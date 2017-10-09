@@ -1,6 +1,6 @@
-## <a name="versions-of-hello-azure-cli"></a>Versões do Olá CLI do Azure
+## <a name="versions-of-hello-azure-cli"></a><span data-ttu-id="8d5c7-101">Versões do Olá CLI do Azure</span><span class="sxs-lookup"><span data-stu-id="8d5c7-101">Versions of hello Azure CLI</span></span>
 
-Existem duas versões do Olá Interface de linha de comandos do Azure (CLI) atualmente disponíveis:
+<span data-ttu-id="8d5c7-102">Existem duas versões do Olá Interface de linha de comandos do Azure (CLI) atualmente disponíveis:</span><span class="sxs-lookup"><span data-stu-id="8d5c7-102">There are two versions of hello Azure Command-Line Interface (CLI) currently available:</span></span>
 
-* [Azure CLI 2.0](../articles/storage/common/storage-azure-cli.md): nosso CLI de próxima geração escrita no Python, para utilização com o modelo de implementação do Resource Manager Olá.
-* [Azure CLI 1.0](../articles/storage/common/storage-azure-cli-nodejs.md): CLI nossa escritos no Node.js, para utilização com clássica Olá e modelos de implementação do Resource Manager.
+* <span data-ttu-id="8d5c7-103">[Azure CLI 2.0](../articles/storage/common/storage-azure-cli.md): nosso CLI de próxima geração escrita no Python, para utilização com o modelo de implementação do Resource Manager Olá.</span><span class="sxs-lookup"><span data-stu-id="8d5c7-103">[Azure CLI 2.0](../articles/storage/common/storage-azure-cli.md): Our next-generation CLI written in Python, for use with hello Resource Manager deployment model.</span></span>
+* <span data-ttu-id="8d5c7-104">[Azure CLI 1.0](../articles/storage/common/storage-azure-cli-nodejs.md): CLI nossa escritos no Node.js, para utilização com clássica Olá e modelos de implementação do Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="8d5c7-104">[Azure CLI 1.0](../articles/storage/common/storage-azure-cli-nodejs.md): Our CLI written in Node.js, for use with both hello classic and Resource Manager deployment models.</span></span>

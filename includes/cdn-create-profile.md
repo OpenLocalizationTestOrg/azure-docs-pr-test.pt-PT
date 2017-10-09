@@ -1,16 +1,16 @@
-**toocreate um novo perfil CDN**
+<span data-ttu-id="37126-101">**toocreate um novo perfil CDN**</span><span class="sxs-lookup"><span data-stu-id="37126-101">**toocreate a new CDN profile**</span></span>
 
-1. No Olá [Portal do Azure](https://portal.azure.com), no Olá superior esquerda, clique em **novo**.  No Olá **novo** painel, selecione **Web + móvel**, em seguida, **CDN**.
+1. <span data-ttu-id="37126-102">No Olá [Portal do Azure](https://portal.azure.com), no Olá superior esquerda, clique em **novo**.</span><span class="sxs-lookup"><span data-stu-id="37126-102">In hello [Azure Portal](https://portal.azure.com), in hello upper left, click **New**.</span></span>  <span data-ttu-id="37126-103">No Olá **novo** painel, selecione **Web + móvel**, em seguida, **CDN**.</span><span class="sxs-lookup"><span data-stu-id="37126-103">In hello **New** blade, select **Web + Mobile**, then **CDN**.</span></span>
    
-    é apresentado o painel do perfil da CDN Olá novo.
+    <span data-ttu-id="37126-104">é apresentado o painel do perfil da CDN Olá novo.</span><span class="sxs-lookup"><span data-stu-id="37126-104">hello new CDN profile blade appears.</span></span>
    
     ![Novo Perfil da CDN](./media/cdn-create-profile/new-cdn-profile-include.png)
-2. Introduza um nome para o seu perfil da CDN.
-3. Selecione uma **Localização**.  Este é Olá localização do Azure onde as informações do perfil CDN serão armazenadas.  Esta ação não tem qualquer impacto sobre as localizações de ponto final da CDN.
-4. Selecione ou crie um **Grupo de Recursos**.  Para mais informações sobre os Grupos de Recursos, veja [Descrição geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md#resource-groups).
-5. Selecione um **Escalão de preço**.  Consulte Olá [descrição geral da CDN](../articles/cdn/cdn-overview.md#azure-cdn-features) para uma comparação dos escalões de preço.
+2. <span data-ttu-id="37126-106">Introduza um nome para o seu perfil da CDN.</span><span class="sxs-lookup"><span data-stu-id="37126-106">Enter a name for your CDN profile.</span></span>
+3. <span data-ttu-id="37126-107">Selecione uma **Localização**.</span><span class="sxs-lookup"><span data-stu-id="37126-107">Select a **Location**.</span></span>  <span data-ttu-id="37126-108">Este é Olá localização do Azure onde as informações do perfil CDN serão armazenadas.</span><span class="sxs-lookup"><span data-stu-id="37126-108">This is hello Azure location where your CDN profile information will be stored.</span></span>  <span data-ttu-id="37126-109">Esta ação não tem qualquer impacto sobre as localizações de ponto final da CDN.</span><span class="sxs-lookup"><span data-stu-id="37126-109">It has no impact on CDN endpoint locations.</span></span>
+4. <span data-ttu-id="37126-110">Selecione ou crie um **Grupo de Recursos**.</span><span class="sxs-lookup"><span data-stu-id="37126-110">Select or create a **Resource Group**.</span></span>  <span data-ttu-id="37126-111">Para mais informações sobre os Grupos de Recursos, veja [Descrição geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md#resource-groups).</span><span class="sxs-lookup"><span data-stu-id="37126-111">For more information on Resource Groups, see [Azure Resource Manager overview](../articles/azure-resource-manager/resource-group-overview.md#resource-groups).</span></span>
+5. <span data-ttu-id="37126-112">Selecione um **Escalão de preço**.</span><span class="sxs-lookup"><span data-stu-id="37126-112">Select a **Pricing tier**.</span></span>  <span data-ttu-id="37126-113">Consulte Olá [descrição geral da CDN](../articles/cdn/cdn-overview.md#azure-cdn-features) para uma comparação dos escalões de preço.</span><span class="sxs-lookup"><span data-stu-id="37126-113">See hello [CDN Overview](../articles/cdn/cdn-overview.md#azure-cdn-features) for a comparison of pricing tiers.</span></span>
    
     ![Seleção do escalão de preço da CDN](./media/cdn-create-profile/cdn-choose-sku-include.png)
-6. Selecione Olá **subscrição** para este perfil da CDN.
-7. Clique em Olá **criar** botão novo perfil de toocreate Olá. 
+6. <span data-ttu-id="37126-115">Selecione Olá **subscrição** para este perfil da CDN.</span><span class="sxs-lookup"><span data-stu-id="37126-115">Select hello **Subscription** for this CDN profile.</span></span>
+7. <span data-ttu-id="37126-116">Clique em Olá **criar** botão novo perfil de toocreate Olá.</span><span class="sxs-lookup"><span data-stu-id="37126-116">Click hello **Create** button toocreate hello new profile.</span></span> 
 

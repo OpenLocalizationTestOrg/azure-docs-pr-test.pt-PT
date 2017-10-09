@@ -1,9 +1,9 @@
-Coleção de medidas personalizadas. Utilize este tooreport de coleção com o nome associada ao item de telemetria de Olá de medida. Casos de utilização típicos são:
-- tamanho de Olá do payload de telemetria de dependência
-- número de Olá de itens de fila processados pelo pedido de telemetria
-- tempo desse cliente demorou toocomplete Olá passo na conclusão do passo do Assistente para eventos de telemetria.
+<span data-ttu-id="ee1cf-101">Coleção de medidas personalizadas.</span><span class="sxs-lookup"><span data-stu-id="ee1cf-101">Collection of custom measurements.</span></span> <span data-ttu-id="ee1cf-102">Utilize este tooreport de coleção com o nome associada ao item de telemetria de Olá de medida.</span><span class="sxs-lookup"><span data-stu-id="ee1cf-102">Use this collection tooreport named measurement associated with hello telemetry item.</span></span> <span data-ttu-id="ee1cf-103">Casos de utilização típicos são:</span><span class="sxs-lookup"><span data-stu-id="ee1cf-103">Typical use cases are:</span></span>
+- <span data-ttu-id="ee1cf-104">tamanho de Olá do payload de telemetria de dependência</span><span class="sxs-lookup"><span data-stu-id="ee1cf-104">hello size of Dependency Telemetry payload</span></span>
+- <span data-ttu-id="ee1cf-105">número de Olá de itens de fila processados pelo pedido de telemetria</span><span class="sxs-lookup"><span data-stu-id="ee1cf-105">hello number of queue items processed by Request Telemetry</span></span>
+- <span data-ttu-id="ee1cf-106">tempo desse cliente demorou toocomplete Olá passo na conclusão do passo do Assistente para eventos de telemetria.</span><span class="sxs-lookup"><span data-stu-id="ee1cf-106">time that customer took toocomplete hello step in wizard step completion Event Telemetry.</span></span>
 
-Pode consultar [medidas personalizadas](https://analytics.applicationinsights.io/demo?q=H4sIAAAAAAAAA2WLOw6DMAyGd07hZoLeoRPqyMaGGAL8aiPhGCV2kKoeHsHK%2Bj1myyr8LoiaqfrT%2FkUCzRft4LMl8OUeL3LuLLIx%2BxR%2BIF8%2BtcoiNq2o78vgWuFthQaJ1AeGGxt6UlBwKxa1qQ6EpLhAfQAAAA%3D%3D&timespan=PT24H) na análise de aplicação:
+<span data-ttu-id="ee1cf-107">Pode consultar [medidas personalizadas](https://analytics.applicationinsights.io/demo?q=H4sIAAAAAAAAA2WLOw6DMAyGd07hZoLeoRPqyMaGGAL8aiPhGCV2kKoeHsHK%2Bj1myyr8LoiaqfrT%2FkUCzRft4LMl8OUeL3LuLLIx%2BxR%2BIF8%2BtcoiNq2o78vgWuFthQaJ1AeGGxt6UlBwKxa1qQ6EpLhAfQAAAA%3D%3D&timespan=PT24H) na análise de aplicação:</span><span class="sxs-lookup"><span data-stu-id="ee1cf-107">You can query [custom measurements](https://analytics.applicationinsights.io/demo?q=H4sIAAAAAAAAA2WLOw6DMAyGd07hZoLeoRPqyMaGGAL8aiPhGCV2kKoeHsHK%2Bj1myyr8LoiaqfrT%2FkUCzRft4LMl8OUeL3LuLLIx%2BxR%2BIF8%2BtcoiNq2o78vgWuFthQaJ1AeGGxt6UlBwKxa1qQ6EpLhAfQAAAA%3D%3D&timespan=PT24H) in Application Analytics:</span></span>
 
 ```
 customEvents
@@ -12,6 +12,6 @@ customEvents
 ```
 
  > [!NOTE]
- > Medidas personalizadas estão associadas a itens de telemetria de Olá pertencem a. São requerente toosampling com itens de telemetria de Olá que contenha esses valores. tootrack uma medida que tem um valor independente dos outros tipos de telemetria, utilização [telemetria métrica](../articles/application-insights/app-insights-api-custom-events-metrics.md).
+ > <span data-ttu-id="ee1cf-108">Medidas personalizadas estão associadas a itens de telemetria de Olá pertencem a.</span><span class="sxs-lookup"><span data-stu-id="ee1cf-108">Custom measurements are associated with hello telemetry item they belong to.</span></span> <span data-ttu-id="ee1cf-109">São requerente toosampling com itens de telemetria de Olá que contenha esses valores.</span><span class="sxs-lookup"><span data-stu-id="ee1cf-109">They are subject toosampling with hello telemetry item containing those measurements.</span></span> <span data-ttu-id="ee1cf-110">tootrack uma medida que tem um valor independente dos outros tipos de telemetria, utilização [telemetria métrica](../articles/application-insights/app-insights-api-custom-events-metrics.md).</span><span class="sxs-lookup"><span data-stu-id="ee1cf-110">tootrack a measurement that has a value independent from other telemetry types, use [Metric telemetry](../articles/application-insights/app-insights-api-custom-events-metrics.md).</span></span>
 
-Comprimento de chave máximo: 150
+<span data-ttu-id="ee1cf-111">Comprimento de chave máximo: 150</span><span class="sxs-lookup"><span data-stu-id="ee1cf-111">Max key length: 150</span></span>

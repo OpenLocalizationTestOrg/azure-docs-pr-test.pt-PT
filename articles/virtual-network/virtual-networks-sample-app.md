@@ -20,15 +20,15 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="sample-application-for-use-with-dmzs"></a>Exemplo de aplicação para utilização com DMZ
-[Devolver toohello segurança limites melhores práticas de página][HOME]
+# <a name="sample-application-for-use-with-dmzs"></a><span data-ttu-id="af6fb-103">Exemplo de aplicação para utilização com DMZ</span><span class="sxs-lookup"><span data-stu-id="af6fb-103">Sample application for use with DMZs</span></span>
+<span data-ttu-id="af6fb-104">[Devolver toohello segurança limites melhores práticas de página][HOME]</span><span class="sxs-lookup"><span data-stu-id="af6fb-104">[Return toohello Security Boundary Best Practices Page][HOME]</span></span>
 
-Estes scripts do PowerShell podem ser executadas localmente no Olá IIS01 e AppVM01 tooinstall servidores e configurar uma aplicação web simples que apresenta uma página html do servidor de IIS01 front-end Olá com conteúdo do servidor de AppVM01 Olá back-end.
+<span data-ttu-id="af6fb-105">Estes scripts do PowerShell podem ser executadas localmente no Olá IIS01 e AppVM01 tooinstall servidores e configurar uma aplicação web simples que apresenta uma página html do servidor de IIS01 front-end Olá com conteúdo do servidor de AppVM01 Olá back-end.</span><span class="sxs-lookup"><span data-stu-id="af6fb-105">These PowerShell scripts can be run locally on hello IIS01 and AppVM01 servers tooinstall and set up a simple web application that displays an html page from hello front-end IIS01 server with content from hello back-end AppVM01 server.</span></span>
 
-Esta aplicação fornece um ambiente de teste simples para muitos dos exemplos de rede de Perímetro Olá e como as alterações no Olá pontos finais, NSGs, UDR e regras de Firewall podem afetar os fluxos de tráfego.
+<span data-ttu-id="af6fb-106">Esta aplicação fornece um ambiente de teste simples para muitos dos exemplos de rede de Perímetro Olá e como as alterações no Olá pontos finais, NSGs, UDR e regras de Firewall podem afetar os fluxos de tráfego.</span><span class="sxs-lookup"><span data-stu-id="af6fb-106">This application provides a simple testing environment for many of hello DMZ Examples and how changes on hello Endpoints, NSGs, UDR, and Firewall rules can affect traffic flows.</span></span>
 
-## <a name="firewall-rule-tooallow-icmp"></a>Tooallow de regra de firewall ICMP
-Esta declaração de PowerShell simple pode ser executada em qualquer tráfego ICMP (Ping) tooallow VM do Windows. Esta atualização de firewall permite mais fácil de teste e resolução de problemas, permitindo Olá ping protocolo toopass através da firewall do windows hello (para a maioria das Linux distros que ICMP está ativada por predefinição).
+## <a name="firewall-rule-tooallow-icmp"></a><span data-ttu-id="af6fb-107">Tooallow de regra de firewall ICMP</span><span class="sxs-lookup"><span data-stu-id="af6fb-107">Firewall rule tooallow ICMP</span></span>
+<span data-ttu-id="af6fb-108">Esta declaração de PowerShell simple pode ser executada em qualquer tráfego ICMP (Ping) tooallow VM do Windows.</span><span class="sxs-lookup"><span data-stu-id="af6fb-108">This simple PowerShell statement can be run on any Windows VM tooallow ICMP (Ping) traffic.</span></span> <span data-ttu-id="af6fb-109">Esta atualização de firewall permite mais fácil de teste e resolução de problemas, permitindo Olá ping protocolo toopass através da firewall do windows hello (para a maioria das Linux distros que ICMP está ativada por predefinição).</span><span class="sxs-lookup"><span data-stu-id="af6fb-109">This firewall update allows for easier testing and troubleshooting by allowing hello ping protocol toopass through hello windows firewall (for most Linux distros ICMP is on by default).</span></span>
 
 ```PowerShell
 # Turn On ICMPv4
@@ -36,18 +36,18 @@ New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
     -Protocol ICMPv4 -Enabled True -Profile Any -Action Allow
 ```
 
-Se utilizar Olá seguintes scripts, esta adição da regra de firewall é a primeira instrução de Olá.
+<span data-ttu-id="af6fb-110">Se utilizar Olá seguintes scripts, esta adição da regra de firewall é a primeira instrução de Olá.</span><span class="sxs-lookup"><span data-stu-id="af6fb-110">If you use hello following scripts, this firewall rule addition is hello first statement.</span></span>
 
-## <a name="iis01---web-application-installation-script"></a>IIS01 - o script de instalação de aplicações Web
-Este script irão:
+## <a name="iis01---web-application-installation-script"></a><span data-ttu-id="af6fb-111">IIS01 - o script de instalação de aplicações Web</span><span class="sxs-lookup"><span data-stu-id="af6fb-111">IIS01 - Web application installation script</span></span>
+<span data-ttu-id="af6fb-112">Este script irão:</span><span class="sxs-lookup"><span data-stu-id="af6fb-112">This script will:</span></span>
 
-1. Abrir IMCPv4 (Ping) na firewall do windows local server Olá para fins de teste mais fácil
-2. Instalar o IIS e Olá .net Framework 4.5
-3. Criar uma página web do ASP.NET e Web. config
-4. Alterar Olá predefinido aplicação conjunto toomake acesso a ficheiros mais fácil
-5. Conta de administrador do conjunto Olá utilizador anónimo tooyour e a palavra-passe
+1. <span data-ttu-id="af6fb-113">Abrir IMCPv4 (Ping) na firewall do windows local server Olá para fins de teste mais fácil</span><span class="sxs-lookup"><span data-stu-id="af6fb-113">Open IMCPv4 (Ping) on hello local server windows firewall for easier testing</span></span>
+2. <span data-ttu-id="af6fb-114">Instalar o IIS e Olá .net Framework 4.5</span><span class="sxs-lookup"><span data-stu-id="af6fb-114">Install IIS and hello .Net Framework v4.5</span></span>
+3. <span data-ttu-id="af6fb-115">Criar uma página web do ASP.NET e Web. config</span><span class="sxs-lookup"><span data-stu-id="af6fb-115">Create an ASP.NET web page and a Web.config file</span></span>
+4. <span data-ttu-id="af6fb-116">Alterar Olá predefinido aplicação conjunto toomake acesso a ficheiros mais fácil</span><span class="sxs-lookup"><span data-stu-id="af6fb-116">Change hello Default application pool toomake file access easier</span></span>
+5. <span data-ttu-id="af6fb-117">Conta de administrador do conjunto Olá utilizador anónimo tooyour e a palavra-passe</span><span class="sxs-lookup"><span data-stu-id="af6fb-117">Set hello Anonymous user tooyour admin account and password</span></span>
 
-Este script do PowerShell deve ser executado localmente enquanto RDP tinha em IIS01.
+<span data-ttu-id="af6fb-118">Este script do PowerShell deve ser executado localmente enquanto RDP tinha em IIS01.</span><span class="sxs-lookup"><span data-stu-id="af6fb-118">This PowerShell script should be run locally while RDP’d into IIS01.</span></span>
 
 ```PowerShell
 # IIS Server Post Build Config Script
@@ -145,21 +145,21 @@ Este script do PowerShell deve ser executado localmente enquanto RDP tinha em II
     Write-Host
 ```
 
-## <a name="appvm01---file-server-installation-script"></a>AppVM01 - o script de instalação do servidor de ficheiros
-Este script configura Olá back-end para esta aplicação simple. Este script irão:
+## <a name="appvm01---file-server-installation-script"></a><span data-ttu-id="af6fb-119">AppVM01 - o script de instalação do servidor de ficheiros</span><span class="sxs-lookup"><span data-stu-id="af6fb-119">AppVM01 - File server installation script</span></span>
+<span data-ttu-id="af6fb-120">Este script configura Olá back-end para esta aplicação simple.</span><span class="sxs-lookup"><span data-stu-id="af6fb-120">This script sets up hello back-end for this simple application.</span></span> <span data-ttu-id="af6fb-121">Este script irão:</span><span class="sxs-lookup"><span data-stu-id="af6fb-121">This script will:</span></span>
 
-1. Abrir IMCPv4 (Ping) na firewall de Olá para fins de teste mais fácil
-2. Criar um diretório para Olá web site
-3. Criar um toobe do ficheiro de texto remotamente aceder através da página web de Olá
-4. Definir as permissões no tooAnonymous de ficheiro e diretório Olá tooallow acesso
-5. Desativar a mais fácil de navegar a partir deste servidor tooallow de segurança avançada do IE 
+1. <span data-ttu-id="af6fb-122">Abrir IMCPv4 (Ping) na firewall de Olá para fins de teste mais fácil</span><span class="sxs-lookup"><span data-stu-id="af6fb-122">Open IMCPv4 (Ping) on hello firewall for easier testing</span></span>
+2. <span data-ttu-id="af6fb-123">Criar um diretório para Olá web site</span><span class="sxs-lookup"><span data-stu-id="af6fb-123">Create a directory for hello web site</span></span>
+3. <span data-ttu-id="af6fb-124">Criar um toobe do ficheiro de texto remotamente aceder através da página web de Olá</span><span class="sxs-lookup"><span data-stu-id="af6fb-124">Create a text file toobe remotely access by hello web page</span></span>
+4. <span data-ttu-id="af6fb-125">Definir as permissões no tooAnonymous de ficheiro e diretório Olá tooallow acesso</span><span class="sxs-lookup"><span data-stu-id="af6fb-125">Set permissions on hello directory and file tooAnonymous tooallow access</span></span>
+5. <span data-ttu-id="af6fb-126">Desativar a mais fácil de navegar a partir deste servidor tooallow de segurança avançada do IE</span><span class="sxs-lookup"><span data-stu-id="af6fb-126">Turn off IE Enhanced Security tooallow easier browsing from this server</span></span> 
 
 > [!IMPORTANT]
-> **Melhor prática**: nunca desativar a segurança avançada do IE num servidor de produção e, normalmente, é uma web de Olá toosurf ideia incorreta de um servidor de produção. Além disso, a abertura de partilhas de ficheiros para acesso anónimo é incorreto, mas já está aqui de simplicidade.
+> <span data-ttu-id="af6fb-127">**Melhor prática**: nunca desativar a segurança avançada do IE num servidor de produção e, normalmente, é uma web de Olá toosurf ideia incorreta de um servidor de produção.</span><span class="sxs-lookup"><span data-stu-id="af6fb-127">**Best Practice**: Never turn off IE Enhanced Security on a production server, plus it's generally a bad idea toosurf hello web from a production server.</span></span> <span data-ttu-id="af6fb-128">Além disso, a abertura de partilhas de ficheiros para acesso anónimo é incorreto, mas já está aqui de simplicidade.</span><span class="sxs-lookup"><span data-stu-id="af6fb-128">Also, opening up file shares for anonymous access is a bad idea, but done here for simplicity.</span></span>
 > 
 > 
 
-Este script do PowerShell deve ser executado localmente enquanto RDP tinha em AppVM01. PowerShell é necessário toobe run a execução do administrador tooensure com êxito.
+<span data-ttu-id="af6fb-129">Este script do PowerShell deve ser executado localmente enquanto RDP tinha em AppVM01.</span><span class="sxs-lookup"><span data-stu-id="af6fb-129">This PowerShell script should be run locally while RDP’d into AppVM01.</span></span> <span data-ttu-id="af6fb-130">PowerShell é necessário toobe run a execução do administrador tooensure com êxito.</span><span class="sxs-lookup"><span data-stu-id="af6fb-130">PowerShell is required toobe run as Administrator tooensure successful execution.</span></span>
 
 ```PowerShell
 # AppVM01 Server Post Build Config Script
@@ -192,13 +192,13 @@ Este script do PowerShell deve ser executado localmente enquanto RDP tinha em Ap
     Write-Host
 ```
 
-## <a name="dns01---dns-server-installation-script"></a>DNS01 - o script de instalação do servidor DNS
-Não há nenhum script incluído neste tooset de aplicação de exemplo segurança do servidor de DNS Olá. Se o teste de regras de firewall de Olá, NSG ou UDR tem tooinclude o tráfego do DNS, servidor de Olá DNS01 tem toobe configurar manualmente. ficheiro de xml de configuração de rede de Olá e modelo do Resource Manager para ambos os exemplos incluem DNS01 como servidor DNS primário do Olá e servidor DNS público Olá alojadas pelo nível 3 como servidor DNS de cópia de segurança Olá. servidor de nível 3 DNS Olá teria de ser Olá real DNS do servidor utilizado para o tráfego não local e com DNS01 não o programa de configuração, não há redes locais ocorreriam DNS.
+## <a name="dns01---dns-server-installation-script"></a><span data-ttu-id="af6fb-131">DNS01 - o script de instalação do servidor DNS</span><span class="sxs-lookup"><span data-stu-id="af6fb-131">DNS01 - DNS server installation script</span></span>
+<span data-ttu-id="af6fb-132">Não há nenhum script incluído neste tooset de aplicação de exemplo segurança do servidor de DNS Olá.</span><span class="sxs-lookup"><span data-stu-id="af6fb-132">There is no script included in this sample application tooset up hello DNS server.</span></span> <span data-ttu-id="af6fb-133">Se o teste de regras de firewall de Olá, NSG ou UDR tem tooinclude o tráfego do DNS, servidor de Olá DNS01 tem toobe configurar manualmente.</span><span class="sxs-lookup"><span data-stu-id="af6fb-133">If testing of hello firewall rules, NSG, or UDR needs tooinclude DNS traffic, hello DNS01 server needs toobe set up manually.</span></span> <span data-ttu-id="af6fb-134">ficheiro de xml de configuração de rede de Olá e modelo do Resource Manager para ambos os exemplos incluem DNS01 como servidor DNS primário do Olá e servidor DNS público Olá alojadas pelo nível 3 como servidor DNS de cópia de segurança Olá.</span><span class="sxs-lookup"><span data-stu-id="af6fb-134">hello Network Configuration xml file and Resource Manager Template for both examples includes DNS01 as hello primary DNS server and hello public DNS server hosted by Level 3 as hello backup DNS server.</span></span> <span data-ttu-id="af6fb-135">servidor de nível 3 DNS Olá teria de ser Olá real DNS do servidor utilizado para o tráfego não local e com DNS01 não o programa de configuração, não há redes locais ocorreriam DNS.</span><span class="sxs-lookup"><span data-stu-id="af6fb-135">hello Level 3 DNS server would be hello actual DNS server used for non-local traffic, and with DNS01 not setup, no local network DNS would occur.</span></span>
 
-## <a name="next-steps"></a>Passos seguintes
-* Executar script de IIS01 Olá num servidor de IIS
-* Executar script de servidor de ficheiros em AppVM01
-* Procurar toohello IP público na IIS01 toovalidate da compilação
+## <a name="next-steps"></a><span data-ttu-id="af6fb-136">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="af6fb-136">Next steps</span></span>
+* <span data-ttu-id="af6fb-137">Executar script de IIS01 Olá num servidor de IIS</span><span class="sxs-lookup"><span data-stu-id="af6fb-137">Run hello IIS01 script on an IIS server</span></span>
+* <span data-ttu-id="af6fb-138">Executar script de servidor de ficheiros em AppVM01</span><span class="sxs-lookup"><span data-stu-id="af6fb-138">Run File Server script on AppVM01</span></span>
+* <span data-ttu-id="af6fb-139">Procurar toohello IP público na IIS01 toovalidate da compilação</span><span class="sxs-lookup"><span data-stu-id="af6fb-139">Browse toohello Public IP on IIS01 toovalidate your build</span></span>
 
 <!--Link References-->
 [HOME]: ../best-practices-network-security.md

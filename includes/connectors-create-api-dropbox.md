@@ -1,18 +1,18 @@
-### <a name="prerequisites"></a>Pré-requisitos
-* A [Dropbox](https://www.Dropbox.com/) conta 
+### <a name="prerequisites"></a><span data-ttu-id="6e0b9-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="6e0b9-101">Prerequisites</span></span>
+* <span data-ttu-id="6e0b9-102">A [Dropbox](https://www.Dropbox.com/) conta</span><span class="sxs-lookup"><span data-stu-id="6e0b9-102">A [Dropbox](https://www.Dropbox.com/) account</span></span> 
 
-Antes de poder utilizar a sua conta Dropbox numa aplicação lógica, tem de autorizar conta Dropbox da tooyour tooconnect Olá lógica aplicação. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure. 
+<span data-ttu-id="6e0b9-103">Antes de poder utilizar a sua conta Dropbox numa aplicação lógica, tem de autorizar conta Dropbox da tooyour tooconnect Olá lógica aplicação.</span><span class="sxs-lookup"><span data-stu-id="6e0b9-103">Before you can use your Dropbox account in a Logic app, you must authorize hello Logic app tooconnect tooyour Dropbox account.</span></span> <span data-ttu-id="6e0b9-104">Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="6e0b9-104">Fortunately, you can do this easily from within your Logic app on hello Azure Portal.</span></span> 
 
-Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica conta Dropbox:
+<span data-ttu-id="6e0b9-105">Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica conta Dropbox:</span><span class="sxs-lookup"><span data-stu-id="6e0b9-105">Here are hello steps tooauthorize your Logic app tooconnect tooyour Dropbox account:</span></span>
 
-1. toocreate tooDropbox uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Dropbox* na caixa de pesquisa de Olá. Selecione o acionador de Olá ou ação que irá gostar toouse:  
-   ![Passo 1 da Dropbox](./media/connectors-create-api-dropbox/dropbox-1.png)
-2. Se ainda não criou quaisquer tooDropbox ligações antes, obterá tooprovide pedido as suas credenciais Dropbox. Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta Dropbox:  
+1. <span data-ttu-id="6e0b9-106">toocreate tooDropbox uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Dropbox* na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="6e0b9-106">toocreate a connection tooDropbox, in hello Logic app designer, select **Show Microsoft managed APIs** in hello drop down list then enter *Dropbox* in hello search box.</span></span> <span data-ttu-id="6e0b9-107">Selecione o acionador de Olá ou ação que irá gostar toouse:</span><span class="sxs-lookup"><span data-stu-id="6e0b9-107">Select hello trigger or action you'll like toouse:</span></span>  
+   <span data-ttu-id="6e0b9-108">![Passo 1 da Dropbox](./media/connectors-create-api-dropbox/dropbox-1.png)</span><span class="sxs-lookup"><span data-stu-id="6e0b9-108">![Dropbox step 1](./media/connectors-create-api-dropbox/dropbox-1.png)</span></span>
+2. <span data-ttu-id="6e0b9-109">Se ainda não criou quaisquer tooDropbox ligações antes, obterá tooprovide pedido as suas credenciais Dropbox.</span><span class="sxs-lookup"><span data-stu-id="6e0b9-109">If you haven't created any connections tooDropbox before, you'll get prompted tooprovide your Dropbox credentials.</span></span> <span data-ttu-id="6e0b9-110">Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta Dropbox:</span><span class="sxs-lookup"><span data-stu-id="6e0b9-110">These credentials will be used tooauthorize your Logic app tooconnect to, and access your Dropbox account's data:</span></span>  
    ![Passo 2 da Dropbox](./media/connectors-create-api-dropbox/dropbox-2.png)
-3. Forneça o tooauthorize de nome e palavra-passe de utilizador do Dropbox a aplicação de lógica:  
+3. <span data-ttu-id="6e0b9-112">Forneça o tooauthorize de nome e palavra-passe de utilizador do Dropbox a aplicação de lógica:</span><span class="sxs-lookup"><span data-stu-id="6e0b9-112">Provide your Dropbox user name and password tooauthorize your Logic app:</span></span>  
    ![Passo 3 da Dropbox](./media/connectors-create-api-dropbox/dropbox-3.png)   
-4. Autorize toouse de aplicação de lógica de Olá a sua conta Dropbox:  
+4. <span data-ttu-id="6e0b9-114">Autorize toouse de aplicação de lógica de Olá a sua conta Dropbox:</span><span class="sxs-lookup"><span data-stu-id="6e0b9-114">Authorize hello Logic app toouse your Dropbox account:</span></span>  
    ![Passo 4 da Dropbox](./media/connectors-create-api-dropbox/dropbox-4.png)
-5. Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:  
+5. <span data-ttu-id="6e0b9-116">Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="6e0b9-116">Notice hello connection has been created and you are now free tooproceed with hello other steps in your Logic app:</span></span>  
    ![Passo 5 da Dropbox](./media/connectors-create-api-dropbox/dropbox-5.png)   
 

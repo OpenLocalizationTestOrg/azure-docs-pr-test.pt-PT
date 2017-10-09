@@ -1,8 +1,8 @@
-**Discos da máquina virtual não geridos standard: por limites de disco**
+<span data-ttu-id="13330-101">**Discos da máquina virtual não geridos standard: por limites de disco**</span><span class="sxs-lookup"><span data-stu-id="13330-101">**Standard unmanaged virtual machine disks: per disk limits**</span></span>
 
-| Escalão da VM | VM de Escalão Básico | VM de Escalão Standard |
+| <span data-ttu-id="13330-102">Escalão da VM</span><span class="sxs-lookup"><span data-stu-id="13330-102">VM Tier</span></span> | <span data-ttu-id="13330-103">VM de Escalão Básico</span><span class="sxs-lookup"><span data-stu-id="13330-103">Basic Tier VM</span></span> | <span data-ttu-id="13330-104">VM de Escalão Standard</span><span class="sxs-lookup"><span data-stu-id="13330-104">Standard Tier VM</span></span> |
 | --- | --- | --- |
-| Tamanho do disco |4095 GB |4095 GB |
-| Máx. de IOPS 8 KB por disco persistente |300 |500 |
-| Número máx. de discos com IOPS máximo |66 |40 |
+| <span data-ttu-id="13330-105">Tamanho do disco</span><span class="sxs-lookup"><span data-stu-id="13330-105">Disk size</span></span> |<span data-ttu-id="13330-106">4095 GB</span><span class="sxs-lookup"><span data-stu-id="13330-106">4095 GB</span></span> |<span data-ttu-id="13330-107">4095 GB</span><span class="sxs-lookup"><span data-stu-id="13330-107">4095 GB</span></span> |
+| <span data-ttu-id="13330-108">Máx. de IOPS 8 KB por disco persistente</span><span class="sxs-lookup"><span data-stu-id="13330-108">Max 8 KB IOPS per persistent disk</span></span> |<span data-ttu-id="13330-109">300</span><span class="sxs-lookup"><span data-stu-id="13330-109">300</span></span> |<span data-ttu-id="13330-110">500</span><span class="sxs-lookup"><span data-stu-id="13330-110">500</span></span> |
+| <span data-ttu-id="13330-111">Número máx. de discos com IOPS máximo</span><span class="sxs-lookup"><span data-stu-id="13330-111">Max number of disks performing max IOPS</span></span> |<span data-ttu-id="13330-112">66</span><span class="sxs-lookup"><span data-stu-id="13330-112">66</span></span> |<span data-ttu-id="13330-113">40</span><span class="sxs-lookup"><span data-stu-id="13330-113">40</span></span> |
 

@@ -1,4 +1,4 @@
-Olá principais problemas seguintes poderão ajudar a resolver o problema. toostart de resolução de problemas, consultar estes passos:
+<span data-ttu-id="4b380-101">Olá principais problemas seguintes poderão ajudar a resolver o problema.</span><span class="sxs-lookup"><span data-stu-id="4b380-101">hello following top issues may help resolve your issue.</span></span> <span data-ttu-id="4b380-102">toostart de resolução de problemas, consultar estes passos:</span><span class="sxs-lookup"><span data-stu-id="4b380-102">toostart troubleshooting, review these steps:</span></span>
 
-- [Não é possível suportar cluster Olá Olá solicitado o tamanho da VM](../articles/virtual-machines/linux/troubleshoot-deploy-vm.md#the-cluster-cannot-support-the-requested-vm-size)
-- [Olá cluster não tem recursos gratuitos](../articles/virtual-machines/linux/troubleshoot-deploy-vm.md#the-cluster-does-not-have-free-resources)
+- [<span data-ttu-id="4b380-103">Não é possível suportar cluster Olá Olá solicitado o tamanho da VM</span><span class="sxs-lookup"><span data-stu-id="4b380-103">hello cluster cannot support hello requested VM size</span></span>](../articles/virtual-machines/linux/troubleshoot-deploy-vm.md#the-cluster-cannot-support-the-requested-vm-size)
+- [<span data-ttu-id="4b380-104">Olá cluster não tem recursos gratuitos</span><span class="sxs-lookup"><span data-stu-id="4b380-104">hello cluster does not have free resources</span></span>](../articles/virtual-machines/linux/troubleshoot-deploy-vm.md#the-cluster-does-not-have-free-resources)

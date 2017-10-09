@@ -21,5 +21,5 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="common-azure-cli-10-commands-on-linux-and-mac"></a>Comandos da CLI do Azure 1.0 comuns no Linux e Mac
+# <a name="common-azure-cli-10-commands-on-linux-and-mac"></a><span data-ttu-id="ddbaf-103">Comandos da CLI do Azure 1.0 comuns no Linux e Mac</span><span class="sxs-lookup"><span data-stu-id="ddbaf-103">Common Azure CLI 1.0 commands on Linux and Mac</span></span>
 [!INCLUDE [virtual-machines-common-cli-manage-nodejs](../../../includes/virtual-machines-common-cli-manage-nodejs.md)]

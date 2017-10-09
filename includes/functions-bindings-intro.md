@@ -1,7 +1,7 @@
-Esta é a informação de referência para programadores das funções do Azure. Se tiver novas funções tooAzure, começar a utilizar Olá os seguintes recursos:
+<span data-ttu-id="17bb8-101">Esta é a informação de referência para programadores das funções do Azure.</span><span class="sxs-lookup"><span data-stu-id="17bb8-101">This is reference information for Azure Functions developers.</span></span> <span data-ttu-id="17bb8-102">Se tiver novas funções tooAzure, começar a utilizar Olá os seguintes recursos:</span><span class="sxs-lookup"><span data-stu-id="17bb8-102">If you're new tooAzure Functions, start with hello following resources:</span></span>
 
-* [Criar a sua primeira função](../articles/azure-functions/functions-create-first-azure-function.md)
-* [Referência para programadores das Funções do Azure](../articles/azure-functions/functions-reference.md)
-* [C#](../articles/azure-functions/functions-reference-csharp.md), [F #](../articles/azure-functions/functions-reference-fsharp.md), ou [nó](../articles/azure-functions/functions-reference-node.md) referência para programadores
-* [Conceitos de enlaces e acionadores de funções do Azure](..\articles\azure-functions\functions-triggers-bindings.md)
+* [<span data-ttu-id="17bb8-103">Criar a sua primeira função</span><span class="sxs-lookup"><span data-stu-id="17bb8-103">Create your first function</span></span>](../articles/azure-functions/functions-create-first-azure-function.md)
+* [<span data-ttu-id="17bb8-104">Referência para programadores das Funções do Azure</span><span class="sxs-lookup"><span data-stu-id="17bb8-104">Azure Functions developer reference</span></span>](../articles/azure-functions/functions-reference.md)
+* <span data-ttu-id="17bb8-105">[C#](../articles/azure-functions/functions-reference-csharp.md), [F #](../articles/azure-functions/functions-reference-fsharp.md), ou [nó](../articles/azure-functions/functions-reference-node.md) referência para programadores</span><span class="sxs-lookup"><span data-stu-id="17bb8-105">[C#](../articles/azure-functions/functions-reference-csharp.md), [F#](../articles/azure-functions/functions-reference-fsharp.md), or [Node](../articles/azure-functions/functions-reference-node.md) developer reference</span></span>
+* [<span data-ttu-id="17bb8-106">Conceitos de enlaces e acionadores de funções do Azure</span><span class="sxs-lookup"><span data-stu-id="17bb8-106">Azure Functions triggers and bindings concepts</span></span>](..\articles\azure-functions\functions-triggers-bindings.md)
 

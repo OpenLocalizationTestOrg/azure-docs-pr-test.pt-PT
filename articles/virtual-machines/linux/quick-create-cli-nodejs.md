@@ -20,55 +20,55 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 08/18/2017
 ---
-# <a name="create-a-linux-vm-using-the-azure-cli-10"></a>Criar uma VM do Linux através da CLI 1.0 do Azure
+# <a name="create-a-linux-vm-using-the-azure-cli-10"></a><span data-ttu-id="94acc-103">Criar uma VM do Linux através da CLI 1.0 do Azure</span><span class="sxs-lookup"><span data-stu-id="94acc-103">Create a Linux VM using the Azure CLI 1.0</span></span>
 
-Este artigo mostra como implementar rapidamente uma máquina virtual (VM) com Linux no Azure através do comando `azure vm quick-create` na interface de linha de comandos (CLI) do Azure. O comando `quick-create` implementa uma VM numa infraestrutura básica segura que pode utilizar para criar protótipos ou testar rapidamente um conceito.
+<span data-ttu-id="94acc-104">Este artigo mostra como implementar rapidamente uma máquina virtual (VM) com Linux no Azure através do comando `azure vm quick-create` na interface de linha de comandos (CLI) do Azure.</span><span class="sxs-lookup"><span data-stu-id="94acc-104">This article shows how to quickly deploy a Linux virtual machine (VM) on Azure by using the `azure vm quick-create` command in the Azure command-line interface (CLI).</span></span> <span data-ttu-id="94acc-105">O comando `quick-create` implementa uma VM numa infraestrutura básica segura que pode utilizar para criar protótipos ou testar rapidamente um conceito.</span><span class="sxs-lookup"><span data-stu-id="94acc-105">The `quick-create` command deploys a VM inside a basic, secure infrastructure that you can use to prototype or test a concept rapidly.</span></span>
 
 > [!NOTE]
-Para criar uma VM com a CLI 2.0 do Azure, veja [Criar uma VM com a CLI do Azure](../windows/quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+<span data-ttu-id="94acc-106">Para criar uma VM com a CLI 2.0 do Azure, veja [Criar uma VM com a CLI do Azure](../windows/quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).</span><span class="sxs-lookup"><span data-stu-id="94acc-106">To create a VM using the Azure CLI 2.0, see [Create a VM with the Azure CLI](../windows/quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).</span></span>
 
-Também pode implementar rapidamente uma VM com Linux através do [portal do Azure](quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+<span data-ttu-id="94acc-107">Também pode implementar rapidamente uma VM com Linux através do [portal do Azure](quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).</span><span class="sxs-lookup"><span data-stu-id="94acc-107">You can also quickly deploy a Linux VM by using the [Azure portal](quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).</span></span>
 
-O artigo requer uma [ficheiros de chaves públicos e privados SSH](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+<span data-ttu-id="94acc-108">O artigo requer uma [ficheiros de chaves públicos e privados SSH](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).</span><span class="sxs-lookup"><span data-stu-id="94acc-108">The article requires an [SSH public and private key files](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).</span></span>
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="quick-commands"></a>Comandos rápidos
+## <a name="quick-commands"></a><span data-ttu-id="94acc-109">Comandos rápidos</span><span class="sxs-lookup"><span data-stu-id="94acc-109">Quick commands</span></span>
 
-O exemplo seguinte mostra como implementar uma VM CoreOS e anexar a chave Secure Shell (SSH) (os seus argumentos podem ser diferentes):
+<span data-ttu-id="94acc-110">O exemplo seguinte mostra como implementar uma VM CoreOS e anexar a chave Secure Shell (SSH) (os seus argumentos podem ser diferentes):</span><span class="sxs-lookup"><span data-stu-id="94acc-110">The following example shows how to deploy a CoreOS VM and attach your Secure Shell (SSH) key (your arguments might be different):</span></span>
 
 ```azurecli
 azure vm quick-create -M ~/.ssh/id_rsa.pub -Q CoreOS
 ```
 
-## <a name="detailed-walkthrough"></a>Instruções detalhadas
+## <a name="detailed-walkthrough"></a><span data-ttu-id="94acc-111">Instruções detalhadas</span><span class="sxs-lookup"><span data-stu-id="94acc-111">Detailed walkthrough</span></span>
 
-As instruções seguintes têm uma VM UbuntuLTS a ser implementada, passo a passo, com explicações do que cada passo está a fazer.
+<span data-ttu-id="94acc-112">As instruções seguintes têm uma VM UbuntuLTS a ser implementada, passo a passo, com explicações do que cada passo está a fazer.</span><span class="sxs-lookup"><span data-stu-id="94acc-112">The following walkthrough has an UbuntuLTS VM being deployed, step by step, with explanations of what each step is doing.</span></span>
 
-## <a name="vm-quick-create-aliases"></a>Criação rápida de aliases para VM
+## <a name="vm-quick-create-aliases"></a><span data-ttu-id="94acc-113">Criação rápida de aliases para VM</span><span class="sxs-lookup"><span data-stu-id="94acc-113">VM quick-create aliases</span></span>
 
-Uma forma rápida de escolher uma distribuição consiste em utilizar os aliases da CLI do Azure mapeados para as distribuições de SO mais comuns. A tabela seguinte lista os aliases (a partir da versão 0.10 da CLI do Azure). Todas as implementações que utilizem `quick-create` são predefinidas para VMs apoiadas pelo armazenamento de unidade de estado sólido (SSD), que oferece aprovisionamento mais rápido e acesso ao disco de elevado desempenho. (Estes aliases representam uma parte muito pequena das distribuições disponíveis no Azure. Encontre mais imagens no Azure Marketplace ao [procurar uma imagem no PowerShell](../windows/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), [na Web](https://azure.microsoft.com/marketplace/virtual-machines/) ou ao [carregar a sua própria imagem personalizada](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).)
+<span data-ttu-id="94acc-114">Uma forma rápida de escolher uma distribuição consiste em utilizar os aliases da CLI do Azure mapeados para as distribuições de SO mais comuns.</span><span class="sxs-lookup"><span data-stu-id="94acc-114">A quick way to choose a distribution is to use the Azure CLI aliases mapped to the most common OS distributions.</span></span> <span data-ttu-id="94acc-115">A tabela seguinte lista os aliases (a partir da versão 0.10 da CLI do Azure).</span><span class="sxs-lookup"><span data-stu-id="94acc-115">The following table lists the aliases (as of Azure CLI version 0.10).</span></span> <span data-ttu-id="94acc-116">Todas as implementações que utilizem `quick-create` são predefinidas para VMs apoiadas pelo armazenamento de unidade de estado sólido (SSD), que oferece aprovisionamento mais rápido e acesso ao disco de elevado desempenho.</span><span class="sxs-lookup"><span data-stu-id="94acc-116">All deployments that use `quick-create` default to VMs that are backed by solid-state drive (SSD) storage, which offers faster provisioning and high-performance disk access.</span></span> <span data-ttu-id="94acc-117">(Estes aliases representam uma parte muito pequena das distribuições disponíveis no Azure.</span><span class="sxs-lookup"><span data-stu-id="94acc-117">(These aliases represent a tiny portion of the available distributions on Azure.</span></span> <span data-ttu-id="94acc-118">Encontre mais imagens no Azure Marketplace ao [procurar uma imagem no PowerShell](../windows/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), [na Web](https://azure.microsoft.com/marketplace/virtual-machines/) ou ao [carregar a sua própria imagem personalizada](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).)</span><span class="sxs-lookup"><span data-stu-id="94acc-118">Find more images in the Azure Marketplace by [searching for an image in PowerShell](../windows/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), [on the web](https://azure.microsoft.com/marketplace/virtual-machines/), or [upload your own custom image](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).)</span></span>
 
-| Alias | Publicador | Oferta | SKU | Versão |
+| <span data-ttu-id="94acc-119">Alias</span><span class="sxs-lookup"><span data-stu-id="94acc-119">Alias</span></span> | <span data-ttu-id="94acc-120">Publicador</span><span class="sxs-lookup"><span data-stu-id="94acc-120">Publisher</span></span> | <span data-ttu-id="94acc-121">Oferta</span><span class="sxs-lookup"><span data-stu-id="94acc-121">Offer</span></span> | <span data-ttu-id="94acc-122">SKU</span><span class="sxs-lookup"><span data-stu-id="94acc-122">SKU</span></span> | <span data-ttu-id="94acc-123">Versão</span><span class="sxs-lookup"><span data-stu-id="94acc-123">Version</span></span> |
 |:--- |:--- |:--- |:--- |:--- |
-| CentOS |OpenLogic |CentOS |7.2 |mais recente |
-| CoreOS |CoreOS |CoreOS |Estável |mais recente |
-| Debian |credativ |Debian |8 |mais recente |
-| openSUSE |SUSE |openSUSE |13.2 |mais recente |
-| RHEL |Red Hat |RHEL |7.2 |mais recente |
-| UbuntuLTS |Canónico |Ubuntu Server |14.04.4-LTS |mais recente |
+| <span data-ttu-id="94acc-124">CentOS</span><span class="sxs-lookup"><span data-stu-id="94acc-124">CentOS</span></span> |<span data-ttu-id="94acc-125">OpenLogic</span><span class="sxs-lookup"><span data-stu-id="94acc-125">OpenLogic</span></span> |<span data-ttu-id="94acc-126">CentOS</span><span class="sxs-lookup"><span data-stu-id="94acc-126">CentOS</span></span> |<span data-ttu-id="94acc-127">7.2</span><span class="sxs-lookup"><span data-stu-id="94acc-127">7.2</span></span> |<span data-ttu-id="94acc-128">mais recente</span><span class="sxs-lookup"><span data-stu-id="94acc-128">latest</span></span> |
+| <span data-ttu-id="94acc-129">CoreOS</span><span class="sxs-lookup"><span data-stu-id="94acc-129">CoreOS</span></span> |<span data-ttu-id="94acc-130">CoreOS</span><span class="sxs-lookup"><span data-stu-id="94acc-130">CoreOS</span></span> |<span data-ttu-id="94acc-131">CoreOS</span><span class="sxs-lookup"><span data-stu-id="94acc-131">CoreOS</span></span> |<span data-ttu-id="94acc-132">Estável</span><span class="sxs-lookup"><span data-stu-id="94acc-132">Stable</span></span> |<span data-ttu-id="94acc-133">mais recente</span><span class="sxs-lookup"><span data-stu-id="94acc-133">latest</span></span> |
+| <span data-ttu-id="94acc-134">Debian</span><span class="sxs-lookup"><span data-stu-id="94acc-134">Debian</span></span> |<span data-ttu-id="94acc-135">credativ</span><span class="sxs-lookup"><span data-stu-id="94acc-135">credativ</span></span> |<span data-ttu-id="94acc-136">Debian</span><span class="sxs-lookup"><span data-stu-id="94acc-136">Debian</span></span> |<span data-ttu-id="94acc-137">8</span><span class="sxs-lookup"><span data-stu-id="94acc-137">8</span></span> |<span data-ttu-id="94acc-138">mais recente</span><span class="sxs-lookup"><span data-stu-id="94acc-138">latest</span></span> |
+| <span data-ttu-id="94acc-139">openSUSE</span><span class="sxs-lookup"><span data-stu-id="94acc-139">openSUSE</span></span> |<span data-ttu-id="94acc-140">SUSE</span><span class="sxs-lookup"><span data-stu-id="94acc-140">SUSE</span></span> |<span data-ttu-id="94acc-141">openSUSE</span><span class="sxs-lookup"><span data-stu-id="94acc-141">openSUSE</span></span> |<span data-ttu-id="94acc-142">13.2</span><span class="sxs-lookup"><span data-stu-id="94acc-142">13.2</span></span> |<span data-ttu-id="94acc-143">mais recente</span><span class="sxs-lookup"><span data-stu-id="94acc-143">latest</span></span> |
+| <span data-ttu-id="94acc-144">RHEL</span><span class="sxs-lookup"><span data-stu-id="94acc-144">RHEL</span></span> |<span data-ttu-id="94acc-145">Red Hat</span><span class="sxs-lookup"><span data-stu-id="94acc-145">Red Hat</span></span> |<span data-ttu-id="94acc-146">RHEL</span><span class="sxs-lookup"><span data-stu-id="94acc-146">RHEL</span></span> |<span data-ttu-id="94acc-147">7.2</span><span class="sxs-lookup"><span data-stu-id="94acc-147">7.2</span></span> |<span data-ttu-id="94acc-148">mais recente</span><span class="sxs-lookup"><span data-stu-id="94acc-148">latest</span></span> |
+| <span data-ttu-id="94acc-149">UbuntuLTS</span><span class="sxs-lookup"><span data-stu-id="94acc-149">UbuntuLTS</span></span> |<span data-ttu-id="94acc-150">Canónico</span><span class="sxs-lookup"><span data-stu-id="94acc-150">Canonical</span></span> |<span data-ttu-id="94acc-151">Ubuntu Server</span><span class="sxs-lookup"><span data-stu-id="94acc-151">Ubuntu Server</span></span> |<span data-ttu-id="94acc-152">14.04.4-LTS</span><span class="sxs-lookup"><span data-stu-id="94acc-152">14.04.4-LTS</span></span> |<span data-ttu-id="94acc-153">mais recente</span><span class="sxs-lookup"><span data-stu-id="94acc-153">latest</span></span> |
 
-As secções seguintes utilizam o alias `UbuntuLTS` para a opção **ImageURN** (`-Q`) para implementar um Ubuntu 14.04.4 LTS Server.
+<span data-ttu-id="94acc-154">As secções seguintes utilizam o alias `UbuntuLTS` para a opção **ImageURN** (`-Q`) para implementar um Ubuntu 14.04.4 LTS Server.</span><span class="sxs-lookup"><span data-stu-id="94acc-154">The following sections use the `UbuntuLTS` alias for the **ImageURN** option (`-Q`) to deploy an Ubuntu 14.04.4 LTS Server.</span></span>
 
-O exemplo `quick-create` anterior apenas chamou o sinalizador `-M` para identificar a chave pública SSH para carregar ao mesmo tempo que desativou palavras-passe SSH, pelo que lhe são pedidos os argumentos seguintes:
+<span data-ttu-id="94acc-155">O exemplo `quick-create` anterior apenas chamou o sinalizador `-M` para identificar a chave pública SSH para carregar ao mesmo tempo que desativou palavras-passe SSH, pelo que lhe são pedidos os argumentos seguintes:</span><span class="sxs-lookup"><span data-stu-id="94acc-155">The previous `quick-create` example only called out the `-M` flag to identify the SSH public key to upload while disabling SSH passwords, so you are prompted for the following arguments:</span></span>
 
-* o nome do grupo de recursos (normalmente, qualquer cadeia serve para o seu primeiro grupo de recursos do Azure)
-* o nome da VM
-* localização (`westus` ou `westeurope` são boas predefinições)
-* o linux (para que o Azure saiba que SO pretende)
-* o nome de utilizador
+* <span data-ttu-id="94acc-156">o nome do grupo de recursos (normalmente, qualquer cadeia serve para o seu primeiro grupo de recursos do Azure)</span><span class="sxs-lookup"><span data-stu-id="94acc-156">resource group name (any string is typically fine for your first Azure resource group)</span></span>
+* <span data-ttu-id="94acc-157">o nome da VM</span><span class="sxs-lookup"><span data-stu-id="94acc-157">VM name</span></span>
+* <span data-ttu-id="94acc-158">localização (`westus` ou `westeurope` são boas predefinições)</span><span class="sxs-lookup"><span data-stu-id="94acc-158">location (`westus` or `westeurope` are good defaults)</span></span>
+* <span data-ttu-id="94acc-159">o linux (para que o Azure saiba que SO pretende)</span><span class="sxs-lookup"><span data-stu-id="94acc-159">linux (to let Azure know which OS you want)</span></span>
+* <span data-ttu-id="94acc-160">o nome de utilizador</span><span class="sxs-lookup"><span data-stu-id="94acc-160">username</span></span>
 
-O exemplo seguinte especifica todos os valores, para que não sejam necessários mais pedidos. Assim, desde que tenha um `~/.ssh/id_rsa.pub` como um ficheiro de chave pública com o formato ssh-rsa, funciona tal como está:
+<span data-ttu-id="94acc-161">O exemplo seguinte especifica todos os valores, para que não sejam necessários mais pedidos.</span><span class="sxs-lookup"><span data-stu-id="94acc-161">The following example specifies all the values so that no further prompting is required.</span></span> <span data-ttu-id="94acc-162">Assim, desde que tenha um `~/.ssh/id_rsa.pub` como um ficheiro de chave pública com o formato ssh-rsa, funciona tal como está:</span><span class="sxs-lookup"><span data-stu-id="94acc-162">So long as you have an `~/.ssh/id_rsa.pub` as a ssh-rsa format public key file, it works as is:</span></span>
 
 ```azurecli
 azure vm quick-create \
@@ -81,7 +81,7 @@ azure vm quick-create \
   --image-urn UbuntuLTS
 ```
 
-O resultado deverá ser semelhante ao do bloco de saída seguinte:
+<span data-ttu-id="94acc-163">O resultado deverá ser semelhante ao do bloco de saída seguinte:</span><span class="sxs-lookup"><span data-stu-id="94acc-163">The output should look like the following output block:</span></span>
 
 ```azurecli
 info:    Executing command vm quick-create
@@ -159,14 +159,14 @@ data:      Diagnostics Instance View:
 info:    vm quick-create command OK
 ```
 
-## <a name="log-in-to-the-new-vm"></a>Iniciar sessão na nova VM
-Inicie sessão na sua VM com o endereço IP público apresentado no resultado. Também pode utilizar o nome de domínio completamente qualificado (FQDN) apresentado:
+## <a name="log-in-to-the-new-vm"></a><span data-ttu-id="94acc-164">Iniciar sessão na nova VM</span><span class="sxs-lookup"><span data-stu-id="94acc-164">Log in to the new VM</span></span>
+<span data-ttu-id="94acc-165">Inicie sessão na sua VM com o endereço IP público apresentado no resultado.</span><span class="sxs-lookup"><span data-stu-id="94acc-165">Log in to your VM by using the public IP address listed in the output.</span></span> <span data-ttu-id="94acc-166">Também pode utilizar o nome de domínio completamente qualificado (FQDN) apresentado:</span><span class="sxs-lookup"><span data-stu-id="94acc-166">You can also use the fully qualified domain name (FQDN) that's listed:</span></span>
 
 ```bash
 ssh -i ~/.ssh/id_rsa.pub ahmet@138.91.247.29
 ```
 
-O processo de início de sessão deve ter um aspeto semelhante ao do bloco de saída:
+<span data-ttu-id="94acc-167">O processo de início de sessão deve ter um aspeto semelhante ao do bloco de saída:</span><span class="sxs-lookup"><span data-stu-id="94acc-167">The login process should look something like the following output block:</span></span>
 
 ```bash
 Warning: Permanently added '138.91.247.29' (ECDSA) to the list of known hosts.
@@ -200,10 +200,10 @@ applicable law.
 myAdminUser@myVM:~$
 ```
 
-## <a name="next-steps"></a>Passos seguintes
-O comando `azure vm quick-create` é a forma mais rápida de implementar uma VM para que possa iniciar sessão numa shell bash e começar a trabalhar. No entanto, utilizar o comando `vm quick-create` não lhe dá um controlo extenso nem lhe permite criar um ambiente mais complexo.  Para implementar uma VM com Linux personalizada para a sua infraestrutura, pode seguir qualquer um dos artigos seguintes:
+## <a name="next-steps"></a><span data-ttu-id="94acc-168">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="94acc-168">Next steps</span></span>
+<span data-ttu-id="94acc-169">O comando `azure vm quick-create` é a forma mais rápida de implementar uma VM para que possa iniciar sessão numa shell bash e começar a trabalhar.</span><span class="sxs-lookup"><span data-stu-id="94acc-169">The `azure vm quick-create` command is the way to quickly deploy a VM so you can log in to a bash shell and get working.</span></span> <span data-ttu-id="94acc-170">No entanto, utilizar o comando `vm quick-create` não lhe dá um controlo extenso nem lhe permite criar um ambiente mais complexo.</span><span class="sxs-lookup"><span data-stu-id="94acc-170">However, using `vm quick-create` does not give you extensive control nor does it enable you to create a more complex environment.</span></span>  <span data-ttu-id="94acc-171">Para implementar uma VM com Linux personalizada para a sua infraestrutura, pode seguir qualquer um dos artigos seguintes:</span><span class="sxs-lookup"><span data-stu-id="94acc-171">To deploy a Linux VM that's customized for your infrastructure, you can follow any of these articles:</span></span>
 
-* [Criar um ambiente personalizado para uma VM com Linux diretamente através dos comandos da CLI do Azure](create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Criar uma VM com Linux Protegida por SSH no Azure através de modelos](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [<span data-ttu-id="94acc-172">Criar um ambiente personalizado para uma VM com Linux diretamente através dos comandos da CLI do Azure</span><span class="sxs-lookup"><span data-stu-id="94acc-172">Create your own custom environment for a Linux VM using Azure CLI commands directly</span></span>](create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [<span data-ttu-id="94acc-173">Criar uma VM com Linux Protegida por SSH no Azure através de modelos</span><span class="sxs-lookup"><span data-stu-id="94acc-173">Create an SSH Secured Linux VM on Azure using templates</span></span>](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-Também pode [utilizar o controlador `docker-machine` do Azure com vários comandos para criar rapidamente uma VM do Linux como anfitrião docker](docker-machine.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+<span data-ttu-id="94acc-174">Também pode [utilizar o controlador `docker-machine` do Azure com vários comandos para criar rapidamente uma VM do Linux como anfitrião docker](docker-machine.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).</span><span class="sxs-lookup"><span data-stu-id="94acc-174">You can also [use the `docker-machine` Azure driver with various commands to quickly create a Linux VM as a docker host](docker-machine.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).</span></span>

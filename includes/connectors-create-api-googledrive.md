@@ -1,20 +1,20 @@
-### <a name="prerequisites"></a>Pré-requisitos
-* A [GoogleDrive](https://www.google.com/drive/) conta  
+### <a name="prerequisites"></a><span data-ttu-id="59cda-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="59cda-101">Prerequisites</span></span>
+* <span data-ttu-id="59cda-102">A [GoogleDrive](https://www.google.com/drive/) conta</span><span class="sxs-lookup"><span data-stu-id="59cda-102">A [GoogleDrive](https://www.google.com/drive/) account</span></span>  
 
-Antes de poder utilizar a sua conta GoogleDrive numa aplicação lógica, tem de autorizar conta GoogleDrive da tooyour tooconnect Olá lógica aplicação. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.  
+<span data-ttu-id="59cda-103">Antes de poder utilizar a sua conta GoogleDrive numa aplicação lógica, tem de autorizar conta GoogleDrive da tooyour tooconnect Olá lógica aplicação. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="59cda-103">Before you can use your GoogleDrive account in a Logic app, you must authorize hello Logic app tooconnect tooyour GoogleDrive account.Fortunately, you can do this easily from within your Logic app on hello Azure Portal.</span></span>  
 
-Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica GoogleDrive conta:  
+<span data-ttu-id="59cda-104">Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica GoogleDrive conta:</span><span class="sxs-lookup"><span data-stu-id="59cda-104">Here are hello steps tooauthorize your Logic app tooconnect tooyour GoogleDrive account:</span></span>  
 
-1. toocreate tooGoogleDrive uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *GoogleDrive* na caixa de pesquisa de Olá. Selecione o acionador de Olá ou ação que irá gostar toouse:  
-   ![Passo de criação de ligação GoogleDrive](./media/connectors-create-api-googledrive/googledrive-1.png)  
-2. Se ainda não criou quaisquer tooGoogleDrive ligações antes, obterá tooprovide pedido as suas credenciais GoogleDrive. Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta GoogleDrive:  
+1. <span data-ttu-id="59cda-105">toocreate tooGoogleDrive uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *GoogleDrive* na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="59cda-105">toocreate a connection tooGoogleDrive, in hello Logic app designer, select **Show Microsoft managed APIs** in hello drop down list then enter *GoogleDrive* in hello search box.</span></span> <span data-ttu-id="59cda-106">Selecione o acionador de Olá ou ação que irá gostar toouse:</span><span class="sxs-lookup"><span data-stu-id="59cda-106">Select hello trigger or action you'll like toouse:</span></span>  
+   <span data-ttu-id="59cda-107">![Passo de criação de ligação GoogleDrive](./media/connectors-create-api-googledrive/googledrive-1.png)</span><span class="sxs-lookup"><span data-stu-id="59cda-107">![GoogleDrive connection creation step](./media/connectors-create-api-googledrive/googledrive-1.png)</span></span>  
+2. <span data-ttu-id="59cda-108">Se ainda não criou quaisquer tooGoogleDrive ligações antes, obterá tooprovide pedido as suas credenciais GoogleDrive.</span><span class="sxs-lookup"><span data-stu-id="59cda-108">If you haven't created any connections tooGoogleDrive before, you'll get prompted tooprovide your GoogleDrive credentials.</span></span> <span data-ttu-id="59cda-109">Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta GoogleDrive:</span><span class="sxs-lookup"><span data-stu-id="59cda-109">These credentials will be used tooauthorize your Logic app tooconnect to, and access your GoogleDrive account's data:</span></span>  
    ![Passo de criação de ligação GoogleDrive](./media/connectors-create-api-googledrive/googledrive-2.png)  
-3. Forneça o seu endereço de e-mail GoogleDrive:  
+3. <span data-ttu-id="59cda-111">Forneça o seu endereço de e-mail GoogleDrive:</span><span class="sxs-lookup"><span data-stu-id="59cda-111">Provide your GoogleDrive email address:</span></span>  
    ![Passo de criação de ligação GoogleDrive](./media/connectors-create-api-googledrive/googledrive-3.png)  
-4. Forneça o tooauthorize de palavra-passe GoogleDrive a aplicação de lógica:  
+4. <span data-ttu-id="59cda-113">Forneça o tooauthorize de palavra-passe GoogleDrive a aplicação de lógica:</span><span class="sxs-lookup"><span data-stu-id="59cda-113">Provide your GoogleDrive password tooauthorize your Logic app:</span></span>  
    ![Passo de criação de ligação GoogleDrive](./media/connectors-create-api-googledrive/googledrive-4.png)
-5. Permitir Olá ligação tooGoogleDrive  
+5. <span data-ttu-id="59cda-115">Permitir Olá ligação tooGoogleDrive</span><span class="sxs-lookup"><span data-stu-id="59cda-115">Allow hello connection tooGoogleDrive</span></span>  
    ![Passo de criação de ligação GoogleDrive](./media/connectors-create-api-googledrive/googledrive-5.png)  
-6. Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:  
+6. <span data-ttu-id="59cda-117">Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="59cda-117">Notice hello connection has been created and you are now free tooproceed with hello other steps in your Logic app:</span></span>  
    ![Passo de criação de ligação GoogleDrive](./media/connectors-create-api-googledrive/googledrive-6.png)  
 

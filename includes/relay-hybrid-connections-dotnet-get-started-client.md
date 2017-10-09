@@ -1,15 +1,15 @@
-### <a name="create-a-console-application"></a>Criar uma aplicação de consola
+### <a name="create-a-console-application"></a><span data-ttu-id="db20c-101">Criar uma aplicação de consola</span><span class="sxs-lookup"><span data-stu-id="db20c-101">Create a console application</span></span>
 
-Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação de Consola (.NET Framework)**.
+<span data-ttu-id="db20c-102">Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação de Consola (.NET Framework)**.</span><span class="sxs-lookup"><span data-stu-id="db20c-102">First, launch Visual Studio and create a new **Console App (.NET Framework)** project.</span></span>
 
-### <a name="add-hello-relay-nuget-package"></a>Adicionar o pacote NuGet do reencaminhamento de Olá
+### <a name="add-hello-relay-nuget-package"></a><span data-ttu-id="db20c-103">Adicionar o pacote NuGet do reencaminhamento de Olá</span><span class="sxs-lookup"><span data-stu-id="db20c-103">Add hello Relay NuGet package</span></span>
 
-1. Clique no projeto Olá recém-criado e, em seguida, clique em **gerir pacotes NuGet**.
-2. Clique em Olá **procurar** separador, em seguida, procure "Microsoft.Azure.Relay" e selecione Olá **reencaminhamento do Microsoft Azure** item. Clique em **instalar** toocomplete Olá instalação, em seguida, feche esta caixa de diálogo.
+1. <span data-ttu-id="db20c-104">Clique no projeto Olá recém-criado e, em seguida, clique em **gerir pacotes NuGet**.</span><span class="sxs-lookup"><span data-stu-id="db20c-104">Right-click hello newly created project and then click **Manage NuGet Packages**.</span></span>
+2. <span data-ttu-id="db20c-105">Clique em Olá **procurar** separador, em seguida, procure "Microsoft.Azure.Relay" e selecione Olá **reencaminhamento do Microsoft Azure** item.</span><span class="sxs-lookup"><span data-stu-id="db20c-105">Click hello **Browse** tab, then search for "Microsoft.Azure.Relay" and select hello **Microsoft Azure Relay** item.</span></span> <span data-ttu-id="db20c-106">Clique em **instalar** toocomplete Olá instalação, em seguida, feche esta caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="db20c-106">Click **Install** toocomplete hello installation, then close this dialog box.</span></span>
 
-### <a name="write-some-code-toosend-messages"></a>Escrever alguns códigos toosend mensagens
+### <a name="write-some-code-toosend-messages"></a><span data-ttu-id="db20c-107">Escrever alguns códigos toosend mensagens</span><span class="sxs-lookup"><span data-stu-id="db20c-107">Write some code toosend messages</span></span>
 
-1. Substituir a existente Olá `using` declarações, Olá parte superior do ficheiro Program.cs de Olá com seguinte Olá `using` instruções:
+1. <span data-ttu-id="db20c-108">Substituir a existente Olá `using` declarações, Olá parte superior do ficheiro Program.cs de Olá com seguinte Olá `using` instruções:</span><span class="sxs-lookup"><span data-stu-id="db20c-108">Replace hello existing `using` statements at hello top of hello Program.cs file with hello following `using` statements:</span></span>
    
     ```csharp
     using System;
@@ -18,7 +18,7 @@ Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação 
     using System.Threading.Tasks;
     using Microsoft.Azure.Relay;
     ```
-2. Adicionar constantes toohello `Program` classe para detalhes de ligação do Olá híbrida. Substitua os marcadores de posição de Olá entre parênteses Retos valores Olá obtido durante a criação da ligação híbrida Olá. Ser toouse se Olá completamente qualificado espaço de nomes:
+2. <span data-ttu-id="db20c-109">Adicionar constantes toohello `Program` classe para detalhes de ligação do Olá híbrida.</span><span class="sxs-lookup"><span data-stu-id="db20c-109">Add constants toohello `Program` class for hello hybrid connection details.</span></span> <span data-ttu-id="db20c-110">Substitua os marcadores de posição de Olá entre parênteses Retos valores Olá obtido durante a criação da ligação híbrida Olá.</span><span class="sxs-lookup"><span data-stu-id="db20c-110">Replace hello placeholders in brackets with hello values you obtained when creating hello hybrid connection.</span></span> <span data-ttu-id="db20c-111">Ser toouse se Olá completamente qualificado espaço de nomes:</span><span class="sxs-lookup"><span data-stu-id="db20c-111">Be sure toouse hello fully qualified namespace name:</span></span>
    
     ```csharp
     private const string RelayNamespace = "{RelayNamespace}.servicebus.windows.net";
@@ -26,7 +26,7 @@ Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação 
     private const string KeyName = "{SASKeyName}";
     private const string Key = "{SASKey}";
     ```
-3. Adicionar Olá seguinte método toohello `Program` classe:
+3. <span data-ttu-id="db20c-112">Adicionar Olá seguinte método toohello `Program` classe:</span><span class="sxs-lookup"><span data-stu-id="db20c-112">Add hello following method toohello `Program` class:</span></span>
    
     ```csharp
     private static async Task RunAsync()
@@ -87,13 +87,13 @@ Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação 
         await relayConnection.CloseAsync(CancellationToken.None);
     }
     ```
-4. Adicione a seguinte linha de código toohello de Olá `Main` método Olá `Program` classe.
+4. <span data-ttu-id="db20c-113">Adicione a seguinte linha de código toohello de Olá `Main` método Olá `Program` classe.</span><span class="sxs-lookup"><span data-stu-id="db20c-113">Add hello following line of code toohello `Main` method in hello `Program` class.</span></span>
    
     ```csharp
     RunAsync().GetAwaiter().GetResult();
     ```
    
-    O ficheiro Program.cs deve ter o seguinte aspeto.
+    <span data-ttu-id="db20c-114">O ficheiro Program.cs deve ter o seguinte aspeto.</span><span class="sxs-lookup"><span data-stu-id="db20c-114">Here is what your Program.cs should look like.</span></span>
    
     ```csharp
     using System;

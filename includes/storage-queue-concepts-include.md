@@ -1,24 +1,24 @@
-## <a name="what-is-queue-storage"></a>O que é o Armazenamento de Filas?
-Armazenamento de filas do Azure é um serviço para armazenar grandes quantidades de mensagens que podem ser acedidas de qualquer local no mundo Olá através de chamadas autenticadas com HTTP ou HTTPS. Uma mensagem de fila única pode ser segurança too64 KB de tamanho e uma fila pode conter milhões de mensagens, cópia de segurança toohello limite da capacidade total de uma conta de armazenamento.
+## <a name="what-is-queue-storage"></a><span data-ttu-id="83ea8-101">O que é o Armazenamento de Filas?</span><span class="sxs-lookup"><span data-stu-id="83ea8-101">What is Queue Storage?</span></span>
+<span data-ttu-id="83ea8-102">Armazenamento de filas do Azure é um serviço para armazenar grandes quantidades de mensagens que podem ser acedidas de qualquer local no mundo Olá através de chamadas autenticadas com HTTP ou HTTPS.</span><span class="sxs-lookup"><span data-stu-id="83ea8-102">Azure Queue storage is a service for storing large numbers of messages that can be accessed from anywhere in hello world via authenticated calls using HTTP or HTTPS.</span></span> <span data-ttu-id="83ea8-103">Uma mensagem de fila única pode ser segurança too64 KB de tamanho e uma fila pode conter milhões de mensagens, cópia de segurança toohello limite da capacidade total de uma conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="83ea8-103">A single queue message can be up too64 KB in size, and a queue can contain millions of messages, up toohello total capacity limit of a storage account.</span></span>
 
-Utilizações comuns do Armazenamento de filas:
+<span data-ttu-id="83ea8-104">Utilizações comuns do Armazenamento de filas:</span><span class="sxs-lookup"><span data-stu-id="83ea8-104">Common uses of Queue storage include:</span></span>
 
-* Criar um registo de segurança de trabalho tooprocess de forma assíncrona
-* Transmissão de mensagens de uma função de trabalho do Azure de tooan de função web do Azure
+* <span data-ttu-id="83ea8-105">Criar um registo de segurança de trabalho tooprocess de forma assíncrona</span><span class="sxs-lookup"><span data-stu-id="83ea8-105">Creating a backlog of work tooprocess asynchronously</span></span>
+* <span data-ttu-id="83ea8-106">Transmissão de mensagens de uma função de trabalho do Azure de tooan de função web do Azure</span><span class="sxs-lookup"><span data-stu-id="83ea8-106">Passing messages from an Azure web role tooan Azure worker role</span></span>
 
-## <a name="queue-service-concepts"></a>Conceitos do Serviço Fila
-Olá serviço fila contém Olá os seguintes componentes:
+## <a name="queue-service-concepts"></a><span data-ttu-id="83ea8-107">Conceitos do Serviço Fila</span><span class="sxs-lookup"><span data-stu-id="83ea8-107">Queue Service Concepts</span></span>
+<span data-ttu-id="83ea8-108">Olá serviço fila contém Olá os seguintes componentes:</span><span class="sxs-lookup"><span data-stu-id="83ea8-108">hello Queue service contains hello following components:</span></span>
 
 ![Queue1](./media/storage-queue-concepts-include/queue1.png)
 
-* **Formato de URL:** ficheiros são endereçáveis com Olá segue o formato de URL:   
-    http://`<storage account>`.queue.core.windows.net/`<queue>` 
+* <span data-ttu-id="83ea8-110">**Formato de URL:** ficheiros são endereçáveis com Olá segue o formato de URL:</span><span class="sxs-lookup"><span data-stu-id="83ea8-110">**URL format:** Queues are addressable using hello following URL format:</span></span>   
+    <span data-ttu-id="83ea8-111">http://`<storage account>`.queue.core.windows.net/`<queue>`</span><span class="sxs-lookup"><span data-stu-id="83ea8-111">http://`<storage account>`.queue.core.windows.net/`<queue>`</span></span> 
   
-    Olá seguinte URL endereça uma fila no diagrama de Olá:  
+    <span data-ttu-id="83ea8-112">Olá seguinte URL endereça uma fila no diagrama de Olá:</span><span class="sxs-lookup"><span data-stu-id="83ea8-112">hello following URL addresses a queue in hello diagram:</span></span>  
   
     `http://myaccount.queue.core.windows.net/images-to-download`
 
-* **Conta de armazenamento:** todas as acesso tooAzure armazenamento é feito através de uma conta de armazenamento. Veja [Metas de Desempenho e Escalabilidade do Storage do Azure](../articles/storage/common/storage-scalability-targets.md) para obter detalhes acerca da capacidade das contas de armazenamento.
-* **Fila:** uma fila contém um conjunto de mensagens. Todas as mensagens têm de estar numa fila. Tenha em atenção de que nome da fila Olá tem de ser todo em minúsculas. Para obter informações sobre a nomenclatura de filas, veja [Nomenclatura de Filas e Metadados](https://msdn.microsoft.com/library/azure/dd179349.aspx).
-* **Mensagem:** A mensagem, em qualquer formato de cópia de segurança too64 KB. Olá o tempo máximo que uma mensagem pode permanecer na fila de Olá é de 7 dias.
+* <span data-ttu-id="83ea8-113">**Conta de armazenamento:** todas as acesso tooAzure armazenamento é feito através de uma conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="83ea8-113">**Storage Account:** All access tooAzure Storage is done through a storage account.</span></span> <span data-ttu-id="83ea8-114">Veja [Metas de Desempenho e Escalabilidade do Storage do Azure](../articles/storage/common/storage-scalability-targets.md) para obter detalhes acerca da capacidade das contas de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="83ea8-114">See [Azure Storage Scalability and Performance Targets](../articles/storage/common/storage-scalability-targets.md) for details about storage account capacity.</span></span>
+* <span data-ttu-id="83ea8-115">**Fila:** uma fila contém um conjunto de mensagens.</span><span class="sxs-lookup"><span data-stu-id="83ea8-115">**Queue:** A queue contains a set of messages.</span></span> <span data-ttu-id="83ea8-116">Todas as mensagens têm de estar numa fila.</span><span class="sxs-lookup"><span data-stu-id="83ea8-116">All messages must be in a queue.</span></span> <span data-ttu-id="83ea8-117">Tenha em atenção de que nome da fila Olá tem de ser todo em minúsculas.</span><span class="sxs-lookup"><span data-stu-id="83ea8-117">Note that hello queue name must be all lowercase.</span></span> <span data-ttu-id="83ea8-118">Para obter informações sobre a nomenclatura de filas, veja [Nomenclatura de Filas e Metadados](https://msdn.microsoft.com/library/azure/dd179349.aspx).</span><span class="sxs-lookup"><span data-stu-id="83ea8-118">For information on naming queues, see [Naming Queues and Metadata](https://msdn.microsoft.com/library/azure/dd179349.aspx).</span></span>
+* <span data-ttu-id="83ea8-119">**Mensagem:** A mensagem, em qualquer formato de cópia de segurança too64 KB.</span><span class="sxs-lookup"><span data-stu-id="83ea8-119">**Message:** A message, in any format, of up too64 KB.</span></span> <span data-ttu-id="83ea8-120">Olá o tempo máximo que uma mensagem pode permanecer na fila de Olá é de 7 dias.</span><span class="sxs-lookup"><span data-stu-id="83ea8-120">hello maximum time that a message can remain in hello queue is 7 days.</span></span>
 

@@ -1,12 +1,12 @@
 > [!IMPORTANT] 
-> A partir de 1 de Março de 2017, não é possível criar o novo circuitos do ExpressRoute no modelo de implementação clássica Olá.
+> <span data-ttu-id="3e0ca-101">A partir de 1 de Março de 2017, não é possível criar o novo circuitos do ExpressRoute no modelo de implementação clássica Olá.</span><span class="sxs-lookup"><span data-stu-id="3e0ca-101">As of March 1, 2017, you can't create new ExpressRoute circuits in hello classic deployment model.</span></span>
 > 
-> - Pode mover um circuito do ExpressRoute existente de modelo de implementação do Gestor de recursos do Olá implementação clássica modelo toohello sem ter qualquer indisponibilidade da conectividade da hora. Para obter mais informações, consulte [Move an existing circuit (Mover um circuito existente)](../articles/expressroute/expressroute-move.md).
-> - Pode ligar redes toovirtual no modelo de implementação clássica Olá definindo **allowClassicOperations** tooTRUE.
+> - <span data-ttu-id="3e0ca-102">Pode mover um circuito do ExpressRoute existente de modelo de implementação do Gestor de recursos do Olá implementação clássica modelo toohello sem ter qualquer indisponibilidade da conectividade da hora.</span><span class="sxs-lookup"><span data-stu-id="3e0ca-102">You can move an existing ExpressRoute circuit from hello classic deployment model toohello Resource Manager deployment model without experiencing any connectivity down time.</span></span> <span data-ttu-id="3e0ca-103">Para obter mais informações, consulte [Move an existing circuit (Mover um circuito existente)](../articles/expressroute/expressroute-move.md).</span><span class="sxs-lookup"><span data-stu-id="3e0ca-103">For more information, see [Move an existing circuit](../articles/expressroute/expressroute-move.md).</span></span>
+> - <span data-ttu-id="3e0ca-104">Pode ligar redes toovirtual no modelo de implementação clássica Olá definindo **allowClassicOperations** tooTRUE.</span><span class="sxs-lookup"><span data-stu-id="3e0ca-104">You can connect toovirtual networks in hello classic deployment model by setting **allowClassicOperations** tooTRUE.</span></span>
 > 
-> Utilizar Olá seguintes ligações toocreate e gerir circuitos do ExpressRoute no modelo de implementação do Resource Manager Olá:
+> <span data-ttu-id="3e0ca-105">Utilizar Olá seguintes ligações toocreate e gerir circuitos do ExpressRoute no modelo de implementação do Resource Manager Olá:</span><span class="sxs-lookup"><span data-stu-id="3e0ca-105">Use hello following links toocreate and manage ExpressRoute circuits in hello Resource Manager deployment model:</span></span>
 
-> - [Criar e gerir circuitos do ExpressRoute](../articles/expressroute/expressroute-howto-circuit-portal-resource-manager.md)<br>
-> - [Configurar o encaminhamento (peering) dos circuitos do ExpressRoute](../articles/expressroute/expressroute-howto-routing-portal-resource-manager.md)
+> - [<span data-ttu-id="3e0ca-106">Criar e gerir circuitos do ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="3e0ca-106">Create and manage ExpressRoute circuits</span></span>](../articles/expressroute/expressroute-howto-circuit-portal-resource-manager.md)<br>
+> - [<span data-ttu-id="3e0ca-107">Configurar o encaminhamento (peering) dos circuitos do ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="3e0ca-107">Configure routing (peering) for ExpressRoute circuits</span></span>](../articles/expressroute/expressroute-howto-routing-portal-resource-manager.md)
 >
 >

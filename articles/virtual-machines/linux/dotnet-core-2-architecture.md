@@ -22,18 +22,18 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="application-architecture-with-azure-resource-manager-templates-for-linux-vms"></a>Arquitetura de aplicações com modelos Azure Resource Manager para VMs com Linux
+# <a name="application-architecture-with-azure-resource-manager-templates-for-linux-vms"></a><span data-ttu-id="1a4ed-103">Arquitetura de aplicações com modelos Azure Resource Manager para VMs com Linux</span><span class="sxs-lookup"><span data-stu-id="1a4ed-103">Application architecture with Azure Resource Manager templates for Linux VMs</span></span>
 
-Ao desenvolver uma implementação do Azure Resource Manager, requisitos de processamento necessário toobe mapeado tooAzure recursos e serviços. Se uma aplicação consiste de vários pontos finais de http, uma base de dados e um serviço de colocação em cache de dados, hello recursos do Azure que aloja cada um destes componentes tem de toobe rationalized. Por exemplo, a aplicação de arquivo de música de exemplo de Olá inclui uma aplicação web que está alojada numa máquina virtual e uma base de dados do SQL Server, que está alojado na base de dados SQL do Azure. 
+<span data-ttu-id="1a4ed-104">Ao desenvolver uma implementação do Azure Resource Manager, requisitos de processamento necessário toobe mapeado tooAzure recursos e serviços.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-104">When developing an Azure Resource Manager deployment, compute requirements need toobe mapped tooAzure resources and services.</span></span> <span data-ttu-id="1a4ed-105">Se uma aplicação consiste de vários pontos finais de http, uma base de dados e um serviço de colocação em cache de dados, hello recursos do Azure que aloja cada um destes componentes tem de toobe rationalized.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-105">If an application consists of several http endpoints, a database, and a data caching service, hello Azure resources that host each of these components needs toobe rationalized.</span></span> <span data-ttu-id="1a4ed-106">Por exemplo, a aplicação de arquivo de música de exemplo de Olá inclui uma aplicação web que está alojada numa máquina virtual e uma base de dados do SQL Server, que está alojado na base de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-106">For instance, hello sample Music Store application includes a web application that is hosted on a virtual machine, and a SQL database, which is hosted in Azure SQL database.</span></span> 
 
-Este documento fornece detalhes sobre como os recursos de computação do arquivo de música Olá estão configurados no modelo de Gestor de recursos do Azure de exemplo de Olá. Todas as dependências e configurações exclusivas são realçadas. Para uma experiência otimizada Olá, pré-implemente uma instância de trabalho, juntamente com o modelo do Azure Resource Manager Olá e Olá solução tooyour subscrição do Azure. modelo completo Olá pode ser encontrado aqui – [a implementação da loja de música no Ubuntu](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-linux). 
+<span data-ttu-id="1a4ed-107">Este documento fornece detalhes sobre como os recursos de computação do arquivo de música Olá estão configurados no modelo de Gestor de recursos do Azure de exemplo de Olá.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-107">This document details how hello Music Store compute resources are configured in hello sample Azure Resource Manager template.</span></span> <span data-ttu-id="1a4ed-108">Todas as dependências e configurações exclusivas são realçadas.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-108">All dependencies and unique configurations are highlighted.</span></span> <span data-ttu-id="1a4ed-109">Para uma experiência otimizada Olá, pré-implemente uma instância de trabalho, juntamente com o modelo do Azure Resource Manager Olá e Olá solução tooyour subscrição do Azure.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-109">For hello best experience, pre-deploy an instance of hello solution tooyour Azure subscription and work along with hello Azure Resource Manager template.</span></span> <span data-ttu-id="1a4ed-110">modelo completo Olá pode ser encontrado aqui – [a implementação da loja de música no Ubuntu](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-linux).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-110">hello complete template can be found here – [Music Store Deployment on Ubuntu](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-linux).</span></span> 
 
-## <a name="virtual-machine"></a>Máquina Virtual
-Olá aplicação da loja de música inclui uma aplicação web, onde os clientes podem procurar e adquirir música. Enquanto existirem vários serviços do Azure que podem alojar aplicações web, para este exemplo, uma Máquina Virtual é utilizado. Utilizar o modelo de arquivo de música de exemplo de Olá, uma máquina virtual é implementada, instalar um servidor web e Web site do arquivo de música Olá instalado e configurado. Para sake Olá deste artigo, apenas a implementação de máquina virtual Olá está detalhada. configuração de Hello do servidor de web de Olá e aplicação de Olá é detalhada num artigo posterior.
+## <a name="virtual-machine"></a><span data-ttu-id="1a4ed-111">Máquina Virtual</span><span class="sxs-lookup"><span data-stu-id="1a4ed-111">Virtual Machine</span></span>
+<span data-ttu-id="1a4ed-112">Olá aplicação da loja de música inclui uma aplicação web, onde os clientes podem procurar e adquirir música.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-112">hello Music Store application includes a web application where customers can browse and purchase music.</span></span> <span data-ttu-id="1a4ed-113">Enquanto existirem vários serviços do Azure que podem alojar aplicações web, para este exemplo, uma Máquina Virtual é utilizado.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-113">While there are several Azure services that can host web applications, for this example, a Virtual Machine is used.</span></span> <span data-ttu-id="1a4ed-114">Utilizar o modelo de arquivo de música de exemplo de Olá, uma máquina virtual é implementada, instalar um servidor web e Web site do arquivo de música Olá instalado e configurado.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-114">Using hello sample Music Store template, a virtual machine is deployed, a web server install, and hello Music Store website installed and configured.</span></span> <span data-ttu-id="1a4ed-115">Para sake Olá deste artigo, apenas a implementação de máquina virtual Olá está detalhada.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-115">For hello sake of this article, only hello virtual machine deployment is detailed.</span></span> <span data-ttu-id="1a4ed-116">configuração de Hello do servidor de web de Olá e aplicação de Olá é detalhada num artigo posterior.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-116">hello configuration of hello web server and hello application is detailed in a later article.</span></span>
 
-Uma máquina virtual pode ser adicionada modelo tooa utilizando Olá Visual Studio adicionar novo recurso do assistente, ou por inserir o modelo de implementação de Olá JSON válido. Quando implementar uma máquina virtual, vários recursos relacionados são também necessárias. Se utilizar o modelo do Visual Studio toocreate Olá, estes recursos são criados por si. Se manualmente construir o modelo de Olá, estes recursos têm de toobe inserido e configurado.
+<span data-ttu-id="1a4ed-117">Uma máquina virtual pode ser adicionada modelo tooa utilizando Olá Visual Studio adicionar novo recurso do assistente, ou por inserir o modelo de implementação de Olá JSON válido.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-117">A virtual machine can be added tooa template using hello Visual Studio Add New Resource wizard, or by inserting valid JSON into hello deployment template.</span></span> <span data-ttu-id="1a4ed-118">Quando implementar uma máquina virtual, vários recursos relacionados são também necessárias.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-118">When deploying a virtual machine, several related resources are also needed.</span></span> <span data-ttu-id="1a4ed-119">Se utilizar o modelo do Visual Studio toocreate Olá, estes recursos são criados por si.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-119">If using Visual Studio toocreate hello template, these resources are created for you.</span></span> <span data-ttu-id="1a4ed-120">Se manualmente construir o modelo de Olá, estes recursos têm de toobe inserido e configurado.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-120">If manually constructing hello template, these resources need toobe inserted and configured.</span></span>
 
-Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [JSON de Máquina Virtual](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L295).
+<span data-ttu-id="1a4ed-121">Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [JSON de Máquina Virtual](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L295).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-121">Follow this link toosee hello JSON sample within hello Resource Manager template – [Virtual Machine JSON](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L295).</span></span>
 
 ```json
 {
@@ -61,14 +61,14 @@ Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá –
     }
 ```
 
-Depois de implementada, as propriedades da máquina virtual Olá podem ser vistas no Olá portal do Azure.
+<span data-ttu-id="1a4ed-122">Depois de implementada, as propriedades da máquina virtual Olá podem ser vistas no Olá portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-122">Once deployed, hello virtual machine properties can be seen in hello Azure portal.</span></span>
 
 ![Máquina Virtual](./media/dotnet-core-2-architecture/vm.png)
 
-## <a name="storage-account"></a>Conta de Armazenamento
-As contas de armazenamento têm várias capacidades e opções de armazenamento. Para o contexto de Olá das máquinas virtuais do Azure, uma conta de armazenamento contém discos rígidos virtuais da máquina virtual de Olá Olá e quaisquer discos de dados adicionais. exemplo de arquivo de música Olá inclui um armazenamento conta toohold Olá disco rígido virtual de cada máquina virtual numa implementação de Olá. 
+## <a name="storage-account"></a><span data-ttu-id="1a4ed-124">Conta de Armazenamento</span><span class="sxs-lookup"><span data-stu-id="1a4ed-124">Storage Account</span></span>
+<span data-ttu-id="1a4ed-125">As contas de armazenamento têm várias capacidades e opções de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-125">Storage accounts have many storage options and capabilities.</span></span> <span data-ttu-id="1a4ed-126">Para o contexto de Olá das máquinas virtuais do Azure, uma conta de armazenamento contém discos rígidos virtuais da máquina virtual de Olá Olá e quaisquer discos de dados adicionais.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-126">For hello context of Azure Virtual machines, a storage account holds hello virtual hard drives of hello virtual machine and any additional data disks.</span></span> <span data-ttu-id="1a4ed-127">exemplo de arquivo de música Olá inclui um armazenamento conta toohold Olá disco rígido virtual de cada máquina virtual numa implementação de Olá.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-127">hello Music Store sample includes one storage account toohold hello virtual hard drive of each virtual machine in hello deployment.</span></span> 
 
-Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [conta de armazenamento](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L109).
+<span data-ttu-id="1a4ed-128">Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [conta de armazenamento](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L109).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-128">Follow this link toosee hello JSON sample within hello Resource Manager template – [Storage Account](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L109).</span></span>
 
 ```json
 {
@@ -85,9 +85,9 @@ Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá –
 }
 ```
 
-Uma conta de armazenamento é associar com uma máquina virtual no interior da declaração de modelo do Resource Manager Olá da máquina virtual de Olá. 
+<span data-ttu-id="1a4ed-129">Uma conta de armazenamento é associar com uma máquina virtual no interior da declaração de modelo do Resource Manager Olá da máquina virtual de Olá.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-129">A storage account is associate with a virtual machine inside hello Resource Manager template declaration of hello virtual machine.</span></span> 
 
-Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [associação da Máquina Virtual e a conta de armazenamento](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L341).
+<span data-ttu-id="1a4ed-130">Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [associação da Máquina Virtual e a conta de armazenamento](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L341).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-130">Follow this link toosee hello JSON sample within hello Resource Manager template – [Virtual Machine and Storage Account association](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L341).</span></span>
 
 ```json
 "osDisk": {
@@ -100,20 +100,20 @@ Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá –
 }
 ```
 
-Após a implementação, conta de armazenamento Olá pode ser visualizada no Olá portal do Azure.
+<span data-ttu-id="1a4ed-131">Após a implementação, conta de armazenamento Olá pode ser visualizada no Olá portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-131">After deployment, hello storage account can be viewed in hello Azure portal.</span></span>
 
 ![Conta de Armazenamento](./media/dotnet-core-2-architecture/storacct.png)
 
-Clicar num contentor de BLOBs de conta de armazenamento Olá, ficheiros de disco rígido virtual Olá para cada máquina virtual implementada com o modelo de Olá podem ser vistos.
+<span data-ttu-id="1a4ed-133">Clicar num contentor de BLOBs de conta de armazenamento Olá, ficheiros de disco rígido virtual Olá para cada máquina virtual implementada com o modelo de Olá podem ser vistos.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-133">Clicking into hello storage account blob container, hello virtual hard drive file for each virtual machine deployed with hello template can be seen.</span></span>
 
 ![Unidades de disco rígido virtuais](./media/dotnet-core-2-architecture/vhd.png)
 
-Para obter mais informações sobre o Storage do Azure, consulte [documentação do Storage do Azure](https://azure.microsoft.com/documentation/services/storage/).
+<span data-ttu-id="1a4ed-135">Para obter mais informações sobre o Storage do Azure, consulte [documentação do Storage do Azure](https://azure.microsoft.com/documentation/services/storage/).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-135">For more information on Azure Storage, see [Azure Storage documentation](https://azure.microsoft.com/documentation/services/storage/).</span></span>
 
-## <a name="virtual-network"></a>Rede Virtual
-Se precisar de uma máquina virtual à rede interna, tais como a capacidade de Olá toocommunicate com outras máquinas virtuais e os recursos do Azure, uma rede Virtual do Azure, é necessária.  Uma rede virtual não faz máquina virtual de Olá acessível através de Olá internet. Conectividade pública requer um endereço IP público, que é descrito mais tarde nesta série.
+## <a name="virtual-network"></a><span data-ttu-id="1a4ed-136">Rede Virtual</span><span class="sxs-lookup"><span data-stu-id="1a4ed-136">Virtual Network</span></span>
+<span data-ttu-id="1a4ed-137">Se precisar de uma máquina virtual à rede interna, tais como a capacidade de Olá toocommunicate com outras máquinas virtuais e os recursos do Azure, uma rede Virtual do Azure, é necessária.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-137">If a virtual machine requires internal networking such as hello ability toocommunicate with other virtual machines and Azure resources, an Azure Virtual Network is required.</span></span>  <span data-ttu-id="1a4ed-138">Uma rede virtual não faz máquina virtual de Olá acessível através de Olá internet.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-138">A virtual network does not make hello virtual machine accessible over hello internet.</span></span> <span data-ttu-id="1a4ed-139">Conectividade pública requer um endereço IP público, que é descrito mais tarde nesta série.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-139">Public connectivity requires a public IP address, which is detailed later in this series.</span></span>
 
-Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [sub-redes e de rede Virtual](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L136).
+<span data-ttu-id="1a4ed-140">Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [sub-redes e de rede Virtual](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L136).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-140">Follow this link toosee hello JSON sample within hello Resource Manager template – [Virtual Network and Subnets](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L136).</span></span>
 
 ```json
 {
@@ -148,14 +148,14 @@ Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá –
 }
 ```
 
-De Olá portal do Azure, a rede virtual Olá aspeto Olá seguinte imagem. Tenha em atenção de que todas as máquinas virtuais implementadas com o modelo de Olá são toohello anexado de rede virtual.
+<span data-ttu-id="1a4ed-141">De Olá portal do Azure, a rede virtual Olá aspeto Olá seguinte imagem.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-141">From hello Azure portal, hello virtual network looks like hello following image.</span></span> <span data-ttu-id="1a4ed-142">Tenha em atenção de que todas as máquinas virtuais implementadas com o modelo de Olá são toohello anexado de rede virtual.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-142">Notice that all virtual machines deployed with hello template are attached toohello virtual network.</span></span>
 
 ![Rede Virtual](./media/dotnet-core-2-architecture/vnet.png)
 
-## <a name="network-interface"></a>Interface de rede
- Uma interface de rede liga-se a rede virtual da máquina virtual tooa, mais especificamente tooa sub-rede que tenha sido definido na rede virtual Olá. 
+## <a name="network-interface"></a><span data-ttu-id="1a4ed-144">Interface de rede</span><span class="sxs-lookup"><span data-stu-id="1a4ed-144">Network Interface</span></span>
+ <span data-ttu-id="1a4ed-145">Uma interface de rede liga-se a rede virtual da máquina virtual tooa, mais especificamente tooa sub-rede que tenha sido definido na rede virtual Olá.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-145">A network interface connects a virtual machine tooa virtual network, more specifically tooa subnet that has been defined in hello virtual network.</span></span> 
 
- Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [Interface de rede](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L166).
+ <span data-ttu-id="1a4ed-146">Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [Interface de rede](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L166).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-146">Follow this link toosee hello JSON sample within hello Resource Manager template – [Network Interface](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L166).</span></span>
 
 ```json
 {
@@ -202,9 +202,9 @@ De Olá portal do Azure, a rede virtual Olá aspeto Olá seguinte imagem. Tenha 
 }
 ```
 
-Cada recurso de máquina virtual inclui um perfil de rede. interface de rede Olá está associado a máquina virtual de Olá neste perfil.  
+<span data-ttu-id="1a4ed-147">Cada recurso de máquina virtual inclui um perfil de rede.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-147">Each virtual machine resource includes a network profile.</span></span> <span data-ttu-id="1a4ed-148">interface de rede Olá está associado a máquina virtual de Olá neste perfil.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-148">hello network interface is associated with hello virtual machine in this profile.</span></span>  
 
-Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [perfil de rede de Máquina Virtual](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L350).
+<span data-ttu-id="1a4ed-149">Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [perfil de rede de Máquina Virtual](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L350).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-149">Follow this link toosee hello JSON sample within hello Resource Manager template – [Virtual Machine Network Profile](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L350).</span></span>
 
 ```json
 "networkProfile": {
@@ -216,18 +216,18 @@ Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá –
 }
 ```
 
-De Olá portal do Azure, a interface de rede Olá aspeto Olá seguinte imagem. Olá endereço IP e a associação da máquina virtual de Olá podem ser vistos no recurso de interface de rede Olá.
+<span data-ttu-id="1a4ed-150">De Olá portal do Azure, a interface de rede Olá aspeto Olá seguinte imagem.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-150">From hello Azure portal, hello network interface looks like hello following image.</span></span> <span data-ttu-id="1a4ed-151">Olá endereço IP e a associação da máquina virtual de Olá podem ser vistos no recurso de interface de rede Olá.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-151">hello internal IP address and hello virtual machine association can be seen on hello network interface resource.</span></span>
 
 ![Interface de rede](./media/dotnet-core-2-architecture/nic.png)
 
-Para obter mais informações sobre redes virtuais do Azure, consulte [documentação de Virtual Network do Azure](https://azure.microsoft.com/documentation/services/virtual-network/).
+<span data-ttu-id="1a4ed-153">Para obter mais informações sobre redes virtuais do Azure, consulte [documentação de Virtual Network do Azure](https://azure.microsoft.com/documentation/services/virtual-network/).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-153">For more information on Azure Virtual Networks, see [Azure Virtual Network documentation](https://azure.microsoft.com/documentation/services/virtual-network/).</span></span>
 
-## <a name="azure-sql-database"></a>Base de Dados SQL do Azure
-Além disso tooa virtual máquina que aloja o Web site do arquivo de música Olá, uma base de dados do SQL do Azure é a base de dados do toohost implementado Olá loja de música. Olá das vantagens da SQL Database do Azure a utilizar aqui é que um segundo conjunto de máquinas virtuais não é necessário, e dimensionamento e disponibilidade está incorporado no serviço de Olá.
+## <a name="azure-sql-database"></a><span data-ttu-id="1a4ed-154">Base de Dados SQL do Azure</span><span class="sxs-lookup"><span data-stu-id="1a4ed-154">Azure SQL Database</span></span>
+<span data-ttu-id="1a4ed-155">Além disso tooa virtual máquina que aloja o Web site do arquivo de música Olá, uma base de dados do SQL do Azure é a base de dados do toohost implementado Olá loja de música.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-155">In addition tooa virtual machine hosting hello Music Store website, an Azure SQL Database is deployed toohost hello Music Store database.</span></span> <span data-ttu-id="1a4ed-156">Olá das vantagens da SQL Database do Azure a utilizar aqui é que um segundo conjunto de máquinas virtuais não é necessário, e dimensionamento e disponibilidade está incorporado no serviço de Olá.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-156">hello advantage of using Azure SQL Database here is that a second set of virtual machines is not required, and scale and availability is built into hello service.</span></span>
 
-Uma base de dados SQL do Azure pode ser adicionada utilizando Olá Visual Studio adicionar novo recurso do assistente, ou por inserir um JSON válido de um modelo. Olá recursos do SQL Server inclui um nome de utilizador e palavra-passe que é concedido direitos administrativos na instância do SQL Server de Olá. Além disso, é adicionado um recurso de firewall do SQL Server. Por predefinição, as aplicações alojadas no Azure são tooconnect possível com a instância do SQL Olá. tooallow aplicação externa essa uma SQL Server Management studio tooconnect toohello instância do SQL, firewall Olá tem toobe configurado. Para sake Olá de demonstração de arquivo de música Olá, a configuração predefinida de Olá é adequada. 
+<span data-ttu-id="1a4ed-157">Uma base de dados SQL do Azure pode ser adicionada utilizando Olá Visual Studio adicionar novo recurso do assistente, ou por inserir um JSON válido de um modelo.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-157">An Azure SQL database can be added using hello Visual Studio Add New Resource wizard, or by inserting valid JSON into a template.</span></span> <span data-ttu-id="1a4ed-158">Olá recursos do SQL Server inclui um nome de utilizador e palavra-passe que é concedido direitos administrativos na instância do SQL Server de Olá.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-158">hello SQL Server resource includes a user name and password that is granted administrative rights on hello SQL instance.</span></span> <span data-ttu-id="1a4ed-159">Além disso, é adicionado um recurso de firewall do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-159">Also, a SQL firewall resource is added.</span></span> <span data-ttu-id="1a4ed-160">Por predefinição, as aplicações alojadas no Azure são tooconnect possível com a instância do SQL Olá.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-160">By default, applications hosted in Azure are able tooconnect with hello SQL instance.</span></span> <span data-ttu-id="1a4ed-161">tooallow aplicação externa essa uma SQL Server Management studio tooconnect toohello instância do SQL, firewall Olá tem toobe configurado.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-161">tooallow external application such a SQL Server Management studio tooconnect toohello SQL instance, hello firewall needs toobe configured.</span></span> <span data-ttu-id="1a4ed-162">Para sake Olá de demonstração de arquivo de música Olá, a configuração predefinida de Olá é adequada.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-162">For hello sake of hello Music Store demo, hello default configuration is fine.</span></span> 
 
-Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [BD SQL do Azure](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L401).
+<span data-ttu-id="1a4ed-163">Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá – [BD SQL do Azure](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L401).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-163">Follow this link toosee hello JSON sample within hello Resource Manager template – [Azure SQL DB](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L401).</span></span>
 
 ```json
 {
@@ -262,14 +262,14 @@ Siga esta ligação toosee Olá JSON amostra modelo do Resource Manager Olá –
 }
 ```
 
-Uma vista do Olá SQL server e base de dados de MusicStore visto na Olá portal do Azure.
+<span data-ttu-id="1a4ed-164">Uma vista do Olá SQL server e base de dados de MusicStore visto na Olá portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="1a4ed-164">A view of hello SQL server and MusicStore database as seen in hello Azure portal.</span></span>
 
 ![SQL Server](./media/dotnet-core-2-architecture/sql.png)
 
-Para obter mais informações sobre a implementação da SQL Database do Azure, consulte [documentação da SQL Database do Azure](https://azure.microsoft.com/documentation/services/sql-database/).
+<span data-ttu-id="1a4ed-166">Para obter mais informações sobre a implementação da SQL Database do Azure, consulte [documentação da SQL Database do Azure](https://azure.microsoft.com/documentation/services/sql-database/).</span><span class="sxs-lookup"><span data-stu-id="1a4ed-166">For more information on deploying Azure SQL Database, see [Azure SQL Database documentation](https://azure.microsoft.com/documentation/services/sql-database/).</span></span>
 
-## <a name="next-step"></a>Passo seguinte
+## <a name="next-step"></a><span data-ttu-id="1a4ed-167">Passo seguinte</span><span class="sxs-lookup"><span data-stu-id="1a4ed-167">Next step</span></span>
 <hr>
 
-[Passo 2 - acesso e segurança de modelos Azure Resource Manager](dotnet-core-3-access-security.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+[<span data-ttu-id="1a4ed-168">Passo 2 - acesso e segurança de modelos Azure Resource Manager</span><span class="sxs-lookup"><span data-stu-id="1a4ed-168">Step 2 - Access and Security in Azure Resource Manager Templates</span></span>](dotnet-core-3-access-security.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 

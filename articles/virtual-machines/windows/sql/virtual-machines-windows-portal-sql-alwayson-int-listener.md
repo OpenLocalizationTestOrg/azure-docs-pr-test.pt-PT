@@ -20,256 +20,256 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="configure-a-load-balancer-for-an-always-on-availability-group-in-azure"></a>Configurar um balanceador de carga para um grupo de disponibilidade Always On no Azure
-Este artigo explica como toocreate um balanceador de carga para um grupo de disponibilidade SQL Server Always On no Azure virtual máquinas estão em execução com o Azure Resource Manager. Um grupo de disponibilidade necessita de um balanceador de carga quando são instâncias do SQL Server Olá em máquinas virtuais do Azure. Balanceador de carga Olá armazena do endereço IP Olá escuta do grupo de disponibilidade de Olá. Se um grupo de disponibilidade abranger várias regiões, cada região necessita de um balanceador de carga.
+# <a name="configure-a-load-balancer-for-an-always-on-availability-group-in-azure"></a><span data-ttu-id="f08b5-103">Configurar um balanceador de carga para um grupo de disponibilidade Always On no Azure</span><span class="sxs-lookup"><span data-stu-id="f08b5-103">Configure a load balancer for an Always On availability group in Azure</span></span>
+<span data-ttu-id="f08b5-104">Este artigo explica como toocreate um balanceador de carga para um grupo de disponibilidade SQL Server Always On no Azure virtual máquinas estão em execução com o Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="f08b5-104">This article explains how toocreate a load balancer for a SQL Server Always On availability group in Azure virtual machines that are running with Azure Resource Manager.</span></span> <span data-ttu-id="f08b5-105">Um grupo de disponibilidade necessita de um balanceador de carga quando são instâncias do SQL Server Olá em máquinas virtuais do Azure.</span><span class="sxs-lookup"><span data-stu-id="f08b5-105">An availability group requires a load balancer when hello SQL Server instances are on Azure virtual machines.</span></span> <span data-ttu-id="f08b5-106">Balanceador de carga Olá armazena do endereço IP Olá escuta do grupo de disponibilidade de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-106">hello load balancer stores hello IP address for hello availability group listener.</span></span> <span data-ttu-id="f08b5-107">Se um grupo de disponibilidade abranger várias regiões, cada região necessita de um balanceador de carga.</span><span class="sxs-lookup"><span data-stu-id="f08b5-107">If an availability group spans multiple regions, each region needs a load balancer.</span></span>
 
-toocomplete nesta tarefa, terá de toohave implementado num grupo de disponibilidade do SQL Server em virtual machines do Azure que estejam a executar com o Resource Manager. Máquinas virtuais do SQL Server tem de pertencer toohello mesmo conjunto de disponibilidade. Pode utilizar Olá [modelo Microsoft](virtual-machines-windows-portal-sql-alwayson-availability-groups.md) tooautomatically criar grupo de disponibilidade de Olá no Gestor de recursos. Este modelo cria automaticamente um balanceador de carga interno para si. 
+<span data-ttu-id="f08b5-108">toocomplete nesta tarefa, terá de toohave implementado num grupo de disponibilidade do SQL Server em virtual machines do Azure que estejam a executar com o Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="f08b5-108">toocomplete this task, you need toohave a SQL Server availability group deployed on Azure virtual machines that are running with Resource Manager.</span></span> <span data-ttu-id="f08b5-109">Máquinas virtuais do SQL Server tem de pertencer toohello mesmo conjunto de disponibilidade.</span><span class="sxs-lookup"><span data-stu-id="f08b5-109">Both SQL Server virtual machines must belong toohello same availability set.</span></span> <span data-ttu-id="f08b5-110">Pode utilizar Olá [modelo Microsoft](virtual-machines-windows-portal-sql-alwayson-availability-groups.md) tooautomatically criar grupo de disponibilidade de Olá no Gestor de recursos.</span><span class="sxs-lookup"><span data-stu-id="f08b5-110">You can use hello [Microsoft template](virtual-machines-windows-portal-sql-alwayson-availability-groups.md) tooautomatically create hello availability group in Resource Manager.</span></span> <span data-ttu-id="f08b5-111">Este modelo cria automaticamente um balanceador de carga interno para si.</span><span class="sxs-lookup"><span data-stu-id="f08b5-111">This template automatically creates an internal load balancer for you.</span></span> 
 
-Se preferir, pode [configurar manualmente a um grupo de disponibilidade](virtual-machines-windows-portal-sql-alwayson-availability-groups-manual.md).
+<span data-ttu-id="f08b5-112">Se preferir, pode [configurar manualmente a um grupo de disponibilidade](virtual-machines-windows-portal-sql-alwayson-availability-groups-manual.md).</span><span class="sxs-lookup"><span data-stu-id="f08b5-112">If you prefer, you can [manually configure an availability group](virtual-machines-windows-portal-sql-alwayson-availability-groups-manual.md).</span></span>
 
-Este artigo requer que os grupos de disponibilidade já estão configurados.  
+<span data-ttu-id="f08b5-113">Este artigo requer que os grupos de disponibilidade já estão configurados.</span><span class="sxs-lookup"><span data-stu-id="f08b5-113">This article requires that your availability groups are already configured.</span></span>  
 
-Tópicos relacionados incluem:
+<span data-ttu-id="f08b5-114">Tópicos relacionados incluem:</span><span class="sxs-lookup"><span data-stu-id="f08b5-114">Related topics include:</span></span>
 
-* [Configurar grupos de disponibilidade Always On na VM do Azure (GUI)](virtual-machines-windows-portal-sql-alwayson-availability-groups-manual.md)   
-* [Configurar uma ligação VNet a VNet através do Azure Resource Manager e o PowerShell](../../../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md)
+* [<span data-ttu-id="f08b5-115">Configurar grupos de disponibilidade Always On na VM do Azure (GUI)</span><span class="sxs-lookup"><span data-stu-id="f08b5-115">Configure Always On availability groups in Azure VM (GUI)</span></span>](virtual-machines-windows-portal-sql-alwayson-availability-groups-manual.md)   
+* [<span data-ttu-id="f08b5-116">Configurar uma ligação VNet a VNet através do Azure Resource Manager e o PowerShell</span><span class="sxs-lookup"><span data-stu-id="f08b5-116">Configure a VNet-to-VNet connection by using Azure Resource Manager and PowerShell</span></span>](../../../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md)
 
-Orientando através deste artigo, pode criar e configurar um balanceador de carga no Olá portal do Azure. Após a conclusão do processo de Olá, pode configura Olá toouse Olá endereço IP do Balanceador de carga Olá para escuta do grupo de disponibilidade de Olá.
+<span data-ttu-id="f08b5-117">Orientando através deste artigo, pode criar e configurar um balanceador de carga no Olá portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="f08b5-117">By walking through this article, you create and configure a load balancer in hello Azure portal.</span></span> <span data-ttu-id="f08b5-118">Após a conclusão do processo de Olá, pode configura Olá toouse Olá endereço IP do Balanceador de carga Olá para escuta do grupo de disponibilidade de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-118">After hello process is complete, you configure hello cluster toouse hello IP address from hello load balancer for hello availability group listener.</span></span>
 
-## <a name="create-and-configure-hello-load-balancer-in-hello-azure-portal"></a>Criar e configurar o Balanceador de carga Olá no Olá portal do Azure
-Nesta parte da tarefa de Olá, Olá seguintes:
+## <a name="create-and-configure-hello-load-balancer-in-hello-azure-portal"></a><span data-ttu-id="f08b5-119">Criar e configurar o Balanceador de carga Olá no Olá portal do Azure</span><span class="sxs-lookup"><span data-stu-id="f08b5-119">Create and configure hello load balancer in hello Azure portal</span></span>
+<span data-ttu-id="f08b5-120">Nesta parte da tarefa de Olá, Olá seguintes:</span><span class="sxs-lookup"><span data-stu-id="f08b5-120">In this portion of hello task, do hello following:</span></span>
 
-1. No portal do Azure Olá, criar Balanceador de carga Olá e configurar o endereço IP Olá.
-2. Configure o conjunto de back-end Olá.
-3. Crie a sonda de Olá. 
-4. Definir regras de balanceamento de carga Olá.
-
-> [!NOTE]
-> Se as instâncias do SQL Server de Olá estiverem em vários grupos de recursos e regiões, execute cada passo duas vezes, uma vez em cada grupo de recursos.
-> 
-> 
-
-### <a name="step-1-create-hello-load-balancer-and-configure-hello-ip-address"></a>Passo 1: Criar Balanceador de carga Olá e configurar o endereço IP Olá
-Em primeiro lugar, crie o Balanceador de carga Olá. 
-
-1. No portal do Azure Olá, abra o grupo de recursos de Olá contém Olá máquinas virtuais do SQL Server. 
-
-2. No grupo de recursos de Olá, clique em **adicionar**.
-
-3. Procurar **Balanceador de carga** e, em seguida, nos resultados de pesquisa de Olá, selecione **Load Balancer**, que é publicada pelo **Microsoft**.
-
-4. No Olá **Balanceador de carga** painel, clique em **criar**.
-
-5. No Olá **criar Balanceador de carga** diálogo caixa, configure o Balanceador de carga Olá da seguinte forma:
-
-   | Definição | Valor |
-   | --- | --- |
-   | **Nome** |Um nome de texto que representa o Balanceador de carga Olá. Por exemplo, **sqlLB**. |
-   | **Tipo** |**Interno**: maioria das implementações de utilizar um balanceador de carga interno, que permite que aplicações Olá dentro do mesmo grupo de disponibilidade do toohello tooconnect rede virtual.  </br> **Externo**: permite que o grupo de disponibilidade do aplicações tooconnect toohello através de uma ligação à Internet pública. |
-   | **Rede virtual** |Selecione a rede virtual Olá que Olá intances de SQL Server estão em. |
-   | **Sub-rede** |Selecione a sub-rede de Olá que são instâncias do SQL Server Olá no. |
-   | **Atribuição de endereços IP** |**Estática** |
-   | **Endereço IP privado** |Especifique um endereço IP disponível da sub-rede Olá. Utilize este endereço IP quando criar um serviço de escuta no cluster de Olá. Num script do PowerShell, neste artigo, utilize este endereço de Olá `$ILBIP` variável. |
-   | **Subscrição** |Se tiver várias subscrições, poderá ser apresentado este campo. Selecione a subscrição de Olá que pretende que o tooassociate com este recurso. É normalmente Olá mesma subscrição, todos os recursos de Olá Olá grupo de disponibilidade. |
-   | **Grupo de recursos** |Selecione o grupo de recursos de Olá que são instâncias do SQL Server Olá no. |
-   | **Localização** |Selecione Olá localização do Azure que são instâncias do SQL Server Olá no. |
-
-6. Clique em **Criar**. 
-
-O Azure cria Balanceador de carga Olá. Balanceador de carga Olá pertence tooa de rede específicas, sub-rede, grupo de recursos e localização. Depois de Azure concluir a tarefa de Olá, verifique as definições do Balanceador de carga Olá no Azure. 
-
-### <a name="step-2-configure-hello-back-end-pool"></a>Passo 2: Configurar o conjunto de back-end Olá
-Conjunto de endereços de back-end Olá, Azure chamadas *conjunto back-end*. Neste caso, o conjunto de back-end Olá é endereços Olá de instâncias do SQL Server dois Olá no seu grupo de disponibilidade. 
-
-1. No seu grupo de recursos, clique em Balanceador de carga Olá que criou. 
-
-2. No **definições**, clique em **conjuntos back-end**.
-
-3. No **conjuntos back-end**, clique em **adicionar** toocreate um conjunto de endereços de back-end. 
-
-4. No **adicionar conjunto back-end**, em **nome**, escreva um nome para o conjunto de back-end Olá.
-
-5. Em **máquinas virtuais**, clique em **adicionar uma máquina virtual**. 
-
-6. Em **escolher as máquinas virtuais**, clique em **escolher um conjunto de disponibilidade**e, em seguida, especifique o conjunto de disponibilidade de Olá que as máquinas virtuais do SQL Server Olá pertence ao.
-
-7. Depois de escolher o conjunto de disponibilidade de Olá, clique em **escolher máquinas de virtuais Olá**, selecione Olá duas máquinas virtuais que alojem instâncias do SQL Server Olá no grupo de disponibilidade de Olá e, em seguida, clique em **selecione**. 
-
-8. Clique em **OK** painéis de Olá tooclose para **escolher as máquinas virtuais**, e **adicionar conjunto back-end**. 
-
-Azure atualiza as definições de Olá para o conjunto de endereços de back-end de Olá. O conjunto de disponibilidade tem agora um agrupamento de duas instâncias do SQL Server.
-
-### <a name="step-3-create-a-probe"></a>Passo 3: Criar uma sonda
-sonda de Olá define a forma como o Azure verifica que instâncias do SQL Server Olá atualmente, possui escuta do grupo de disponibilidade de Olá. Serviço de Olá com base no endereço IP Olá numa porta que definem quando criar a sonda de Olá as sondas do Azure.
-
-1. Balanceador de carga no Olá **definições** painel, clique em **sondas de estado de funcionamento**. 
-
-2. No Olá **sondas de estado de funcionamento** painel, clique em **adicionar**.
-
-3. Configurar a sonda de Olá no Olá **adicionar sonda** painel. Os seguintes valores tooconfigure Olá sonda Olá de utilização:
-
-   | Definição | Valor |
-   | --- | --- |
-   | **Nome** |Um nome de texto que representa a sonda de Olá. Por exemplo, **SQLAlwaysOnEndPointProbe**. |
-   | **Protocolo** |**TCP** |
-   | **Porta** |Pode utilizar qualquer porta disponível. Por exemplo, *59999*. |
-   | **Intervalo** |*5* |
-   | **Limiar de mau estado de funcionamento** |*2* |
-
-4.  Clique em **OK**. 
+1. <span data-ttu-id="f08b5-121">No portal do Azure Olá, criar Balanceador de carga Olá e configurar o endereço IP Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-121">In hello Azure portal, create hello load balancer and configure hello IP address.</span></span>
+2. <span data-ttu-id="f08b5-122">Configure o conjunto de back-end Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-122">Configure hello back-end pool.</span></span>
+3. <span data-ttu-id="f08b5-123">Crie a sonda de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-123">Create hello probe.</span></span> 
+4. <span data-ttu-id="f08b5-124">Definir regras de balanceamento de carga Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-124">Set hello load balancing rules.</span></span>
 
 > [!NOTE]
-> Certifique-se de que a porta de Olá que especificar está aberta na firewall de Olá de ambas as instâncias do SQL Server. Ambas as instâncias requerem uma regra de entrada para Olá a porta TCP que utiliza. Para obter mais informações, consulte [adicionar ou Editar regra de Firewall](http://technet.microsoft.com/library/cc753558.aspx). 
+> <span data-ttu-id="f08b5-125">Se as instâncias do SQL Server de Olá estiverem em vários grupos de recursos e regiões, execute cada passo duas vezes, uma vez em cada grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="f08b5-125">If hello SQL Server instances are in multiple resource groups and regions, perform each step twice, once in each resource group.</span></span>
 > 
 > 
 
-Azure cria Olá pesquisa e, em seguida, utiliza-o tootest que instância do SQL Server tem o serviço de escuta de Olá Olá grupo de disponibilidade.
+### <a name="step-1-create-hello-load-balancer-and-configure-hello-ip-address"></a><span data-ttu-id="f08b5-126">Passo 1: Criar Balanceador de carga Olá e configurar o endereço IP Olá</span><span class="sxs-lookup"><span data-stu-id="f08b5-126">Step 1: Create hello load balancer and configure hello IP address</span></span>
+<span data-ttu-id="f08b5-127">Em primeiro lugar, crie o Balanceador de carga Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-127">First, create hello load balancer.</span></span> 
 
-### <a name="step-4-set-hello-load-balancing-rules"></a>Passo 4: Definir regras de balanceamento de carga Olá
-regras de balanceamento de carga Olá configurar como Olá load balancer encaminha instâncias do tráfego toohello do SQL Server. Para este Balanceador de carga, ativar a devolução direta do servidor porque apenas uma das duas instâncias de SQL Server Olá possui o recurso de serviço de escuta do grupo de disponibilidade de Olá cada vez.
+1. <span data-ttu-id="f08b5-128">No portal do Azure Olá, abra o grupo de recursos de Olá contém Olá máquinas virtuais do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="f08b5-128">In hello Azure portal, open hello resource group that contains hello SQL Server virtual machines.</span></span> 
 
-1. Balanceador de carga no Olá **definições** painel, clique em **as regras de balanceamento de carga**. 
+2. <span data-ttu-id="f08b5-129">No grupo de recursos de Olá, clique em **adicionar**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-129">In hello resource group, click **Add**.</span></span>
 
-2. No Olá **as regras de balanceamento de carga** painel, clique em **adicionar**.
+3. <span data-ttu-id="f08b5-130">Procurar **Balanceador de carga** e, em seguida, nos resultados de pesquisa de Olá, selecione **Load Balancer**, que é publicada pelo **Microsoft**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-130">Search for **load balancer** and then, in hello search results, select **Load Balancer**, which is published by **Microsoft**.</span></span>
 
-3. No Olá **as regras de balanceamento de carga de adicionar** painel, configurar a regra de balanceamento de carga Olá. Utilize Olá seguintes definições: 
+4. <span data-ttu-id="f08b5-131">No Olá **Balanceador de carga** painel, clique em **criar**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-131">On hello **Load Balancer** blade, click **Create**.</span></span>
 
-   | Definição | Valor |
+5. <span data-ttu-id="f08b5-132">No Olá **criar Balanceador de carga** diálogo caixa, configure o Balanceador de carga Olá da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="f08b5-132">In hello **Create load balancer** dialog box, configure hello load balancer as follows:</span></span>
+
+   | <span data-ttu-id="f08b5-133">Definição</span><span class="sxs-lookup"><span data-stu-id="f08b5-133">Setting</span></span> | <span data-ttu-id="f08b5-134">Valor</span><span class="sxs-lookup"><span data-stu-id="f08b5-134">Value</span></span> |
    | --- | --- |
-   | **Nome** |Um nome de texto que representa as regras de balanceamento de carga Olá. Por exemplo, **SQLAlwaysOnEndPointListener**. |
-   | **Protocolo** |**TCP** |
-   | **Porta** |*1433* |
-   | **Porta de back-end** |*1433*. Este valor é ignorado porque esta regra utiliza **IP flutuante (devolução direta do servidor)**. |
-   | **Sonda** |Utilize o nome de Olá da sonda de Olá que criou para este Balanceador de carga. |
-   | **Persistência da sessão** |**Nenhum** |
-   | **Tempo limite de inatividade (minutos)** |*4* |
-   | **Vírgula flutuante (devolução direta do servidor) de IP** |**Ativado** |
+   | <span data-ttu-id="f08b5-135">**Nome**</span><span class="sxs-lookup"><span data-stu-id="f08b5-135">**Name**</span></span> |<span data-ttu-id="f08b5-136">Um nome de texto que representa o Balanceador de carga Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-136">A text name representing hello load balancer.</span></span> <span data-ttu-id="f08b5-137">Por exemplo, **sqlLB**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-137">For example, **sqlLB**.</span></span> |
+   | <span data-ttu-id="f08b5-138">**Tipo**</span><span class="sxs-lookup"><span data-stu-id="f08b5-138">**Type**</span></span> |<span data-ttu-id="f08b5-139">**Interno**: maioria das implementações de utilizar um balanceador de carga interno, que permite que aplicações Olá dentro do mesmo grupo de disponibilidade do toohello tooconnect rede virtual.</span><span class="sxs-lookup"><span data-stu-id="f08b5-139">**Internal**: Most implementations use an internal load balancer, which allows applications within hello same virtual network tooconnect toohello availability group.</span></span>  </br> <span data-ttu-id="f08b5-140">**Externo**: permite que o grupo de disponibilidade do aplicações tooconnect toohello através de uma ligação à Internet pública.</span><span class="sxs-lookup"><span data-stu-id="f08b5-140">**External**: Allows applications tooconnect toohello availability group through a public Internet connection.</span></span> |
+   | <span data-ttu-id="f08b5-141">**Rede virtual**</span><span class="sxs-lookup"><span data-stu-id="f08b5-141">**Virtual network**</span></span> |<span data-ttu-id="f08b5-142">Selecione a rede virtual Olá que Olá intances de SQL Server estão em.</span><span class="sxs-lookup"><span data-stu-id="f08b5-142">Select hello virtual network that hello SQL Server intances are in.</span></span> |
+   | <span data-ttu-id="f08b5-143">**Sub-rede**</span><span class="sxs-lookup"><span data-stu-id="f08b5-143">**Subnet**</span></span> |<span data-ttu-id="f08b5-144">Selecione a sub-rede de Olá que são instâncias do SQL Server Olá no.</span><span class="sxs-lookup"><span data-stu-id="f08b5-144">Select hello subnet that hello SQL Server instances are in.</span></span> |
+   | <span data-ttu-id="f08b5-145">**Atribuição de endereços IP**</span><span class="sxs-lookup"><span data-stu-id="f08b5-145">**IP address assignment**</span></span> |<span data-ttu-id="f08b5-146">**Estática**</span><span class="sxs-lookup"><span data-stu-id="f08b5-146">**Static**</span></span> |
+   | <span data-ttu-id="f08b5-147">**Endereço IP privado**</span><span class="sxs-lookup"><span data-stu-id="f08b5-147">**Private IP address**</span></span> |<span data-ttu-id="f08b5-148">Especifique um endereço IP disponível da sub-rede Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-148">Specify an available IP address from hello subnet.</span></span> <span data-ttu-id="f08b5-149">Utilize este endereço IP quando criar um serviço de escuta no cluster de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-149">Use this IP address when you create a listener on hello cluster.</span></span> <span data-ttu-id="f08b5-150">Num script do PowerShell, neste artigo, utilize este endereço de Olá `$ILBIP` variável.</span><span class="sxs-lookup"><span data-stu-id="f08b5-150">In a PowerShell script, later in this article, use this address for hello `$ILBIP` variable.</span></span> |
+   | <span data-ttu-id="f08b5-151">**Subscrição**</span><span class="sxs-lookup"><span data-stu-id="f08b5-151">**Subscription**</span></span> |<span data-ttu-id="f08b5-152">Se tiver várias subscrições, poderá ser apresentado este campo.</span><span class="sxs-lookup"><span data-stu-id="f08b5-152">If you have multiple subscriptions, this field might appear.</span></span> <span data-ttu-id="f08b5-153">Selecione a subscrição de Olá que pretende que o tooassociate com este recurso.</span><span class="sxs-lookup"><span data-stu-id="f08b5-153">Select hello subscription that you want tooassociate with this resource.</span></span> <span data-ttu-id="f08b5-154">É normalmente Olá mesma subscrição, todos os recursos de Olá Olá grupo de disponibilidade.</span><span class="sxs-lookup"><span data-stu-id="f08b5-154">It is normally hello same subscription as all hello resources for hello availability group.</span></span> |
+   | <span data-ttu-id="f08b5-155">**Grupo de recursos**</span><span class="sxs-lookup"><span data-stu-id="f08b5-155">**Resource group**</span></span> |<span data-ttu-id="f08b5-156">Selecione o grupo de recursos de Olá que são instâncias do SQL Server Olá no.</span><span class="sxs-lookup"><span data-stu-id="f08b5-156">Select hello resource group that hello SQL Server instances are in.</span></span> |
+   | <span data-ttu-id="f08b5-157">**Localização**</span><span class="sxs-lookup"><span data-stu-id="f08b5-157">**Location**</span></span> |<span data-ttu-id="f08b5-158">Selecione Olá localização do Azure que são instâncias do SQL Server Olá no.</span><span class="sxs-lookup"><span data-stu-id="f08b5-158">Select hello Azure location that hello SQL Server instances are in.</span></span> |
+
+6. <span data-ttu-id="f08b5-159">Clique em **Criar**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-159">Click **Create**.</span></span> 
+
+<span data-ttu-id="f08b5-160">O Azure cria Balanceador de carga Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-160">Azure creates hello load balancer.</span></span> <span data-ttu-id="f08b5-161">Balanceador de carga Olá pertence tooa de rede específicas, sub-rede, grupo de recursos e localização.</span><span class="sxs-lookup"><span data-stu-id="f08b5-161">hello load balancer belongs tooa specific network, subnet, resource group, and location.</span></span> <span data-ttu-id="f08b5-162">Depois de Azure concluir a tarefa de Olá, verifique as definições do Balanceador de carga Olá no Azure.</span><span class="sxs-lookup"><span data-stu-id="f08b5-162">After Azure completes hello task, verify hello load balancer settings in Azure.</span></span> 
+
+### <a name="step-2-configure-hello-back-end-pool"></a><span data-ttu-id="f08b5-163">Passo 2: Configurar o conjunto de back-end Olá</span><span class="sxs-lookup"><span data-stu-id="f08b5-163">Step 2: Configure hello back-end pool</span></span>
+<span data-ttu-id="f08b5-164">Conjunto de endereços de back-end Olá, Azure chamadas *conjunto back-end*.</span><span class="sxs-lookup"><span data-stu-id="f08b5-164">Azure calls hello back-end address pool *backend pool*.</span></span> <span data-ttu-id="f08b5-165">Neste caso, o conjunto de back-end Olá é endereços Olá de instâncias do SQL Server dois Olá no seu grupo de disponibilidade.</span><span class="sxs-lookup"><span data-stu-id="f08b5-165">In this case, hello back-end pool is hello addresses of hello two SQL Server instances in your availability group.</span></span> 
+
+1. <span data-ttu-id="f08b5-166">No seu grupo de recursos, clique em Balanceador de carga Olá que criou.</span><span class="sxs-lookup"><span data-stu-id="f08b5-166">In your resource group, click hello load balancer that you created.</span></span> 
+
+2. <span data-ttu-id="f08b5-167">No **definições**, clique em **conjuntos back-end**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-167">On **Settings**, click **Backend pools**.</span></span>
+
+3. <span data-ttu-id="f08b5-168">No **conjuntos back-end**, clique em **adicionar** toocreate um conjunto de endereços de back-end.</span><span class="sxs-lookup"><span data-stu-id="f08b5-168">On **Backend pools**, click **Add** toocreate a back-end address pool.</span></span> 
+
+4. <span data-ttu-id="f08b5-169">No **adicionar conjunto back-end**, em **nome**, escreva um nome para o conjunto de back-end Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-169">On **Add backend pool**, under **Name**, type a name for hello back-end pool.</span></span>
+
+5. <span data-ttu-id="f08b5-170">Em **máquinas virtuais**, clique em **adicionar uma máquina virtual**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-170">Under **Virtual machines**, click **Add a virtual machine**.</span></span> 
+
+6. <span data-ttu-id="f08b5-171">Em **escolher as máquinas virtuais**, clique em **escolher um conjunto de disponibilidade**e, em seguida, especifique o conjunto de disponibilidade de Olá que as máquinas virtuais do SQL Server Olá pertence ao.</span><span class="sxs-lookup"><span data-stu-id="f08b5-171">Under **Choose virtual machines**, click **Choose an availability set**, and then specify hello availability set that hello SQL Server virtual machines belong to.</span></span>
+
+7. <span data-ttu-id="f08b5-172">Depois de escolher o conjunto de disponibilidade de Olá, clique em **escolher máquinas de virtuais Olá**, selecione Olá duas máquinas virtuais que alojem instâncias do SQL Server Olá no grupo de disponibilidade de Olá e, em seguida, clique em **selecione**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-172">After you have chosen hello availability set, click **Choose hello virtual machines**, select hello two virtual machines that host hello SQL Server instances in hello availability group, and then click **Select**.</span></span> 
+
+8. <span data-ttu-id="f08b5-173">Clique em **OK** painéis de Olá tooclose para **escolher as máquinas virtuais**, e **adicionar conjunto back-end**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-173">Click **OK** tooclose hello blades for **Choose virtual machines**, and **Add backend pool**.</span></span> 
+
+<span data-ttu-id="f08b5-174">Azure atualiza as definições de Olá para o conjunto de endereços de back-end de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-174">Azure updates hello settings for hello back-end address pool.</span></span> <span data-ttu-id="f08b5-175">O conjunto de disponibilidade tem agora um agrupamento de duas instâncias do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="f08b5-175">Now your availability set has a pool of two SQL Server instances.</span></span>
+
+### <a name="step-3-create-a-probe"></a><span data-ttu-id="f08b5-176">Passo 3: Criar uma sonda</span><span class="sxs-lookup"><span data-stu-id="f08b5-176">Step 3: Create a probe</span></span>
+<span data-ttu-id="f08b5-177">sonda de Olá define a forma como o Azure verifica que instâncias do SQL Server Olá atualmente, possui escuta do grupo de disponibilidade de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-177">hello probe defines how Azure verifies which of hello SQL Server instances currently owns hello availability group listener.</span></span> <span data-ttu-id="f08b5-178">Serviço de Olá com base no endereço IP Olá numa porta que definem quando criar a sonda de Olá as sondas do Azure.</span><span class="sxs-lookup"><span data-stu-id="f08b5-178">Azure probes hello service based on hello IP address on a port that you define when you create hello probe.</span></span>
+
+1. <span data-ttu-id="f08b5-179">Balanceador de carga no Olá **definições** painel, clique em **sondas de estado de funcionamento**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-179">On hello load balancer **Settings** blade, click **Health probes**.</span></span> 
+
+2. <span data-ttu-id="f08b5-180">No Olá **sondas de estado de funcionamento** painel, clique em **adicionar**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-180">On hello **Health probes** blade, click **Add**.</span></span>
+
+3. <span data-ttu-id="f08b5-181">Configurar a sonda de Olá no Olá **adicionar sonda** painel.</span><span class="sxs-lookup"><span data-stu-id="f08b5-181">Configure hello probe on hello **Add probe** blade.</span></span> <span data-ttu-id="f08b5-182">Os seguintes valores tooconfigure Olá sonda Olá de utilização:</span><span class="sxs-lookup"><span data-stu-id="f08b5-182">Use hello following values tooconfigure hello probe:</span></span>
+
+   | <span data-ttu-id="f08b5-183">Definição</span><span class="sxs-lookup"><span data-stu-id="f08b5-183">Setting</span></span> | <span data-ttu-id="f08b5-184">Valor</span><span class="sxs-lookup"><span data-stu-id="f08b5-184">Value</span></span> |
+   | --- | --- |
+   | <span data-ttu-id="f08b5-185">**Nome**</span><span class="sxs-lookup"><span data-stu-id="f08b5-185">**Name**</span></span> |<span data-ttu-id="f08b5-186">Um nome de texto que representa a sonda de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-186">A text name representing hello probe.</span></span> <span data-ttu-id="f08b5-187">Por exemplo, **SQLAlwaysOnEndPointProbe**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-187">For example, **SQLAlwaysOnEndPointProbe**.</span></span> |
+   | <span data-ttu-id="f08b5-188">**Protocolo**</span><span class="sxs-lookup"><span data-stu-id="f08b5-188">**Protocol**</span></span> |<span data-ttu-id="f08b5-189">**TCP**</span><span class="sxs-lookup"><span data-stu-id="f08b5-189">**TCP**</span></span> |
+   | <span data-ttu-id="f08b5-190">**Porta**</span><span class="sxs-lookup"><span data-stu-id="f08b5-190">**Port**</span></span> |<span data-ttu-id="f08b5-191">Pode utilizar qualquer porta disponível.</span><span class="sxs-lookup"><span data-stu-id="f08b5-191">You can use any available port.</span></span> <span data-ttu-id="f08b5-192">Por exemplo, *59999*.</span><span class="sxs-lookup"><span data-stu-id="f08b5-192">For example, *59999*.</span></span> |
+   | <span data-ttu-id="f08b5-193">**Intervalo**</span><span class="sxs-lookup"><span data-stu-id="f08b5-193">**Interval**</span></span> |<span data-ttu-id="f08b5-194">*5*</span><span class="sxs-lookup"><span data-stu-id="f08b5-194">*5*</span></span> |
+   | <span data-ttu-id="f08b5-195">**Limiar de mau estado de funcionamento**</span><span class="sxs-lookup"><span data-stu-id="f08b5-195">**Unhealthy threshold**</span></span> |<span data-ttu-id="f08b5-196">*2*</span><span class="sxs-lookup"><span data-stu-id="f08b5-196">*2*</span></span> |
+
+4.  <span data-ttu-id="f08b5-197">Clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-197">Click **OK**.</span></span> 
+
+> [!NOTE]
+> <span data-ttu-id="f08b5-198">Certifique-se de que a porta de Olá que especificar está aberta na firewall de Olá de ambas as instâncias do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="f08b5-198">Make sure that hello port you specify is open on hello firewall of both SQL Server instances.</span></span> <span data-ttu-id="f08b5-199">Ambas as instâncias requerem uma regra de entrada para Olá a porta TCP que utiliza.</span><span class="sxs-lookup"><span data-stu-id="f08b5-199">Both instances require an inbound rule for hello TCP port that you use.</span></span> <span data-ttu-id="f08b5-200">Para obter mais informações, consulte [adicionar ou Editar regra de Firewall](http://technet.microsoft.com/library/cc753558.aspx).</span><span class="sxs-lookup"><span data-stu-id="f08b5-200">For more information, see [Add or Edit Firewall Rule](http://technet.microsoft.com/library/cc753558.aspx).</span></span> 
+> 
+> 
+
+<span data-ttu-id="f08b5-201">Azure cria Olá pesquisa e, em seguida, utiliza-o tootest que instância do SQL Server tem o serviço de escuta de Olá Olá grupo de disponibilidade.</span><span class="sxs-lookup"><span data-stu-id="f08b5-201">Azure creates hello probe and then uses it tootest which SQL Server instance has hello listener for hello availability group.</span></span>
+
+### <a name="step-4-set-hello-load-balancing-rules"></a><span data-ttu-id="f08b5-202">Passo 4: Definir regras de balanceamento de carga Olá</span><span class="sxs-lookup"><span data-stu-id="f08b5-202">Step 4: Set hello load balancing rules</span></span>
+<span data-ttu-id="f08b5-203">regras de balanceamento de carga Olá configurar como Olá load balancer encaminha instâncias do tráfego toohello do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="f08b5-203">hello load balancing rules configure how hello load balancer routes traffic toohello SQL Server instances.</span></span> <span data-ttu-id="f08b5-204">Para este Balanceador de carga, ativar a devolução direta do servidor porque apenas uma das duas instâncias de SQL Server Olá possui o recurso de serviço de escuta do grupo de disponibilidade de Olá cada vez.</span><span class="sxs-lookup"><span data-stu-id="f08b5-204">For this load balancer, you enable direct server return because only one of hello two SQL Server instances owns hello availability group listener resource at a time.</span></span>
+
+1. <span data-ttu-id="f08b5-205">Balanceador de carga no Olá **definições** painel, clique em **as regras de balanceamento de carga**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-205">On hello load balancer **Settings** blade, click **Load balancing rules**.</span></span> 
+
+2. <span data-ttu-id="f08b5-206">No Olá **as regras de balanceamento de carga** painel, clique em **adicionar**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-206">On hello **Load balancing rules** blade, click **Add**.</span></span>
+
+3. <span data-ttu-id="f08b5-207">No Olá **as regras de balanceamento de carga de adicionar** painel, configurar a regra de balanceamento de carga Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-207">On hello **Add load balancing rules** blade, configure hello load balancing rule.</span></span> <span data-ttu-id="f08b5-208">Utilize Olá seguintes definições:</span><span class="sxs-lookup"><span data-stu-id="f08b5-208">Use hello following settings:</span></span> 
+
+   | <span data-ttu-id="f08b5-209">Definição</span><span class="sxs-lookup"><span data-stu-id="f08b5-209">Setting</span></span> | <span data-ttu-id="f08b5-210">Valor</span><span class="sxs-lookup"><span data-stu-id="f08b5-210">Value</span></span> |
+   | --- | --- |
+   | <span data-ttu-id="f08b5-211">**Nome**</span><span class="sxs-lookup"><span data-stu-id="f08b5-211">**Name**</span></span> |<span data-ttu-id="f08b5-212">Um nome de texto que representa as regras de balanceamento de carga Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-212">A text name representing hello load balancing rules.</span></span> <span data-ttu-id="f08b5-213">Por exemplo, **SQLAlwaysOnEndPointListener**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-213">For example, **SQLAlwaysOnEndPointListener**.</span></span> |
+   | <span data-ttu-id="f08b5-214">**Protocolo**</span><span class="sxs-lookup"><span data-stu-id="f08b5-214">**Protocol**</span></span> |<span data-ttu-id="f08b5-215">**TCP**</span><span class="sxs-lookup"><span data-stu-id="f08b5-215">**TCP**</span></span> |
+   | <span data-ttu-id="f08b5-216">**Porta**</span><span class="sxs-lookup"><span data-stu-id="f08b5-216">**Port**</span></span> |<span data-ttu-id="f08b5-217">*1433*</span><span class="sxs-lookup"><span data-stu-id="f08b5-217">*1433*</span></span> |
+   | <span data-ttu-id="f08b5-218">**Porta de back-end**</span><span class="sxs-lookup"><span data-stu-id="f08b5-218">**Backend Port**</span></span> |<span data-ttu-id="f08b5-219">*1433*. Este valor é ignorado porque esta regra utiliza **IP flutuante (devolução direta do servidor)**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-219">*1433*. This value is ignored because this rule uses **Floating IP (direct server return)**.</span></span> |
+   | <span data-ttu-id="f08b5-220">**Sonda**</span><span class="sxs-lookup"><span data-stu-id="f08b5-220">**Probe**</span></span> |<span data-ttu-id="f08b5-221">Utilize o nome de Olá da sonda de Olá que criou para este Balanceador de carga.</span><span class="sxs-lookup"><span data-stu-id="f08b5-221">Use hello name of hello probe that you created for this load balancer.</span></span> |
+   | <span data-ttu-id="f08b5-222">**Persistência da sessão**</span><span class="sxs-lookup"><span data-stu-id="f08b5-222">**Session persistence**</span></span> |<span data-ttu-id="f08b5-223">**Nenhum**</span><span class="sxs-lookup"><span data-stu-id="f08b5-223">**None**</span></span> |
+   | <span data-ttu-id="f08b5-224">**Tempo limite de inatividade (minutos)**</span><span class="sxs-lookup"><span data-stu-id="f08b5-224">**Idle timeout (minutes)**</span></span> |<span data-ttu-id="f08b5-225">*4*</span><span class="sxs-lookup"><span data-stu-id="f08b5-225">*4*</span></span> |
+   | <span data-ttu-id="f08b5-226">**Vírgula flutuante (devolução direta do servidor) de IP**</span><span class="sxs-lookup"><span data-stu-id="f08b5-226">**Floating IP (direct server return)**</span></span> |<span data-ttu-id="f08b5-227">**Ativado**</span><span class="sxs-lookup"><span data-stu-id="f08b5-227">**Enabled**</span></span> |
 
    > [!NOTE]
-   > Poderá ter tooscroll baixo Olá painel tooview todas as definições de Olá.
+   > <span data-ttu-id="f08b5-228">Poderá ter tooscroll baixo Olá painel tooview todas as definições de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-228">You might have tooscroll down hello blade tooview all hello settings.</span></span>
    > 
 
-4. Clique em **OK**. 
-5. Azure configura a regra de balanceamento de carga de Olá. Balanceador de carga Olá está agora configurado tooroute tráfego toohello SQL instância do servidor que aloja o serviço de escuta de Olá Olá grupo de disponibilidade. 
+4. <span data-ttu-id="f08b5-229">Clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-229">Click **OK**.</span></span> 
+5. <span data-ttu-id="f08b5-230">Azure configura a regra de balanceamento de carga de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-230">Azure configures hello load balancing rule.</span></span> <span data-ttu-id="f08b5-231">Balanceador de carga Olá está agora configurado tooroute tráfego toohello SQL instância do servidor que aloja o serviço de escuta de Olá Olá grupo de disponibilidade.</span><span class="sxs-lookup"><span data-stu-id="f08b5-231">Now hello load balancer is configured tooroute traffic toohello SQL Server instance that hosts hello listener for hello availability group.</span></span> 
 
-Neste momento, o grupo de recursos de Olá tem um balanceador de carga que liga tooboth máquinas de SQL Server. Balanceador de carga Olá também contém um endereço IP para Olá SQL Server Always On escuta do grupo disponibilidade, para que a máquina pode responder toorequests Olá para grupos de disponibilidade.
+<span data-ttu-id="f08b5-232">Neste momento, o grupo de recursos de Olá tem um balanceador de carga que liga tooboth máquinas de SQL Server.</span><span class="sxs-lookup"><span data-stu-id="f08b5-232">At this point, hello resource group has a load balancer that connects tooboth SQL Server machines.</span></span> <span data-ttu-id="f08b5-233">Balanceador de carga Olá também contém um endereço IP para Olá SQL Server Always On escuta do grupo disponibilidade, para que a máquina pode responder toorequests Olá para grupos de disponibilidade.</span><span class="sxs-lookup"><span data-stu-id="f08b5-233">hello load balancer also contains an IP address for hello SQL Server Always On availability group listener, so that either machine can respond toorequests for hello availability groups.</span></span>
 
 > [!NOTE]
-> Se as instâncias do SQL Server estão em duas regiões separadas, repita os passos de Olá Olá outra região. Cada região necessita de um balanceador de carga. 
+> <span data-ttu-id="f08b5-234">Se as instâncias do SQL Server estão em duas regiões separadas, repita os passos de Olá Olá outra região.</span><span class="sxs-lookup"><span data-stu-id="f08b5-234">If your SQL Server instances are in two separate regions, repeat hello steps in hello other region.</span></span> <span data-ttu-id="f08b5-235">Cada região necessita de um balanceador de carga.</span><span class="sxs-lookup"><span data-stu-id="f08b5-235">Each region requires a load balancer.</span></span> 
 > 
 > 
 
-## <a name="configure-hello-cluster-toouse-hello-load-balancer-ip-address"></a>Configurar toouse de cluster de Olá Olá endereço IP de Balanceador de carga
-passo seguinte Olá tooconfigure Olá escuta no cluster de Olá e coloque online serviço de escuta de Olá. Olá seguintes: 
+## <a name="configure-hello-cluster-toouse-hello-load-balancer-ip-address"></a><span data-ttu-id="f08b5-236">Configurar toouse de cluster de Olá Olá endereço IP de Balanceador de carga</span><span class="sxs-lookup"><span data-stu-id="f08b5-236">Configure hello cluster toouse hello load balancer IP address</span></span>
+<span data-ttu-id="f08b5-237">passo seguinte Olá tooconfigure Olá escuta no cluster de Olá e coloque online serviço de escuta de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-237">hello next step is tooconfigure hello listener on hello cluster, and bring hello listener online.</span></span> <span data-ttu-id="f08b5-238">Olá seguintes:</span><span class="sxs-lookup"><span data-stu-id="f08b5-238">Do hello following:</span></span> 
 
-1. Crie a escuta do grupo de disponibilidade de Olá Olá cluster de ativação pós-falha. 
+1. <span data-ttu-id="f08b5-239">Crie a escuta do grupo de disponibilidade de Olá Olá cluster de ativação pós-falha.</span><span class="sxs-lookup"><span data-stu-id="f08b5-239">Create hello availability group listener on hello failover cluster.</span></span> 
 
-2. Coloque online serviço de escuta de Olá.
+2. <span data-ttu-id="f08b5-240">Coloque online serviço de escuta de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-240">Bring hello listener online.</span></span>
 
-### <a name="step-5-create-hello-availability-group-listener-on-hello-failover-cluster"></a>Passo 5: Criar a escuta do grupo de disponibilidade de Olá Olá cluster de ativação pós-falha
-Neste passo, cria manualmente escuta do grupo de disponibilidade Olá no Gestor de clusters de ativação pós-falha e o SQL Server Management Studio.
+### <a name="step-5-create-hello-availability-group-listener-on-hello-failover-cluster"></a><span data-ttu-id="f08b5-241">Passo 5: Criar a escuta do grupo de disponibilidade de Olá Olá cluster de ativação pós-falha</span><span class="sxs-lookup"><span data-stu-id="f08b5-241">Step 5: Create hello availability group listener on hello failover cluster</span></span>
+<span data-ttu-id="f08b5-242">Neste passo, cria manualmente escuta do grupo de disponibilidade Olá no Gestor de clusters de ativação pós-falha e o SQL Server Management Studio.</span><span class="sxs-lookup"><span data-stu-id="f08b5-242">In this step, you manually create hello availability group listener in Failover Cluster Manager and SQL Server Management Studio.</span></span>
 
 [!INCLUDE [ag-listener-configure](../../../../includes/virtual-machines-ag-listener-configure.md)]
 
-### <a name="verify-hello-configuration-of-hello-listener"></a>Verifique a configuração de Olá do serviço de escuta de Olá
+### <a name="verify-hello-configuration-of-hello-listener"></a><span data-ttu-id="f08b5-243">Verifique a configuração de Olá do serviço de escuta de Olá</span><span class="sxs-lookup"><span data-stu-id="f08b5-243">Verify hello configuration of hello listener</span></span>
 
-Se os recursos do cluster Olá e as dependências se encontram corretamente configuradas, deve ser capaz de tooview Olá serviço de escuta de SQL Server Management Studio. tooset Olá porta do serviço de escuta, Olá a seguir:
+<span data-ttu-id="f08b5-244">Se os recursos do cluster Olá e as dependências se encontram corretamente configuradas, deve ser capaz de tooview Olá serviço de escuta de SQL Server Management Studio.</span><span class="sxs-lookup"><span data-stu-id="f08b5-244">If hello cluster resources and dependencies are correctly configured, you should be able tooview hello listener in SQL Server Management Studio.</span></span> <span data-ttu-id="f08b5-245">tooset Olá porta do serviço de escuta, Olá a seguir:</span><span class="sxs-lookup"><span data-stu-id="f08b5-245">tooset hello listener port, do hello following:</span></span>
 
-1. Inicie o SQL Server Management Studio e, em seguida, ligue toohello de réplica primária.
+1. <span data-ttu-id="f08b5-246">Inicie o SQL Server Management Studio e, em seguida, ligue toohello de réplica primária.</span><span class="sxs-lookup"><span data-stu-id="f08b5-246">Start SQL Server Management Studio, and then connect toohello primary replica.</span></span>
 
-2. Aceda demasiado**elevada disponibilidade do AlwaysOn** > **grupos de disponibilidade** > **escuta do grupo de disponibilidade**.  
-    Deverá ver agora o nome do serviço de escuta de Olá que criou no Gestor de clusters de ativação pós-falha. 
+2. <span data-ttu-id="f08b5-247">Aceda demasiado**elevada disponibilidade do AlwaysOn** > **grupos de disponibilidade** > **escuta do grupo de disponibilidade**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-247">Go too**AlwaysOn High Availability** > **Availability Groups** > **Availability Group Listeners**.</span></span>  
+    <span data-ttu-id="f08b5-248">Deverá ver agora o nome do serviço de escuta de Olá que criou no Gestor de clusters de ativação pós-falha.</span><span class="sxs-lookup"><span data-stu-id="f08b5-248">You should now see hello listener name that you created in Failover Cluster Manager.</span></span> 
 
-3. Clique no nome do serviço de escuta de Olá e, em seguida, clique em **propriedades**.
+3. <span data-ttu-id="f08b5-249">Clique no nome do serviço de escuta de Olá e, em seguida, clique em **propriedades**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-249">Right-click hello listener name, and then click **Properties**.</span></span>
 
-4. No Olá **porta** caixa, especifique o número de porta de escuta do grupo de disponibilidade de Olá Olá utilizando Olá $EndpointPort que utilizou anteriormente (1433 foi predefinido Olá) e, em seguida, clique em **OK**.
+4. <span data-ttu-id="f08b5-250">No Olá **porta** caixa, especifique o número de porta de escuta do grupo de disponibilidade de Olá Olá utilizando Olá $EndpointPort que utilizou anteriormente (1433 foi predefinido Olá) e, em seguida, clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-250">In hello **Port** box, specify hello port number for hello availability group listener by using hello $EndpointPort you used earlier (1433 was hello default), and then click **OK**.</span></span>
 
-Tem agora um grupo de disponibilidade em máquinas virtuais do Azure em execução no modo Resource Manager. 
+<span data-ttu-id="f08b5-251">Tem agora um grupo de disponibilidade em máquinas virtuais do Azure em execução no modo Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="f08b5-251">You now have an availability group in Azure virtual machines running in Resource Manager mode.</span></span> 
 
-## <a name="test-hello-connection-toohello-listener"></a>O serviço de escuta do teste Olá ligação toohello
-Testar a ligação de Olá, Olá seguinte:
+## <a name="test-hello-connection-toohello-listener"></a><span data-ttu-id="f08b5-252">O serviço de escuta do teste Olá ligação toohello</span><span class="sxs-lookup"><span data-stu-id="f08b5-252">Test hello connection toohello listener</span></span>
+<span data-ttu-id="f08b5-253">Testar a ligação de Olá, Olá seguinte:</span><span class="sxs-lookup"><span data-stu-id="f08b5-253">Test hello connection by doing hello following:</span></span>
 
-1. Instância do SQL Server do RDP tooa que está a ser Olá mesmo virtual de rede, mas não réplica Olá próprio. Este servidor pode ser Olá outra instância do SQL Server em cluster Olá.
+1. <span data-ttu-id="f08b5-254">Instância do SQL Server do RDP tooa que está a ser Olá mesmo virtual de rede, mas não réplica Olá próprio.</span><span class="sxs-lookup"><span data-stu-id="f08b5-254">RDP tooa SQL Server instance that is in hello same virtual network, but does not own hello replica.</span></span> <span data-ttu-id="f08b5-255">Este servidor pode ser Olá outra instância do SQL Server em cluster Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-255">This server can be hello other SQL Server instance in hello cluster.</span></span>
 
-2. Utilize **sqlcmd** ligação do utilitário tootest Olá. Por exemplo, o seguinte script de Olá estabelece uma **sqlcmd** réplica primária de toohello ligação através do serviço de escuta de Olá com autenticação do Windows:
+2. <span data-ttu-id="f08b5-256">Utilize **sqlcmd** ligação do utilitário tootest Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-256">Use **sqlcmd** utility tootest hello connection.</span></span> <span data-ttu-id="f08b5-257">Por exemplo, o seguinte script de Olá estabelece uma **sqlcmd** réplica primária de toohello ligação através do serviço de escuta de Olá com autenticação do Windows:</span><span class="sxs-lookup"><span data-stu-id="f08b5-257">For example, hello following script establishes a **sqlcmd** connection toohello primary replica through hello listener with Windows authentication:</span></span>
    
         sqlcmd -S <listenerName> -E
 
-Olá ligação SQLCMD liga automaticamente toohello instância de SQL Server que aloja a réplica primária Olá. 
+<span data-ttu-id="f08b5-258">Olá ligação SQLCMD liga automaticamente toohello instância de SQL Server que aloja a réplica primária Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-258">hello SQLCMD connection automatically connects toohello SQL Server instance that hosts hello primary replica.</span></span> 
 
-## <a name="create-an-ip-address-for-an-additional-availability-group"></a>Criar um endereço IP para um grupo de disponibilidade adicionais
+## <a name="create-an-ip-address-for-an-additional-availability-group"></a><span data-ttu-id="f08b5-259">Criar um endereço IP para um grupo de disponibilidade adicionais</span><span class="sxs-lookup"><span data-stu-id="f08b5-259">Create an IP address for an additional availability group</span></span>
 
-Cada grupo de disponibilidade utiliza um serviço de escuta separado. Cada serviço de escuta possui o seu próprio endereço IP. Utilize Olá mesmo endereço IP de Olá de toohold de Balanceador de carga para as escutas de adicionais. Depois de criar um grupo de disponibilidade, adicionar balanceador de carga de toohello de endereço IP Olá e, em seguida, configure o serviço de escuta de Olá.
+<span data-ttu-id="f08b5-260">Cada grupo de disponibilidade utiliza um serviço de escuta separado.</span><span class="sxs-lookup"><span data-stu-id="f08b5-260">Each availability group uses a separate listener.</span></span> <span data-ttu-id="f08b5-261">Cada serviço de escuta possui o seu próprio endereço IP.</span><span class="sxs-lookup"><span data-stu-id="f08b5-261">Each listener has its own IP address.</span></span> <span data-ttu-id="f08b5-262">Utilize Olá mesmo endereço IP de Olá de toohold de Balanceador de carga para as escutas de adicionais.</span><span class="sxs-lookup"><span data-stu-id="f08b5-262">Use hello same load balancer toohold hello IP address for additional listeners.</span></span> <span data-ttu-id="f08b5-263">Depois de criar um grupo de disponibilidade, adicionar balanceador de carga de toohello de endereço IP Olá e, em seguida, configure o serviço de escuta de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-263">After you create an availability group, add hello IP address toohello load balancer, and then configure hello listener.</span></span>
 
-tooadd um balanceador de carga do tooa de endereço IP com Olá portal do Azure, Olá seguintes:
+<span data-ttu-id="f08b5-264">tooadd um balanceador de carga do tooa de endereço IP com Olá portal do Azure, Olá seguintes:</span><span class="sxs-lookup"><span data-stu-id="f08b5-264">tooadd an IP address tooa load balancer with hello Azure portal, do hello following:</span></span>
 
-1. No portal do Azure Olá, abra o grupo de recursos de Olá que contém o Balanceador de carga Olá e, em seguida, clique em Balanceador de carga Olá. 
+1. <span data-ttu-id="f08b5-265">No portal do Azure Olá, abra o grupo de recursos de Olá que contém o Balanceador de carga Olá e, em seguida, clique em Balanceador de carga Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-265">In hello Azure portal, open hello resource group that contains hello load balancer, and then click hello load balancer.</span></span> 
 
-2. Em **definições**, clique em **conjunto IP de front-end**e, em seguida, clique em **adicionar**. 
+2. <span data-ttu-id="f08b5-266">Em **definições**, clique em **conjunto IP de front-end**e, em seguida, clique em **adicionar**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-266">Under **SETTINGS**, click **Frontend IP pool**, and then click **Add**.</span></span> 
 
-3. Em **adicionar endereço IP de front-end**, atribua um nome para o front-end de Olá. 
+3. <span data-ttu-id="f08b5-267">Em **adicionar endereço IP de front-end**, atribua um nome para o front-end de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-267">Under **Add frontend IP address**, assign a name for hello front end.</span></span> 
 
-4. Certifique-se de que Olá **rede Virtual** e Olá **sub-rede** são Olá igual ao hello instâncias do SQL Server.
+4. <span data-ttu-id="f08b5-268">Certifique-se de que Olá **rede Virtual** e Olá **sub-rede** são Olá igual ao hello instâncias do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="f08b5-268">Verify that hello **Virtual network** and hello **Subnet** are hello same as hello SQL Server instances.</span></span>
 
-5. Definir o endereço IP de Olá para serviço de escuta de Olá. 
+5. <span data-ttu-id="f08b5-269">Definir o endereço IP de Olá para serviço de escuta de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-269">Set hello IP address for hello listener.</span></span> 
    
    >[!TIP]
-   >Pode definir toostatic de endereço IP de Olá e escreva um endereço que não é atualmente utilizado na sub-rede Olá. Em alternativa, pode definir toodynamic de endereço IP de Olá e guardar o conjunto IP de front-end novo de Olá. Se o fizer, Olá portal do Azure atribui automaticamente disponível toohello conjunto de endereços IP. Pode, em seguida, volte a abrir o conjunto IP Front-end Olá e alterar Olá toostatic de atribuição. 
+   ><span data-ttu-id="f08b5-270">Pode definir toostatic de endereço IP de Olá e escreva um endereço que não é atualmente utilizado na sub-rede Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-270">You can set hello IP address toostatic and type an address that is not currently used in hello subnet.</span></span> <span data-ttu-id="f08b5-271">Em alternativa, pode definir toodynamic de endereço IP de Olá e guardar o conjunto IP de front-end novo de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-271">Alternatively, you can set hello IP address toodynamic and save hello new front-end IP pool.</span></span> <span data-ttu-id="f08b5-272">Se o fizer, Olá portal do Azure atribui automaticamente disponível toohello conjunto de endereços IP.</span><span class="sxs-lookup"><span data-stu-id="f08b5-272">When you do so, hello Azure portal automatically assigns an available IP address toohello pool.</span></span> <span data-ttu-id="f08b5-273">Pode, em seguida, volte a abrir o conjunto IP Front-end Olá e alterar Olá toostatic de atribuição.</span><span class="sxs-lookup"><span data-stu-id="f08b5-273">You can then reopen hello front-end IP pool and change hello assignment toostatic.</span></span> 
 
-6. Guarde o endereço IP Olá para serviço de escuta de Olá. 
+6. <span data-ttu-id="f08b5-274">Guarde o endereço IP Olá para serviço de escuta de Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-274">Save hello IP address for hello listener.</span></span> 
 
-7. Adicione uma pesquisa de estado de funcionamento utilizando Olá seguintes definições:
+7. <span data-ttu-id="f08b5-275">Adicione uma pesquisa de estado de funcionamento utilizando Olá seguintes definições:</span><span class="sxs-lookup"><span data-stu-id="f08b5-275">Add a health probe by using hello following settings:</span></span>
 
-   |Definição |Valor
+   |<span data-ttu-id="f08b5-276">Definição</span><span class="sxs-lookup"><span data-stu-id="f08b5-276">Setting</span></span> |<span data-ttu-id="f08b5-277">Valor</span><span class="sxs-lookup"><span data-stu-id="f08b5-277">Value</span></span>
    |:-----|:----
-   |**Nome** |Sonda de Olá tooidentify um nome.
-   |**Protocolo** |TCP
-   |**Porta** |Uma porta não utilizada TCP, que tem de estar disponível em todas as máquinas virtuais. Não pode ser utilizado para qualquer outra finalidade. Não existem dois serviços de escuta podem utilizar Olá mesmo sonda a porta. 
-   |**Intervalo** |tenta Olá período de tempo entre a pesquisa. Utilize predefinição de Olá (5).
-   |**Limiar de mau estado de funcionamento** |número de Olá de limiares consecutivos que devem falhar antes de uma máquina virtual é considerada em mau estado de funcionamento.
+   |<span data-ttu-id="f08b5-278">**Nome**</span><span class="sxs-lookup"><span data-stu-id="f08b5-278">**Name**</span></span> |<span data-ttu-id="f08b5-279">Sonda de Olá tooidentify um nome.</span><span class="sxs-lookup"><span data-stu-id="f08b5-279">A name tooidentify hello probe.</span></span>
+   |<span data-ttu-id="f08b5-280">**Protocolo**</span><span class="sxs-lookup"><span data-stu-id="f08b5-280">**Protocol**</span></span> |<span data-ttu-id="f08b5-281">TCP</span><span class="sxs-lookup"><span data-stu-id="f08b5-281">TCP</span></span>
+   |<span data-ttu-id="f08b5-282">**Porta**</span><span class="sxs-lookup"><span data-stu-id="f08b5-282">**Port**</span></span> |<span data-ttu-id="f08b5-283">Uma porta não utilizada TCP, que tem de estar disponível em todas as máquinas virtuais.</span><span class="sxs-lookup"><span data-stu-id="f08b5-283">An unused TCP port, which must be available on all virtual machines.</span></span> <span data-ttu-id="f08b5-284">Não pode ser utilizado para qualquer outra finalidade.</span><span class="sxs-lookup"><span data-stu-id="f08b5-284">It cannot be used for any other purpose.</span></span> <span data-ttu-id="f08b5-285">Não existem dois serviços de escuta podem utilizar Olá mesmo sonda a porta.</span><span class="sxs-lookup"><span data-stu-id="f08b5-285">No two listeners can use hello same probe port.</span></span> 
+   |<span data-ttu-id="f08b5-286">**Intervalo**</span><span class="sxs-lookup"><span data-stu-id="f08b5-286">**Interval**</span></span> |<span data-ttu-id="f08b5-287">tenta Olá período de tempo entre a pesquisa.</span><span class="sxs-lookup"><span data-stu-id="f08b5-287">hello amount of time between probe attempts.</span></span> <span data-ttu-id="f08b5-288">Utilize predefinição de Olá (5).</span><span class="sxs-lookup"><span data-stu-id="f08b5-288">Use hello default (5).</span></span>
+   |<span data-ttu-id="f08b5-289">**Limiar de mau estado de funcionamento**</span><span class="sxs-lookup"><span data-stu-id="f08b5-289">**Unhealthy threshold**</span></span> |<span data-ttu-id="f08b5-290">número de Olá de limiares consecutivos que devem falhar antes de uma máquina virtual é considerada em mau estado de funcionamento.</span><span class="sxs-lookup"><span data-stu-id="f08b5-290">hello number of consecutive thresholds that should fail before a virtual machine is considered unhealthy.</span></span>
 
-8. Clique em **OK** sonda de Olá toosave. 
+8. <span data-ttu-id="f08b5-291">Clique em **OK** sonda de Olá toosave.</span><span class="sxs-lookup"><span data-stu-id="f08b5-291">Click **OK** toosave hello probe.</span></span> 
 
-9. Crie uma regra de balanceamento de carga. Clique em **as regras de balanceamento de carga**e, em seguida, clique em **adicionar**.
+9. <span data-ttu-id="f08b5-292">Crie uma regra de balanceamento de carga.</span><span class="sxs-lookup"><span data-stu-id="f08b5-292">Create a load balancing rule.</span></span> <span data-ttu-id="f08b5-293">Clique em **as regras de balanceamento de carga**e, em seguida, clique em **adicionar**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-293">Click **Load balancing rules**, and then click **Add**.</span></span>
 
-10. Configure Olá novo de balanceamento de carga regra ao utilizar Olá seguintes definições:
+10. <span data-ttu-id="f08b5-294">Configure Olá novo de balanceamento de carga regra ao utilizar Olá seguintes definições:</span><span class="sxs-lookup"><span data-stu-id="f08b5-294">Configure hello new load balancing rule by using hello following settings:</span></span>
 
-   |Definição |Valor
+   |<span data-ttu-id="f08b5-295">Definição</span><span class="sxs-lookup"><span data-stu-id="f08b5-295">Setting</span></span> |<span data-ttu-id="f08b5-296">Valor</span><span class="sxs-lookup"><span data-stu-id="f08b5-296">Value</span></span>
    |:-----|:----
-   |**Nome** |Olá de tooidentify um nome de regra de balanceamento de carga. 
-   |**Endereço IP de front-end** |Selecione o endereço IP Olá que criou. 
-   |**Protocolo** |TCP
-   |**Porta** |Utilize a porta de Olá que instâncias do SQL Server Olá estão a utilizar. Uma instância predefinida utiliza a porta 1433, a menos que o alterado. 
-   |**Porta de back-end** |Olá utilize mesmo valor como **porta**.
-   |**Conjunto back-end** |conjunto de Olá que contém máquinas virtuais de Olá com instâncias de SQL Server Olá. 
-   |**Sonda de estado de funcionamento** |Escolha sonda Olá que criou.
-   |**Persistência da sessão** |Nenhuma
-   |**Tempo limite de inatividade (minutos)** |Predefinição (4)
-   |**Vírgula flutuante (devolução direta do servidor) de IP** | Ativado
+   |<span data-ttu-id="f08b5-297">**Nome**</span><span class="sxs-lookup"><span data-stu-id="f08b5-297">**Name**</span></span> |<span data-ttu-id="f08b5-298">Olá de tooidentify um nome de regra de balanceamento de carga.</span><span class="sxs-lookup"><span data-stu-id="f08b5-298">A name tooidentify hello load balancing rule.</span></span> 
+   |<span data-ttu-id="f08b5-299">**Endereço IP de front-end**</span><span class="sxs-lookup"><span data-stu-id="f08b5-299">**Frontend IP address**</span></span> |<span data-ttu-id="f08b5-300">Selecione o endereço IP Olá que criou.</span><span class="sxs-lookup"><span data-stu-id="f08b5-300">Select hello IP address you created.</span></span> 
+   |<span data-ttu-id="f08b5-301">**Protocolo**</span><span class="sxs-lookup"><span data-stu-id="f08b5-301">**Protocol**</span></span> |<span data-ttu-id="f08b5-302">TCP</span><span class="sxs-lookup"><span data-stu-id="f08b5-302">TCP</span></span>
+   |<span data-ttu-id="f08b5-303">**Porta**</span><span class="sxs-lookup"><span data-stu-id="f08b5-303">**Port**</span></span> |<span data-ttu-id="f08b5-304">Utilize a porta de Olá que instâncias do SQL Server Olá estão a utilizar.</span><span class="sxs-lookup"><span data-stu-id="f08b5-304">Use hello port that hello SQL Server instances are using.</span></span> <span data-ttu-id="f08b5-305">Uma instância predefinida utiliza a porta 1433, a menos que o alterado.</span><span class="sxs-lookup"><span data-stu-id="f08b5-305">A default instance uses port 1433, unless you changed it.</span></span> 
+   |<span data-ttu-id="f08b5-306">**Porta de back-end**</span><span class="sxs-lookup"><span data-stu-id="f08b5-306">**Backend port**</span></span> |<span data-ttu-id="f08b5-307">Olá utilize mesmo valor como **porta**.</span><span class="sxs-lookup"><span data-stu-id="f08b5-307">Use hello same value as **Port**.</span></span>
+   |<span data-ttu-id="f08b5-308">**Conjunto back-end**</span><span class="sxs-lookup"><span data-stu-id="f08b5-308">**Backend pool**</span></span> |<span data-ttu-id="f08b5-309">conjunto de Olá que contém máquinas virtuais de Olá com instâncias de SQL Server Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-309">hello pool that contains hello virtual machines with hello SQL Server instances.</span></span> 
+   |<span data-ttu-id="f08b5-310">**Sonda de estado de funcionamento**</span><span class="sxs-lookup"><span data-stu-id="f08b5-310">**Health probe**</span></span> |<span data-ttu-id="f08b5-311">Escolha sonda Olá que criou.</span><span class="sxs-lookup"><span data-stu-id="f08b5-311">Choose hello probe you created.</span></span>
+   |<span data-ttu-id="f08b5-312">**Persistência da sessão**</span><span class="sxs-lookup"><span data-stu-id="f08b5-312">**Session persistence**</span></span> |<span data-ttu-id="f08b5-313">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="f08b5-313">None</span></span>
+   |<span data-ttu-id="f08b5-314">**Tempo limite de inatividade (minutos)**</span><span class="sxs-lookup"><span data-stu-id="f08b5-314">**Idle timeout (minutes)**</span></span> |<span data-ttu-id="f08b5-315">Predefinição (4)</span><span class="sxs-lookup"><span data-stu-id="f08b5-315">Default (4)</span></span>
+   |<span data-ttu-id="f08b5-316">**Vírgula flutuante (devolução direta do servidor) de IP**</span><span class="sxs-lookup"><span data-stu-id="f08b5-316">**Floating IP (direct server return)**</span></span> | <span data-ttu-id="f08b5-317">Ativado</span><span class="sxs-lookup"><span data-stu-id="f08b5-317">Enabled</span></span>
 
-### <a name="configure-hello-availability-group-toouse-hello-new-ip-address"></a>Configurar Olá disponibilidade grupo toouse Olá novo endereço IP
+### <a name="configure-hello-availability-group-toouse-hello-new-ip-address"></a><span data-ttu-id="f08b5-318">Configurar Olá disponibilidade grupo toouse Olá novo endereço IP</span><span class="sxs-lookup"><span data-stu-id="f08b5-318">Configure hello availability group toouse hello new IP address</span></span>
 
-toofinish configurar cluster Olá, os passos de repetições Olá que seguiu quando efetuado primeiro grupo de disponibilidade Olá. Ou seja, configura Olá [toouse Olá novo endereço IP do cluster](#configure-the-cluster-to-use-the-load-balancer-ip-address). 
+<span data-ttu-id="f08b5-319">toofinish configurar cluster Olá, os passos de repetições Olá que seguiu quando efetuado primeiro grupo de disponibilidade Olá.</span><span class="sxs-lookup"><span data-stu-id="f08b5-319">toofinish configuring hello cluster, repeat hello steps that you followed when you made hello first availability group.</span></span> <span data-ttu-id="f08b5-320">Ou seja, configura Olá [toouse Olá novo endereço IP do cluster](#configure-the-cluster-to-use-the-load-balancer-ip-address).</span><span class="sxs-lookup"><span data-stu-id="f08b5-320">That is, configure hello [cluster toouse hello new IP address](#configure-the-cluster-to-use-the-load-balancer-ip-address).</span></span> 
 
-Depois de ter adicionado um endereço IP para o serviço de escuta de Olá, configure o grupo de disponibilidade adicionais de Olá, Olá seguinte: 
+<span data-ttu-id="f08b5-321">Depois de ter adicionado um endereço IP para o serviço de escuta de Olá, configure o grupo de disponibilidade adicionais de Olá, Olá seguinte:</span><span class="sxs-lookup"><span data-stu-id="f08b5-321">After you have added an IP address for hello listener, configure hello additional availability group by doing hello following:</span></span> 
 
-1. Certifique-se de que a porta da sonda Olá para o novo endereço IP Olá está aberta em ambas as máquinas virtuais do SQL Server. 
+1. <span data-ttu-id="f08b5-322">Certifique-se de que a porta da sonda Olá para o novo endereço IP Olá está aberta em ambas as máquinas virtuais do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="f08b5-322">Verify that hello probe port for hello new IP address is open on both SQL Server virtual machines.</span></span> 
 
-2. [No Gestor de clusters, adicionar o ponto de acesso de cliente Olá](#addcap).
+2. <span data-ttu-id="f08b5-323">[No Gestor de clusters, adicionar o ponto de acesso de cliente Olá](#addcap).</span><span class="sxs-lookup"><span data-stu-id="f08b5-323">[In Cluster Manager, add hello client access point](#addcap).</span></span>
 
-3. [Configurar o recurso IP Olá para o grupo de disponibilidade de Olá](#congroup).
+3. <span data-ttu-id="f08b5-324">[Configurar o recurso IP Olá para o grupo de disponibilidade de Olá](#congroup).</span><span class="sxs-lookup"><span data-stu-id="f08b5-324">[Configure hello IP resource for hello availability group](#congroup).</span></span>
 
    >[!IMPORTANT]
-   >Quando cria o endereço IP Olá, utilize o endereço IP de Olá que adicionou toohello Balanceador de carga.  
+   ><span data-ttu-id="f08b5-325">Quando cria o endereço IP Olá, utilize o endereço IP de Olá que adicionou toohello Balanceador de carga.</span><span class="sxs-lookup"><span data-stu-id="f08b5-325">When you create hello IP address, use hello IP address that you added toohello load balancer.</span></span>  
 
-4. [Tornar o recurso do grupo de disponibilidade do SQL Server Olá depende de ponto de acesso de cliente Olá](#dependencyGroup).
+4. <span data-ttu-id="f08b5-326">[Tornar o recurso do grupo de disponibilidade do SQL Server Olá depende de ponto de acesso de cliente Olá](#dependencyGroup).</span><span class="sxs-lookup"><span data-stu-id="f08b5-326">[Make hello SQL Server availability group resource dependent on hello client access point](#dependencyGroup).</span></span>
 
-5. [Se o acesso de cliente Olá ponto recursos dependentes no endereço IP Olá](#listname).
+5. <span data-ttu-id="f08b5-327">[Se o acesso de cliente Olá ponto recursos dependentes no endereço IP Olá](#listname).</span><span class="sxs-lookup"><span data-stu-id="f08b5-327">[Make hello client access point resource dependent on hello IP address](#listname).</span></span>
  
-6. [Definir os parâmetros de cluster Olá no PowerShell](#setparam).
+6. <span data-ttu-id="f08b5-328">[Definir os parâmetros de cluster Olá no PowerShell](#setparam).</span><span class="sxs-lookup"><span data-stu-id="f08b5-328">[Set hello cluster parameters in PowerShell](#setparam).</span></span>
 
-Depois de configurar Olá disponibilidade grupo toouse Olá novo endereço IP, configure o serviço de escuta do Olá ligação toohello. 
+<span data-ttu-id="f08b5-329">Depois de configurar Olá disponibilidade grupo toouse Olá novo endereço IP, configure o serviço de escuta do Olá ligação toohello.</span><span class="sxs-lookup"><span data-stu-id="f08b5-329">After you configure hello availability group toouse hello new IP address, configure hello connection toohello listener.</span></span> 
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="f08b5-330">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="f08b5-330">Next steps</span></span>
 
-- [Configurar um grupo de disponibilidade SQL Server Always On em máquinas virtuais do Azure em regiões diferentes](virtual-machines-windows-portal-sql-availability-group-dr.md)
+- [<span data-ttu-id="f08b5-331">Configurar um grupo de disponibilidade SQL Server Always On em máquinas virtuais do Azure em regiões diferentes</span><span class="sxs-lookup"><span data-stu-id="f08b5-331">Configure a SQL Server Always On availability group on Azure virtual machines in different regions</span></span>](virtual-machines-windows-portal-sql-availability-group-dr.md)

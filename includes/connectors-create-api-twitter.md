@@ -1,18 +1,18 @@
-### <a name="prerequisites"></a>Pré-requisitos
-* Uma conta do Twitter 
+### <a name="prerequisites"></a><span data-ttu-id="dbaf2-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="dbaf2-101">Prerequisites</span></span>
+* <span data-ttu-id="dbaf2-102">Uma conta do Twitter</span><span class="sxs-lookup"><span data-stu-id="dbaf2-102">A Twitter account</span></span> 
 
-Antes de poder utilizar a conta do Twitter numa aplicação lógica, deve autorizar a conta do Olá logic app tooconnect tooyour Twitter. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure. 
+<span data-ttu-id="dbaf2-103">Antes de poder utilizar a conta do Twitter numa aplicação lógica, deve autorizar a conta do Olá logic app tooconnect tooyour Twitter.</span><span class="sxs-lookup"><span data-stu-id="dbaf2-103">Before you can use your Twitter account in a logic app, you must authorize hello logic app tooconnect tooyour Twitter account.</span></span> <span data-ttu-id="dbaf2-104">Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="dbaf2-104">Fortunately, you can do this easily from within your logic app on hello Azure Portal.</span></span> 
 
-Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica conta do Twitter:
+<span data-ttu-id="dbaf2-105">Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica conta do Twitter:</span><span class="sxs-lookup"><span data-stu-id="dbaf2-105">Here are hello steps tooauthorize your logic app tooconnect tooyour Twitter account:</span></span>
 
-1. toocreate tooTwitter uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Twitter* na caixa de pesquisa de Olá. Selecione o acionador de Olá ou ação que irá gostar toouse:  
-   ![Imagem de ligação do twitter 0](./media/connectors-create-api-twitter/twitter-0.png)
-2. Se ainda não criou quaisquer tooTwitter ligações antes, obterá tooprovide pedido as suas credenciais do Twitter. Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta do Twitter:  
+1. <span data-ttu-id="dbaf2-106">toocreate tooTwitter uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Twitter* na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="dbaf2-106">toocreate a connection tooTwitter, in hello logic app designer, select **Show Microsoft managed APIs** in hello drop down list then enter *Twitter* in hello search box.</span></span> <span data-ttu-id="dbaf2-107">Selecione o acionador de Olá ou ação que irá gostar toouse:</span><span class="sxs-lookup"><span data-stu-id="dbaf2-107">Select hello trigger or action you'll like toouse:</span></span>  
+   <span data-ttu-id="dbaf2-108">![Imagem de ligação do twitter 0](./media/connectors-create-api-twitter/twitter-0.png)</span><span class="sxs-lookup"><span data-stu-id="dbaf2-108">![Twitter connection image 0](./media/connectors-create-api-twitter/twitter-0.png)</span></span>
+2. <span data-ttu-id="dbaf2-109">Se ainda não criou quaisquer tooTwitter ligações antes, obterá tooprovide pedido as suas credenciais do Twitter.</span><span class="sxs-lookup"><span data-stu-id="dbaf2-109">If you haven't created any connections tooTwitter before, you'll get prompted tooprovide your Twitter credentials.</span></span> <span data-ttu-id="dbaf2-110">Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta do Twitter:</span><span class="sxs-lookup"><span data-stu-id="dbaf2-110">These credentials will be used tooauthorize your logic app tooconnect to, and access your Twitter account's data:</span></span>  
    ![Imagem de ligação do twitter 1](./media/connectors-create-api-twitter/twitter-1.png)  
-3. Fornece o tooauthorize de nome e palavra-passe de utilizador do Twitter a sua aplicação lógica:  
+3. <span data-ttu-id="dbaf2-112">Fornece o tooauthorize de nome e palavra-passe de utilizador do Twitter a sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="dbaf2-112">Provide your Twitter user name and password tooauthorize your logic app:</span></span>  
    ![Imagem de ligação do twitter 2](./media/connectors-create-api-twitter/twitter-2.png)  
-4. Confirme a sua autorização:  
+4. <span data-ttu-id="dbaf2-114">Confirme a sua autorização:</span><span class="sxs-lookup"><span data-stu-id="dbaf2-114">Confirm your authorization:</span></span>  
    ![Imagem de ligação do twitter 3](./media/connectors-create-api-twitter/twitter-3.png)  
-5. Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:  
+5. <span data-ttu-id="dbaf2-116">Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="dbaf2-116">Notice hello connection has been created and you are now free tooproceed with hello other steps in your logic app:</span></span>  
    ![Imagem de ligação do twitter 4](./media/connectors-create-api-twitter/twitter-4.png)
 

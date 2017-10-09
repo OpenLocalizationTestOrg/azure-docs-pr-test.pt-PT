@@ -22,31 +22,31 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="create-a-vm-with-a-static-public-ip-address-using-hello-azure-cli-10"></a>Criar uma VM com um endereço IP público estático utilizando Olá CLI do Azure 1.0
+# <a name="create-a-vm-with-a-static-public-ip-address-using-hello-azure-cli-10"></a><span data-ttu-id="d8ac7-103">Criar uma VM com um endereço IP público estático utilizando Olá CLI do Azure 1.0</span><span class="sxs-lookup"><span data-stu-id="d8ac7-103">Create a VM with a static public IP address using hello Azure CLI 1.0</span></span>
 
 > [!div class="op_single_selector"]
-> * [Portal do Azure](virtual-network-deploy-static-pip-arm-portal.md)
-> * [PowerShell](virtual-network-deploy-static-pip-arm-ps.md)
-> * [CLI 2.0 do Azure](virtual-network-deploy-static-pip-arm-cli.md)
-> * [CLI do Azure 1.0](virtual-network-deploy-static-pip-cli-nodejs.md)
-> * [Modelo](virtual-network-deploy-static-pip-arm-template.md)
-> * [PowerShell (Clássico)](virtual-networks-reserved-public-ip.md)
+> * [<span data-ttu-id="d8ac7-104">Portal do Azure</span><span class="sxs-lookup"><span data-stu-id="d8ac7-104">Azure portal</span></span>](virtual-network-deploy-static-pip-arm-portal.md)
+> * [<span data-ttu-id="d8ac7-105">PowerShell</span><span class="sxs-lookup"><span data-stu-id="d8ac7-105">PowerShell</span></span>](virtual-network-deploy-static-pip-arm-ps.md)
+> * [<span data-ttu-id="d8ac7-106">CLI 2.0 do Azure</span><span class="sxs-lookup"><span data-stu-id="d8ac7-106">Azure CLI 2.0</span></span>](virtual-network-deploy-static-pip-arm-cli.md)
+> * [<span data-ttu-id="d8ac7-107">CLI do Azure 1.0</span><span class="sxs-lookup"><span data-stu-id="d8ac7-107">Azure CLI 1.0</span></span>](virtual-network-deploy-static-pip-cli-nodejs.md)
+> * [<span data-ttu-id="d8ac7-108">Modelo</span><span class="sxs-lookup"><span data-stu-id="d8ac7-108">Template</span></span>](virtual-network-deploy-static-pip-arm-template.md)
+> * [<span data-ttu-id="d8ac7-109">PowerShell (Clássico)</span><span class="sxs-lookup"><span data-stu-id="d8ac7-109">PowerShell (Classic)</span></span>](virtual-networks-reserved-public-ip.md)
 
 [!INCLUDE [virtual-network-deploy-static-pip-intro-include.md](../../includes/virtual-network-deploy-static-pip-intro-include.md)]
 
 > [!NOTE]
-> O Azure tem dois modelos de implementação para criar e trabalhar com recursos: [Resource Manager e Clássico](../resource-manager-deployment-model.md). Este artigo abrange utilizando o modelo de implementação Resource Manager de Olá, que a Microsoft recomenda-se para a maioria das implementações de novo em vez do modelo de implementação clássica Olá.
+> <span data-ttu-id="d8ac7-110">O Azure tem dois modelos de implementação para criar e trabalhar com recursos: [Resource Manager e Clássico](../resource-manager-deployment-model.md).</span><span class="sxs-lookup"><span data-stu-id="d8ac7-110">Azure has two different deployment models for creating and working with resources: [Resource Manager and classic](../resource-manager-deployment-model.md).</span></span> <span data-ttu-id="d8ac7-111">Este artigo abrange utilizando o modelo de implementação Resource Manager de Olá, que a Microsoft recomenda-se para a maioria das implementações de novo em vez do modelo de implementação clássica Olá.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-111">This article covers using hello Resource Manager deployment model, which Microsoft recommends for most new deployments instead of hello classic deployment model.</span></span>
 
 [!INCLUDE [virtual-network-deploy-static-pip-scenario-include.md](../../includes/virtual-network-deploy-static-pip-scenario-include.md)]
 
 [!INCLUDE [azure-cli-prerequisites-include.md](../../includes/azure-cli-prerequisites-include.md)]
 
-Pode concluir esta tarefa utilizando Olá 1.0 CLI do Azure (Este artigo) ou Olá [Azure CLI 2.0](virtual-network-deploy-static-pip-arm-cli.md). 
+<span data-ttu-id="d8ac7-112">Pode concluir esta tarefa utilizando Olá 1.0 CLI do Azure (Este artigo) ou Olá [Azure CLI 2.0](virtual-network-deploy-static-pip-arm-cli.md).</span><span class="sxs-lookup"><span data-stu-id="d8ac7-112">You can complete this task using hello Azure CLI 1.0 (this article) or hello [Azure CLI 2.0](virtual-network-deploy-static-pip-arm-cli.md).</span></span> 
 
-## <a name = "create"></a>Passo 1 – iniciar o script
-Pode transferir o script de deteção completa Olá utilizado [aqui](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/03-Static-public-IP/virtual-network-deploy-static-pip-arm-cli.sh). Olá concluir os seguintes passos toochange Olá script toowork no seu ambiente:
+## <span data-ttu-id="d8ac7-113"><a name = "create"></a>Passo 1 – iniciar o script</span><span class="sxs-lookup"><span data-stu-id="d8ac7-113"><a name = "create"></a>Step 1 - Start your script</span></span>
+<span data-ttu-id="d8ac7-114">Pode transferir o script de deteção completa Olá utilizado [aqui](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/03-Static-public-IP/virtual-network-deploy-static-pip-arm-cli.sh).</span><span class="sxs-lookup"><span data-stu-id="d8ac7-114">You can download hello full bash script used [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/03-Static-public-IP/virtual-network-deploy-static-pip-arm-cli.sh).</span></span> <span data-ttu-id="d8ac7-115">Olá concluir os seguintes passos toochange Olá script toowork no seu ambiente:</span><span class="sxs-lookup"><span data-stu-id="d8ac7-115">Complete hello following steps toochange hello script toowork in your environment:</span></span>
 
-Alterar Olá valores das variáveis de Olá abaixo com base nos valores de Olá pretende toouse para a sua implementação. Olá seguir o cenário de toohello de mapa de valores utilizado neste artigo:
+<span data-ttu-id="d8ac7-116">Alterar Olá valores das variáveis de Olá abaixo com base nos valores de Olá pretende toouse para a sua implementação.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-116">Change hello values of hello variables below based on hello values you want toouse for your deployment.</span></span> <span data-ttu-id="d8ac7-117">Olá seguir o cenário de toohello de mapa de valores utilizado neste artigo:</span><span class="sxs-lookup"><span data-stu-id="d8ac7-117">hello following values map toohello scenario used in this article:</span></span>
 
 ```azurecli
 # Set variables for hello new resource group
@@ -79,16 +79,16 @@ pipName="PIPWEB1"
 dnsName="iaasstoryws1"
 ```
 
-## <a name="step-2---create-hello-necessary-resources-for-your-vm"></a>Passo 2 - Criar Olá recursos necessários para a VM
-Antes de criar uma VM, precisa de um grupo de recursos, VNet, pública IP e NIC toobe utilizado pelo Olá VM.
+## <a name="step-2---create-hello-necessary-resources-for-your-vm"></a><span data-ttu-id="d8ac7-118">Passo 2 - Criar Olá recursos necessários para a VM</span><span class="sxs-lookup"><span data-stu-id="d8ac7-118">Step 2 - Create hello necessary resources for your VM</span></span>
+<span data-ttu-id="d8ac7-119">Antes de criar uma VM, precisa de um grupo de recursos, VNet, pública IP e NIC toobe utilizado pelo Olá VM.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-119">Before creating a VM, you need a resource group, VNet, public IP, and NIC toobe used by hello VM.</span></span>
 
-1. Crie um novo grupo de recursos.
+1. <span data-ttu-id="d8ac7-120">Crie um novo grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-120">Create a new resource group.</span></span>
 
     ```azurecli
     azure group create $rgName $location
     ```
 
-2. Criar Olá VNet e sub-rede.
+2. <span data-ttu-id="d8ac7-121">Criar Olá VNet e sub-rede.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-121">Create hello VNet and subnet.</span></span>
 
     ```azurecli
     azure network vnet create --resource-group $rgName \
@@ -101,7 +101,7 @@ Antes de criar uma VM, precisa de um grupo de recursos, VNet, pública IP e NIC 
         --address-prefix $subnetPrefix
     ```
 
-3. Crie o recurso de IP público Olá.
+3. <span data-ttu-id="d8ac7-122">Crie o recurso de IP público Olá.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-122">Create hello public IP resource.</span></span>
 
     ```azurecli
     azure network public-ip create --resource-group $rgName \
@@ -111,7 +111,7 @@ Antes de criar uma VM, precisa de um grupo de recursos, VNet, pública IP e NIC 
         --domain-name-label $dnsName
     ```
 
-4. Crie a interface de rede (NIC) do Olá para Olá VM na sub-rede Olá criado acima, com o IP público Olá. Tenha em atenção Olá primeiro conjunto de comandos são utilizados tooretrieve Olá **Id** da sub-rede Olá criado acima.
+4. <span data-ttu-id="d8ac7-123">Crie a interface de rede (NIC) do Olá para Olá VM na sub-rede Olá criado acima, com o IP público Olá.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-123">Create hello network interface (NIC) for hello VM in hello subnet created above, with hello public IP.</span></span> <span data-ttu-id="d8ac7-124">Tenha em atenção Olá primeiro conjunto de comandos são utilizados tooretrieve Olá **Id** da sub-rede Olá criado acima.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-124">Notice hello first set of commands are used tooretrieve hello **Id** of hello subnet created above.</span></span>
 
     ```azurecli
     subnetId="$(azure network vnet subnet show --resource-group $rgName \
@@ -129,10 +129,10 @@ Antes de criar uma VM, precisa de um grupo de recursos, VNet, pública IP e NIC 
     ```
 
    > [!TIP]
-   > Olá primeiro comando acima utiliza [grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html) e [manipulação de cadeia](http://tldp.org/LDP/abs/html/string-manipulation.html) (mais especificamente, a remoção de subcadeia).
+   > <span data-ttu-id="d8ac7-125">Olá primeiro comando acima utiliza [grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html) e [manipulação de cadeia](http://tldp.org/LDP/abs/html/string-manipulation.html) (mais especificamente, a remoção de subcadeia).</span><span class="sxs-lookup"><span data-stu-id="d8ac7-125">hello first command above uses [grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html) and [string manipulation](http://tldp.org/LDP/abs/html/string-manipulation.html) (more specifically, substring removal).</span></span>
    >
 
-5. Crie um Olá de toohost de conta de armazenamento disco de SO de VM.
+5. <span data-ttu-id="d8ac7-126">Crie um Olá de toohost de conta de armazenamento disco de SO de VM.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-126">Create a storage account toohost hello VM OS drive.</span></span>
 
     ```azurecli
     azure storage account create $stdStorageAccountName \
@@ -140,10 +140,10 @@ Antes de criar uma VM, precisa de um grupo de recursos, VNet, pública IP e NIC 
         --location $location --type LRS
     ```
 
-## <a name="step-3---create-hello-vm"></a>Passo 3 – criar Olá VM
-Agora que todos os recursos necessários estão em vigor, pode criar uma nova VM.
+## <a name="step-3---create-hello-vm"></a><span data-ttu-id="d8ac7-127">Passo 3 – criar Olá VM</span><span class="sxs-lookup"><span data-stu-id="d8ac7-127">Step 3 - Create hello VM</span></span>
+<span data-ttu-id="d8ac7-128">Agora que todos os recursos necessários estão em vigor, pode criar uma nova VM.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-128">Now that all necessary resources are in place, you can create a new VM.</span></span>
 
-1. Crie Olá VM.
+1. <span data-ttu-id="d8ac7-129">Crie Olá VM.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-129">Create hello VM.</span></span>
 
     ```azurecli
     azure vm create --resource-group $rgName \
@@ -160,18 +160,18 @@ Agora que todos os recursos necessários estão em vigor, pode criar uma nova VM
         --admin-username $username \
         --admin-password $password
     ```
-2. Guarde o ficheiro de script de Olá.
+2. <span data-ttu-id="d8ac7-130">Guarde o ficheiro de script de Olá.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-130">Save hello script file.</span></span>
 
-## <a name="step-4---run-hello-script"></a>Passo 4 - executar Olá script
-Depois de efetuar as alterações necessárias e compreender o script de Olá Mostrar acima, execute o script de Olá.
+## <a name="step-4---run-hello-script"></a><span data-ttu-id="d8ac7-131">Passo 4 - executar Olá script</span><span class="sxs-lookup"><span data-stu-id="d8ac7-131">Step 4 - Run hello script</span></span>
+<span data-ttu-id="d8ac7-132">Depois de efetuar as alterações necessárias e compreender o script de Olá Mostrar acima, execute o script de Olá.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-132">After making any necessary changes, and understanding hello script show above, run hello script.</span></span>
 
-1. A partir de uma consola de bash, execute o script de Olá acima.
+1. <span data-ttu-id="d8ac7-133">A partir de uma consola de bash, execute o script de Olá acima.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-133">From a bash console, run hello script above.</span></span>
 
     ```azurecli
     sh myscript.sh
     ```
 
-2. saída de Olá abaixo deve ser apresentada após alguns minutos.
+2. <span data-ttu-id="d8ac7-134">saída de Olá abaixo deve ser apresentada após alguns minutos.</span><span class="sxs-lookup"><span data-stu-id="d8ac7-134">hello output below should be displayed after a few minutes.</span></span>
 
         info:    Executing command group create
         info:    Getting resource group IaaSStory

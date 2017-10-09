@@ -1,10 +1,10 @@
-| Recurso | Limite Máximo |
+| <span data-ttu-id="10625-101">Recurso</span><span class="sxs-lookup"><span data-stu-id="10625-101">Resource</span></span> | <span data-ttu-id="10625-102">Limite Máximo</span><span class="sxs-lookup"><span data-stu-id="10625-102">Maximum Limit</span></span> |
 | --- | --- |
-| Número máx. de novas tarefas que podem ser submetidos a cada 30 segundos por conta de automatização (tarefas agendadas não) |100 |
-| Número máx. de execução simultânea no cancelamento das tarefas em Olá mesma instância do tempo por conta de automatização (tarefas agendadas não) |200 |
-| Número máx. de módulos que podem ser importados a cada 30 segundos por conta de automatização |5 |
-| Tamanho máx. de um módulo |100 MB |
-| Tempo de execução de tarefa - escalão gratuito |500 minutos por subscrição por mês de calendário |
-| Quantidade de máximo de memória especificada tooa tarefa |400 MB |
-| Número máx. de sockets rede permitido por tarefa |1000 |
+| <span data-ttu-id="10625-103">Número máx. de novas tarefas que podem ser submetidos a cada 30 segundos por conta de automatização (tarefas agendadas não)</span><span class="sxs-lookup"><span data-stu-id="10625-103">Max number of new jobs that can be submitted every 30 seconds per Automation Account (non Scheduled jobs)</span></span> |<span data-ttu-id="10625-104">100</span><span class="sxs-lookup"><span data-stu-id="10625-104">100</span></span> |
+| <span data-ttu-id="10625-105">Número máx. de execução simultânea no cancelamento das tarefas em Olá mesma instância do tempo por conta de automatização (tarefas agendadas não)</span><span class="sxs-lookup"><span data-stu-id="10625-105">Max number of concurrent running jobs at hello same instance of time per Automation Account (non Scheduled jobs)</span></span> |<span data-ttu-id="10625-106">200</span><span class="sxs-lookup"><span data-stu-id="10625-106">200</span></span> |
+| <span data-ttu-id="10625-107">Número máx. de módulos que podem ser importados a cada 30 segundos por conta de automatização</span><span class="sxs-lookup"><span data-stu-id="10625-107">Max number of modules that can be imported every 30 seconds per Automation Account</span></span> |<span data-ttu-id="10625-108">5</span><span class="sxs-lookup"><span data-stu-id="10625-108">5</span></span> |
+| <span data-ttu-id="10625-109">Tamanho máx. de um módulo</span><span class="sxs-lookup"><span data-stu-id="10625-109">Max size of a Module</span></span> |<span data-ttu-id="10625-110">100 MB</span><span class="sxs-lookup"><span data-stu-id="10625-110">100 MB</span></span> |
+| <span data-ttu-id="10625-111">Tempo de execução de tarefa - escalão gratuito</span><span class="sxs-lookup"><span data-stu-id="10625-111">Job Run Time - Free tier</span></span> |<span data-ttu-id="10625-112">500 minutos por subscrição por mês de calendário</span><span class="sxs-lookup"><span data-stu-id="10625-112">500 minutes per subscription per calendar month</span></span> |
+| <span data-ttu-id="10625-113">Quantidade de máximo de memória especificada tooa tarefa</span><span class="sxs-lookup"><span data-stu-id="10625-113">Max amount of memory given tooa job</span></span> |<span data-ttu-id="10625-114">400 MB</span><span class="sxs-lookup"><span data-stu-id="10625-114">400 MB</span></span> |
+| <span data-ttu-id="10625-115">Número máx. de sockets rede permitido por tarefa</span><span class="sxs-lookup"><span data-stu-id="10625-115">Max number of network sockets allowed per job</span></span> |<span data-ttu-id="10625-116">1000</span><span class="sxs-lookup"><span data-stu-id="10625-116">1000</span></span> |
 

@@ -1,18 +1,18 @@
-Neste passo, vai criar uma regra tooopen Olá sonda porta de firewall de Olá com balanceamento de carga do ponto final (59999, conforme especificado anteriormente) e outra regra de porta de serviço de escuta do grupo de disponibilidade do tooopen Olá. Uma vez que criou o ponto final com balanceamento de carga de Olá no Olá VMs que contêm as réplicas do grupo de disponibilidade, precisará de porta da sonda tooopen Olá e porta de serviço de escuta de Olá no Olá respetivas VMs.
+<span data-ttu-id="fff10-101">Neste passo, vai criar uma regra tooopen Olá sonda porta de firewall de Olá com balanceamento de carga do ponto final (59999, conforme especificado anteriormente) e outra regra de porta de serviço de escuta do grupo de disponibilidade do tooopen Olá.</span><span class="sxs-lookup"><span data-stu-id="fff10-101">In this step, you create a firewall rule tooopen hello probe port for hello load-balanced endpoint (59999, as specified earlier) and another rule tooopen hello availability group listener port.</span></span> <span data-ttu-id="fff10-102">Uma vez que criou o ponto final com balanceamento de carga de Olá no Olá VMs que contêm as réplicas do grupo de disponibilidade, precisará de porta da sonda tooopen Olá e porta de serviço de escuta de Olá no Olá respetivas VMs.</span><span class="sxs-lookup"><span data-stu-id="fff10-102">Because you created hello load-balanced endpoint on hello VMs that contain availability group replicas, you need tooopen hello probe port and hello listener port on hello respective VMs.</span></span>
 
-1. Em VMs que alojam as réplicas, iniciar **Firewall do Windows com segurança avançada**.
+1. <span data-ttu-id="fff10-103">Em VMs que alojam as réplicas, iniciar **Firewall do Windows com segurança avançada**.</span><span class="sxs-lookup"><span data-stu-id="fff10-103">On VMs that host replicas, start **Windows Firewall with Advanced Security**.</span></span>
 
-2. Clique com botão direito **regras de entrada**e, em seguida, clique em **nova regra**.
+2. <span data-ttu-id="fff10-104">Clique com botão direito **regras de entrada**e, em seguida, clique em **nova regra**.</span><span class="sxs-lookup"><span data-stu-id="fff10-104">Right-click **Inbound Rules**, and then click **New Rule**.</span></span>
 
-3. No Olá **tipo de regra** página, selecione **porta**e, em seguida, clique em **seguinte**.
+3. <span data-ttu-id="fff10-105">No Olá **tipo de regra** página, selecione **porta**e, em seguida, clique em **seguinte**.</span><span class="sxs-lookup"><span data-stu-id="fff10-105">On hello **Rule Type** page, select **Port**, and then click **Next**.</span></span>
 
-4. No Olá **protocolo e portas** página, selecione **TCP**, tipo **59999** no Olá **portas locais específicas** caixa e, em seguida, clique em **Seguinte**.
+4. <span data-ttu-id="fff10-106">No Olá **protocolo e portas** página, selecione **TCP**, tipo **59999** no Olá **portas locais específicas** caixa e, em seguida, clique em **Seguinte**.</span><span class="sxs-lookup"><span data-stu-id="fff10-106">On hello **Protocol and Ports** page, select **TCP**, type **59999** in hello **Specific local ports** box, and then click **Next**.</span></span>
 
-5. No Olá **ação** página, mantenha **permitir ligação Olá** selecionada e, em seguida, clique em **seguinte**.
+5. <span data-ttu-id="fff10-107">No Olá **ação** página, mantenha **permitir ligação Olá** selecionada e, em seguida, clique em **seguinte**.</span><span class="sxs-lookup"><span data-stu-id="fff10-107">On hello **Action** page, keep **Allow hello connection** selected, and then click **Next**.</span></span>
 
-6. No Olá **perfil** página, aceite as predefinições de Olá e, em seguida, clique em **seguinte**.
+6. <span data-ttu-id="fff10-108">No Olá **perfil** página, aceite as predefinições de Olá e, em seguida, clique em **seguinte**.</span><span class="sxs-lookup"><span data-stu-id="fff10-108">On hello **Profile** page, accept hello default settings, and then click **Next**.</span></span>
 
-7. No Olá **nome** página, numa Olá **nome** texto caixa, especifique um nome de regra, tal como **sempre no serviço de escuta de sonda de porta**e, em seguida, clique em **concluir**.
+7. <span data-ttu-id="fff10-109">No Olá **nome** página, numa Olá **nome** texto caixa, especifique um nome de regra, tal como **sempre no serviço de escuta de sonda de porta**e, em seguida, clique em **concluir**.</span><span class="sxs-lookup"><span data-stu-id="fff10-109">On hello **Name** page, in hello **Name** text box, specify a rule name, such as **Always On Listener Probe Port**, and then click **Finish**.</span></span>
 
-8. Repita Olá precedente passos para a porta do serviço de escuta de grupo de disponibilidade do Olá (tal como especificado anteriormente no parâmetro de Olá $EndpointPort do script Olá) e, em seguida, especifique um nome de regra adequada, tais como **sempre no serviço de escuta de porta**.
+8. <span data-ttu-id="fff10-110">Repita Olá precedente passos para a porta do serviço de escuta de grupo de disponibilidade do Olá (tal como especificado anteriormente no parâmetro de Olá $EndpointPort do script Olá) e, em seguida, especifique um nome de regra adequada, tais como **sempre no serviço de escuta de porta**.</span><span class="sxs-lookup"><span data-stu-id="fff10-110">Repeat hello preceding steps for hello availability group listener port (as specified earlier in hello $EndpointPort parameter of hello script), and then specify an appropriate rule name, such as **Always On Listener Port**.</span></span>
 

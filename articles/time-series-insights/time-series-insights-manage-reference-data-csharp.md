@@ -21,15 +21,15 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="manage-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Gerir os dados de referência para um ambiente de informações de séries de tempo do Azure com c#
+# <a name="manage-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a><span data-ttu-id="283fd-103">Gerir os dados de referência para um ambiente de informações de séries de tempo do Azure com c#</span><span class="sxs-lookup"><span data-stu-id="283fd-103">Manage reference data for an Azure Time Series Insights environment by using C#</span></span>
 
-Este exemplo c# demonstra como toomanage referência a dados para um ambiente de informações de séries de tempo do Azure.
-Antes de exemplo de Olá em execução, certifique-se Olá os passos seguintes é concluída.
-1. Foi criado um conjunto de dados de referência utilizando [neste artigo](time-series-insights-add-reference-data-set.md).
-2. token de acesso de Olá utilizado quando a execução da aplicação Olá é adquirida através de Olá API do Azure Active Directory. Este token deve ser transmitido Olá `Authorization` cabeçalho de cada pedido de API de consulta. Para configurar aplicações não interativa, consulte Olá [autenticação e autorização](time-series-insights-authentication-and-authorization.md) artigo.
-3. Todas as constantes de Olá definidas no início de Olá de exemplo de Olá estão definidas corretamente.
+<span data-ttu-id="283fd-104">Este exemplo c# demonstra como toomanage referência a dados para um ambiente de informações de séries de tempo do Azure.</span><span class="sxs-lookup"><span data-stu-id="283fd-104">This C# sample demonstrates how toomanage reference data for an Azure Time Series Insights environment.</span></span>
+<span data-ttu-id="283fd-105">Antes de exemplo de Olá em execução, certifique-se Olá os passos seguintes é concluída.</span><span class="sxs-lookup"><span data-stu-id="283fd-105">Before running hello sample, ensure hello following steps are completed.</span></span>
+1. <span data-ttu-id="283fd-106">Foi criado um conjunto de dados de referência utilizando [neste artigo](time-series-insights-add-reference-data-set.md).</span><span class="sxs-lookup"><span data-stu-id="283fd-106">A reference data set has been created using [this article](time-series-insights-add-reference-data-set.md).</span></span>
+2. <span data-ttu-id="283fd-107">token de acesso de Olá utilizado quando a execução da aplicação Olá é adquirida através de Olá API do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="283fd-107">hello access token used when running hello application is acquired through hello Azure Active Directory API.</span></span> <span data-ttu-id="283fd-108">Este token deve ser transmitido Olá `Authorization` cabeçalho de cada pedido de API de consulta.</span><span class="sxs-lookup"><span data-stu-id="283fd-108">This token should be passed in hello `Authorization` header of every Query API request.</span></span> <span data-ttu-id="283fd-109">Para configurar aplicações não interativa, consulte Olá [autenticação e autorização](time-series-insights-authentication-and-authorization.md) artigo.</span><span class="sxs-lookup"><span data-stu-id="283fd-109">For setting up non-interactive applications, see hello [Authentication and authorization](time-series-insights-authentication-and-authorization.md) article.</span></span>
+3. <span data-ttu-id="283fd-110">Todas as constantes de Olá definidas no início de Olá de exemplo de Olá estão definidas corretamente.</span><span class="sxs-lookup"><span data-stu-id="283fd-110">All hello constants defined at hello beginning of hello sample are correctly set.</span></span>
 
-## <a name="c-sample"></a>Exemplo C#
+## <a name="c-sample"></a><span data-ttu-id="283fd-111">Exemplo C#</span><span class="sxs-lookup"><span data-stu-id="283fd-111">C# sample</span></span>
 
 ```csharp
 // Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -232,6 +232,6 @@ namespace TimeSeriesInsightsReferenceDataSampleApp
 }
 ```
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="283fd-112">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="283fd-112">Next steps</span></span>
 
-Para referência de API completa Olá, consulte [API de dados de referência](/rest/api/time-series-insights/time-series-insights-reference-reference-data-api) documento.
+<span data-ttu-id="283fd-113">Para referência de API completa Olá, consulte [API de dados de referência](/rest/api/time-series-insights/time-series-insights-reference-reference-data-api) documento.</span><span class="sxs-lookup"><span data-stu-id="283fd-113">For hello complete API reference, see [Reference Data API](/rest/api/time-series-insights/time-series-insights-reference-reference-data-api) document.</span></span>

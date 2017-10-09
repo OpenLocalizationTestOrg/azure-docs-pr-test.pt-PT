@@ -1,11 +1,11 @@
-| Recurso | Limite Máximo |
+| <span data-ttu-id="7984a-101">Recurso</span><span class="sxs-lookup"><span data-stu-id="7984a-101">Resource</span></span> | <span data-ttu-id="7984a-102">Limite Máximo</span><span class="sxs-lookup"><span data-stu-id="7984a-102">Maximum Limit</span></span> |
 | --- | --- |
-| Utilizadores de coleção de aplicações |5 por coleção de aplicações |
-| Tempo médio de pontos de dados |200 por utilizador ativo/dia |
-| Conjunto de App-Info médio |50 por utilizador ativo/dia |
-| Médias mensagens enviadas por push |20 por utilizador ativo/dia |
-| Segmentos |100 por aplicação |
-| Critérios por segmento |10 |
-| Campanhas Push ativas |50 por aplicação |
-| Total campanhas Push (inclui o Active Directory & concluído) |1000 por aplicação |
+| <span data-ttu-id="7984a-103">Utilizadores de coleção de aplicações</span><span class="sxs-lookup"><span data-stu-id="7984a-103">App Collection Users</span></span> |<span data-ttu-id="7984a-104">5 por coleção de aplicações</span><span class="sxs-lookup"><span data-stu-id="7984a-104">5 per App Collection</span></span> |
+| <span data-ttu-id="7984a-105">Tempo médio de pontos de dados</span><span class="sxs-lookup"><span data-stu-id="7984a-105">Average Data points</span></span> |<span data-ttu-id="7984a-106">200 por utilizador ativo/dia</span><span class="sxs-lookup"><span data-stu-id="7984a-106">200 per Active User/Day</span></span> |
+| <span data-ttu-id="7984a-107">Conjunto de App-Info médio</span><span class="sxs-lookup"><span data-stu-id="7984a-107">Average App-Info set</span></span> |<span data-ttu-id="7984a-108">50 por utilizador ativo/dia</span><span class="sxs-lookup"><span data-stu-id="7984a-108">50 per Active User/Day</span></span> |
+| <span data-ttu-id="7984a-109">Médias mensagens enviadas por push</span><span class="sxs-lookup"><span data-stu-id="7984a-109">Average Messages pushed</span></span> |<span data-ttu-id="7984a-110">20 por utilizador ativo/dia</span><span class="sxs-lookup"><span data-stu-id="7984a-110">20 per Active User/Day</span></span> |
+| <span data-ttu-id="7984a-111">Segmentos</span><span class="sxs-lookup"><span data-stu-id="7984a-111">Segments</span></span> |<span data-ttu-id="7984a-112">100 por aplicação</span><span class="sxs-lookup"><span data-stu-id="7984a-112">100 per app</span></span> |
+| <span data-ttu-id="7984a-113">Critérios por segmento</span><span class="sxs-lookup"><span data-stu-id="7984a-113">Criteria per segment</span></span> |<span data-ttu-id="7984a-114">10</span><span class="sxs-lookup"><span data-stu-id="7984a-114">10</span></span> |
+| <span data-ttu-id="7984a-115">Campanhas Push ativas</span><span class="sxs-lookup"><span data-stu-id="7984a-115">Active Push Campaigns</span></span> |<span data-ttu-id="7984a-116">50 por aplicação</span><span class="sxs-lookup"><span data-stu-id="7984a-116">50 per app</span></span> |
+| <span data-ttu-id="7984a-117">Total campanhas Push (inclui o Active Directory & concluído)</span><span class="sxs-lookup"><span data-stu-id="7984a-117">Total Push Campaigns (includes Active & Completed)</span></span> |<span data-ttu-id="7984a-118">1000 por aplicação</span><span class="sxs-lookup"><span data-stu-id="7984a-118">1000 per app</span></span> |
 

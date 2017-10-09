@@ -1,13 +1,13 @@
-No portal do Azure Olá, pode ver o estado da ligação Olá para um Gateway de VPN de VNet clássica navegando toohello ligação. Olá passos seguintes mostram toonavigate unidirecional tooyour ligação e certifique-se.
+<span data-ttu-id="8d307-101">No portal do Azure Olá, pode ver o estado da ligação Olá para um Gateway de VPN de VNet clássica navegando toohello ligação.</span><span class="sxs-lookup"><span data-stu-id="8d307-101">In hello Azure portal, you can view hello connection status for a classic VNet VPN Gateway by navigating toohello connection.</span></span> <span data-ttu-id="8d307-102">Olá passos seguintes mostram toonavigate unidirecional tooyour ligação e certifique-se.</span><span class="sxs-lookup"><span data-stu-id="8d307-102">hello following steps show one way toonavigate tooyour connection and verify.</span></span>
 
-1. No Olá [portal do Azure](http://portal.azure.com), clique em **todos os recursos** e navegue tooyour de rede virtual clássica.
-2. No painel de rede virtual Olá, clique em **descrição geral** tooaccess Olá **ligações VPN** secção do painel de Olá.
-3. No gráfico de ligações de VPN Olá, clique em site Olá.
+1. <span data-ttu-id="8d307-103">No Olá [portal do Azure](http://portal.azure.com), clique em **todos os recursos** e navegue tooyour de rede virtual clássica.</span><span class="sxs-lookup"><span data-stu-id="8d307-103">In hello [Azure portal](http://portal.azure.com), click **All resources** and navigate tooyour classic virtual network.</span></span>
+2. <span data-ttu-id="8d307-104">No painel de rede virtual Olá, clique em **descrição geral** tooaccess Olá **ligações VPN** secção do painel de Olá.</span><span class="sxs-lookup"><span data-stu-id="8d307-104">On hello virtual network blade, click **Overview** tooaccess hello **VPN connections** section of hello blade.</span></span>
+3. <span data-ttu-id="8d307-105">No gráfico de ligações de VPN Olá, clique em site Olá.</span><span class="sxs-lookup"><span data-stu-id="8d307-105">On hello VPN connections graphic, click hello site.</span></span>
 
-    ![Local site](./media/vpn-gateway-verify-connection-azureportal-classic/localsitename.png "local site")
-4. No Olá **ligações VPN de Site para site** painel, ver Olá informações sobre o seu site.
+    <span data-ttu-id="8d307-106">![Local site](./media/vpn-gateway-verify-connection-azureportal-classic/localsitename.png "local site")</span><span class="sxs-lookup"><span data-stu-id="8d307-106">![Local site](./media/vpn-gateway-verify-connection-azureportal-classic/localsitename.png "local site")</span></span>
+4. <span data-ttu-id="8d307-107">No Olá **ligações VPN de Site para site** painel, ver Olá informações sobre o seu site.</span><span class="sxs-lookup"><span data-stu-id="8d307-107">On hello **Site-to-site VPN connections** blade, view hello information about your site.</span></span>
 
-    ![Connection status](./media/vpn-gateway-verify-connection-azureportal-classic/siteconnectstatus.png "Connection status")
-5. tooview mais informações sobre a ligação de Olá, clique no nome de Olá de Olá do Olá ligação tooopen **ligação de VPN de Site para site** painel.
+    <span data-ttu-id="8d307-108">![Connection status](./media/vpn-gateway-verify-connection-azureportal-classic/siteconnectstatus.png "Connection status")</span><span class="sxs-lookup"><span data-stu-id="8d307-108">![Connection status](./media/vpn-gateway-verify-connection-azureportal-classic/siteconnectstatus.png "Connection status")</span></span>
+5. <span data-ttu-id="8d307-109">tooview mais informações sobre a ligação de Olá, clique no nome de Olá de Olá do Olá ligação tooopen **ligação de VPN de Site para site** painel.</span><span class="sxs-lookup"><span data-stu-id="8d307-109">tooview more information about hello connection, click hello name of hello connection tooopen hello **Site-to-site VPN Connection** blade.</span></span>
 
-    ![Connection status more](./media/vpn-gateway-verify-connection-azureportal-classic/connections4.png "Connection status more info")
+    <span data-ttu-id="8d307-110">![Connection status more](./media/vpn-gateway-verify-connection-azureportal-classic/connections4.png "Connection status more info")</span><span class="sxs-lookup"><span data-stu-id="8d307-110">![Connection status more](./media/vpn-gateway-verify-connection-azureportal-classic/connections4.png "Connection status more info")</span></span>

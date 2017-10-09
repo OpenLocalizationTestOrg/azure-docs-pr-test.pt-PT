@@ -1,18 +1,18 @@
-| Recurso | Limite predefinido | Nota |
+| <span data-ttu-id="17c10-101">Recurso</span><span class="sxs-lookup"><span data-stu-id="17c10-101">Resource</span></span> | <span data-ttu-id="17c10-102">Limite predefinido</span><span class="sxs-lookup"><span data-stu-id="17c10-102">Default limit</span></span> | <span data-ttu-id="17c10-103">Nota</span><span class="sxs-lookup"><span data-stu-id="17c10-103">Note</span></span> |
 | --- | --- | --- |
-| Gateway de Aplicação |50 por subscrição | |
-| Configurações IP de Front-end |2 |1 pública e 1 privada |
-| Portas de Front-end |20 | |
-| Conjuntos de Endereços de Back-end |20 | |
-| Servidores de Back-end por conjunto |100 | |
-| Serviços de Escuta HTTP |20 | |
-| Regras de balanceamento de carga HTTP |200 |n. º de serviços de escuta de HTTP * n, n = predefinição 10 |
-| Definições de HTTP de back-end |20 |1 por Conjunto de Endereços de Back-end |
-| Instâncias por gateway |10 | |
-| Certificados SSL |20 |1 por Serviço de Escuta HTTP |
-| Certificados de autenticação |5 | 10 no máximo |
-| Tempo limite mínimo do pedido |1 segundo | |
-| Tempo limite máximo do pedido |24 hrs | |
-| Número de sites |20 |1 por Serviço de Escuta HTTP |
-| Mapas de URL por serviço de escuta |1 | |
+| <span data-ttu-id="17c10-104">Gateway de Aplicação</span><span class="sxs-lookup"><span data-stu-id="17c10-104">Application Gateway</span></span> |<span data-ttu-id="17c10-105">50 por subscrição</span><span class="sxs-lookup"><span data-stu-id="17c10-105">50 per subscription</span></span> | |
+| <span data-ttu-id="17c10-106">Configurações IP de Front-end</span><span class="sxs-lookup"><span data-stu-id="17c10-106">Frontend IP Configurations</span></span> |<span data-ttu-id="17c10-107">2</span><span class="sxs-lookup"><span data-stu-id="17c10-107">2</span></span> |<span data-ttu-id="17c10-108">1 pública e 1 privada</span><span class="sxs-lookup"><span data-stu-id="17c10-108">1 public and 1 private</span></span> |
+| <span data-ttu-id="17c10-109">Portas de Front-end</span><span class="sxs-lookup"><span data-stu-id="17c10-109">Frontend Ports</span></span> |<span data-ttu-id="17c10-110">20</span><span class="sxs-lookup"><span data-stu-id="17c10-110">20</span></span> | |
+| <span data-ttu-id="17c10-111">Conjuntos de Endereços de Back-end</span><span class="sxs-lookup"><span data-stu-id="17c10-111">Backend Address Pools</span></span> |<span data-ttu-id="17c10-112">20</span><span class="sxs-lookup"><span data-stu-id="17c10-112">20</span></span> | |
+| <span data-ttu-id="17c10-113">Servidores de Back-end por conjunto</span><span class="sxs-lookup"><span data-stu-id="17c10-113">Backend Servers per pool</span></span> |<span data-ttu-id="17c10-114">100</span><span class="sxs-lookup"><span data-stu-id="17c10-114">100</span></span> | |
+| <span data-ttu-id="17c10-115">Serviços de Escuta HTTP</span><span class="sxs-lookup"><span data-stu-id="17c10-115">HTTP Listeners</span></span> |<span data-ttu-id="17c10-116">20</span><span class="sxs-lookup"><span data-stu-id="17c10-116">20</span></span> | |
+| <span data-ttu-id="17c10-117">Regras de balanceamento de carga HTTP</span><span class="sxs-lookup"><span data-stu-id="17c10-117">HTTP load balancing rules</span></span> |<span data-ttu-id="17c10-118">200</span><span class="sxs-lookup"><span data-stu-id="17c10-118">200</span></span> |<span data-ttu-id="17c10-119">n. º de serviços de escuta de HTTP * n, n = predefinição 10</span><span class="sxs-lookup"><span data-stu-id="17c10-119"># of HTTP Listeners * n, n=10 Default</span></span> |
+| <span data-ttu-id="17c10-120">Definições de HTTP de back-end</span><span class="sxs-lookup"><span data-stu-id="17c10-120">Backend HTTP settings</span></span> |<span data-ttu-id="17c10-121">20</span><span class="sxs-lookup"><span data-stu-id="17c10-121">20</span></span> |<span data-ttu-id="17c10-122">1 por Conjunto de Endereços de Back-end</span><span class="sxs-lookup"><span data-stu-id="17c10-122">1 per Backend Address Pool</span></span> |
+| <span data-ttu-id="17c10-123">Instâncias por gateway</span><span class="sxs-lookup"><span data-stu-id="17c10-123">Instances per gateway</span></span> |<span data-ttu-id="17c10-124">10</span><span class="sxs-lookup"><span data-stu-id="17c10-124">10</span></span> | |
+| <span data-ttu-id="17c10-125">Certificados SSL</span><span class="sxs-lookup"><span data-stu-id="17c10-125">SSL certificates</span></span> |<span data-ttu-id="17c10-126">20</span><span class="sxs-lookup"><span data-stu-id="17c10-126">20</span></span> |<span data-ttu-id="17c10-127">1 por Serviço de Escuta HTTP</span><span class="sxs-lookup"><span data-stu-id="17c10-127">1 per HTTP Listeners</span></span> |
+| <span data-ttu-id="17c10-128">Certificados de autenticação</span><span class="sxs-lookup"><span data-stu-id="17c10-128">Authentication certificates</span></span> |<span data-ttu-id="17c10-129">5</span><span class="sxs-lookup"><span data-stu-id="17c10-129">5</span></span> | <span data-ttu-id="17c10-130">10 no máximo</span><span class="sxs-lookup"><span data-stu-id="17c10-130">Maximum 10</span></span> |
+| <span data-ttu-id="17c10-131">Tempo limite mínimo do pedido</span><span class="sxs-lookup"><span data-stu-id="17c10-131">Request timeout min</span></span> |<span data-ttu-id="17c10-132">1 segundo</span><span class="sxs-lookup"><span data-stu-id="17c10-132">1 second</span></span> | |
+| <span data-ttu-id="17c10-133">Tempo limite máximo do pedido</span><span class="sxs-lookup"><span data-stu-id="17c10-133">Request timeout max</span></span> |<span data-ttu-id="17c10-134">24 hrs</span><span class="sxs-lookup"><span data-stu-id="17c10-134">24hrs</span></span> | |
+| <span data-ttu-id="17c10-135">Número de sites</span><span class="sxs-lookup"><span data-stu-id="17c10-135">Number of sites</span></span> |<span data-ttu-id="17c10-136">20</span><span class="sxs-lookup"><span data-stu-id="17c10-136">20</span></span> |<span data-ttu-id="17c10-137">1 por Serviço de Escuta HTTP</span><span class="sxs-lookup"><span data-stu-id="17c10-137">1 per HTTP Listeners</span></span> |
+| <span data-ttu-id="17c10-138">Mapas de URL por serviço de escuta</span><span class="sxs-lookup"><span data-stu-id="17c10-138">URL Maps per listener</span></span> |<span data-ttu-id="17c10-139">1</span><span class="sxs-lookup"><span data-stu-id="17c10-139">1</span></span> | |
 

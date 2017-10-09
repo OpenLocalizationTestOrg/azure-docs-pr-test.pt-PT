@@ -1,16 +1,16 @@
-### <a name="prerequisites"></a>Pré-requisitos
-* A [Facebook](https://www.facebook.com/) conta 
+### <a name="prerequisites"></a><span data-ttu-id="a62dc-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="a62dc-101">Prerequisites</span></span>
+* <span data-ttu-id="a62dc-102">A [Facebook](https://www.facebook.com/) conta</span><span class="sxs-lookup"><span data-stu-id="a62dc-102">A [Facebook](https://www.facebook.com/) account</span></span> 
 
-Antes de poder utilizar a sua conta do Facebook numa aplicação lógica, tem de autorizar conta Facebook da tooyour tooconnect Olá lógica aplicação. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure. 
+<span data-ttu-id="a62dc-103">Antes de poder utilizar a sua conta do Facebook numa aplicação lógica, tem de autorizar conta Facebook da tooyour tooconnect Olá lógica aplicação.</span><span class="sxs-lookup"><span data-stu-id="a62dc-103">Before you can use your Facebook account in a Logic app, you must authorize hello Logic app tooconnect tooyour Facebook account.</span></span> <span data-ttu-id="a62dc-104">Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="a62dc-104">Fortunately, you can do this easily from within your Logic app on hello Azure Portal.</span></span> 
 
-Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica Facebook conta:
+<span data-ttu-id="a62dc-105">Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica Facebook conta:</span><span class="sxs-lookup"><span data-stu-id="a62dc-105">Here are hello steps tooauthorize your Logic app tooconnect tooyour Facebook account:</span></span>
 
-1. toocreate tooFacebook uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Facebook* na caixa de pesquisa de Olá. Selecione o acionador de Olá ou ação que irá gostar toouse:  
-   ![passo 1 da Facebook](./media/connectors-create-api-facebook/facebook-1.png)
-2. Se ainda não criou quaisquer tooFacebook ligações antes, obterá tooprovide pedido as suas credenciais do Facebook. Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta Facebook:  
+1. <span data-ttu-id="a62dc-106">toocreate tooFacebook uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Facebook* na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="a62dc-106">toocreate a connection tooFacebook, in hello Logic app designer, select **Show Microsoft managed APIs** in hello drop down list then enter *Facebook* in hello search box.</span></span> <span data-ttu-id="a62dc-107">Selecione o acionador de Olá ou ação que irá gostar toouse:</span><span class="sxs-lookup"><span data-stu-id="a62dc-107">Select hello trigger or action you'll like toouse:</span></span>  
+   <span data-ttu-id="a62dc-108">![passo 1 da Facebook](./media/connectors-create-api-facebook/facebook-1.png)</span><span class="sxs-lookup"><span data-stu-id="a62dc-108">![facebook step 1](./media/connectors-create-api-facebook/facebook-1.png)</span></span>
+2. <span data-ttu-id="a62dc-109">Se ainda não criou quaisquer tooFacebook ligações antes, obterá tooprovide pedido as suas credenciais do Facebook.</span><span class="sxs-lookup"><span data-stu-id="a62dc-109">If you haven't created any connections tooFacebook before, you'll get prompted tooprovide your Facebook credentials.</span></span> <span data-ttu-id="a62dc-110">Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta Facebook:</span><span class="sxs-lookup"><span data-stu-id="a62dc-110">These credentials will be used tooauthorize your Logic app tooconnect to, and access your Facebook account's data:</span></span>  
    ![passo 2 da Facebook](./media/connectors-create-api-facebook/facebook-2.png)
-3. Fornece o tooauthorize de nome e palavra-passe de utilizador do Facebook a sua aplicação lógica:  
+3. <span data-ttu-id="a62dc-112">Fornece o tooauthorize de nome e palavra-passe de utilizador do Facebook a sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="a62dc-112">Provide your Facebook user name and password tooauthorize your Logic app:</span></span>  
    ![passo 3 da Facebook](./media/connectors-create-api-facebook/facebook-3.png)   
-4. Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:  
+4. <span data-ttu-id="a62dc-114">Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="a62dc-114">Notice hello connection has been created and you are now free tooproceed with hello other steps in your Logic app:</span></span>  
    ![passo 4 da Facebook](./media/connectors-create-api-facebook/facebook-4.png)   
 

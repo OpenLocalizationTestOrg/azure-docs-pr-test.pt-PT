@@ -1,6 +1,6 @@
 > [!div class="op_single_selector"]
-> * [Cluster do Linux](../articles/hdinsight/hdinsight-use-oozie-linux-mac.md)
-> * [Cluster do Windows](../articles/hdinsight/hdinsight-use-oozie.md)
+> * [<span data-ttu-id="c8418-101">Cluster do Linux</span><span class="sxs-lookup"><span data-stu-id="c8418-101">Linux cluster</span></span>](../articles/hdinsight/hdinsight-use-oozie-linux-mac.md)
+> * [<span data-ttu-id="c8418-102">Cluster do Windows</span><span class="sxs-lookup"><span data-stu-id="c8418-102">Windows cluster</span></span>](../articles/hdinsight/hdinsight-use-oozie.md)
 > 
 > 
 

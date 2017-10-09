@@ -1,27 +1,27 @@
-#### <a name="expressroute-limits"></a>Limites do ExpressRoute
-Olá seguintes limites aplica tooExpressRoute recursos por subscrição.
+#### <a name="expressroute-limits"></a><span data-ttu-id="a2dc9-101">Limites do ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="a2dc9-101">ExpressRoute Limits</span></span>
+<span data-ttu-id="a2dc9-102">Olá seguintes limites aplica tooExpressRoute recursos por subscrição.</span><span class="sxs-lookup"><span data-stu-id="a2dc9-102">hello following limits apply tooExpressRoute resources per subscription.</span></span>
 
-| Recurso | Limite Predefinido |
+| <span data-ttu-id="a2dc9-103">Recurso</span><span class="sxs-lookup"><span data-stu-id="a2dc9-103">Resource</span></span> | <span data-ttu-id="a2dc9-104">Limite Predefinido</span><span class="sxs-lookup"><span data-stu-id="a2dc9-104">Default Limit</span></span> |
 | --- | --- |
-| Circuitos ExpressRoute por subscrição |10 |
-| Circuitos ExpressRoute por região por subscrição para ARM |10 |
-| Número máximo de rotas para o peering privado do Azure com o ExpressRoute standard |4,000 |
-| Número máximo de rotas para o peering privado do Azure com o suplemento ExpressRoute premium |10,000 |
-| Número máximo de rotas para o peering público do Azure com o ExpressRoute standard |200 |
-| Número máximo de rotas para o peering público do Azure com o suplemento ExpressRoute premium |200 |
-| Número máximo de rotas para peering da Microsoft do Azure com o ExpressRoute standard |200 |
-| Número máximo de rotas para peering com o suplemento ExpressRoute premium da Microsoft Azure |200 |
-| Número de ligações de rede virtual permitidos por circuito do ExpressRoute |Consulte a tabela abaixo |
+| <span data-ttu-id="a2dc9-105">Circuitos ExpressRoute por subscrição</span><span class="sxs-lookup"><span data-stu-id="a2dc9-105">ExpressRoute circuits per subscription</span></span> |<span data-ttu-id="a2dc9-106">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-106">10</span></span> |
+| <span data-ttu-id="a2dc9-107">Circuitos ExpressRoute por região por subscrição para ARM</span><span class="sxs-lookup"><span data-stu-id="a2dc9-107">ExpressRoute circuits per region per subscription for ARM</span></span> |<span data-ttu-id="a2dc9-108">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-108">10</span></span> |
+| <span data-ttu-id="a2dc9-109">Número máximo de rotas para o peering privado do Azure com o ExpressRoute standard</span><span class="sxs-lookup"><span data-stu-id="a2dc9-109">Maximum number of routes for Azure private peering with ExpressRoute standard</span></span> |<span data-ttu-id="a2dc9-110">4,000</span><span class="sxs-lookup"><span data-stu-id="a2dc9-110">4,000</span></span> |
+| <span data-ttu-id="a2dc9-111">Número máximo de rotas para o peering privado do Azure com o suplemento ExpressRoute premium</span><span class="sxs-lookup"><span data-stu-id="a2dc9-111">Maximum number of routes for Azure private peering with ExpressRoute premium add-on</span></span> |<span data-ttu-id="a2dc9-112">10,000</span><span class="sxs-lookup"><span data-stu-id="a2dc9-112">10,000</span></span> |
+| <span data-ttu-id="a2dc9-113">Número máximo de rotas para o peering público do Azure com o ExpressRoute standard</span><span class="sxs-lookup"><span data-stu-id="a2dc9-113">Maximum number of routes for Azure public peering with ExpressRoute standard</span></span> |<span data-ttu-id="a2dc9-114">200</span><span class="sxs-lookup"><span data-stu-id="a2dc9-114">200</span></span> |
+| <span data-ttu-id="a2dc9-115">Número máximo de rotas para o peering público do Azure com o suplemento ExpressRoute premium</span><span class="sxs-lookup"><span data-stu-id="a2dc9-115">Maximum number of routes for Azure public peering with ExpressRoute premium add-on</span></span> |<span data-ttu-id="a2dc9-116">200</span><span class="sxs-lookup"><span data-stu-id="a2dc9-116">200</span></span> |
+| <span data-ttu-id="a2dc9-117">Número máximo de rotas para peering da Microsoft do Azure com o ExpressRoute standard</span><span class="sxs-lookup"><span data-stu-id="a2dc9-117">Maximum number of routes for Azure Microsoft peering with ExpressRoute standard</span></span> |<span data-ttu-id="a2dc9-118">200</span><span class="sxs-lookup"><span data-stu-id="a2dc9-118">200</span></span> |
+| <span data-ttu-id="a2dc9-119">Número máximo de rotas para peering com o suplemento ExpressRoute premium da Microsoft Azure</span><span class="sxs-lookup"><span data-stu-id="a2dc9-119">Maximum number of routes for Azure Microsoft peering with ExpressRoute premium add-on</span></span> |<span data-ttu-id="a2dc9-120">200</span><span class="sxs-lookup"><span data-stu-id="a2dc9-120">200</span></span> |
+| <span data-ttu-id="a2dc9-121">Número de ligações de rede virtual permitidos por circuito do ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="a2dc9-121">Number of virtual network links allowed per ExpressRoute circuit</span></span> |<span data-ttu-id="a2dc9-122">Consulte a tabela abaixo</span><span class="sxs-lookup"><span data-stu-id="a2dc9-122">see table below</span></span> |
 
-#### <a name="number-of-virtual-networks-per-expressroute-circuit"></a>Número de redes virtuais por circuito do ExpressRoute
-| **Tamanho do circuito** | **Número de ligações VNet para standard** | **Número de ligações VNet com o suplemento Premium** |
+#### <a name="number-of-virtual-networks-per-expressroute-circuit"></a><span data-ttu-id="a2dc9-123">Número de redes virtuais por circuito do ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="a2dc9-123">Number of Virtual Networks per ExpressRoute circuit</span></span>
+| <span data-ttu-id="a2dc9-124">**Tamanho do circuito**</span><span class="sxs-lookup"><span data-stu-id="a2dc9-124">**Circuit Size**</span></span> | <span data-ttu-id="a2dc9-125">**Número de ligações VNet para standard**</span><span class="sxs-lookup"><span data-stu-id="a2dc9-125">**Number of VNet links for standard**</span></span> | <span data-ttu-id="a2dc9-126">**Número de ligações VNet com o suplemento Premium**</span><span class="sxs-lookup"><span data-stu-id="a2dc9-126">**Number of VNet Links with Premium add-on**</span></span> |
 | --- | --- | --- |
-| 50 Mbps |10 |20 |
-| 100 Mbps |10 |25 |
-| 200 Mbps |10 |25 |
-| 500 Mbps |10 |40 |
-| 1 Gbps |10 |50 |
-| 2 Gbps |10 |60 |
-| 5 Gbps |10 |75 |
-| 10 Gbps |10 |100 |
+| <span data-ttu-id="a2dc9-127">50 Mbps</span><span class="sxs-lookup"><span data-stu-id="a2dc9-127">50 Mbps</span></span> |<span data-ttu-id="a2dc9-128">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-128">10</span></span> |<span data-ttu-id="a2dc9-129">20</span><span class="sxs-lookup"><span data-stu-id="a2dc9-129">20</span></span> |
+| <span data-ttu-id="a2dc9-130">100 Mbps</span><span class="sxs-lookup"><span data-stu-id="a2dc9-130">100 Mbps</span></span> |<span data-ttu-id="a2dc9-131">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-131">10</span></span> |<span data-ttu-id="a2dc9-132">25</span><span class="sxs-lookup"><span data-stu-id="a2dc9-132">25</span></span> |
+| <span data-ttu-id="a2dc9-133">200 Mbps</span><span class="sxs-lookup"><span data-stu-id="a2dc9-133">200 Mbps</span></span> |<span data-ttu-id="a2dc9-134">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-134">10</span></span> |<span data-ttu-id="a2dc9-135">25</span><span class="sxs-lookup"><span data-stu-id="a2dc9-135">25</span></span> |
+| <span data-ttu-id="a2dc9-136">500 Mbps</span><span class="sxs-lookup"><span data-stu-id="a2dc9-136">500 Mbps</span></span> |<span data-ttu-id="a2dc9-137">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-137">10</span></span> |<span data-ttu-id="a2dc9-138">40</span><span class="sxs-lookup"><span data-stu-id="a2dc9-138">40</span></span> |
+| <span data-ttu-id="a2dc9-139">1 Gbps</span><span class="sxs-lookup"><span data-stu-id="a2dc9-139">1 Gbps</span></span> |<span data-ttu-id="a2dc9-140">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-140">10</span></span> |<span data-ttu-id="a2dc9-141">50</span><span class="sxs-lookup"><span data-stu-id="a2dc9-141">50</span></span> |
+| <span data-ttu-id="a2dc9-142">2 Gbps</span><span class="sxs-lookup"><span data-stu-id="a2dc9-142">2 Gbps</span></span> |<span data-ttu-id="a2dc9-143">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-143">10</span></span> |<span data-ttu-id="a2dc9-144">60</span><span class="sxs-lookup"><span data-stu-id="a2dc9-144">60</span></span> |
+| <span data-ttu-id="a2dc9-145">5 Gbps</span><span class="sxs-lookup"><span data-stu-id="a2dc9-145">5 Gbps</span></span> |<span data-ttu-id="a2dc9-146">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-146">10</span></span> |<span data-ttu-id="a2dc9-147">75</span><span class="sxs-lookup"><span data-stu-id="a2dc9-147">75</span></span> |
+| <span data-ttu-id="a2dc9-148">10 Gbps</span><span class="sxs-lookup"><span data-stu-id="a2dc9-148">10 Gbps</span></span> |<span data-ttu-id="a2dc9-149">10</span><span class="sxs-lookup"><span data-stu-id="a2dc9-149">10</span></span> |<span data-ttu-id="a2dc9-150">100</span><span class="sxs-lookup"><span data-stu-id="a2dc9-150">100</span></span> |
 

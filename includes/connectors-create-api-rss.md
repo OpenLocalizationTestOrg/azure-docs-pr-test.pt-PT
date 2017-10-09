@@ -1,14 +1,14 @@
-### <a name="prerequisites"></a>Pré-requisitos
-* Um [RSS](https://wikipedia.org/wiki/RSS) conta  
+### <a name="prerequisites"></a><span data-ttu-id="f9325-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="f9325-101">Prerequisites</span></span>
+* <span data-ttu-id="f9325-102">Um [RSS](https://wikipedia.org/wiki/RSS) conta</span><span class="sxs-lookup"><span data-stu-id="f9325-102">An [RSS](https://wikipedia.org/wiki/RSS) account</span></span>  
 
-Antes de poder utilizar a conta RSS numa aplicação lógica, deve autorizar a conta da Olá lógica aplicação tooconnect tooyour RSS. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.  
+<span data-ttu-id="f9325-103">Antes de poder utilizar a conta RSS numa aplicação lógica, deve autorizar a conta da Olá lógica aplicação tooconnect tooyour RSS. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="f9325-103">Before you can use your RSS account in a Logic app, you must authorize hello Logic app tooconnect tooyour RSS account.Fortunately, you can do this easily from within your Logic app on hello Azure Portal.</span></span>  
 
-Seguem-se Olá passos tooauthorize sua conta RSS tooyour de tooconnect de aplicação de lógica:  
+<span data-ttu-id="f9325-104">Seguem-se Olá passos tooauthorize sua conta RSS tooyour de tooconnect de aplicação de lógica:</span><span class="sxs-lookup"><span data-stu-id="f9325-104">Here are hello steps tooauthorize your Logic app tooconnect tooyour RSS account:</span></span>  
 
-1. toocreate tooRSS uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *RSS* na caixa de pesquisa de Olá. Selecione o acionador de Olá ou ação que irá gostar toouse:  
-   ![Passo de criação de ligação de RSS](./media/connectors-create-api-rss/rss-1.png)  
-2. Selecione **criar ligação** :  
-   ![Passo de criação de ligação de RSS](./media/connectors-create-api-rss/rss-2.png)  
-3. Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:  
+1. <span data-ttu-id="f9325-105">toocreate tooRSS uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *RSS* na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="f9325-105">toocreate a connection tooRSS, in hello Logic app designer, select **Show Microsoft managed APIs** in hello drop down list then enter *RSS* in hello search box.</span></span> <span data-ttu-id="f9325-106">Selecione o acionador de Olá ou ação que irá gostar toouse:</span><span class="sxs-lookup"><span data-stu-id="f9325-106">Select hello trigger or action you'll like toouse:</span></span>  
+   <span data-ttu-id="f9325-107">![Passo de criação de ligação de RSS](./media/connectors-create-api-rss/rss-1.png)</span><span class="sxs-lookup"><span data-stu-id="f9325-107">![RSS connection creation step](./media/connectors-create-api-rss/rss-1.png)</span></span>  
+2. <span data-ttu-id="f9325-108">Selecione **criar ligação** :</span><span class="sxs-lookup"><span data-stu-id="f9325-108">Select **Create connection** :</span></span>  
+   <span data-ttu-id="f9325-109">![Passo de criação de ligação de RSS](./media/connectors-create-api-rss/rss-2.png)</span><span class="sxs-lookup"><span data-stu-id="f9325-109">![RSS connection creation step](./media/connectors-create-api-rss/rss-2.png)</span></span>  
+3. <span data-ttu-id="f9325-110">Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="f9325-110">Notice hello connection has been created and you are now free tooproceed with hello other steps in your Logic app:</span></span>  
    ![Passo de criação de ligação de RSS](./media/connectors-create-api-rss/rss-3.png)  
 

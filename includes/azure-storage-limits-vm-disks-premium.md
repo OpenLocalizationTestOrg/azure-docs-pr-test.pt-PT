@@ -1,28 +1,28 @@
-**Discos da máquina virtual não geridos premium: por limites de conta**
+<span data-ttu-id="5a2d0-101">**Discos da máquina virtual não geridos premium: por limites de conta**</span><span class="sxs-lookup"><span data-stu-id="5a2d0-101">**Premium unmanaged virtual machine disks: per account limits**</span></span>
 
-| Recurso | Limite Predefinido |
+| <span data-ttu-id="5a2d0-102">Recurso</span><span class="sxs-lookup"><span data-stu-id="5a2d0-102">Resource</span></span> | <span data-ttu-id="5a2d0-103">Limite Predefinido</span><span class="sxs-lookup"><span data-stu-id="5a2d0-103">Default Limit</span></span> |
 | --- | --- |
-| Capacidade total do disco por conta |35 TB |
-| Capacidade total do instantâneo por conta |10 TB |
-| Largura de banda máxima por conta (entrada + saída<sup>1</sup>) |<=50 Gbps |
+| <span data-ttu-id="5a2d0-104">Capacidade total do disco por conta</span><span class="sxs-lookup"><span data-stu-id="5a2d0-104">Total disk capacity per account</span></span> |<span data-ttu-id="5a2d0-105">35 TB</span><span class="sxs-lookup"><span data-stu-id="5a2d0-105">35 TB</span></span> |
+| <span data-ttu-id="5a2d0-106">Capacidade total do instantâneo por conta</span><span class="sxs-lookup"><span data-stu-id="5a2d0-106">Total snapshot capacity per account</span></span> |<span data-ttu-id="5a2d0-107">10 TB</span><span class="sxs-lookup"><span data-stu-id="5a2d0-107">10 TB</span></span> |
+| <span data-ttu-id="5a2d0-108">Largura de banda máxima por conta (entrada + saída<sup>1</sup>)</span><span class="sxs-lookup"><span data-stu-id="5a2d0-108">Max bandwidth per account (ingress + egress<sup>1</sup>)</span></span> |<span data-ttu-id="5a2d0-109"><=50 Gbps</span><span class="sxs-lookup"><span data-stu-id="5a2d0-109"><=50 Gbps</span></span> |
 
-<sup>1</sup>*entrada* refere-se os dados de tooall (pedidos) que está a ser enviados tooa conta de armazenamento. *Saída* refere-se os dados de tooall (respostas) que está a ser recebidos de uma conta de armazenamento.
+<span data-ttu-id="5a2d0-110"><sup>1</sup>*entrada* refere-se os dados de tooall (pedidos) que está a ser enviados tooa conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="5a2d0-110"><sup>1</sup>*Ingress* refers tooall data (requests) being sent tooa storage account.</span></span> <span data-ttu-id="5a2d0-111">*Saída* refere-se os dados de tooall (respostas) que está a ser recebidos de uma conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="5a2d0-111">*Egress* refers tooall data (responses) being received from a storage account.</span></span>
 
-**Discos da máquina virtual não geridos premium: por limites de disco**
+<span data-ttu-id="5a2d0-112">**Discos da máquina virtual não geridos premium: por limites de disco**</span><span class="sxs-lookup"><span data-stu-id="5a2d0-112">**Premium unmanaged virtual machine disks: per disk limits**</span></span>
 
-| Tipo de Disco de Armazenamento Premium | P10 | P20 | P30 | P40 | P50 |
+| <span data-ttu-id="5a2d0-113">Tipo de Disco de Armazenamento Premium</span><span class="sxs-lookup"><span data-stu-id="5a2d0-113">Premium Storage Disk Type</span></span> | <span data-ttu-id="5a2d0-114">P10</span><span class="sxs-lookup"><span data-stu-id="5a2d0-114">P10</span></span> | <span data-ttu-id="5a2d0-115">P20</span><span class="sxs-lookup"><span data-stu-id="5a2d0-115">P20</span></span> | <span data-ttu-id="5a2d0-116">P30</span><span class="sxs-lookup"><span data-stu-id="5a2d0-116">P30</span></span> | <span data-ttu-id="5a2d0-117">P40</span><span class="sxs-lookup"><span data-stu-id="5a2d0-117">P40</span></span> | <span data-ttu-id="5a2d0-118">P50</span><span class="sxs-lookup"><span data-stu-id="5a2d0-118">P50</span></span> |
 | --- | --- | --- | --- | --- | --- |
-| Tamanho do disco |128 GiB |512 GiB |1024 GiB (1 TB) |2048 giB (2 TB)|4095 giB (4 TB)|
-| IOPs Máx por disco |500 |2300 |5000 |7500 |7500 |
-| Débito máx por disco |100 MB/s | 150 MB/s |200 MB/s |250 MB/s |250 MB/s |
-| Número máx. de discos por conta de armazenamento |280 |70 |35 | 17 | 8 |
+| <span data-ttu-id="5a2d0-119">Tamanho do disco</span><span class="sxs-lookup"><span data-stu-id="5a2d0-119">Disk size</span></span> |<span data-ttu-id="5a2d0-120">128 GiB</span><span class="sxs-lookup"><span data-stu-id="5a2d0-120">128 GiB</span></span> |<span data-ttu-id="5a2d0-121">512 GiB</span><span class="sxs-lookup"><span data-stu-id="5a2d0-121">512 GiB</span></span> |<span data-ttu-id="5a2d0-122">1024 GiB (1 TB)</span><span class="sxs-lookup"><span data-stu-id="5a2d0-122">1024 GiB (1 TB)</span></span> |<span data-ttu-id="5a2d0-123">2048 giB (2 TB)</span><span class="sxs-lookup"><span data-stu-id="5a2d0-123">2048 GiB (2 TB)</span></span>|<span data-ttu-id="5a2d0-124">4095 giB (4 TB)</span><span class="sxs-lookup"><span data-stu-id="5a2d0-124">4095 GiB (4 TB)</span></span>|
+| <span data-ttu-id="5a2d0-125">IOPs Máx por disco</span><span class="sxs-lookup"><span data-stu-id="5a2d0-125">Max IOPS per disk</span></span> |<span data-ttu-id="5a2d0-126">500</span><span class="sxs-lookup"><span data-stu-id="5a2d0-126">500</span></span> |<span data-ttu-id="5a2d0-127">2300</span><span class="sxs-lookup"><span data-stu-id="5a2d0-127">2300</span></span> |<span data-ttu-id="5a2d0-128">5000</span><span class="sxs-lookup"><span data-stu-id="5a2d0-128">5000</span></span> |<span data-ttu-id="5a2d0-129">7500</span><span class="sxs-lookup"><span data-stu-id="5a2d0-129">7500</span></span> |<span data-ttu-id="5a2d0-130">7500</span><span class="sxs-lookup"><span data-stu-id="5a2d0-130">7500</span></span> |
+| <span data-ttu-id="5a2d0-131">Débito máx por disco</span><span class="sxs-lookup"><span data-stu-id="5a2d0-131">Max throughput per disk</span></span> |<span data-ttu-id="5a2d0-132">100 MB/s</span><span class="sxs-lookup"><span data-stu-id="5a2d0-132">100 MB/s</span></span> | <span data-ttu-id="5a2d0-133">150 MB/s</span><span class="sxs-lookup"><span data-stu-id="5a2d0-133">150 MB/s</span></span> |<span data-ttu-id="5a2d0-134">200 MB/s</span><span class="sxs-lookup"><span data-stu-id="5a2d0-134">200 MB/s</span></span> |<span data-ttu-id="5a2d0-135">250 MB/s</span><span class="sxs-lookup"><span data-stu-id="5a2d0-135">250 MB/s</span></span> |<span data-ttu-id="5a2d0-136">250 MB/s</span><span class="sxs-lookup"><span data-stu-id="5a2d0-136">250 MB/s</span></span> |
+| <span data-ttu-id="5a2d0-137">Número máx. de discos por conta de armazenamento</span><span class="sxs-lookup"><span data-stu-id="5a2d0-137">Max number of disks per storage account</span></span> |<span data-ttu-id="5a2d0-138">280</span><span class="sxs-lookup"><span data-stu-id="5a2d0-138">280</span></span> |<span data-ttu-id="5a2d0-139">70</span><span class="sxs-lookup"><span data-stu-id="5a2d0-139">70</span></span> |<span data-ttu-id="5a2d0-140">35</span><span class="sxs-lookup"><span data-stu-id="5a2d0-140">35</span></span> | <span data-ttu-id="5a2d0-141">17</span><span class="sxs-lookup"><span data-stu-id="5a2d0-141">17</span></span> | <span data-ttu-id="5a2d0-142">8</span><span class="sxs-lookup"><span data-stu-id="5a2d0-142">8</span></span> |
 
-**Discos da máquina virtual não geridos premium: por limites de VM**
+<span data-ttu-id="5a2d0-143">**Discos da máquina virtual não geridos premium: por limites de VM**</span><span class="sxs-lookup"><span data-stu-id="5a2d0-143">**Premium unmanaged virtual machine disks: per VM limits**</span></span>
 
-| Recurso | Limite Predefinido |
+| <span data-ttu-id="5a2d0-144">Recurso</span><span class="sxs-lookup"><span data-stu-id="5a2d0-144">Resource</span></span> | <span data-ttu-id="5a2d0-145">Limite Predefinido</span><span class="sxs-lookup"><span data-stu-id="5a2d0-145">Default Limit</span></span> |
 | --- | --- |
-| IOPs Máx Por VM |80.000 IOPS com GS5 VM<sup>1</sup> |
-| Débito máx por VM |2.000 MB/s com GS5 VM<sup>1</sup> |
+| <span data-ttu-id="5a2d0-146">IOPs Máx Por VM</span><span class="sxs-lookup"><span data-stu-id="5a2d0-146">Max IOPS Per VM</span></span> |<span data-ttu-id="5a2d0-147">80.000 IOPS com GS5 VM<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="5a2d0-147">80,000 IOPS with GS5 VM<sup>1</sup></span></span> |
+| <span data-ttu-id="5a2d0-148">Débito máx por VM</span><span class="sxs-lookup"><span data-stu-id="5a2d0-148">Max throughput per VM</span></span> |<span data-ttu-id="5a2d0-149">2.000 MB/s com GS5 VM<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="5a2d0-149">2,000 MB/s with GS5 VM<sup>1</sup></span></span> |
 
-<sup>1</sup>Consulte demasiado[tamanho da VM](../articles/virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para limites de outros tamanhos de VM. 
+<span data-ttu-id="5a2d0-150"><sup>1</sup>Consulte demasiado[tamanho da VM](../articles/virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para limites de outros tamanhos de VM.</span><span class="sxs-lookup"><span data-stu-id="5a2d0-150"><sup>1</sup>Refer too[VM Size](../articles/virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) for limits on other VM sizes.</span></span> 
 

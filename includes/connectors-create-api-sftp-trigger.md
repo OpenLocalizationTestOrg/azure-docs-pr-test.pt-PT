@@ -1,18 +1,18 @@
-Vamos adicionar um acionador.
+<span data-ttu-id="834a1-101">Vamos adicionar um acionador.</span><span class="sxs-lookup"><span data-stu-id="834a1-101">Let's add a trigger.</span></span>
 
-1. Introduza *sftp* na caixa de pesquisa de Olá no designer de aplicações de lógica de Olá, em seguida, selecione Olá **SFTP - quando um ficheiro é adicionado ou modificado** acionador   
-   ![Imagem de Acionador SFTP 1](./media/connectors-create-api-sftp/trigger-1.png)  
-2. Olá **quando um ficheiro é adicionado ou modificado** controlo abre-se  
-   ![Imagem de Acionador SFTP 2](./media/connectors-create-api-sftp/trigger-2.png)  
-3. Selecione Olá **...**  localizado no lado direito de Olá do controlo de Olá. Esta ação abre controlo de selecionador de pasta Olá  
-   ![Imagem de Acionador SFTP 3](./media/connectors-create-api-sftp/action-1.png)  
-4. Selecione Olá **SFTP** tooselect Olá a pasta raiz como Olá toomonitor de pasta para os ficheiros novos ou modificados. Pasta de raiz do aviso Olá é apresentada no Olá **pasta** controlo.  
-   ![Imagem de Acionador SFTP 4](./media/connectors-create-api-sftp/action-2.png)   
+1. <span data-ttu-id="834a1-102">Introduza *sftp* na caixa de pesquisa de Olá no designer de aplicações de lógica de Olá, em seguida, selecione Olá **SFTP - quando um ficheiro é adicionado ou modificado** acionador</span><span class="sxs-lookup"><span data-stu-id="834a1-102">Enter *sftp* in hello search box on hello logic apps designer then select hello **SFTP - When a file is added or modified**  trigger</span></span>   
+   <span data-ttu-id="834a1-103">![Imagem de Acionador SFTP 1](./media/connectors-create-api-sftp/trigger-1.png)</span><span class="sxs-lookup"><span data-stu-id="834a1-103">![SFTP trigger image 1](./media/connectors-create-api-sftp/trigger-1.png)</span></span>  
+2. <span data-ttu-id="834a1-104">Olá **quando um ficheiro é adicionado ou modificado** controlo abre-se</span><span class="sxs-lookup"><span data-stu-id="834a1-104">hello **When a file is added or modified** control opens up</span></span>  
+   <span data-ttu-id="834a1-105">![Imagem de Acionador SFTP 2](./media/connectors-create-api-sftp/trigger-2.png)</span><span class="sxs-lookup"><span data-stu-id="834a1-105">![SFTP trigger image 2](./media/connectors-create-api-sftp/trigger-2.png)</span></span>  
+3. <span data-ttu-id="834a1-106">Selecione Olá **...**  localizado no lado direito de Olá do controlo de Olá.</span><span class="sxs-lookup"><span data-stu-id="834a1-106">Select hello **...** located on hello right side of hello control.</span></span> <span data-ttu-id="834a1-107">Esta ação abre controlo de selecionador de pasta Olá</span><span class="sxs-lookup"><span data-stu-id="834a1-107">This opens hello folder picker control</span></span>  
+   <span data-ttu-id="834a1-108">![Imagem de Acionador SFTP 3](./media/connectors-create-api-sftp/action-1.png)</span><span class="sxs-lookup"><span data-stu-id="834a1-108">![SFTP trigger image 3](./media/connectors-create-api-sftp/action-1.png)</span></span>  
+4. <span data-ttu-id="834a1-109">Selecione Olá **SFTP** tooselect Olá a pasta raiz como Olá toomonitor de pasta para os ficheiros novos ou modificados.</span><span class="sxs-lookup"><span data-stu-id="834a1-109">Select hello **SFTP** tooselect hello root folder as hello folder toomonitor for new or modified files.</span></span> <span data-ttu-id="834a1-110">Pasta de raiz do aviso Olá é apresentada no Olá **pasta** controlo.</span><span class="sxs-lookup"><span data-stu-id="834a1-110">Notice hello root folder is now displayed in hello **Folder** control.</span></span>  
+   <span data-ttu-id="834a1-111">![Imagem de Acionador SFTP 4](./media/connectors-create-api-sftp/action-2.png)</span><span class="sxs-lookup"><span data-stu-id="834a1-111">![SFTP trigger image 4](./media/connectors-create-api-sftp/action-2.png)</span></span>   
 
-Neste momento, a aplicação lógica foi configurada com um acionador que começará a execução da Olá outros acionadores e ações no fluxo de trabalho Olá um ficheiro é modificado ou criado na pasta SFTP específica Olá. 
+<span data-ttu-id="834a1-112">Neste momento, a aplicação lógica foi configurada com um acionador que começará a execução da Olá outros acionadores e ações no fluxo de trabalho Olá um ficheiro é modificado ou criado na pasta SFTP específica Olá.</span><span class="sxs-lookup"><span data-stu-id="834a1-112">At this point, your logic app has been configured with a trigger that will begin a run of hello other triggers and actions in hello workflow when a file is either modified or created in hello specific SFTP folder.</span></span> 
 
 > [!NOTE]
-> Para um toobe de aplicação lógica funcional, tem de conter pelo menos um acionador e uma ação. Siga os passos de Olá Olá seguinte secção tooadd uma ação.  
+> <span data-ttu-id="834a1-113">Para um toobe de aplicação lógica funcional, tem de conter pelo menos um acionador e uma ação.</span><span class="sxs-lookup"><span data-stu-id="834a1-113">For a logic app toobe functional, it must contain at least one trigger and one action.</span></span> <span data-ttu-id="834a1-114">Siga os passos de Olá Olá seguinte secção tooadd uma ação.</span><span class="sxs-lookup"><span data-stu-id="834a1-114">Follow hello steps in hello next section tooadd an action.</span></span>  
 > 
 > 
 

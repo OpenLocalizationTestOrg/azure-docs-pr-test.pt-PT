@@ -1,22 +1,22 @@
-Depois de tem propagadas registos Olá para o nome de domínio, tem de associá-las com a sua aplicação Web. Utilize Olá os seguintes passos tooenable Olá os nomes de domínio utilizando o seu browser.
+<span data-ttu-id="d6c9d-101">Depois de tem propagadas registos Olá para o nome de domínio, tem de associá-las com a sua aplicação Web.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-101">After hello records for your domain name have propagated, you must associate them with your Web App.</span></span> <span data-ttu-id="d6c9d-102">Utilize Olá os seguintes passos tooenable Olá os nomes de domínio utilizando o seu browser.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-102">Use hello following steps tooenable hello domain names using your web browser.</span></span>
 
 > [!NOTE]
-> Pode demorar algum tempo para registos TXT criado no Olá toopropagate passos anteriores, através de Olá sistema DNS. Não é possível adicionar o nome de domínio Olá da aplicação web de tooyour até Olá registo TXT tiver sido propagada. Se estiver a utilizar um registo a, não é possível adicionar uma aplicação de web de tooyour de nome de domínio de registos de Olá até que o registo TXT de Olá criado no passo anterior Olá tiver sido propagada.
+> <span data-ttu-id="d6c9d-103">Pode demorar algum tempo para registos TXT criado no Olá toopropagate passos anteriores, através de Olá sistema DNS.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-103">It can take some time for TXT records created in hello previous steps toopropagate through hello DNS system.</span></span> <span data-ttu-id="d6c9d-104">Não é possível adicionar o nome de domínio Olá da aplicação web de tooyour até Olá registo TXT tiver sido propagada.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-104">You cannot add hello domain name of tooyour web app until hello TXT record has propagated.</span></span> <span data-ttu-id="d6c9d-105">Se estiver a utilizar um registo a, não é possível adicionar uma aplicação de web de tooyour de nome de domínio de registos de Olá até que o registo TXT de Olá criado no passo anterior Olá tiver sido propagada.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-105">If you are using an A record, you cannot add hello A record domain name tooyour web app until hello TXT record created in hello previous step has propagated.</span></span>
 > 
-> Pode utilizar um serviço como <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> tooverify Olá registo TXT está disponível.
+> <span data-ttu-id="d6c9d-106">Pode utilizar um serviço como <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> tooverify Olá registo TXT está disponível.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-106">You can use a service such as <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> tooverify that hello TXT record is available.</span></span>
 > 
 > 
 
-1. No seu browser, abra Olá [Portal do Azure](https://portal.azure.com).
-2. No Olá **Web Apps** separador, clique no nome de Olá da sua aplicação web e, em seguida, selecione **domínios personalizados**
+1. <span data-ttu-id="d6c9d-107">No seu browser, abra Olá [Portal do Azure](https://portal.azure.com).</span><span class="sxs-lookup"><span data-stu-id="d6c9d-107">In your browser, open hello [Azure Portal](https://portal.azure.com).</span></span>
+2. <span data-ttu-id="d6c9d-108">No Olá **Web Apps** separador, clique no nome de Olá da sua aplicação web e, em seguida, selecione **domínios personalizados**</span><span class="sxs-lookup"><span data-stu-id="d6c9d-108">In hello **Web Apps** tab, click hello name of your web app, and then select **Custom domains**</span></span>
    
     ![](./media/custom-dns-web-site/dncmntask-cname-6.png)
-3. No Olá **domínios personalizados** painel, clique em **adicionar hostname**.
-4. Olá utilize **Hostname** texto caixas tooenter Olá domínio nomes tooassociate com esta aplicação web.
+3. <span data-ttu-id="d6c9d-109">No Olá **domínios personalizados** painel, clique em **adicionar hostname**.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-109">In hello **Custom domains** blade, click **Add hostname**.</span></span>
+4. <span data-ttu-id="d6c9d-110">Olá utilize **Hostname** texto caixas tooenter Olá domínio nomes tooassociate com esta aplicação web.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-110">Use hello **Hostname** text boxes tooenter hello domain names tooassociate with this web app.</span></span>
    
     ![](./media/custom-dns-web-site/add-custom-domain.png)
-5. Clique em **validar**.
-6. Após clicar em **validar** Azure irá iniciar fluxo de trabalho de verificação de domínio. Isto irá verificar para a propriedade do domínio, bem como de êxito de disponibilidade e o relatório de nome de anfitrião ou de erro detalhadas com guidence prescritiva sobre como toofix Olá erro.    
+5. <span data-ttu-id="d6c9d-111">Clique em **validar**.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-111">Click **Validate**.</span></span>
+6. <span data-ttu-id="d6c9d-112">Após clicar em **validar** Azure irá iniciar fluxo de trabalho de verificação de domínio.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-112">Upon clicking **Validate** Azure will kick off Domain Verification workflow.</span></span> <span data-ttu-id="d6c9d-113">Isto irá verificar para a propriedade do domínio, bem como de êxito de disponibilidade e o relatório de nome de anfitrião ou de erro detalhadas com guidence prescritiva sobre como toofix Olá erro.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-113">This will check for Domain ownership as well as Hostname availability and report success or detailed error with prescriptive guidence on how toofix hello error.</span></span>    
 
-Neste momento, deve ser o nome de domínio personalizado de Olá tooenter consegue no seu browser e ver que com êxito demora a aplicação web de tooyour.
+<span data-ttu-id="d6c9d-114">Neste momento, deve ser o nome de domínio personalizado de Olá tooenter consegue no seu browser e ver que com êxito demora a aplicação web de tooyour.</span><span class="sxs-lookup"><span data-stu-id="d6c9d-114">At this point, you should be able tooenter hello custom domain name in your browser and see that it successfully takes you tooyour web app.</span></span>
 

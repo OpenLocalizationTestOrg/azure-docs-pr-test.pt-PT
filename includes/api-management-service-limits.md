@@ -1,10 +1,10 @@
-| Recurso | Limite |
+| <span data-ttu-id="6c3cb-101">Recurso</span><span class="sxs-lookup"><span data-stu-id="6c3cb-101">Resource</span></span> | <span data-ttu-id="6c3cb-102">Limite</span><span class="sxs-lookup"><span data-stu-id="6c3cb-102">Limit</span></span> |
 | --- | --- |
-| Chamadas de API (por unidade de escala) |milhões de 32 por dia<sup>1</sup> |
-| Transferência de dados (por unidade de escala) |161 GB por dia<sup>1</sup> |
-| Cache |5 GB<sup>1</sup> |
-| Unidades de escala |Ilimitados<sup>1</sup> |
-| Integração do Azure Active Directory |Contas de utilizador ilimitados<sup>1</sup> |
+| <span data-ttu-id="6c3cb-103">Chamadas de API (por unidade de escala)</span><span class="sxs-lookup"><span data-stu-id="6c3cb-103">API Calls (per unit of scale)</span></span> |<span data-ttu-id="6c3cb-104">milhões de 32 por dia<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="6c3cb-104">32 million per day<sup>1</sup></span></span> |
+| <span data-ttu-id="6c3cb-105">Transferência de dados (por unidade de escala)</span><span class="sxs-lookup"><span data-stu-id="6c3cb-105">Data transfer (per unit of scale)</span></span> |<span data-ttu-id="6c3cb-106">161 GB por dia<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="6c3cb-106">161 GB per day<sup>1</sup></span></span> |
+| <span data-ttu-id="6c3cb-107">Cache</span><span class="sxs-lookup"><span data-stu-id="6c3cb-107">Cache</span></span> |<span data-ttu-id="6c3cb-108">5 GB<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="6c3cb-108">5 GB<sup>1</sup></span></span> |
+| <span data-ttu-id="6c3cb-109">Unidades de escala</span><span class="sxs-lookup"><span data-stu-id="6c3cb-109">Units of scale</span></span> |<span data-ttu-id="6c3cb-110">Ilimitados<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="6c3cb-110">Unlimited<sup>1</sup></span></span> |
+| <span data-ttu-id="6c3cb-111">Integração do Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="6c3cb-111">Azure Active Directory Integration</span></span> |<span data-ttu-id="6c3cb-112">Contas de utilizador ilimitados<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="6c3cb-112">Unlimited User Accounts<sup>1</sup></span></span> |
 
-<sup>1</sup>limites de API Management são diferentes para cada escalão de preço. toosee Olá camadas e os respetivos limites associados de preços e dimensionamento opções, consulte [preços de gestão de API](https://azure.microsoft.com/pricing/details/api-management/).
+<span data-ttu-id="6c3cb-113"><sup>1</sup>limites de API Management são diferentes para cada escalão de preço.</span><span class="sxs-lookup"><span data-stu-id="6c3cb-113"><sup>1</sup>API Management limits are different for each pricing tier.</span></span> <span data-ttu-id="6c3cb-114">toosee Olá camadas e os respetivos limites associados de preços e dimensionamento opções, consulte [preços de gestão de API](https://azure.microsoft.com/pricing/details/api-management/).</span><span class="sxs-lookup"><span data-stu-id="6c3cb-114">toosee hello pricing tiers and their associated limits and scaling options, see [API Management Pricing](https://azure.microsoft.com/pricing/details/api-management/).</span></span>
 

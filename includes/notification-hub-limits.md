@@ -1,9 +1,9 @@
 
-| ESCALÃO: | GRATUITO | BÁSICO | STANDARD |
+| <span data-ttu-id="07b61-101">ESCALÃO:</span><span class="sxs-lookup"><span data-stu-id="07b61-101">TIER:</span></span> | <span data-ttu-id="07b61-102">GRATUITO</span><span class="sxs-lookup"><span data-stu-id="07b61-102">FREE</span></span> | <span data-ttu-id="07b61-103">BÁSICO</span><span class="sxs-lookup"><span data-stu-id="07b61-103">BASIC</span></span> | <span data-ttu-id="07b61-104">STANDARD</span><span class="sxs-lookup"><span data-stu-id="07b61-104">STANDARD</span></span> |
 | --- | --- | --- | --- |
-| Push Incluídos |1 Milhão |10 Milhões |10 Milhões |
-| Dispositivos Ativos |500 |200,000 | 10 milhões |
-| Quota de etiqueta por instalação/registo |60 |60 |60 |
+| <span data-ttu-id="07b61-105">Push Incluídos</span><span class="sxs-lookup"><span data-stu-id="07b61-105">Included Pushes</span></span> |<span data-ttu-id="07b61-106">1 Milhão</span><span class="sxs-lookup"><span data-stu-id="07b61-106">1 Million</span></span> |<span data-ttu-id="07b61-107">10 Milhões</span><span class="sxs-lookup"><span data-stu-id="07b61-107">10 Million</span></span> |<span data-ttu-id="07b61-108">10 Milhões</span><span class="sxs-lookup"><span data-stu-id="07b61-108">10 Million</span></span> |
+| <span data-ttu-id="07b61-109">Dispositivos Ativos</span><span class="sxs-lookup"><span data-stu-id="07b61-109">Active Devices</span></span> |<span data-ttu-id="07b61-110">500</span><span class="sxs-lookup"><span data-stu-id="07b61-110">500</span></span> |<span data-ttu-id="07b61-111">200,000</span><span class="sxs-lookup"><span data-stu-id="07b61-111">200,000</span></span> | <span data-ttu-id="07b61-112">10 milhões</span><span class="sxs-lookup"><span data-stu-id="07b61-112">10 million</span></span> |
+| <span data-ttu-id="07b61-113">Quota de etiqueta por instalação/registo</span><span class="sxs-lookup"><span data-stu-id="07b61-113">Tag quota per installation/registration</span></span> |<span data-ttu-id="07b61-114">60</span><span class="sxs-lookup"><span data-stu-id="07b61-114">60</span></span> |<span data-ttu-id="07b61-115">60</span><span class="sxs-lookup"><span data-stu-id="07b61-115">60</span></span> |<span data-ttu-id="07b61-116">60</span><span class="sxs-lookup"><span data-stu-id="07b61-116">60</span></span> |
 
-Para obter detalhes adicionais sobre estes limites e informações sobre preços, consulte [Preços dos Hubs de Notificação](https://azure.microsoft.com/pricing/details/notification-hubs/). 
+<span data-ttu-id="07b61-117">Para obter detalhes adicionais sobre estes limites e informações sobre preços, consulte [Preços dos Hubs de Notificação](https://azure.microsoft.com/pricing/details/notification-hubs/).</span><span class="sxs-lookup"><span data-stu-id="07b61-117">For additional details on these limits and for information on pricing, see [Notification Hubs Pricing](https://azure.microsoft.com/pricing/details/notification-hubs/).</span></span> 
 

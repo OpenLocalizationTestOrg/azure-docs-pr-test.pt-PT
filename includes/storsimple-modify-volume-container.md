@@ -1,19 +1,19 @@
 <!--author=SharS last changed: 1/7/2016-->
 
-#### <a name="toomodify-a-volume-container"></a>toomodify um contentor de volume
-1. No Olá **dispositivos** página, selecione o dispositivo de Olá, faça duplo clique e, em seguida, clique em Olá **contentores de Volume** separador.
-2. Numa listagem de tabela Olá de contentores de volume Olá, selecione a definição de Olá que pretende toomodify e clique em **modificar**.
-3. No Olá **contentor de Volume modificar** diálogo caixa, Olá a seguir:
+#### <a name="toomodify-a-volume-container"></a><span data-ttu-id="bf93f-101">toomodify um contentor de volume</span><span class="sxs-lookup"><span data-stu-id="bf93f-101">toomodify a volume container</span></span>
+1. <span data-ttu-id="bf93f-102">No Olá **dispositivos** página, selecione o dispositivo de Olá, faça duplo clique e, em seguida, clique em Olá **contentores de Volume** separador.</span><span class="sxs-lookup"><span data-stu-id="bf93f-102">On hello **Devices** page, select hello device, double-click it, and then click hello **Volume containers** tab.</span></span>
+2. <span data-ttu-id="bf93f-103">Numa listagem de tabela Olá de contentores de volume Olá, selecione a definição de Olá que pretende toomodify e clique em **modificar**.</span><span class="sxs-lookup"><span data-stu-id="bf93f-103">In hello tabular listing of hello volume containers, select hello setting that you want toomodify, and click **Modify**.</span></span>
+3. <span data-ttu-id="bf93f-104">No Olá **contentor de Volume modificar** diálogo caixa, Olá a seguir:</span><span class="sxs-lookup"><span data-stu-id="bf93f-104">In hello **Modify Volume container** dialog box, do hello following:</span></span>
    
-   1. Alterar o nome de Olá do contentor de volume Olá e modificar Olá associado à definição de largura de banda. 
+   1. <span data-ttu-id="bf93f-105">Alterar o nome de Olá do contentor de volume Olá e modificar Olá associado à definição de largura de banda.</span><span class="sxs-lookup"><span data-stu-id="bf93f-105">Change hello name of hello volume container and modify hello associated bandwidth setting.</span></span> 
       
        ![Modificar o contentor de Volume com o modelo de largura de banda 1](./media/storsimple-modify-volume-container/HCS_ModifyVCBT1-include.png)
-   2. Não é possível alterar a conta de armazenamento e a chave de encriptação de Olá depois forem especificadas. Se tiver especificado **selecionar um modelo de largura de banda**, clique em página seguinte do Olá seta tooproceed toohello.
-4. Na página seguinte do Olá do Olá **modificar o contentor de Volume** caixa de diálogo:
+   2. <span data-ttu-id="bf93f-107">Não é possível alterar a conta de armazenamento e a chave de encriptação de Olá depois forem especificadas.</span><span class="sxs-lookup"><span data-stu-id="bf93f-107">hello encryption key and storage account cannot be changed after they are specified.</span></span> <span data-ttu-id="bf93f-108">Se tiver especificado **selecionar um modelo de largura de banda**, clique em página seguinte do Olá seta tooproceed toohello.</span><span class="sxs-lookup"><span data-stu-id="bf93f-108">If you specified **Select a bandwidth template**, click hello arrow tooproceed toohello next page.</span></span>
+4. <span data-ttu-id="bf93f-109">Na página seguinte do Olá do Olá **modificar o contentor de Volume** caixa de diálogo:</span><span class="sxs-lookup"><span data-stu-id="bf93f-109">In hello next page of hello **Modify Volume Container** dialog box:</span></span>
    
-   1. A partir da Olá na lista pendente, escolha um modelo de largura de banda existente.
-   2. Reveja as definições de agendamento de Olá para o modelo de largura de banda especificado Olá.
+   1. <span data-ttu-id="bf93f-110">A partir da Olá na lista pendente, escolha um modelo de largura de banda existente.</span><span class="sxs-lookup"><span data-stu-id="bf93f-110">From hello drop-down list, choose an existing bandwidth template.</span></span>
+   2. <span data-ttu-id="bf93f-111">Reveja as definições de agendamento de Olá para o modelo de largura de banda especificado Olá.</span><span class="sxs-lookup"><span data-stu-id="bf93f-111">Review hello schedule settings for hello specified bandwidth template.</span></span>
       
        ![Modificar o contentor de Volume com o modelo de largura de banda 2](./media/storsimple-modify-volume-container/HCS_ModifyVCBT2-include.png)
-   3. Clique em ícone de verificação Olá ![ícone de verificação](./media/storsimple-modify-volume-container/HCS_CheckIcon-include.png) toosave Olá definições atualizadas. Olá **contentores de Volume** página será atualizada tooreflect Olá alterações.
+   3. <span data-ttu-id="bf93f-113">Clique em ícone de verificação Olá ![ícone de verificação](./media/storsimple-modify-volume-container/HCS_CheckIcon-include.png) toosave Olá definições atualizadas.</span><span class="sxs-lookup"><span data-stu-id="bf93f-113">Click hello check icon ![check icon](./media/storsimple-modify-volume-container/HCS_CheckIcon-include.png) toosave hello updated settings.</span></span> <span data-ttu-id="bf93f-114">Olá **contentores de Volume** página será atualizada tooreflect Olá alterações.</span><span class="sxs-lookup"><span data-stu-id="bf93f-114">hello **Volume containers** page will be updated tooreflect hello changes.</span></span>
 

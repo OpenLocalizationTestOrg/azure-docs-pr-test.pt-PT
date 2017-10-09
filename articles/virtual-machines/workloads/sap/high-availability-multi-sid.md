@@ -23,7 +23,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="create-an-sap-netweaver-multi-sid-configuration"></a>Criar uma configuração de várias SID do SAP NetWeaver
+# <a name="create-an-sap-netweaver-multi-sid-configuration"></a><span data-ttu-id="0ab2d-103">Criar uma configuração de várias SID do SAP NetWeaver</span><span class="sxs-lookup"><span data-stu-id="0ab2d-103">Create an SAP NetWeaver multi-SID configuration</span></span>
 
 [767598]:https://launchpad.support.sap.com/#/notes/767598
 [773830]:https://launchpad.support.sap.com/#/notes/773830
@@ -444,93 +444,93 @@ ms.lasthandoff: 10/06/2017
 [xplat-cli-azure-resource-manager]:../../../xplat-cli-azure-resource-manager.md
 
 
-Setembro de 2016, a Microsoft lançou uma funcionalidade onde pode gerir vários endereços IP virtuais utilizando um [Balanceador de carga interno do Azure][load-balancer-multivip-overview]. Esta funcionalidade já existe no balanceador de carga externo do Azure Olá.
+<span data-ttu-id="0ab2d-104">Setembro de 2016, a Microsoft lançou uma funcionalidade onde pode gerir vários endereços IP virtuais utilizando um [Balanceador de carga interno do Azure][load-balancer-multivip-overview].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-104">In September 2016, Microsoft released a feature where you can manage multiple virtual IP addresses by using an [Azure internal load balancer][load-balancer-multivip-overview].</span></span> <span data-ttu-id="0ab2d-105">Esta funcionalidade já existe no balanceador de carga externo do Azure Olá.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-105">This functionality already exists in hello Azure external load balancer.</span></span>
 
-Se tiver uma implementação de SAP, pode utilizar um toocreate de Balanceador de carga interno uma configuração de cluster do Windows para SAP ASCS/SCS, conforme documentado no Olá [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows] [ sap-ha-guide].
+<span data-ttu-id="0ab2d-106">Se tiver uma implementação de SAP, pode utilizar um toocreate de Balanceador de carga interno uma configuração de cluster do Windows para SAP ASCS/SCS, conforme documentado no Olá [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows] [ sap-ha-guide].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-106">If you have an SAP deployment, you can use an internal load balancer toocreate a Windows cluster configuration for SAP ASCS/SCS, as documented in hello [guide for high-availability SAP NetWeaver on Windows VMs][sap-ha-guide].</span></span>
 
-Este artigo incida no como toomove de uma única ASCS/SCS instalação tooan SAP várias SID configuração instalando adicionais SAP ASCS/SCS agrupados instâncias para um cluster de Clustering de ativação pós-falha de servidor ao Windows ' (WSFC) existente. Quando este processo é concluído, será configurou um cluster de múltiplos SID SAP.
+<span data-ttu-id="0ab2d-107">Este artigo incida no como toomove de uma única ASCS/SCS instalação tooan SAP várias SID configuração instalando adicionais SAP ASCS/SCS agrupados instâncias para um cluster de Clustering de ativação pós-falha de servidor ao Windows ' (WSFC) existente.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-107">This article focuses on how toomove from a single ASCS/SCS installation tooan SAP multi-SID configuration by installing additional SAP ASCS/SCS clustered instances into an existing Windows Server Failover Clustering (WSFC) cluster.</span></span> <span data-ttu-id="0ab2d-108">Quando este processo é concluído, será configurou um cluster de múltiplos SID SAP.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-108">When this process is completed, you will have configured an SAP multi-SID cluster.</span></span>
 
 > [!NOTE]
-> Esta funcionalidade está disponível apenas no modelo de implementação Azure Resource Manager Olá.
+> <span data-ttu-id="0ab2d-109">Esta funcionalidade está disponível apenas no modelo de implementação Azure Resource Manager Olá.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-109">This feature is available only in hello Azure Resource Manager deployment model.</span></span>
 
-## <a name="prerequisites"></a>Pré-requisitos
-Já configurou um cluster WSFC que é utilizado para uma instância do SAP ASCS/SCS, tal como explicado Olá [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows] [ sap-ha-guide] e como é mostrado neste diagrama.
+## <a name="prerequisites"></a><span data-ttu-id="0ab2d-110">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="0ab2d-110">Prerequisites</span></span>
+<span data-ttu-id="0ab2d-111">Já configurou um cluster WSFC que é utilizado para uma instância do SAP ASCS/SCS, tal como explicado Olá [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows] [ sap-ha-guide] e como é mostrado neste diagrama.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-111">You have already configured a WSFC cluster that is used for one SAP ASCS/SCS instance, as discussed in hello [guide for high-availability SAP NetWeaver on Windows VMs][sap-ha-guide] and as shown in this diagram.</span></span>
 
 ![Instância do SAP ASCS/SCS de elevada disponibilidade][sap-ha-guide-figure-6001]
 
-## <a name="target-architecture"></a>Arquitetura de destino
+## <a name="target-architecture"></a><span data-ttu-id="0ab2d-113">Arquitetura de destino</span><span class="sxs-lookup"><span data-stu-id="0ab2d-113">Target architecture</span></span>
 
-Olá objetivo é tooinstall várias SAP ABAP ASCS ou SAP Java SCS em cluster instâncias no Olá mesmo cluster WSFC, conforme ilustrado aqui:
+<span data-ttu-id="0ab2d-114">Olá objetivo é tooinstall várias SAP ABAP ASCS ou SAP Java SCS em cluster instâncias no Olá mesmo cluster WSFC, conforme ilustrado aqui:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-114">hello goal is tooinstall multiple SAP ABAP ASCS or SAP Java SCS clustered instances in hello same WSFC cluster, as illustrated here:</span></span>
 
 ![Várias instâncias de SAP ASCS/SCS em cluster no Azure][sap-ha-guide-figure-6002]
 
 > [!NOTE]
->Não há limite toohello diversas privada IPs front-end para cada Balanceador de carga interno do Azure.
+><span data-ttu-id="0ab2d-116">Não há limite toohello diversas privada IPs front-end para cada Balanceador de carga interno do Azure.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-116">There is a limit toohello number of private front-end IPs for each Azure internal load balancer.</span></span>
 >
->Olá o número máximo de instâncias de SAP ASCS/SCS num cluster WSFC é toohello igual número máximo de IPs front-end privada para cada Balanceador de carga interno do Azure.
+><span data-ttu-id="0ab2d-117">Olá o número máximo de instâncias de SAP ASCS/SCS num cluster WSFC é toohello igual número máximo de IPs front-end privada para cada Balanceador de carga interno do Azure.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-117">hello maximum number of SAP ASCS/SCS instances in one WSFC cluster is equal toohello maximum number of private front-end IPs for each Azure internal load balancer.</span></span>
 >
 
-Para obter mais informações sobre limites de Balanceador de carga, consulte "IP de front-end privada por Balanceador de carga" em [limites de rede: o Azure Resource Manager][networking-limits-azure-resource-manager].
+<span data-ttu-id="0ab2d-118">Para obter mais informações sobre limites de Balanceador de carga, consulte "IP de front-end privada por Balanceador de carga" em [limites de rede: o Azure Resource Manager][networking-limits-azure-resource-manager].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-118">For more information about load-balancer limits, see "Private front end IP per load balancer" in [Networking limits: Azure Resource Manager][networking-limits-azure-resource-manager].</span></span>
 
-horizontal completa de Olá com dois sistemas SAP de elevada disponibilidade seria ter este aspeto:
+<span data-ttu-id="0ab2d-119">horizontal completa de Olá com dois sistemas SAP de elevada disponibilidade seria ter este aspeto:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-119">hello complete landscape with two high-availability SAP systems would look like this:</span></span>
 
 ![Configuração de elevada disponibilidade várias-SID SAP com o sistema SAP dois SIDs][sap-ha-guide-figure-6003]
 
 > [!IMPORTANT]
-> configuração de Olá tem de cumprir Olá seguintes condições:
-> - Olá SAP ASCS/SCS instâncias têm de partilhar Olá mesmo WSFC cluster.
-> - Cada SID DBMS deve ter o seu próprio cluster de WSFC dedicado.
-> - Servidores de aplicações SAP, que pertencem o sistema SAP tooone SID tem de ter os seus próprios VMs dedicadas.
+> <span data-ttu-id="0ab2d-121">configuração de Olá tem de cumprir Olá seguintes condições:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-121">hello setup must meet hello following conditions:</span></span>
+> - <span data-ttu-id="0ab2d-122">Olá SAP ASCS/SCS instâncias têm de partilhar Olá mesmo WSFC cluster.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-122">hello SAP ASCS/SCS instances must share hello same WSFC cluster.</span></span>
+> - <span data-ttu-id="0ab2d-123">Cada SID DBMS deve ter o seu próprio cluster de WSFC dedicado.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-123">Each DBMS SID must have its own dedicated WSFC cluster.</span></span>
+> - <span data-ttu-id="0ab2d-124">Servidores de aplicações SAP, que pertencem o sistema SAP tooone SID tem de ter os seus próprios VMs dedicadas.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-124">SAP application servers that belong tooone SAP system SID must have their own dedicated VMs.</span></span>
 
 
-## <a name="prepare-hello-infrastructure"></a>Preparar a infraestrutura de Olá
-tooprepare da infraestrutura, pode instalar uma instância adicional do SAP ASCS/SCS com Olá os seguintes parâmetros:
+## <a name="prepare-hello-infrastructure"></a><span data-ttu-id="0ab2d-125">Preparar a infraestrutura de Olá</span><span class="sxs-lookup"><span data-stu-id="0ab2d-125">Prepare hello infrastructure</span></span>
+<span data-ttu-id="0ab2d-126">tooprepare da infraestrutura, pode instalar uma instância adicional do SAP ASCS/SCS com Olá os seguintes parâmetros:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-126">tooprepare your infrastructure, you can install an additional SAP ASCS/SCS instance with hello following parameters:</span></span>
 
-| Nome do parâmetro | Valor |
+| <span data-ttu-id="0ab2d-127">Nome do parâmetro</span><span class="sxs-lookup"><span data-stu-id="0ab2d-127">Parameter name</span></span> | <span data-ttu-id="0ab2d-128">Valor</span><span class="sxs-lookup"><span data-stu-id="0ab2d-128">Value</span></span> |
 | --- | --- |
-| SAP ASCS/SCS SID |PR1-lb-ascs |
-| Balanceador de carga interno SAP DBMS | PR5 |
-| Nome de anfitrião virtual SAP | pr5-sap-cl |
-| Endereço IP de anfitrião virtual SAP ASCS/SCS (endereço IP do Balanceador de carga do Azure adicionais) | 10.0.0.50 |
-| Número de instância do SAP ASCS/SCS | 50 |
-| Porta de sonda do ILB para a instância do SAP ASCS/SCS adicionais | 62350 |
+| <span data-ttu-id="0ab2d-129">SAP ASCS/SCS SID</span><span class="sxs-lookup"><span data-stu-id="0ab2d-129">SAP ASCS/SCS SID</span></span> |<span data-ttu-id="0ab2d-130">PR1-lb-ascs</span><span class="sxs-lookup"><span data-stu-id="0ab2d-130">pr1-lb-ascs</span></span> |
+| <span data-ttu-id="0ab2d-131">Balanceador de carga interno SAP DBMS</span><span class="sxs-lookup"><span data-stu-id="0ab2d-131">SAP DBMS internal load balancer</span></span> | <span data-ttu-id="0ab2d-132">PR5</span><span class="sxs-lookup"><span data-stu-id="0ab2d-132">PR5</span></span> |
+| <span data-ttu-id="0ab2d-133">Nome de anfitrião virtual SAP</span><span class="sxs-lookup"><span data-stu-id="0ab2d-133">SAP virtual host name</span></span> | <span data-ttu-id="0ab2d-134">pr5-sap-cl</span><span class="sxs-lookup"><span data-stu-id="0ab2d-134">pr5-sap-cl</span></span> |
+| <span data-ttu-id="0ab2d-135">Endereço IP de anfitrião virtual SAP ASCS/SCS (endereço IP do Balanceador de carga do Azure adicionais)</span><span class="sxs-lookup"><span data-stu-id="0ab2d-135">SAP ASCS/SCS virtual host IP address (additional Azure load balancer IP address)</span></span> | <span data-ttu-id="0ab2d-136">10.0.0.50</span><span class="sxs-lookup"><span data-stu-id="0ab2d-136">10.0.0.50</span></span> |
+| <span data-ttu-id="0ab2d-137">Número de instância do SAP ASCS/SCS</span><span class="sxs-lookup"><span data-stu-id="0ab2d-137">SAP ASCS/SCS instance number</span></span> | <span data-ttu-id="0ab2d-138">50</span><span class="sxs-lookup"><span data-stu-id="0ab2d-138">50</span></span> |
+| <span data-ttu-id="0ab2d-139">Porta de sonda do ILB para a instância do SAP ASCS/SCS adicionais</span><span class="sxs-lookup"><span data-stu-id="0ab2d-139">ILB probe port for additional SAP ASCS/SCS instance</span></span> | <span data-ttu-id="0ab2d-140">62350</span><span class="sxs-lookup"><span data-stu-id="0ab2d-140">62350</span></span> |
 
 > [!NOTE]
-> Para as instâncias de cluster do SAP ASCS/SCS, cada endereço IP necessita de uma porta de pesquisa exclusivo. Por exemplo, se um endereço IP num Balanceador de carga interno do Azure utiliza a porta da sonda 62300, nenhum outro endereço IP que Balanceador de carga pode utilizar a porta da sonda 62300.
+> <span data-ttu-id="0ab2d-141">Para as instâncias de cluster do SAP ASCS/SCS, cada endereço IP necessita de uma porta de pesquisa exclusivo.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-141">For SAP ASCS/SCS cluster instances, each IP address requires a unique probe port.</span></span> <span data-ttu-id="0ab2d-142">Por exemplo, se um endereço IP num Balanceador de carga interno do Azure utiliza a porta da sonda 62300, nenhum outro endereço IP que Balanceador de carga pode utilizar a porta da sonda 62300.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-142">For example, if one IP address on an Azure internal load balancer uses probe port 62300, no other IP address on that load balancer can use probe port 62300.</span></span>
 >
->Para efeitos de nosso, porque a porta da sonda 62300 já está reservada, estamos a utilizar a porta de sonda 62350.
+><span data-ttu-id="0ab2d-143">Para efeitos de nosso, porque a porta da sonda 62300 já está reservada, estamos a utilizar a porta de sonda 62350.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-143">For our purposes, because probe port 62300 is already reserved, we are using probe port 62350.</span></span>
 
-Pode instalar instâncias adicionais de SAP ASCS/SCS no cluster WSFC existente Olá com dois nós:
+<span data-ttu-id="0ab2d-144">Pode instalar instâncias adicionais de SAP ASCS/SCS no cluster WSFC existente Olá com dois nós:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-144">You can install additional SAP ASCS/SCS instances in hello existing WSFC cluster with two nodes:</span></span>
 
-| Função de máquina virtual | Nome de anfitrião de máquina virtual | Endereço IP estático |
+| <span data-ttu-id="0ab2d-145">Função de máquina virtual</span><span class="sxs-lookup"><span data-stu-id="0ab2d-145">Virtual machine role</span></span> | <span data-ttu-id="0ab2d-146">Nome de anfitrião de máquina virtual</span><span class="sxs-lookup"><span data-stu-id="0ab2d-146">Virtual machine host name</span></span> | <span data-ttu-id="0ab2d-147">Endereço IP estático</span><span class="sxs-lookup"><span data-stu-id="0ab2d-147">Static IP address</span></span> |
 | --- | --- | --- |
-| nó de cluster 1 para a instância ASCS/SCS |PR1-ascs-0 |10.0.0.10 |
-| nó de cluster 2nd para a instância ASCS/SCS |PR1-ascs-1 |10.0.0.9 |
+| <span data-ttu-id="0ab2d-148">nó de cluster 1 para a instância ASCS/SCS</span><span class="sxs-lookup"><span data-stu-id="0ab2d-148">1st cluster node for ASCS/SCS instance</span></span> |<span data-ttu-id="0ab2d-149">PR1-ascs-0</span><span class="sxs-lookup"><span data-stu-id="0ab2d-149">pr1-ascs-0</span></span> |<span data-ttu-id="0ab2d-150">10.0.0.10</span><span class="sxs-lookup"><span data-stu-id="0ab2d-150">10.0.0.10</span></span> |
+| <span data-ttu-id="0ab2d-151">nó de cluster 2nd para a instância ASCS/SCS</span><span class="sxs-lookup"><span data-stu-id="0ab2d-151">2nd cluster node for ASCS/SCS instance</span></span> |<span data-ttu-id="0ab2d-152">PR1-ascs-1</span><span class="sxs-lookup"><span data-stu-id="0ab2d-152">pr1-ascs-1</span></span> |<span data-ttu-id="0ab2d-153">10.0.0.9</span><span class="sxs-lookup"><span data-stu-id="0ab2d-153">10.0.0.9</span></span> |
 
-### <a name="create-a-virtual-host-name-for-hello-clustered-sap-ascsscs-instance-on-hello-dns-server"></a>Criar um nome de anfitrião virtual para a instância de SAP ASCS/SCS Olá em cluster num servidor DNS Olá
+### <a name="create-a-virtual-host-name-for-hello-clustered-sap-ascsscs-instance-on-hello-dns-server"></a><span data-ttu-id="0ab2d-154">Criar um nome de anfitrião virtual para a instância de SAP ASCS/SCS Olá em cluster num servidor DNS Olá</span><span class="sxs-lookup"><span data-stu-id="0ab2d-154">Create a virtual host name for hello clustered SAP ASCS/SCS instance on hello DNS server</span></span>
 
-Pode criar uma entrada DNS para o nome de anfitrião virtual Olá da instância ASCS/SCS Olá utilizando Olá os seguintes parâmetros:
+<span data-ttu-id="0ab2d-155">Pode criar uma entrada DNS para o nome de anfitrião virtual Olá da instância ASCS/SCS Olá utilizando Olá os seguintes parâmetros:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-155">You can create a DNS entry for hello virtual host name of hello ASCS/SCS instance by using hello following parameters:</span></span>
 
-| Novo nome de anfitrião virtual SAP ASCS/SCS | Endereços IP associados |
+| <span data-ttu-id="0ab2d-156">Novo nome de anfitrião virtual SAP ASCS/SCS</span><span class="sxs-lookup"><span data-stu-id="0ab2d-156">New SAP ASCS/SCS virtual host name</span></span> | <span data-ttu-id="0ab2d-157">Endereços IP associados</span><span class="sxs-lookup"><span data-stu-id="0ab2d-157">Associated IP address</span></span> |
 | --- | --- | --- |
-|pr5-sap-cl |10.0.0.50 |
+|<span data-ttu-id="0ab2d-158">pr5-sap-cl</span><span class="sxs-lookup"><span data-stu-id="0ab2d-158">pr5-sap-cl</span></span> |<span data-ttu-id="0ab2d-159">10.0.0.50</span><span class="sxs-lookup"><span data-stu-id="0ab2d-159">10.0.0.50</span></span> |
 
-Olá novo nome de anfitrião e endereço IP são apresentados no Olá Gestor de DNS, conforme mostrado na seguinte captura de ecrã de Olá:
+<span data-ttu-id="0ab2d-160">Olá novo nome de anfitrião e endereço IP são apresentados no Olá Gestor de DNS, conforme mostrado na seguinte captura de ecrã de Olá:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-160">hello new host name and IP address are displayed in hello DNS Manager, as shown in hello following screenshot:</span></span>
 
 ![Lista de Gestor de DNS realce Olá definida a entrada DNS para Olá novo SAP ASCS/SCS cluster virtual nome e endereço de TCP/IP][sap-ha-guide-figure-6004]
 
-procedimento de Olá para criar uma entrada DNS também está descrito em detalhe no Olá principal [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide-9.1.1].
+<span data-ttu-id="0ab2d-162">procedimento de Olá para criar uma entrada DNS também está descrito em detalhe no Olá principal [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide-9.1.1].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-162">hello procedure for creating a DNS entry is also described in detail in hello main [guide for high-availability SAP NetWeaver on Windows VMs][sap-ha-guide-9.1.1].</span></span>
 
 > [!NOTE]
-> Olá novo endereço IP que atribuir o nome de anfitrião virtual toohello de instância ASCS/SCS adicional Olá tem de ser Olá igual Olá novo endereço IP que atribuiu Balanceador de carga do Azure de SAP toohello.
+> <span data-ttu-id="0ab2d-163">Olá novo endereço IP que atribuir o nome de anfitrião virtual toohello de instância ASCS/SCS adicional Olá tem de ser Olá igual Olá novo endereço IP que atribuiu Balanceador de carga do Azure de SAP toohello.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-163">hello new IP address that you assign toohello virtual host name of hello additional ASCS/SCS instance must be hello same as hello new IP address that you assigned toohello SAP Azure load balancer.</span></span>
 >
->No nosso cenário, o endereço IP Olá é 10.0.0.50.
+><span data-ttu-id="0ab2d-164">No nosso cenário, o endereço IP Olá é 10.0.0.50.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-164">In our scenario, hello IP address is 10.0.0.50.</span></span>
 
-### <a name="add-an-ip-address-tooan-existing-azure-internal-load-balancer-by-using-powershell"></a>Adicionar um balanceador de carga interno do Azure existente do IP endereço tooan utilizando o PowerShell
+### <a name="add-an-ip-address-tooan-existing-azure-internal-load-balancer-by-using-powershell"></a><span data-ttu-id="0ab2d-165">Adicionar um balanceador de carga interno do Azure existente do IP endereço tooan utilizando o PowerShell</span><span class="sxs-lookup"><span data-stu-id="0ab2d-165">Add an IP address tooan existing Azure internal load balancer by using PowerShell</span></span>
 
-toocreate mais do que uma instância do SAP ASCS/SCS no Olá WSFC mesmo cluster, utilize o PowerShell tooadd um tooan de endereços IP existentes Balanceador de carga interno do Azure. Cada endereço IP requer as suas próprias regras de balanceamento de carga, porta da sonda, conjunto IP Front-end e conjunto de back-end.
+<span data-ttu-id="0ab2d-166">toocreate mais do que uma instância do SAP ASCS/SCS no Olá WSFC mesmo cluster, utilize o PowerShell tooadd um tooan de endereços IP existentes Balanceador de carga interno do Azure.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-166">toocreate more than one SAP ASCS/SCS instance in hello same WSFC cluster, use PowerShell tooadd an IP address tooan existing Azure internal load balancer.</span></span> <span data-ttu-id="0ab2d-167">Cada endereço IP requer as suas próprias regras de balanceamento de carga, porta da sonda, conjunto IP Front-end e conjunto de back-end.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-167">Each IP address requires its own load-balancing rules, probe port, front-end IP pool, and back-end pool.</span></span>
 
-Olá seguinte script adiciona um nova IP endereço tooan existente Balanceador de carga. Atualize as variáveis de PowerShell Olá para o seu ambiente. script de Olá criará necessárias todas as regras de balanceamento de carga para todas as portas de SAP ASCS/SCS.
+<span data-ttu-id="0ab2d-168">Olá seguinte script adiciona um nova IP endereço tooan existente Balanceador de carga.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-168">hello following script adds a new IP address tooan existing load balancer.</span></span> <span data-ttu-id="0ab2d-169">Atualize as variáveis de PowerShell Olá para o seu ambiente.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-169">Update hello PowerShell variables for your environment.</span></span> <span data-ttu-id="0ab2d-170">script de Olá criará necessárias todas as regras de balanceamento de carga para todas as portas de SAP ASCS/SCS.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-170">hello script will create all needed load-balancing rules for all SAP ASCS/SCS ports.</span></span>
 
 ```powershell
 
@@ -609,64 +609,64 @@ $ILB | Set-AzureRmLoadBalancer
 Write-Host "Succesfully added new IP '$ILBIP' toohello internal load balancer '$ILBName'!" -ForegroundColor Green
 
 ```
-Depois de script de Olá foi executada, Olá os resultados são apresentados no Olá portal do Azure, conforme mostrado na seguinte captura de ecrã de Olá:
+<span data-ttu-id="0ab2d-171">Depois de script de Olá foi executada, Olá os resultados são apresentados no Olá portal do Azure, conforme mostrado na seguinte captura de ecrã de Olá:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-171">After hello script has run, hello results are displayed in hello Azure portal, as shown in hello following screenshot:</span></span>
 
 ![Novo conjunto IP Front-end na Olá portal do Azure][sap-ha-guide-figure-6005]
 
-### <a name="add-disks-toocluster-machines-and-configure-hello-sios-cluster-share-disk"></a>Adicionar discos toocluster máquinas e configurar Olá SIOS cluster partilha de disco
+### <a name="add-disks-toocluster-machines-and-configure-hello-sios-cluster-share-disk"></a><span data-ttu-id="0ab2d-173">Adicionar discos toocluster máquinas e configurar Olá SIOS cluster partilha de disco</span><span class="sxs-lookup"><span data-stu-id="0ab2d-173">Add disks toocluster machines, and configure hello SIOS cluster share disk</span></span>
 
-Tem de adicionar um nova partilha de disco em cluster para cada instância de SAP ASCS/SCS adicionais. Para o Windows Server 2012 R2, o disco da partilha de cluster WSFC de Olá atualmente em utilização é solução de software SIOS DataKeeper Olá.
+<span data-ttu-id="0ab2d-174">Tem de adicionar um nova partilha de disco em cluster para cada instância de SAP ASCS/SCS adicionais.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-174">You must add a new cluster share disk for each additional SAP ASCS/SCS instance.</span></span> <span data-ttu-id="0ab2d-175">Para o Windows Server 2012 R2, o disco da partilha de cluster WSFC de Olá atualmente em utilização é solução de software SIOS DataKeeper Olá.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-175">For Windows Server 2012 R2, hello WSFC cluster share disk currently in use is hello SIOS DataKeeper software solution.</span></span>
 
-Olá seguintes:
-1. Adicionar um disco ou discos de Olá mesmo tamanho (que precisa de toostripe) tooeach de Olá os nós do cluster e formate-los.
-2. Configure a replicação de armazenamento com SIOS DataKeeper.
+<span data-ttu-id="0ab2d-176">Olá seguintes:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-176">Do hello following:</span></span>
+1. <span data-ttu-id="0ab2d-177">Adicionar um disco ou discos de Olá mesmo tamanho (que precisa de toostripe) tooeach de Olá os nós do cluster e formate-los.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-177">Add an additional disk or disks of hello same size (which you need toostripe) tooeach of hello cluster nodes, and format them.</span></span>
+2. <span data-ttu-id="0ab2d-178">Configure a replicação de armazenamento com SIOS DataKeeper.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-178">Configure storage replication with SIOS DataKeeper.</span></span>
 
-Este procedimento assume que já instalou SIOS DataKeeper máquinas de cluster WSFC Olá. Se instalou, agora tem de configurar a replicação entre máquinas Olá. processo de Olá é descrito em detalhe no Olá principal [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide-8.12.3.3].  
+<span data-ttu-id="0ab2d-179">Este procedimento assume que já instalou SIOS DataKeeper máquinas de cluster WSFC Olá.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-179">This procedure assumes that you have already installed SIOS DataKeeper on hello WSFC cluster machines.</span></span> <span data-ttu-id="0ab2d-180">Se instalou, agora tem de configurar a replicação entre máquinas Olá.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-180">If you have installed it, you must now configure replication between hello machines.</span></span> <span data-ttu-id="0ab2d-181">processo de Olá é descrito em detalhe no Olá principal [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide-8.12.3.3].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-181">hello process is described in detail in hello main [guide for high-availability SAP NetWeaver on Windows VMs][sap-ha-guide-8.12.3.3].</span></span>  
 
 ![DataKeeper síncrono de espelhamento para Olá novo SAP ASCS/SCS partilha de disco][sap-ha-guide-figure-6006]
 
-### <a name="deploy-vms-for-sap-application-servers-and-dbms-cluster"></a>Implementar as VMs para o DBMS cluster e servidores de aplicação do SAP
+### <a name="deploy-vms-for-sap-application-servers-and-dbms-cluster"></a><span data-ttu-id="0ab2d-183">Implementar as VMs para o DBMS cluster e servidores de aplicação do SAP</span><span class="sxs-lookup"><span data-stu-id="0ab2d-183">Deploy VMs for SAP application servers and DBMS cluster</span></span>
 
-preparação de infraestrutura de Olá toocomplete para Olá segundo SAP sistema Olá seguintes:
+<span data-ttu-id="0ab2d-184">preparação de infraestrutura de Olá toocomplete para Olá segundo SAP sistema Olá seguintes:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-184">toocomplete hello infrastructure preparation for hello second SAP system, do hello following:</span></span>
 
-1. Implemente VMs dedicadas SAP para servidores de aplicações e colocá-los no seu próprio grupo de disponibilidade dedicado.
-2. Implemente VMs dedicadas para DBMS cluster e colocá-los no seu próprio grupo de disponibilidade dedicado.
+1. <span data-ttu-id="0ab2d-185">Implemente VMs dedicadas SAP para servidores de aplicações e colocá-los no seu próprio grupo de disponibilidade dedicado.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-185">Deploy dedicated VMs for SAP application servers and put them in their own dedicated availability group.</span></span>
+2. <span data-ttu-id="0ab2d-186">Implemente VMs dedicadas para DBMS cluster e colocá-los no seu próprio grupo de disponibilidade dedicado.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-186">Deploy dedicated VMs for DBMS cluster and put them in their own dedicated availability group.</span></span>
 
 
-## <a name="install-hello-second-sap-sid2-netweaver-system"></a>Instalar o sistema de SAP NetWeaver de SID2 segundo Olá
+## <a name="install-hello-second-sap-sid2-netweaver-system"></a><span data-ttu-id="0ab2d-187">Instalar o sistema de SAP NetWeaver de SID2 segundo Olá</span><span class="sxs-lookup"><span data-stu-id="0ab2d-187">Install hello second SAP SID2 NetWeaver system</span></span>
 
-processo de conclusão de Olá de instalar um sistema de SAP SID2 segundo é descrito em Olá principal [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide-9].
+<span data-ttu-id="0ab2d-188">processo de conclusão de Olá de instalar um sistema de SAP SID2 segundo é descrito em Olá principal [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide-9].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-188">hello complete process of installing a second SAP SID2 system is described in hello main [guide for high-availability SAP NetWeaver on Windows VMs][sap-ha-guide-9].</span></span>
 
-procedimento de alto nível Olá é o seguinte:
+<span data-ttu-id="0ab2d-189">procedimento de alto nível Olá é o seguinte:</span><span class="sxs-lookup"><span data-stu-id="0ab2d-189">hello high-level procedure is as follows:</span></span>
 
-1. [Instalar Olá SAP primeiro nó de cluster][sap-ha-guide-9.1.2].  
- Neste passo, que está a instalar SAP com instâncias ASCS/SCS de elevada disponibilidade no Olá **o nó de cluster de WSFC existente 1**.
+1. <span data-ttu-id="0ab2d-190">[Instalar Olá SAP primeiro nó de cluster][sap-ha-guide-9.1.2].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-190">[Install hello SAP first cluster node][sap-ha-guide-9.1.2].</span></span>  
+ <span data-ttu-id="0ab2d-191">Neste passo, que está a instalar SAP com instâncias ASCS/SCS de elevada disponibilidade no Olá **o nó de cluster de WSFC existente 1**.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-191">In this step, you are installing SAP with a high-availability ASCS/SCS instance on hello **EXISTING WSFC cluster node 1**.</span></span>
 
-2. [Modificar o perfil SAP Olá da instância ASCS/SCS Olá][sap-ha-guide-9.1.3].
+2. <span data-ttu-id="0ab2d-192">[Modificar o perfil SAP Olá da instância ASCS/SCS Olá][sap-ha-guide-9.1.3].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-192">[Modify hello SAP profile of hello ASCS/SCS instance][sap-ha-guide-9.1.3].</span></span>
 
-3. [Configurar uma porta de sonda][sap-ha-guide-9.1.4].  
- Neste passo, está a configurar um recurso de cluster do SAP porta da sonda SAP-SID2-IP utilizando o PowerShell. Execute esta configuração num de nós de cluster do SAP ASCS/SCS Olá.
+3. <span data-ttu-id="0ab2d-193">[Configurar uma porta de sonda][sap-ha-guide-9.1.4].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-193">[Configure a probe port][sap-ha-guide-9.1.4].</span></span>  
+ <span data-ttu-id="0ab2d-194">Neste passo, está a configurar um recurso de cluster do SAP porta da sonda SAP-SID2-IP utilizando o PowerShell.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-194">In this step, you are configuring an SAP cluster resource SAP-SID2-IP probe port by using PowerShell.</span></span> <span data-ttu-id="0ab2d-195">Execute esta configuração num de nós de cluster do SAP ASCS/SCS Olá.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-195">Execute this configuration on one of hello SAP ASCS/SCS cluster nodes.</span></span>
 
-4. [Instalar a instância de base de dados de Olá][sap-ha-guide-9.2].  
- Neste passo, estiver a instalar DBMS num cluster de WSFC dedicado.
+4. <span data-ttu-id="0ab2d-196">[Instalar a instância de base de dados de Olá][sap-ha-guide-9.2].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-196">[Install hello database instance][sap-ha-guide-9.2].</span></span>  
+ <span data-ttu-id="0ab2d-197">Neste passo, estiver a instalar DBMS num cluster de WSFC dedicado.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-197">In this step, you are installing DBMS on a dedicated WSFC cluster.</span></span>
 
-5. [Instalar o segundo nó de cluster Olá][sap-ha-guide-9.3].  
- Neste passo, que está a instalar SAP com uma instância ASCS/SCS de elevada disponibilidade num nó de cluster WSFC existente do Olá 2.
+5. <span data-ttu-id="0ab2d-198">[Instalar o segundo nó de cluster Olá][sap-ha-guide-9.3].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-198">[Install hello second cluster node][sap-ha-guide-9.3].</span></span>  
+ <span data-ttu-id="0ab2d-199">Neste passo, que está a instalar SAP com uma instância ASCS/SCS de elevada disponibilidade num nó de cluster WSFC existente do Olá 2.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-199">In this step, you are installing SAP with a high-availability ASCS/SCS instance on hello existing WSFC cluster node 2.</span></span>
 
-6. Abrir portas de Firewall do Windows para a instância de SAP ASCS/SCS Olá e ProbePort.  
- Em ambos os nós de cluster que são utilizados para instâncias de SAP ASCS/SCS, que está a abrir todas as portas de Firewall do Windows que são utilizadas pelo SAP ASCS/SCS. Estas portas são listadas na Olá [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide-8.8].  
- Também abra Olá do Azure de carga interno balanceador porta da sonda, que é 62350 no nosso cenário.
+6. <span data-ttu-id="0ab2d-200">Abrir portas de Firewall do Windows para a instância de SAP ASCS/SCS Olá e ProbePort.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-200">Open Windows Firewall ports for hello SAP ASCS/SCS instance and ProbePort.</span></span>  
+ <span data-ttu-id="0ab2d-201">Em ambos os nós de cluster que são utilizados para instâncias de SAP ASCS/SCS, que está a abrir todas as portas de Firewall do Windows que são utilizadas pelo SAP ASCS/SCS.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-201">On both cluster nodes that are used for SAP ASCS/SCS instances, you are opening all Windows Firewall ports that are used by SAP ASCS/SCS.</span></span> <span data-ttu-id="0ab2d-202">Estas portas são listadas na Olá [guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide-8.8].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-202">These ports are listed in hello [guide for high-availability SAP NetWeaver on Windows VMs][sap-ha-guide-8.8].</span></span>  
+ <span data-ttu-id="0ab2d-203">Também abra Olá do Azure de carga interno balanceador porta da sonda, que é 62350 no nosso cenário.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-203">Also open hello Azure internal load balancer probe port, which is 62350 in our scenario.</span></span>
 
-7. [Alterar tipo de início de Olá de instância de serviço do Windows do SAP ERS Olá][sap-ha-guide-9.4].
+7. <span data-ttu-id="0ab2d-204">[Alterar tipo de início de Olá de instância de serviço do Windows do SAP ERS Olá][sap-ha-guide-9.4].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-204">[Change hello start type of hello SAP ERS Windows service instance][sap-ha-guide-9.4].</span></span>
 
-8. [Instalar o servidor de principal da aplicação Olá SAP] [ sap-ha-guide-9.5] no novo Olá dedicado VM.
+8. <span data-ttu-id="0ab2d-205">[Instalar o servidor de principal da aplicação Olá SAP] [ sap-ha-guide-9.5] no novo Olá dedicado VM.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-205">[Install hello SAP primary application server][sap-ha-guide-9.5] on hello new dedicated VM.</span></span>
 
-9. [Instalar o servidor de aplicação adicional do SAP Olá] [ sap-ha-guide-9.6] no novo Olá dedicado VM.
+9. <span data-ttu-id="0ab2d-206">[Instalar o servidor de aplicação adicional do SAP Olá] [ sap-ha-guide-9.6] no novo Olá dedicado VM.</span><span class="sxs-lookup"><span data-stu-id="0ab2d-206">[Install hello SAP additional application server][sap-ha-guide-9.6] on hello new dedicated VM.</span></span>
 
-10. [Testar a ativação pós-falha de instância do SAP ASCS/SCS Olá e replicação SIOS][sap-ha-guide-10].
+10. <span data-ttu-id="0ab2d-207">[Testar a ativação pós-falha de instância do SAP ASCS/SCS Olá e replicação SIOS][sap-ha-guide-10].</span><span class="sxs-lookup"><span data-stu-id="0ab2d-207">[Test hello SAP ASCS/SCS instance failover and SIOS replication][sap-ha-guide-10].</span></span>
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="0ab2d-208">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="0ab2d-208">Next steps</span></span>
 
-- [Limites de rede: o Azure Resource Manager][networking-limits-azure-resource-manager]
-- [Balanceador de carga de vários VIPs do Azure][load-balancer-multivip-overview]
-- [Guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide]
+- <span data-ttu-id="0ab2d-209">[Limites de rede: o Azure Resource Manager][networking-limits-azure-resource-manager]</span><span class="sxs-lookup"><span data-stu-id="0ab2d-209">[Networking limits: Azure Resource Manager][networking-limits-azure-resource-manager]</span></span>
+- <span data-ttu-id="0ab2d-210">[Balanceador de carga de vários VIPs do Azure][load-balancer-multivip-overview]</span><span class="sxs-lookup"><span data-stu-id="0ab2d-210">[Multiple VIPs for Azure Load Balancer][load-balancer-multivip-overview]</span></span>
+- <span data-ttu-id="0ab2d-211">[Guia para elevada disponibilidade SAP NetWeaver em VMs do Windows][sap-ha-guide]</span><span class="sxs-lookup"><span data-stu-id="0ab2d-211">[Guide for high-availability SAP NetWeaver on Windows VMs][sap-ha-guide]</span></span>

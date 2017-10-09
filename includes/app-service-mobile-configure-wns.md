@@ -1,7 +1,7 @@
 
-1. No Olá [portal do Azure](https://portal.azure.com/), clique em **Procurar tudo** > **serviços aplicacionais**e clique em seu back-end do Mobile Apps. Em **definições**, clique em **Push do serviço de aplicações**e, em seguida, clique em seu nome de hub de notificação.
-2. Aceda demasiado**Windows (WNS)**, introduza Olá **a chave de segurança** (segredo do cliente) e **SID do pacote** obtido a partir do site dos Serviços Live de Olá e, em seguida, clique em  **Guardar**.
+1. <span data-ttu-id="e9004-101">No Olá [portal do Azure](https://portal.azure.com/), clique em **Procurar tudo** > **serviços aplicacionais**e clique em seu back-end do Mobile Apps.</span><span class="sxs-lookup"><span data-stu-id="e9004-101">In hello [Azure portal](https://portal.azure.com/), click **Browse All** > **App Services**, and click your Mobile Apps back end.</span></span> <span data-ttu-id="e9004-102">Em **definições**, clique em **Push do serviço de aplicações**e, em seguida, clique em seu nome de hub de notificação.</span><span class="sxs-lookup"><span data-stu-id="e9004-102">Under **Settings**, click **App Service Push**, and then click your notification hub name.</span></span>
+2. <span data-ttu-id="e9004-103">Aceda demasiado**Windows (WNS)**, introduza Olá **a chave de segurança** (segredo do cliente) e **SID do pacote** obtido a partir do site dos Serviços Live de Olá e, em seguida, clique em  **Guardar**.</span><span class="sxs-lookup"><span data-stu-id="e9004-103">Go too**Windows (WNS)**, enter hello **Security key** (client secret) and **Package SID** that you obtained from hello Live Services site, and then click **Save**.</span></span>
 
     ![Definir a chave WNS Olá no portal de Olá](./media/app-service-mobile-configure-wns/mobile-push-wns-credentials.png)
 
-O back-end está agora configurado toouse as notificações de push do WNS toosend.
+<span data-ttu-id="e9004-105">O back-end está agora configurado toouse as notificações de push do WNS toosend.</span><span class="sxs-lookup"><span data-stu-id="e9004-105">Your back end is now configured toouse WNS toosend push notifications.</span></span>

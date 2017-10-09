@@ -1,17 +1,17 @@
 > [!div class="op_single_selector"]
-> * [Dispositivo: Node.js Serviço: Node.js](../articles/iot-hub/iot-hub-node-node-device-management-get-started.md)
-> * [Dispositivo: Node.js Serviço: C#](../articles/iot-hub/iot-hub-csharp-node-device-management-get-started.md)
-> * [Dispositivo: Serviço de Java: Java](../articles/iot-hub/iot-hub-java-java-device-management-getstarted.md)
+> * [<span data-ttu-id="c457e-101">Dispositivo: Node.js Serviço: Node.js</span><span class="sxs-lookup"><span data-stu-id="c457e-101">Device: Node.js Service: Node.js</span></span>](../articles/iot-hub/iot-hub-node-node-device-management-get-started.md)
+> * [<span data-ttu-id="c457e-102">Dispositivo: Node.js Serviço: C#</span><span class="sxs-lookup"><span data-stu-id="c457e-102">Device: Node.js Service: C#</span></span>](../articles/iot-hub/iot-hub-csharp-node-device-management-get-started.md)
+> * [<span data-ttu-id="c457e-103">Dispositivo: Serviço de Java: Java</span><span class="sxs-lookup"><span data-stu-id="c457e-103">Device: Java Service: Java</span></span>](../articles/iot-hub/iot-hub-java-java-device-management-getstarted.md)
 
-Aplicações de back-end pode utilizar primitivos do IoT Hub do Azure, tal como [dispositivo duplo] [ lnk-devtwin] e [direcionar métodos][lnk-c2dmethod], tooremotely iniciar e monitorizar ações de gestão de dispositivos em dispositivos. Este tutorial mostra como uma aplicação de back-end e uma aplicação de dispositivo podem trabalhar em conjunto tooinitiate e monitorizar um reinício do dispositivo remoto utilizar o IoT Hub.
+<span data-ttu-id="c457e-104">Aplicações de back-end pode utilizar primitivos do IoT Hub do Azure, tal como [dispositivo duplo] [ lnk-devtwin] e [direcionar métodos][lnk-c2dmethod], tooremotely iniciar e monitorizar ações de gestão de dispositivos em dispositivos.</span><span class="sxs-lookup"><span data-stu-id="c457e-104">Back-end apps can use Azure IoT Hub primitives, such as [device twin][lnk-devtwin] and [direct methods][lnk-c2dmethod], tooremotely start and monitor device management actions on devices.</span></span> <span data-ttu-id="c457e-105">Este tutorial mostra como uma aplicação de back-end e uma aplicação de dispositivo podem trabalhar em conjunto tooinitiate e monitorizar um reinício do dispositivo remoto utilizar o IoT Hub.</span><span class="sxs-lookup"><span data-stu-id="c457e-105">This tutorial shows you how a back-end app and a device app can work together tooinitiate and monitor a remote device reboot using IoT Hub.</span></span>
 
-Utilize ações de gestão do dispositivo tooinitiate um método direto (por exemplo, o reinício, reposição de fábrica e atualização de firmware) a partir de uma aplicação de back-end na nuvem de Olá. dispositivo Olá é responsável por:
+<span data-ttu-id="c457e-106">Utilize ações de gestão do dispositivo tooinitiate um método direto (por exemplo, o reinício, reposição de fábrica e atualização de firmware) a partir de uma aplicação de back-end na nuvem de Olá.</span><span class="sxs-lookup"><span data-stu-id="c457e-106">Use a direct method tooinitiate device management actions (such as reboot, factory reset, and firmware update) from a back-end app in hello cloud.</span></span> <span data-ttu-id="c457e-107">dispositivo Olá é responsável por:</span><span class="sxs-lookup"><span data-stu-id="c457e-107">hello device is responsible for:</span></span>
 
-* A processar o pedido de método de Olá enviado a partir do IoT Hub.
-* Iniciar a ação específicos do dispositivo correspondente Olá no dispositivo Olá.
-* Fornecer atualizações de estado através de *comunicadas propriedades* tooIoT Hub.
+* <span data-ttu-id="c457e-108">A processar o pedido de método de Olá enviado a partir do IoT Hub.</span><span class="sxs-lookup"><span data-stu-id="c457e-108">Handling hello method request sent from IoT Hub.</span></span>
+* <span data-ttu-id="c457e-109">Iniciar a ação específicos do dispositivo correspondente Olá no dispositivo Olá.</span><span class="sxs-lookup"><span data-stu-id="c457e-109">Initiating hello corresponding device-specific action on hello device.</span></span>
+* <span data-ttu-id="c457e-110">Fornecer atualizações de estado através de *comunicadas propriedades* tooIoT Hub.</span><span class="sxs-lookup"><span data-stu-id="c457e-110">Providing status updates through *reported properties* tooIoT Hub.</span></span>
 
-Pode utilizar uma aplicação de back-end Olá nuvem toorun dispositivo duplo consultas tooreport em curso Olá das suas ações de gestão de dispositivos.
+<span data-ttu-id="c457e-111">Pode utilizar uma aplicação de back-end Olá nuvem toorun dispositivo duplo consultas tooreport em curso Olá das suas ações de gestão de dispositivos.</span><span class="sxs-lookup"><span data-stu-id="c457e-111">You can use a back-end app in hello cloud toorun device twin queries tooreport on hello progress of your device management actions.</span></span>
 
 [lnk-devtwin]: ../articles/iot-hub/iot-hub-devguide-device-twins.md
 [lnk-c2dmethod]: ../articles/iot-hub/iot-hub-devguide-direct-methods.md

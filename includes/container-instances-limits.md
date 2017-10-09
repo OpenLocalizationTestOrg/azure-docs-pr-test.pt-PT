@@ -1,3 +1,3 @@
-| Recurso | Limite Predefinido |
+| <span data-ttu-id="edeea-101">Recurso</span><span class="sxs-lookup"><span data-stu-id="edeea-101">Resource</span></span> | <span data-ttu-id="edeea-102">Limite Predefinido</span><span class="sxs-lookup"><span data-stu-id="edeea-102">Default Limit</span></span> |
 | --- | --- |
-| Grupos de contentores por [subscrição](../articles/billing-buy-sign-up-azure-subscription.md) | 20 |
+| <span data-ttu-id="edeea-103">Grupos de contentores por [subscrição](../articles/billing-buy-sign-up-azure-subscription.md)</span><span class="sxs-lookup"><span data-stu-id="edeea-103">Container groups per [subscription](../articles/billing-buy-sign-up-azure-subscription.md)</span></span> | <span data-ttu-id="edeea-104">20</span><span class="sxs-lookup"><span data-stu-id="edeea-104">20</span></span> |

@@ -1,14 +1,14 @@
-Criar um plano de serviço de aplicações com Olá [criar plano de serviço aplicacional az](/cli/azure/appservice/plan#create) comando.
+<span data-ttu-id="ad81e-101">Criar um plano de serviço de aplicações com Olá [criar plano de serviço aplicacional az](/cli/azure/appservice/plan#create) comando.</span><span class="sxs-lookup"><span data-stu-id="ad81e-101">Create an App Service plan with hello [az appservice plan create](/cli/azure/appservice/plan#create) command.</span></span>
 
 [!INCLUDE [app-service-plan](app-service-plan.md)]
 
-Olá exemplo seguinte cria um plano de serviço de aplicações com o nome `myAppServicePlan` no Olá **livres** escalão de preço:
+<span data-ttu-id="ad81e-102">Olá exemplo seguinte cria um plano de serviço de aplicações com o nome `myAppServicePlan` no Olá **livres** escalão de preço:</span><span class="sxs-lookup"><span data-stu-id="ad81e-102">hello following example creates an App Service plan named `myAppServicePlan` in hello **Free** pricing tier:</span></span>
 
 ```azurecli-interactive
 az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku FREE
 ```
 
-Quando tiver sido criado Olá plano do App Service, Olá CLI do Azure mostra informações toohello semelhante seguinte exemplo:
+<span data-ttu-id="ad81e-103">Quando tiver sido criado Olá plano do App Service, Olá CLI do Azure mostra informações toohello semelhante seguinte exemplo:</span><span class="sxs-lookup"><span data-stu-id="ad81e-103">When hello App Service plan has been created, hello Azure CLI shows information similar toohello following example:</span></span>
 
 ```json
 { 

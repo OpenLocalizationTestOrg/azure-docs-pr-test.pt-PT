@@ -1,4 +1,4 @@
-1. Servidor de processos de toohello de início de sessão como administrador.
-2. Transferir a versão mais recente do Olá do Olá [a configuração do Unified](http://aka.ms/unifiedinstaller).
-3. Faça duplo clique Olá toolaunch Olá atualização do processo do instalador.
-4. Instalador de Olá detetará Olá vários componentes que estão instalados e atualizá-los a versão mais recente toohello.
+1. <span data-ttu-id="78110-101">Servidor de processos de toohello de início de sessão como administrador.</span><span class="sxs-lookup"><span data-stu-id="78110-101">Login toohello process server as an Administrator.</span></span>
+2. <span data-ttu-id="78110-102">Transferir a versão mais recente do Olá do Olá [a configuração do Unified](http://aka.ms/unifiedinstaller).</span><span class="sxs-lookup"><span data-stu-id="78110-102">Download hello latest version of hello [Unified Setup](http://aka.ms/unifiedinstaller).</span></span>
+3. <span data-ttu-id="78110-103">Faça duplo clique Olá toolaunch Olá atualização do processo do instalador.</span><span class="sxs-lookup"><span data-stu-id="78110-103">Double-click hello installer toolaunch hello update process.</span></span>
+4. <span data-ttu-id="78110-104">Instalador de Olá detetará Olá vários componentes que estão instalados e atualizá-los a versão mais recente toohello.</span><span class="sxs-lookup"><span data-stu-id="78110-104">hello installer will detect hello various components that are installed and upgrade them toohello latest version.</span></span>

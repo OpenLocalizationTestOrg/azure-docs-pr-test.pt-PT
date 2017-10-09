@@ -20,22 +20,22 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="what-happened-toomy-webjob-project-visual-studio-azure-storage-connected-service"></a>O projeto de WebJob toomy acontecido (Visual Studio do armazenamento do Azure ligado service)?
-## <a name="references-added"></a>Referências adicionadas
-pacote NuGet de armazenamento do Azure de Olá foi adicionado tooor atualizado no seu projeto de Visual Studio.  
-Este pacote adiciona Olá .NET referências a seguir:
+# <a name="what-happened-toomy-webjob-project-visual-studio-azure-storage-connected-service"></a><span data-ttu-id="b1a7f-104">O projeto de WebJob toomy acontecido (Visual Studio do armazenamento do Azure ligado service)?</span><span class="sxs-lookup"><span data-stu-id="b1a7f-104">What happened toomy WebJob project (Visual Studio Azure Storage connected service)?</span></span>
+## <a name="references-added"></a><span data-ttu-id="b1a7f-105">Referências adicionadas</span><span class="sxs-lookup"><span data-stu-id="b1a7f-105">References Added</span></span>
+<span data-ttu-id="b1a7f-106">pacote NuGet de armazenamento do Azure de Olá foi adicionado tooor atualizado no seu projeto de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="b1a7f-106">hello Azure Storage NuGet package was added tooor updated in your Visual Studio project.</span></span>  
+<span data-ttu-id="b1a7f-107">Este pacote adiciona Olá .NET referências a seguir:</span><span class="sxs-lookup"><span data-stu-id="b1a7f-107">This package adds hello following .NET references:</span></span>
 
-* **Microsoft.Data.Edm**
-* **Microsoft.Data.OData**
-* **Microsoft.Data.Services.Client**
-* **Configurationmanager**
-* **Microsoft.WindowsAzure.Storage**
-* **Newtonsoft**
-* **Data**
-* **System.Spatial**
+* <span data-ttu-id="b1a7f-108">**Microsoft.Data.Edm**</span><span class="sxs-lookup"><span data-stu-id="b1a7f-108">**Microsoft.Data.Edm**</span></span>
+* <span data-ttu-id="b1a7f-109">**Microsoft.Data.OData**</span><span class="sxs-lookup"><span data-stu-id="b1a7f-109">**Microsoft.Data.OData**</span></span>
+* <span data-ttu-id="b1a7f-110">**Microsoft.Data.Services.Client**</span><span class="sxs-lookup"><span data-stu-id="b1a7f-110">**Microsoft.Data.Services.Client**</span></span>
+* <span data-ttu-id="b1a7f-111">**Configurationmanager**</span><span class="sxs-lookup"><span data-stu-id="b1a7f-111">**Microsoft.WindowsAzure.ConfigurationManager**</span></span>
+* <span data-ttu-id="b1a7f-112">**Microsoft.WindowsAzure.Storage**</span><span class="sxs-lookup"><span data-stu-id="b1a7f-112">**Microsoft.WindowsAzure.Storage**</span></span>
+* <span data-ttu-id="b1a7f-113">**Newtonsoft**</span><span class="sxs-lookup"><span data-stu-id="b1a7f-113">**Newtonsoft.Json**</span></span>
+* <span data-ttu-id="b1a7f-114">**Data**</span><span class="sxs-lookup"><span data-stu-id="b1a7f-114">**System.Data**</span></span>
+* <span data-ttu-id="b1a7f-115">**System.Spatial**</span><span class="sxs-lookup"><span data-stu-id="b1a7f-115">**System.Spatial**</span></span>
 
-## <a name="connection-string-for-azure-storage-added"></a>Cadeia de ligação para o armazenamento de Azure adicionado
-No ficheiro App. config de Olá do seu projeto, Olá **AzureWebJobsStorage** e **AzureWebJobsDashboard** entradas foram atualizadas com a cadeia de ligação e a chave da conta de armazenamento Olá selecionado.
+## <a name="connection-string-for-azure-storage-added"></a><span data-ttu-id="b1a7f-116">Cadeia de ligação para o armazenamento de Azure adicionado</span><span class="sxs-lookup"><span data-stu-id="b1a7f-116">Connection string for Azure Storage added</span></span>
+<span data-ttu-id="b1a7f-117">No ficheiro App. config de Olá do seu projeto, Olá **AzureWebJobsStorage** e **AzureWebJobsDashboard** entradas foram atualizadas com a cadeia de ligação e a chave da conta de armazenamento Olá selecionado.</span><span class="sxs-lookup"><span data-stu-id="b1a7f-117">In hello App.config file of your project, hello **AzureWebJobsStorage** and **AzureWebJobsDashboard** entries were updated with hello selected storage account's connection string and key.</span></span>
 
-Para obter mais informações, consulte [recursos de documentação de WebJobs do Azure](http://go.microsoft.com/fwlink/?linkid=390226).
+<span data-ttu-id="b1a7f-118">Para obter mais informações, consulte [recursos de documentação de WebJobs do Azure](http://go.microsoft.com/fwlink/?linkid=390226).</span><span class="sxs-lookup"><span data-stu-id="b1a7f-118">For more information, see [Azure WebJobs documentation resources](http://go.microsoft.com/fwlink/?linkid=390226).</span></span>
 

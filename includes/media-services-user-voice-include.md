@@ -1,10 +1,10 @@
-Olá utilize [voz do utilizador](http://go.microsoft.com/fwlink/?linkid=698785&clcid=0x409) fórum tooprovide comentários e faça sugestões sobre como tooimprove dos Media Services do Azure. Pode também aceder diretamente tooone de Olá seguintes categorias:
+<span data-ttu-id="e17c2-101">Olá utilize [voz do utilizador](http://go.microsoft.com/fwlink/?linkid=698785&clcid=0x409) fórum tooprovide comentários e faça sugestões sobre como tooimprove dos Media Services do Azure.</span><span class="sxs-lookup"><span data-stu-id="e17c2-101">Use hello [User Voice](http://go.microsoft.com/fwlink/?linkid=698785&clcid=0x409) forum tooprovide feedback and make suggestions on how tooimprove Azure Media Services.</span></span> <span data-ttu-id="e17c2-102">Pode também aceder diretamente tooone de Olá seguintes categorias:</span><span class="sxs-lookup"><span data-stu-id="e17c2-102">You can also go directly tooone of hello following categories:</span></span>
 
-* [Media Player do Azure](https://feedback.azure.com/forums/169396-media-services/category/109320-azure-media-player/)
-* [Bibliotecas SDK do Cliente](https://feedback.azure.com/forums/169396-media-services/category/144435-client-sdks/)
-* [Codificação e processamento](https://feedback.azure.com/forums/169396-media-services/category/144411-encoding-and-processing/)
-* [Transmissão em direto](https://feedback.azure.com/forums/169396-media-services/category/144414-live-streaming/)
-* [Análise de multimédia](https://feedback.azure.com/forums/169396-media-services/category/146181-media-analytics)
-* [Portal do Azure](https://feedback.azure.com/forums/169396-media-services/category/144432-portal/)
-* [API REST e plataforma](https://feedback.azure.com/forums/169396-media-services/category/144423-rest-api-and-platform/)
-* [Transmissão VoD](https://feedback.azure.com/forums/169396-media-services/category/144429-vod-streaming/)
+* [<span data-ttu-id="e17c2-103">Media Player do Azure</span><span class="sxs-lookup"><span data-stu-id="e17c2-103">Azure Media Player</span></span>](https://feedback.azure.com/forums/169396-media-services/category/109320-azure-media-player/)
+* [<span data-ttu-id="e17c2-104">Bibliotecas SDK do Cliente</span><span class="sxs-lookup"><span data-stu-id="e17c2-104">Client SDK libraries</span></span>](https://feedback.azure.com/forums/169396-media-services/category/144435-client-sdks/)
+* [<span data-ttu-id="e17c2-105">Codificação e processamento</span><span class="sxs-lookup"><span data-stu-id="e17c2-105">Encoding and processing</span></span>](https://feedback.azure.com/forums/169396-media-services/category/144411-encoding-and-processing/)
+* [<span data-ttu-id="e17c2-106">Transmissão em direto</span><span class="sxs-lookup"><span data-stu-id="e17c2-106">Live Streaming</span></span>](https://feedback.azure.com/forums/169396-media-services/category/144414-live-streaming/)
+* [<span data-ttu-id="e17c2-107">Análise de multimédia</span><span class="sxs-lookup"><span data-stu-id="e17c2-107">Media Analytics</span></span>](https://feedback.azure.com/forums/169396-media-services/category/146181-media-analytics)
+* [<span data-ttu-id="e17c2-108">Portal do Azure</span><span class="sxs-lookup"><span data-stu-id="e17c2-108">Azure portal</span></span>](https://feedback.azure.com/forums/169396-media-services/category/144432-portal/)
+* [<span data-ttu-id="e17c2-109">API REST e plataforma</span><span class="sxs-lookup"><span data-stu-id="e17c2-109">REST API and platform</span></span>](https://feedback.azure.com/forums/169396-media-services/category/144423-rest-api-and-platform/)
+* [<span data-ttu-id="e17c2-110">Transmissão VoD</span><span class="sxs-lookup"><span data-stu-id="e17c2-110">VOD Streaming</span></span>](https://feedback.azure.com/forums/169396-media-services/category/144429-vod-streaming/)

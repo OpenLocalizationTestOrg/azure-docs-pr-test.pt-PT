@@ -1,46 +1,46 @@
-1. Execute o ficheiro de instalação do programa de configuração Unified Olá.
-2. No **antes de começar**, selecione **instalar o servidor de processos e o servidor de configuração de Olá**.
+1. <span data-ttu-id="150e8-101">Execute o ficheiro de instalação do programa de configuração Unified Olá.</span><span class="sxs-lookup"><span data-stu-id="150e8-101">Run hello Unified Setup installation file.</span></span>
+2. <span data-ttu-id="150e8-102">No **antes de começar**, selecione **instalar o servidor de processos e o servidor de configuração de Olá**.</span><span class="sxs-lookup"><span data-stu-id="150e8-102">In **Before You Begin**, select **Install hello configuration server and process server**.</span></span>
 
     ![Antes de começar](./media/site-recovery-add-configuration-server/combined-wiz1.png)
 
-3. No **licença de Software de terceiros**, clique em **aceito** toodownload e instalar MySQL.
+3. <span data-ttu-id="150e8-104">No **licença de Software de terceiros**, clique em **aceito** toodownload e instalar MySQL.</span><span class="sxs-lookup"><span data-stu-id="150e8-104">In **Third Party Software License**, click **I Accept** toodownload and install MySQL.</span></span>
 
     ![Software de terceiros](./media/site-recovery-add-configuration-server/combined-wiz2.png)
-4. No **registo**, selecione a chave de registo de Olá transferiu a partir do Cofre de Olá.
+4. <span data-ttu-id="150e8-106">No **registo**, selecione a chave de registo de Olá transferiu a partir do Cofre de Olá.</span><span class="sxs-lookup"><span data-stu-id="150e8-106">In **Registration**, select hello registration key you downloaded from hello vault.</span></span>
 
     ![Registo](./media/site-recovery-add-configuration-server/combined-wiz3.png)
-5. No **definições da Internet**, especifique como o fornecedor em execução no servidor de configuração de Olá liga tooAzure recuperação de sites através de Olá Olá Internet.
+5. <span data-ttu-id="150e8-108">No **definições da Internet**, especifique como o fornecedor em execução no servidor de configuração de Olá liga tooAzure recuperação de sites através de Olá Olá Internet.</span><span class="sxs-lookup"><span data-stu-id="150e8-108">In **Internet Settings**, specify how hello Provider running on hello configuration server connects tooAzure Site Recovery over hello Internet.</span></span>
 
-   a. Se pretender tooconnect com o proxy de Olá que está atualmente configurado no computador de Olá, selecione **ligar tooAzure recuperação do Site utilizando um servidor proxy**.
+   <span data-ttu-id="150e8-109">a.</span><span class="sxs-lookup"><span data-stu-id="150e8-109">a.</span></span> <span data-ttu-id="150e8-110">Se pretender tooconnect com o proxy de Olá que está atualmente configurado no computador de Olá, selecione **ligar tooAzure recuperação do Site utilizando um servidor proxy**.</span><span class="sxs-lookup"><span data-stu-id="150e8-110">If you want tooconnect with hello proxy that's currently set up on hello machine, select **Connect tooAzure Site Recovery using a proxy server**.</span></span>
 
-   b. Se pretender que Olá fornecedor tooconnect diretamente, selecione **se ligue diretamente tooAzure recuperação de sites sem um servidor proxy**.
+   <span data-ttu-id="150e8-111">b.</span><span class="sxs-lookup"><span data-stu-id="150e8-111">b.</span></span> <span data-ttu-id="150e8-112">Se pretender que Olá fornecedor tooconnect diretamente, selecione **se ligue diretamente tooAzure recuperação de sites sem um servidor proxy**.</span><span class="sxs-lookup"><span data-stu-id="150e8-112">If you want hello Provider tooconnect directly, select **Connect directly tooAzure Site Recovery without a proxy server**.</span></span>
 
-   c. Selecione se Olá proxy existente requer autenticação ou se quiser toouse um proxy personalizado para ligação de fornecedor Olá, **ligar com definições de proxy personalizado**.
+   <span data-ttu-id="150e8-113">c.</span><span class="sxs-lookup"><span data-stu-id="150e8-113">c.</span></span> <span data-ttu-id="150e8-114">Selecione se Olá proxy existente requer autenticação ou se quiser toouse um proxy personalizado para ligação de fornecedor Olá, **ligar com definições de proxy personalizado**.</span><span class="sxs-lookup"><span data-stu-id="150e8-114">If hello existing proxy requires authentication, or if you want toouse a custom proxy for hello Provider connection, select **Connect with custom proxy settings**.</span></span>
 
-     * Se utilizar um proxy personalizado, terá de endereço de Olá toospecify, porta e credenciais.
-     * Se estiver a utilizar um proxy, já deverá ter permitido os URLs de Olá descritos em [pré-requisitos](#prerequisites).
+     * <span data-ttu-id="150e8-115">Se utilizar um proxy personalizado, terá de endereço de Olá toospecify, porta e credenciais.</span><span class="sxs-lookup"><span data-stu-id="150e8-115">If you use a custom proxy, you need toospecify hello address, port, and credentials.</span></span>
+     * <span data-ttu-id="150e8-116">Se estiver a utilizar um proxy, já deverá ter permitido os URLs de Olá descritos em [pré-requisitos](#prerequisites).</span><span class="sxs-lookup"><span data-stu-id="150e8-116">If you're using a proxy, you should have already allowed hello URLs described in [Prerequisites](#prerequisites).</span></span>
 
      ![Firewall](./media/site-recovery-add-configuration-server/combined-wiz4.png)
-6. No **verificação de pré-requisitos**, a configuração executa um toomake de verificação se a instalação pode ser executada. Se é apresentado um aviso sobre Olá **verificação de sincronização de hora Global**, certifique-se essa hora Olá no relógio do sistema Olá (**data e hora** definições) é Olá mesmo como Olá fuso horário.
+6. <span data-ttu-id="150e8-118">No **verificação de pré-requisitos**, a configuração executa um toomake de verificação se a instalação pode ser executada.</span><span class="sxs-lookup"><span data-stu-id="150e8-118">In **Prerequisites Check**, Setup runs a check toomake sure that installation can run.</span></span> <span data-ttu-id="150e8-119">Se é apresentado um aviso sobre Olá **verificação de sincronização de hora Global**, certifique-se essa hora Olá no relógio do sistema Olá (**data e hora** definições) é Olá mesmo como Olá fuso horário.</span><span class="sxs-lookup"><span data-stu-id="150e8-119">If a warning appears about hello **Global time sync check**, verify that hello time on hello system clock (**Date and Time** settings) is hello same as hello time zone.</span></span>
 
     ![Pré-requisitos](./media/site-recovery-add-configuration-server/combined-wiz5.png)
-7. No **MySQL configuração**, crie as credenciais de início de sessão toohello MySQL instância do servidor que está instalada.
+7. <span data-ttu-id="150e8-121">No **MySQL configuração**, crie as credenciais de início de sessão toohello MySQL instância do servidor que está instalada.</span><span class="sxs-lookup"><span data-stu-id="150e8-121">In **MySQL Configuration**, create credentials for logging on toohello MySQL server instance that is installed.</span></span>
 
     ![MySQL](./media/site-recovery-add-configuration-server/combined-wiz6.png)
-8. No **ambiente detalhes**, selecione se que vai tooreplicate VMs de VMware. Se, em seguida, a configuração verifica se PowerCLI 6.0 está instalada.
+8. <span data-ttu-id="150e8-123">No **ambiente detalhes**, selecione se que vai tooreplicate VMs de VMware.</span><span class="sxs-lookup"><span data-stu-id="150e8-123">In **Environment Details**, select whether you're going tooreplicate VMware VMs.</span></span> <span data-ttu-id="150e8-124">Se, em seguida, a configuração verifica se PowerCLI 6.0 está instalada.</span><span class="sxs-lookup"><span data-stu-id="150e8-124">If you are, then Setup checks that PowerCLI 6.0 is installed.</span></span>
 
     ![MySQL](./media/site-recovery-add-configuration-server/combined-wiz7.png)
 
-9. No **instalar localização**, selecione de onde pretende que os binários de Olá tooinstall e armazenar cache Olá. unidade de Olá que selecionar tem de ter, pelo menos, 5 GB de espaço em disco disponível, mas recomenda-se uma unidade de cache com, pelo menos, 600 GB de espaço livre.
+9. <span data-ttu-id="150e8-126">No **instalar localização**, selecione de onde pretende que os binários de Olá tooinstall e armazenar cache Olá.</span><span class="sxs-lookup"><span data-stu-id="150e8-126">In **Install Location**, select where you want tooinstall hello binaries and store hello cache.</span></span> <span data-ttu-id="150e8-127">unidade de Olá que selecionar tem de ter, pelo menos, 5 GB de espaço em disco disponível, mas recomenda-se uma unidade de cache com, pelo menos, 600 GB de espaço livre.</span><span class="sxs-lookup"><span data-stu-id="150e8-127">hello drive you select must have at least 5 GB of disk space available, but we recommend a cache drive with at least 600 GB of free space.</span></span>
 
     ![Localização de instalação](./media/site-recovery-add-configuration-server/combined-wiz8.png)
-10. No **seleção de rede**, especifique o serviço de escuta de Olá (placa de rede e a porta SSL) no qual envia de servidor de configuração de Olá e recebe dados de replicação. Porta 9443 é Olá predefinido porta é utilizada para enviar e receber tráfego de replicação, mas pode modificar este toosuit número de porta requisitos do seu ambiente. Porta de toohello adição 9443, também Iremos abrir porta 443, que é utilizada por um operações de replicação de tooorchestrate de servidor web. Não utilize a porta 443 para enviar ou receber tráfego de replicação.
+10. <span data-ttu-id="150e8-129">No **seleção de rede**, especifique o serviço de escuta de Olá (placa de rede e a porta SSL) no qual envia de servidor de configuração de Olá e recebe dados de replicação.</span><span class="sxs-lookup"><span data-stu-id="150e8-129">In **Network Selection**, specify hello listener (network adapter and SSL port) on which hello configuration server sends and receives replication data.</span></span> <span data-ttu-id="150e8-130">Porta 9443 é Olá predefinido porta é utilizada para enviar e receber tráfego de replicação, mas pode modificar este toosuit número de porta requisitos do seu ambiente.</span><span class="sxs-lookup"><span data-stu-id="150e8-130">Port 9443 is hello default port used for sending and receiving replication traffic, but you can modify this port number toosuit your environment's requirements.</span></span> <span data-ttu-id="150e8-131">Porta de toohello adição 9443, também Iremos abrir porta 443, que é utilizada por um operações de replicação de tooorchestrate de servidor web.</span><span class="sxs-lookup"><span data-stu-id="150e8-131">In addition toohello port 9443, we also open port 443, which is used by a web server tooorchestrate replication operations.</span></span> <span data-ttu-id="150e8-132">Não utilize a porta 443 para enviar ou receber tráfego de replicação.</span><span class="sxs-lookup"><span data-stu-id="150e8-132">Do not use port 443 for sending or receiving replication traffic.</span></span>
 
     ![Seleção de rede](./media/site-recovery-add-configuration-server/combined-wiz9.png)
 
 
-11. No **resumo**, reveja as informações de Olá e clique em **instalar**. Quando a instalação estiver concluída, é gerada uma frase de acesso. Irá precisar dela, quando ativar a replicação, por isso, copie-a e mantenha-a numa localização segura.
+11. <span data-ttu-id="150e8-134">No **resumo**, reveja as informações de Olá e clique em **instalar**.</span><span class="sxs-lookup"><span data-stu-id="150e8-134">In **Summary**, review hello information and click **Install**.</span></span> <span data-ttu-id="150e8-135">Quando a instalação estiver concluída, é gerada uma frase de acesso.</span><span class="sxs-lookup"><span data-stu-id="150e8-135">When installation finishes, a passphrase is generated.</span></span> <span data-ttu-id="150e8-136">Irá precisar dela, quando ativar a replicação, por isso, copie-a e mantenha-a numa localização segura.</span><span class="sxs-lookup"><span data-stu-id="150e8-136">You will need this when you enable replication, so copy it and keep it in a secure location.</span></span>
 
     ![Resumo](./media/site-recovery-add-configuration-server/combined-wiz10.png)
 
-Após a conclusão de registo, o servidor de Olá é apresentado no Olá **definições** > **servidores** painel no Cofre de Olá.
+<span data-ttu-id="150e8-138">Após a conclusão de registo, o servidor de Olá é apresentado no Olá **definições** > **servidores** painel no Cofre de Olá.</span><span class="sxs-lookup"><span data-stu-id="150e8-138">After registration finishes, hello server is displayed on hello **Settings** > **Servers** blade in hello vault.</span></span>

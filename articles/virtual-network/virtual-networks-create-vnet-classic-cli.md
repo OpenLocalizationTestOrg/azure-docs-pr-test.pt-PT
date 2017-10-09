@@ -21,14 +21,14 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="create-a-virtual-network-classic-by-using-hello-azure-cli"></a>Criar uma rede virtual (clássica) utilizando Olá CLI do Azure
+# <a name="create-a-virtual-network-classic-by-using-hello-azure-cli"></a><span data-ttu-id="eaafe-103">Criar uma rede virtual (clássica) utilizando Olá CLI do Azure</span><span class="sxs-lookup"><span data-stu-id="eaafe-103">Create a virtual network (classic) by using hello Azure CLI</span></span>
 [!INCLUDE [virtual-networks-create-vnet-selectors-classic-include](../../includes/virtual-networks-create-vnet-selectors-classic-include.md)]
 
 [!INCLUDE [virtual-networks-create-vnet-intro](../../includes/virtual-networks-create-vnet-intro-include.md)]
 
 [!INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
-Este documento abrange a criação de uma VNet com o modelo de implementação clássica Olá. Também pode [criar uma rede virtual no modelo de implementação do Resource Manager Olá utilizando Olá CLI do Azure](virtual-networks-create-vnet-arm-cli.md).
+<span data-ttu-id="eaafe-104">Este documento abrange a criação de uma VNet com o modelo de implementação clássica Olá.</span><span class="sxs-lookup"><span data-stu-id="eaafe-104">This document covers creating a VNet by using hello classic deployment model.</span></span> <span data-ttu-id="eaafe-105">Também pode [criar uma rede virtual no modelo de implementação do Resource Manager Olá utilizando Olá CLI do Azure](virtual-networks-create-vnet-arm-cli.md).</span><span class="sxs-lookup"><span data-stu-id="eaafe-105">You can also [create a virtual network in hello Resource Manager deployment model by using hello Azure CLI](virtual-networks-create-vnet-arm-cli.md).</span></span>
 
 [!INCLUDE [virtual-networks-create-vnet-scenario-include](../../includes/virtual-networks-create-vnet-scenario-include.md)]
 

@@ -1,16 +1,16 @@
-## <a name="scenario"></a>Cenário
-toobetter mostram como toocreate NSGs, este documento utilizará cenário Olá abaixo.
+## <a name="scenario"></a><span data-ttu-id="9ef8d-101">Cenário</span><span class="sxs-lookup"><span data-stu-id="9ef8d-101">Scenario</span></span>
+<span data-ttu-id="9ef8d-102">toobetter mostram como toocreate NSGs, este documento utilizará cenário Olá abaixo.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-102">toobetter illustrate how toocreate NSGs, this document will use hello scenario below.</span></span>
 
 ![Cenário de VNet](./media/virtual-networks-create-nsg-scenario-include/figure1.png)
 
-Neste cenário, irá criar um NSG para cada sub-rede na Olá **TestVNet** rede virtual, conforme descrito abaixo: 
+<span data-ttu-id="9ef8d-104">Neste cenário, irá criar um NSG para cada sub-rede na Olá **TestVNet** rede virtual, conforme descrito abaixo:</span><span class="sxs-lookup"><span data-stu-id="9ef8d-104">In this scenario you will create an NSG for each subnet in hello **TestVNet** virtual network, as described below:</span></span> 
 
-* **NSG-front-end**. Olá front-end NSG será aplicado toohello *front-end* sub-rede e contêm duas regras:    
-  * **regra de RDP**. Esta regra irá permitir RDP tráfego toohello *front-end* sub-rede.
-  * **regra de Web**. Esta regra irá permitir HTTP tráfego toohello *front-end* sub-rede.
-* **NSG-back-end**. Olá de back-end NSG serão aplicado toohello *back-end* sub-rede e contêm duas regras:    
-  * **regra de SQL**. Esta regra permite que o tráfego SQL apenas a partir de Olá *front-end* sub-rede.
-  * **regra de Web**. Esta regra negar internet todos os vinculado tráfego de Olá *back-end* sub-rede.
+* <span data-ttu-id="9ef8d-105">**NSG-front-end**.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-105">**NSG-FrontEnd**.</span></span> <span data-ttu-id="9ef8d-106">Olá front-end NSG será aplicado toohello *front-end* sub-rede e contêm duas regras:</span><span class="sxs-lookup"><span data-stu-id="9ef8d-106">hello front end NSG will be applied toohello *FrontEnd* subnet, and contain two rules:</span></span>    
+  * <span data-ttu-id="9ef8d-107">**regra de RDP**.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-107">**rdp-rule**.</span></span> <span data-ttu-id="9ef8d-108">Esta regra irá permitir RDP tráfego toohello *front-end* sub-rede.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-108">This rule will allow RDP traffic toohello *FrontEnd* subnet.</span></span>
+  * <span data-ttu-id="9ef8d-109">**regra de Web**.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-109">**web-rule**.</span></span> <span data-ttu-id="9ef8d-110">Esta regra irá permitir HTTP tráfego toohello *front-end* sub-rede.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-110">This rule will allow HTTP traffic toohello *FrontEnd* subnet.</span></span>
+* <span data-ttu-id="9ef8d-111">**NSG-back-end**.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-111">**NSG-BackEnd**.</span></span> <span data-ttu-id="9ef8d-112">Olá de back-end NSG serão aplicado toohello *back-end* sub-rede e contêm duas regras:</span><span class="sxs-lookup"><span data-stu-id="9ef8d-112">hello back end NSG will be applied toohello *BackEnd* subnet, and contain two rules:</span></span>    
+  * <span data-ttu-id="9ef8d-113">**regra de SQL**.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-113">**sql-rule**.</span></span> <span data-ttu-id="9ef8d-114">Esta regra permite que o tráfego SQL apenas a partir de Olá *front-end* sub-rede.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-114">This rule allows SQL traffic only from hello *FrontEnd* subnet.</span></span>
+  * <span data-ttu-id="9ef8d-115">**regra de Web**.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-115">**web-rule**.</span></span> <span data-ttu-id="9ef8d-116">Esta regra negar internet todos os vinculado tráfego de Olá *back-end* sub-rede.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-116">This rule denies all internet bound traffic from hello *BackEnd* subnet.</span></span>
 
-Olá combinação destas regras criar um cenário semelhante a rede de Perímetro, onde sub-rede de back-end de Olá só pode receber o tráfego de entrada para o SQL Server da sub-rede do front-end de Olá e tem toohello sem acesso à Internet, enquanto a sub-rede do front-end Olá pode comunicar com Olá Internet, e receba apenas os pedidos HTTP recebidos.
+<span data-ttu-id="9ef8d-117">Olá combinação destas regras criar um cenário semelhante a rede de Perímetro, onde sub-rede de back-end de Olá só pode receber o tráfego de entrada para o SQL Server da sub-rede do front-end de Olá e tem toohello sem acesso à Internet, enquanto a sub-rede do front-end Olá pode comunicar com Olá Internet, e receba apenas os pedidos HTTP recebidos.</span><span class="sxs-lookup"><span data-stu-id="9ef8d-117">hello combination of these rules create a DMZ-like scenario, where hello back end subnet can only receive incoming traffic for SQL from hello front end subnet, and has no access toohello Internet, while hello front end subnet can communicate with hello Internet, and receive incoming HTTP requests only.</span></span>
 

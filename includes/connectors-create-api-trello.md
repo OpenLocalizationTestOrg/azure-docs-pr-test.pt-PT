@@ -1,18 +1,18 @@
-### <a name="prerequisites"></a>Pré-requisitos
-* A [Trello](http://trello.com) conta 
+### <a name="prerequisites"></a><span data-ttu-id="5eec7-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="5eec7-101">Prerequisites</span></span>
+* <span data-ttu-id="5eec7-102">A [Trello](http://trello.com) conta</span><span class="sxs-lookup"><span data-stu-id="5eec7-102">A [Trello](http://trello.com) account</span></span> 
 
-Antes de poder utilizar a sua conta Trello numa aplicação lógica, tem de autorizar conta Trello da tooyour tooconnect Olá lógica aplicação. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure. 
+<span data-ttu-id="5eec7-103">Antes de poder utilizar a sua conta Trello numa aplicação lógica, tem de autorizar conta Trello da tooyour tooconnect Olá lógica aplicação.</span><span class="sxs-lookup"><span data-stu-id="5eec7-103">Before you can use your Trello account in a Logic app, you must authorize hello Logic app tooconnect tooyour Trello account.</span></span> <span data-ttu-id="5eec7-104">Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="5eec7-104">Fortunately, you can do this easily from within your Logic app on hello Azure Portal.</span></span> 
 
-Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica Trello conta:
+<span data-ttu-id="5eec7-105">Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica Trello conta:</span><span class="sxs-lookup"><span data-stu-id="5eec7-105">Here are hello steps tooauthorize your Logic app tooconnect tooyour Trello account:</span></span>
 
-1. toocreate tooTrello uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Trello* na caixa de pesquisa de Olá. Selecione o acionador de Olá ou ação que irá gostar toouse:  
+1. <span data-ttu-id="5eec7-106">toocreate tooTrello uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Trello* na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="5eec7-106">toocreate a connection tooTrello, in hello Logic app designer, select **Show Microsoft managed APIs** in hello drop down list then enter *Trello* in hello search box.</span></span> <span data-ttu-id="5eec7-107">Selecione o acionador de Olá ou ação que irá gostar toouse:</span><span class="sxs-lookup"><span data-stu-id="5eec7-107">Select hello trigger or action you'll like toouse:</span></span>  
    ![](./media/connectors-create-api-trello/trello-1.png)
-2. Se ainda não criou quaisquer tooTrello ligações antes, obterá tooprovide pedido as suas credenciais Trello. Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta Trello:  
+2. <span data-ttu-id="5eec7-108">Se ainda não criou quaisquer tooTrello ligações antes, obterá tooprovide pedido as suas credenciais Trello.</span><span class="sxs-lookup"><span data-stu-id="5eec7-108">If you haven't created any connections tooTrello before, you'll get prompted tooprovide your Trello credentials.</span></span> <span data-ttu-id="5eec7-109">Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta Trello:</span><span class="sxs-lookup"><span data-stu-id="5eec7-109">These credentials will be used tooauthorize your Logic app tooconnect to, and access your Trello account's data:</span></span>  
    ![](./media/connectors-create-api-trello/trello-2.png) 
-3. Permitir-nos tooconnect tooTrello:  
+3. <span data-ttu-id="5eec7-110">Permitir-nos tooconnect tooTrello:</span><span class="sxs-lookup"><span data-stu-id="5eec7-110">Allow us tooconnect tooTrello:</span></span>  
    ![](./media/connectors-create-api-trello/trello-3.png)   
-4. Forneça o tooauthorize de nome e palavra-passe de utilizador do Trello a aplicação de lógica:  
+4. <span data-ttu-id="5eec7-111">Forneça o tooauthorize de nome e palavra-passe de utilizador do Trello a aplicação de lógica:</span><span class="sxs-lookup"><span data-stu-id="5eec7-111">Provide your Trello user name and password tooauthorize your Logic app:</span></span>  
    ![](./media/connectors-create-api-trello/trello-4.png)  
-5. Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:  
+5. <span data-ttu-id="5eec7-112">Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="5eec7-112">Notice hello connection has been created and you are now free tooproceed with hello other steps in your Logic app:</span></span>  
    ![](./media/connectors-create-api-trello/trello-5.png)
 

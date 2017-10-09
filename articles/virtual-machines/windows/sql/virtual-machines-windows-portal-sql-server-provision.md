@@ -20,291 +20,291 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="provision-a-sql-server-virtual-machine-in-hello-azure-portal"></a>Aprovisionar uma máquina virtual do SQL Server no Olá portal do Azure
+# <a name="provision-a-sql-server-virtual-machine-in-hello-azure-portal"></a><span data-ttu-id="42c3c-104">Aprovisionar uma máquina virtual do SQL Server no Olá portal do Azure</span><span class="sxs-lookup"><span data-stu-id="42c3c-104">Provision a SQL Server virtual machine in hello Azure portal</span></span>
 > [!div class="op_single_selector"]
-> * [Portal](virtual-machines-windows-portal-sql-server-provision.md)
-> * [PowerShell](virtual-machines-windows-ps-sql-create.md)
+> * [<span data-ttu-id="42c3c-105">Portal</span><span class="sxs-lookup"><span data-stu-id="42c3c-105">Portal</span></span>](virtual-machines-windows-portal-sql-server-provision.md)
+> * [<span data-ttu-id="42c3c-106">PowerShell</span><span class="sxs-lookup"><span data-stu-id="42c3c-106">PowerShell</span></span>](virtual-machines-windows-ps-sql-create.md)
 > 
 > 
 
-Este tutorial ponto-a-ponto mostra-lhe como toouse Olá tooprovision portal do Azure uma máquina virtual com o SQL Server.
+<span data-ttu-id="42c3c-107">Este tutorial ponto-a-ponto mostra-lhe como toouse Olá tooprovision portal do Azure uma máquina virtual com o SQL Server.</span><span class="sxs-lookup"><span data-stu-id="42c3c-107">This end-to-end tutorial shows you how toouse hello Azure portal tooprovision a virtual machine running SQL Server.</span></span>
 
-Galeria da máquina virtual do Azure (VM) de Olá inclui várias imagens que contêm o Microsoft SQL Server. Com alguns cliques, pode selecionar uma das imagens de VM do SQL na Galeria de Olá de Olá e aprovisioná-lo no seu ambiente do Azure.
+<span data-ttu-id="42c3c-108">Galeria da máquina virtual do Azure (VM) de Olá inclui várias imagens que contêm o Microsoft SQL Server.</span><span class="sxs-lookup"><span data-stu-id="42c3c-108">hello Azure virtual machine (VM) gallery includes several images that contain Microsoft SQL Server.</span></span> <span data-ttu-id="42c3c-109">Com alguns cliques, pode selecionar uma das imagens de VM do SQL na Galeria de Olá de Olá e aprovisioná-lo no seu ambiente do Azure.</span><span class="sxs-lookup"><span data-stu-id="42c3c-109">With a few clicks, you can select one of hello SQL VM images from hello gallery and provision it in your Azure environment.</span></span>
 
-Neste tutorial, irá:
+<span data-ttu-id="42c3c-110">Neste tutorial, irá:</span><span class="sxs-lookup"><span data-stu-id="42c3c-110">In this tutorial, you will:</span></span>
 
-* [Selecionar uma imagem de VM do SQL da Galeria de Olá](#select-a-sql-vm-image-from-the-gallery)
-* [Configurar e criar Olá VM](#configure-the-vm)
-* [Abrir Olá VM com o ambiente de trabalho remoto](#open-the-vm-with-remote-desktop)
-* [Ligar tooSQL servidor remotamente](#connect-to-sql-server-remotely)
+* [<span data-ttu-id="42c3c-111">Selecionar uma imagem de VM do SQL da Galeria de Olá</span><span class="sxs-lookup"><span data-stu-id="42c3c-111">Select a SQL VM image from hello gallery</span></span>](#select-a-sql-vm-image-from-the-gallery)
+* [<span data-ttu-id="42c3c-112">Configurar e criar Olá VM</span><span class="sxs-lookup"><span data-stu-id="42c3c-112">Configure and create hello VM</span></span>](#configure-the-vm)
+* [<span data-ttu-id="42c3c-113">Abrir Olá VM com o ambiente de trabalho remoto</span><span class="sxs-lookup"><span data-stu-id="42c3c-113">Open hello VM with Remote Desktop</span></span>](#open-the-vm-with-remote-desktop)
+* [<span data-ttu-id="42c3c-114">Ligar tooSQL servidor remotamente</span><span class="sxs-lookup"><span data-stu-id="42c3c-114">Connect tooSQL Server remotely</span></span>](#connect-to-sql-server-remotely)
 
-## <a name="select-a-sql-vm-image-from-hello-gallery"></a>Selecionar uma imagem de VM do SQL da Galeria de Olá
+## <a name="select-a-sql-vm-image-from-hello-gallery"></a><span data-ttu-id="42c3c-115">Selecionar uma imagem de VM do SQL da Galeria de Olá</span><span class="sxs-lookup"><span data-stu-id="42c3c-115">Select a SQL VM image from hello gallery</span></span>
 
-1. Inicie sessão no toohello [portal do Azure](https://portal.azure.com) utilizando a sua conta.
+1. <span data-ttu-id="42c3c-116">Inicie sessão no toohello [portal do Azure](https://portal.azure.com) utilizando a sua conta.</span><span class="sxs-lookup"><span data-stu-id="42c3c-116">Log in toohello [Azure portal](https://portal.azure.com) using your account.</span></span>
 
    > [!NOTE]
-   > Se não tiver uma conta do Azure, aceda a [Versão de avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+   > <span data-ttu-id="42c3c-117">Se não tiver uma conta do Azure, aceda a [Versão de avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).</span><span class="sxs-lookup"><span data-stu-id="42c3c-117">If you do not have an Azure account, visit [Azure free trial](https://azure.microsoft.com/pricing/free-trial/).</span></span>
 
-2. No portal do Azure Olá, clique em **novo**. portal de Olá abre Olá **novo** janela.
+2. <span data-ttu-id="42c3c-118">No portal do Azure Olá, clique em **novo**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-118">On hello Azure portal, click **New**.</span></span> <span data-ttu-id="42c3c-119">portal de Olá abre Olá **novo** janela.</span><span class="sxs-lookup"><span data-stu-id="42c3c-119">hello portal opens hello **New** window.</span></span>
 
-3. No Olá **novo** janela, clique em **computação** e, em seguida, clique em **ver todos os**.
+3. <span data-ttu-id="42c3c-120">No Olá **novo** janela, clique em **computação** e, em seguida, clique em **ver todos os**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-120">In hello **New** window, click **Compute** and then click **See all**.</span></span>
 
    ![Janela Nova Computação](./media/virtual-machines-windows-portal-sql-server-provision/azure-new-compute-blade.png)
 
-4. No campo de pesquisa de Olá, escreva **do SQL Server**, e prima ENTER.
+4. <span data-ttu-id="42c3c-122">No campo de pesquisa de Olá, escreva **do SQL Server**, e prima ENTER.</span><span class="sxs-lookup"><span data-stu-id="42c3c-122">In hello search field, type **SQL Server**, and press ENTER.</span></span>
 
-5. Em seguida, clique em Olá **filtro** ícone e selecione **Microsoft** para o publicador de Olá. Clique em **feito** nos resultados de Olá Olá filtro janela toofilter tooMicrosoft publicados imagens do SQL Server.
+5. <span data-ttu-id="42c3c-123">Em seguida, clique em Olá **filtro** ícone e selecione **Microsoft** para o publicador de Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-123">Then click hello **Filter** icon and select **Microsoft** for hello publisher.</span></span> <span data-ttu-id="42c3c-124">Clique em **feito** nos resultados de Olá Olá filtro janela toofilter tooMicrosoft publicados imagens do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="42c3c-124">Click **Done** on hello filter window toofilter hello results tooMicrosoft published SQL Server images.</span></span>
 
    ![Janela Máquinas Virtuais do Azure](./media/virtual-machines-windows-portal-sql-server-provision/azure-compute-blade2.png)
 
-5. Reveja as imagens de SQL Server disponíveis Olá. Cada imagem identifica uma versão do SQL Server e um sistema operativo.
+5. <span data-ttu-id="42c3c-126">Reveja as imagens de SQL Server disponíveis Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-126">Review hello available SQL Server images.</span></span> <span data-ttu-id="42c3c-127">Cada imagem identifica uma versão do SQL Server e um sistema operativo.</span><span class="sxs-lookup"><span data-stu-id="42c3c-127">Each image identifies a SQL Server version and an operating system.</span></span>
 
-6. Com o nome de imagem de Olá selecione **licença livre: SQL Server 2016 SP1 Programador no Windows Server 2016**.
-
-   > [!TIP]
-   > edição de programador Olá é utilizada neste tutorial, porque é uma edição completa do SQL Server que está livre para fins de teste de desenvolvimento. Só paga pelos custo de Olá de execução Olá VM. No entanto, estiver livre toochoose qualquer uma das imagens de Olá toouse neste tutorial.
+6. <span data-ttu-id="42c3c-128">Com o nome de imagem de Olá selecione **licença livre: SQL Server 2016 SP1 Programador no Windows Server 2016**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-128">Select hello image named **Free License: SQL Server 2016 SP1 Developer on Windows Server 2016**.</span></span>
 
    > [!TIP]
-   > Imagens da VM do SQL Server incluem custos de licenciamento Olá para o SQL Server para Olá preços por minuto de Olá VM criar (exceto para edições Olá programador e o Express). O SQL Server Developer é gratuito para programação/teste (não para produção) e o SQL Express é gratuito para cargas de trabalho leves (inferiores a 1GB de memória e inferiores a 10 GB de armazenamento). Há outra opção toobring-your-proprietário-licença (BYOL) e pagar apenas para Olá VM. Aos nomes dessas imagem é adicionado o prefixo {BYOL}. 
+   > <span data-ttu-id="42c3c-129">edição de programador Olá é utilizada neste tutorial, porque é uma edição completa do SQL Server que está livre para fins de teste de desenvolvimento.</span><span class="sxs-lookup"><span data-stu-id="42c3c-129">hello Developer edition is used in this tutorial because it is a full-featured edition of SQL Server that is free for development testing purposes.</span></span> <span data-ttu-id="42c3c-130">Só paga pelos custo de Olá de execução Olá VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-130">You pay only for hello cost of running hello VM.</span></span> <span data-ttu-id="42c3c-131">No entanto, estiver livre toochoose qualquer uma das imagens de Olá toouse neste tutorial.</span><span class="sxs-lookup"><span data-stu-id="42c3c-131">However, you are free toochoose any of hello images toouse in this tutorial.</span></span>
+
+   > [!TIP]
+   > <span data-ttu-id="42c3c-132">Imagens da VM do SQL Server incluem custos de licenciamento Olá para o SQL Server para Olá preços por minuto de Olá VM criar (exceto para edições Olá programador e o Express).</span><span class="sxs-lookup"><span data-stu-id="42c3c-132">SQL VM images include hello licensing costs for SQL Server into hello per-minute pricing of hello VM you create (except for hello Developer and Express editions).</span></span> <span data-ttu-id="42c3c-133">O SQL Server Developer é gratuito para programação/teste (não para produção) e o SQL Express é gratuito para cargas de trabalho leves (inferiores a 1GB de memória e inferiores a 10 GB de armazenamento).</span><span class="sxs-lookup"><span data-stu-id="42c3c-133">SQL Server Developer is free for development/testing (not production) and SQL Express is free for lightweight workloads (less than 1GB memory, less than 10 GB storage).</span></span> <span data-ttu-id="42c3c-134">Há outra opção toobring-your-proprietário-licença (BYOL) e pagar apenas para Olá VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-134">There is another option toobring-your-own-license (BYOL) and pay only for hello VM.</span></span> <span data-ttu-id="42c3c-135">Aos nomes dessas imagem é adicionado o prefixo {BYOL}.</span><span class="sxs-lookup"><span data-stu-id="42c3c-135">Those image names are prefixed with {BYOL}.</span></span> 
    >
-   > Para obter mais informações sobre estas opções, consulte [Pricing guidance for SQL Server Azure VMs (Documentação de orientação sobre preços de VMs do Azure do SQL Server)](virtual-machines-windows-sql-server-pricing-guidance.md).
+   > <span data-ttu-id="42c3c-136">Para obter mais informações sobre estas opções, consulte [Pricing guidance for SQL Server Azure VMs (Documentação de orientação sobre preços de VMs do Azure do SQL Server)](virtual-machines-windows-sql-server-pricing-guidance.md).</span><span class="sxs-lookup"><span data-stu-id="42c3c-136">For more information on these options, see [Pricing guidance for SQL Server Azure VMs](virtual-machines-windows-sql-server-pricing-guidance.md).</span></span>
 
-7. Em **Selecionar um modelo de implementação**, confirme se **Resource Manager** está selecionado. Gestor de recursos é Olá recomendado modelo de implementação de novas máquinas virtuais. 
+7. <span data-ttu-id="42c3c-137">Em **Selecionar um modelo de implementação**, confirme se **Resource Manager** está selecionado.</span><span class="sxs-lookup"><span data-stu-id="42c3c-137">Under **Select a deployment model**, verify that **Resource Manager** is selected.</span></span> <span data-ttu-id="42c3c-138">Gestor de recursos é Olá recomendado modelo de implementação de novas máquinas virtuais.</span><span class="sxs-lookup"><span data-stu-id="42c3c-138">Resource Manager is hello recommended deployment model for new virtual machines.</span></span> 
 
-8. Clique em **Criar**.
+8. <span data-ttu-id="42c3c-139">Clique em **Criar**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-139">Click **Create**.</span></span>
 
     ![Criar a VM do SQL com o Resource Manager](./media/virtual-machines-windows-portal-sql-server-provision/azure-compute-sql-deployment-model.png)
 
-## <a name="configure-hello-vm"></a>Configurar Olá VM
-Existem cinco janelas para configurar uma máquina virtual do SQL Server.
+## <a name="configure-hello-vm"></a><span data-ttu-id="42c3c-141">Configurar Olá VM</span><span class="sxs-lookup"><span data-stu-id="42c3c-141">Configure hello VM</span></span>
+<span data-ttu-id="42c3c-142">Existem cinco janelas para configurar uma máquina virtual do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="42c3c-142">There are five windows for configuring a SQL Server virtual machine.</span></span>
 
-| Passo | Descrição |
+| <span data-ttu-id="42c3c-143">Passo</span><span class="sxs-lookup"><span data-stu-id="42c3c-143">Step</span></span> | <span data-ttu-id="42c3c-144">Descrição</span><span class="sxs-lookup"><span data-stu-id="42c3c-144">Description</span></span> |
 | --- | --- |
-| **Noções básicas** |[Configurar as definições básicas](#1-configure-basic-settings) |
-| **Tamanho** |[Selecionar o tamanho da máquina virtual](#2-choose-virtual-machine-size) |
-| **Definições** |[Configurar funcionalidades opcionais](#3-configure-optional-features) |
-| **Definições do SQL Server** |[Configurar definições do SQL Server](#4-configure-sql-server-settings) |
-| **Resumo** |[Resumo de Olá de revisão](#5-review-the-summary) |
+| <span data-ttu-id="42c3c-145">**Noções básicas**</span><span class="sxs-lookup"><span data-stu-id="42c3c-145">**Basics**</span></span> |[<span data-ttu-id="42c3c-146">Configurar as definições básicas</span><span class="sxs-lookup"><span data-stu-id="42c3c-146">Configure basic settings</span></span>](#1-configure-basic-settings) |
+| <span data-ttu-id="42c3c-147">**Tamanho**</span><span class="sxs-lookup"><span data-stu-id="42c3c-147">**Size**</span></span> |[<span data-ttu-id="42c3c-148">Selecionar o tamanho da máquina virtual</span><span class="sxs-lookup"><span data-stu-id="42c3c-148">Choose virtual machine size</span></span>](#2-choose-virtual-machine-size) |
+| <span data-ttu-id="42c3c-149">**Definições**</span><span class="sxs-lookup"><span data-stu-id="42c3c-149">**Settings**</span></span> |[<span data-ttu-id="42c3c-150">Configurar funcionalidades opcionais</span><span class="sxs-lookup"><span data-stu-id="42c3c-150">Configure optional features</span></span>](#3-configure-optional-features) |
+| <span data-ttu-id="42c3c-151">**Definições do SQL Server**</span><span class="sxs-lookup"><span data-stu-id="42c3c-151">**SQL Server settings**</span></span> |[<span data-ttu-id="42c3c-152">Configurar definições do SQL Server</span><span class="sxs-lookup"><span data-stu-id="42c3c-152">Configure SQL server settings</span></span>](#4-configure-sql-server-settings) |
+| <span data-ttu-id="42c3c-153">**Resumo**</span><span class="sxs-lookup"><span data-stu-id="42c3c-153">**Summary**</span></span> |[<span data-ttu-id="42c3c-154">Resumo de Olá de revisão</span><span class="sxs-lookup"><span data-stu-id="42c3c-154">Review hello summary</span></span>](#5-review-the-summary) |
 
-## <a name="1-configure-basic-settings"></a>1. Configurar as definições básicas
+## <a name="1-configure-basic-settings"></a><span data-ttu-id="42c3c-155">1. Configurar as definições básicas</span><span class="sxs-lookup"><span data-stu-id="42c3c-155">1. Configure basic settings</span></span>
 
-No Olá **Noções básicas** janela, fornecer Olá seguintes informações:
+<span data-ttu-id="42c3c-156">No Olá **Noções básicas** janela, fornecer Olá seguintes informações:</span><span class="sxs-lookup"><span data-stu-id="42c3c-156">On hello **Basics** window, provide hello following information:</span></span>
 
-* Introduza um **Nome** exclusivo para a máquina virtual.
+* <span data-ttu-id="42c3c-157">Introduza um **Nome** exclusivo para a máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="42c3c-157">Enter a unique virtual machine **Name**.</span></span>
 
-* Selecione **SSD** no tipo de disco da VM, para um desempenho ideal.
+* <span data-ttu-id="42c3c-158">Selecione **SSD** no tipo de disco da VM, para um desempenho ideal.</span><span class="sxs-lookup"><span data-stu-id="42c3c-158">Select **SSD** for VM disk type for optimal performance.</span></span>
 
-* Especifique um **nome de utilizador** Olá conta de administrador local no Olá VM. Esta conta também é adicionada toohello do SQL Server **sysadmin** função de servidor fixa.
+* <span data-ttu-id="42c3c-159">Especifique um **nome de utilizador** Olá conta de administrador local no Olá VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-159">Specify a **User name** for hello local administrator account on hello VM.</span></span> <span data-ttu-id="42c3c-160">Esta conta também é adicionada toohello do SQL Server **sysadmin** função de servidor fixa.</span><span class="sxs-lookup"><span data-stu-id="42c3c-160">This account is also added toohello SQL Server **sysadmin** fixed server role.</span></span>
 
-* Forneça uma **Palavra-passe** forte.
+* <span data-ttu-id="42c3c-161">Forneça uma **Palavra-passe** forte.</span><span class="sxs-lookup"><span data-stu-id="42c3c-161">Provide a strong **Password**.</span></span>
 
-* Se tiver várias subscrições, certifique-se de que está correta para a subscrição de Olá Olá nova VM.
+* <span data-ttu-id="42c3c-162">Se tiver várias subscrições, certifique-se de que está correta para a subscrição de Olá Olá nova VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-162">If you have multiple subscriptions, verify that hello subscription is correct for hello new VM.</span></span>
 
-* No Olá **grupo de recursos** caixa, escreva um nome para um novo grupo de recursos. Em alternativa, toouse um grupo de recursos existente clique em **utilizar existente**. Um grupo de recursos é uma coleção de recursos relacionados no Azure (máquinas virtuais, contas do Storage, redes virtuais, etc.).
+* <span data-ttu-id="42c3c-163">No Olá **grupo de recursos** caixa, escreva um nome para um novo grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="42c3c-163">In hello **Resource group** box, type a name for a new resource group.</span></span> <span data-ttu-id="42c3c-164">Em alternativa, toouse um grupo de recursos existente clique em **utilizar existente**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-164">Alternatively, toouse an existing resource group click **Use existing**.</span></span> <span data-ttu-id="42c3c-165">Um grupo de recursos é uma coleção de recursos relacionados no Azure (máquinas virtuais, contas do Storage, redes virtuais, etc.).</span><span class="sxs-lookup"><span data-stu-id="42c3c-165">A resource group is a collection of related resources in Azure (virtual machines, storage accounts, virtual networks, etc.).</span></span>
 
   > [!NOTE]
-  > Utilizar um novo grupo de recursos é útil se estiver apenas a testar ou a saber mais sobre implementações do SQL Server no Azure. Depois de concluir o teste, elimine Olá de eliminação de tooautomatically de grupo de recursos do Olá VM e todos os recursos associados esse grupo de recursos. Para mais informações sobre grupos de recursos, consulte o artigo [Descrição Geral do Azure Resource Manager](../../../azure-resource-manager/resource-group-overview.md).
+  > <span data-ttu-id="42c3c-166">Utilizar um novo grupo de recursos é útil se estiver apenas a testar ou a saber mais sobre implementações do SQL Server no Azure.</span><span class="sxs-lookup"><span data-stu-id="42c3c-166">Using a new resource group is helpful if you are just testing or learning about SQL Server deployments in Azure.</span></span> <span data-ttu-id="42c3c-167">Depois de concluir o teste, elimine Olá de eliminação de tooautomatically de grupo de recursos do Olá VM e todos os recursos associados esse grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="42c3c-167">After you finish with your test, delete hello resource group tooautomatically delete hello VM and all resources associated with that resource group.</span></span> <span data-ttu-id="42c3c-168">Para mais informações sobre grupos de recursos, consulte o artigo [Descrição Geral do Azure Resource Manager](../../../azure-resource-manager/resource-group-overview.md).</span><span class="sxs-lookup"><span data-stu-id="42c3c-168">For more information about resource groups, see [Azure Resource Manager Overview](../../../azure-resource-manager/resource-group-overview.md).</span></span>
 
-* Selecione um **localização** para Olá região do Azure que irá alojar esta implementação.
+* <span data-ttu-id="42c3c-169">Selecione um **localização** para Olá região do Azure que irá alojar esta implementação.</span><span class="sxs-lookup"><span data-stu-id="42c3c-169">Select a **Location** for hello Azure region that will host this deployment.</span></span>
 
-* Clique em **OK** definições de Olá toosave.
+* <span data-ttu-id="42c3c-170">Clique em **OK** definições de Olá toosave.</span><span class="sxs-lookup"><span data-stu-id="42c3c-170">Click **OK** toosave hello settings.</span></span>
 
     ![Janela Informações Básicas do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-basic.png)
 
-## <a name="2-choose-virtual-machine-size"></a>2. Selecionar o tamanho da máquina virtual
+## <a name="2-choose-virtual-machine-size"></a><span data-ttu-id="42c3c-172">2. Selecionar o tamanho da máquina virtual</span><span class="sxs-lookup"><span data-stu-id="42c3c-172">2. Choose virtual machine size</span></span>
 
-No Olá **tamanho** passo, escolha um tamanho de máquina virtual em Olá **escolher um tamanho** janela. janela de Olá inicialmente apresenta os tamanhos de máquina recomendadas com base na imagem de Olá que selecionou.
+<span data-ttu-id="42c3c-173">No Olá **tamanho** passo, escolha um tamanho de máquina virtual em Olá **escolher um tamanho** janela.</span><span class="sxs-lookup"><span data-stu-id="42c3c-173">On hello **Size** step, choose a virtual machine size in hello **Choose a size** window.</span></span> <span data-ttu-id="42c3c-174">janela de Olá inicialmente apresenta os tamanhos de máquina recomendadas com base na imagem de Olá que selecionou.</span><span class="sxs-lookup"><span data-stu-id="42c3c-174">hello window initially displays recommended machine sizes based on hello image you selected.</span></span>
 
 > [!IMPORTANT]
-> Olá estimado custo mensal apresentado no Olá **escolher um tamanho** janela não inclui os custos de licenciamento do SQL Server. Este é o custo de Olá de Olá VM individualmente. Para Olá rápida e programador as edições do SQL Server, este é o custo estimado total de Olá. Para outras edições, consulte Olá [página de preços de máquinas virtuais do Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) e selecione a edição de destino do SQL Server. Consulte também Olá [preços orientação para as VMs do SQL do Azure](virtual-machines-windows-sql-server-pricing-guidance.md).
+> <span data-ttu-id="42c3c-175">Olá estimado custo mensal apresentado no Olá **escolher um tamanho** janela não inclui os custos de licenciamento do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="42c3c-175">hello estimated monthly cost displayed on hello **Choose a size** window does not include SQL Server licensing costs.</span></span> <span data-ttu-id="42c3c-176">Este é o custo de Olá de Olá VM individualmente.</span><span class="sxs-lookup"><span data-stu-id="42c3c-176">This is hello cost of hello VM alone.</span></span> <span data-ttu-id="42c3c-177">Para Olá rápida e programador as edições do SQL Server, este é o custo estimado total de Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-177">For hello Express and Developer editions of SQL Server, this is hello total estimated cost.</span></span> <span data-ttu-id="42c3c-178">Para outras edições, consulte Olá [página de preços de máquinas virtuais do Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) e selecione a edição de destino do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="42c3c-178">For other editions, see hello [Windows Virtual Machines pricing page](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) and select your target edition of SQL Server.</span></span> <span data-ttu-id="42c3c-179">Consulte também Olá [preços orientação para as VMs do SQL do Azure](virtual-machines-windows-sql-server-pricing-guidance.md).</span><span class="sxs-lookup"><span data-stu-id="42c3c-179">Also see hello [Pricing guidance for SQL Server Azure VMs](virtual-machines-windows-sql-server-pricing-guidance.md).</span></span>
 
 ![Opções de Tamanho da VM do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-vm-choose-a-size.png)
 
-Para cargas de trabalho de produção, consulte Olá recomendado tamanhos de máquina e configuração no [práticas recomendadas do SQL Server em Azure Virtual Machines](virtual-machines-windows-sql-performance.md). Se precisar de um tamanho da máquina não estiver listado, clique em Olá **ver todos os** botão.
+<span data-ttu-id="42c3c-181">Para cargas de trabalho de produção, consulte Olá recomendado tamanhos de máquina e configuração no [práticas recomendadas do SQL Server em Azure Virtual Machines](virtual-machines-windows-sql-performance.md).</span><span class="sxs-lookup"><span data-stu-id="42c3c-181">For production workloads, see hello recommended machine sizes and configuration in [Performance best practices for SQL Server in Azure Virtual Machines](virtual-machines-windows-sql-performance.md).</span></span> <span data-ttu-id="42c3c-182">Se precisar de um tamanho da máquina não estiver listado, clique em Olá **ver todos os** botão.</span><span class="sxs-lookup"><span data-stu-id="42c3c-182">If you need a machine size that is not listed, click hello **View all** button.</span></span>
 
 > [!NOTE]
-> Para obter mais informações sobre os tamanhos da máquina virtual, consulte [Tamanhos das Virtual Machines](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+> <span data-ttu-id="42c3c-183">Para obter mais informações sobre os tamanhos da máquina virtual, consulte [Tamanhos das Virtual Machines](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).</span><span class="sxs-lookup"><span data-stu-id="42c3c-183">For more information about virtual machine sizes see, [Sizes for virtual machines](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).</span></span>
 
-Selecione o tamanho da máquina e, em seguida, clique em **Selecionar**.
+<span data-ttu-id="42c3c-184">Selecione o tamanho da máquina e, em seguida, clique em **Selecionar**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-184">Choose your machine size, and then click **Select**.</span></span>
 
-## <a name="3-configure-optional-features"></a>3. Configurar funcionalidades opcionais
+## <a name="3-configure-optional-features"></a><span data-ttu-id="42c3c-185">3. Configurar funcionalidades opcionais</span><span class="sxs-lookup"><span data-stu-id="42c3c-185">3. Configure optional features</span></span>
 
-No Olá **definições** janela, configure o storage do Azure, redes e a monitorização para a máquina virtual de Olá.
+<span data-ttu-id="42c3c-186">No Olá **definições** janela, configure o storage do Azure, redes e a monitorização para a máquina virtual de Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-186">On hello **Settings** window, configure Azure storage, networking, and monitoring for hello virtual machine.</span></span>
 
-* Em **Armazenamento**, selecione **Sim**, em **Managed Disks**.
+* <span data-ttu-id="42c3c-187">Em **Armazenamento**, selecione **Sim**, em **Managed Disks**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-187">Under **Storage**, select **Yes** under use **Managed Disks**.</span></span>
 
    > [!NOTE]
-   > A Microsoft recomenda o Managed Disks para o SQL Server. Armazenamento de identificadores de discos em segundo plano de Olá de gerido. Além disso, quando as máquinas virtuais com discos geridos estão em Olá redundância adequada de tooprovide recursos de armazenamento Olá distribui o mesmo conjunto de disponibilidade, o Azure. Para obter informações adicionais, veja [Azure Managed Disks Overview](../../../storage/storage-managed-disks-overview.md) (Descrição Geral do Managed Disks). Para obter informações específicas sobre os discos geridos em conjuntos de disponibilidade, veja [Use managed disks for VMs in availability set](../manage-availability.md) (Utilizar discos geridos em VMs num conjunto de disponibilidade).
+   > <span data-ttu-id="42c3c-188">A Microsoft recomenda o Managed Disks para o SQL Server.</span><span class="sxs-lookup"><span data-stu-id="42c3c-188">Microsoft recommends Managed Disks for SQL Server.</span></span> <span data-ttu-id="42c3c-189">Armazenamento de identificadores de discos em segundo plano de Olá de gerido.</span><span class="sxs-lookup"><span data-stu-id="42c3c-189">Managed Disks handles storage behind hello scenes.</span></span> <span data-ttu-id="42c3c-190">Além disso, quando as máquinas virtuais com discos geridos estão em Olá redundância adequada de tooprovide recursos de armazenamento Olá distribui o mesmo conjunto de disponibilidade, o Azure.</span><span class="sxs-lookup"><span data-stu-id="42c3c-190">In addition, when virtual machines with Managed Disks are in hello same availability set, Azure distributes hello storage resources tooprovide appropriate redundancy.</span></span> <span data-ttu-id="42c3c-191">Para obter informações adicionais, veja [Azure Managed Disks Overview](../../../storage/storage-managed-disks-overview.md) (Descrição Geral do Managed Disks).</span><span class="sxs-lookup"><span data-stu-id="42c3c-191">For additional information, see [Azure Managed Disks Overview](../../../storage/storage-managed-disks-overview.md).</span></span> <span data-ttu-id="42c3c-192">Para obter informações específicas sobre os discos geridos em conjuntos de disponibilidade, veja [Use managed disks for VMs in availability set](../manage-availability.md) (Utilizar discos geridos em VMs num conjunto de disponibilidade).</span><span class="sxs-lookup"><span data-stu-id="42c3c-192">For specifics about managed disks in an availability set, see [Use managed disks for VMs in availability set](../manage-availability.md).</span></span>
 
-* Em **rede**, pode aceitar valores de Olá preenchido automaticamente. Também pode clicar em cada funcionalidade toomanually configurar Olá **rede Virtual**, **sub-rede**, **endereço IP público**, e **dogrupodesegurançaderede**. Para efeitos de Olá deste tutorial, mantenha os valores predefinidos de Olá.
+* <span data-ttu-id="42c3c-193">Em **rede**, pode aceitar valores de Olá preenchido automaticamente.</span><span class="sxs-lookup"><span data-stu-id="42c3c-193">Under **Network**, you can accept hello automatically populated values.</span></span> <span data-ttu-id="42c3c-194">Também pode clicar em cada funcionalidade toomanually configurar Olá **rede Virtual**, **sub-rede**, **endereço IP público**, e **dogrupodesegurançaderede**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-194">You can also click on each feature toomanually configure hello **Virtual network**, **Subnet**, **Public IP address**, and **Network Security Group**.</span></span> <span data-ttu-id="42c3c-195">Para efeitos de Olá deste tutorial, mantenha os valores predefinidos de Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-195">For hello purposes of this tutorial, keep hello default values.</span></span>
 
-* Azure ativa **monitorização** por predefinição com Olá a mesma conta do storage designada para Olá VM. Pode alterar estas definições aqui.
+* <span data-ttu-id="42c3c-196">Azure ativa **monitorização** por predefinição com Olá a mesma conta do storage designada para Olá VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-196">Azure enables **Monitoring** by default with hello same storage account designated for hello VM.</span></span> <span data-ttu-id="42c3c-197">Pode alterar estas definições aqui.</span><span class="sxs-lookup"><span data-stu-id="42c3c-197">You can change these settings here.</span></span>
 
-* Em **do conjunto de disponibilidade**, pode deixar predefinição Olá **nenhum** para este tutorial. Se planear tooset dos grupos de disponibilidade do AlwaysOn de SQL Server, configure Olá disponibilidade tooavoid recriar Olá máquina.  Para obter mais informações, consulte [gerir Olá disponibilidade das Virtual Machines](../manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+* <span data-ttu-id="42c3c-198">Em **do conjunto de disponibilidade**, pode deixar predefinição Olá **nenhum** para este tutorial.</span><span class="sxs-lookup"><span data-stu-id="42c3c-198">Under **Availability set**, you can leave hello default of **none** for this tutorial.</span></span> <span data-ttu-id="42c3c-199">Se planear tooset dos grupos de disponibilidade do AlwaysOn de SQL Server, configure Olá disponibilidade tooavoid recriar Olá máquina.</span><span class="sxs-lookup"><span data-stu-id="42c3c-199">If you plan tooset up SQL AlwaysOn Availability Groups, configure hello availability tooavoid recreating hello virtual machine.</span></span>  <span data-ttu-id="42c3c-200">Para obter mais informações, consulte [gerir Olá disponibilidade das Virtual Machines](../manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).</span><span class="sxs-lookup"><span data-stu-id="42c3c-200">For more information, see [Manage hello Availability of Virtual Machines](../manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).</span></span>
 
-Quando tiver terminado de configurar estas definições, clique em **OK**.
+<span data-ttu-id="42c3c-201">Quando tiver terminado de configurar estas definições, clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-201">When you are done configuring these settings, click **OK**.</span></span>
 
-## <a name="4-configure-sql-server-settings"></a>4. Configurar definições do SQL Server
-No Olá **definições do SQL Server** janela, configure as definições específicas e otimizações para SQL Server. definições de Olá que pode configurar para o SQL Server incluem o seguinte Olá.
+## <a name="4-configure-sql-server-settings"></a><span data-ttu-id="42c3c-202">4. Configurar definições do SQL Server</span><span class="sxs-lookup"><span data-stu-id="42c3c-202">4. Configure SQL server settings</span></span>
+<span data-ttu-id="42c3c-203">No Olá **definições do SQL Server** janela, configure as definições específicas e otimizações para SQL Server.</span><span class="sxs-lookup"><span data-stu-id="42c3c-203">On hello **SQL Server settings** window, configure specific settings and optimizations for SQL Server.</span></span> <span data-ttu-id="42c3c-204">definições de Olá que pode configurar para o SQL Server incluem o seguinte Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-204">hello settings that you can configure for SQL Server include hello following.</span></span>
 
-| Definição |
+| <span data-ttu-id="42c3c-205">Definição</span><span class="sxs-lookup"><span data-stu-id="42c3c-205">Setting</span></span> |
 | --- |
-| [Conetividade](#connectivity) |
-| [Autenticação](#authentication) |
-| [Configuração do armazenamento](#storage-configuration) |
-| [Aplicação de Patches Automatizada](#automated-patching) |
-| [Cópia de Segurança Automatizada](#automated-backup) |
-| [Integração do Cofre de Chaves do Azure](#azure-key-vault-integration) |
-| [Serviços R](#r-services) |
+| [<span data-ttu-id="42c3c-206">Conetividade</span><span class="sxs-lookup"><span data-stu-id="42c3c-206">Connectivity</span></span>](#connectivity) |
+| [<span data-ttu-id="42c3c-207">Autenticação</span><span class="sxs-lookup"><span data-stu-id="42c3c-207">Authentication</span></span>](#authentication) |
+| [<span data-ttu-id="42c3c-208">Configuração do armazenamento</span><span class="sxs-lookup"><span data-stu-id="42c3c-208">Storage configuration</span></span>](#storage-configuration) |
+| [<span data-ttu-id="42c3c-209">Aplicação de Patches Automatizada</span><span class="sxs-lookup"><span data-stu-id="42c3c-209">Automated Patching</span></span>](#automated-patching) |
+| [<span data-ttu-id="42c3c-210">Cópia de Segurança Automatizada</span><span class="sxs-lookup"><span data-stu-id="42c3c-210">Automated Backup</span></span>](#automated-backup) |
+| [<span data-ttu-id="42c3c-211">Integração do Cofre de Chaves do Azure</span><span class="sxs-lookup"><span data-stu-id="42c3c-211">Azure Key Vault Integration</span></span>](#azure-key-vault-integration) |
+| [<span data-ttu-id="42c3c-212">Serviços R</span><span class="sxs-lookup"><span data-stu-id="42c3c-212">R Services</span></span>](#r-services) |
 
-### <a name="connectivity"></a>Conectividade
+### <a name="connectivity"></a><span data-ttu-id="42c3c-213">Conectividade</span><span class="sxs-lookup"><span data-stu-id="42c3c-213">Connectivity</span></span>
 
-Em **conectividade do SQL**, especifique o tipo de Olá de acesso que pretende toohello instância do SQL Server nesta VM. Para efeitos de Olá deste tutorial, selecione **público (internet)** Olá, tooallow ligações tooSQL servidor de máquinas ou serviços na internet. Com esta opção selecionada, Azure configura automaticamente a firewall de Olá e tráfego de tooallow do grupo de segurança de rede da Olá na porta 1433.
+<span data-ttu-id="42c3c-214">Em **conectividade do SQL**, especifique o tipo de Olá de acesso que pretende toohello instância do SQL Server nesta VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-214">Under **SQL connectivity**, specify hello type of access you want toohello SQL Server instance on this VM.</span></span> <span data-ttu-id="42c3c-215">Para efeitos de Olá deste tutorial, selecione **público (internet)** Olá, tooallow ligações tooSQL servidor de máquinas ou serviços na internet.</span><span class="sxs-lookup"><span data-stu-id="42c3c-215">For hello purposes of this tutorial, select **Public (internet)** tooallow connections tooSQL Server from machines or services on hello internet.</span></span> <span data-ttu-id="42c3c-216">Com esta opção selecionada, Azure configura automaticamente a firewall de Olá e tráfego de tooallow do grupo de segurança de rede da Olá na porta 1433.</span><span class="sxs-lookup"><span data-stu-id="42c3c-216">With this option selected, Azure automatically configures hello firewall and hello network security group tooallow traffic on port 1433.</span></span>
 
 ![Opções de Conectividade do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-connectivity-alt.png)
 
 > [!TIP]
-> Por predefinição, o SQL Server escuta numa porta bem conhecida, a **1433**. Para maior segurança, altere a porta de Olá no Olá toolisten de caixa de diálogo anterior numa porta não predefinidos, tais como 1401. Se o fizer, tem de utilizar essa parte para se ligar a partir de qualquer ferramenta cliente, como o SSMS.
+> <span data-ttu-id="42c3c-218">Por predefinição, o SQL Server escuta numa porta bem conhecida, a **1433**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-218">By default, SQL Server listens on a well-known port, **1433**.</span></span> <span data-ttu-id="42c3c-219">Para maior segurança, altere a porta de Olá no Olá toolisten de caixa de diálogo anterior numa porta não predefinidos, tais como 1401.</span><span class="sxs-lookup"><span data-stu-id="42c3c-219">For increased security, change hello port in hello previous dialog toolisten on a non-default port, such as 1401.</span></span> <span data-ttu-id="42c3c-220">Se o fizer, tem de utilizar essa parte para se ligar a partir de qualquer ferramenta cliente, como o SSMS.</span><span class="sxs-lookup"><span data-stu-id="42c3c-220">If you do this, you must connect using that port from any client tools, such as SSMS.</span></span>
 
-tooconnect tooSQL servidor através de Olá internet, também tem de ativar a autenticação do SQL Server, que está descrito na secção seguinte, Olá.
+<span data-ttu-id="42c3c-221">tooconnect tooSQL servidor através de Olá internet, também tem de ativar a autenticação do SQL Server, que está descrito na secção seguinte, Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-221">tooconnect tooSQL Server via hello internet, you also must enable SQL Server Authentication, which is described in hello next section.</span></span>
 
-Se preferir toonot ativar ligações toohello motor de base de dados através de Olá internet, escolha uma das seguintes opções de Olá:
+<span data-ttu-id="42c3c-222">Se preferir toonot ativar ligações toohello motor de base de dados através de Olá internet, escolha uma das seguintes opções de Olá:</span><span class="sxs-lookup"><span data-stu-id="42c3c-222">If you would prefer toonot enable connections toohello Database Engine via hello internet, choose one of hello following options:</span></span>
 
-* **Local (no interior da VM)** tooallow ligações tooSQL Server apenas a partir de dentro de Olá VM.
-* **Privada (na Virtual Network)** tooallow ligações tooSQL servidor de máquinas ou serviços na Olá mesma rede virtual.
+* <span data-ttu-id="42c3c-223">**Local (no interior da VM)** tooallow ligações tooSQL Server apenas a partir de dentro de Olá VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-223">**Local (inside VM only)** tooallow connections tooSQL Server only from within hello VM.</span></span>
+* <span data-ttu-id="42c3c-224">**Privada (na Virtual Network)** tooallow ligações tooSQL servidor de máquinas ou serviços na Olá mesma rede virtual.</span><span class="sxs-lookup"><span data-stu-id="42c3c-224">**Private (within Virtual Network)** tooallow connections tooSQL Server from machines or services in hello same virtual network.</span></span>
 
-Em geral, melhore a segurança, selecionando a conectividade mais restritiva Olá que permite o seu cenário. Mas todas as opções de Olá com capacidade de segurança através de regras do grupo de segurança de rede e a autenticação SQL/Windows. Pode editar o grupo de segurança de rede após Olá que é criada a VM. Para obter mais informações, veja [Security Considerations for SQL Server in Azure Virtual Machines](virtual-machines-windows-sql-security.md) (Considerações de segurança para o SQL Server em Máquinas Virtuais do Azure).
+<span data-ttu-id="42c3c-225">Em geral, melhore a segurança, selecionando a conectividade mais restritiva Olá que permite o seu cenário.</span><span class="sxs-lookup"><span data-stu-id="42c3c-225">In general, improve security by choosing hello most restrictive connectivity that your scenario allows.</span></span> <span data-ttu-id="42c3c-226">Mas todas as opções de Olá com capacidade de segurança através de regras do grupo de segurança de rede e a autenticação SQL/Windows.</span><span class="sxs-lookup"><span data-stu-id="42c3c-226">But all hello options are securable through Network Security Group rules and SQL/Windows Authentication.</span></span> <span data-ttu-id="42c3c-227">Pode editar o grupo de segurança de rede após Olá que é criada a VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-227">You can edit Network Security Group after hello VM is created.</span></span> <span data-ttu-id="42c3c-228">Para obter mais informações, veja [Security Considerations for SQL Server in Azure Virtual Machines](virtual-machines-windows-sql-security.md) (Considerações de segurança para o SQL Server em Máquinas Virtuais do Azure).</span><span class="sxs-lookup"><span data-stu-id="42c3c-228">For more information, see [Security Considerations for SQL Server in Azure Virtual Machines](virtual-machines-windows-sql-security.md).</span></span>
 
 > [!NOTE]
-> imagem de máquina virtual de Olá para o SQL Server Express edition não ativar automaticamente a protocolo Olá TCP/IP. Isto acontece mesmo para Olá conectividade pública e privada opções. Para a edição Express, tem de utilizar SQL Server Configuration Manager demasiado[ative manualmente o protocolo de TCP/IP de Olá](#configure-sql-server-to-listen-on-the-tcp-protocol) depois de criar Olá VM.
+> <span data-ttu-id="42c3c-229">imagem de máquina virtual de Olá para o SQL Server Express edition não ativar automaticamente a protocolo Olá TCP/IP.</span><span class="sxs-lookup"><span data-stu-id="42c3c-229">hello virtual machine image for SQL Server Express edition does not automatically enable hello TCP/IP protocol.</span></span> <span data-ttu-id="42c3c-230">Isto acontece mesmo para Olá conectividade pública e privada opções.</span><span class="sxs-lookup"><span data-stu-id="42c3c-230">This is true even for hello Public and  Private connectivity options.</span></span> <span data-ttu-id="42c3c-231">Para a edição Express, tem de utilizar SQL Server Configuration Manager demasiado[ative manualmente o protocolo de TCP/IP de Olá](#configure-sql-server-to-listen-on-the-tcp-protocol) depois de criar Olá VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-231">For Express edition, you must use SQL Server Configuration Manager too[manually enable hello TCP/IP protocol](#configure-sql-server-to-listen-on-the-tcp-protocol) after creating hello VM.</span></span>
 
-### <a name="authentication"></a>Autenticação
+### <a name="authentication"></a><span data-ttu-id="42c3c-232">Autenticação</span><span class="sxs-lookup"><span data-stu-id="42c3c-232">Authentication</span></span>
 
-Se necessitar da Autenticação do SQL Server, clique em **Ativar** em **Autenticação do SQL**.
+<span data-ttu-id="42c3c-233">Se necessitar da Autenticação do SQL Server, clique em **Ativar** em **Autenticação do SQL**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-233">If you require SQL Server Authentication, click **Enable** under **SQL authentication**.</span></span>
 
 ![Autenticação do SQL Server](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-authentication.png)
 
 > [!NOTE]
-> Se planear tooaccess do SQL Server através de Olá internet (ou seja, a Olá opção de conectividade pública), tem de ativar a autenticação do SQL aqui. Acesso público toohello do SQL Server requer a utilização de Olá da autenticação do SQL.
+> <span data-ttu-id="42c3c-235">Se planear tooaccess do SQL Server através de Olá internet (ou seja, a Olá opção de conectividade pública), tem de ativar a autenticação do SQL aqui.</span><span class="sxs-lookup"><span data-stu-id="42c3c-235">If you plan tooaccess SQL Server over hello internet (i.e. hello Public connectivity option), you must enable SQL authentication here.</span></span> <span data-ttu-id="42c3c-236">Acesso público toohello do SQL Server requer a utilização de Olá da autenticação do SQL.</span><span class="sxs-lookup"><span data-stu-id="42c3c-236">Public access toohello SQL Server requires hello use of SQL Authentication.</span></span>
 > 
 > 
 
-Se ativar a Autenticação do SQL Server, especifique um **Nome de início de sessão** e uma **Palavra-passe**. Este nome de utilizador está configurado como um início de sessão da autenticação do SQL Server e é membro de Olá **sysadmin** função de servidor fixa. Consulte o artigo [Escolher um Modo de Autenticação](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode) para obter mais informações sobre Modos de Autenticação.
+<span data-ttu-id="42c3c-237">Se ativar a Autenticação do SQL Server, especifique um **Nome de início de sessão** e uma **Palavra-passe**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-237">If you enable SQL Server Authentication, specify a **Login name** and **Password**.</span></span> <span data-ttu-id="42c3c-238">Este nome de utilizador está configurado como um início de sessão da autenticação do SQL Server e é membro de Olá **sysadmin** função de servidor fixa.</span><span class="sxs-lookup"><span data-stu-id="42c3c-238">This user name is configured as a SQL Server Authentication login and member of hello **sysadmin** fixed server role.</span></span> <span data-ttu-id="42c3c-239">Consulte o artigo [Escolher um Modo de Autenticação](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode) para obter mais informações sobre Modos de Autenticação.</span><span class="sxs-lookup"><span data-stu-id="42c3c-239">See [Choose an Authentication Mode](https://docs.microsoft.com/sql/relational-databases/security/choose-an-authentication-mode) for more information about Authentication Modes.</span></span>
 
-Se não ativar a autenticação do SQL Server, pode utilizar conta de administrador local Olá na instância de SQL Server do Olá VM tooconnect toohello.
+<span data-ttu-id="42c3c-240">Se não ativar a autenticação do SQL Server, pode utilizar conta de administrador local Olá na instância de SQL Server do Olá VM tooconnect toohello.</span><span class="sxs-lookup"><span data-stu-id="42c3c-240">If you do not enable SQL Server Authentication, then you can use hello local Administrator account on hello VM tooconnect toohello SQL Server instance.</span></span>
 
-### <a name="storage-configuration"></a>Configuração do armazenamento
+### <a name="storage-configuration"></a><span data-ttu-id="42c3c-241">Configuração do armazenamento</span><span class="sxs-lookup"><span data-stu-id="42c3c-241">Storage configuration</span></span>
 
-Clique em **configuração de armazenamento** os requisitos de armazenamento de Olá toospecify.
+<span data-ttu-id="42c3c-242">Clique em **configuração de armazenamento** os requisitos de armazenamento de Olá toospecify.</span><span class="sxs-lookup"><span data-stu-id="42c3c-242">Click **Storage configuration** toospecify hello storage requirements.</span></span>
 
 ![Configuração do Armazenamento do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-storage.png)
 
 > [!NOTE]
-> Se tiver configurado manualmente o armazenamento padrão do toouse VM, esta opção não está disponível. A otimização de armazenamento automática só está disponível para o Premium Storage.
+> <span data-ttu-id="42c3c-244">Se tiver configurado manualmente o armazenamento padrão do toouse VM, esta opção não está disponível.</span><span class="sxs-lookup"><span data-stu-id="42c3c-244">If you manually configured your VM toouse standard storage, this option is not available.</span></span> <span data-ttu-id="42c3c-245">A otimização de armazenamento automática só está disponível para o Premium Storage.</span><span class="sxs-lookup"><span data-stu-id="42c3c-245">Automatic storage optimization is available only for Premium Storage.</span></span>
 
 > [!TIP]
-> número de Olá de paragens e os limites superiores Olá de cada controlo de deslize estão dependentes de tamanho de Olá da VM que selecionou. Uma VM maior e mais poderosa é capaz de tooscale cópias de segurança mais.
+> <span data-ttu-id="42c3c-246">número de Olá de paragens e os limites superiores Olá de cada controlo de deslize estão dependentes de tamanho de Olá da VM que selecionou.</span><span class="sxs-lookup"><span data-stu-id="42c3c-246">hello number of stops and hello upper limits of each slider is dependent on hello size of VM you selected.</span></span> <span data-ttu-id="42c3c-247">Uma VM maior e mais poderosa é capaz de tooscale cópias de segurança mais.</span><span class="sxs-lookup"><span data-stu-id="42c3c-247">A larger and more powerful VM is able tooscale up more.</span></span>
 
-Pode especificar os requisitos como operações de entrada/saída por segundo (IOPs), débito em MB/s e tamanho de armazenamento total. Configure estes valores, utilizando as escalas deslizantes de Olá. Pode alterar estas definições de armazenamento com base na carga de trabalho. portal de Olá calcula automaticamente Olá número de discos tooattach e configurar com base nestes requisitos.
+<span data-ttu-id="42c3c-248">Pode especificar os requisitos como operações de entrada/saída por segundo (IOPs), débito em MB/s e tamanho de armazenamento total.</span><span class="sxs-lookup"><span data-stu-id="42c3c-248">You can specify requirements as input/output operations per second (IOPs), throughput in MB/s, and total storage size.</span></span> <span data-ttu-id="42c3c-249">Configure estes valores, utilizando as escalas deslizantes de Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-249">Configure these values by using hello sliding scales.</span></span> <span data-ttu-id="42c3c-250">Pode alterar estas definições de armazenamento com base na carga de trabalho.</span><span class="sxs-lookup"><span data-stu-id="42c3c-250">You can change these storage settings based on workload.</span></span> <span data-ttu-id="42c3c-251">portal de Olá calcula automaticamente Olá número de discos tooattach e configurar com base nestes requisitos.</span><span class="sxs-lookup"><span data-stu-id="42c3c-251">hello portal automatically calculates hello number of disks tooattach and configure based on these requirements.</span></span>
 
-Em **armazenamento otimizado para**, selecione uma das seguintes opções de Olá:
+<span data-ttu-id="42c3c-252">Em **armazenamento otimizado para**, selecione uma das seguintes opções de Olá:</span><span class="sxs-lookup"><span data-stu-id="42c3c-252">Under **Storage optimized for**, select one of hello following options:</span></span>
 
-* **Geral** é Olá predefinição e suporta a maioria das cargas de trabalho.
-* **Transacional** processamento otimiza o armazenamento de Olá para cargas de trabalho OLTP de bases de dados tradicionais.
-* **Armazenamento de dados** otimiza o armazenamento de Olá para cargas de trabalho analíticas e de relatórios.
+* <span data-ttu-id="42c3c-253">**Geral** é Olá predefinição e suporta a maioria das cargas de trabalho.</span><span class="sxs-lookup"><span data-stu-id="42c3c-253">**General** is hello default setting and supports most workloads.</span></span>
+* <span data-ttu-id="42c3c-254">**Transacional** processamento otimiza o armazenamento de Olá para cargas de trabalho OLTP de bases de dados tradicionais.</span><span class="sxs-lookup"><span data-stu-id="42c3c-254">**Transactional** processing optimizes hello storage for traditional database OLTP workloads.</span></span>
+* <span data-ttu-id="42c3c-255">**Armazenamento de dados** otimiza o armazenamento de Olá para cargas de trabalho analíticas e de relatórios.</span><span class="sxs-lookup"><span data-stu-id="42c3c-255">**Data warehousing** optimizes hello storage for analytic and reporting workloads.</span></span>
 
-### <a name="automated-patching"></a>Aplicação de patches automatizada
+### <a name="automated-patching"></a><span data-ttu-id="42c3c-256">Aplicação de patches automatizada</span><span class="sxs-lookup"><span data-stu-id="42c3c-256">Automated patching</span></span>
 
-A **Aplicação de patches automatizada** está ativada por predefinição. Aplicação de patches automatizada permite Azure tooautomatically patch do SQL Server e Olá sistema operativo. Especifique um dia da semana de Olá, a hora e a duração de uma janela de manutenção. O Azure executa a aplicação de patches nesta janela de manutenção. agenda da janela de manutenção Olá utiliza a região da VM Olá por período de tempo. Se não pretender que o Azure tooautomatically patch do SQL Server e Olá sistema operativo, clique em **desativar**.  
+<span data-ttu-id="42c3c-257">A **Aplicação de patches automatizada** está ativada por predefinição.</span><span class="sxs-lookup"><span data-stu-id="42c3c-257">**Automated patching** is enabled by default.</span></span> <span data-ttu-id="42c3c-258">Aplicação de patches automatizada permite Azure tooautomatically patch do SQL Server e Olá sistema operativo.</span><span class="sxs-lookup"><span data-stu-id="42c3c-258">Automated patching allows Azure tooautomatically patch SQL Server and hello operating system.</span></span> <span data-ttu-id="42c3c-259">Especifique um dia da semana de Olá, a hora e a duração de uma janela de manutenção.</span><span class="sxs-lookup"><span data-stu-id="42c3c-259">Specify a day of hello week, time, and duration for a maintenance window.</span></span> <span data-ttu-id="42c3c-260">O Azure executa a aplicação de patches nesta janela de manutenção.</span><span class="sxs-lookup"><span data-stu-id="42c3c-260">Azure performs patching in this maintenance window.</span></span> <span data-ttu-id="42c3c-261">agenda da janela de manutenção Olá utiliza a região da VM Olá por período de tempo.</span><span class="sxs-lookup"><span data-stu-id="42c3c-261">hello maintenance window schedule uses hello VM locale for time.</span></span> <span data-ttu-id="42c3c-262">Se não pretender que o Azure tooautomatically patch do SQL Server e Olá sistema operativo, clique em **desativar**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-262">If you do not want Azure tooautomatically patch SQL Server and hello operating system, click **Disable**.</span></span>  
 
 ![Aplicação de Patches Automatizada do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-patching.png)
 
-Para obter mais informações, consulte o artigo [Aplicação de Patches Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-patching.md).
+<span data-ttu-id="42c3c-264">Para obter mais informações, consulte o artigo [Aplicação de Patches Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-patching.md).</span><span class="sxs-lookup"><span data-stu-id="42c3c-264">For more information, see [Automated Patching for SQL Server in Azure Virtual Machines](virtual-machines-windows-sql-automated-patching.md).</span></span>
 
-### <a name="automated-backup"></a>Cópia de segurança automatizada
+### <a name="automated-backup"></a><span data-ttu-id="42c3c-265">Cópia de segurança automatizada</span><span class="sxs-lookup"><span data-stu-id="42c3c-265">Automated backup</span></span>
 
-Ative as cópias de segurança de bases de dados automáticas em **Cópia de segurança automatizada**. A cópia de segurança automatizada está desativada por predefinição.
+<span data-ttu-id="42c3c-266">Ative as cópias de segurança de bases de dados automáticas em **Cópia de segurança automatizada**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-266">Enable automatic database backups for all databases under **Automated backup**.</span></span> <span data-ttu-id="42c3c-267">A cópia de segurança automatizada está desativada por predefinição.</span><span class="sxs-lookup"><span data-stu-id="42c3c-267">Automated backup is disabled by default.</span></span>
 
-Quando ativa a cópia de segurança automatizada do SQL Server, pode configurar as seguintes Olá:
+<span data-ttu-id="42c3c-268">Quando ativa a cópia de segurança automatizada do SQL Server, pode configurar as seguintes Olá:</span><span class="sxs-lookup"><span data-stu-id="42c3c-268">When you enable SQL automated backup, you can configure hello following:</span></span>
 
-* Período de retenção (dias) para cópias de segurança
-* Toouse de conta de armazenamento para cópias de segurança
-* Opção de encriptação e palavra-passe para as cópias de segurança
-* Realizar cópia de segurança das bases de dados do sistema
-* Configurar agenda da cópia de segurança
+* <span data-ttu-id="42c3c-269">Período de retenção (dias) para cópias de segurança</span><span class="sxs-lookup"><span data-stu-id="42c3c-269">Retention period (days) for backups</span></span>
+* <span data-ttu-id="42c3c-270">Toouse de conta de armazenamento para cópias de segurança</span><span class="sxs-lookup"><span data-stu-id="42c3c-270">Storage account toouse for backups</span></span>
+* <span data-ttu-id="42c3c-271">Opção de encriptação e palavra-passe para as cópias de segurança</span><span class="sxs-lookup"><span data-stu-id="42c3c-271">Encryption option and password for backups</span></span>
+* <span data-ttu-id="42c3c-272">Realizar cópia de segurança das bases de dados do sistema</span><span class="sxs-lookup"><span data-stu-id="42c3c-272">Backup system databases</span></span>
+* <span data-ttu-id="42c3c-273">Configurar agenda da cópia de segurança</span><span class="sxs-lookup"><span data-stu-id="42c3c-273">Configure backup schedule</span></span>
 
-Clique em cópia de segurança, do tooencrypt Olá **ativar**. Em seguida, especifique Olá **palavra-passe**. O Azure cria um certificado tooencrypt Olá as cópias de segurança e utiliza Olá especificado tooprotect de palavra-passe esse certificado.
+<span data-ttu-id="42c3c-274">Clique em cópia de segurança, do tooencrypt Olá **ativar**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-274">tooencrypt hello backup, click **Enable**.</span></span> <span data-ttu-id="42c3c-275">Em seguida, especifique Olá **palavra-passe**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-275">Then specify hello **Password**.</span></span> <span data-ttu-id="42c3c-276">O Azure cria um certificado tooencrypt Olá as cópias de segurança e utiliza Olá especificado tooprotect de palavra-passe esse certificado.</span><span class="sxs-lookup"><span data-stu-id="42c3c-276">Azure creates a certificate tooencrypt hello backups and uses hello specified password tooprotect that certificate.</span></span>
 
 ![Cópia de Segurança Automatizada do SQL](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-autobackup2.png)
 
- Para obter mais informações, consulte o artigo [Cópia de Segurança Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-backup.md).
+ <span data-ttu-id="42c3c-278">Para obter mais informações, consulte o artigo [Cópia de Segurança Automatizada para o SQL Server nas Virtual Machines do Azure](virtual-machines-windows-sql-automated-backup.md).</span><span class="sxs-lookup"><span data-stu-id="42c3c-278">For more information, see [Automated Backup for SQL Server in Azure Virtual Machines](virtual-machines-windows-sql-automated-backup.md).</span></span>
 
-### <a name="azure-key-vault-integration"></a>Integração do Cofre de Chaves do Azure
+### <a name="azure-key-vault-integration"></a><span data-ttu-id="42c3c-279">Integração do Cofre de Chaves do Azure</span><span class="sxs-lookup"><span data-stu-id="42c3c-279">Azure Key Vault integration</span></span>
 
-toostore segredos de segurança no Azure para a encriptação, clique em **integração do Cofre de chaves do Azure** e clique em **ativar**.
+<span data-ttu-id="42c3c-280">toostore segredos de segurança no Azure para a encriptação, clique em **integração do Cofre de chaves do Azure** e clique em **ativar**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-280">toostore security secrets in Azure for encryption, click **Azure key vault integration** and click **Enable**.</span></span>
 
 ![Integração do Cofre de Chaves do SQL Azure](./media/virtual-machines-windows-portal-sql-server-provision/azure-sql-arm-akv.png)
 
-Olá tabela seguinte lista Olá parâmetros necessários tooconfigure integração do Cofre de chaves do Azure.
+<span data-ttu-id="42c3c-282">Olá tabela seguinte lista Olá parâmetros necessários tooconfigure integração do Cofre de chaves do Azure.</span><span class="sxs-lookup"><span data-stu-id="42c3c-282">hello following table lists hello parameters required tooconfigure Azure Key Vault Integration.</span></span>
 
-| PARÂMETRO | DESCRIÇÃO | EXEMPLO |
+| <span data-ttu-id="42c3c-283">PARÂMETRO</span><span class="sxs-lookup"><span data-stu-id="42c3c-283">PARAMETER</span></span> | <span data-ttu-id="42c3c-284">DESCRIÇÃO</span><span class="sxs-lookup"><span data-stu-id="42c3c-284">DESCRIPTION</span></span> | <span data-ttu-id="42c3c-285">EXEMPLO</span><span class="sxs-lookup"><span data-stu-id="42c3c-285">EXAMPLE</span></span> |
 | --- | --- | --- |
-| **URL do Cofre de Chaves** |localização de Olá do Cofre de chaves Olá. |https://contosokeyvault.vault.azure.net/ |
-| **Nome principal** |Nome principal do serviço Azure Active Directory. Este nome também é referido tooas Olá ID de cliente. |fde2b411-33d5-4e11-af04eb07b669ccf2 |
-| **Segredo principal** |Segredo principal do serviço Azure Active Directory. Este segredo também é referido tooas Olá segredo do cliente. |9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM= |
-| **Nome da credencial** |**Nome da credencial**: a integração AKV cria uma credencial dentro do SQL Server, permitindo Olá VM toohave acesso toohello Cofre de chaves. Escolha um nome para esta credencial. |mycred1 |
+| <span data-ttu-id="42c3c-286">**URL do Cofre de Chaves**</span><span class="sxs-lookup"><span data-stu-id="42c3c-286">**Key Vault URL**</span></span> |<span data-ttu-id="42c3c-287">localização de Olá do Cofre de chaves Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-287">hello location of hello key vault.</span></span> |<span data-ttu-id="42c3c-288">https://contosokeyvault.vault.azure.net/</span><span class="sxs-lookup"><span data-stu-id="42c3c-288">https://contosokeyvault.vault.azure.net/</span></span> |
+| <span data-ttu-id="42c3c-289">**Nome principal**</span><span class="sxs-lookup"><span data-stu-id="42c3c-289">**Principal name**</span></span> |<span data-ttu-id="42c3c-290">Nome principal do serviço Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="42c3c-290">Azure Active Directory service principal name.</span></span> <span data-ttu-id="42c3c-291">Este nome também é referido tooas Olá ID de cliente.</span><span class="sxs-lookup"><span data-stu-id="42c3c-291">This name is also referred tooas hello Client ID.</span></span> |<span data-ttu-id="42c3c-292">fde2b411-33d5-4e11-af04eb07b669ccf2</span><span class="sxs-lookup"><span data-stu-id="42c3c-292">fde2b411-33d5-4e11-af04eb07b669ccf2</span></span> |
+| <span data-ttu-id="42c3c-293">**Segredo principal**</span><span class="sxs-lookup"><span data-stu-id="42c3c-293">**Principal secret**</span></span> |<span data-ttu-id="42c3c-294">Segredo principal do serviço Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="42c3c-294">Azure Active Directory service principal secret.</span></span> <span data-ttu-id="42c3c-295">Este segredo também é referido tooas Olá segredo do cliente.</span><span class="sxs-lookup"><span data-stu-id="42c3c-295">This secret is also referred tooas hello Client Secret.</span></span> |<span data-ttu-id="42c3c-296">9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM=</span><span class="sxs-lookup"><span data-stu-id="42c3c-296">9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM=</span></span> |
+| <span data-ttu-id="42c3c-297">**Nome da credencial**</span><span class="sxs-lookup"><span data-stu-id="42c3c-297">**Credential name**</span></span> |<span data-ttu-id="42c3c-298">**Nome da credencial**: a integração AKV cria uma credencial dentro do SQL Server, permitindo Olá VM toohave acesso toohello Cofre de chaves.</span><span class="sxs-lookup"><span data-stu-id="42c3c-298">**Credential name**: AKV Integration creates a credential within SQL Server, allowing hello VM toohave access toohello key vault.</span></span> <span data-ttu-id="42c3c-299">Escolha um nome para esta credencial.</span><span class="sxs-lookup"><span data-stu-id="42c3c-299">Choose a name for this credential.</span></span> |<span data-ttu-id="42c3c-300">mycred1</span><span class="sxs-lookup"><span data-stu-id="42c3c-300">mycred1</span></span> |
 
-Para obter mais informações, consulte o artigo [Configurar a Integração do Cofre de Chaves do Azure para o SQL Server em VMs do Azure](virtual-machines-windows-ps-sql-keyvault.md).
+<span data-ttu-id="42c3c-301">Para obter mais informações, consulte o artigo [Configurar a Integração do Cofre de Chaves do Azure para o SQL Server em VMs do Azure](virtual-machines-windows-ps-sql-keyvault.md).</span><span class="sxs-lookup"><span data-stu-id="42c3c-301">For more information, see [Configure Azure Key Vault Integration for SQL Server on Azure VMs](virtual-machines-windows-ps-sql-keyvault.md).</span></span>
 
-### <a name="r-services"></a>Serviços R
+### <a name="r-services"></a><span data-ttu-id="42c3c-302">Serviços R</span><span class="sxs-lookup"><span data-stu-id="42c3c-302">R services</span></span>
 
-Tiver Olá opção tooenable [serviços do SQL Server R](https://msdn.microsoft.com/library/mt604845.aspx). Isto permite-lhe toouse avançada de análise com o SQL Server 2016. Clique em **ativar** no Olá **definições do SQL Server** janela.
+<span data-ttu-id="42c3c-303">Tiver Olá opção tooenable [serviços do SQL Server R](https://msdn.microsoft.com/library/mt604845.aspx).</span><span class="sxs-lookup"><span data-stu-id="42c3c-303">You have hello option tooenable [SQL Server R Services](https://msdn.microsoft.com/library/mt604845.aspx).</span></span> <span data-ttu-id="42c3c-304">Isto permite-lhe toouse avançada de análise com o SQL Server 2016.</span><span class="sxs-lookup"><span data-stu-id="42c3c-304">This enables you toouse advanced analytics with SQL Server 2016.</span></span> <span data-ttu-id="42c3c-305">Clique em **ativar** no Olá **definições do SQL Server** janela.</span><span class="sxs-lookup"><span data-stu-id="42c3c-305">Click **Enable** on hello **SQL Server Settings** window.</span></span>
 
 > [!NOTE]
-> Para o SQL Server 2016 programador Edition, esta opção está incorretamente desativada pelo portal Olá. Na Developer Edition, tem de ativar os Serviços R manualmente depois de criar a VM.
+> <span data-ttu-id="42c3c-306">Para o SQL Server 2016 programador Edition, esta opção está incorretamente desativada pelo portal Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-306">For SQL Server 2016 Developer Edition, this option is incorrectly disabled by hello portal.</span></span> <span data-ttu-id="42c3c-307">Na Developer Edition, tem de ativar os Serviços R manualmente depois de criar a VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-307">For Developer edition, you must enable R Services manually after creating your VM.</span></span>
 
 ![Ativar os Serviços R do SQL Server](./media/virtual-machines-windows-portal-sql-server-provision/azure-vm-sql-server-r-services.png)
 
-Quando tiver terminado de configurar as definições do SQL Server, clique em **OK**.
+<span data-ttu-id="42c3c-309">Quando tiver terminado de configurar as definições do SQL Server, clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-309">When you are finished configuring SQL Server settings, click **OK**.</span></span>
 
-## <a name="5-review-hello-summary"></a>5. Resumo de Olá de revisão
+## <a name="5-review-hello-summary"></a><span data-ttu-id="42c3c-310">5. Resumo de Olá de revisão</span><span class="sxs-lookup"><span data-stu-id="42c3c-310">5. Review hello summary</span></span>
 
-No Olá **resumo** janela, reveja Olá resumo e clique em **Compra** toocreate do SQL Server, grupo de recursos e recursos especificados para esta VM.
+<span data-ttu-id="42c3c-311">No Olá **resumo** janela, reveja Olá resumo e clique em **Compra** toocreate do SQL Server, grupo de recursos e recursos especificados para esta VM.</span><span class="sxs-lookup"><span data-stu-id="42c3c-311">On hello **Summary** window, review hello summary and click **Purchase** toocreate SQL Server, resource group, and resources specified for this VM.</span></span>
 
-Pode monitorizar a implementação de Olá de Olá portal do Azure. Olá **notificações** botão, Olá parte superior do ecrã de Olá mostra o estado básico da implementação de Olá.
+<span data-ttu-id="42c3c-312">Pode monitorizar a implementação de Olá de Olá portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="42c3c-312">You can monitor hello deployment from hello Azure portal.</span></span> <span data-ttu-id="42c3c-313">Olá **notificações** botão, Olá parte superior do ecrã de Olá mostra o estado básico da implementação de Olá.</span><span class="sxs-lookup"><span data-stu-id="42c3c-313">hello **Notifications** button at hello top of hello screen shows basic status of hello deployment.</span></span>
 
 > [!NOTE]
-> tooprovide, com uma ideia na implementação exceder o tempo, implementei uma região de EUA Leste toohello VM do SQL Server com as predefinições. Esta implementação de teste demorou um total de 26 minutos toocomplete. Mas poderá ter uma implementação mais lenta ou mais rápida com base na sua região e nas definições selecionadas.
+> <span data-ttu-id="42c3c-314">tooprovide, com uma ideia na implementação exceder o tempo, implementei uma região de EUA Leste toohello VM do SQL Server com as predefinições.</span><span class="sxs-lookup"><span data-stu-id="42c3c-314">tooprovide you with an idea on deployment times, I deployed a SQL VM toohello East US region with default settings.</span></span> <span data-ttu-id="42c3c-315">Esta implementação de teste demorou um total de 26 minutos toocomplete.</span><span class="sxs-lookup"><span data-stu-id="42c3c-315">This test deployment took a total of 26 minutes toocomplete.</span></span> <span data-ttu-id="42c3c-316">Mas poderá ter uma implementação mais lenta ou mais rápida com base na sua região e nas definições selecionadas.</span><span class="sxs-lookup"><span data-stu-id="42c3c-316">But you might experience a faster or slower deployment time based on your region and selected settings.</span></span>
 
-## <a name="open-hello-vm-with-remote-desktop"></a>Abrir Olá VM com o ambiente de trabalho remoto
+## <a name="open-hello-vm-with-remote-desktop"></a><span data-ttu-id="42c3c-317">Abrir Olá VM com o ambiente de trabalho remoto</span><span class="sxs-lookup"><span data-stu-id="42c3c-317">Open hello VM with Remote Desktop</span></span>
 
-Utilize Olá os seguintes passos tooconnect toohello do SQL Server virtual máquina com o ambiente de trabalho remoto:
+<span data-ttu-id="42c3c-318">Utilize Olá os seguintes passos tooconnect toohello do SQL Server virtual máquina com o ambiente de trabalho remoto:</span><span class="sxs-lookup"><span data-stu-id="42c3c-318">Use hello following steps tooconnect toohello SQL Server virtual machine with Remote Desktop:</span></span>
 
 > [!INCLUDE [Connect tooSQL Server VM with remote desktop](../../../../includes/virtual-machines-sql-server-remote-desktop-connect.md)]
 
-Depois de ligar a máquina de virtual toohello do SQL Server, pode iniciar o SQL Server Management Studio e estabelecer ligação com a autenticação do Windows com as suas credenciais de administrador local. Se ativou a autenticação do SQL Server, também pode ligar com autenticação de SQL com o início de sessão do Olá SQL e a palavra-passe que configurou durante o aprovisionamento.
+<span data-ttu-id="42c3c-319">Depois de ligar a máquina de virtual toohello do SQL Server, pode iniciar o SQL Server Management Studio e estabelecer ligação com a autenticação do Windows com as suas credenciais de administrador local.</span><span class="sxs-lookup"><span data-stu-id="42c3c-319">After you connect toohello SQL Server virtual machine, you can launch SQL Server Management Studio and connect with Windows Authentication using your local administrator credentials.</span></span> <span data-ttu-id="42c3c-320">Se ativou a autenticação do SQL Server, também pode ligar com autenticação de SQL com o início de sessão do Olá SQL e a palavra-passe que configurou durante o aprovisionamento.</span><span class="sxs-lookup"><span data-stu-id="42c3c-320">If you enabled SQL Server Authentication, you can also connect with SQL Authentication using hello SQL login and password you configured during provisioning.</span></span>
 
-Máquina toohello de acesso permite-lhe toodirectly alteração máquina e definições do SQL Server com base nos seus requisitos. Por exemplo, pode configurar as definições da firewall Olá ou alterar as definições de configuração do SQL Server.
+<span data-ttu-id="42c3c-321">Máquina toohello de acesso permite-lhe toodirectly alteração máquina e definições do SQL Server com base nos seus requisitos.</span><span class="sxs-lookup"><span data-stu-id="42c3c-321">Access toohello machine enables you toodirectly change machine and SQL Server settings based on your requirements.</span></span> <span data-ttu-id="42c3c-322">Por exemplo, pode configurar as definições da firewall Olá ou alterar as definições de configuração do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="42c3c-322">For example, you could configure hello firewall settings or change SQL Server configuration settings.</span></span>
 
-## <a name="enable-tcpip-for-developer-and-express-editions"></a>Ativar o TCP/IP para edições Developer e Express
+## <a name="enable-tcpip-for-developer-and-express-editions"></a><span data-ttu-id="42c3c-323">Ativar o TCP/IP para edições Developer e Express</span><span class="sxs-lookup"><span data-stu-id="42c3c-323">Enable TCP/IP for Developer and Express editions</span></span>
 
-Quando aprovisionar uma nova VM do SQL Server, Azure não automaticamente ativa o protocolo de TCP/IP Olá para programadores do SQL Server e edições Express. passos de Olá abaixo explicam como toomanually ative TCP/IP para que possam ligar remotamente por endereço IP.
+<span data-ttu-id="42c3c-324">Quando aprovisionar uma nova VM do SQL Server, Azure não automaticamente ativa o protocolo de TCP/IP Olá para programadores do SQL Server e edições Express.</span><span class="sxs-lookup"><span data-stu-id="42c3c-324">When provisioning a new SQL Server VM, Azure does not automatically enable hello TCP/IP protocol for SQL Server Developer and Express editions.</span></span> <span data-ttu-id="42c3c-325">passos de Olá abaixo explicam como toomanually ative TCP/IP para que possam ligar remotamente por endereço IP.</span><span class="sxs-lookup"><span data-stu-id="42c3c-325">hello steps below explain how toomanually enable TCP/IP so that you can connect remotely by IP address.</span></span>
 
-Olá, utilize os passos a seguir **Gestor de configuração do SQL Server** tooenable protocolo de Olá TCP/IP para programadores do SQL Server e edições Express.
+<span data-ttu-id="42c3c-326">Olá, utilize os passos a seguir **Gestor de configuração do SQL Server** tooenable protocolo de Olá TCP/IP para programadores do SQL Server e edições Express.</span><span class="sxs-lookup"><span data-stu-id="42c3c-326">hello following steps use **SQL Server Configuration Manager** tooenable hello TCP/IP protocol for SQL Server Developer and Express editions.</span></span>
 
 > [!INCLUDE [Connect tooSQL Server VM with remote desktop](../../../../includes/virtual-machines-sql-server-connection-tcp-protocol.md)]
 
-## <a name="connect-toosql-server-remotely"></a>Ligar tooSQL servidor remotamente
+## <a name="connect-toosql-server-remotely"></a><span data-ttu-id="42c3c-327">Ligar tooSQL servidor remotamente</span><span class="sxs-lookup"><span data-stu-id="42c3c-327">Connect tooSQL Server remotely</span></span>
 
-Neste tutorial, selecionamos **pública** acesso para a máquina virtual de Olá e **autenticação do SQL Server**. Estas definições Olá configurada automaticamente máquinas virtuais tooallow do SQL Server ligações a partir da qualquer cliente através de Olá internet (partindo do princípio de que tem início de sessão Olá correto SQL).
+<span data-ttu-id="42c3c-328">Neste tutorial, selecionamos **pública** acesso para a máquina virtual de Olá e **autenticação do SQL Server**.</span><span class="sxs-lookup"><span data-stu-id="42c3c-328">In this tutorial, we selected **Public** access for hello virtual machine and **SQL Server Authentication**.</span></span> <span data-ttu-id="42c3c-329">Estas definições Olá configurada automaticamente máquinas virtuais tooallow do SQL Server ligações a partir da qualquer cliente através de Olá internet (partindo do princípio de que tem início de sessão Olá correto SQL).</span><span class="sxs-lookup"><span data-stu-id="42c3c-329">These settings automatically configured hello virtual machine tooallow SQL Server connections from any client over hello internet (assuming they have hello correct SQL login).</span></span>
 
 > [!NOTE]
-> Se não selecionou público durante o aprovisionamento, pode alterar as definições de conectividade do SQL Server através do portal Olá após o aprovisionamento. Para obter mais informações, veja o artigo [Alterar as definições de conectividade SQL](virtual-machines-windows-sql-connect.md#change).
+> <span data-ttu-id="42c3c-330">Se não selecionou público durante o aprovisionamento, pode alterar as definições de conectividade do SQL Server através do portal Olá após o aprovisionamento.</span><span class="sxs-lookup"><span data-stu-id="42c3c-330">If you did not select Public during provisioning, then you can change your SQL connectivity settings through hello portal after provisioning.</span></span> <span data-ttu-id="42c3c-331">Para obter mais informações, veja o artigo [Alterar as definições de conectividade SQL](virtual-machines-windows-sql-connect.md#change).</span><span class="sxs-lookup"><span data-stu-id="42c3c-331">For more information, see  [Change your SQL connectivity settings](virtual-machines-windows-sql-connect.md#change).</span></span>
 
-Olá secções a seguir mostra como tooconnect tooyour instância de SQL Server na VM a partir de outro computador através de Olá internet.
+<span data-ttu-id="42c3c-332">Olá secções a seguir mostra como tooconnect tooyour instância de SQL Server na VM a partir de outro computador através de Olá internet.</span><span class="sxs-lookup"><span data-stu-id="42c3c-332">hello following sections show how tooconnect tooyour SQL Server instance on your VM from a different computer over hello internet.</span></span>
 
 > [!INCLUDE [Connect tooSQL Server in a VM Resource Manager](../../../../includes/virtual-machines-sql-server-connection-steps-resource-manager.md)]
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a><span data-ttu-id="42c3c-333">Passos Seguintes</span><span class="sxs-lookup"><span data-stu-id="42c3c-333">Next Steps</span></span>
 
-Para outras informações sobre como utilizar o SQL Server no Azure, consulte [do SQL Server em Azure Virtual Machines](virtual-machines-windows-sql-server-iaas-overview.md) e Olá [perguntas mais frequentes](virtual-machines-windows-sql-server-iaas-faq.md).
+<span data-ttu-id="42c3c-334">Para outras informações sobre como utilizar o SQL Server no Azure, consulte [do SQL Server em Azure Virtual Machines](virtual-machines-windows-sql-server-iaas-overview.md) e Olá [perguntas mais frequentes](virtual-machines-windows-sql-server-iaas-faq.md).</span><span class="sxs-lookup"><span data-stu-id="42c3c-334">For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](virtual-machines-windows-sql-server-iaas-overview.md) and hello [Frequently Asked Questions](virtual-machines-windows-sql-server-iaas-faq.md).</span></span>

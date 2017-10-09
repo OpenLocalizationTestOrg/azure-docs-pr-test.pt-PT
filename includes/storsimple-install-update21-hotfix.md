@@ -1,42 +1,42 @@
 <!--author=alkohli last changed: 05/19/16-->
 
-#### <a name="toodownload-hotfixes"></a>correções toodownload
-Efetue Olá seguintes passos toodownload Olá atualização de software de Olá catálogo Microsoft Update.
+#### <a name="toodownload-hotfixes"></a><span data-ttu-id="ed7e1-101">correções toodownload</span><span class="sxs-lookup"><span data-stu-id="ed7e1-101">toodownload hotfixes</span></span>
+<span data-ttu-id="ed7e1-102">Efetue Olá seguintes passos toodownload Olá atualização de software de Olá catálogo Microsoft Update.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-102">Perform hello following steps toodownload hello software update from hello Microsoft Update Catalog.</span></span>
 
-1. Inicie o Internet Explorer e navegue demasiado[http://catalog.update.microsoft.com](http://catalog.update.microsoft.com).
-2. Se esta for a primeira vez utilizando Olá catálogo Microsoft Update neste computador, clique em **instalar** quando pedido tooinstall hello do suplemento do catálogo Microsoft Update.
-    ![Instalar o catálogo](./media/storsimple-install-update2-hotfix/HCS_InstallCatalog-include.png)
-3. Na caixa de pesquisa de Olá de Olá catálogo Microsoft Update, introduza o número de Base de dados de conhecimento (KB) Olá de correção de Olá que pretende toodownload, por exemplo **3179904**e, em seguida, clique em **pesquisa**.
+1. <span data-ttu-id="ed7e1-103">Inicie o Internet Explorer e navegue demasiado[http://catalog.update.microsoft.com](http://catalog.update.microsoft.com).</span><span class="sxs-lookup"><span data-stu-id="ed7e1-103">Start Internet Explorer and navigate too[http://catalog.update.microsoft.com](http://catalog.update.microsoft.com).</span></span>
+2. <span data-ttu-id="ed7e1-104">Se esta for a primeira vez utilizando Olá catálogo Microsoft Update neste computador, clique em **instalar** quando pedido tooinstall hello do suplemento do catálogo Microsoft Update.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-104">If this is your first time using hello Microsoft Update Catalog on this computer, click **Install** when prompted tooinstall hello Microsoft Update Catalog add-on.</span></span>
+    <span data-ttu-id="ed7e1-105">![Instalar o catálogo](./media/storsimple-install-update2-hotfix/HCS_InstallCatalog-include.png)</span><span class="sxs-lookup"><span data-stu-id="ed7e1-105">![Install catalog](./media/storsimple-install-update2-hotfix/HCS_InstallCatalog-include.png)</span></span>
+3. <span data-ttu-id="ed7e1-106">Na caixa de pesquisa de Olá de Olá catálogo Microsoft Update, introduza o número de Base de dados de conhecimento (KB) Olá de correção de Olá que pretende toodownload, por exemplo **3179904**e, em seguida, clique em **pesquisa**.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-106">In hello search box of hello Microsoft Update Catalog, enter hello Knowledge Base (KB) number of hello hotfix you want toodownload, for example **3179904**, and then click **Search**.</span></span>
    
-    Olá listagem de correção é apresentado, por exemplo, **cumulativa 2.2 atualização do pacote de Software para a série de 8000 do StorSimple**.
+    <span data-ttu-id="ed7e1-107">Olá listagem de correção é apresentado, por exemplo, **cumulativa 2.2 atualização do pacote de Software para a série de 8000 do StorSimple**.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-107">hello hotfix listing appears, for example, **Cumulative Software Bundle Update 2.2 for StorSimple 8000 Series**.</span></span>
    
     ![Catálogo de pesquisa](./media/storsimple-install-update2-hotfix/HCS_SearchCatalog1-include.png)
-4. Clique em **Adicionar**. atualização de Olá está adicionada toohello cesto.
-5. Procure as correções adicionais listados na tabela de Olá acima (**3103616**, **3146621**) e adicione cada cesto toohello.
-6. Clique em **Ver Cesto**.
-7. Clique em **Transferir**. Especifique ou **procurar** tooa localização local onde pretende Olá transfere tooappear. Olá as atualizações são transferidas toohello especificada a localização e colocada numa pasta com o mesmo nome como atualização Olá de Olá secundárias. pasta de Olá também pode ser copiado tooa partilha de rede que seja acessível a partir do dispositivo Olá.
+4. <span data-ttu-id="ed7e1-109">Clique em **Adicionar**.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-109">Click **Add**.</span></span> <span data-ttu-id="ed7e1-110">atualização de Olá está adicionada toohello cesto.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-110">hello update is added toohello basket.</span></span>
+5. <span data-ttu-id="ed7e1-111">Procure as correções adicionais listados na tabela de Olá acima (**3103616**, **3146621**) e adicione cada cesto toohello.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-111">Search for any additional hotfixes listed in hello table above (**3103616**, **3146621**), and add each toohello basket.</span></span>
+6. <span data-ttu-id="ed7e1-112">Clique em **Ver Cesto**.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-112">Click **View Basket**.</span></span>
+7. <span data-ttu-id="ed7e1-113">Clique em **Transferir**.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-113">Click **Download**.</span></span> <span data-ttu-id="ed7e1-114">Especifique ou **procurar** tooa localização local onde pretende Olá transfere tooappear.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-114">Specify or **Browse** tooa local location where you want hello downloads tooappear.</span></span> <span data-ttu-id="ed7e1-115">Olá as atualizações são transferidas toohello especificada a localização e colocada numa pasta com o mesmo nome como atualização Olá de Olá secundárias.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-115">hello updates are downloaded toohello specified location and placed in a sub-folder with hello same name as hello update.</span></span> <span data-ttu-id="ed7e1-116">pasta de Olá também pode ser copiado tooa partilha de rede que seja acessível a partir do dispositivo Olá.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-116">hello folder can also be copied tooa network share that is reachable from hello device.</span></span>
 
 > [!NOTE]
-> Correções de Olá devem ser acessíveis a ambos os toodetect controladores mensagens de quaisquer potenciais erros de controlador de ponto a ponto Olá.
+> <span data-ttu-id="ed7e1-117">Correções de Olá devem ser acessíveis a ambos os toodetect controladores mensagens de quaisquer potenciais erros de controlador de ponto a ponto Olá.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-117">hello hotfixes must be accessible from both controllers toodetect any potential error messages from hello peer controller.</span></span>
 > 
 > 
 
-#### <a name="tooinstall-and-verify-regular-mode-hotfixes"></a>tooinstall e certifique-se correções modo normal
-Efetuar Olá tooinstall passos a seguir e certifique-se correções modo normal. Se já instalou utilizando Olá Portal do Azure, avançar diretamente demasiado[instalar e certifique-se correções do modo de manutenção](#to-install-and-verify-maintenance-mode-hotfixes).
+#### <a name="tooinstall-and-verify-regular-mode-hotfixes"></a><span data-ttu-id="ed7e1-118">tooinstall e certifique-se correções modo normal</span><span class="sxs-lookup"><span data-stu-id="ed7e1-118">tooinstall and verify regular mode hotfixes</span></span>
+<span data-ttu-id="ed7e1-119">Efetuar Olá tooinstall passos a seguir e certifique-se correções modo normal.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-119">Perform hello following steps tooinstall and verify regular-mode hotfixes.</span></span> <span data-ttu-id="ed7e1-120">Se já instalou utilizando Olá Portal do Azure, avançar diretamente demasiado[instalar e certifique-se correções do modo de manutenção](#to-install-and-verify-maintenance-mode-hotfixes).</span><span class="sxs-lookup"><span data-stu-id="ed7e1-120">If you already installed them using hello Azure Portal, skip ahead too[install and verify maintenance mode hotfixes](#to-install-and-verify-maintenance-mode-hotfixes).</span></span>
 
-1. tooinstall Olá correções, interface do Windows PowerShell de Olá de acesso na consola de série do dispositivo StorSimple. Siga instruções de detalhado Olá [consola de série utilizar o PuTTy tooconnect toohello](../articles/storsimple/storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console). Na linha de comandos Olá, prima **Enter**.
-2. Selecione **opção 1** toolog no dispositivo toohello com acesso total. Recomendamos que instale a correção de Olá no controlador passivo Olá primeiro.
-3. correção de Olá tooinstall, na linha de comandos Olá, tipo:
+1. <span data-ttu-id="ed7e1-121">tooinstall Olá correções, interface do Windows PowerShell de Olá de acesso na consola de série do dispositivo StorSimple.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-121">tooinstall hello hotfixes, access hello Windows PowerShell interface on your StorSimple device serial console.</span></span> <span data-ttu-id="ed7e1-122">Siga instruções de detalhado Olá [consola de série utilizar o PuTTy tooconnect toohello](../articles/storsimple/storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console).</span><span class="sxs-lookup"><span data-stu-id="ed7e1-122">Follow hello detailed instructions in [Use PuTTy tooconnect toohello serial console](../articles/storsimple/storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console).</span></span> <span data-ttu-id="ed7e1-123">Na linha de comandos Olá, prima **Enter**.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-123">At hello command prompt, press **Enter**.</span></span>
+2. <span data-ttu-id="ed7e1-124">Selecione **opção 1** toolog no dispositivo toohello com acesso total.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-124">Select **Option 1** toolog on toohello device with full access.</span></span> <span data-ttu-id="ed7e1-125">Recomendamos que instale a correção de Olá no controlador passivo Olá primeiro.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-125">We recommend that you install hello hotfix on hello passive controller first.</span></span>
+3. <span data-ttu-id="ed7e1-126">correção de Olá tooinstall, na linha de comandos Olá, tipo:</span><span class="sxs-lookup"><span data-stu-id="ed7e1-126">tooinstall hello hotfix, at hello command prompt, type:</span></span>
    
     `Start-HcsHotfix -Path <path tooupdate file> -Credential <credentials in domain\username format>`
    
-    Utilize o IP, em vez de DNS no caminho de partilha no Olá acima comando. parâmetro de credencial de Olá só é utilizado se aceder a uma partilha autenticada.
+    <span data-ttu-id="ed7e1-127">Utilize o IP, em vez de DNS no caminho de partilha no Olá acima comando.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-127">Use IP rather than DNS in share path in hello above command.</span></span> <span data-ttu-id="ed7e1-128">parâmetro de credencial de Olá só é utilizado se aceder a uma partilha autenticada.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-128">hello credential parameter is used only if you are accessing an authenticated share.</span></span>
    
-    Recomendamos que utilize partilhas de tooaccess de parâmetro de credencial de Olá. Mesmo partilhas que estão abertas demasiado "todos os utilizadores" são, normalmente, não abrir toounauthenticated utilizadores.
+    <span data-ttu-id="ed7e1-129">Recomendamos que utilize partilhas de tooaccess de parâmetro de credencial de Olá.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-129">We recommend that you use hello credential parameter tooaccess shares.</span></span> <span data-ttu-id="ed7e1-130">Mesmo partilhas que estão abertas demasiado "todos os utilizadores" são, normalmente, não abrir toounauthenticated utilizadores.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-130">Even shares that are open too“everyone” are typically not open toounauthenticated users.</span></span>
    
-    Forneça a palavra-passe Olá quando lhe for pedido.
+    <span data-ttu-id="ed7e1-131">Forneça a palavra-passe Olá quando lhe for pedido.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-131">Supply hello password when prompted.</span></span>
    
-    É apresentada abaixo uma saída de exemplo.
+    <span data-ttu-id="ed7e1-132">É apresentada abaixo uma saída de exemplo.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-132">A sample output is shown below.</span></span>
    
     ```
     Controller0>Start-HcsHotfix -Path \\10.100.100.100\share
@@ -50,14 +50,14 @@ Efetuar Olá tooinstall passos a seguir e certifique-se correções modo normal.
     [Y] Yes [N] No [?] Help (default is "Y"): Y
     ```
 
-4. Tipo **Y** quando o pedido tooconfirm Olá instalação de correção.
+4. <span data-ttu-id="ed7e1-133">Tipo **Y** quando o pedido tooconfirm Olá instalação de correção.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-133">Type **Y** when prompted tooconfirm hello hotfix installation.</span></span>
    
    > [!IMPORTANT]
-   > Se instalar a atualização 2.2, só a instalar o ficheiro binário Olá precedido pela 'all-hcsmdssoftwareudpate'. Não instale Olá Cis e Olá MDS a atualização do agente precedida pela all cismdsagentupdatebundle. Falha toodo, por isso, resultará num erro. 
+   > <span data-ttu-id="ed7e1-134">Se instalar a atualização 2.2, só a instalar o ficheiro binário Olá precedido pela 'all-hcsmdssoftwareudpate'.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-134">If installing Update 2.2, only install hello binary file prefaced with 'all-hcsmdssoftwareudpate'.</span></span> <span data-ttu-id="ed7e1-135">Não instale Olá Cis e Olá MDS a atualização do agente precedida pela all cismdsagentupdatebundle.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-135">Do not install hello Cis and hello MDS agent update prefaced with all-cismdsagentupdatebundle.</span></span> <span data-ttu-id="ed7e1-136">Falha toodo, por isso, resultará num erro.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-136">Failure toodo so will result in an error.</span></span> 
 
-5. Monitorizar Olá update utilizando Olá `Get-HcsUpdateStatus` cmdlet. atualização Olá primeiro irá concluir num controlador de Olá passiva. Depois do controlador passivo Olá é atualizada, existirá uma ativação pós-falha e atualização Olá, em seguida, irão ser aplicada em Olá outro controlador. atualização de Olá está concluída quando ambos os controladores de Olá são atualizados.
+5. <span data-ttu-id="ed7e1-137">Monitorizar Olá update utilizando Olá `Get-HcsUpdateStatus` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-137">Monitor hello update by using hello `Get-HcsUpdateStatus` cmdlet.</span></span> <span data-ttu-id="ed7e1-138">atualização Olá primeiro irá concluir num controlador de Olá passiva.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-138">hello update will first complete on hello passive controller.</span></span> <span data-ttu-id="ed7e1-139">Depois do controlador passivo Olá é atualizada, existirá uma ativação pós-falha e atualização Olá, em seguida, irão ser aplicada em Olá outro controlador.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-139">Once hello passive controller is updated, there will be a failover and hello update will then get applied on hello other controller.</span></span> <span data-ttu-id="ed7e1-140">atualização de Olá está concluída quando ambos os controladores de Olá são atualizados.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-140">hello update is complete when both hello controllers are updated.</span></span>
    
-    Olá saída de exemplo seguinte mostra Olá atualização em curso. Olá `RunInprogress` será `True` quando Olá atualização se encontra em curso.
+    <span data-ttu-id="ed7e1-141">Olá saída de exemplo seguinte mostra Olá atualização em curso.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-141">hello following sample output shows hello update in progress.</span></span> <span data-ttu-id="ed7e1-142">Olá `RunInprogress` será `True` quando Olá atualização se encontra em curso.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-142">hello `RunInprogress` will be `True` when hello update is in progress.</span></span>
    
     ```
     Controller0>Get-HcsUpdateStatus
@@ -68,7 +68,7 @@ Efetuar Olá tooinstall passos a seguir e certifique-se correções modo normal.
     Controller1Events   :
     ```
    
-     Olá saída de exemplo a seguir indica que a atualização Olá estiver concluída. Olá `RunInProgress` será `False` quando a atualização de Olá foi concluída.
+     <span data-ttu-id="ed7e1-143">Olá saída de exemplo a seguir indica que a atualização Olá estiver concluída.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-143">hello following sample output indicates that hello update is finished.</span></span> <span data-ttu-id="ed7e1-144">Olá `RunInProgress` será `False` quando a atualização de Olá foi concluída.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-144">hello `RunInProgress` will be `False` when hello update has completed.</span></span>
    
     ```
     Controller0>Get-HcsUpdateStatus
@@ -80,48 +80,48 @@ Efetuar Olá tooinstall passos a seguir e certifique-se correções modo normal.
     ```
 
     > [!NOTE]
-    > Ocasionalmente, Olá cmdlet relatórios `False` quando atualização Olá ainda está em curso. tooensure Olá correção está concluída, aguarde alguns minutos, execute novamente este comando e certifique-se de que Olá `RunInProgress` é `False`. Se estiver, Olá correção foi concluída.
+    > <span data-ttu-id="ed7e1-145">Ocasionalmente, Olá cmdlet relatórios `False` quando atualização Olá ainda está em curso.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-145">Occasionally, hello cmdlet reports `False` when hello update is still in progress.</span></span> <span data-ttu-id="ed7e1-146">tooensure Olá correção está concluída, aguarde alguns minutos, execute novamente este comando e certifique-se de que Olá `RunInProgress` é `False`.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-146">tooensure that hello hotfix is complete, wait for a few minutes, rerun this command and verify that hello `RunInProgress` is `False`.</span></span> <span data-ttu-id="ed7e1-147">Se estiver, Olá correção foi concluída.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-147">If it is, then hello hotfix has completed.</span></span>
 
-1. Após a conclusão da atualização de software Olá, verifique as versões de software do sistema Olá. Escreva:
+1. <span data-ttu-id="ed7e1-148">Após a conclusão da atualização de software Olá, verifique as versões de software do sistema Olá.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-148">After hello software update is complete, verify hello system software versions.</span></span> <span data-ttu-id="ed7e1-149">Escreva:</span><span class="sxs-lookup"><span data-stu-id="ed7e1-149">Type:</span></span>
    
     `Get-HcsSystem`
    
-    Deverá ver Olá seguintes versões:
+    <span data-ttu-id="ed7e1-150">Deverá ver Olá seguintes versões:</span><span class="sxs-lookup"><span data-stu-id="ed7e1-150">You should see hello following versions:</span></span>
    
    * `HcsSoftwareVersion: 6.3.9600.17708`
    * `CisAgentVersion: 1.0.9299.0`
    * `MdsAgentVersion: 30.0.4698.16` 
      
-     Se os números de versão de Olá não alterar depois de aplicar a atualização de Olá, indica que correção Olá tooapply falhou. Se tal acontecer, entre em contacto com o [Suporte da Microsoft](../articles/storsimple/storsimple-contact-microsoft-support.md) para obter assistência.
+     <span data-ttu-id="ed7e1-151">Se os números de versão de Olá não alterar depois de aplicar a atualização de Olá, indica que correção Olá tooapply falhou.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-151">If hello version numbers do not change after applying hello update, it indicates that hello hotfix has failed tooapply.</span></span> <span data-ttu-id="ed7e1-152">Se tal acontecer, entre em contacto com o [Suporte da Microsoft](../articles/storsimple/storsimple-contact-microsoft-support.md) para obter assistência.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-152">Should you see this, please contact [Microsoft Support](../articles/storsimple/storsimple-contact-microsoft-support.md) for further assistance.</span></span>
      
      > [!IMPORTANT]
-     > Tem de reiniciar o controlador de Active Directory Olá através de Olá `Restart-HcsController` cmdlet antes de aplicar Olá restantes atualizações. 
+     > <span data-ttu-id="ed7e1-153">Tem de reiniciar o controlador de Active Directory Olá através de Olá `Restart-HcsController` cmdlet antes de aplicar Olá restantes atualizações.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-153">You must restart hello active controller via hello `Restart-HcsController` cmdlet before applying hello remaining updates.</span></span> 
      > 
      > 
-2. Repita os passos 3 a 5 tooinstall Olá restantes correções modo normal.
+2. <span data-ttu-id="ed7e1-154">Repita os passos 3 a 5 tooinstall Olá restantes correções modo normal.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-154">Repeat steps 3-5 tooinstall hello remaining regular-mode hotfixes.</span></span>
    
-   * atualização de iSCSI Olá KB3146621
-   * atualização WMI Olá KB3103616
-3. Ignore este passo se estão a atualizar a partir da atualização 2. Se estão a atualizar a partir de um tooUpdate anterior da versão 2, terá também de toodownload:
+   * <span data-ttu-id="ed7e1-155">atualização de iSCSI Olá KB3146621</span><span class="sxs-lookup"><span data-stu-id="ed7e1-155">hello iSCSI update KB3146621</span></span>
+   * <span data-ttu-id="ed7e1-156">atualização WMI Olá KB3103616</span><span class="sxs-lookup"><span data-stu-id="ed7e1-156">hello WMI update KB3103616</span></span>
+3. <span data-ttu-id="ed7e1-157">Ignore este passo se estão a atualizar a partir da atualização 2.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-157">Skip this step if you are updating from Update 2.</span></span> <span data-ttu-id="ed7e1-158">Se estão a atualizar a partir de um tooUpdate anterior da versão 2, terá também de toodownload:</span><span class="sxs-lookup"><span data-stu-id="ed7e1-158">If you are updating from a version prior tooUpdate 2, you will also need toodownload:</span></span>
 
-    - controlador Olá LSI KB3121900
+    - <span data-ttu-id="ed7e1-159">controlador Olá LSI KB3121900</span><span class="sxs-lookup"><span data-stu-id="ed7e1-159">hello LSI driver KB3121900</span></span>
 
-    - atualização de Spaceport Olá KB3090322
+    - <span data-ttu-id="ed7e1-160">atualização de Spaceport Olá KB3090322</span><span class="sxs-lookup"><span data-stu-id="ed7e1-160">hello Spaceport update KB3090322</span></span>
 
-    - atualização de Storport Olá KB3080728
+    - <span data-ttu-id="ed7e1-161">atualização de Storport Olá KB3080728</span><span class="sxs-lookup"><span data-stu-id="ed7e1-161">hello Storport update KB3080728</span></span>
 
-#### <a name="tooinstall-and-verify-maintenance-mode-hotfixes"></a>tooinstall e certifique-se correções do modo de manutenção
-Utilize as atualizações de firmware do KB3121899 tooinstall disco. Estas atualizações acontece e tomar toocomplete cerca de 30 minutos. Pode escolher tooinstall estes numa janela de manutenção planeada por consola ligação de série do dispositivo toohello.
+#### <a name="tooinstall-and-verify-maintenance-mode-hotfixes"></a><span data-ttu-id="ed7e1-162">tooinstall e certifique-se correções do modo de manutenção</span><span class="sxs-lookup"><span data-stu-id="ed7e1-162">tooinstall and verify maintenance mode hotfixes</span></span>
+<span data-ttu-id="ed7e1-163">Utilize as atualizações de firmware do KB3121899 tooinstall disco.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-163">Use KB3121899 tooinstall disk firmware updates.</span></span> <span data-ttu-id="ed7e1-164">Estas atualizações acontece e tomar toocomplete cerca de 30 minutos.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-164">These are disruptive updates and take around 30 minutes toocomplete.</span></span> <span data-ttu-id="ed7e1-165">Pode escolher tooinstall estes numa janela de manutenção planeada por consola ligação de série do dispositivo toohello.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-165">You can choose tooinstall these in a planned maintenance window by connecting toohello device serial console.</span></span>
 
-Tenha em atenção que se o firmware do disco já se encontra atualizado, não terá de tooinstall estas atualizações. Executar Olá `Get-HcsUpdateAvailability` cmdlet a partir da consola de série de dispositivo do Olá toocheck se as atualizações estão disponíveis e se Olá atualiza tem acontece (modo de manutenção) ou não acontece (modo normal) atualizações.
+<span data-ttu-id="ed7e1-166">Tenha em atenção que se o firmware do disco já se encontra atualizado, não terá de tooinstall estas atualizações.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-166">Note that if your disk firmware is already up-to-date, you won't need tooinstall these updates.</span></span> <span data-ttu-id="ed7e1-167">Executar Olá `Get-HcsUpdateAvailability` cmdlet a partir da consola de série de dispositivo do Olá toocheck se as atualizações estão disponíveis e se Olá atualiza tem acontece (modo de manutenção) ou não acontece (modo normal) atualizações.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-167">Run hello `Get-HcsUpdateAvailability` cmdlet from hello device serial console toocheck if updates are available and whether hello updates are disruptive (maintenance mode) or non-disruptive (regular mode) updates.</span></span>
 
-atualizações de firmware do tooinstall Olá disco, siga as instruções de Olá abaixo.
+<span data-ttu-id="ed7e1-168">atualizações de firmware do tooinstall Olá disco, siga as instruções de Olá abaixo.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-168">tooinstall hello disk firmware updates, follow hello instructions below.</span></span>
 
-1. Colocar o dispositivo de Olá em modo de manutenção de Olá. Tenha em atenção que não deve utilizar a comunicação remota do Windows PowerShell ao ligar o dispositivo de tooa no modo de manutenção. Em vez disso, execute este cmdlet no controlador de dispositivo Olá quando estiver ligado através da consola de série do dispositivo de Olá. Escreva:
+1. <span data-ttu-id="ed7e1-169">Colocar o dispositivo de Olá em modo de manutenção de Olá.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-169">Place hello device in hello Maintenance mode.</span></span> <span data-ttu-id="ed7e1-170">Tenha em atenção que não deve utilizar a comunicação remota do Windows PowerShell ao ligar o dispositivo de tooa no modo de manutenção.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-170">Note that you should not use Windows PowerShell remoting when connecting tooa device in Maintenance mode.</span></span> <span data-ttu-id="ed7e1-171">Em vez disso, execute este cmdlet no controlador de dispositivo Olá quando estiver ligado através da consola de série do dispositivo de Olá.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-171">Instead run this cmdlet on hello device controller when connected through hello device serial console.</span></span> <span data-ttu-id="ed7e1-172">Escreva:</span><span class="sxs-lookup"><span data-stu-id="ed7e1-172">Type:</span></span>
    
     `Enter-HcsMaintenanceMode`
    
-    É apresentada abaixo uma saída de exemplo.
+    <span data-ttu-id="ed7e1-173">É apresentada abaixo uma saída de exemplo.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-173">A sample output is shown below.</span></span>
    
         Controller0>Enter-HcsMaintenanceMode
         Checking device state...
@@ -143,12 +143,12 @@ atualizações de firmware do tooinstall Olá disco, siga as instruções de Ol�
         [4] Change language
         Please enter your choice>
    
-    Em seguida, reinicie os dois controladores de Olá no modo de manutenção.
-2. atualização de firmware de disco por Olá tooinstall, tipo:
+    <span data-ttu-id="ed7e1-174">Em seguida, reinicie os dois controladores de Olá no modo de manutenção.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-174">Both hello controllers then restart into Maintenance mode.</span></span>
+2. <span data-ttu-id="ed7e1-175">atualização de firmware de disco por Olá tooinstall, tipo:</span><span class="sxs-lookup"><span data-stu-id="ed7e1-175">tooinstall hello disk firmware update, type:</span></span>
    
     `Start-HcsHotfix -Path <path tooupdate file> -Credential <credentials in domain\username format>`
    
-    É apresentada abaixo uma saída de exemplo.
+    <span data-ttu-id="ed7e1-176">É apresentada abaixo uma saída de exemplo.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-176">A sample output is shown below.</span></span>
    
         Controller1>Start-HcsHotfix -Path \\10.100.100.100\share\DiskFirmwarePackage.exe -Credential contoso\john
         Enter Password:
@@ -157,16 +157,16 @@ atualizações de firmware do tooinstall Olá disco, siga as instruções de Ol�
         This operation starts a hotfix installation and could reboot one or both of hello controllers. By installing new updates you agree to, and accept any additional terms associated with, hello new functionality listed in hello release notes (https://go.microsoft.com/fwLink/?LinkID=613790). Are you sure you want toocontinue?
         [Y] Yes [N] No (Default is "Y"): Y
         WARNING: Installation is currently in progress. This operation can take several minutes toocomplete.
-3. Monitor Olá instalar progresso com `Get-HcsUpdateStatus` comando. Olá atualização estiver concluída quando hello `RunInProgress` alterações demasiado`False`.
-4. Depois de concluída a instalação de Olá, reinicia o controlador de Olá no qual Olá foi instalada a correção de modo de manutenção. Inicie sessão como opção 1 com acesso total e verificar a versão de firmware do disco Olá. Escreva:
+3. <span data-ttu-id="ed7e1-177">Monitor Olá instalar progresso com `Get-HcsUpdateStatus` comando.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-177">Monitor hello install progress using `Get-HcsUpdateStatus` command.</span></span> <span data-ttu-id="ed7e1-178">Olá atualização estiver concluída quando hello `RunInProgress` alterações demasiado`False`.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-178">hello update is complete when hello `RunInProgress` changes too`False`.</span></span>
+4. <span data-ttu-id="ed7e1-179">Depois de concluída a instalação de Olá, reinicia o controlador de Olá no qual Olá foi instalada a correção de modo de manutenção.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-179">After hello installation is complete, hello controller on which hello maintenance mode hotfix was installed restarts.</span></span> <span data-ttu-id="ed7e1-180">Inicie sessão como opção 1 com acesso total e verificar a versão de firmware do disco Olá.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-180">Log in as option 1 with full access and verify hello disk firmware version.</span></span> <span data-ttu-id="ed7e1-181">Escreva:</span><span class="sxs-lookup"><span data-stu-id="ed7e1-181">Type:</span></span>
    
    `Get-HcsFirmwareVersion`
    
-   Olá esperado versões de firmware do disco são:
+   <span data-ttu-id="ed7e1-182">Olá esperado versões de firmware do disco são:</span><span class="sxs-lookup"><span data-stu-id="ed7e1-182">hello expected disk firmware versions are:</span></span>
    
    `XMGG, XGEG, KZ50, F6C2, VR08`
    
-   É apresentada abaixo uma saída de exemplo.
+   <span data-ttu-id="ed7e1-183">É apresentada abaixo uma saída de exemplo.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-183">A sample output is shown below.</span></span>
    
        -----------------------MAINTENANCE MODE------------------------
        Microsoft Azure StorSimple Appliance Model 8100
@@ -220,8 +220,8 @@ atualizações de firmware do tooinstall Olá disco, siga as instruções de Ol�
          SEAGATE:ST4000NM0023:XMGG
          SEAGATE:ST4000NM0023:XMGG
    
-    Executar Olá `Get-HcsFirmwareVersion` comando em tooverify controlador segundo Olá que Olá versão do software foi atualizado. Modo de manutenção de Olá, em seguida, pode sair. toodo por isso, escreva Olá seguinte comando para cada controlador de dispositivo:
+    <span data-ttu-id="ed7e1-184">Executar Olá `Get-HcsFirmwareVersion` comando em tooverify controlador segundo Olá que Olá versão do software foi atualizado.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-184">Run hello `Get-HcsFirmwareVersion` command on hello second controller tooverify that hello software version has been updated.</span></span> <span data-ttu-id="ed7e1-185">Modo de manutenção de Olá, em seguida, pode sair.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-185">You can then exit hello maintenance mode.</span></span> <span data-ttu-id="ed7e1-186">toodo por isso, escreva Olá seguinte comando para cada controlador de dispositivo:</span><span class="sxs-lookup"><span data-stu-id="ed7e1-186">toodo so, type hello following command for each device controller:</span></span>
    
    `Exit-HcsMaintenanceMode`
-5. os controladores de Olá reinicie quando sair do modo de manutenção. Depois de firmware de disco Olá atualizações são aplicadas com êxito e o dispositivo de Olá saiu do modo de manutenção, toohello retorno portal clássico do Azure. Tenha em atenção que portal Olá poderá não mostrar que instalou as atualizações de modo de manutenção Olá durante 24 horas.
+5. <span data-ttu-id="ed7e1-187">os controladores de Olá reinicie quando sair do modo de manutenção.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-187">hello controllers restart when you exit Maintenance mode.</span></span> <span data-ttu-id="ed7e1-188">Depois de firmware de disco Olá atualizações são aplicadas com êxito e o dispositivo de Olá saiu do modo de manutenção, toohello retorno portal clássico do Azure.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-188">After hello disk firmware updates are successfully applied and hello device has exited maintenance mode, return toohello Azure classic portal.</span></span> <span data-ttu-id="ed7e1-189">Tenha em atenção que portal Olá poderá não mostrar que instalou as atualizações de modo de manutenção Olá durante 24 horas.</span><span class="sxs-lookup"><span data-stu-id="ed7e1-189">Note that hello portal might not show that you installed hello Maintenance mode updates for 24 hours.</span></span>
 

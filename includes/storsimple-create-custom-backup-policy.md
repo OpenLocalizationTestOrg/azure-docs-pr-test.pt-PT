@@ -1,27 +1,27 @@
 <!--author=SharS last changed: 9/15/15-->
 
-#### <a name="toocreate-a-custom-backup-policy"></a>toocreate uma política de cópia de segurança personalizada
-1. No Olá **dispositivos** página, clique em **políticas de cópia de segurança** e, em seguida, clique em **adicionar**.
-2. No Olá **adicionar uma política de cópia de segurança** caixa de diálogo em **definir a política de cópia de segurança**:
+#### <a name="toocreate-a-custom-backup-policy"></a><span data-ttu-id="70d27-101">toocreate uma política de cópia de segurança personalizada</span><span class="sxs-lookup"><span data-stu-id="70d27-101">toocreate a custom backup policy</span></span>
+1. <span data-ttu-id="70d27-102">No Olá **dispositivos** página, clique em **políticas de cópia de segurança** e, em seguida, clique em **adicionar**.</span><span class="sxs-lookup"><span data-stu-id="70d27-102">On hello **Devices** page, click **Backup Policies** and then click **Add**.</span></span>
+2. <span data-ttu-id="70d27-103">No Olá **adicionar uma política de cópia de segurança** caixa de diálogo em **definir a política de cópia de segurança**:</span><span class="sxs-lookup"><span data-stu-id="70d27-103">In hello **Add a backup policy** dialog box, under **Define your backup policy**:</span></span>
    
-   1. Especifique um nome de política de cópia de segurança.
-   2. Selecione Olá volumes toobe adicionado toothis política. Pode escolher tooadd vários volumes selecionando-o de Olá na lista pendente.
-   3. Clique Olá ícone de verificação ![ícone de verificação](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png).
+   1. <span data-ttu-id="70d27-104">Especifique um nome de política de cópia de segurança.</span><span class="sxs-lookup"><span data-stu-id="70d27-104">Specify a backup policy name.</span></span>
+   2. <span data-ttu-id="70d27-105">Selecione Olá volumes toobe adicionado toothis política.</span><span class="sxs-lookup"><span data-stu-id="70d27-105">Select hello volumes toobe added toothis policy.</span></span> <span data-ttu-id="70d27-106">Pode escolher tooadd vários volumes selecionando-o de Olá na lista pendente.</span><span class="sxs-lookup"><span data-stu-id="70d27-106">You can choose tooadd multiple volumes by selecting them from hello drop-down list.</span></span>
+   3. <span data-ttu-id="70d27-107">Clique Olá ícone de verificação</span><span class="sxs-lookup"><span data-stu-id="70d27-107">Click hello check icon</span></span> ![ícone de verificação](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png)<span data-ttu-id="70d27-109">.</span><span class="sxs-lookup"><span data-stu-id="70d27-109">.</span></span>
       
-      Será notificado depois de política de Olá é criada com êxito. página de políticas de cópia de segurança de Olá também será atualizado tooshow Olá recém-criado política.
-3. Clique no nome da política de Olá (primeira coluna) toodrill para baixo para obter detalhes da política de Olá que acabou de criar.
-4. Clique em **gerir agendas**.
-5. No Olá **gerir agendas** caixa de diálogo:
+      <span data-ttu-id="70d27-110">Será notificado depois de política de Olá é criada com êxito.</span><span class="sxs-lookup"><span data-stu-id="70d27-110">You will be notified after hello policy is created successfully.</span></span> <span data-ttu-id="70d27-111">página de políticas de cópia de segurança de Olá também será atualizado tooshow Olá recém-criado política.</span><span class="sxs-lookup"><span data-stu-id="70d27-111">hello backup policies page will also be updated tooshow hello newly created policy.</span></span>
+3. <span data-ttu-id="70d27-112">Clique no nome da política de Olá (primeira coluna) toodrill para baixo para obter detalhes da política de Olá que acabou de criar.</span><span class="sxs-lookup"><span data-stu-id="70d27-112">Click hello policy name (first column) toodrill down into details of hello policy you just created.</span></span>
+4. <span data-ttu-id="70d27-113">Clique em **gerir agendas**.</span><span class="sxs-lookup"><span data-stu-id="70d27-113">Click **manage schedules**.</span></span>
+5. <span data-ttu-id="70d27-114">No Olá **gerir agendas** caixa de diálogo:</span><span class="sxs-lookup"><span data-stu-id="70d27-114">In hello **Manage Schedules** dialog box:</span></span>
    
-   1. Selecione **criar nova** tooadd agenda outra.
-   2. A partir da Olá na lista pendente, escolha o tipo de cópia de segurança de Olá como **local** ou **nuvem** instantâneo.
-   3. Especifique a frequência de cópia de segurança de Olá em minutos, horas, dias ou semanas.
-   4. Selecione uma retenção. Opções de retenção de Olá dependem da frequência de cópia de segurança de Olá.
-   5. Selecione Olá Iniciar hora e data para a política de Olá.
-   6. Selecione Olá caixa de verificação tooenable Olá política.
-6. Clique Olá ícone de verificação ![ícone de verificação](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png) toofinish.
-7. Irá devolver toohello os detalhes da política. Clique em **guardar** toosave Olá alterações introduzidas toothis política. Será notificado quando a política de Olá foi guardada.
-8. Navegue back toohello **políticas de cópia de segurança** página. a listagem de tabela Olá das políticas de cópia de segurança de Olá será atualizado toodisplay Olá modificada política.
+   1. <span data-ttu-id="70d27-115">Selecione **criar nova** tooadd agenda outra.</span><span class="sxs-lookup"><span data-stu-id="70d27-115">Select **Create new** tooadd another schedule.</span></span>
+   2. <span data-ttu-id="70d27-116">A partir da Olá na lista pendente, escolha o tipo de cópia de segurança de Olá como **local** ou **nuvem** instantâneo.</span><span class="sxs-lookup"><span data-stu-id="70d27-116">From hello drop-down list, choose hello backup type as **local** or **cloud** snapshot.</span></span>
+   3. <span data-ttu-id="70d27-117">Especifique a frequência de cópia de segurança de Olá em minutos, horas, dias ou semanas.</span><span class="sxs-lookup"><span data-stu-id="70d27-117">Specify hello backup frequency in minutes, hours, days, or weeks.</span></span>
+   4. <span data-ttu-id="70d27-118">Selecione uma retenção.</span><span class="sxs-lookup"><span data-stu-id="70d27-118">Select a retention.</span></span> <span data-ttu-id="70d27-119">Opções de retenção de Olá dependem da frequência de cópia de segurança de Olá.</span><span class="sxs-lookup"><span data-stu-id="70d27-119">hello retention choices depend on hello backup frequency.</span></span>
+   5. <span data-ttu-id="70d27-120">Selecione Olá Iniciar hora e data para a política de Olá.</span><span class="sxs-lookup"><span data-stu-id="70d27-120">Select hello starting time and date for hello policy.</span></span>
+   6. <span data-ttu-id="70d27-121">Selecione Olá caixa de verificação tooenable Olá política.</span><span class="sxs-lookup"><span data-stu-id="70d27-121">Select hello check box tooenable hello policy.</span></span>
+6. <span data-ttu-id="70d27-122">Clique Olá ícone de verificação</span><span class="sxs-lookup"><span data-stu-id="70d27-122">Click hello check icon</span></span> ![ícone de verificação](./media/storsimple-add-backup-policy/HCS_CheckIcon-include.png) <span data-ttu-id="70d27-124">toofinish.</span><span class="sxs-lookup"><span data-stu-id="70d27-124">toofinish.</span></span>
+7. <span data-ttu-id="70d27-125">Irá devolver toohello os detalhes da política.</span><span class="sxs-lookup"><span data-stu-id="70d27-125">You will return toohello policy details.</span></span> <span data-ttu-id="70d27-126">Clique em **guardar** toosave Olá alterações introduzidas toothis política.</span><span class="sxs-lookup"><span data-stu-id="70d27-126">Click **Save** toosave hello changes you made toothis policy.</span></span> <span data-ttu-id="70d27-127">Será notificado quando a política de Olá foi guardada.</span><span class="sxs-lookup"><span data-stu-id="70d27-127">You will be notified when hello policy has been saved.</span></span>
+8. <span data-ttu-id="70d27-128">Navegue back toohello **políticas de cópia de segurança** página.</span><span class="sxs-lookup"><span data-stu-id="70d27-128">Navigate back toohello **Backup Policies** page.</span></span> <span data-ttu-id="70d27-129">a listagem de tabela Olá das políticas de cópia de segurança de Olá será atualizado toodisplay Olá modificada política.</span><span class="sxs-lookup"><span data-stu-id="70d27-129">hello tabular listing of hello backup policies will be updated toodisplay hello modified policy.</span></span>
    
-    ![Política de cópia de segurança personalizada](./media/storsimple-create-custom-backup-policy/HCS_CustomBackupPolicyM-include.png).
+    ![Política de cópia de segurança personalizada](./media/storsimple-create-custom-backup-policy/HCS_CustomBackupPolicyM-include.png)<span data-ttu-id="70d27-131">.</span><span class="sxs-lookup"><span data-stu-id="70d27-131">.</span></span>
 

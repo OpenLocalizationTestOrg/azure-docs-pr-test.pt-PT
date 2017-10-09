@@ -1,18 +1,18 @@
-### <a name="prerequisites"></a>Pré-requisitos
-* A [Salesforce](https://salesforce.com) conta  
+### <a name="prerequisites"></a><span data-ttu-id="19fcb-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="19fcb-101">Prerequisites</span></span>
+* <span data-ttu-id="19fcb-102">A [Salesforce](https://salesforce.com) conta</span><span class="sxs-lookup"><span data-stu-id="19fcb-102">A [Salesforce](https://salesforce.com) account</span></span>  
 
-Antes de poder utilizar a conta do Salesforce numa aplicação lógica, tem de autorizar conta Salesforce de tooyour tooconnect Olá logic app. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.  
+<span data-ttu-id="19fcb-103">Antes de poder utilizar a conta do Salesforce numa aplicação lógica, tem de autorizar conta Salesforce de tooyour tooconnect Olá logic app. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="19fcb-103">Before you can use your Salesforce account in a logic app, you must authorize hello logic app tooconnect tooyour Salesforce account.Fortunately, you can do this easily from within your logic app on hello Azure Portal.</span></span>  
 
-Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica conta Salesforce:  
+<span data-ttu-id="19fcb-104">Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica conta Salesforce:</span><span class="sxs-lookup"><span data-stu-id="19fcb-104">Here are hello steps tooauthorize your logic app tooconnect tooyour Salesforce account:</span></span>  
 
-1. toocreate tooSalesforce uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Salesforce* na caixa de pesquisa de Olá. Selecione o acionador de Olá ou ação que irá gostar toouse:  
-   ![Imagem de ligação do Salesforce 1](./media/connectors-create-api-salesforce/salesforce-1.png)  
-2. Se ainda não criou quaisquer tooSalesforce ligações antes, obterá tooprovide pedido as suas credenciais do Salesforce. Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta Salesforce:  
+1. <span data-ttu-id="19fcb-105">toocreate tooSalesforce uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Salesforce* na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="19fcb-105">toocreate a connection tooSalesforce, in hello logic app designer, select **Show Microsoft managed APIs** in hello drop down list then enter *Salesforce* in hello search box.</span></span> <span data-ttu-id="19fcb-106">Selecione o acionador de Olá ou ação que irá gostar toouse:</span><span class="sxs-lookup"><span data-stu-id="19fcb-106">Select hello trigger or action you'll like toouse:</span></span>  
+   <span data-ttu-id="19fcb-107">![Imagem de ligação do Salesforce 1](./media/connectors-create-api-salesforce/salesforce-1.png)</span><span class="sxs-lookup"><span data-stu-id="19fcb-107">![Salesforce connection image 1](./media/connectors-create-api-salesforce/salesforce-1.png)</span></span>  
+2. <span data-ttu-id="19fcb-108">Se ainda não criou quaisquer tooSalesforce ligações antes, obterá tooprovide pedido as suas credenciais do Salesforce.</span><span class="sxs-lookup"><span data-stu-id="19fcb-108">If you haven't created any connections tooSalesforce before, you'll get prompted tooprovide your Salesforce credentials.</span></span> <span data-ttu-id="19fcb-109">Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta Salesforce:</span><span class="sxs-lookup"><span data-stu-id="19fcb-109">These credentials will be used tooauthorize your logic app tooconnect to, and access your Salesforce account's data:</span></span>  
    ![Imagem de ligação do Salesforce 2](./media/connectors-create-api-salesforce/salesforce-2.png)  
-3. Fornece o tooauthorize de nome e palavra-passe de utilizador do Salesforce a sua aplicação lógica:  
+3. <span data-ttu-id="19fcb-111">Fornece o tooauthorize de nome e palavra-passe de utilizador do Salesforce a sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="19fcb-111">Provide your Salesforce user name and password tooauthorize your logic app:</span></span>  
    ![Imagem de ligação do Salesforce 3](./media/connectors-create-api-salesforce/salesforce-3.png)  
-4. Permitir-nos tooconnect tooSalesforce:  
+4. <span data-ttu-id="19fcb-113">Permitir-nos tooconnect tooSalesforce:</span><span class="sxs-lookup"><span data-stu-id="19fcb-113">Allow us tooconnect tooSalesforce:</span></span>  
    ![Imagem de ligação do Salesforce 4](./media/connectors-create-api-salesforce/salesforce-4.png)  
-5. Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:  
+5. <span data-ttu-id="19fcb-115">Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="19fcb-115">Notice hello connection has been created and you are now free tooproceed with hello other steps in your logic app:</span></span>  
    ![Imagem de ligação do Salesforce 5](./media/connectors-create-api-salesforce/salesforce-5.png)  
 

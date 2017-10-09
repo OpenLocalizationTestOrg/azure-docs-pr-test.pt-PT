@@ -21,23 +21,23 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="create-a-complete-linux-virtual-machine-environment-in-azure-with-ansible"></a>Criar um ambiente de máquina virtual completado do Linux no Azure com Ansible
-Ansible permite-lhe implementação de Olá tooautomate e a configuração de recursos no seu ambiente. Pode utilizar Ansible toomanage as máquinas virtuais (VMs) no Azure, Olá mesmo, tal como faria com qualquer outro recurso. Este artigo mostra como toocreate num ambiente de Linux completado e de recursos com Ansible de suporte. Também pode aprender como demasiado[criar uma VM básica com Ansible](ansible-create-vm.md).
+# <a name="create-a-complete-linux-virtual-machine-environment-in-azure-with-ansible"></a><span data-ttu-id="fe7a0-103">Criar um ambiente de máquina virtual completado do Linux no Azure com Ansible</span><span class="sxs-lookup"><span data-stu-id="fe7a0-103">Create a complete Linux virtual machine environment in Azure with Ansible</span></span>
+<span data-ttu-id="fe7a0-104">Ansible permite-lhe implementação de Olá tooautomate e a configuração de recursos no seu ambiente.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-104">Ansible allows you tooautomate hello deployment and configuration of resources in your environment.</span></span> <span data-ttu-id="fe7a0-105">Pode utilizar Ansible toomanage as máquinas virtuais (VMs) no Azure, Olá mesmo, tal como faria com qualquer outro recurso.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-105">You can use Ansible toomanage your virtual machines (VMs) in Azure, hello same as you would any other resource.</span></span> <span data-ttu-id="fe7a0-106">Este artigo mostra como toocreate num ambiente de Linux completado e de recursos com Ansible de suporte.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-106">This article shows you how toocreate a complete Linux environment and supporting resources with Ansible.</span></span> <span data-ttu-id="fe7a0-107">Também pode aprender como demasiado[criar uma VM básica com Ansible](ansible-create-vm.md).</span><span class="sxs-lookup"><span data-stu-id="fe7a0-107">You can also learn how too[Create a basic VM with Ansible](ansible-create-vm.md).</span></span>
 
 
-## <a name="prerequisites"></a>Pré-requisitos
-toomanage Azure recursos com Ansible, terá de Olá seguintes:
+## <a name="prerequisites"></a><span data-ttu-id="fe7a0-108">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="fe7a0-108">Prerequisites</span></span>
+<span data-ttu-id="fe7a0-109">toomanage Azure recursos com Ansible, terá de Olá seguintes:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-109">toomanage Azure resources with Ansible, you need hello following:</span></span>
 
-- Ansible e Olá módulos de SDK Python do Azure instalados no sistema anfitrião.
-    - Instalar Ansible [Ubuntu 16.04 LTS](ansible-install-configure.md#ubuntu-1604-lts), [CentOS 7.3](ansible-install-configure.md#centos-73), e [SLES 12.2 SP2](ansible-install-configure.md#sles-122-sp2)
-- Credenciais do Azure e toouse Ansible configurado-los.
-    - [Criar as credenciais do Azure e configurar Ansible](ansible-install-configure.md#create-azure-credentials)
-- CLI do Azure versão 2.0.4 ou posterior. Executar `az --version` versão de Olá toofind. 
-    - Se precisar de tooupgrade, consulte [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). Também pode utilizar [nuvem Shell](/azure/cloud-shell/quickstart) partir do seu browser.
+- <span data-ttu-id="fe7a0-110">Ansible e Olá módulos de SDK Python do Azure instalados no sistema anfitrião.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-110">Ansible and hello Azure Python SDK modules installed on your host system.</span></span>
+    - <span data-ttu-id="fe7a0-111">Instalar Ansible [Ubuntu 16.04 LTS](ansible-install-configure.md#ubuntu-1604-lts), [CentOS 7.3](ansible-install-configure.md#centos-73), e [SLES 12.2 SP2](ansible-install-configure.md#sles-122-sp2)</span><span class="sxs-lookup"><span data-stu-id="fe7a0-111">Install Ansible on [Ubuntu 16.04 LTS](ansible-install-configure.md#ubuntu-1604-lts), [CentOS 7.3](ansible-install-configure.md#centos-73), and [SLES 12.2 SP2](ansible-install-configure.md#sles-122-sp2)</span></span>
+- <span data-ttu-id="fe7a0-112">Credenciais do Azure e toouse Ansible configurado-los.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-112">Azure credentials, and Ansible configured toouse them.</span></span>
+    - [<span data-ttu-id="fe7a0-113">Criar as credenciais do Azure e configurar Ansible</span><span class="sxs-lookup"><span data-stu-id="fe7a0-113">Create Azure credentials and configure Ansible</span></span>](ansible-install-configure.md#create-azure-credentials)
+- <span data-ttu-id="fe7a0-114">CLI do Azure versão 2.0.4 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-114">Azure CLI version 2.0.4 or later.</span></span> <span data-ttu-id="fe7a0-115">Executar `az --version` versão de Olá toofind.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-115">Run `az --version` toofind hello version.</span></span> 
+    - <span data-ttu-id="fe7a0-116">Se precisar de tooupgrade, consulte [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli).</span><span class="sxs-lookup"><span data-stu-id="fe7a0-116">If you need tooupgrade, see [Install Azure CLI 2.0]( /cli/azure/install-azure-cli).</span></span> <span data-ttu-id="fe7a0-117">Também pode utilizar [nuvem Shell](/azure/cloud-shell/quickstart) partir do seu browser.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-117">You can also use [Cloud Shell](/azure/cloud-shell/quickstart) from your browser.</span></span>
 
 
-## <a name="create-virtual-network"></a>Criar a rede virtual
-Olá seguinte secção um manual de comunicação social Ansible cria uma rede virtual denominada *myVnet* no Olá *10.0.0.0/16* espaço de endereços:
+## <a name="create-virtual-network"></a><span data-ttu-id="fe7a0-118">Criar a rede virtual</span><span class="sxs-lookup"><span data-stu-id="fe7a0-118">Create virtual network</span></span>
+<span data-ttu-id="fe7a0-119">Olá seguinte secção um manual de comunicação social Ansible cria uma rede virtual denominada *myVnet* no Olá *10.0.0.0/16* espaço de endereços:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-119">hello following section in an Ansible playbook creates a virtual network named *myVnet* in hello *10.0.0.0/16* address space:</span></span>
 
 ```yaml
 - name: Create virtual network
@@ -47,7 +47,7 @@ Olá seguinte secção um manual de comunicação social Ansible cria uma rede v
     address_prefixes: "10.10.0.0/16"
 ```
 
-tooadd uma sub-rede, Olá secção a seguir cria uma sub-rede designada *mySubnet* no Olá *myVnet* rede virtual:
+<span data-ttu-id="fe7a0-120">tooadd uma sub-rede, Olá secção a seguir cria uma sub-rede designada *mySubnet* no Olá *myVnet* rede virtual:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-120">tooadd a subnet, hello following section creates a subnet named *mySubnet* in hello *myVnet* virtual network:</span></span>
 
 ```yaml
 - name: Add subnet
@@ -59,8 +59,8 @@ tooadd uma sub-rede, Olá secção a seguir cria uma sub-rede designada *mySubne
 ```
 
 
-## <a name="create-public-ip-address"></a>Criar endereço IP público
-recursos de tooaccess em Olá Internet, criar e atribuir um tooyour de endereço IP público VM. Olá seguinte secção um manual de comunicação social Ansible cria um endereço IP público com o nome *myPublicIP*:
+## <a name="create-public-ip-address"></a><span data-ttu-id="fe7a0-121">Criar endereço IP público</span><span class="sxs-lookup"><span data-stu-id="fe7a0-121">Create public IP address</span></span>
+<span data-ttu-id="fe7a0-122">recursos de tooaccess em Olá Internet, criar e atribuir um tooyour de endereço IP público VM.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-122">tooaccess resources across hello Internet, create and assign a public IP address tooyour VM.</span></span> <span data-ttu-id="fe7a0-123">Olá seguinte secção um manual de comunicação social Ansible cria um endereço IP público com o nome *myPublicIP*:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-123">hello following section in an Ansible playbook creates a public IP address named *myPublicIP*:</span></span>
 
 ```yaml
 - name: Create public IP address
@@ -71,8 +71,8 @@ recursos de tooaccess em Olá Internet, criar e atribuir um tooyour de endereço
 ```
 
 
-## <a name="create-network-security-group"></a>Criar o grupo de segurança de rede
-Rede grupos de segurança Olá fluxo de controlo de tráfego de rede que entra e sai da VM. Olá seguinte secção um manual de comunicação social Ansible cria um grupo de segurança de rede com o nome *myNetworkSecurityGroup* e define o tráfego SSH tooallow uma regra na porta TCP 22:
+## <a name="create-network-security-group"></a><span data-ttu-id="fe7a0-124">Criar o grupo de segurança de rede</span><span class="sxs-lookup"><span data-stu-id="fe7a0-124">Create Network Security Group</span></span>
+<span data-ttu-id="fe7a0-125">Rede grupos de segurança Olá fluxo de controlo de tráfego de rede que entra e sai da VM.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-125">Network Security Groups control hello flow of network traffic in and out of your VM.</span></span> <span data-ttu-id="fe7a0-126">Olá seguinte secção um manual de comunicação social Ansible cria um grupo de segurança de rede com o nome *myNetworkSecurityGroup* e define o tráfego SSH tooallow uma regra na porta TCP 22:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-126">hello following section in an Ansible playbook creates a network security group named *myNetworkSecurityGroup* and defines a rule tooallow SSH traffic on TCP port 22:</span></span>
 
 ```yaml
 - name: Create Network Security Group that allows SSH
@@ -89,8 +89,8 @@ Rede grupos de segurança Olá fluxo de controlo de tráfego de rede que entra e
 ```
 
 
-## <a name="create-virtual-network-interface-card"></a>Criar o cartão de interface de rede virtual
-Uma placa de interface de rede virtual (NIC) liga-se a sua tooa VM fornecido a rede virtual, o endereço IP público e o grupo de segurança de rede. Olá seguinte secção um manual de comunicação social Ansible cria uma NIC virtual com o nome *myNIC* ligado toohello virtual recursos de rede que criou:
+## <a name="create-virtual-network-interface-card"></a><span data-ttu-id="fe7a0-127">Criar o cartão de interface de rede virtual</span><span class="sxs-lookup"><span data-stu-id="fe7a0-127">Create virtual network interface card</span></span>
+<span data-ttu-id="fe7a0-128">Uma placa de interface de rede virtual (NIC) liga-se a sua tooa VM fornecido a rede virtual, o endereço IP público e o grupo de segurança de rede.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-128">A virtual network interface card (NIC) connects your VM tooa given virtual network, public IP address, and network security group.</span></span> <span data-ttu-id="fe7a0-129">Olá seguinte secção um manual de comunicação social Ansible cria uma NIC virtual com o nome *myNIC* ligado toohello virtual recursos de rede que criou:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-129">hello following section in an Ansible playbook creates a virtual NIC named *myNIC* connected toohello virtual networking resources you have created:</span></span>
 
 ```yaml
 - name: Create virtual network inteface card
@@ -104,8 +104,8 @@ Uma placa de interface de rede virtual (NIC) liga-se a sua tooa VM fornecido a r
 ```
 
 
-## <a name="create-virtual-machine"></a>Criar a máquina virtual
-passo final Olá é toocreate uma VM e utilize todos os recursos de Olá criados. Olá seguinte secção um manual de comunicação social Ansible cria uma VM chamada *myVM* e anexa Olá NIC virtual com o nome *myNIC*. Introduza os seus próprios dados de chaves públicos no Olá *key_data* emparelhe da seguinte forma:
+## <a name="create-virtual-machine"></a><span data-ttu-id="fe7a0-130">Criar a máquina virtual</span><span class="sxs-lookup"><span data-stu-id="fe7a0-130">Create virtual machine</span></span>
+<span data-ttu-id="fe7a0-131">passo final Olá é toocreate uma VM e utilize todos os recursos de Olá criados.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-131">hello final step is toocreate a VM and use all hello resources created.</span></span> <span data-ttu-id="fe7a0-132">Olá seguinte secção um manual de comunicação social Ansible cria uma VM chamada *myVM* e anexa Olá NIC virtual com o nome *myNIC*.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-132">hello following section in an Ansible playbook creates a VM named *myVM* and attaches hello virtual NIC named *myNIC*.</span></span> <span data-ttu-id="fe7a0-133">Introduza os seus próprios dados de chaves públicos no Olá *key_data* emparelhe da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-133">Enter your own public key data in hello *key_data* pair as follows:</span></span>
 
 ```yaml
 - name: Create VM
@@ -126,8 +126,8 @@ passo final Olá é toocreate uma VM e utilize todos os recursos de Olá criados
       version: latest
 ```
 
-## <a name="complete-ansible-playbook"></a>Concluir o manual de comunicação social Ansible
-toobring todas estas secções em conjunto, crie um manual de comunicação social Ansible denominado *azure_create_complete_vm.yml* e colar Olá seguinte conteúdo:
+## <a name="complete-ansible-playbook"></a><span data-ttu-id="fe7a0-134">Concluir o manual de comunicação social Ansible</span><span class="sxs-lookup"><span data-stu-id="fe7a0-134">Complete Ansible playbook</span></span>
+<span data-ttu-id="fe7a0-135">toobring todas estas secções em conjunto, crie um manual de comunicação social Ansible denominado *azure_create_complete_vm.yml* e colar Olá seguinte conteúdo:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-135">toobring all these sections together, create an Ansible playbook named *azure_create_complete_vm.yml* and paste hello following contents:</span></span>
 
 ```yaml
 - name: Create Azure VM
@@ -187,19 +187,19 @@ toobring todas estas secções em conjunto, crie um manual de comunicação soci
         version: latest
 ```
 
-Ansible tem um toodeploy do grupo de recursos de todos os recursos em. Crie um grupo de recursos com [az group create](/cli/azure/vm#create). Olá exemplo seguinte cria um grupo de recursos denominado *myResourceGroup* no Olá *eastus* localização:
+<span data-ttu-id="fe7a0-136">Ansible tem um toodeploy do grupo de recursos de todos os recursos em.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-136">Ansible needs a resource group toodeploy all your resources into.</span></span> <span data-ttu-id="fe7a0-137">Crie um grupo de recursos com [az group create](/cli/azure/vm#create).</span><span class="sxs-lookup"><span data-stu-id="fe7a0-137">Create a resource group with [az group create](/cli/azure/vm#create).</span></span> <span data-ttu-id="fe7a0-138">Olá exemplo seguinte cria um grupo de recursos denominado *myResourceGroup* no Olá *eastus* localização:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-138">hello following example creates a resource group named *myResourceGroup* in hello *eastus* location:</span></span>
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
 ```
 
-toocreate Olá concluída VM ambiente com Ansible, execute o manual de comunicação social Olá da seguinte forma:
+<span data-ttu-id="fe7a0-139">toocreate Olá concluída VM ambiente com Ansible, execute o manual de comunicação social Olá da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-139">toocreate hello complete VM environment with Ansible, run hello playbook as follows:</span></span>
 
 ```bash
 ansible-playbook azure_create_complete_vm.yml
 ```
 
-saída de Olá procura toohello semelhante seguinte o exemplo que mostra Olá que VM foi criada com êxito:
+<span data-ttu-id="fe7a0-140">saída de Olá procura toohello semelhante seguinte o exemplo que mostra Olá que VM foi criada com êxito:</span><span class="sxs-lookup"><span data-stu-id="fe7a0-140">hello output looks similar toohello following example that shows hello VM has been successfully created:</span></span>
 
 ```bash
 PLAY [Create Azure VM] ****************************************************
@@ -229,5 +229,5 @@ PLAY RECAP ****************************************************************
 localhost                  : ok=7    changed=6    unreachable=0    failed=0
 ```
 
-## <a name="next-steps"></a>Passos seguintes
-Este exemplo cria um ambiente de VM completado, incluindo Olá necessário recursos de rede virtuais. Para um exemplo mais direto toocreate uma VM para recursos de rede existentes com opções predefinidas, consulte [criar uma VM](ansible-create-vm.md).
+## <a name="next-steps"></a><span data-ttu-id="fe7a0-141">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="fe7a0-141">Next steps</span></span>
+<span data-ttu-id="fe7a0-142">Este exemplo cria um ambiente de VM completado, incluindo Olá necessário recursos de rede virtuais.</span><span class="sxs-lookup"><span data-stu-id="fe7a0-142">This example creates a complete VM environment including hello required virtual networking resources.</span></span> <span data-ttu-id="fe7a0-143">Para um exemplo mais direto toocreate uma VM para recursos de rede existentes com opções predefinidas, consulte [criar uma VM](ansible-create-vm.md).</span><span class="sxs-lookup"><span data-stu-id="fe7a0-143">For a more direct example toocreate a VM into existing network resources with default options, see [Create a VM](ansible-create-vm.md).</span></span>

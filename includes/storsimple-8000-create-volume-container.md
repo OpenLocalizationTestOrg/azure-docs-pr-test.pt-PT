@@ -1,34 +1,34 @@
 <!--author=alkohli last changed: 06/22/17-->
 
-#### <a name="toocreate-a-volume-container"></a>toocreate um contentor de volume
-1. Aceda tooyour do serviço StorSimple Manager de dispositivo e clique em **dispositivos**. A partir de Olá tabela lista de dispositivos de Olá, selecione e clique no dispositivo. 
+#### <a name="toocreate-a-volume-container"></a><span data-ttu-id="f196c-101">toocreate um contentor de volume</span><span class="sxs-lookup"><span data-stu-id="f196c-101">toocreate a volume container</span></span>
+1. <span data-ttu-id="f196c-102">Aceda tooyour do serviço StorSimple Manager de dispositivo e clique em **dispositivos**.</span><span class="sxs-lookup"><span data-stu-id="f196c-102">Go tooyour StorSimple Device Manager service and click **Devices**.</span></span> <span data-ttu-id="f196c-103">A partir de Olá tabela lista de dispositivos de Olá, selecione e clique no dispositivo.</span><span class="sxs-lookup"><span data-stu-id="f196c-103">From hello tabular listing of hello devices, select and click a device.</span></span> 
 
     ![Painel Contentor de volumes](./media/storsimple-8000-create-volume-container/createvolumecontainer1.png)
 
-2. No dashboard de dispositivo Olá, clique em **+ adicionar contentor de volume**
+2. <span data-ttu-id="f196c-105">No dashboard de dispositivo Olá, clique em **+ adicionar contentor de volume**</span><span class="sxs-lookup"><span data-stu-id="f196c-105">In hello device dashboard, click **+ Add volume container**</span></span>
 
     ![Painel Contentor de volumes](./media/storsimple-8000-create-volume-container/createvolumecontainer2.png)
 
-3. No Olá **contentor de volume adicionar** painel:
+3. <span data-ttu-id="f196c-107">No Olá **contentor de volume adicionar** painel:</span><span class="sxs-lookup"><span data-stu-id="f196c-107">In hello **Add volume container** blade:</span></span>
    
-   1. dispositivo Olá é selecionado automaticamente.
-   2. Forneça um **Nome** para o contentor do volume. nome de Olá tem de ser 3 too32 carateres. Não pode mudar o nome de um contentor de volumes depois de o mesmo ter sido criado.
-   3. Selecione **ativar a encriptação de armazenamento de nuvem** tooenable encriptação de dados de Olá enviados a partir de Olá dispositivo toohello nuvem.
-   4. Forneça e confirme uma **chave de encriptação de armazenamento na nuvem** que 8 too32 carateres de comprimento. Esta chave é utilizada por Olá dispositivo tooaccess encriptados de dados.
-   5. Selecione um **conta de armazenamento** tooassociate com este contentor de volume. Pode escolher uma conta do storage existente ou a conta predefinida Olá que é gerada no momento de Olá da criação do serviço. Também pode utilizar Olá **adicionar novo** opção toospecify uma conta de armazenamento que não se encontra ligado toothis a subscrição do serviço.
-   6. Selecione **ilimitada** no Olá **Especificar largura de banda** na lista pendente se desejar tooconsume largura de banda disponível Olá todos os. Também pode definir esta opção demasiado**personalizada** tooemploy controlos de largura de banda e especifique um valor entre 1 e 1000 Mbps.
-      Se tiver as informações de utilização de largura de banda disponíveis, poderá ser tooallocate capaz de largura de banda com base num agendamento, especificando **selecionar um modelo de largura de banda**. Para um procedimento passo a passo, consulte demasiado[adicionar um modelo de largura de banda](../articles/storsimple/storsimple-8000-manage-bandwidth-templates.md#add-a-bandwidth-template).
+   1. <span data-ttu-id="f196c-108">dispositivo Olá é selecionado automaticamente.</span><span class="sxs-lookup"><span data-stu-id="f196c-108">hello device is automatically selected.</span></span>
+   2. <span data-ttu-id="f196c-109">Forneça um **Nome** para o contentor do volume.</span><span class="sxs-lookup"><span data-stu-id="f196c-109">Supply a **Name** for your volume container.</span></span> <span data-ttu-id="f196c-110">nome de Olá tem de ser 3 too32 carateres.</span><span class="sxs-lookup"><span data-stu-id="f196c-110">hello name must be 3 too32 characters long.</span></span> <span data-ttu-id="f196c-111">Não pode mudar o nome de um contentor de volumes depois de o mesmo ter sido criado.</span><span class="sxs-lookup"><span data-stu-id="f196c-111">You cannot rename a volume container once it is created.</span></span>
+   3. <span data-ttu-id="f196c-112">Selecione **ativar a encriptação de armazenamento de nuvem** tooenable encriptação de dados de Olá enviados a partir de Olá dispositivo toohello nuvem.</span><span class="sxs-lookup"><span data-stu-id="f196c-112">Select **Enable Cloud Storage Encryption** tooenable encryption of hello data sent from hello device toohello cloud.</span></span>
+   4. <span data-ttu-id="f196c-113">Forneça e confirme uma **chave de encriptação de armazenamento na nuvem** que 8 too32 carateres de comprimento.</span><span class="sxs-lookup"><span data-stu-id="f196c-113">Provide and confirm a **Cloud Storage Encryption Key** that is 8 too32 characters long.</span></span> <span data-ttu-id="f196c-114">Esta chave é utilizada por Olá dispositivo tooaccess encriptados de dados.</span><span class="sxs-lookup"><span data-stu-id="f196c-114">This key is used by hello device tooaccess encrypted data.</span></span>
+   5. <span data-ttu-id="f196c-115">Selecione um **conta de armazenamento** tooassociate com este contentor de volume.</span><span class="sxs-lookup"><span data-stu-id="f196c-115">Select a **Storage Account** tooassociate with this volume container.</span></span> <span data-ttu-id="f196c-116">Pode escolher uma conta do storage existente ou a conta predefinida Olá que é gerada no momento de Olá da criação do serviço.</span><span class="sxs-lookup"><span data-stu-id="f196c-116">You can choose an existing storage account or hello default account that is generated at hello time of service creation.</span></span> <span data-ttu-id="f196c-117">Também pode utilizar Olá **adicionar novo** opção toospecify uma conta de armazenamento que não se encontra ligado toothis a subscrição do serviço.</span><span class="sxs-lookup"><span data-stu-id="f196c-117">You can also use hello **Add new** option toospecify a storage account that is not linked toothis service subscription.</span></span>
+   6. <span data-ttu-id="f196c-118">Selecione **ilimitada** no Olá **Especificar largura de banda** na lista pendente se desejar tooconsume largura de banda disponível Olá todos os.</span><span class="sxs-lookup"><span data-stu-id="f196c-118">Select **Unlimited** in hello **Specify bandwidth** drop-down list if you wish tooconsume all hello available bandwidth.</span></span> <span data-ttu-id="f196c-119">Também pode definir esta opção demasiado**personalizada** tooemploy controlos de largura de banda e especifique um valor entre 1 e 1000 Mbps.</span><span class="sxs-lookup"><span data-stu-id="f196c-119">You can also set this option too**Custom** tooemploy bandwidth controls, and specify a value between 1 Mbps and 1,000 Mbps.</span></span>
+      <span data-ttu-id="f196c-120">Se tiver as informações de utilização de largura de banda disponíveis, poderá ser tooallocate capaz de largura de banda com base num agendamento, especificando **selecionar um modelo de largura de banda**.</span><span class="sxs-lookup"><span data-stu-id="f196c-120">If you have your bandwidth usage information available, you may be able tooallocate bandwidth based on a schedule by specifying **Select a bandwidth template**.</span></span> <span data-ttu-id="f196c-121">Para um procedimento passo a passo, consulte demasiado[adicionar um modelo de largura de banda](../articles/storsimple/storsimple-8000-manage-bandwidth-templates.md#add-a-bandwidth-template).</span><span class="sxs-lookup"><span data-stu-id="f196c-121">For a step-by-step procedure, go too[Add a bandwidth template](../articles/storsimple/storsimple-8000-manage-bandwidth-templates.md#add-a-bandwidth-template).</span></span>
 
       ![Painel Contentor de volumes](./media/storsimple-8000-create-volume-container/createvolumecontainer6b.png)
-   7. Clique em **Criar**.
+   7. <span data-ttu-id="f196c-123">Clique em **Criar**.</span><span class="sxs-lookup"><span data-stu-id="f196c-123">Click **Create**.</span></span>
 
         ![Painel Contentor de volumes](./media/storsimple-8000-create-volume-container/createvolumecontainer6.png)
    
-       Será notificado quando o contentor de volume Olá é criado com êxito.
+       <span data-ttu-id="f196c-125">Será notificado quando o contentor de volume Olá é criado com êxito.</span><span class="sxs-lookup"><span data-stu-id="f196c-125">You are notified when hello volume container is successfully created.</span></span>
 
        ![Notificação de criação do contentor de volumes](./media/storsimple-8000-create-volume-container/createvolumecontainer8.png)
 
-   Olá recém-criado contentor de volume é listado na lista de Olá de contentores de volume para o seu dispositivo.
+   <span data-ttu-id="f196c-127">Olá recém-criado contentor de volume é listado na lista de Olá de contentores de volume para o seu dispositivo.</span><span class="sxs-lookup"><span data-stu-id="f196c-127">hello newly created volume container is listed in hello list of volume containers for your device.</span></span>
 
    ![Painel Adicionar contentor de volumes](./media/storsimple-8000-create-volume-container/createvolumecontainer9.png)
 

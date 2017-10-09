@@ -1,3 +1,3 @@
 > [!IMPORTANT]
-> dispositivo Olá ID pode ser visível nos registos de Olá recolhidos para o suporte ao cliente e a resolução de problemas, por isso certifique-se tooavoid quaisquer informações sensíveis ao nomenclatura-lo.
+> <span data-ttu-id="082ac-101">dispositivo Olá ID pode ser visível nos registos de Olá recolhidos para o suporte ao cliente e a resolução de problemas, por isso certifique-se tooavoid quaisquer informações sensíveis ao nomenclatura-lo.</span><span class="sxs-lookup"><span data-stu-id="082ac-101">hello device ID may be visible in hello logs collected for customer support and troubleshooting, so make sure tooavoid any sensitive information while naming it.</span></span>
 >

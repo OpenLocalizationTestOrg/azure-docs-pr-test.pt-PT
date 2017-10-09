@@ -21,8 +21,8 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="understand-common-error-messages-when-you-manage-windows-virtual-machines-in-azure"></a>Compreender as mensagens de erro comuns quando gerir máquinas virtuais do Windows no Azure
+# <a name="understand-common-error-messages-when-you-manage-windows-virtual-machines-in-azure"></a><span data-ttu-id="2fe80-103">Compreender as mensagens de erro comuns quando gerir máquinas virtuais do Windows no Azure</span><span class="sxs-lookup"><span data-stu-id="2fe80-103">Understand common error messages when you manage Windows virtual machines in Azure</span></span>
 
-Este artigo descreve alguns dos códigos de erro mais comuns Olá e as mensagens que pode surgir quando criar ou gerir o Windows as máquinas virtuais (VMs) no Azure.
+<span data-ttu-id="2fe80-104">Este artigo descreve alguns dos códigos de erro mais comuns Olá e as mensagens que pode surgir quando criar ou gerir o Windows as máquinas virtuais (VMs) no Azure.</span><span class="sxs-lookup"><span data-stu-id="2fe80-104">This article describes some of hello most common error codes and messages you may encounter when you create or manage Windows virtual machines (VMs) in Azure.</span></span>
 
 [!INCLUDE [virtual-machines-common-error-messages](../../../includes/virtual-machines-common-error-messages.md)]

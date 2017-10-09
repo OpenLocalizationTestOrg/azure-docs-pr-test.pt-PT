@@ -20,6 +20,6 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="azurelogcollector-extension"></a>Extensão de AzureLogCollector
+# <a name="azurelogcollector-extension"></a><span data-ttu-id="a4d41-103">Extensão de AzureLogCollector</span><span class="sxs-lookup"><span data-stu-id="a4d41-103">AzureLogCollector Extension</span></span>
 [!INCLUDE [virtual-machines-common-log-collector-extension](../../../includes/virtual-machines-common-log-collector-extension.md)]
 

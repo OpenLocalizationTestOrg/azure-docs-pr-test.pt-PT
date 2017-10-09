@@ -1,14 +1,14 @@
-### <a name="prerequisites"></a>Pré-requisitos
-* A [SMTP](https://wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) conta  
+### <a name="prerequisites"></a><span data-ttu-id="05e12-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="05e12-101">Prerequisites</span></span>
+* <span data-ttu-id="05e12-102">A [SMTP](https://wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) conta</span><span class="sxs-lookup"><span data-stu-id="05e12-102">A [SMTP](https://wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) account</span></span>  
 
-Antes de poder utilizar a conta de SMTP numa aplicação lógica, tem de autorizar conta SMTP de tooyour tooconnect Olá logic app. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.  
+<span data-ttu-id="05e12-103">Antes de poder utilizar a conta de SMTP numa aplicação lógica, tem de autorizar conta SMTP de tooyour tooconnect Olá logic app. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="05e12-103">Before you can use your SMTP account in a logic app, you must authorize hello logic app tooconnect tooyour SMTP account.Fortunately, you can do this easily from within your logic app on hello Azure Portal.</span></span>  
 
-Seguem-se Olá passos tooauthorize sua tooconnect tooyour SMTP conta da aplicação de lógica:  
+<span data-ttu-id="05e12-104">Seguem-se Olá passos tooauthorize sua tooconnect tooyour SMTP conta da aplicação de lógica:</span><span class="sxs-lookup"><span data-stu-id="05e12-104">Here are hello steps tooauthorize your logic app tooconnect tooyour SMTP account:</span></span>  
 
-1. toocreate tooSMTP uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *SMTP* na caixa de pesquisa de Olá. Selecione o acionador de Olá ou ação que irá gostar toouse:  
+1. <span data-ttu-id="05e12-105">toocreate tooSMTP uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *SMTP* na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="05e12-105">toocreate a connection tooSMTP, in hello logic app designer, select **Show Microsoft managed APIs** in hello drop down list then enter *SMTP* in hello search box.</span></span> <span data-ttu-id="05e12-106">Selecione o acionador de Olá ou ação que irá gostar toouse:</span><span class="sxs-lookup"><span data-stu-id="05e12-106">Select hello trigger or action you'll like toouse:</span></span>  
    ![](./media/connectors-create-api-smtp/smtp-1.png)  
-2. Se ainda não criou quaisquer tooSMTP ligações antes, obterá tooprovide pedido as suas credenciais de SMTP. Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta SMTP:  
+2. <span data-ttu-id="05e12-107">Se ainda não criou quaisquer tooSMTP ligações antes, obterá tooprovide pedido as suas credenciais de SMTP.</span><span class="sxs-lookup"><span data-stu-id="05e12-107">If you haven't created any connections tooSMTP before, you'll get prompted tooprovide your SMTP credentials.</span></span> <span data-ttu-id="05e12-108">Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados da sua conta SMTP:</span><span class="sxs-lookup"><span data-stu-id="05e12-108">These credentials will be used tooauthorize your logic app tooconnect to, and access your SMTP account's data:</span></span>  
    ![](./media/connectors-create-api-smtp/smtp-2.png)  
-3. Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:  
+3. <span data-ttu-id="05e12-109">Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="05e12-109">Notice hello connection has been created and you are now free tooproceed with hello other steps in your logic app:</span></span>  
    ![](./media/connectors-create-api-smtp/smtp-3.png)  
 

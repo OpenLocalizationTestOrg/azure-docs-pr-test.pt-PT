@@ -1,26 +1,26 @@
-### <a name="prerequisites"></a>Pré-requisitos
-* Uma conta do Twilio
-* Um número de telefone Twilio verificado que pode receber de SMS
-* Um número de telefone Twilio verificado que pode enviar SMS
+### <a name="prerequisites"></a><span data-ttu-id="1cad8-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="1cad8-101">Prerequisites</span></span>
+* <span data-ttu-id="1cad8-102">Uma conta do Twilio</span><span class="sxs-lookup"><span data-stu-id="1cad8-102">A Twilio account</span></span>
+* <span data-ttu-id="1cad8-103">Um número de telefone Twilio verificado que pode receber de SMS</span><span class="sxs-lookup"><span data-stu-id="1cad8-103">A verified Twilio phone number that can receive SMS</span></span>
+* <span data-ttu-id="1cad8-104">Um número de telefone Twilio verificado que pode enviar SMS</span><span class="sxs-lookup"><span data-stu-id="1cad8-104">A verified Twilio phone number that can send SMS</span></span>
 
 > [!NOTE]
-> Se estiver a utilizar uma conta de avaliação do Twilio, pode apenas enviar SMS demasiado**verificado** números de telefone.  
+> <span data-ttu-id="1cad8-105">Se estiver a utilizar uma conta de avaliação do Twilio, pode apenas enviar SMS demasiado**verificado** números de telefone.</span><span class="sxs-lookup"><span data-stu-id="1cad8-105">If you are using a Twilio trial account, you can only send SMS too**verified** phone numbers.</span></span>  
 > 
 > 
 
-Antes de poder utilizar a sua conta do Twilio numa aplicação lógica, tem de autorizar conta Twilio da tooyour tooconnect Olá lógica aplicação. Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure. 
+<span data-ttu-id="1cad8-106">Antes de poder utilizar a sua conta do Twilio numa aplicação lógica, tem de autorizar conta Twilio da tooyour tooconnect Olá lógica aplicação.</span><span class="sxs-lookup"><span data-stu-id="1cad8-106">Before you can use your Twilio account in a Logic app, you must authorize hello Logic app tooconnect tooyour Twilio account.</span></span> <span data-ttu-id="1cad8-107">Felizmente, pode fazê-facilmente na sua aplicação lógica em Olá Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="1cad8-107">Fortunately, you can do this easily from within your Logic app on hello Azure Portal.</span></span> 
 
-Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica conta do Twilio:
+<span data-ttu-id="1cad8-108">Seguem-se Olá passos tooauthorize sua tooyour de tooconnect de aplicação lógica conta do Twilio:</span><span class="sxs-lookup"><span data-stu-id="1cad8-108">Here are hello steps tooauthorize your Logic app tooconnect tooyour Twilio account:</span></span>
 
-1. toocreate tooTwilio uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Twilio* na caixa de pesquisa de Olá. Selecione o acionador de Olá ou ação que irá gostar toouse:  
+1. <span data-ttu-id="1cad8-109">toocreate tooTwilio uma ligação, no designer de aplicação de lógica de Olá, selecione **Mostrar Microsoft APIs geridas** no Olá na lista pendente, em seguida, introduza *Twilio* na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="1cad8-109">toocreate a connection tooTwilio, in hello Logic app designer, select **Show Microsoft managed APIs** in hello drop down list then enter *Twilio* in hello search box.</span></span> <span data-ttu-id="1cad8-110">Selecione o acionador de Olá ou ação que irá gostar toouse:</span><span class="sxs-lookup"><span data-stu-id="1cad8-110">Select hello trigger or action you'll like toouse:</span></span>  
    ![](./media/connectors-create-api-twilio/twilio-0.png)
-2. Se ainda não criou quaisquer tooTwilio ligações antes, obterá tooprovide pedido as suas credenciais do Twilio. Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados do sua conta Twilio:  
+2. <span data-ttu-id="1cad8-111">Se ainda não criou quaisquer tooTwilio ligações antes, obterá tooprovide pedido as suas credenciais do Twilio.</span><span class="sxs-lookup"><span data-stu-id="1cad8-111">If you haven't created any connections tooTwilio before, you'll get prompted tooprovide your Twilio credentials.</span></span> <span data-ttu-id="1cad8-112">Estas credenciais serão utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder aos dados do sua conta Twilio:</span><span class="sxs-lookup"><span data-stu-id="1cad8-112">These credentials will be used tooauthorize your Logic app tooconnect to, and access your Twilio account's data:</span></span>  
    ![](./media/connectors-create-api-twilio/twilio-1.png)  
-3. Terá de Olá **id de conta do Twilio** e **token de acesso do Twilio** do dashboard de Olá do Twilio, por isso, inicie sessão no tooyour Twilio conta agora toograb duas estas informações:  
+3. <span data-ttu-id="1cad8-113">Terá de Olá **id de conta do Twilio** e **token de acesso do Twilio** do dashboard de Olá do Twilio, por isso, inicie sessão no tooyour Twilio conta agora toograb duas estas informações:</span><span class="sxs-lookup"><span data-stu-id="1cad8-113">You'll need hello **Twilio account id** and **Twilio access token**  from hello dashboard in Twilio, so log in tooyour Twilio account now toograb these two pieces of information:</span></span>  
    ![](./media/connectors-create-api-twilio/twilio-2.png)  
-4. Aplicações Twilio e lógica utilizam nomes diferentes tooidentify duas estas informações. Eis como tem de mapeá-los caixa de diálogo do toohello Logic apps:![](./media/connectors-create-api-twilio/twilio-3.png)  
-5. Selecione Olá **criar ligação** botão:  
+4. <span data-ttu-id="1cad8-114">Aplicações Twilio e lógica utilizam nomes diferentes tooidentify duas estas informações.</span><span class="sxs-lookup"><span data-stu-id="1cad8-114">Twilio and Logic apps use different names tooidentify these two pieces of infomation.</span></span> <span data-ttu-id="1cad8-115">Eis como tem de mapeá-los caixa de diálogo do toohello Logic apps:![](./media/connectors-create-api-twilio/twilio-3.png)</span><span class="sxs-lookup"><span data-stu-id="1cad8-115">Here is how you must map them toohello Logic apps dialog: ![](./media/connectors-create-api-twilio/twilio-3.png)</span></span>  
+5. <span data-ttu-id="1cad8-116">Selecione Olá **criar ligação** botão:</span><span class="sxs-lookup"><span data-stu-id="1cad8-116">Select hello **Create connection** button:</span></span>  
    ![](./media/connectors-create-api-twilio/twilio-4.png)
-6. Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:  
+6. <span data-ttu-id="1cad8-117">Repare a ligação de Olá foi criada e são agora tooproceed livre com Olá outro passos na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="1cad8-117">Notice hello connection has been created and you are now free tooproceed with hello other steps in your Logic app:</span></span>  
    ![](./media/connectors-create-api-twilio/twilio-5.png)
 

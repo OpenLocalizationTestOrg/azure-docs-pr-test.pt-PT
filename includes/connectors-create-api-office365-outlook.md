@@ -1,19 +1,19 @@
-#### <a name="prerequisites"></a>Pré-requisitos
-* Uma conta do Azure; Pode criar um [conta gratuita](https://azure.microsoft.com/free)
-* Um [do Office 365](https://office365.com) conta  
+#### <a name="prerequisites"></a><span data-ttu-id="34d12-101">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="34d12-101">Prerequisites</span></span>
+* <span data-ttu-id="34d12-102">Uma conta do Azure; Pode criar um [conta gratuita](https://azure.microsoft.com/free)</span><span class="sxs-lookup"><span data-stu-id="34d12-102">An Azure account; you can create a [free account](https://azure.microsoft.com/free)</span></span>
+* <span data-ttu-id="34d12-103">Um [do Office 365](https://office365.com) conta</span><span class="sxs-lookup"><span data-stu-id="34d12-103">An [Office 365](https://office365.com) account</span></span>  
 
-Antes de utilizar a sua conta Office 365 numa aplicação lógica, autorize Olá logic app tooconnect tooyour conta do Office 365. Pode fazê-facilmente na sua aplicação lógica em Olá portal do Azure.  
+<span data-ttu-id="34d12-104">Antes de utilizar a sua conta Office 365 numa aplicação lógica, autorize Olá logic app tooconnect tooyour conta do Office 365.</span><span class="sxs-lookup"><span data-stu-id="34d12-104">Before using your Office 365 account in a logic app, authorize hello logic app tooconnect tooyour Office 365 account.</span></span> <span data-ttu-id="34d12-105">Pode fazê-facilmente na sua aplicação lógica em Olá portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="34d12-105">You can do this easily within your logic app on hello Azure portal.</span></span>  
 
-Autorize a conta de tooconnect aplicação do lógica tooyour do Office 365 com Olá os seguintes passos:
+<span data-ttu-id="34d12-106">Autorize a conta de tooconnect aplicação do lógica tooyour do Office 365 com Olá os seguintes passos:</span><span class="sxs-lookup"><span data-stu-id="34d12-106">Authorize your logic app tooconnect tooyour Office 365 account using hello following steps:</span></span>
 
-1. Crie uma aplicação lógica. No designer de aplicações lógicas Olá, selecione **Mostrar Microsoft APIs geridas** Olá na lista pendente e, em seguida, introduza "office 365" na caixa de pesquisa de Olá. Selecione um dos acionadores Olá pelos mesmos ou ações:  
-    ![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-sendemail.png)  
-2. Se ainda não criou anteriormente qualquer tooOffice ligações 365, é pedido toosign utilizando as suas credenciais do Office 365:  
+1. <span data-ttu-id="34d12-107">Crie uma aplicação lógica.</span><span class="sxs-lookup"><span data-stu-id="34d12-107">Create a logic app.</span></span> <span data-ttu-id="34d12-108">No designer de aplicações lógicas Olá, selecione **Mostrar Microsoft APIs geridas** Olá na lista pendente e, em seguida, introduza "office 365" na caixa de pesquisa de Olá.</span><span class="sxs-lookup"><span data-stu-id="34d12-108">In hello Logic Apps designer, select **Show Microsoft managed APIs** in hello drop down list, and then enter "office 365" in hello search box.</span></span> <span data-ttu-id="34d12-109">Selecione um dos acionadores Olá pelos mesmos ou ações:</span><span class="sxs-lookup"><span data-stu-id="34d12-109">Select one of hello triggers or actions:</span></span>  
+    <span data-ttu-id="34d12-110">![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-sendemail.png)</span><span class="sxs-lookup"><span data-stu-id="34d12-110">![Office 365 connection creation step](./media/connectors-create-api-office365-outlook/office365-sendemail.png)</span></span>  
+2. <span data-ttu-id="34d12-111">Se ainda não criou anteriormente qualquer tooOffice ligações 365, é pedido toosign utilizando as suas credenciais do Office 365:</span><span class="sxs-lookup"><span data-stu-id="34d12-111">If you haven't previously created any connections tooOffice 365, you are prompted toosign in using your Office 365 credentials:</span></span>  
     ![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-signin.png)  
-3. Selecione **sessão**e introduza o nome de utilizador e palavra-passe. Selecione **sessão**:  
-    ![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-usernamepassword.png)
+3. <span data-ttu-id="34d12-113">Selecione **sessão**e introduza o nome de utilizador e palavra-passe.</span><span class="sxs-lookup"><span data-stu-id="34d12-113">Select **Sign in**, and enter your user name and password.</span></span> <span data-ttu-id="34d12-114">Selecione **sessão**:</span><span class="sxs-lookup"><span data-stu-id="34d12-114">Select **Sign in**:</span></span>  
+    <span data-ttu-id="34d12-115">![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-usernamepassword.png)</span><span class="sxs-lookup"><span data-stu-id="34d12-115">![Office 365 connection creation step](./media/connectors-create-api-office365-outlook/office365-usernamepassword.png)</span></span>
    
-    Estas credenciais são utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder à sua conta Office 365. 
-4. Tenha em atenção Olá ligação foi criada. Agora, pode continuar com a Olá outro passos seguintes na sua aplicação lógica:   
+    <span data-ttu-id="34d12-116">Estas credenciais são utilizada tooauthorize sua tooconnect de aplicação lógica para e aceder à sua conta Office 365.</span><span class="sxs-lookup"><span data-stu-id="34d12-116">These credentials are used tooauthorize your logic app tooconnect to, and access your Office 365 account.</span></span> 
+4. <span data-ttu-id="34d12-117">Tenha em atenção Olá ligação foi criada.</span><span class="sxs-lookup"><span data-stu-id="34d12-117">Notice hello connection has been created.</span></span> <span data-ttu-id="34d12-118">Agora, pode continuar com a Olá outro passos seguintes na sua aplicação lógica:</span><span class="sxs-lookup"><span data-stu-id="34d12-118">Now, proceed with hello other steps in your logic app:</span></span>   
     ![Passo de criação de ligação do Office 365](./media/connectors-create-api-office365-outlook/office365-sendemailproperties.png)  
 

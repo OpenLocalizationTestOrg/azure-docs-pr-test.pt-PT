@@ -1,2 +1,2 @@
-toouse esta funcionalidade e outras novas funcionalidades do Azure, inscreva-se Olá [pré-visualização gratuita](https://account.windowsazure.com/PreviewFeatures).
+<span data-ttu-id="b3680-101">toouse esta funcionalidade e outras novas funcionalidades do Azure, inscreva-se Olá [pré-visualização gratuita](https://account.windowsazure.com/PreviewFeatures).</span><span class="sxs-lookup"><span data-stu-id="b3680-101">toouse this feature and other new Azure capabilities, sign up for hello [free preview](https://account.windowsazure.com/PreviewFeatures).</span></span>
 

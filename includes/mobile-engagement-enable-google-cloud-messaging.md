@@ -1,14 +1,14 @@
 
-### <a name="create-a-google-firebase-project-with-api-key"></a>Criar um projeto do Google Firebase com a chave de API
+### <a name="create-a-google-firebase-project-with-api-key"></a><span data-ttu-id="13083-101">Criar um projeto do Google Firebase com a chave de API</span><span class="sxs-lookup"><span data-stu-id="13083-101">Create a Google Firebase project with API key</span></span>
 > [!NOTE]
-> toocomplete neste procedimento, tem de ter uma conta do Google que tenha um endereço de correio eletrónico verificado. toocreate uma nova conta do Google, aceda demasiado<a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>.
+> <span data-ttu-id="13083-102">toocomplete neste procedimento, tem de ter uma conta do Google que tenha um endereço de correio eletrónico verificado.</span><span class="sxs-lookup"><span data-stu-id="13083-102">toocomplete this procedure, you must have a Google account that has a verified email address.</span></span> <span data-ttu-id="13083-103">toocreate uma nova conta do Google, aceda demasiado<a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>.</span><span class="sxs-lookup"><span data-stu-id="13083-103">toocreate a new Google account, go too<a href="http://go.microsoft.com/fwlink/p/?LinkId=268302" target="_blank">accounts.google.com</a>.</span></span>
 > 
 > 
 
-1. Navegue toohello [consola Firebase](https://console.firebase.google.com/) e inicie sessão com as suas credenciais de conta Google.
-2. Clique em **criar novo projeto** botão toocreate um novo projeto. Em alternativa, também pode clicar em **importar projeto do Google** tooimport e projeto existente. 
-3. Se tiver optado por criar um novo projeto, terá de indicar um **Nome do projeto** e escolher um **País/Região**.
-4. Na página do seu projeto, clique em Olá **definições** roda roda dentada na parte superior de Olá à esquerda. No menu de Olá, clique em **definições do projeto**.  
-5. Clique em Olá **Cloud Messaging** separador na parte superior do Olá. 
-6. Tome nota do Olá **chave do servidor** e Olá **ID do remetente** que utilizará posteriormente no Olá *ficheiro de manifesto Android*.  
+1. <span data-ttu-id="13083-104">Navegue toohello [consola Firebase](https://console.firebase.google.com/) e inicie sessão com as suas credenciais de conta Google.</span><span class="sxs-lookup"><span data-stu-id="13083-104">Navigate toohello [Firebase Console](https://console.firebase.google.com/) and sign-in with your Google account credentials.</span></span>
+2. <span data-ttu-id="13083-105">Clique em **criar novo projeto** botão toocreate um novo projeto.</span><span class="sxs-lookup"><span data-stu-id="13083-105">Click on **Create new Project** button toocreate a new project.</span></span> <span data-ttu-id="13083-106">Em alternativa, também pode clicar em **importar projeto do Google** tooimport e projeto existente.</span><span class="sxs-lookup"><span data-stu-id="13083-106">Alternatively, you can also click on **Import Google Project** tooimport and existing project.</span></span> 
+3. <span data-ttu-id="13083-107">Se tiver optado por criar um novo projeto, terá de indicar um **Nome do projeto** e escolher um **País/Região**.</span><span class="sxs-lookup"><span data-stu-id="13083-107">If you opted for creating a new project then provide a **Project name** and choose a **Country/Region**.</span></span>
+4. <span data-ttu-id="13083-108">Na página do seu projeto, clique em Olá **definições** roda roda dentada na parte superior de Olá à esquerda.</span><span class="sxs-lookup"><span data-stu-id="13083-108">On your project page, click hello **Settings** cog wheel at hello top left.</span></span> <span data-ttu-id="13083-109">No menu de Olá, clique em **definições do projeto**.</span><span class="sxs-lookup"><span data-stu-id="13083-109">In hello menu, click on **Project settings**.</span></span>  
+5. <span data-ttu-id="13083-110">Clique em Olá **Cloud Messaging** separador na parte superior do Olá.</span><span class="sxs-lookup"><span data-stu-id="13083-110">Click on hello **Cloud Messaging** tab at hello top.</span></span> 
+6. <span data-ttu-id="13083-111">Tome nota do Olá **chave do servidor** e Olá **ID do remetente** que utilizará posteriormente no Olá *ficheiro de manifesto Android*.</span><span class="sxs-lookup"><span data-stu-id="13083-111">Make a note of hello **Server Key** and hello **Sender ID** that you will use later in hello *Android Manifest file*.</span></span>  
 

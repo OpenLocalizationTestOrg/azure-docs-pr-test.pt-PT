@@ -1,10 +1,10 @@
 
 
-1. Inicie sessão no toohello [consola Firebase](https://firebase.google.com/console/). Crie um novo projeto Firebase se ainda não tiver um.
-2. Depois do projeto ser criado, clique em **aplicação Android do adicionar Firebase tooyour** e siga as instruções de Olá fornecidas.
+1. <span data-ttu-id="7a742-101">Inicie sessão no toohello [consola Firebase](https://firebase.google.com/console/).</span><span class="sxs-lookup"><span data-stu-id="7a742-101">Sign in toohello [Firebase console](https://firebase.google.com/console/).</span></span> <span data-ttu-id="7a742-102">Crie um novo projeto Firebase se ainda não tiver um.</span><span class="sxs-lookup"><span data-stu-id="7a742-102">Create a new Firebase project if you don't already have one.</span></span>
+2. <span data-ttu-id="7a742-103">Depois do projeto ser criado, clique em **aplicação Android do adicionar Firebase tooyour** e siga as instruções de Olá fornecidas.</span><span class="sxs-lookup"><span data-stu-id="7a742-103">After your project is created, click **Add Firebase tooyour Android app** and follow hello instructions provided.</span></span>
 
     ![](./media/notification-hubs-enable-firebase-cloud-messaging/notification-hubs-add-firebase-to-android-app.png)
-3. Na consola do Olá Firebase, clique em Olá roda dentada do seu projeto e, em seguida, clique em **definições do projeto**.
+3. <span data-ttu-id="7a742-104">Na consola do Olá Firebase, clique em Olá roda dentada do seu projeto e, em seguida, clique em **definições do projeto**.</span><span class="sxs-lookup"><span data-stu-id="7a742-104">In hello Firebase console, click hello cog for your project and then click **Project Settings**.</span></span>
 
     ![](./media/notification-hubs-enable-firebase-cloud-messaging/notification-hubs-firebase-console-project-settings.png)
-4. Clique em Olá **Cloud Messaging** separador Definições do projeto e, cópia Olá valor Olá **chave do servidor** e **ID do remetente**. Estes valores serão utilizados posterior tooconfigure Olá notification hub política de acesso e o controlador de notificação na aplicação Olá.
+4. <span data-ttu-id="7a742-105">Clique em Olá **Cloud Messaging** separador Definições do projeto e, cópia Olá valor Olá **chave do servidor** e **ID do remetente**.</span><span class="sxs-lookup"><span data-stu-id="7a742-105">Click hello **Cloud Messaging** tab in your project settings, and copy hello value of hello **Server key** and **Sender ID**.</span></span> <span data-ttu-id="7a742-106">Estes valores serão utilizados posterior tooconfigure Olá notification hub política de acesso e o controlador de notificação na aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="7a742-106">These values will be used later tooconfigure hello notification hub access policy, and your notification handler in hello app.</span></span>

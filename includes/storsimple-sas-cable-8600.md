@@ -1,43 +1,43 @@
 <!--author=alkohli last changed:02/22/16-->
 
-#### <a name="tooattach-hello-sas-cables"></a>cabos SAS do tooattach Olá
-1. Identifica Olá primário e inclusões EBOD Olá. inclusões de Olá dois podem ser identificados ao observar os respetivos planos de back. Consulte Olá imagem para obter orientações sobre a seguir. 
+#### <a name="tooattach-hello-sas-cables"></a><span data-ttu-id="7b81f-101">cabos SAS do tooattach Olá</span><span class="sxs-lookup"><span data-stu-id="7b81f-101">tooattach hello SAS cables</span></span>
+1. <span data-ttu-id="7b81f-102">Identifica Olá primário e inclusões EBOD Olá.</span><span class="sxs-lookup"><span data-stu-id="7b81f-102">Identify hello primary and hello EBOD enclosures.</span></span> <span data-ttu-id="7b81f-103">inclusões de Olá dois podem ser identificados ao observar os respetivos planos de back.</span><span class="sxs-lookup"><span data-stu-id="7b81f-103">hello two enclosures can be identified by looking at their respective back planes.</span></span> <span data-ttu-id="7b81f-104">Consulte Olá imagem para obter orientações sobre a seguir.</span><span class="sxs-lookup"><span data-stu-id="7b81f-104">See hello following image for guidance.</span></span> 
    
     ![Fazer uma cópia plane de principal e inclusões EBOD](./media/storsimple-sas-cable-8600/HCSBackplaneofprimaryandEBODenclosure.png)
    
-    **Criar uma vista de site primário e inclusões EBOD**
+    <span data-ttu-id="7b81f-106">**Criar uma vista de site primário e inclusões EBOD**</span><span class="sxs-lookup"><span data-stu-id="7b81f-106">**Back view of primary and EBOD enclosures**</span></span>
    
-   | Etiqueta | Descrição |
+   | <span data-ttu-id="7b81f-107">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="7b81f-107">Label</span></span> | <span data-ttu-id="7b81f-108">Descrição</span><span class="sxs-lookup"><span data-stu-id="7b81f-108">Description</span></span> |
    |:--- |:--- |
-   | 1 |Inclusão principal |
-   | 2 |Inclusão EBOD |
-2. Localize os números de série de Olá Olá primário e inclusões EBOD Olá. sticker do número de série de Olá é affixed toohello ear back de cada bastidor. os números de série de Olá tem de ser idênticos em ambas as caixas. [Contacte o Support Microsoft](../articles/storsimple/storsimple-contact-microsoft-support.md) imediatamente se hello números de série não correspondem. Consulte Olá seguinte ilustração toolocate Olá os números de série.
+   | <span data-ttu-id="7b81f-109">1</span><span class="sxs-lookup"><span data-stu-id="7b81f-109">1</span></span> |<span data-ttu-id="7b81f-110">Inclusão principal</span><span class="sxs-lookup"><span data-stu-id="7b81f-110">Primary enclosure</span></span> |
+   | <span data-ttu-id="7b81f-111">2</span><span class="sxs-lookup"><span data-stu-id="7b81f-111">2</span></span> |<span data-ttu-id="7b81f-112">Inclusão EBOD</span><span class="sxs-lookup"><span data-stu-id="7b81f-112">EBOD enclosure</span></span> |
+2. <span data-ttu-id="7b81f-113">Localize os números de série de Olá Olá primário e inclusões EBOD Olá.</span><span class="sxs-lookup"><span data-stu-id="7b81f-113">Locate hello serial numbers on hello primary and hello EBOD enclosures.</span></span> <span data-ttu-id="7b81f-114">sticker do número de série de Olá é affixed toohello ear back de cada bastidor.</span><span class="sxs-lookup"><span data-stu-id="7b81f-114">hello serial number sticker is affixed toohello back ear of each enclosure.</span></span> <span data-ttu-id="7b81f-115">os números de série de Olá tem de ser idênticos em ambas as caixas.</span><span class="sxs-lookup"><span data-stu-id="7b81f-115">hello serial numbers must be identical on both enclosures.</span></span> <span data-ttu-id="7b81f-116">[Contacte o Support Microsoft](../articles/storsimple/storsimple-contact-microsoft-support.md) imediatamente se hello números de série não correspondem.</span><span class="sxs-lookup"><span data-stu-id="7b81f-116">[Contact Microsoft Support](../articles/storsimple/storsimple-contact-microsoft-support.md) immediately if hello serial numbers do not match.</span></span> <span data-ttu-id="7b81f-117">Consulte Olá seguinte ilustração toolocate Olá os números de série.</span><span class="sxs-lookup"><span data-stu-id="7b81f-117">See hello following illustration toolocate hello serial numbers.</span></span>
    
     ![Vista de rear de inclusão que mostra o número de série](./media/storsimple-sas-cable-8600/HCSRearviewofenclosureindicatinglocationofserialnumbersticker.png)
    
-    **Localização do número de série sticker**
+    <span data-ttu-id="7b81f-119">**Localização do número de série sticker**</span><span class="sxs-lookup"><span data-stu-id="7b81f-119">**Location of serial number sticker**</span></span>
    
-   | Etiqueta | Descrição |
+   | <span data-ttu-id="7b81f-120">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="7b81f-120">Label</span></span> | <span data-ttu-id="7b81f-121">Descrição</span><span class="sxs-lookup"><span data-stu-id="7b81f-121">Description</span></span> |
    |:--- |:--- |
-   | 1 |EAR de inclusão de Olá |
-3. Utilize Olá fornecido SAS cabos tooconnect Olá inclusão principal do EBOD bastidor toohello da seguinte forma:
+   | <span data-ttu-id="7b81f-122">1</span><span class="sxs-lookup"><span data-stu-id="7b81f-122">1</span></span> |<span data-ttu-id="7b81f-123">EAR de inclusão de Olá</span><span class="sxs-lookup"><span data-stu-id="7b81f-123">Ear of hello enclosure</span></span> |
+3. <span data-ttu-id="7b81f-124">Utilize Olá fornecido SAS cabos tooconnect Olá inclusão principal do EBOD bastidor toohello da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="7b81f-124">Use hello provided SAS cables tooconnect hello EBOD enclosure toohello primary enclosure as follows:</span></span>
    
-   1. Identifique portas SAS quatro Olá no bastidor primário Olá e inclusão EBOD Olá. portas SAS Olá estão identificadas como EBOD no bastidor primário Olá e correspondem A tooport no bastidor EBOD Olá, conforme mostrado na ilustração de cablagem SAS Olá, abaixo.
-   2. Olá utilize fornecido SAS cabos tooconnect Olá EBOD porta tooport A.
-   3. Olá porta EBOD controlador 0 deve ser uma porta de toohello ligado num controlador de EBOD 0. Olá porta EBOD no controlador 1 deve ser uma porta de toohello ligado num controlador de EBOD 1. Consulte Olá ilustração para obter orientações sobre a seguir. 
+   1. <span data-ttu-id="7b81f-125">Identifique portas SAS quatro Olá no bastidor primário Olá e inclusão EBOD Olá.</span><span class="sxs-lookup"><span data-stu-id="7b81f-125">Identify hello four SAS ports on hello primary enclosure and hello EBOD enclosure.</span></span> <span data-ttu-id="7b81f-126">portas SAS Olá estão identificadas como EBOD no bastidor primário Olá e correspondem A tooport no bastidor EBOD Olá, conforme mostrado na ilustração de cablagem SAS Olá, abaixo.</span><span class="sxs-lookup"><span data-stu-id="7b81f-126">hello SAS ports are labeled as EBOD on hello primary enclosure and correspond tooport A on hello EBOD enclosure, as shown in hello SAS cabling illustration, below.</span></span>
+   2. <span data-ttu-id="7b81f-127">Olá utilize fornecido SAS cabos tooconnect Olá EBOD porta tooport A.</span><span class="sxs-lookup"><span data-stu-id="7b81f-127">Use hello provided SAS cables tooconnect hello EBOD port tooport A.</span></span>
+   3. <span data-ttu-id="7b81f-128">Olá porta EBOD controlador 0 deve ser uma porta de toohello ligado num controlador de EBOD 0.</span><span class="sxs-lookup"><span data-stu-id="7b81f-128">hello EBOD port on controller 0 should be connected toohello port A on EBOD controller 0.</span></span> <span data-ttu-id="7b81f-129">Olá porta EBOD no controlador 1 deve ser uma porta de toohello ligado num controlador de EBOD 1.</span><span class="sxs-lookup"><span data-stu-id="7b81f-129">hello EBOD port on controller 1 should be connected toohello port A on EBOD controller 1.</span></span> <span data-ttu-id="7b81f-130">Consulte Olá ilustração para obter orientações sobre a seguir.</span><span class="sxs-lookup"><span data-stu-id="7b81f-130">See hello following illustration for guidance.</span></span> 
       
       ![SAS cablagem para o seu dispositivo](./media/storsimple-sas-cable-8600/HCSSAScablingforyourdevice.png)
       
-      **SAS de cablagem**
+      <span data-ttu-id="7b81f-132">**SAS de cablagem**</span><span class="sxs-lookup"><span data-stu-id="7b81f-132">**SAS cabling**</span></span>
       
-      | Etiqueta | Descrição |
+      | <span data-ttu-id="7b81f-133">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="7b81f-133">Label</span></span> | <span data-ttu-id="7b81f-134">Descrição</span><span class="sxs-lookup"><span data-stu-id="7b81f-134">Description</span></span> |
       |:--- |:--- |
-      | A |Inclusão principal |
-      | B |Inclusão EBOD |
-      | 1 |Controlador 0 |
-      | 2 |Controlador 1 |
-      | 3 |EBOD controlador 0 |
-      | 4 |EBOD controlador 1 |
-      | 5, 6 |Portas SAS no bastidor primário (EBOD identificado) |
-      | 7, 8 |Portas SAS no bastidor EBOD (A porta) |
+      | <span data-ttu-id="7b81f-135">A</span><span class="sxs-lookup"><span data-stu-id="7b81f-135">A</span></span> |<span data-ttu-id="7b81f-136">Inclusão principal</span><span class="sxs-lookup"><span data-stu-id="7b81f-136">Primary enclosure</span></span> |
+      | <span data-ttu-id="7b81f-137">B</span><span class="sxs-lookup"><span data-stu-id="7b81f-137">B</span></span> |<span data-ttu-id="7b81f-138">Inclusão EBOD</span><span class="sxs-lookup"><span data-stu-id="7b81f-138">EBOD enclosure</span></span> |
+      | <span data-ttu-id="7b81f-139">1</span><span class="sxs-lookup"><span data-stu-id="7b81f-139">1</span></span> |<span data-ttu-id="7b81f-140">Controlador 0</span><span class="sxs-lookup"><span data-stu-id="7b81f-140">Controller 0</span></span> |
+      | <span data-ttu-id="7b81f-141">2</span><span class="sxs-lookup"><span data-stu-id="7b81f-141">2</span></span> |<span data-ttu-id="7b81f-142">Controlador 1</span><span class="sxs-lookup"><span data-stu-id="7b81f-142">Controller 1</span></span> |
+      | <span data-ttu-id="7b81f-143">3</span><span class="sxs-lookup"><span data-stu-id="7b81f-143">3</span></span> |<span data-ttu-id="7b81f-144">EBOD controlador 0</span><span class="sxs-lookup"><span data-stu-id="7b81f-144">EBOD Controller 0</span></span> |
+      | <span data-ttu-id="7b81f-145">4</span><span class="sxs-lookup"><span data-stu-id="7b81f-145">4</span></span> |<span data-ttu-id="7b81f-146">EBOD controlador 1</span><span class="sxs-lookup"><span data-stu-id="7b81f-146">EBOD Controller 1</span></span> |
+      | <span data-ttu-id="7b81f-147">5, 6</span><span class="sxs-lookup"><span data-stu-id="7b81f-147">5, 6</span></span> |<span data-ttu-id="7b81f-148">Portas SAS no bastidor primário (EBOD identificado)</span><span class="sxs-lookup"><span data-stu-id="7b81f-148">SAS ports on primary enclosure (labeled EBOD)</span></span> |
+      | <span data-ttu-id="7b81f-149">7, 8</span><span class="sxs-lookup"><span data-stu-id="7b81f-149">7, 8</span></span> |<span data-ttu-id="7b81f-150">Portas SAS no bastidor EBOD (A porta)</span><span class="sxs-lookup"><span data-stu-id="7b81f-150">SAS ports on EBOD enclosure (Port A)</span></span> |
 

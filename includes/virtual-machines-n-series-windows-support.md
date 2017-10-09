@@ -1,19 +1,19 @@
-## <a name="supported-operating-systems-and-drivers"></a>Sistemas operativos e controladores suportados
+## <a name="supported-operating-systems-and-drivers"></a><span data-ttu-id="377dc-101">Sistemas operativos e controladores suportados</span><span class="sxs-lookup"><span data-stu-id="377dc-101">Supported operating systems and drivers</span></span>
 
-### <a name="nv-instances---nvidia-grid-drivers"></a>Instâncias de NV - controladores de GRID da NVIDIA
+### <a name="nv-instances---nvidia-grid-drivers"></a><span data-ttu-id="377dc-102">Instâncias de NV - controladores de GRID da NVIDIA</span><span class="sxs-lookup"><span data-stu-id="377dc-102">NV instances - NVIDIA GRID drivers</span></span>
 
-| SO | Controlador |
+| <span data-ttu-id="377dc-103">SO</span><span class="sxs-lookup"><span data-stu-id="377dc-103">OS</span></span> | <span data-ttu-id="377dc-104">Controlador</span><span class="sxs-lookup"><span data-stu-id="377dc-104">Driver</span></span> |
 | -------- |------------- |
-| Windows Server 2016 | [370.12](https://go.microsoft.com/fwlink/?linkid=836843) (.exe) |
-| Windows Server 2012 R2 | [370.12](https://go.microsoft.com/fwlink/?linkid=836844) (.exe)  |
+| <span data-ttu-id="377dc-105">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="377dc-105">Windows Server 2016</span></span> | <span data-ttu-id="377dc-106">[370.12](https://go.microsoft.com/fwlink/?linkid=836843) (.exe)</span><span class="sxs-lookup"><span data-stu-id="377dc-106">[370.12](https://go.microsoft.com/fwlink/?linkid=836843) (.exe)</span></span> |
+| <span data-ttu-id="377dc-107">Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="377dc-107">Windows Server 2012 R2</span></span> | <span data-ttu-id="377dc-108">[370.12](https://go.microsoft.com/fwlink/?linkid=836844) (.exe)</span><span class="sxs-lookup"><span data-stu-id="377dc-108">[370.12](https://go.microsoft.com/fwlink/?linkid=836844) (.exe)</span></span>  |
 
-### <a name="nc-instances---nvidia-tesla-drivers"></a>Instâncias de NC - controladores de NVIDIA Tesla
+### <a name="nc-instances---nvidia-tesla-drivers"></a><span data-ttu-id="377dc-109">Instâncias de NC - controladores de NVIDIA Tesla</span><span class="sxs-lookup"><span data-stu-id="377dc-109">NC instances - NVIDIA Tesla drivers</span></span>
 
-| SO | Controlador |
+| <span data-ttu-id="377dc-110">SO</span><span class="sxs-lookup"><span data-stu-id="377dc-110">OS</span></span> | <span data-ttu-id="377dc-111">Controlador</span><span class="sxs-lookup"><span data-stu-id="377dc-111">Driver</span></span> |
 | -------- |------------- |
-| Windows Server 2016 | [376.84](http://us.download.nvidia.com/Windows/Quadro_Certified/376.84/376.84-tesla-desktop-winserver2016-international-whql.exe) (.exe) |
-| Windows Server 2012 R2 | [376.84](http://us.download.nvidia.com/Windows/Quadro_Certified/376.84/376.84-tesla-desktop-winserver2008-2012r2-64bit-international-whql.exe) (.exe) |
+| <span data-ttu-id="377dc-112">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="377dc-112">Windows Server 2016</span></span> | <span data-ttu-id="377dc-113">[376.84](http://us.download.nvidia.com/Windows/Quadro_Certified/376.84/376.84-tesla-desktop-winserver2016-international-whql.exe) (.exe)</span><span class="sxs-lookup"><span data-stu-id="377dc-113">[376.84](http://us.download.nvidia.com/Windows/Quadro_Certified/376.84/376.84-tesla-desktop-winserver2016-international-whql.exe) (.exe)</span></span> |
+| <span data-ttu-id="377dc-114">Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="377dc-114">Windows Server 2012 R2</span></span> | <span data-ttu-id="377dc-115">[376.84](http://us.download.nvidia.com/Windows/Quadro_Certified/376.84/376.84-tesla-desktop-winserver2008-2012r2-64bit-international-whql.exe) (.exe)</span><span class="sxs-lookup"><span data-stu-id="377dc-115">[376.84](http://us.download.nvidia.com/Windows/Quadro_Certified/376.84/376.84-tesla-desktop-winserver2008-2012r2-64bit-international-whql.exe) (.exe)</span></span> |
 
 > [!NOTE]
-> As ligações de transferência do controlador Tesla estão atualizadas no momento da publicação. Para controladores mais recentes Olá, visite Olá [NVIDIA](http://www.nvidia.com/) Web site.
+> <span data-ttu-id="377dc-116">As ligações de transferência do controlador Tesla estão atualizadas no momento da publicação.</span><span class="sxs-lookup"><span data-stu-id="377dc-116">Tesla driver download links are current at time of publication.</span></span> <span data-ttu-id="377dc-117">Para controladores mais recentes Olá, visite Olá [NVIDIA](http://www.nvidia.com/) Web site.</span><span class="sxs-lookup"><span data-stu-id="377dc-117">For hello latest drivers, visit hello [NVIDIA](http://www.nvidia.com/) website.</span></span>
 >

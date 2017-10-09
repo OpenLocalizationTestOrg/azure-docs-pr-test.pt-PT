@@ -1,5 +1,5 @@
-### <a name="need-some-help"></a>Precisa de ajuda?
-Colocar perguntas no Olá fóruns do Azure. - [Visite o MSDN](http://go.microsoft.com/fwlink/?LinkId=780719)
+### <a name="need-some-help"></a><span data-ttu-id="5facb-101">Precisa de ajuda?</span><span class="sxs-lookup"><span data-stu-id="5facb-101">Need some help?</span></span>
+<span data-ttu-id="5facb-102">Colocar perguntas no Olá fóruns do Azure.</span><span class="sxs-lookup"><span data-stu-id="5facb-102">Post questions in hello Azure forums.</span></span><span data-ttu-id="5facb-103"> - [Visite o MSDN](http://go.microsoft.com/fwlink/?LinkId=780719)</span><span class="sxs-lookup"><span data-stu-id="5facb-103"> - [Visit MSDN](http://go.microsoft.com/fwlink/?LinkId=780719)</span></span>
 
-Marque as perguntas com a palavra-chave de Olá `azure-functions`. - [Visite o Stack Overflow](http://stackoverflow.com/questions/tagged/azure-functions)
+<span data-ttu-id="5facb-104">Marque as perguntas com a palavra-chave de Olá `azure-functions`.</span><span class="sxs-lookup"><span data-stu-id="5facb-104">Tag questions with hello keyword `azure-functions`.</span></span><span data-ttu-id="5facb-105"> - [Visite o Stack Overflow](http://stackoverflow.com/questions/tagged/azure-functions)</span><span class="sxs-lookup"><span data-stu-id="5facb-105"> - [Visit Stack Overflow](http://stackoverflow.com/questions/tagged/azure-functions)</span></span>
 

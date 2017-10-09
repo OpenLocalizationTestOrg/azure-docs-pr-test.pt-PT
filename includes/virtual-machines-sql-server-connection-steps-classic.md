@@ -1,23 +1,23 @@
-### <a name="determine-hello-dns-name-of-hello-virtual-machine"></a>Determinar o nome DNS Olá da máquina virtual de Olá
-tooconnect toohello motor de base de dados do SQL Server, de outro computador, tem de saber Olá sistema de nomes de domínio (DNS) nome da máquina virtual de Olá. (Isto é Olá nome Olá internet utiliza tooidentify Olá máquina virtual. Pode utilizar o endereço IP Olá, mas o endereço IP Olá pode mudar quando Azure move os recursos para redundância ou manutenção. nome DNS Olá será estável porque pode ser redirecionado tooa novo endereço IP.)  
+### <a name="determine-hello-dns-name-of-hello-virtual-machine"></a><span data-ttu-id="83a7f-101">Determinar o nome DNS Olá da máquina virtual de Olá</span><span class="sxs-lookup"><span data-stu-id="83a7f-101">Determine hello DNS name of hello virtual machine</span></span>
+<span data-ttu-id="83a7f-102">tooconnect toohello motor de base de dados do SQL Server, de outro computador, tem de saber Olá sistema de nomes de domínio (DNS) nome da máquina virtual de Olá.</span><span class="sxs-lookup"><span data-stu-id="83a7f-102">tooconnect toohello SQL Server Database Engine from another computer, you must know hello Domain Name System (DNS) name of hello virtual machine.</span></span> <span data-ttu-id="83a7f-103">(Isto é Olá nome Olá internet utiliza tooidentify Olá máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="83a7f-103">(This is hello name hello internet uses tooidentify hello virtual machine.</span></span> <span data-ttu-id="83a7f-104">Pode utilizar o endereço IP Olá, mas o endereço IP Olá pode mudar quando Azure move os recursos para redundância ou manutenção.</span><span class="sxs-lookup"><span data-stu-id="83a7f-104">You can use hello IP address, but hello IP address might change when Azure moves resources for redundancy or maintenance.</span></span> <span data-ttu-id="83a7f-105">nome DNS Olá será estável porque pode ser redirecionado tooa novo endereço IP.)</span><span class="sxs-lookup"><span data-stu-id="83a7f-105">hello DNS name will be stable because it can be redirected tooa new IP address.)</span></span>  
 
-1. No Portal do Azure de Olá (ou do passo anterior Olá), selecione **máquinas virtuais (clássicas)**.
-2. Selecione a sua VM do SQL.
-3. No Olá **Máquina Virtual** painel, Olá cópia **nome DNS** para a máquina virtual de Olá.
+1. <span data-ttu-id="83a7f-106">No Portal do Azure de Olá (ou do passo anterior Olá), selecione **máquinas virtuais (clássicas)**.</span><span class="sxs-lookup"><span data-stu-id="83a7f-106">In hello Azure Portal (or from hello previous step), select **Virtual machines (classic)**.</span></span>
+2. <span data-ttu-id="83a7f-107">Selecione a sua VM do SQL.</span><span class="sxs-lookup"><span data-stu-id="83a7f-107">Select your SQL VM.</span></span>
+3. <span data-ttu-id="83a7f-108">No Olá **Máquina Virtual** painel, Olá cópia **nome DNS** para a máquina virtual de Olá.</span><span class="sxs-lookup"><span data-stu-id="83a7f-108">On hello **Virtual machine** blade, copy hello **DNS name** for hello virtual machine.</span></span>
    
     ![Nome DNS](./media/virtual-machines-sql-server-connection-steps/sql-vm-dns-name.png)
 
-### <a name="connect-toohello-database-engine-from-another-computer"></a>Ligar toohello motor de base de dados a partir de outro computador
-1. Num computador ligado toohello internet, abra o SQL Server Management Studio.
-2. No Olá **ligar tooServer** ou **ligar tooDatabase motor** Olá caixa de diálogo **nome do servidor** box, introduza o nome DNS Olá da máquina virtual de Olá (determinada na Olá tarefa anterior) e um número de porta do ponto final público no formato de Olá de *DNSName, portnumber* como **mysqlvm.cloudapp.net,57500**.
+### <a name="connect-toohello-database-engine-from-another-computer"></a><span data-ttu-id="83a7f-110">Ligar toohello motor de base de dados a partir de outro computador</span><span class="sxs-lookup"><span data-stu-id="83a7f-110">Connect toohello Database Engine from another computer</span></span>
+1. <span data-ttu-id="83a7f-111">Num computador ligado toohello internet, abra o SQL Server Management Studio.</span><span class="sxs-lookup"><span data-stu-id="83a7f-111">On a computer connected toohello internet, open SQL Server Management Studio.</span></span>
+2. <span data-ttu-id="83a7f-112">No Olá **ligar tooServer** ou **ligar tooDatabase motor** Olá caixa de diálogo **nome do servidor** box, introduza o nome DNS Olá da máquina virtual de Olá (determinada na Olá tarefa anterior) e um número de porta do ponto final público no formato de Olá de *DNSName, portnumber* como **mysqlvm.cloudapp.net,57500**.</span><span class="sxs-lookup"><span data-stu-id="83a7f-112">In hello **Connect tooServer** or **Connect tooDatabase Engine** dialog box, in hello **Server name** box, enter hello DNS name of hello virtual machine (determined in hello previous task) and a public endpoint port number in hello format of *DNSName,portnumber* such as **mysqlvm.cloudapp.net,57500**.</span></span>
    
     ![Ligar através do SSMS](./media/virtual-machines-sql-server-connection-steps/33Connect-SSMS.png)
    
-    Não se lembra número de porta do ponto final público Olá que criou anteriormente, pode encontrá-lo no Olá **pontos finais** área da Olá **Máquina Virtual** painel.
+    <span data-ttu-id="83a7f-114">Não se lembra número de porta do ponto final público Olá que criou anteriormente, pode encontrá-lo no Olá **pontos finais** área da Olá **Máquina Virtual** painel.</span><span class="sxs-lookup"><span data-stu-id="83a7f-114">If you don't remember hello public endpoint port number you previously created, you can find it in hello **Endpoints** area of hello **Virtual machine** blade.</span></span>
    
     ![Porta Pública](./media/virtual-machines-sql-server-connection-steps/sql-vm-port-number.png)
-3. No Olá **autenticação** caixa, selecione **autenticação do SQL Server**.
-4. No Olá **início de sessão** caixa, nome de Olá do tipo de início de sessão que criou uma tarefa anterior.
-5. No Olá **palavra-passe** caixa, a palavra-passe Olá de tipo de início de sessão de Olá que criar uma tarefa anterior.
-6. Clique em **Ligar**.
+3. <span data-ttu-id="83a7f-116">No Olá **autenticação** caixa, selecione **autenticação do SQL Server**.</span><span class="sxs-lookup"><span data-stu-id="83a7f-116">In hello **Authentication** box, select **SQL Server Authentication**.</span></span>
+4. <span data-ttu-id="83a7f-117">No Olá **início de sessão** caixa, nome de Olá do tipo de início de sessão que criou uma tarefa anterior.</span><span class="sxs-lookup"><span data-stu-id="83a7f-117">In hello **Login** box, type hello name of a login that you created in an earlier task.</span></span>
+5. <span data-ttu-id="83a7f-118">No Olá **palavra-passe** caixa, a palavra-passe Olá de tipo de início de sessão de Olá que criar uma tarefa anterior.</span><span class="sxs-lookup"><span data-stu-id="83a7f-118">In hello **Password** box, type hello password of hello login that you create in an earlier task.</span></span>
+6. <span data-ttu-id="83a7f-119">Clique em **Ligar**.</span><span class="sxs-lookup"><span data-stu-id="83a7f-119">Click **Connect**.</span></span>
 

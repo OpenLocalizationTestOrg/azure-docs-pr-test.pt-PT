@@ -1,32 +1,32 @@
 <!--author=SharS last changed: 02/04/2016-->
 
-#### <a name="toocreate-a-volume"></a>toocreate um volume
-1. No dispositivo Olá **início rápido** página, clique em **adicionar um volume**. Esta ação inicia Olá Assistente adicionar um volume.
-2. No Olá Assistente para adicionar um volume, em **definições básicas**, Olá a seguir:
+#### <a name="toocreate-a-volume"></a><span data-ttu-id="492f9-101">toocreate um volume</span><span class="sxs-lookup"><span data-stu-id="492f9-101">toocreate a volume</span></span>
+1. <span data-ttu-id="492f9-102">No dispositivo Olá **início rápido** página, clique em **adicionar um volume**.</span><span class="sxs-lookup"><span data-stu-id="492f9-102">On hello device **Quick Start** page, click **Add a volume**.</span></span> <span data-ttu-id="492f9-103">Esta ação inicia Olá Assistente adicionar um volume.</span><span class="sxs-lookup"><span data-stu-id="492f9-103">This starts hello Add a volume wizard.</span></span>
+2. <span data-ttu-id="492f9-104">No Olá Assistente para adicionar um volume, em **definições básicas**, Olá a seguir:</span><span class="sxs-lookup"><span data-stu-id="492f9-104">In hello Add a volume wizard, under **Basic Settings**, do hello following:</span></span>
    
-   1. Forneça um **Nome** para o volume.
-   2. Especifique Olá **capacidade aprovisionada** para o volume em GB ou TB. capacidade do volume Olá tem de ser entre 1 GB e 64 TB para um dispositivo físico.
-   3. No Olá na lista pendente, selecione Olá **tipo de utilização** para o volume. 
-   4. Se estiver a utilizar este volume para dados de arquivo, selecionar Olá **utilizar este volume para menos dados de arquivo acedidos com frequência** caixa de verificação. Para todos os outros casos de utilização selecione simplesmente **Volume em Camadas**. (Os volumes em camadas chamavam-se anteriormente volumes principais).
+   1. <span data-ttu-id="492f9-105">Forneça um **Nome** para o volume.</span><span class="sxs-lookup"><span data-stu-id="492f9-105">Supply a **Name** for your volume.</span></span>
+   2. <span data-ttu-id="492f9-106">Especifique Olá **capacidade aprovisionada** para o volume em GB ou TB.</span><span class="sxs-lookup"><span data-stu-id="492f9-106">Specify hello **Provisioned Capacity** for your volume in GB or TB.</span></span> <span data-ttu-id="492f9-107">capacidade do volume Olá tem de ser entre 1 GB e 64 TB para um dispositivo físico.</span><span class="sxs-lookup"><span data-stu-id="492f9-107">hello volume capacity must be between 1 GB and 64 TB for a physical device.</span></span>
+   3. <span data-ttu-id="492f9-108">No Olá na lista pendente, selecione Olá **tipo de utilização** para o volume.</span><span class="sxs-lookup"><span data-stu-id="492f9-108">On hello drop-down list, select hello **Usage Type** for your volume.</span></span> 
+   4. <span data-ttu-id="492f9-109">Se estiver a utilizar este volume para dados de arquivo, selecionar Olá **utilizar este volume para menos dados de arquivo acedidos com frequência** caixa de verificação.</span><span class="sxs-lookup"><span data-stu-id="492f9-109">If you are using this volume for archival data, select hello **Use this volume for less frequently accessed archival data** check box.</span></span> <span data-ttu-id="492f9-110">Para todos os outros casos de utilização selecione simplesmente **Volume em Camadas**.</span><span class="sxs-lookup"><span data-stu-id="492f9-110">For all other use cases, simply select **Tiered Volume**.</span></span> <span data-ttu-id="492f9-111">(Os volumes em camadas chamavam-se anteriormente volumes principais).</span><span class="sxs-lookup"><span data-stu-id="492f9-111">(Tiered volumes were formerly called primary volumes).</span></span>
       
         ![Adicionar volume](./media/storsimple-create-volume/ScreenshotUpdate1VolumeFlow.png)
       
-      1. Clique Olá ícone de seta ![ícone de seta](./media/storsimple-create-volume/HCS_ArrowIcon-include.png) toogo toohello a página seguinte.
-3. No Olá **definições adicionais** caixa de diálogo Adicionar um novo registo de controlo de acesso (ACR):
+      1. <span data-ttu-id="492f9-113">Clique Olá ícone de seta</span><span class="sxs-lookup"><span data-stu-id="492f9-113">Click hello arrow icon</span></span> ![ícone de seta](./media/storsimple-create-volume/HCS_ArrowIcon-include.png) <span data-ttu-id="492f9-115">toogo toohello a página seguinte.</span><span class="sxs-lookup"><span data-stu-id="492f9-115">toogo toohello next page.</span></span>
+3. <span data-ttu-id="492f9-116">No Olá **definições adicionais** caixa de diálogo Adicionar um novo registo de controlo de acesso (ACR):</span><span class="sxs-lookup"><span data-stu-id="492f9-116">In hello **Additional Settings** dialog box, add a new access control record (ACR):</span></span>
    
-   1. Forneça um **Nome** para o ACR.
-   2. Em **nome do iniciador iSCSI**, fornecer Olá iSCSI nome qualificado (IQN) de anfitrião do Windows. Se não tiver Olá IQN, aceda demasiado[Get Olá IQN de um anfitrião Windows Server](#get-the-iqn-of-a-windows-server-host).
-   3. Recomendamos que ative uma cópia de segurança predefinida selecionando Olá **ativar uma cópia de segurança predefinido para este volume** caixa de verificação. cópia de segurança do Olá predefinida criará uma política executada às 22:30 todos os dias (hora de dispositivo), que cria um instantâneo de nuvem do volume.
+   1. <span data-ttu-id="492f9-117">Forneça um **Nome** para o ACR.</span><span class="sxs-lookup"><span data-stu-id="492f9-117">Supply a **Name** for your ACR.</span></span>
+   2. <span data-ttu-id="492f9-118">Em **nome do iniciador iSCSI**, fornecer Olá iSCSI nome qualificado (IQN) de anfitrião do Windows.</span><span class="sxs-lookup"><span data-stu-id="492f9-118">Under **iSCSI Initiator Name**, provide hello iSCSI Qualified Name (IQN) of your Windows host.</span></span> <span data-ttu-id="492f9-119">Se não tiver Olá IQN, aceda demasiado[Get Olá IQN de um anfitrião Windows Server](#get-the-iqn-of-a-windows-server-host).</span><span class="sxs-lookup"><span data-stu-id="492f9-119">If you don't have hello IQN, go too[Get hello IQN of a Windows Server host](#get-the-iqn-of-a-windows-server-host).</span></span>
+   3. <span data-ttu-id="492f9-120">Recomendamos que ative uma cópia de segurança predefinida selecionando Olá **ativar uma cópia de segurança predefinido para este volume** caixa de verificação.</span><span class="sxs-lookup"><span data-stu-id="492f9-120">We recommend that you enable a default backup by selecting hello **Enable a default backup for this volume** check box.</span></span> <span data-ttu-id="492f9-121">cópia de segurança do Olá predefinida criará uma política executada às 22:30 todos os dias (hora de dispositivo), que cria um instantâneo de nuvem do volume.</span><span class="sxs-lookup"><span data-stu-id="492f9-121">hello default backup will create a policy that executes at 22:30 each day (device time) and creates a cloud snapshot of this volume.</span></span>
       
       > [!NOTE]
-      > Depois da cópia de segurança de Olá é ativada aqui, não pode ser revertida. Terá de tooedit Olá volume toomodify esta definição.
+      > <span data-ttu-id="492f9-122">Depois da cópia de segurança de Olá é ativada aqui, não pode ser revertida.</span><span class="sxs-lookup"><span data-stu-id="492f9-122">After hello backup is enabled here, it cannot be reverted.</span></span> <span data-ttu-id="492f9-123">Terá de tooedit Olá volume toomodify esta definição.</span><span class="sxs-lookup"><span data-stu-id="492f9-123">You will need tooedit hello volume toomodify this setting.</span></span>
       > 
       > 
       
         ![Adicionar volume](./media/storsimple-create-volume/AddVolume2-include.png)
-4. Clique Olá ícone de verificação ![ícone de verificação](./media/storsimple-create-volume/HCS_CheckIcon-include.png). Será criado um volume com Olá especificado definições.
+4. <span data-ttu-id="492f9-125">Clique Olá ícone de verificação</span><span class="sxs-lookup"><span data-stu-id="492f9-125">Click hello check icon</span></span> ![ícone de verificação](./media/storsimple-create-volume/HCS_CheckIcon-include.png)<span data-ttu-id="492f9-127">.</span><span class="sxs-lookup"><span data-stu-id="492f9-127">.</span></span> <span data-ttu-id="492f9-128">Será criado um volume com Olá especificado definições.</span><span class="sxs-lookup"><span data-stu-id="492f9-128">A volume will be created with hello specified settings.</span></span>
 
-![Vídeo disponível](./media/storsimple-create-volume/Video_icon.png) **Vídeo disponível**
+<span data-ttu-id="492f9-129">![Vídeo disponível](./media/storsimple-create-volume/Video_icon.png) **Vídeo disponível**</span><span class="sxs-lookup"><span data-stu-id="492f9-129">![Video available](./media/storsimple-create-volume/Video_icon.png) **Video available**</span></span>
 
-toowatch um vídeo que demonstra como toocreate um volume StorSimple, clique em [aqui](https://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/).
+<span data-ttu-id="492f9-130">toowatch um vídeo que demonstra como toocreate um volume StorSimple, clique em [aqui](https://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/).</span><span class="sxs-lookup"><span data-stu-id="492f9-130">toowatch a video that demonstrates how toocreate a StorSimple volume, click [here](https://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/).</span></span>
 

@@ -1,14 +1,14 @@
-Olá legado (antigo) do VPN gateway SKUs são:
+<span data-ttu-id="1bd8f-101">Olá legado (antigo) do VPN gateway SKUs são:</span><span class="sxs-lookup"><span data-stu-id="1bd8f-101">hello legacy (old) VPN gateway SKUs are:</span></span>
 
-* Básica
-* Standard
-* HighPerformance
+* <span data-ttu-id="1bd8f-102">Básica</span><span class="sxs-lookup"><span data-stu-id="1bd8f-102">Basic</span></span>
+* <span data-ttu-id="1bd8f-103">Standard</span><span class="sxs-lookup"><span data-stu-id="1bd8f-103">Standard</span></span>
+* <span data-ttu-id="1bd8f-104">HighPerformance</span><span class="sxs-lookup"><span data-stu-id="1bd8f-104">HighPerformance</span></span>
 
-Gateway de VPN não utiliza a SKU de gateway de UltraPerformance Olá. Para obter informações sobre Olá UltraPerformance SKU, consulte Olá [ExpressRoute](../articles/expressroute/expressroute-about-virtual-network-gateways.md) documentação.
+<span data-ttu-id="1bd8f-105">Gateway de VPN não utiliza a SKU de gateway de UltraPerformance Olá.</span><span class="sxs-lookup"><span data-stu-id="1bd8f-105">VPN Gateway does not use hello UltraPerformance gateway SKU.</span></span> <span data-ttu-id="1bd8f-106">Para obter informações sobre Olá UltraPerformance SKU, consulte Olá [ExpressRoute](../articles/expressroute/expressroute-about-virtual-network-gateways.md) documentação.</span><span class="sxs-lookup"><span data-stu-id="1bd8f-106">For information about hello UltraPerformance SKU, see hello [ExpressRoute](../articles/expressroute/expressroute-about-virtual-network-gateways.md) documentation.</span></span>
 
-Ao trabalhar com Olá SKUs legados, considere Olá seguinte:
+<span data-ttu-id="1bd8f-107">Ao trabalhar com Olá SKUs legados, considere Olá seguinte:</span><span class="sxs-lookup"><span data-stu-id="1bd8f-107">When working with hello legacy SKUs, consider hello following:</span></span>
 
-* Se quiser toouse um tipo de PolicyBased VPN, tem de utilizar Olá SKU básico. As VPNs PolicyBased (anteriormente designadas Encaminhamento Estático) não são suportadas em mais nenhum SKU.
-* BGP não é suportado em Olá SKU básico.
-* Gateway de VPN do ExpressRoute coexistentes configurações não são suportadas em Olá SKU básico.
-* Ligações do S2S VPN Gateway de ativo-ativo podem ser configuradas em Olá HighPerformance SKU apenas.
+* <span data-ttu-id="1bd8f-108">Se quiser toouse um tipo de PolicyBased VPN, tem de utilizar Olá SKU básico.</span><span class="sxs-lookup"><span data-stu-id="1bd8f-108">If you want toouse a PolicyBased VPN type, you must use hello Basic SKU.</span></span> <span data-ttu-id="1bd8f-109">As VPNs PolicyBased (anteriormente designadas Encaminhamento Estático) não são suportadas em mais nenhum SKU.</span><span class="sxs-lookup"><span data-stu-id="1bd8f-109">PolicyBased VPNs (previously called Static Routing) are not supported on any other SKU.</span></span>
+* <span data-ttu-id="1bd8f-110">BGP não é suportado em Olá SKU básico.</span><span class="sxs-lookup"><span data-stu-id="1bd8f-110">BGP is not supported on hello Basic SKU.</span></span>
+* <span data-ttu-id="1bd8f-111">Gateway de VPN do ExpressRoute coexistentes configurações não são suportadas em Olá SKU básico.</span><span class="sxs-lookup"><span data-stu-id="1bd8f-111">ExpressRoute-VPN Gateway coexist configurations are not supported on hello Basic SKU.</span></span>
+* <span data-ttu-id="1bd8f-112">Ligações do S2S VPN Gateway de ativo-ativo podem ser configuradas em Olá HighPerformance SKU apenas.</span><span class="sxs-lookup"><span data-stu-id="1bd8f-112">Active-active S2S VPN Gateway connections can be configured on hello HighPerformance SKU only.</span></span>

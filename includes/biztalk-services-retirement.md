@@ -1,10 +1,10 @@
 > [!IMPORTANT]
-> O Microsoft Azure BizTalk Services (MABS) está a ser desativado e substituído por aplicações de lógica do Azure. Se utilizar atualmente MABS, em seguida, [mover de BizTalk Services tooLogic aplicações](../articles/logic-apps/logic-apps-move-from-mabs.md) fornece algumas orientações para mover o tooLogic de soluções de integração aplicações. 
+> <span data-ttu-id="7ab32-101">O Microsoft Azure BizTalk Services (MABS) está a ser desativado e substituído por aplicações de lógica do Azure.</span><span class="sxs-lookup"><span data-stu-id="7ab32-101">Microsoft Azure BizTalk Services (MABS) is being retired, and replaced with Azure Logic Apps.</span></span> <span data-ttu-id="7ab32-102">Se utilizar atualmente MABS, em seguida, [mover de BizTalk Services tooLogic aplicações](../articles/logic-apps/logic-apps-move-from-mabs.md) fornece algumas orientações para mover o tooLogic de soluções de integração aplicações.</span><span class="sxs-lookup"><span data-stu-id="7ab32-102">If you currently use MABS, then [Move from BizTalk Services tooLogic Apps](../articles/logic-apps/logic-apps-move-from-mabs.md) provides some guidance on moving your integration solutions tooLogic Apps.</span></span> 
 > 
-> Se tiver aplicações de tooLogic nova, em seguida, sugerimos a introdução aqui: 
+> <span data-ttu-id="7ab32-103">Se tiver aplicações de tooLogic nova, em seguida, sugerimos a introdução aqui:</span><span class="sxs-lookup"><span data-stu-id="7ab32-103">If you're brand new tooLogic Apps, then we suggest getting started here:</span></span> 
 > 
-> - [O que são as aplicações lógicas](../articles/logic-apps/logic-apps-what-are-logic-apps.md)  
+> - [<span data-ttu-id="7ab32-104">O que são as aplicações lógicas</span><span class="sxs-lookup"><span data-stu-id="7ab32-104">What are Logic Apps</span></span>](../articles/logic-apps/logic-apps-what-are-logic-apps.md)  
 > 
-> - [Criar a sua primeira aplicação lógica](../articles/logic-apps/logic-apps-create-a-logic-app.md) ou começar rapidamente com um [modelo compilado previamente](../articles/logic-apps/logic-apps-use-logic-app-templates.md)  
+> - <span data-ttu-id="7ab32-105">[Criar a sua primeira aplicação lógica](../articles/logic-apps/logic-apps-create-a-logic-app.md) ou começar rapidamente com um [modelo compilado previamente](../articles/logic-apps/logic-apps-use-logic-app-templates.md)</span><span class="sxs-lookup"><span data-stu-id="7ab32-105">[Create your first logic app](../articles/logic-apps/logic-apps-create-a-logic-app.md), or quickly get started using a [pre-built template](../articles/logic-apps/logic-apps-use-logic-app-templates.md)</span></span>  
 > 
-> - [Ver todos os conectores disponíveis de Olá](../articles/connectors/apis-list.md) pode utilizar uma aplicação lógica
+> - <span data-ttu-id="7ab32-106">[Ver todos os conectores disponíveis de Olá](../articles/connectors/apis-list.md) pode utilizar uma aplicação lógica</span><span class="sxs-lookup"><span data-stu-id="7ab32-106">[View all hello available connectors](../articles/connectors/apis-list.md) you can use in a logic app</span></span>

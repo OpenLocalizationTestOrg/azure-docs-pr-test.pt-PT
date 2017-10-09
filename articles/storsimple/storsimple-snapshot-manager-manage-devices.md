@@ -20,194 +20,194 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="use-storsimple-snapshot-manager-tooconnect-and-manage-storsimple-devices"></a>Utilize o Snapshot Manager do StorSimple tooconnect e gerir dispositivos StorSimple
-## <a name="overview"></a>Descrição geral
-Pode utilizar nós Olá Snapshot Manager do StorSimple **âmbito** tooverify painel importar dados do dispositivo StorSimple e atualizar os dispositivos de armazenamento ligado. Além disso, ao clicar em Olá **dispositivos** nós, pode ver uma lista de dispositivos ligados e as informações de estado correspondente no Olá **resultados** painel.
+# <a name="use-storsimple-snapshot-manager-tooconnect-and-manage-storsimple-devices"></a><span data-ttu-id="89464-103">Utilize o Snapshot Manager do StorSimple tooconnect e gerir dispositivos StorSimple</span><span class="sxs-lookup"><span data-stu-id="89464-103">Use StorSimple Snapshot Manager tooconnect and manage StorSimple devices</span></span>
+## <a name="overview"></a><span data-ttu-id="89464-104">Descrição geral</span><span class="sxs-lookup"><span data-stu-id="89464-104">Overview</span></span>
+<span data-ttu-id="89464-105">Pode utilizar nós Olá Snapshot Manager do StorSimple **âmbito** tooverify painel importar dados do dispositivo StorSimple e atualizar os dispositivos de armazenamento ligado.</span><span class="sxs-lookup"><span data-stu-id="89464-105">You can use nodes in hello StorSimple Snapshot Manager **Scope** pane tooverify imported StorSimple device data and refresh connected storage devices.</span></span> <span data-ttu-id="89464-106">Além disso, ao clicar em Olá **dispositivos** nós, pode ver uma lista de dispositivos ligados e as informações de estado correspondente no Olá **resultados** painel.</span><span class="sxs-lookup"><span data-stu-id="89464-106">Additionally, when you click hello **Devices** node, you can see a list of connected devices and corresponding status information in hello **Results** pane.</span></span>
 
 ![Dispositivos ligados](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_connect_devices.png)
 
-**Figura 1: Ligada do StorSimple Snapshot Manager do dispositivo** 
+<span data-ttu-id="89464-108">**Figura 1: Ligada do StorSimple Snapshot Manager do dispositivo**</span><span class="sxs-lookup"><span data-stu-id="89464-108">**Figure 1: StorSimple Snapshot Manager connected device**</span></span> 
 
-Dependendo do seu **vista** seleções, Olá **resultados** painel mostra Olá seguintes informações sobre cada dispositivo. (Para mais informações sobre como configurar uma vista, visite demasiado[menu Ver](storsimple-use-snapshot-manager.md#view-menu).
+<span data-ttu-id="89464-109">Dependendo do seu **vista** seleções, Olá **resultados** painel mostra Olá seguintes informações sobre cada dispositivo.</span><span class="sxs-lookup"><span data-stu-id="89464-109">Depending on your **View** selections, hello **Results** pane shows hello following information about each device.</span></span> <span data-ttu-id="89464-110">(Para mais informações sobre como configurar uma vista, visite demasiado[menu Ver](storsimple-use-snapshot-manager.md#view-menu).</span><span class="sxs-lookup"><span data-stu-id="89464-110">(For more information about configuring a view, go too[View menu](storsimple-use-snapshot-manager.md#view-menu).</span></span>
 
-| Coluna de resultados | Descrição |
+| <span data-ttu-id="89464-111">Coluna de resultados</span><span class="sxs-lookup"><span data-stu-id="89464-111">Results column</span></span> | <span data-ttu-id="89464-112">Descrição</span><span class="sxs-lookup"><span data-stu-id="89464-112">Description</span></span> |
 |:--- |:--- |
-| Nome |nome de Olá do dispositivo de Olá como configurado na Olá portal clássico do Azure |
-| Modelo |número de modelo de Olá do dispositivo Olá |
-| Versão |versão de Olá do software de Olá instalado no dispositivo Olá |
-| Estado |Se o dispositivo de Olá está disponível |
-| Última sincronização |Data e hora quando o dispositivo de Olá última sincronização |
-| Número de série |número de série de Olá para dispositivo Olá |
+| <span data-ttu-id="89464-113">Nome</span><span class="sxs-lookup"><span data-stu-id="89464-113">Name</span></span> |<span data-ttu-id="89464-114">nome de Olá do dispositivo de Olá como configurado na Olá portal clássico do Azure</span><span class="sxs-lookup"><span data-stu-id="89464-114">hello name of hello device as configured in hello Azure classic portal</span></span> |
+| <span data-ttu-id="89464-115">Modelo</span><span class="sxs-lookup"><span data-stu-id="89464-115">Model</span></span> |<span data-ttu-id="89464-116">número de modelo de Olá do dispositivo Olá</span><span class="sxs-lookup"><span data-stu-id="89464-116">hello model number of hello device</span></span> |
+| <span data-ttu-id="89464-117">Versão</span><span class="sxs-lookup"><span data-stu-id="89464-117">Version</span></span> |<span data-ttu-id="89464-118">versão de Olá do software de Olá instalado no dispositivo Olá</span><span class="sxs-lookup"><span data-stu-id="89464-118">hello version of hello software installed on hello device</span></span> |
+| <span data-ttu-id="89464-119">Estado</span><span class="sxs-lookup"><span data-stu-id="89464-119">Status</span></span> |<span data-ttu-id="89464-120">Se o dispositivo de Olá está disponível</span><span class="sxs-lookup"><span data-stu-id="89464-120">Whether hello device is available</span></span> |
+| <span data-ttu-id="89464-121">Última sincronização</span><span class="sxs-lookup"><span data-stu-id="89464-121">Last Synced</span></span> |<span data-ttu-id="89464-122">Data e hora quando o dispositivo de Olá última sincronização</span><span class="sxs-lookup"><span data-stu-id="89464-122">Date and time when hello device was last synchronized</span></span> |
+| <span data-ttu-id="89464-123">Número de série</span><span class="sxs-lookup"><span data-stu-id="89464-123">Serial No.</span></span> |<span data-ttu-id="89464-124">número de série de Olá para dispositivo Olá</span><span class="sxs-lookup"><span data-stu-id="89464-124">hello serial number for hello device</span></span> |
 
-Se, faça duplo clique Olá **dispositivos** nó Olá **âmbito** painel, pode selecionar Olá seguintes ações:
+<span data-ttu-id="89464-125">Se, faça duplo clique Olá **dispositivos** nó Olá **âmbito** painel, pode selecionar Olá seguintes ações:</span><span class="sxs-lookup"><span data-stu-id="89464-125">If you right-click hello **Devices** node in hello **Scope** pane, you can select from hello following actions:</span></span>
 
-* Adicionar ou substituir um dispositivo
-* Ligar um dispositivo e certifique-se de importações
-* Atualizar dispositivos ligados
+* <span data-ttu-id="89464-126">Adicionar ou substituir um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-126">Add or replace a device</span></span>
+* <span data-ttu-id="89464-127">Ligar um dispositivo e certifique-se de importações</span><span class="sxs-lookup"><span data-stu-id="89464-127">Connect a device and verify imports</span></span>
+* <span data-ttu-id="89464-128">Atualizar dispositivos ligados</span><span class="sxs-lookup"><span data-stu-id="89464-128">Refresh connected devices</span></span>
 
-Se clicar em Olá **dispositivos** nome de nó e, em seguida, contexto de um dispositivo no Olá **resultados** painel, pode selecionar Olá seguintes ações:
+<span data-ttu-id="89464-129">Se clicar em Olá **dispositivos** nome de nó e, em seguida, contexto de um dispositivo no Olá **resultados** painel, pode selecionar Olá seguintes ações:</span><span class="sxs-lookup"><span data-stu-id="89464-129">If you click hello **Devices** node and then right-click a device name in hello **Results** pane, you can select from hello following actions:</span></span>
 
-* Autenticar um dispositivo
-* Ver detalhes do dispositivo
-* Atualizar um dispositivo
-* Eliminar uma configuração de dispositivo
-* Alterar uma palavra-passe do dispositivo
-
-> [!NOTE]
-> Todas estas ações também estão disponíveis no Olá **ações** painel.
-
-
-Este tutorial explica como toouse tooconnect Snapshot Manager do StorSimple e gerir dispositivos e executar Olá seguintes tarefas:
-
-* Adicionar ou substituir um dispositivo
-* Ligar um dispositivo e certifique-se de importações
-* Atualizar dispositivos ligados
-* Autenticar um dispositivo
-* Ver detalhes do dispositivo
-* Atualizar um dispositivo individual
-* Eliminar uma configuração de dispositivo
-* Alterar uma palavra-passe do dispositivo expirado
-* Substituir um dispositivo com falhas
+* <span data-ttu-id="89464-130">Autenticar um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-130">Authenticate a device</span></span>
+* <span data-ttu-id="89464-131">Ver detalhes do dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-131">View device details</span></span>
+* <span data-ttu-id="89464-132">Atualizar um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-132">Refresh a device</span></span>
+* <span data-ttu-id="89464-133">Eliminar uma configuração de dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-133">Delete a device configuration</span></span>
+* <span data-ttu-id="89464-134">Alterar uma palavra-passe do dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-134">Change a device password</span></span>
 
 > [!NOTE]
-> Para obter informações gerais sobre como utilizar a interface de Snapshot Manager do StorSimple Olá, visite demasiado[interface de utilizador do Snapshot Manager do StorSimple](storsimple-use-snapshot-manager.md).
+> <span data-ttu-id="89464-135">Todas estas ações também estão disponíveis no Olá **ações** painel.</span><span class="sxs-lookup"><span data-stu-id="89464-135">All of these actions are also available in hello **Actions** pane.</span></span>
 
 
-## <a name="add-or-replace-a-device"></a>Adicionar ou substituir um dispositivo
-Utilizar Olá seguir o procedimento tooadd ou substituir um dispositivo StorSimple.
+<span data-ttu-id="89464-136">Este tutorial explica como toouse tooconnect Snapshot Manager do StorSimple e gerir dispositivos e executar Olá seguintes tarefas:</span><span class="sxs-lookup"><span data-stu-id="89464-136">This tutorial explains how toouse StorSimple Snapshot Manager tooconnect and manage devices and perform hello following tasks:</span></span>
 
-#### <a name="tooadd-or-replace-a-device"></a>tooadd ou substituir um dispositivo
-1. Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.
-2. No Olá **âmbito** painel, contexto Olá **dispositivos** nó e, em seguida, clique em **configurar um dispositivo**. Olá **configurar um dispositivo** é apresentada a caixa de diálogo.
+* <span data-ttu-id="89464-137">Adicionar ou substituir um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-137">Add or replace a device</span></span>
+* <span data-ttu-id="89464-138">Ligar um dispositivo e certifique-se de importações</span><span class="sxs-lookup"><span data-stu-id="89464-138">Connect a device and verify imports</span></span>
+* <span data-ttu-id="89464-139">Atualizar dispositivos ligados</span><span class="sxs-lookup"><span data-stu-id="89464-139">Refresh connected devices</span></span>
+* <span data-ttu-id="89464-140">Autenticar um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-140">Authenticate a device</span></span>
+* <span data-ttu-id="89464-141">Ver detalhes do dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-141">View device details</span></span>
+* <span data-ttu-id="89464-142">Atualizar um dispositivo individual</span><span class="sxs-lookup"><span data-stu-id="89464-142">Refresh an individual device</span></span>
+* <span data-ttu-id="89464-143">Eliminar uma configuração de dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-143">Delete a device configuration</span></span>
+* <span data-ttu-id="89464-144">Alterar uma palavra-passe do dispositivo expirado</span><span class="sxs-lookup"><span data-stu-id="89464-144">Change an expired device password</span></span>
+* <span data-ttu-id="89464-145">Substituir um dispositivo com falhas</span><span class="sxs-lookup"><span data-stu-id="89464-145">Replace a failed device</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="89464-146">Para obter informações gerais sobre como utilizar a interface de Snapshot Manager do StorSimple Olá, visite demasiado[interface de utilizador do Snapshot Manager do StorSimple](storsimple-use-snapshot-manager.md).</span><span class="sxs-lookup"><span data-stu-id="89464-146">For general information about using hello StorSimple Snapshot Manager interface, go too[StorSimple Snapshot Manager user interface](storsimple-use-snapshot-manager.md).</span></span>
+
+
+## <a name="add-or-replace-a-device"></a><span data-ttu-id="89464-147">Adicionar ou substituir um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-147">Add or replace a device</span></span>
+<span data-ttu-id="89464-148">Utilizar Olá seguir o procedimento tooadd ou substituir um dispositivo StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-148">Use hello following procedure tooadd or replace a StorSimple device.</span></span>
+
+#### <a name="tooadd-or-replace-a-device"></a><span data-ttu-id="89464-149">tooadd ou substituir um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-149">tooadd or replace a device</span></span>
+1. <span data-ttu-id="89464-150">Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-150">Click hello desktop icon toostart StorSimple Snapshot Manager.</span></span>
+2. <span data-ttu-id="89464-151">No Olá **âmbito** painel, contexto Olá **dispositivos** nó e, em seguida, clique em **configurar um dispositivo**.</span><span class="sxs-lookup"><span data-stu-id="89464-151">In hello **Scope** pane, right-click hello **Devices** node, and then click **Configure a device**.</span></span> <span data-ttu-id="89464-152">Olá **configurar um dispositivo** é apresentada a caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="89464-152">hello **Configure a Device** dialog box appears.</span></span>
    
     ![Configurar um dispositivo StorSimple](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_config_device.png) 
-3. No Olá **dispositivo** caixa pendente, selecione Olá endereço IP dispositivo Olá ou o dispositivo virtual. 
-4. No Olá **palavra-passe** caixa de texto, escrever Olá Snapshot Manager do StorSimple palavra-passe que criou para o dispositivo de Olá no Olá portal clássico do Azure. Clique em **OK**. Snapshot Manager do StorSimple procuram dispositivos de Olá que identificou. 
+3. <span data-ttu-id="89464-154">No Olá **dispositivo** caixa pendente, selecione Olá endereço IP dispositivo Olá ou o dispositivo virtual.</span><span class="sxs-lookup"><span data-stu-id="89464-154">In hello **Device** drop-down box, select hello IP address of hello device or virtual device.</span></span> 
+4. <span data-ttu-id="89464-155">No Olá **palavra-passe** caixa de texto, escrever Olá Snapshot Manager do StorSimple palavra-passe que criou para o dispositivo de Olá no Olá portal clássico do Azure.</span><span class="sxs-lookup"><span data-stu-id="89464-155">In hello **Password** text box, type hello StorSimple Snapshot Manager password that you created for hello device in hello Azure classic portal.</span></span> <span data-ttu-id="89464-156">Clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="89464-156">Click **OK**.</span></span> <span data-ttu-id="89464-157">Snapshot Manager do StorSimple procuram dispositivos de Olá que identificou.</span><span class="sxs-lookup"><span data-stu-id="89464-157">StorSimple Snapshot Manager searches for hello device that you identified.</span></span> 
    
-   * Se o dispositivo de Olá estiver disponível, o Snapshot Manager do StorSimple adiciona uma ligação.
-   * Se o dispositivo Olá estiver indisponível por qualquer motivo, o Snapshot Manager do StorSimple devolve uma mensagem de erro. Clique em **OK** tooclose Olá mensagem de erro e, em seguida, clique em **Cancelar** tooclose Olá **configurar um dispositivo** caixa de diálogo.
+   * <span data-ttu-id="89464-158">Se o dispositivo de Olá estiver disponível, o Snapshot Manager do StorSimple adiciona uma ligação.</span><span class="sxs-lookup"><span data-stu-id="89464-158">If hello device is available, StorSimple Snapshot Manager adds a connection.</span></span>
+   * <span data-ttu-id="89464-159">Se o dispositivo Olá estiver indisponível por qualquer motivo, o Snapshot Manager do StorSimple devolve uma mensagem de erro.</span><span class="sxs-lookup"><span data-stu-id="89464-159">If hello device is unavailable for any reason, StorSimple Snapshot Manager returns an error message.</span></span> <span data-ttu-id="89464-160">Clique em **OK** tooclose Olá mensagem de erro e, em seguida, clique em **Cancelar** tooclose Olá **configurar um dispositivo** caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="89464-160">Click **OK** tooclose hello error message, and then click **Cancel** tooclose hello **Configure a Device** dialog box.</span></span>
 
-## <a name="connect-a-device-and-verify-imports"></a>Ligar um dispositivo e certifique-se de importações
-Utilizar Olá seguir o procedimento tooconnect um dispositivo StorSimple e certifique-se de que todos os grupos existentes de volume que associou cópias de segurança são importados.
+## <a name="connect-a-device-and-verify-imports"></a><span data-ttu-id="89464-161">Ligar um dispositivo e certifique-se de importações</span><span class="sxs-lookup"><span data-stu-id="89464-161">Connect a device and verify imports</span></span>
+<span data-ttu-id="89464-162">Utilizar Olá seguir o procedimento tooconnect um dispositivo StorSimple e certifique-se de que todos os grupos existentes de volume que associou cópias de segurança são importados.</span><span class="sxs-lookup"><span data-stu-id="89464-162">Use hello following procedure tooconnect a StorSimple device and verify that any existing volume groups that have associated backups are imported.</span></span>
 
-#### <a name="tooconnect-a-device-and-verify-imports"></a>tooconnect um dispositivo e certifique-se de importações
-1. tooconnect tooStorSimple um dispositivo Snapshot Manager, siga as instruções de Olá em Adicionar ou substituir um dispositivo. Quando estabelece ligação tooa dispositivo, o Snapshot Manager do StorSimple responde da seguinte forma:
+#### <a name="tooconnect-a-device-and-verify-imports"></a><span data-ttu-id="89464-163">tooconnect um dispositivo e certifique-se de importações</span><span class="sxs-lookup"><span data-stu-id="89464-163">tooconnect a device and verify imports</span></span>
+1. <span data-ttu-id="89464-164">tooconnect tooStorSimple um dispositivo Snapshot Manager, siga as instruções de Olá em Adicionar ou substituir um dispositivo.</span><span class="sxs-lookup"><span data-stu-id="89464-164">tooconnect a device tooStorSimple Snapshot Manager, follow hello instructions in Add or replace a device.</span></span> <span data-ttu-id="89464-165">Quando estabelece ligação tooa dispositivo, o Snapshot Manager do StorSimple responde da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="89464-165">When it connects tooa device, StorSimple Snapshot Manager responds as follows:</span></span>
    
-   * Se o dispositivo Olá estiver indisponível por qualquer motivo, o Snapshot Manager do StorSimple devolve uma mensagem de erro. 
+   * <span data-ttu-id="89464-166">Se o dispositivo Olá estiver indisponível por qualquer motivo, o Snapshot Manager do StorSimple devolve uma mensagem de erro.</span><span class="sxs-lookup"><span data-stu-id="89464-166">If hello device is unavailable for any reason, StorSimple Snapshot Manager returns an error message.</span></span> 
    
-   * Se o dispositivo de Olá estiver disponível, o Snapshot Manager do StorSimple adiciona uma ligação. Quando selecionar o dispositivo de Olá, é apresentado no Olá **resultados** painel, e o campo de estado de Olá indica que o dispositivo Olá **disponível**. Snapshot Manager do StorSimple importa os grupos de volume configurados para dispositivo Olá, desde que os grupos de volume de Olá ter associados a cópias de segurança. Políticas de cópia de segurança não foram importadas. Grupos de volume que não dispõe de cópias de segurança associadas não foram importados.
-2. Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.
-3. Contexto Olá superior nó Olá **âmbito** painel e, em seguida, clique em **alternar importações apresentar**.
+   * <span data-ttu-id="89464-167">Se o dispositivo de Olá estiver disponível, o Snapshot Manager do StorSimple adiciona uma ligação.</span><span class="sxs-lookup"><span data-stu-id="89464-167">If hello device is available, StorSimple Snapshot Manager adds a connection.</span></span> <span data-ttu-id="89464-168">Quando selecionar o dispositivo de Olá, é apresentado no Olá **resultados** painel, e o campo de estado de Olá indica que o dispositivo Olá **disponível**.</span><span class="sxs-lookup"><span data-stu-id="89464-168">When you select hello device, it appears in hello **Results** pane, and hello status field indicates that hello device is **Available**.</span></span> <span data-ttu-id="89464-169">Snapshot Manager do StorSimple importa os grupos de volume configurados para dispositivo Olá, desde que os grupos de volume de Olá ter associados a cópias de segurança.</span><span class="sxs-lookup"><span data-stu-id="89464-169">StorSimple Snapshot Manager imports any volume groups configured for hello device, provided that hello volume groups have associated backups.</span></span> <span data-ttu-id="89464-170">Políticas de cópia de segurança não foram importadas.</span><span class="sxs-lookup"><span data-stu-id="89464-170">Backup policies are not imported.</span></span> <span data-ttu-id="89464-171">Grupos de volume que não dispõe de cópias de segurança associadas não foram importados.</span><span class="sxs-lookup"><span data-stu-id="89464-171">Volume groups that do not have associated backups are not imported.</span></span>
+2. <span data-ttu-id="89464-172">Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-172">Click hello desktop icon toostart StorSimple Snapshot Manager.</span></span>
+3. <span data-ttu-id="89464-173">Contexto Olá superior nó Olá **âmbito** painel e, em seguida, clique em **alternar importações apresentar**.</span><span class="sxs-lookup"><span data-stu-id="89464-173">Right-click hello top node in hello **Scope** pane, and then click **Toggle Imports Display**.</span></span>
    
     ![Apresentação de importações selecione Ativar/desativar](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_Toggle_Imports_Display.png) 
-4. Olá **alternar importações apresentar** aparece a caixa de diálogo, que mostra o estado de Olá de Olá importada para grupos de volume e cópias de segurança. Clique em **OK**.
+4. <span data-ttu-id="89464-175">Olá **alternar importações apresentar** aparece a caixa de diálogo, que mostra o estado de Olá de Olá importada para grupos de volume e cópias de segurança.</span><span class="sxs-lookup"><span data-stu-id="89464-175">hello **Toggle Imports Display** dialog box appears, showing hello status of hello imported volume groups and backups.</span></span> <span data-ttu-id="89464-176">Clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="89464-176">Click **OK**.</span></span>
 
-Depois de cópias de segurança e de grupos de volume Olá importadas com êxito, pode utilizar o Snapshot Manager do StorSimple toomanage-las, apenas como iria gerir grupos de volume e cópias de segurança que criar e configurar com Snapshot Manager do StorSimple. 
+<span data-ttu-id="89464-177">Depois de cópias de segurança e de grupos de volume Olá importadas com êxito, pode utilizar o Snapshot Manager do StorSimple toomanage-las, apenas como iria gerir grupos de volume e cópias de segurança que criar e configurar com Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-177">After hello volume groups and backups are successfully imported, you can use StorSimple Snapshot Manager toomanage them, just as you would manage volume groups and backups that you created and configured with StorSimple Snapshot Manager.</span></span> 
 
-## <a name="refresh-connected-devices"></a>Atualizar dispositivos ligados
-Utilize Olá seguir o procedimento toosynchronize Olá ligado StorSimple dispositivos com o Snapshot Manager do StorSimple.
+## <a name="refresh-connected-devices"></a><span data-ttu-id="89464-178">Atualizar dispositivos ligados</span><span class="sxs-lookup"><span data-stu-id="89464-178">Refresh connected devices</span></span>
+<span data-ttu-id="89464-179">Utilize Olá seguir o procedimento toosynchronize Olá ligado StorSimple dispositivos com o Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-179">Use hello following procedure toosynchronize hello connected StorSimple devices with StorSimple Snapshot Manager.</span></span>
 
-#### <a name="toorefresh-connected-devices"></a>toorefresh dispositivos ligados
-1. Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.
-2. No Olá **âmbito** painel, faça duplo clique **dispositivos**e, em seguida, clique em **atualizar dispositivos**. Isto sincroniza Olá ligado dispositivos com o Snapshot Manager do StorSimple para que possa visualizar grupos de volume Olá e cópias de segurança, incluindo quaisquer adições recentes. 
+#### <a name="toorefresh-connected-devices"></a><span data-ttu-id="89464-180">toorefresh dispositivos ligados</span><span class="sxs-lookup"><span data-stu-id="89464-180">toorefresh connected devices</span></span>
+1. <span data-ttu-id="89464-181">Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-181">Click hello desktop icon toostart StorSimple Snapshot Manager.</span></span>
+2. <span data-ttu-id="89464-182">No Olá **âmbito** painel, faça duplo clique **dispositivos**e, em seguida, clique em **atualizar dispositivos**.</span><span class="sxs-lookup"><span data-stu-id="89464-182">In hello **Scope** pane, right-click **Devices**, and then click **Refresh Devices**.</span></span> <span data-ttu-id="89464-183">Isto sincroniza Olá ligado dispositivos com o Snapshot Manager do StorSimple para que possa visualizar grupos de volume Olá e cópias de segurança, incluindo quaisquer adições recentes.</span><span class="sxs-lookup"><span data-stu-id="89464-183">This synchronizes hello connected devices with StorSimple Snapshot Manager so that you can view hello volume groups and backups, including any recent additions.</span></span> 
    
     ![Atualizar dispositivos do StorSimple Olá](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_Refresh_devices.png)
 
-Olá **atualizar dispositivos** ação obtém novos grupos de volume e quaisquer cópias de segurança associadas de dispositivos ligados. Ao contrário Olá **reanalisar volumes** ação disponível para Olá **Volumes** nó, **atualizar dispositivos** não restaurar o registo de cópia de segurança de Olá.
+<span data-ttu-id="89464-185">Olá **atualizar dispositivos** ação obtém novos grupos de volume e quaisquer cópias de segurança associadas de dispositivos ligados.</span><span class="sxs-lookup"><span data-stu-id="89464-185">hello **Refresh Devices** action retrieves any new volume groups and any associated backups from connected devices.</span></span> <span data-ttu-id="89464-186">Ao contrário Olá **reanalisar volumes** ação disponível para Olá **Volumes** nó, **atualizar dispositivos** não restaurar o registo de cópia de segurança de Olá.</span><span class="sxs-lookup"><span data-stu-id="89464-186">Unlike hello **Rescan volumes** action available for hello **Volumes** node, **Refresh Devices** does not restore hello backup registry.</span></span>
 
-## <a name="authenticate-a-device"></a>Autenticar um dispositivo
-Utilize Olá seguir o procedimento tooauthenticate um dispositivo StorSimple com o Snapshot Manager do StorSimple.
+## <a name="authenticate-a-device"></a><span data-ttu-id="89464-187">Autenticar um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-187">Authenticate a device</span></span>
+<span data-ttu-id="89464-188">Utilize Olá seguir o procedimento tooauthenticate um dispositivo StorSimple com o Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-188">Use hello following procedure tooauthenticate a StorSimple device with StorSimple Snapshot Manager.</span></span>
 
-#### <a name="tooauthenticate-a-device"></a>tooauthenticate um dispositivo
-1. Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.
-2. No Olá **âmbito** painel, clique em **dispositivos**.
-3. No Olá **resultados** painel, clique no nome de Olá do dispositivo de Olá e, em seguida, clique em **autenticar**.
-4. Olá **autenticar** é apresentada a caixa de diálogo. Escreva a palavra-passe de dispositivo Olá e, em seguida, clique em **OK**.
+#### <a name="tooauthenticate-a-device"></a><span data-ttu-id="89464-189">tooauthenticate um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-189">tooauthenticate a device</span></span>
+1. <span data-ttu-id="89464-190">Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-190">Click hello desktop icon toostart StorSimple Snapshot Manager.</span></span>
+2. <span data-ttu-id="89464-191">No Olá **âmbito** painel, clique em **dispositivos**.</span><span class="sxs-lookup"><span data-stu-id="89464-191">In hello **Scope** pane, click **Devices**.</span></span>
+3. <span data-ttu-id="89464-192">No Olá **resultados** painel, clique no nome de Olá do dispositivo de Olá e, em seguida, clique em **autenticar**.</span><span class="sxs-lookup"><span data-stu-id="89464-192">In hello **Results** pane, right-click hello name of hello device, and then click **Authenticate**.</span></span>
+4. <span data-ttu-id="89464-193">Olá **autenticar** é apresentada a caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="89464-193">hello **Authenticate** dialog box appears.</span></span> <span data-ttu-id="89464-194">Escreva a palavra-passe de dispositivo Olá e, em seguida, clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="89464-194">Type hello device password, and then click **OK**.</span></span>
    
     ![Caixa de diálogo de autenticação](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_Authenticate.png) 
 
-## <a name="view-device-details"></a>Ver detalhes do dispositivo
-Utilize Olá os procedimento tooview Olá detalhes de um dispositivo StorSimple e, se necessário, ressincronizar dispositivo Olá com Snapshot Manager do StorSimple.
+## <a name="view-device-details"></a><span data-ttu-id="89464-196">Ver detalhes do dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-196">View device details</span></span>
+<span data-ttu-id="89464-197">Utilize Olá os procedimento tooview Olá detalhes de um dispositivo StorSimple e, se necessário, ressincronizar dispositivo Olá com Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-197">Use hello following procedure tooview hello details of a StorSimple device and, if necessary, resynchronize hello device with StorSimple Snapshot Manager.</span></span>
 
-#### <a name="tooview-and-resynchronize-device-details"></a>tooview e ressincronize detalhes do dispositivo
-1. Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.
-2. No Olá **âmbito** painel, clique em **dispositivos**.
-3. No Olá **resultados** painel, clique no nome de Olá do dispositivo de Olá e, em seguida, clique em **detalhes**.
+#### <a name="tooview-and-resynchronize-device-details"></a><span data-ttu-id="89464-198">tooview e ressincronize detalhes do dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-198">tooview and resynchronize device details</span></span>
+1. <span data-ttu-id="89464-199">Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-199">Click hello desktop icon toostart StorSimple Snapshot Manager.</span></span>
+2. <span data-ttu-id="89464-200">No Olá **âmbito** painel, clique em **dispositivos**.</span><span class="sxs-lookup"><span data-stu-id="89464-200">In hello **Scope** pane, click **Devices**.</span></span>
+3. <span data-ttu-id="89464-201">No Olá **resultados** painel, clique no nome de Olá do dispositivo de Olá e, em seguida, clique em **detalhes**.</span><span class="sxs-lookup"><span data-stu-id="89464-201">In hello **Results** pane, right-click hello name of hello device, and then click **Details**.</span></span>
 
-4. Olá **detalhes do dispositivo** é apresentada a caixa de diálogo. Esta caixa apresenta o nome de Olá, modelo, versão, número de série, estado, destino iSCSI nome qualificado (IQN) e última sincronização data e a hora.
+<span data-ttu-id="89464-202">4. Olá **detalhes do dispositivo** é apresentada a caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="89464-202">4.hello **Device Details** dialog box appears.</span></span> <span data-ttu-id="89464-203">Esta caixa apresenta o nome de Olá, modelo, versão, número de série, estado, destino iSCSI nome qualificado (IQN) e última sincronização data e a hora.</span><span class="sxs-lookup"><span data-stu-id="89464-203">This box shows hello name, model, version, serial number, status, target iSCSI Qualified Name (IQN), and last synchronization date and time.</span></span>
 
-* Clique em **ressincronizar** dispositivo de Olá toosynchronize.
-* Clique em **OK** ou **Cancelar** caixa de diálogo de Olá tooclose.
+* <span data-ttu-id="89464-204">Clique em **ressincronizar** dispositivo de Olá toosynchronize.</span><span class="sxs-lookup"><span data-stu-id="89464-204">Click **Resync** toosynchronize hello device.</span></span>
+* <span data-ttu-id="89464-205">Clique em **OK** ou **Cancelar** caixa de diálogo de Olá tooclose.</span><span class="sxs-lookup"><span data-stu-id="89464-205">Click **OK** or **Cancel** tooclose hello dialog box.</span></span>
   
   ![Detalhes do dispositivo](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_Device_details.png) 
 
-## <a name="refresh-an-individual-device"></a>Atualizar um dispositivo individual
-Utilize Olá seguir o procedimento tooresynchronize um dispositivo StorSimple individual com Snapshot Manager do StorSimple.
+## <a name="refresh-an-individual-device"></a><span data-ttu-id="89464-207">Atualizar um dispositivo individual</span><span class="sxs-lookup"><span data-stu-id="89464-207">Refresh an individual device</span></span>
+<span data-ttu-id="89464-208">Utilize Olá seguir o procedimento tooresynchronize um dispositivo StorSimple individual com Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-208">Use hello following procedure tooresynchronize an individual StorSimple device with StorSimple Snapshot Manager.</span></span>
 
-#### <a name="toorefresh-a-device"></a>toorefresh um dispositivo
-1. Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple. 
-2. No Olá **âmbito** painel, clique em **dispositivos**. 
-3. No Olá **resultados** painel, clique no nome de Olá do dispositivo de Olá e, em seguida, clique em **atualizar dispositivo**. Sincroniza dispositivo Olá com Snapshot Manager do StorSimple.
+#### <a name="toorefresh-a-device"></a><span data-ttu-id="89464-209">toorefresh um dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-209">toorefresh a device</span></span>
+1. <span data-ttu-id="89464-210">Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-210">Click hello desktop icon toostart StorSimple Snapshot Manager.</span></span> 
+2. <span data-ttu-id="89464-211">No Olá **âmbito** painel, clique em **dispositivos**.</span><span class="sxs-lookup"><span data-stu-id="89464-211">In hello **Scope** pane, click **Devices**.</span></span> 
+3. <span data-ttu-id="89464-212">No Olá **resultados** painel, clique no nome de Olá do dispositivo de Olá e, em seguida, clique em **atualizar dispositivo**.</span><span class="sxs-lookup"><span data-stu-id="89464-212">In hello **Results** pane, right-click hello name of hello device, and then click **Refresh Device**.</span></span> <span data-ttu-id="89464-213">Sincroniza dispositivo Olá com Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-213">This synchronizes hello device with StorSimple Snapshot Manager.</span></span>
 
-## <a name="delete-a-device-configuration"></a>Eliminar uma configuração de dispositivo
-Utilize Olá seguir o procedimento toodelete uma configuração de dispositivo StorSimple individuais do Snapshot Manager do StorSimple.
+## <a name="delete-a-device-configuration"></a><span data-ttu-id="89464-214">Eliminar uma configuração de dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-214">Delete a device configuration</span></span>
+<span data-ttu-id="89464-215">Utilize Olá seguir o procedimento toodelete uma configuração de dispositivo StorSimple individuais do Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-215">Use hello following procedure toodelete an individual StorSimple device configuration from StorSimple Snapshot Manager.</span></span>
 
-#### <a name="toodelete-a-device-configuration"></a>toodelete uma configuração de dispositivo
-1. Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.
-2. No Olá **âmbito** painel, clique em **dispositivos**. 
-3. No Olá **resultados** painel, clique no nome de Olá do dispositivo de Olá e, em seguida, clique em **eliminar**. 
-4. Olá seguir a mensagem é apresentada. Clique em **Sim** toodelete Olá configuração ou clique em **não** eliminação de Olá toocancel.
+#### <a name="toodelete-a-device-configuration"></a><span data-ttu-id="89464-216">toodelete uma configuração de dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-216">toodelete a device configuration</span></span>
+1. <span data-ttu-id="89464-217">Clique em Olá ícone de ambiente de trabalho toostart Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-217">Click hello desktop icon toostart StorSimple Snapshot Manager.</span></span>
+2. <span data-ttu-id="89464-218">No Olá **âmbito** painel, clique em **dispositivos**.</span><span class="sxs-lookup"><span data-stu-id="89464-218">In hello **Scope** pane, click **Devices**.</span></span> 
+3. <span data-ttu-id="89464-219">No Olá **resultados** painel, clique no nome de Olá do dispositivo de Olá e, em seguida, clique em **eliminar**.</span><span class="sxs-lookup"><span data-stu-id="89464-219">In hello **Results** pane, right-click hello name of hello device, and then click **Delete**.</span></span> 
+4. <span data-ttu-id="89464-220">Olá seguir a mensagem é apresentada.</span><span class="sxs-lookup"><span data-stu-id="89464-220">hello following message appears.</span></span> <span data-ttu-id="89464-221">Clique em **Sim** toodelete Olá configuração ou clique em **não** eliminação de Olá toocancel.</span><span class="sxs-lookup"><span data-stu-id="89464-221">Click **Yes** toodelete hello configuration or click **No** toocancel hello deletion.</span></span>
    
     ![Eliminar a configuração de dispositivo](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_DeleteDevice.png)
 
-## <a name="change-an-expired-device-password"></a>Alterar uma palavra-passe do dispositivo expirado
-Tem de introduzir uma palavra-passe tooauthenticate um dispositivo StorSimple com o Snapshot Manager do StorSimple. Configurar esta palavra-passe quando utilizar tooset de interface do Windows PowerShell Olá segurança dispositivo Olá. No entanto, a palavra-passe de Olá pode expirar. Se isto acontecer, pode utilizar a palavra-passe de Olá do Olá toochange de portal clássico do Azure. Em seguida, porque o dispositivo de Olá configurado no Snapshot Manager do StorSimple antes de palavra-passe de Olá expirado, tem de autenticar novamente dispositivo Olá no Snapshot Manager do StorSimple.
+## <a name="change-an-expired-device-password"></a><span data-ttu-id="89464-223">Alterar uma palavra-passe do dispositivo expirado</span><span class="sxs-lookup"><span data-stu-id="89464-223">Change an expired device password</span></span>
+<span data-ttu-id="89464-224">Tem de introduzir uma palavra-passe tooauthenticate um dispositivo StorSimple com o Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-224">You must enter a password tooauthenticate a StorSimple device with StorSimple Snapshot Manager.</span></span> <span data-ttu-id="89464-225">Configurar esta palavra-passe quando utilizar tooset de interface do Windows PowerShell Olá segurança dispositivo Olá.</span><span class="sxs-lookup"><span data-stu-id="89464-225">You configure this password when you use hello Windows PowerShell interface tooset up hello device.</span></span> <span data-ttu-id="89464-226">No entanto, a palavra-passe de Olá pode expirar.</span><span class="sxs-lookup"><span data-stu-id="89464-226">However, hello password can expire.</span></span> <span data-ttu-id="89464-227">Se isto acontecer, pode utilizar a palavra-passe de Olá do Olá toochange de portal clássico do Azure.</span><span class="sxs-lookup"><span data-stu-id="89464-227">If this happens, you can use hello Azure classic portal toochange hello password.</span></span> <span data-ttu-id="89464-228">Em seguida, porque o dispositivo de Olá configurado no Snapshot Manager do StorSimple antes de palavra-passe de Olá expirado, tem de autenticar novamente dispositivo Olá no Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-228">Then, because hello device was configured in StorSimple Snapshot Manager before hello password expired, you must re-authenticate hello device in StorSimple Snapshot Manager.</span></span>
 
-#### <a name="toochange-hello-expired-password"></a>Olá toochange expirada palavra-passe
-1. No portal clássico do Azure Olá, inicie o serviço do StorSimple Manager Olá.
-2. Clique em **dispositivos** > **configurar** para dispositivo Olá.
-3. Desloque para baixo toohello secção Snapshot Manager do StorSimple. Introduza uma palavra-passe é de 14 a 15 carateres. Certifique-se de que essa palavra-passe de Olá contiver uma combinação de carateres em maiúsculas, minúsculas, numérico e especiais.
-4. Volte a introduzir Olá palavra-passe tooconfirm-lo.
-5. Clique em **guardar** em Olá parte inferior da página Olá.
+#### <a name="toochange-hello-expired-password"></a><span data-ttu-id="89464-229">Olá toochange expirada palavra-passe</span><span class="sxs-lookup"><span data-stu-id="89464-229">toochange hello expired password</span></span>
+1. <span data-ttu-id="89464-230">No portal clássico do Azure Olá, inicie o serviço do StorSimple Manager Olá.</span><span class="sxs-lookup"><span data-stu-id="89464-230">In hello Azure classic portal, start hello StorSimple Manager service.</span></span>
+2. <span data-ttu-id="89464-231">Clique em **dispositivos** > **configurar** para dispositivo Olá.</span><span class="sxs-lookup"><span data-stu-id="89464-231">Click **Devices** > **Configure** for hello device.</span></span>
+3. <span data-ttu-id="89464-232">Desloque para baixo toohello secção Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-232">Scroll down toohello StorSimple Snapshot Manager section.</span></span> <span data-ttu-id="89464-233">Introduza uma palavra-passe é de 14 a 15 carateres.</span><span class="sxs-lookup"><span data-stu-id="89464-233">Enter a password that is 14-15 characters.</span></span> <span data-ttu-id="89464-234">Certifique-se de que essa palavra-passe de Olá contiver uma combinação de carateres em maiúsculas, minúsculas, numérico e especiais.</span><span class="sxs-lookup"><span data-stu-id="89464-234">Make sure that hello password contains a mix of uppercase, lowercase, numeric, and special characters.</span></span>
+4. <span data-ttu-id="89464-235">Volte a introduzir Olá palavra-passe tooconfirm-lo.</span><span class="sxs-lookup"><span data-stu-id="89464-235">Re-enter hello password tooconfirm it.</span></span>
+5. <span data-ttu-id="89464-236">Clique em **guardar** em Olá parte inferior da página Olá.</span><span class="sxs-lookup"><span data-stu-id="89464-236">Click **Save** at hello bottom of hello page.</span></span>
 
-#### <a name="toore-authenticate-hello-device"></a>toore-autenticar Olá dispositivo
-1. Inicie o Snapshot Manager do StorSimple.
-2. No Olá **âmbito** painel, clique em **dispositivos**. É apresentada uma lista de dispositivos configurados no Olá **resultados** painel.
-3. Selecione o dispositivo de Olá, rato e, em seguida, clique em **autenticar**.
-4. No Olá **autenticar** janela, introduza a nova palavra-passe Olá.
-5. Selecione o dispositivo de Olá, rato e selecione **atualizar dispositivo**. Sincroniza dispositivo Olá com Snapshot Manager do StorSimple.
+#### <a name="toore-authenticate-hello-device"></a><span data-ttu-id="89464-237">toore-autenticar Olá dispositivo</span><span class="sxs-lookup"><span data-stu-id="89464-237">toore-authenticate hello device</span></span>
+1. <span data-ttu-id="89464-238">Inicie o Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-238">Start StorSimple Snapshot Manager.</span></span>
+2. <span data-ttu-id="89464-239">No Olá **âmbito** painel, clique em **dispositivos**.</span><span class="sxs-lookup"><span data-stu-id="89464-239">In hello **Scope** pane, click **Devices**.</span></span> <span data-ttu-id="89464-240">É apresentada uma lista de dispositivos configurados no Olá **resultados** painel.</span><span class="sxs-lookup"><span data-stu-id="89464-240">A list of configured devices appears in hello **Results** pane.</span></span>
+3. <span data-ttu-id="89464-241">Selecione o dispositivo de Olá, rato e, em seguida, clique em **autenticar**.</span><span class="sxs-lookup"><span data-stu-id="89464-241">Select hello device, right-click, and then click **Authenticate**.</span></span>
+4. <span data-ttu-id="89464-242">No Olá **autenticar** janela, introduza a nova palavra-passe Olá.</span><span class="sxs-lookup"><span data-stu-id="89464-242">In hello **Authenticate** window, enter hello new password.</span></span>
+5. <span data-ttu-id="89464-243">Selecione o dispositivo de Olá, rato e selecione **atualizar dispositivo**.</span><span class="sxs-lookup"><span data-stu-id="89464-243">Select hello device, right-click, and select **Refresh device**.</span></span> <span data-ttu-id="89464-244">Sincroniza dispositivo Olá com Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-244">This synchronizes hello device with StorSimple Snapshot Manager.</span></span>
 
-## <a name="replace-a-failed-device"></a>Substituir um dispositivo com falhas
-Se um dispositivo StorSimple falha e é substituído por um dispositivo de modo de espera (ativação pós-falha), Olá utilize os seguintes passos tooconnect toohello novo dispositivo e ver Olá cópias de segurança associadas.
+## <a name="replace-a-failed-device"></a><span data-ttu-id="89464-245">Substituir um dispositivo com falhas</span><span class="sxs-lookup"><span data-stu-id="89464-245">Replace a failed device</span></span>
+<span data-ttu-id="89464-246">Se um dispositivo StorSimple falha e é substituído por um dispositivo de modo de espera (ativação pós-falha), Olá utilize os seguintes passos tooconnect toohello novo dispositivo e ver Olá cópias de segurança associadas.</span><span class="sxs-lookup"><span data-stu-id="89464-246">If a StorSimple device fails and is replaced by a standby (failover) device, use hello following steps tooconnect toohello new device and view hello associated backups.</span></span>
 
-#### <a name="tooconnect-tooa-new-device-after-failover"></a>tooconnect tooa novo dispositivo após a ativação pós-falha
-1. Reconfigure Olá iSCSI ligação toohello novo dispositivo. Para obter instruções, aceda demasiado "passo 7: montar, inicializar e formatar um volume" no [implementar o dispositivo StorSimple no local](storsimple-8000-deployment-walkthrough-u2.md).
+#### <a name="tooconnect-tooa-new-device-after-failover"></a><span data-ttu-id="89464-247">tooconnect tooa novo dispositivo após a ativação pós-falha</span><span class="sxs-lookup"><span data-stu-id="89464-247">tooconnect tooa new device after failover</span></span>
+1. <span data-ttu-id="89464-248">Reconfigure Olá iSCSI ligação toohello novo dispositivo.</span><span class="sxs-lookup"><span data-stu-id="89464-248">Reconfigure hello iSCSI connection toohello new device.</span></span> <span data-ttu-id="89464-249">Para obter instruções, aceda demasiado "passo 7: montar, inicializar e formatar um volume" no [implementar o dispositivo StorSimple no local](storsimple-8000-deployment-walkthrough-u2.md).</span><span class="sxs-lookup"><span data-stu-id="89464-249">For instructions, go too"Step 7: Mount, initialize, and format a volume" in [Deploy your on-premises StorSimple device](storsimple-8000-deployment-walkthrough-u2.md).</span></span>
 
 > [!NOTE]
-> Se o dispositivo StorSimple novo Olá tem hello mesmo endereço IP que Olá antigo, poderá estar tooconnect capaz de configuração da antiga Olá.
+> <span data-ttu-id="89464-250">Se o dispositivo StorSimple novo Olá tem hello mesmo endereço IP que Olá antigo, poderá estar tooconnect capaz de configuração da antiga Olá.</span><span class="sxs-lookup"><span data-stu-id="89464-250">If hello new StorSimple device has hello same IP address as hello old one, you might be able tooconnect hello old configuration.</span></span>
 
 
-1. Pare Olá StorSimple serviço de gestão da Microsoft:
+1. <span data-ttu-id="89464-251">Pare Olá StorSimple serviço de gestão da Microsoft:</span><span class="sxs-lookup"><span data-stu-id="89464-251">Stop hello Microsoft StorSimple Management Service:</span></span>
    
-   1. Inicie o Gestor de servidor.
-   2. No Olá Dashboard do Gestor de servidores, no Olá **ferramentas** menu, selecione **serviços**.
-   3. No Olá **serviços** janela, selecione de Olá **serviço de gestão da Microsoft StorSimple**.
-   4. No Olá com o botão direito painel, em **serviço de gestão da Microsoft StorSimple**, clique em **parar o serviço de Olá**.
-2. Remova dispositivo antigo do Olá configuração informações toohello relacionados:
+   1. <span data-ttu-id="89464-252">Inicie o Gestor de servidor.</span><span class="sxs-lookup"><span data-stu-id="89464-252">Start Server Manager.</span></span>
+   2. <span data-ttu-id="89464-253">No Olá Dashboard do Gestor de servidores, no Olá **ferramentas** menu, selecione **serviços**.</span><span class="sxs-lookup"><span data-stu-id="89464-253">On hello Server Manager Dashboard, on hello **Tools** menu, select **Services**.</span></span>
+   3. <span data-ttu-id="89464-254">No Olá **serviços** janela, selecione de Olá **serviço de gestão da Microsoft StorSimple**.</span><span class="sxs-lookup"><span data-stu-id="89464-254">On hello **Services** window, select hello **Microsoft StorSimple Management Service**.</span></span>
+   4. <span data-ttu-id="89464-255">No Olá com o botão direito painel, em **serviço de gestão da Microsoft StorSimple**, clique em **parar o serviço de Olá**.</span><span class="sxs-lookup"><span data-stu-id="89464-255">In hello right pane, under **Microsoft StorSimple Management Service**, click **Stop hello service**.</span></span>
+2. <span data-ttu-id="89464-256">Remova dispositivo antigo do Olá configuração informações toohello relacionados:</span><span class="sxs-lookup"><span data-stu-id="89464-256">Remove hello configuration information related toohello old device:</span></span>
    
-   1. No Explorador de ficheiros, navegue tooC:\ProgramData\Microsoft\StorSimple\BACatalog.
-   2. Elimine Olá ficheiros na pasta de BACatalog Olá.
-3. Reinicie Olá StorSimple serviço de gestão da Microsoft:
+   1. <span data-ttu-id="89464-257">No Explorador de ficheiros, navegue tooC:\ProgramData\Microsoft\StorSimple\BACatalog.</span><span class="sxs-lookup"><span data-stu-id="89464-257">In File Explorer, browse tooC:\ProgramData\Microsoft\StorSimple\BACatalog.</span></span>
+   2. <span data-ttu-id="89464-258">Elimine Olá ficheiros na pasta de BACatalog Olá.</span><span class="sxs-lookup"><span data-stu-id="89464-258">Delete hello files in hello BACatalog folder.</span></span>
+3. <span data-ttu-id="89464-259">Reinicie Olá StorSimple serviço de gestão da Microsoft:</span><span class="sxs-lookup"><span data-stu-id="89464-259">Restart hello Microsoft StorSimple Management Service:</span></span>
    
-   1. No Olá Dashboard do Gestor de servidores, no Olá **ferramentas** menu, selecione **serviços**.
-   2. No Olá **serviços** janela, selecione de Olá **serviço de gestão da Microsoft StorSimple**.
-   3. No Olá com o botão direito painel, em **serviço de gestão da Microsoft StorSimple**, clique em **Reiniciar serviço Olá**.
-4. Inicie o Snapshot Manager do StorSimple.
-5. tooconfigure Olá novo dispositivo StorSimple, Olá concluir os passos no passo 2: ligar um dispositivo StorSimple no [implementar Snapshot Manager do StorSimple](storsimple-snapshot-manager-deployment.md).
-6. Nó de nível superior de Olá de contexto no Olá **âmbito** painel (Snapshot Manager do StorSimple no exemplo de Olá) e, em seguida, clique em **alternar importações apresentar**. 
-7. É apresentada uma mensagem quando Olá importada grupos de volume e cópias de segurança são visíveis no Snapshot Manager do StorSimple. Clique em **OK**.
+   1. <span data-ttu-id="89464-260">No Olá Dashboard do Gestor de servidores, no Olá **ferramentas** menu, selecione **serviços**.</span><span class="sxs-lookup"><span data-stu-id="89464-260">On hello Server Manager Dashboard, on hello **Tools** menu, select **Services**.</span></span>
+   2. <span data-ttu-id="89464-261">No Olá **serviços** janela, selecione de Olá **serviço de gestão da Microsoft StorSimple**.</span><span class="sxs-lookup"><span data-stu-id="89464-261">On hello **Services** window, select hello **Microsoft StorSimple Management Service**.</span></span>
+   3. <span data-ttu-id="89464-262">No Olá com o botão direito painel, em **serviço de gestão da Microsoft StorSimple**, clique em **Reiniciar serviço Olá**.</span><span class="sxs-lookup"><span data-stu-id="89464-262">In hello right pane, under **Microsoft StorSimple Management Service**, click **Restart hello service**.</span></span>
+4. <span data-ttu-id="89464-263">Inicie o Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-263">Start StorSimple Snapshot Manager.</span></span>
+5. <span data-ttu-id="89464-264">tooconfigure Olá novo dispositivo StorSimple, Olá concluir os passos no passo 2: ligar um dispositivo StorSimple no [implementar Snapshot Manager do StorSimple](storsimple-snapshot-manager-deployment.md).</span><span class="sxs-lookup"><span data-stu-id="89464-264">tooconfigure hello new StorSimple device, complete hello steps in Step 2: Connect a StorSimple device in [Deploy StorSimple Snapshot Manager](storsimple-snapshot-manager-deployment.md).</span></span>
+6. <span data-ttu-id="89464-265">Nó de nível superior de Olá de contexto no Olá **âmbito** painel (Snapshot Manager do StorSimple no exemplo de Olá) e, em seguida, clique em **alternar importações apresentar**.</span><span class="sxs-lookup"><span data-stu-id="89464-265">Right-click hello top-level node in hello **Scope** pane (StorSimple Snapshot Manager in hello example), and then click **Toggle Imports Display**.</span></span> 
+7. <span data-ttu-id="89464-266">É apresentada uma mensagem quando Olá importada grupos de volume e cópias de segurança são visíveis no Snapshot Manager do StorSimple.</span><span class="sxs-lookup"><span data-stu-id="89464-266">A message appears when hello imported volume groups and backups are visible in StorSimple Snapshot Manager.</span></span> <span data-ttu-id="89464-267">Clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="89464-267">Click **OK**.</span></span>
 
-## <a name="next-steps"></a>Passos seguintes
-* Saiba como demasiado[utilizar Snapshot Manager do StorSimple tooadminister solução StorSimple](storsimple-snapshot-manager-admin.md).
-* Saiba como demasiado[utilizar tooview Snapshot Manager do StorSimple e gerir volumes](storsimple-snapshot-manager-manage-volumes.md).
+## <a name="next-steps"></a><span data-ttu-id="89464-268">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="89464-268">Next steps</span></span>
+* <span data-ttu-id="89464-269">Saiba como demasiado[utilizar Snapshot Manager do StorSimple tooadminister solução StorSimple](storsimple-snapshot-manager-admin.md).</span><span class="sxs-lookup"><span data-stu-id="89464-269">Learn how too[use StorSimple Snapshot Manager tooadminister your StorSimple solution](storsimple-snapshot-manager-admin.md).</span></span>
+* <span data-ttu-id="89464-270">Saiba como demasiado[utilizar tooview Snapshot Manager do StorSimple e gerir volumes](storsimple-snapshot-manager-manage-volumes.md).</span><span class="sxs-lookup"><span data-stu-id="89464-270">Learn how too[use StorSimple Snapshot Manager tooview and manage volumes](storsimple-snapshot-manager-manage-volumes.md).</span></span>
 

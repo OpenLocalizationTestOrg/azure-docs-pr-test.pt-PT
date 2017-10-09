@@ -1,14 +1,14 @@
-Para mais informações sobre Olá toolkits do Azure para Java IDEs, consulte Olá seguintes ligações:
+<span data-ttu-id="d7b96-101">Para mais informações sobre Olá toolkits do Azure para Java IDEs, consulte Olá seguintes ligações:</span><span class="sxs-lookup"><span data-stu-id="d7b96-101">For more information about hello Azure toolkits for Java IDEs, see hello following links:</span></span>
 
-* [Toolkit do Azure do Eclipse](/azure/azure-toolkit-for-eclipse)
-  * [Novidades no Olá Toolkit de Azure do Eclipse](/azure/azure-toolkit-for-eclipse-whats-new)
-  * [Instalar Olá Toolkit de Azure do Eclipse](/azure/azure-toolkit-for-eclipse-installation)
-  * [Criar uma aplicação de web de Olá, mundo do Azure no Eclipse](/azure/app-service-web/app-service-web-eclipse-create-hello-world-web-app)
-  * [Instruções de início de sessão para Olá Toolkit de Azure do Eclipse](/azure/azure-toolkit-for-eclipse-sign-in-instructions)
-* [Azure Toolkit para IntelliJ](/azure/azure-toolkit-for-intellij)
-  * [Novidades no Olá Toolkit do Azure para o IntelliJ](/azure/azure-toolkit-for-intellij-whats-new)
-  * [Instalar Olá Toolkit do Azure para o IntelliJ](/azure/azure-toolkit-for-intellij-installation)
-  * [Criar uma aplicação de web de Olá, mundo do Azure no IntelliJ](/azure/app-service-web/app-service-web-intellij-create-hello-world-web-app)
-  * [Início de sessão instruções para Olá Toolkit do Azure para o IntelliJ](/azure/azure-toolkit-for-intellij-sign-in-instructions)
+* [<span data-ttu-id="d7b96-102">Toolkit do Azure do Eclipse</span><span class="sxs-lookup"><span data-stu-id="d7b96-102">Azure Toolkit for Eclipse</span></span>](/azure/azure-toolkit-for-eclipse)
+  * [<span data-ttu-id="d7b96-103">Novidades no Olá Toolkit de Azure do Eclipse</span><span class="sxs-lookup"><span data-stu-id="d7b96-103">What's new in hello Azure Toolkit for Eclipse</span></span>](/azure/azure-toolkit-for-eclipse-whats-new)
+  * [<span data-ttu-id="d7b96-104">Instalar Olá Toolkit de Azure do Eclipse</span><span class="sxs-lookup"><span data-stu-id="d7b96-104">Installing hello Azure Toolkit for Eclipse</span></span>](/azure/azure-toolkit-for-eclipse-installation)
+  * [<span data-ttu-id="d7b96-105">Criar uma aplicação de web de Olá, mundo do Azure no Eclipse</span><span class="sxs-lookup"><span data-stu-id="d7b96-105">Create a Hello World web app for Azure in Eclipse</span></span>](/azure/app-service-web/app-service-web-eclipse-create-hello-world-web-app)
+  * [<span data-ttu-id="d7b96-106">Instruções de início de sessão para Olá Toolkit de Azure do Eclipse</span><span class="sxs-lookup"><span data-stu-id="d7b96-106">Sign-in instructions for hello Azure Toolkit for Eclipse</span></span>](/azure/azure-toolkit-for-eclipse-sign-in-instructions)
+* [<span data-ttu-id="d7b96-107">Azure Toolkit para IntelliJ</span><span class="sxs-lookup"><span data-stu-id="d7b96-107">Azure Toolkit for IntelliJ</span></span>](/azure/azure-toolkit-for-intellij)
+  * [<span data-ttu-id="d7b96-108">Novidades no Olá Toolkit do Azure para o IntelliJ</span><span class="sxs-lookup"><span data-stu-id="d7b96-108">What's new in hello Azure Toolkit for IntelliJ</span></span>](/azure/azure-toolkit-for-intellij-whats-new)
+  * [<span data-ttu-id="d7b96-109">Instalar Olá Toolkit do Azure para o IntelliJ</span><span class="sxs-lookup"><span data-stu-id="d7b96-109">Installing hello Azure Toolkit for IntelliJ</span></span>](/azure/azure-toolkit-for-intellij-installation)
+  * [<span data-ttu-id="d7b96-110">Criar uma aplicação de web de Olá, mundo do Azure no IntelliJ</span><span class="sxs-lookup"><span data-stu-id="d7b96-110">Create a Hello World web app for Azure in IntelliJ</span></span>](/azure/app-service-web/app-service-web-intellij-create-hello-world-web-app)
+  * [<span data-ttu-id="d7b96-111">Início de sessão instruções para Olá Toolkit do Azure para o IntelliJ</span><span class="sxs-lookup"><span data-stu-id="d7b96-111">Sign-in instructions for hello Azure Toolkit for IntelliJ</span></span>](/azure/azure-toolkit-for-intellij-sign-in-instructions)
 
-Para obter mais informações sobre como utilizar o Java com o Azure, consulte Olá [Centro de programadores Java do Azure](https://azure.microsoft.com/develop/java/) e Olá [ferramentas de Java para Visual Studio Team Services](https://java.visualstudio.com/).
+<span data-ttu-id="d7b96-112">Para obter mais informações sobre como utilizar o Java com o Azure, consulte Olá [Centro de programadores Java do Azure](https://azure.microsoft.com/develop/java/) e Olá [ferramentas de Java para Visual Studio Team Services](https://java.visualstudio.com/).</span><span class="sxs-lookup"><span data-stu-id="d7b96-112">For more information about using Java with Azure, see hello [Azure Java Developer Center](https://azure.microsoft.com/develop/java/) and hello [Java Tools for Visual Studio Team Services](https://java.visualstudio.com/).</span></span>

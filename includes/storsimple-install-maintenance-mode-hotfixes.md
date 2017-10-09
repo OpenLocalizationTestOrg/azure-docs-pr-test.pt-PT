@@ -1,17 +1,17 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### <a name="tooinstall-maintenance-mode-hotfixes-via-windows-powershell-for-storsimple"></a>tooinstall correções do modo de manutenção através do Windows PowerShell para StorSimple
+#### <a name="tooinstall-maintenance-mode-hotfixes-via-windows-powershell-for-storsimple"></a><span data-ttu-id="382c3-101">tooinstall correções do modo de manutenção através do Windows PowerShell para StorSimple</span><span class="sxs-lookup"><span data-stu-id="382c3-101">tooinstall Maintenance mode hotfixes via Windows PowerShell for StorSimple</span></span>
 > [!IMPORTANT]
-> No modo de manutenção, precisa tooapply Olá correção pela primeira vez num controlador e, em seguida, no Olá outro controlador.
+> <span data-ttu-id="382c3-102">No modo de manutenção, precisa tooapply Olá correção pela primeira vez num controlador e, em seguida, no Olá outro controlador.</span><span class="sxs-lookup"><span data-stu-id="382c3-102">In Maintenance mode, you need tooapply hello hotfix first on one controller and then on hello other controller.</span></span>
 > 
 > 
 
-1. Coloque o dispositivo de Olá no modo de manutenção. Consulte [passo 2: modo de manutenção introduza](../articles/storsimple/storsimple-update-device.md#step2) para obter instruções sobre como tooenter modo de manutenção.
-2. correção do Olá tooapply, tipo:
+1. <span data-ttu-id="382c3-103">Coloque o dispositivo de Olá no modo de manutenção.</span><span class="sxs-lookup"><span data-stu-id="382c3-103">Place hello device into Maintenance mode.</span></span> <span data-ttu-id="382c3-104">Consulte [passo 2: modo de manutenção introduza](../articles/storsimple/storsimple-update-device.md#step2) para obter instruções sobre como tooenter modo de manutenção.</span><span class="sxs-lookup"><span data-stu-id="382c3-104">See [Step 2: Enter Maintenance mode](../articles/storsimple/storsimple-update-device.md#step2) for instructions on how tooenter Maintenance mode.</span></span>
+2. <span data-ttu-id="382c3-105">correção do Olá tooapply, tipo:</span><span class="sxs-lookup"><span data-stu-id="382c3-105">tooapply hello hotfix, type:</span></span>
    
      `Start-HcsHotfix` 
-3. Quando lhe for pedido, forneça Olá caminho toohello pasta de rede partilhada que contém ficheiros de correções Olá.
-4. Será solicitado para confirmação. Tipo **Y** tooproceed com a instalação da correção de Olá.
-5. Após aplicou Olá correção num controlador, de início de sessão toohello outro controlador. Aplica a correção de Olá como fez para o controlador de Olá anterior.
-6. Depois de Olá correções são aplicadas, saia do modo de manutenção. Consulte [passo 4: modo de manutenção de saída](../articles/storsimple/storsimple-update-device.md#step4) para obter instruções.
+3. <span data-ttu-id="382c3-106">Quando lhe for pedido, forneça Olá caminho toohello pasta de rede partilhada que contém ficheiros de correções Olá.</span><span class="sxs-lookup"><span data-stu-id="382c3-106">When prompted, supply hello path toohello network shared folder that contains hello hotfix files.</span></span>
+4. <span data-ttu-id="382c3-107">Será solicitado para confirmação.</span><span class="sxs-lookup"><span data-stu-id="382c3-107">You will be prompted for confirmation.</span></span> <span data-ttu-id="382c3-108">Tipo **Y** tooproceed com a instalação da correção de Olá.</span><span class="sxs-lookup"><span data-stu-id="382c3-108">Type **Y** tooproceed with hello hotfix installation.</span></span>
+5. <span data-ttu-id="382c3-109">Após aplicou Olá correção num controlador, de início de sessão toohello outro controlador.</span><span class="sxs-lookup"><span data-stu-id="382c3-109">After you have applied hello hotfix on one controller, log on toohello other controller.</span></span> <span data-ttu-id="382c3-110">Aplica a correção de Olá como fez para o controlador de Olá anterior.</span><span class="sxs-lookup"><span data-stu-id="382c3-110">Apply hello hotfix as you did for hello previous controller.</span></span>
+6. <span data-ttu-id="382c3-111">Depois de Olá correções são aplicadas, saia do modo de manutenção.</span><span class="sxs-lookup"><span data-stu-id="382c3-111">After hello hotfixes are applied, exit Maintenance mode.</span></span> <span data-ttu-id="382c3-112">Consulte [passo 4: modo de manutenção de saída](../articles/storsimple/storsimple-update-device.md#step4) para obter instruções.</span><span class="sxs-lookup"><span data-stu-id="382c3-112">See [Step 4: Exit Maintenance mode](../articles/storsimple/storsimple-update-device.md#step4) for instructions.</span></span>
 

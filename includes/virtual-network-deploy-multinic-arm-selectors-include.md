@@ -1,7 +1,7 @@
 > [!div class="op_single_selector"]
-> * [PowerShell](../articles/virtual-network/virtual-network-deploy-multinic-arm-ps.md)
-> * [CLI 2.0 do Azure](../articles/virtual-network/virtual-network-deploy-multinic-arm-cli.md)
-> * [CLI do Azure 1.0](../articles/virtual-network/virtual-network-deploy-multinic-cli-nodejs.md)
-> * [Modelo](../articles/virtual-network/virtual-network-deploy-multinic-arm-template.md)
-> * [PowerShell (Clássico)](../articles/virtual-network/virtual-network-deploy-multinic-classic-ps.md)
-> * [CLI 1.0 do Azure (Clássica)](../articles/virtual-network/virtual-network-deploy-multinic-classic-cli.md)
+> * [<span data-ttu-id="f0478-101">PowerShell</span><span class="sxs-lookup"><span data-stu-id="f0478-101">PowerShell</span></span>](../articles/virtual-network/virtual-network-deploy-multinic-arm-ps.md)
+> * [<span data-ttu-id="f0478-102">CLI 2.0 do Azure</span><span class="sxs-lookup"><span data-stu-id="f0478-102">Azure CLI 2.0</span></span>](../articles/virtual-network/virtual-network-deploy-multinic-arm-cli.md)
+> * [<span data-ttu-id="f0478-103">CLI do Azure 1.0</span><span class="sxs-lookup"><span data-stu-id="f0478-103">Azure CLI 1.0</span></span>](../articles/virtual-network/virtual-network-deploy-multinic-cli-nodejs.md)
+> * [<span data-ttu-id="f0478-104">Modelo</span><span class="sxs-lookup"><span data-stu-id="f0478-104">Template</span></span>](../articles/virtual-network/virtual-network-deploy-multinic-arm-template.md)
+> * [<span data-ttu-id="f0478-105">PowerShell (Clássico)</span><span class="sxs-lookup"><span data-stu-id="f0478-105">PowerShell (Classic)</span></span>](../articles/virtual-network/virtual-network-deploy-multinic-classic-ps.md)
+> * [<span data-ttu-id="f0478-106">CLI 1.0 do Azure (Clássica)</span><span class="sxs-lookup"><span data-stu-id="f0478-106">Azure CLI 1.0 (Classic)</span></span>](../articles/virtual-network/virtual-network-deploy-multinic-classic-cli.md)

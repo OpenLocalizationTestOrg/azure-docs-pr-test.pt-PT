@@ -1,16 +1,16 @@
 
-**Objective-C**:
+<span data-ttu-id="44f29-101">**Objective-C**:</span><span class="sxs-lookup"><span data-stu-id="44f29-101">**Objective-C**:</span></span>
 
-1. No **QSAppDelegate.m**, importar o SDK do iOS Olá e **QSTodoService.h**:
+1. <span data-ttu-id="44f29-102">No **QSAppDelegate.m**, importar o SDK do iOS Olá e **QSTodoService.h**:</span><span class="sxs-lookup"><span data-stu-id="44f29-102">In **QSAppDelegate.m**, import hello iOS SDK and **QSTodoService.h**:</span></span>
    
         #import <MicrosoftAzureMobile/MicrosoftAzureMobile.h>
         #import "QSTodoService.h"
-2. No `didFinishLaunchingWithOptions` no **QSAppDelegate.m**, imediatamente antes de linhas de inserção seguinte de Olá `return YES;`:
+2. <span data-ttu-id="44f29-103">No `didFinishLaunchingWithOptions` no **QSAppDelegate.m**, imediatamente antes de linhas de inserção seguinte de Olá `return YES;`:</span><span class="sxs-lookup"><span data-stu-id="44f29-103">In `didFinishLaunchingWithOptions` in **QSAppDelegate.m**, insert hello following lines right before `return YES;`:</span></span>
    
         UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
-3. No **QSAppDelegate.m**, adicionar Olá seguintes métodos de processador. A aplicação já está atualizado toosupport notificações de push. 
+3. <span data-ttu-id="44f29-104">No **QSAppDelegate.m**, adicionar Olá seguintes métodos de processador.</span><span class="sxs-lookup"><span data-stu-id="44f29-104">In **QSAppDelegate.m**, add hello following handler methods.</span></span> <span data-ttu-id="44f29-105">A aplicação já está atualizado toosupport notificações de push.</span><span class="sxs-lookup"><span data-stu-id="44f29-105">Your app is now updated toosupport push notifications.</span></span> 
    
         // Registration with APNs is successful
         - (void)application:(UIApplication *)application
@@ -77,17 +77,17 @@
    
         }
 
-**SWIFT**:
+<span data-ttu-id="44f29-106">**SWIFT**:</span><span class="sxs-lookup"><span data-stu-id="44f29-106">**Swift**:</span></span>
 
-1. Adicionar ficheiro **ClientManager.swift** com Olá seguir o conteúdo. Substitua *% AppUrl %* com Olá URL de Olá back-end da aplicação móvel do Azure.
+1. <span data-ttu-id="44f29-107">Adicionar ficheiro **ClientManager.swift** com Olá seguir o conteúdo.</span><span class="sxs-lookup"><span data-stu-id="44f29-107">Add file **ClientManager.swift** with hello following contents.</span></span> <span data-ttu-id="44f29-108">Substitua *% AppUrl %* com Olá URL de Olá back-end da aplicação móvel do Azure.</span><span class="sxs-lookup"><span data-stu-id="44f29-108">Replace *%AppUrl%* with hello URL of hello Azure Mobile App backend.</span></span>
    
         class ClientManager {
             static let sharedClient = MSClient(applicationURLString: "%AppUrl%")
         }
-2. No **ToDoTableViewController.swift**, substitua Olá `let client` linha inicializa um `MSClient` com esta linha:
+2. <span data-ttu-id="44f29-109">No **ToDoTableViewController.swift**, substitua Olá `let client` linha inicializa um `MSClient` com esta linha:</span><span class="sxs-lookup"><span data-stu-id="44f29-109">In **ToDoTableViewController.swift**, replace hello `let client` line that initializes an `MSClient` with this line:</span></span>
    
         let client = ClientManager.sharedClient
-3. No **AppDelegate.swift**, substituir o corpo de Olá da `func application` da seguinte forma:
+3. <span data-ttu-id="44f29-110">No **AppDelegate.swift**, substituir o corpo de Olá da `func application` da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="44f29-110">In **AppDelegate.swift**, replace hello body of `func application` as follows:</span></span>
    
         func application(application: UIApplication,
           didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -97,7 +97,7 @@
            application.registerForRemoteNotifications()
            return true
         }
-4. No **AppDelegate.swift**, adicionar Olá seguintes métodos de processador. A aplicação já está atualizado toosupport notificações de push.
+4. <span data-ttu-id="44f29-111">No **AppDelegate.swift**, adicionar Olá seguintes métodos de processador.</span><span class="sxs-lookup"><span data-stu-id="44f29-111">In **AppDelegate.swift**, add hello following handler methods.</span></span> <span data-ttu-id="44f29-112">A aplicação já está atualizado toosupport notificações de push.</span><span class="sxs-lookup"><span data-stu-id="44f29-112">Your app is now updated toosupport push notifications.</span></span>
    
         func application(application: UIApplication,
            didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {

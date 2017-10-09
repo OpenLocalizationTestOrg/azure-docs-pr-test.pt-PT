@@ -1,7 +1,7 @@
-## <a name="clean-up-resources"></a>Limpar recursos
+## <a name="clean-up-resources"></a><span data-ttu-id="1dcd4-101">Limpar recursos</span><span class="sxs-lookup"><span data-stu-id="1dcd4-101">Clean up resources</span></span>
 
-Olá precedente passos, vai criar recursos do Azure num grupo de recursos. Se não conta tooneed estes recursos em Olá futuras, podem eliminá-los ao eliminar o grupo de recursos de Olá.
+<span data-ttu-id="1dcd4-102">Olá precedente passos, vai criar recursos do Azure num grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="1dcd4-102">In hello preceding steps, you created Azure resources in a resource group.</span></span> <span data-ttu-id="1dcd4-103">Se não conta tooneed estes recursos em Olá futuras, podem eliminá-los ao eliminar o grupo de recursos de Olá.</span><span class="sxs-lookup"><span data-stu-id="1dcd4-103">If you don't expect tooneed these resources in hello future, you can delete them by deleting hello resource group.</span></span>
  
-1. Da sua aplicação web **descrição geral** página Olá portal do Azure, selecione de Olá **myResourceGroup** ligação em **grupo de recursos**.
-2. Na página de grupo de recursos de Olá, certifique-se de que Olá recursos listados são Olá aqueles que pretende toodelete.
-3. Selecione **eliminar**, tipo **myResourceGroup** no Olá caixa de texto e, em seguida, selecione **eliminar**.
+1. <span data-ttu-id="1dcd4-104">Da sua aplicação web **descrição geral** página Olá portal do Azure, selecione de Olá **myResourceGroup** ligação em **grupo de recursos**.</span><span class="sxs-lookup"><span data-stu-id="1dcd4-104">From your web app's **Overview** page in hello Azure portal, select hello **myResourceGroup** link under **Resource group**.</span></span>
+2. <span data-ttu-id="1dcd4-105">Na página de grupo de recursos de Olá, certifique-se de que Olá recursos listados são Olá aqueles que pretende toodelete.</span><span class="sxs-lookup"><span data-stu-id="1dcd4-105">On hello resource group page, make sure that hello listed resources are hello ones you want toodelete.</span></span>
+3. <span data-ttu-id="1dcd4-106">Selecione **eliminar**, tipo **myResourceGroup** no Olá caixa de texto e, em seguida, selecione **eliminar**.</span><span class="sxs-lookup"><span data-stu-id="1dcd4-106">Select **Delete**, type **myResourceGroup** in hello text box, and then select **Delete**.</span></span>

@@ -1,26 +1,26 @@
 <!--author=alkohli last changed: 09/02/16 -->
 
-#### <a name="tooinstall-updates-via-hello-azure-classic-portal"></a>tooinstall atualizações através de Olá portal clássico do Azure
-1. No Olá **dispositivos** página, o dispositivo de Olá selecione em que pretende que as atualizações de tooinstall.
-2. Navegue demasiado**dispositivos > manutenção > as atualizações de Software**.
+#### <a name="tooinstall-updates-via-hello-azure-classic-portal"></a><span data-ttu-id="d2f6b-101">tooinstall atualizações através de Olá portal clássico do Azure</span><span class="sxs-lookup"><span data-stu-id="d2f6b-101">tooinstall updates via hello Azure classic portal</span></span>
+1. <span data-ttu-id="d2f6b-102">No Olá **dispositivos** página, o dispositivo de Olá selecione em que pretende que as atualizações de tooinstall.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-102">On hello **Devices** page, select hello device on which you want tooinstall updates.</span></span>
+2. <span data-ttu-id="d2f6b-103">Navegue demasiado**dispositivos > manutenção > as atualizações de Software**.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-103">Navigate too**Devices > Maintenance > Software Updates**.</span></span>
    
     ![atualizar o dispositivo](../includes/media/storsimple-ova-install-update-via-portal/azupdate1m.png)  
-3. Verá uma mensagem se Olá atualizações de software estão disponíveis. toocheck para atualizações, pode também clicar em **procurar atualizações** em Olá parte inferior da página Olá.
+3. <span data-ttu-id="d2f6b-105">Verá uma mensagem se Olá atualizações de software estão disponíveis.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-105">You see a message if hello software updates are available.</span></span> <span data-ttu-id="d2f6b-106">toocheck para atualizações, pode também clicar em **procurar atualizações** em Olá parte inferior da página Olá.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-106">toocheck for updates, you can also click **Scan Updates** at hello bottom of hello page.</span></span>
    
     ![atualizar o dispositivo](../includes/media/storsimple-ova-install-update-via-portal/azupdate2m.png)
-4. Olá parte inferior da página Olá, clique em **transferir atualizações**. Uma caixa de diálogo notifica o utilizador Olá que Olá atualização é acontece. Olá matriz Virtual StorSimple é um dispositivo de nó único, reinícios do dispositivo Olá depois de ser atualizado. Isto afeta qualquer E/S em curso. Clique em toolaunch de ícone de verificação Olá uma tarefa toodownload Olá as atualizações disponíveis. 
+4. <span data-ttu-id="d2f6b-108">Olá parte inferior da página Olá, clique em **transferir atualizações**.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-108">From hello bottom of hello page, click **Download Updates**.</span></span> <span data-ttu-id="d2f6b-109">Uma caixa de diálogo notifica o utilizador Olá que Olá atualização é acontece.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-109">A dialog notifies hello user that hello update is disruptive.</span></span> <span data-ttu-id="d2f6b-110">Olá matriz Virtual StorSimple é um dispositivo de nó único, reinícios do dispositivo Olá depois de ser atualizado.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-110">Given hello StorSimple Virtual Array is a single node device, hello device restarts after it is updated.</span></span> <span data-ttu-id="d2f6b-111">Isto afeta qualquer E/S em curso.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-111">This disrupts any IO in progress.</span></span> <span data-ttu-id="d2f6b-112">Clique em toolaunch de ícone de verificação Olá uma tarefa toodownload Olá as atualizações disponíveis.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-112">Click hello check icon toolaunch a job toodownload hello available updates.</span></span> 
    
     ![atualizar o dispositivo](../includes/media/storsimple-ova-install-update-via-portal/azupdate3m.png)
-5. Será notificado quando Olá atualizações são transferidas. 
+5. <span data-ttu-id="d2f6b-114">Será notificado quando Olá atualizações são transferidas.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-114">You are notified when hello updates are downloaded.</span></span> 
    
     ![atualizar o dispositivo](../includes/media/storsimple-ova-install-update-via-portal/azupdate6m.png)
-6. Olá parte inferior da página Olá, clique em **instalar atualizações** toobegin atualizar dispositivo Olá. caixa de diálogo Olá é apresentada tooyou novamente. Clique em toostart de ícone de verificação de Olá que Olá de tooinstall uma tarefa de atualizações. 
+6. <span data-ttu-id="d2f6b-116">Olá parte inferior da página Olá, clique em **instalar atualizações** toobegin atualizar dispositivo Olá.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-116">From hello bottom of hello page, click **Install Updates** toobegin updating hello device.</span></span> <span data-ttu-id="d2f6b-117">caixa de diálogo Olá é apresentada tooyou novamente.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-117">hello dialog is presented tooyou again.</span></span> <span data-ttu-id="d2f6b-118">Clique em toostart de ícone de verificação de Olá que Olá de tooinstall uma tarefa de atualizações.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-118">Click hello check icon toostart a job tooinstall hello updates.</span></span> 
    
     ![atualizar o dispositivo](../includes/media/storsimple-ova-install-update-via-portal/azupdate7m.png) 
-7. Será notificado depois Olá tarefa é criada. 
+7. <span data-ttu-id="d2f6b-120">Será notificado depois Olá tarefa é criada.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-120">You are notified after hello job is created.</span></span> 
    
     ![atualizar o dispositivo](../includes/media/storsimple-ova-install-update-via-portal/azupdate8m.png)
-8. Clique em **ver tarefa** ligação toogo toohello estado das tarefas monitor e página Olá instalação. Pode clicar em **detalhes** em qualquer tooget tempo informações detalhadas sobre tarefas de atualização de Olá. 
+8. <span data-ttu-id="d2f6b-122">Clique em **ver tarefa** ligação toogo toohello estado das tarefas monitor e página Olá instalação.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-122">Click **View Job** link toogo toohello Jobs page and monitor hello install status.</span></span> <span data-ttu-id="d2f6b-123">Pode clicar em **detalhes** em qualquer tooget tempo informações detalhadas sobre tarefas de atualização de Olá.</span><span class="sxs-lookup"><span data-stu-id="d2f6b-123">You can click **Details** at any time tooget detailed information about hello update job.</span></span> 
    
     ![atualizar o dispositivo](../includes/media/storsimple-ova-install-update-via-portal/azupdate9m.png)
 

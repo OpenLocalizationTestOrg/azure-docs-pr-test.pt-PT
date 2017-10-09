@@ -1,19 +1,19 @@
-### <a name="create-a-tcp-endpoint-for-hello-virtual-machine"></a>Criar um ponto final TCP para a máquina virtual de Olá
-Na ordem tooaccess do SQL Server de Olá internet, Olá deve ter um toolisten de ponto final para comunicação de TCP recebidas. Este passo de configuração do Azure, direciona entrada TCP porta tráfego tooa a porta TCP que seja acessível toohello máquina.
+### <a name="create-a-tcp-endpoint-for-hello-virtual-machine"></a><span data-ttu-id="1b1cc-101">Criar um ponto final TCP para a máquina virtual de Olá</span><span class="sxs-lookup"><span data-stu-id="1b1cc-101">Create a TCP endpoint for hello virtual machine</span></span>
+<span data-ttu-id="1b1cc-102">Na ordem tooaccess do SQL Server de Olá internet, Olá deve ter um toolisten de ponto final para comunicação de TCP recebidas.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-102">In order tooaccess SQL Server from hello internet, hello virtual machine must have an endpoint toolisten for incoming TCP communication.</span></span> <span data-ttu-id="1b1cc-103">Este passo de configuração do Azure, direciona entrada TCP porta tráfego tooa a porta TCP que seja acessível toohello máquina.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-103">This Azure configuration step, directs incoming TCP port traffic tooa TCP port that is accessible toohello virtual machine.</span></span>
 
 > [!NOTE]
-> Se estiver a ligar dentro Olá mesma rede virtual ou serviço de nuvem, não dispõe de toocreate um ponto final acessível publicamente. Nesse caso, pode continuar toohello próximo passo. Para obter mais informações, veja [Cenários de Ligação](../articles/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-sql-connect.md#connection-scenarios).
+> <span data-ttu-id="1b1cc-104">Se estiver a ligar dentro Olá mesma rede virtual ou serviço de nuvem, não dispõe de toocreate um ponto final acessível publicamente.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-104">If you are connecting within hello same cloud service or virtual network, you do not have toocreate a publically accessible endpoint.</span></span> <span data-ttu-id="1b1cc-105">Nesse caso, pode continuar toohello próximo passo.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-105">In that case, you could continue toohello next step.</span></span> <span data-ttu-id="1b1cc-106">Para obter mais informações, veja [Cenários de Ligação](../articles/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-sql-connect.md#connection-scenarios).</span><span class="sxs-lookup"><span data-stu-id="1b1cc-106">For more information, see [Connection Scenarios](../articles/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-sql-connect.md#connection-scenarios).</span></span>
 > 
 > 
 
-1. No Portal do Azure Olá, selecione **máquinas virtuais (clássicas)**.
-2. Em seguida, selecione a máquina virtual do SQL Server.
-3. Selecione **pontos finais**e, em seguida, clique em Olá **adicionar** botão, Olá parte superior do painel de pontos finais de Olá.
+1. <span data-ttu-id="1b1cc-107">No Portal do Azure Olá, selecione **máquinas virtuais (clássicas)**.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-107">On hello Azure Portal, select **Virtual machines (classic)**.</span></span>
+2. <span data-ttu-id="1b1cc-108">Em seguida, selecione a máquina virtual do SQL Server.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-108">Then select you SQL Server virtual machine.</span></span>
+3. <span data-ttu-id="1b1cc-109">Selecione **pontos finais**e, em seguida, clique em Olá **adicionar** botão, Olá parte superior do painel de pontos finais de Olá.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-109">Select **Endpoints**, and then click hello **Add** button at hello top of hello Endpoints blade.</span></span>
    
     ![Passos do Portal para Criar um Ponto Final](./media/virtual-machines-sql-server-connection-steps/portal-endpoint-creation.png)
-4. No Olá **adicionar ponto final** painel, forneça um **nome** como SQLEndpoint.
-5. Selecione **TCP** para Olá **protocolo**.
-6. Para **Porta pública**, especifique um número de porta, como **57500**.
-7. Para **porta privada**, especifique a porta escuta do SQL Server que está predefinida demasiado**1433**.
-8. Clique em **Ok** ponto final de Olá toocreate.
+4. <span data-ttu-id="1b1cc-111">No Olá **adicionar ponto final** painel, forneça um **nome** como SQLEndpoint.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-111">On hello **Add Endpoint** blade, provide a **Name** such as SQLEndpoint.</span></span>
+5. <span data-ttu-id="1b1cc-112">Selecione **TCP** para Olá **protocolo**.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-112">Select **TCP** for hello **Protocol**.</span></span>
+6. <span data-ttu-id="1b1cc-113">Para **Porta pública**, especifique um número de porta, como **57500**.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-113">For **Public port**, specify a port number such as **57500**.</span></span>
+7. <span data-ttu-id="1b1cc-114">Para **porta privada**, especifique a porta escuta do SQL Server que está predefinida demasiado**1433**.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-114">For **Private port**, specify SQL Server's listening port, which defaults too**1433**.</span></span>
+8. <span data-ttu-id="1b1cc-115">Clique em **Ok** ponto final de Olá toocreate.</span><span class="sxs-lookup"><span data-stu-id="1b1cc-115">Click **Ok** toocreate hello endpoint.</span></span>
 

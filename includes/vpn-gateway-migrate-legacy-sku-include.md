@@ -1,16 +1,16 @@
 > [!NOTE]
-> * gateway de VPN Olá endereço IP público será alterado quando migrar a partir de um tooa SKU antigo SKU de novo.
-> * Não é possível migrar clássico toohello de gateways VPN SKUs de novo. Clássico VPN gateways pode apenas utilizar Olá legados SKUs (antigos).
+> * <span data-ttu-id="1ddff-101">gateway de VPN Olá endereço IP público será alterado quando migrar a partir de um tooa SKU antigo SKU de novo.</span><span class="sxs-lookup"><span data-stu-id="1ddff-101">hello VPN gateway Public IP address will change when migrating from an old SKU tooa new SKU.</span></span>
+> * <span data-ttu-id="1ddff-102">Não é possível migrar clássico toohello de gateways VPN SKUs de novo.</span><span class="sxs-lookup"><span data-stu-id="1ddff-102">You can't migrate classic VPN gateways toohello new SKUs.</span></span> <span data-ttu-id="1ddff-103">Clássico VPN gateways pode apenas utilizar Olá legados SKUs (antigos).</span><span class="sxs-lookup"><span data-stu-id="1ddff-103">Classic VPN gateways can only use hello legacy (old) SKUs.</span></span>
 > 
 
-Não é possível redimensionar a VPN do Azure gateways entre Olá SKUs antigos e Olá novas famílias SKU. Se tiver de gateways de VPN no modelo de implementação do Resource Manager Olá que utilizam a versão mais antiga do Olá do Olá SKUs, pode migrar toohello SKUs de novo. toomigrate, elimine o gateway VPN existente Olá na sua rede virtual, em seguida, crie um novo.
+<span data-ttu-id="1ddff-104">Não é possível redimensionar a VPN do Azure gateways entre Olá SKUs antigos e Olá novas famílias SKU.</span><span class="sxs-lookup"><span data-stu-id="1ddff-104">You can't resize your Azure VPN gateways between hello old SKUs and hello new SKU families.</span></span> <span data-ttu-id="1ddff-105">Se tiver de gateways de VPN no modelo de implementação do Resource Manager Olá que utilizam a versão mais antiga do Olá do Olá SKUs, pode migrar toohello SKUs de novo.</span><span class="sxs-lookup"><span data-stu-id="1ddff-105">If you have VPN gateways in hello Resource Manager deployment model that are using hello older version of hello SKUs, you can migrate toohello new SKUs.</span></span> <span data-ttu-id="1ddff-106">toomigrate, elimine o gateway VPN existente Olá na sua rede virtual, em seguida, crie um novo.</span><span class="sxs-lookup"><span data-stu-id="1ddff-106">toomigrate, you delete hello existing VPN gateway for your virtual network, then create a new one.</span></span>
 
-Fluxo de trabalho de migração:
+<span data-ttu-id="1ddff-107">Fluxo de trabalho de migração:</span><span class="sxs-lookup"><span data-stu-id="1ddff-107">Migration workflow:</span></span>
 
-1. Remova qualquer gateway de rede virtual toohello ligações.
-2. Elimine gateway de VPN Olá antigo.
-3. Crie o novo gateway de VPN Olá.
-4. Atualize os dispositivos VPN no local com Olá novo VPN gateway endereço IP (para as ligações Site a Site).
-5. Atualize o valor do endereço IP de gateway do Olá para quaisquer gateways de rede local de VNet a VNet que irão ligar toothis gateway.
-6. Transferir novos pacotes de configuração de VPN de cliente para clientes de P2S ligar a rede virtual toohello através deste gateway VPN.
-7. Recrie o gateway de rede virtual do Olá ligações toohello.
+1. <span data-ttu-id="1ddff-108">Remova qualquer gateway de rede virtual toohello ligações.</span><span class="sxs-lookup"><span data-stu-id="1ddff-108">Remove any connections toohello virtual network gateway.</span></span>
+2. <span data-ttu-id="1ddff-109">Elimine gateway de VPN Olá antigo.</span><span class="sxs-lookup"><span data-stu-id="1ddff-109">Delete hello old VPN gateway.</span></span>
+3. <span data-ttu-id="1ddff-110">Crie o novo gateway de VPN Olá.</span><span class="sxs-lookup"><span data-stu-id="1ddff-110">Create hello new VPN gateway.</span></span>
+4. <span data-ttu-id="1ddff-111">Atualize os dispositivos VPN no local com Olá novo VPN gateway endereço IP (para as ligações Site a Site).</span><span class="sxs-lookup"><span data-stu-id="1ddff-111">Update your on-premises VPN devices with hello new VPN gateway IP address (for Site-to-Site connections).</span></span>
+5. <span data-ttu-id="1ddff-112">Atualize o valor do endereço IP de gateway do Olá para quaisquer gateways de rede local de VNet a VNet que irão ligar toothis gateway.</span><span class="sxs-lookup"><span data-stu-id="1ddff-112">Update hello gateway IP address value for any VNet-to-VNet local network gateways that will connect toothis gateway.</span></span>
+6. <span data-ttu-id="1ddff-113">Transferir novos pacotes de configuração de VPN de cliente para clientes de P2S ligar a rede virtual toohello através deste gateway VPN.</span><span class="sxs-lookup"><span data-stu-id="1ddff-113">Download new client VPN configuration packages for P2S clients connecting toohello virtual network through this VPN gateway.</span></span>
+7. <span data-ttu-id="1ddff-114">Recrie o gateway de rede virtual do Olá ligações toohello.</span><span class="sxs-lookup"><span data-stu-id="1ddff-114">Recreate hello connections toohello virtual network gateway.</span></span>

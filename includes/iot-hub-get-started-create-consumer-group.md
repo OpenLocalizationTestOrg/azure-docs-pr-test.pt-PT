@@ -1,10 +1,10 @@
-## <a name="add-a-consumer-group-tooyour-iot-hub"></a>Adicionar um consumidor grupo tooyour do IoT hub
+## <a name="add-a-consumer-group-tooyour-iot-hub"></a><span data-ttu-id="bc111-101">Adicionar um consumidor grupo tooyour do IoT hub</span><span class="sxs-lookup"><span data-stu-id="bc111-101">Add a consumer group tooyour IoT hub</span></span>
 
-Grupos de consumidores são utilizados pelos dados toopull de aplicações do Azure IoT Hub. Neste tutorial, vai criar um toobe do grupo de consumidores utilizado por um tooread dados próximos do serviço do Azure do seu IoT hub.
+<span data-ttu-id="bc111-102">Grupos de consumidores são utilizados pelos dados toopull de aplicações do Azure IoT Hub.</span><span class="sxs-lookup"><span data-stu-id="bc111-102">Consumer groups are used by applications toopull data from Azure IoT Hub.</span></span> <span data-ttu-id="bc111-103">Neste tutorial, vai criar um toobe do grupo de consumidores utilizado por um tooread dados próximos do serviço do Azure do seu IoT hub.</span><span class="sxs-lookup"><span data-stu-id="bc111-103">In this tutorial, you create a consumer group toobe used by a coming Azure service tooread data from your IoT hub.</span></span>
 
-tooadd um consumidor grupo tooyour IoT hub, siga estes passos:
+<span data-ttu-id="bc111-104">tooadd um consumidor grupo tooyour IoT hub, siga estes passos:</span><span class="sxs-lookup"><span data-stu-id="bc111-104">tooadd a consumer group tooyour IoT hub, follow these steps:</span></span>
 
-1. No Olá [portal do Azure](https://ms.portal.azure.com/), abra o seu IoT hub.
-2. No painel esquerdo Olá, clique em **pontos finais**, selecione **eventos** no painel central Olá, introduza um nome em **grupos de consumidores** no Olá painel à direita e, em seguida, clique em  **Guardar**.
+1. <span data-ttu-id="bc111-105">No Olá [portal do Azure](https://ms.portal.azure.com/), abra o seu IoT hub.</span><span class="sxs-lookup"><span data-stu-id="bc111-105">In hello [Azure portal](https://ms.portal.azure.com/), open your IoT hub.</span></span>
+2. <span data-ttu-id="bc111-106">No painel esquerdo Olá, clique em **pontos finais**, selecione **eventos** no painel central Olá, introduza um nome em **grupos de consumidores** no Olá painel à direita e, em seguida, clique em  **Guardar**.</span><span class="sxs-lookup"><span data-stu-id="bc111-106">In hello left pane, click **Endpoints**, select **Events** on hello middle pane, enter a name under **Consumer groups** on hello right pane, and then click **Save**.</span></span>
 
    ![Criar um grupo de consumidores no seu IoT hub](../articles/iot-hub/media/iot-hub-create-consumer-group/1_iot-hub-create-consumer-group-azure.png)

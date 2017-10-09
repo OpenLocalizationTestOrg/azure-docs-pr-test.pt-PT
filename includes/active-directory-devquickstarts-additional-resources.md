@@ -1,7 +1,7 @@
-## <a name="additional-resources"></a>Recursos adicionais
-* [Olá guia para programadores do Azure AD](../articles/active-directory/develop/active-directory-developers-guide.md)
-* [Exemplos do Azure AD no GitHub](https://github.com/Azure-Samples/?utf8=%E2%9C%93&query=active-directory)
-* [CloudIdentity.com](http://cloudidentity.com)
+## <a name="additional-resources"></a><span data-ttu-id="151c7-101">Recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="151c7-101">Additional resources</span></span>
+* [<span data-ttu-id="151c7-102">Olá guia para programadores do Azure AD</span><span class="sxs-lookup"><span data-stu-id="151c7-102">hello Azure AD developer's guide</span></span>](../articles/active-directory/develop/active-directory-developers-guide.md)
+* [<span data-ttu-id="151c7-103">Exemplos do Azure AD no GitHub</span><span class="sxs-lookup"><span data-stu-id="151c7-103">Azure AD samples on GitHub</span></span>](https://github.com/Azure-Samples/?utf8=%E2%9C%93&query=active-directory)
+* [<span data-ttu-id="151c7-104">CloudIdentity.com</span><span class="sxs-lookup"><span data-stu-id="151c7-104">CloudIdentity.com</span></span>](http://cloudidentity.com)
 
-## <a name="get-security-updates-for-our-products"></a>Obter atualizações de segurança dos nossos produtos
-Aconselhamo-lo tooget notificações de quando os incidentes de segurança ocorrem, visitando [página de TechCenter Olá para as notificações de segurança técnica do Microsoft](https://technet.microsoft.com/security/dd252948) e subscrever toosecurity SUBSCREVENDO os alertas.
+## <a name="get-security-updates-for-our-products"></a><span data-ttu-id="151c7-105">Obter atualizações de segurança dos nossos produtos</span><span class="sxs-lookup"><span data-stu-id="151c7-105">Get security updates for our products</span></span>
+<span data-ttu-id="151c7-106">Aconselhamo-lo tooget notificações de quando os incidentes de segurança ocorrem, visitando [página de TechCenter Olá para as notificações de segurança técnica do Microsoft](https://technet.microsoft.com/security/dd252948) e subscrever toosecurity SUBSCREVENDO os alertas.</span><span class="sxs-lookup"><span data-stu-id="151c7-106">We encourage you tooget notifications of when security incidents occur by visiting [hello TechCenter page for Microsoft technical security notifications](https://technet.microsoft.com/security/dd252948) and subscribing toosecurity advisory alerts.</span></span>

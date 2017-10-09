@@ -1,46 +1,46 @@
 <!--author=alkohli last changed: 9/17/15-->
 
-#### <a name="tooadd-a-storage-account-in-storsimple-8000-series-update-10"></a>tooadd uma conta de armazenamento no StorSimple série 8000 atualização 1.0
-1. Num serviço do StorSimple Manager Olá página de destino, selecione o seu serviço e faça duplo clique. Esta ação irá demorar toohello **início rápido** página. Selecione Olá **configurar** página.
-2. Clique em **Adicionar/editar conta de armazenamento**.
-3. No Olá **adicionar/editar conta de armazenamento** caixa de diálogo, clique em **adicionar novo**.
-4. No Olá **fornecedor** fornecedor de serviços do campo, selecione Olá nuvem adequada. fornecedores de Olá suportado são Azure, Amazon S3, Amazon S3 com RRS, HP e OpenStack. Especifique as credenciais de Olá e a localização de Olá associado à conta de armazenamento Olá dos seus fornecedores de serviços em nuvem. os campos de Olá apresentados para as credenciais serão diferentes consoante o fornecedor do serviço cloud Olá que especificou. 
+#### <a name="tooadd-a-storage-account-in-storsimple-8000-series-update-10"></a><span data-ttu-id="0cb59-101">tooadd uma conta de armazenamento no StorSimple série 8000 atualização 1.0</span><span class="sxs-lookup"><span data-stu-id="0cb59-101">tooadd a storage account in StorSimple 8000 Series Update 1.0</span></span>
+1. <span data-ttu-id="0cb59-102">Num serviço do StorSimple Manager Olá página de destino, selecione o seu serviço e faça duplo clique.</span><span class="sxs-lookup"><span data-stu-id="0cb59-102">On hello StorSimple Manager service landing page, select your service and double-click it.</span></span> <span data-ttu-id="0cb59-103">Esta ação irá demorar toohello **início rápido** página.</span><span class="sxs-lookup"><span data-stu-id="0cb59-103">This will take you toohello **Quick Start** page.</span></span> <span data-ttu-id="0cb59-104">Selecione Olá **configurar** página.</span><span class="sxs-lookup"><span data-stu-id="0cb59-104">Select hello **Configure** page.</span></span>
+2. <span data-ttu-id="0cb59-105">Clique em **Adicionar/editar conta de armazenamento**.</span><span class="sxs-lookup"><span data-stu-id="0cb59-105">Click **Add/edit storage account**.</span></span>
+3. <span data-ttu-id="0cb59-106">No Olá **adicionar/editar conta de armazenamento** caixa de diálogo, clique em **adicionar novo**.</span><span class="sxs-lookup"><span data-stu-id="0cb59-106">In hello **Add/Edit Storage Account** dialog box, click **Add new**.</span></span>
+4. <span data-ttu-id="0cb59-107">No Olá **fornecedor** fornecedor de serviços do campo, selecione Olá nuvem adequada.</span><span class="sxs-lookup"><span data-stu-id="0cb59-107">In hello **Provider** field, select hello appropriate cloud service provider.</span></span> <span data-ttu-id="0cb59-108">fornecedores de Olá suportado são Azure, Amazon S3, Amazon S3 com RRS, HP e OpenStack.</span><span class="sxs-lookup"><span data-stu-id="0cb59-108">hello supported providers are Azure, Amazon S3, Amazon S3 with RRS, HP and OpenStack.</span></span> <span data-ttu-id="0cb59-109">Especifique as credenciais de Olá e a localização de Olá associado à conta de armazenamento Olá dos seus fornecedores de serviços em nuvem.</span><span class="sxs-lookup"><span data-stu-id="0cb59-109">Specify hello credentials and hello location associated with hello storage account of your cloud service providers.</span></span> <span data-ttu-id="0cb59-110">os campos de Olá apresentados para as credenciais serão diferentes consoante o fornecedor do serviço cloud Olá que especificou.</span><span class="sxs-lookup"><span data-stu-id="0cb59-110">hello fields presented for credentials will be different depending upon hello cloud service provider you have specified.</span></span> 
    
-   * Se tiver selecionado o Azure como o fornecedor de serviço em nuvem, forneça Olá **nome** e Olá primário **chave de acesso** para a sua conta de armazenamento do Microsoft Azure. Para uma conta do Azure, localização Olá será automaticamente preenchida.
+   * <span data-ttu-id="0cb59-111">Se tiver selecionado o Azure como o fornecedor de serviço em nuvem, forneça Olá **nome** e Olá primário **chave de acesso** para a sua conta de armazenamento do Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="0cb59-111">If you have selected Azure as your cloud service provider, supply hello **Name** and hello primary **Access Key** for your Microsoft Azure storage account.</span></span> <span data-ttu-id="0cb59-112">Para uma conta do Azure, localização Olá será automaticamente preenchida.</span><span class="sxs-lookup"><span data-stu-id="0cb59-112">For an Azure account, hello location will be automatically populated.</span></span>
      
         ![Adicionar conta de armazenamento do Azure](./media/storsimple-configure-new-storage-account-u1/AddAzureStorageaccount-include.png)
-   * Se tiver selecionado Amazon S3 ou Amazon S3 com RRS, forneça um **Nome da Conta de Armazenamento** amigável, **Chave de Acesso** e **Chave Secreta**. Para o Amazon S3 e o Amazon S3 com RRS, é suportada Olá seguintes localizações:
+   * <span data-ttu-id="0cb59-114">Se tiver selecionado Amazon S3 ou Amazon S3 com RRS, forneça um **Nome da Conta de Armazenamento** amigável, **Chave de Acesso** e **Chave Secreta**.</span><span class="sxs-lookup"><span data-stu-id="0cb59-114">If you have selected Amazon S3 or Amazon S3 with RRS, provide a friendly **Storage Account name**, **Access Key**, and **Secret Key**.</span></span> <span data-ttu-id="0cb59-115">Para o Amazon S3 e o Amazon S3 com RRS, é suportada Olá seguintes localizações:</span><span class="sxs-lookup"><span data-stu-id="0cb59-115">For Amazon S3 and Amazon S3 with RRS, hello following locations are supported:</span></span>
      
-     * E.U.A. Standard
-     * E.U.A. Oeste (Oregon)
-     * E.U.A. Oeste (Norte da Califórnia)
-     * UE (Irlanda)
-     * Ásia-Pacífico (Singapura)
-     * Ásia-Pacífico (Sydney)
-     * Ásia-Pacífico (Tóquio)
-     * América do Sul (São Paulo)
+     * <span data-ttu-id="0cb59-116">E.U.A. Standard</span><span class="sxs-lookup"><span data-stu-id="0cb59-116">US Standard</span></span>
+     * <span data-ttu-id="0cb59-117">E.U.A. Oeste (Oregon)</span><span class="sxs-lookup"><span data-stu-id="0cb59-117">US West (Oregon)</span></span>
+     * <span data-ttu-id="0cb59-118">E.U.A. Oeste (Norte da Califórnia)</span><span class="sxs-lookup"><span data-stu-id="0cb59-118">US West (Northern California)</span></span>
+     * <span data-ttu-id="0cb59-119">UE (Irlanda)</span><span class="sxs-lookup"><span data-stu-id="0cb59-119">EU (Ireland)</span></span>
+     * <span data-ttu-id="0cb59-120">Ásia-Pacífico (Singapura)</span><span class="sxs-lookup"><span data-stu-id="0cb59-120">Asia Pacific (Singapore)</span></span>
+     * <span data-ttu-id="0cb59-121">Ásia-Pacífico (Sydney)</span><span class="sxs-lookup"><span data-stu-id="0cb59-121">Asia Pacific (Sydney)</span></span>
+     * <span data-ttu-id="0cb59-122">Ásia-Pacífico (Tóquio)</span><span class="sxs-lookup"><span data-stu-id="0cb59-122">Asia Pacific (Tokyo)</span></span>
+     * <span data-ttu-id="0cb59-123">América do Sul (São Paulo)</span><span class="sxs-lookup"><span data-stu-id="0cb59-123">South America (Sao Paulo)</span></span>
        
        ![Adicionar conta de armazenamento do Amazon](./media/storsimple-configure-new-storage-account-u1/AddAmazonStorageaccount-include.png)
-   * Se tiver selecionado HP como o fornecedor de serviços em nuvem, forneça um **Nome da Conta de Armazenamento** amigável, o **ID do Inquilino**, o **Nome de Utilizador** e a **Palavra-passe**. Para HP, é suportada Olá seguintes localizações:
+   * <span data-ttu-id="0cb59-125">Se tiver selecionado HP como o fornecedor de serviços em nuvem, forneça um **Nome da Conta de Armazenamento** amigável, o **ID do Inquilino**, o **Nome de Utilizador** e a **Palavra-passe**.</span><span class="sxs-lookup"><span data-stu-id="0cb59-125">If you have selected HP as your cloud service provider, supply a friendly **Storage Account Name**, **Tenant ID**, **Username**, and **Password**.</span></span> <span data-ttu-id="0cb59-126">Para HP, é suportada Olá seguintes localizações:</span><span class="sxs-lookup"><span data-stu-id="0cb59-126">For HP, hello following locations are supported:</span></span>
      
-     * E.U.A Leste
-     * E.U.A. Oeste
+     * <span data-ttu-id="0cb59-127">E.U.A Leste</span><span class="sxs-lookup"><span data-stu-id="0cb59-127">US East</span></span>
+     * <span data-ttu-id="0cb59-128">E.U.A. Oeste</span><span class="sxs-lookup"><span data-stu-id="0cb59-128">US West</span></span>
        
        ![Adicionar conta de armazenamento de HP](./media/storsimple-configure-new-storage-account-u1/AddHPStorageaccount-include.png)
-   * Se tiver selecionado **Openstack** como o fornecedor de serviços em nuvem, forneça um **Nome do Anfitrião**, a **Chave de Acesso** e a **Chave Secreta**.
+   * <span data-ttu-id="0cb59-130">Se tiver selecionado **Openstack** como o fornecedor de serviços em nuvem, forneça um **Nome do Anfitrião**, a **Chave de Acesso** e a **Chave Secreta**.</span><span class="sxs-lookup"><span data-stu-id="0cb59-130">If you have selected **Openstack** as your cloud service provider, provide a **Hostname**, **Access Key**, and **Secret Key**.</span></span>
      
      > [!NOTE]
-     > Para todos os Olá nuvem fornecedores do serviço, excluindo o Azure, é permitido um nome amigável. Pode utilizar diferentes nomes amigáveis e criar mais do que uma conta de armazenamento com Olá mesmo conjunto de credenciais.
+     > <span data-ttu-id="0cb59-131">Para todos os Olá nuvem fornecedores do serviço, excluindo o Azure, é permitido um nome amigável.</span><span class="sxs-lookup"><span data-stu-id="0cb59-131">For all hello cloud service providers, excluding Azure, a friendly name is allowed.</span></span> <span data-ttu-id="0cb59-132">Pode utilizar diferentes nomes amigáveis e criar mais do que uma conta de armazenamento com Olá mesmo conjunto de credenciais.</span><span class="sxs-lookup"><span data-stu-id="0cb59-132">You can use different friendly names and create more than one storage account with hello same set of credentials.</span></span>
      > 
      > 
      
         ![Adicionar conta de armazenamento do Openstack](./media/storsimple-configure-new-storage-account-u1/AddOpenstackStorageaccount-include.png)
-5. Selecione **ativar modo SSL** toocreate um canal seguro para a comunicação de rede entre a nuvem de dispositivo e Olá. Limpar Olá **ativar modo SSL** caixa de verificação apenas se estiver a utilizar uma nuvem privada.
+5. <span data-ttu-id="0cb59-134">Selecione **ativar modo SSL** toocreate um canal seguro para a comunicação de rede entre a nuvem de dispositivo e Olá.</span><span class="sxs-lookup"><span data-stu-id="0cb59-134">Select **Enable SSL Mode** toocreate a secure channel for network communication between your device and hello cloud.</span></span> <span data-ttu-id="0cb59-135">Limpar Olá **ativar modo SSL** caixa de verificação apenas se estiver a utilizar uma nuvem privada.</span><span class="sxs-lookup"><span data-stu-id="0cb59-135">Clear hello **Enable SSL Mode** check box only if you are operating within a private cloud.</span></span>
    
    > [!NOTE]
-   > Se estiver a utilizar HP como o fornecedor, o modo SSL estará sempre ativado.
+   > <span data-ttu-id="0cb59-136">Se estiver a utilizar HP como o fornecedor, o modo SSL estará sempre ativado.</span><span class="sxs-lookup"><span data-stu-id="0cb59-136">If you are using HP as your provider, SSL will always be enabled.</span></span>
    > 
    > 
-6. Clique Olá ícone de verificação ![ícone de verificação](./media/storsimple-configure-new-storage-account/HCS_CheckIcon-include.png). Será notificado depois de conta de armazenamento Olá é criada com êxito.
-7. Olá, conta de armazenamento recentemente criada será apresentada no Olá **configurar** página em **contas do Storage**. Clique em **guardar** toosave Olá nova conta do storage. Clique em **OK** quando lhe for pedida a confirmação.
+6. <span data-ttu-id="0cb59-137">Clique Olá ícone de verificação</span><span class="sxs-lookup"><span data-stu-id="0cb59-137">Click hello check icon</span></span> ![ícone de verificação](./media/storsimple-configure-new-storage-account/HCS_CheckIcon-include.png)<span data-ttu-id="0cb59-139">.</span><span class="sxs-lookup"><span data-stu-id="0cb59-139">.</span></span> <span data-ttu-id="0cb59-140">Será notificado depois de conta de armazenamento Olá é criada com êxito.</span><span class="sxs-lookup"><span data-stu-id="0cb59-140">You will be notified after hello storage account is successfully created.</span></span>
+7. <span data-ttu-id="0cb59-141">Olá, conta de armazenamento recentemente criada será apresentada no Olá **configurar** página em **contas do Storage**.</span><span class="sxs-lookup"><span data-stu-id="0cb59-141">hello newly created storage account will be displayed on hello **Configure** page under **Storage accounts**.</span></span> <span data-ttu-id="0cb59-142">Clique em **guardar** toosave Olá nova conta do storage.</span><span class="sxs-lookup"><span data-stu-id="0cb59-142">Click **Save** toosave hello new storage account.</span></span> <span data-ttu-id="0cb59-143">Clique em **OK** quando lhe for pedida a confirmação.</span><span class="sxs-lookup"><span data-stu-id="0cb59-143">Click **OK** when prompted for confirmation.</span></span>
 

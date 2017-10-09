@@ -1,32 +1,32 @@
-### <a name="gwipnoconnection"></a>endereço IP de gateway de rede local de Olá toomodify - nenhuma ligação de gateway
+### <span data-ttu-id="ca906-101"><a name="gwipnoconnection"></a>endereço IP de gateway de rede local de Olá toomodify - nenhuma ligação de gateway</span><span class="sxs-lookup"><span data-stu-id="ca906-101"><a name="gwipnoconnection"></a> toomodify hello local network gateway IP address - no gateway connection</span></span>
 
-Utilize o exemplo de Olá toomodify um gateway de rede local que não tem uma ligação de gateway. Quando modificar este valor, também pode modificar os prefixos de endereços de Olá em Olá mesmo tempo.
+<span data-ttu-id="ca906-102">Utilize o exemplo de Olá toomodify um gateway de rede local que não tem uma ligação de gateway.</span><span class="sxs-lookup"><span data-stu-id="ca906-102">Use hello example toomodify a local network gateway that does not have a gateway connection.</span></span> <span data-ttu-id="ca906-103">Quando modificar este valor, também pode modificar os prefixos de endereços de Olá em Olá mesmo tempo.</span><span class="sxs-lookup"><span data-stu-id="ca906-103">When modifying this value, you can also modify hello address prefixes at hello same time.</span></span>
 
-1. No Olá recurso de Gateway de rede Local, no Olá **definições** secção, clique em **configuração**.
-2. No Olá **endereço IP** caixa, modifique o endereço IP Olá.
-3. Clique em **guardar** definições de Olá toosave.
+1. <span data-ttu-id="ca906-104">No Olá recurso de Gateway de rede Local, no Olá **definições** secção, clique em **configuração**.</span><span class="sxs-lookup"><span data-stu-id="ca906-104">On hello Local Network Gateway resource, in hello **Settings** section, click **Configuration**.</span></span>
+2. <span data-ttu-id="ca906-105">No Olá **endereço IP** caixa, modifique o endereço IP Olá.</span><span class="sxs-lookup"><span data-stu-id="ca906-105">In hello **IP address** box, modify hello IP address.</span></span>
+3. <span data-ttu-id="ca906-106">Clique em **guardar** definições de Olá toosave.</span><span class="sxs-lookup"><span data-stu-id="ca906-106">Click **Save** toosave hello settings.</span></span>
 
-### <a name="gwipwithconnection"></a>toomodify Olá rede local gateway endereço IP do gateway - existente a ligação de gateway
+### <span data-ttu-id="ca906-107"><a name="gwipwithconnection"></a>toomodify Olá rede local gateway endereço IP do gateway - existente a ligação de gateway</span><span class="sxs-lookup"><span data-stu-id="ca906-107"><a name="gwipwithconnection"></a>toomodify hello local network gateway gateway IP address - existing gateway connection</span></span>
 
-toomodify um gateway de rede local que tenha uma ligação, terá de ligação de Olá toofirst remover. Depois de remover a ligação de Olá, pode modificar o endereço IP do gateway Olá e recriá-lo de uma nova ligação. Também pode modificar os prefixos de endereços de Olá em Olá mesmo tempo. Este procedimento resulta num período de indisponibilidade da ligação VPN. Quando modificar o endereço IP do gateway Olá, não precisa de gateway de VPN de Olá toodelete. Só precisa de ligação de Olá tooremove.
+<span data-ttu-id="ca906-108">toomodify um gateway de rede local que tenha uma ligação, terá de ligação de Olá toofirst remover.</span><span class="sxs-lookup"><span data-stu-id="ca906-108">toomodify a local network gateway that has a connection, you need toofirst remove hello connection.</span></span> <span data-ttu-id="ca906-109">Depois de remover a ligação de Olá, pode modificar o endereço IP do gateway Olá e recriá-lo de uma nova ligação.</span><span class="sxs-lookup"><span data-stu-id="ca906-109">After hello connection is removed, you can modify hello gateway IP address and recreate a new connection.</span></span> <span data-ttu-id="ca906-110">Também pode modificar os prefixos de endereços de Olá em Olá mesmo tempo.</span><span class="sxs-lookup"><span data-stu-id="ca906-110">You can also modify hello address prefixes at hello same time.</span></span> <span data-ttu-id="ca906-111">Este procedimento resulta num período de indisponibilidade da ligação VPN.</span><span class="sxs-lookup"><span data-stu-id="ca906-111">This results in some downtime for your VPN connection.</span></span> <span data-ttu-id="ca906-112">Quando modificar o endereço IP do gateway Olá, não precisa de gateway de VPN de Olá toodelete.</span><span class="sxs-lookup"><span data-stu-id="ca906-112">When modifying hello gateway IP address, you don't need toodelete hello VPN gateway.</span></span> <span data-ttu-id="ca906-113">Só precisa de ligação de Olá tooremove.</span><span class="sxs-lookup"><span data-stu-id="ca906-113">You only need tooremove hello connection.</span></span>
  
-#### <a name="1-remove-hello-connection"></a>1. Remova ligação Olá.
+#### <a name="1-remove-hello-connection"></a><span data-ttu-id="ca906-114">1. Remova ligação Olá.</span><span class="sxs-lookup"><span data-stu-id="ca906-114">1. Remove hello connection.</span></span>
 
-1. No Olá recurso de Gateway de rede Local, no Olá **definições** secção, clique em **ligações**.
-2. Clique em Olá **...**  numa linha de Olá para ligação Olá, em seguida, clique em **eliminar**.
-3. Clique em **guardar** toosave as suas definições.
+1. <span data-ttu-id="ca906-115">No Olá recurso de Gateway de rede Local, no Olá **definições** secção, clique em **ligações**.</span><span class="sxs-lookup"><span data-stu-id="ca906-115">On hello Local Network Gateway resource, in hello **Settings** section, click **Connections**.</span></span>
+2. <span data-ttu-id="ca906-116">Clique em Olá **...**  numa linha de Olá para ligação Olá, em seguida, clique em **eliminar**.</span><span class="sxs-lookup"><span data-stu-id="ca906-116">Click hello **...** on hello line for hello connection, then click **Delete**.</span></span>
+3. <span data-ttu-id="ca906-117">Clique em **guardar** toosave as suas definições.</span><span class="sxs-lookup"><span data-stu-id="ca906-117">Click **Save** toosave your settings.</span></span>
 
-#### <a name="2-modify-hello-ip-address"></a>2. Modificar o endereço IP Olá.
+#### <a name="2-modify-hello-ip-address"></a><span data-ttu-id="ca906-118">2. Modificar o endereço IP Olá.</span><span class="sxs-lookup"><span data-stu-id="ca906-118">2. Modify hello IP address.</span></span>
 
-Também pode modificar os prefixos de endereços de Olá em Olá mesmo tempo.
+<span data-ttu-id="ca906-119">Também pode modificar os prefixos de endereços de Olá em Olá mesmo tempo.</span><span class="sxs-lookup"><span data-stu-id="ca906-119">You can also modify hello address prefixes at hello same time.</span></span>
 
-1. No Olá **endereço IP** caixa, modifique o endereço IP Olá.
-2. Clique em **guardar** definições de Olá toosave.
+1. <span data-ttu-id="ca906-120">No Olá **endereço IP** caixa, modifique o endereço IP Olá.</span><span class="sxs-lookup"><span data-stu-id="ca906-120">In hello **IP address** box, modify hello IP address.</span></span>
+2. <span data-ttu-id="ca906-121">Clique em **guardar** definições de Olá toosave.</span><span class="sxs-lookup"><span data-stu-id="ca906-121">Click **Save** toosave hello settings.</span></span>
 
-#### <a name="3-recreate-hello-connection"></a>3. Recrie a ligação de Olá.
+#### <a name="3-recreate-hello-connection"></a><span data-ttu-id="ca906-122">3. Recrie a ligação de Olá.</span><span class="sxs-lookup"><span data-stu-id="ca906-122">3. Recreate hello connection.</span></span>
 
-1. Navegue toohello Gateway de rede Virtual para a sua VNet. (Não a Olá Gateway de rede Local.)
-2. No Olá Gateway de rede Virtual, no Olá **definições** secção, clique em **ligações**.
-3. Clique em Olá **+ adicionar** tooopen Olá **adicionar ligação** painel.
-4. Recrie a ligação.
-5. Clique em **OK** ligação de Olá toocreate.
+1. <span data-ttu-id="ca906-123">Navegue toohello Gateway de rede Virtual para a sua VNet.</span><span class="sxs-lookup"><span data-stu-id="ca906-123">Navigate toohello Virtual Network Gateway for your VNet.</span></span> <span data-ttu-id="ca906-124">(Não a Olá Gateway de rede Local.)</span><span class="sxs-lookup"><span data-stu-id="ca906-124">(Not hello Local Network Gateway.)</span></span>
+2. <span data-ttu-id="ca906-125">No Olá Gateway de rede Virtual, no Olá **definições** secção, clique em **ligações**.</span><span class="sxs-lookup"><span data-stu-id="ca906-125">On hello Virtual Network Gateway, in hello **Settings** section, click **Connections**.</span></span>
+3. <span data-ttu-id="ca906-126">Clique em Olá **+ adicionar** tooopen Olá **adicionar ligação** painel.</span><span class="sxs-lookup"><span data-stu-id="ca906-126">Click hello **+ Add** tooopen hello **Add connection** blade.</span></span>
+4. <span data-ttu-id="ca906-127">Recrie a ligação.</span><span class="sxs-lookup"><span data-stu-id="ca906-127">Recreate your connection.</span></span>
+5. <span data-ttu-id="ca906-128">Clique em **OK** ligação de Olá toocreate.</span><span class="sxs-lookup"><span data-stu-id="ca906-128">Click **OK** toocreate hello connection.</span></span>

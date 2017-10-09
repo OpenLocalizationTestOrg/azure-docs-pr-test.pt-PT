@@ -1,30 +1,30 @@
 <!--author=alkohli last changed: 9/17/15-->
 
-### <a name="tootake-a-backup"></a>tootake uma cópia de segurança
-1. No dispositivo Olá **início rápido** página, clique em **adicionar uma política de cópia de segurança**. Esta ação iniciará o Assistente de adicionar a política de cópia de segurança de Olá. 
-2. No Olá **definir a política de cópia de segurança** página:
+### <a name="tootake-a-backup"></a><span data-ttu-id="b8532-101">tootake uma cópia de segurança</span><span class="sxs-lookup"><span data-stu-id="b8532-101">tootake a backup</span></span>
+1. <span data-ttu-id="b8532-102">No dispositivo Olá **início rápido** página, clique em **adicionar uma política de cópia de segurança**.</span><span class="sxs-lookup"><span data-stu-id="b8532-102">On hello device **Quick Start** page, click **Add a backup policy**.</span></span> <span data-ttu-id="b8532-103">Esta ação iniciará o Assistente de adicionar a política de cópia de segurança de Olá.</span><span class="sxs-lookup"><span data-stu-id="b8532-103">This will start hello Add Backup Policy wizard.</span></span> 
+2. <span data-ttu-id="b8532-104">No Olá **definir a política de cópia de segurança** página:</span><span class="sxs-lookup"><span data-stu-id="b8532-104">On hello **Define your backup policy** page:</span></span>
    
-   1. Forneça um nome que contenha entre 3 e 150 carateres para a sua política de cópia de segurança.
-   2. Selecione Olá volumes toobe uma cópia de segurança. Se selecionar mais do que um volume, estes volumes serão agrupados toocreate em conjunto um consistentes com falhas cópia de segurança.
-   3. Clique Olá ícone de seta ![ícone de seta](./media/storsimple-take-backup/HCS_ArrowIcon-include.png). 
+   1. <span data-ttu-id="b8532-105">Forneça um nome que contenha entre 3 e 150 carateres para a sua política de cópia de segurança.</span><span class="sxs-lookup"><span data-stu-id="b8532-105">Supply a name that contains between 3 and 150 characters for your backup policy.</span></span>
+   2. <span data-ttu-id="b8532-106">Selecione Olá volumes toobe uma cópia de segurança.</span><span class="sxs-lookup"><span data-stu-id="b8532-106">Select hello volumes toobe backed up.</span></span> <span data-ttu-id="b8532-107">Se selecionar mais do que um volume, estes volumes serão agrupados toocreate em conjunto um consistentes com falhas cópia de segurança.</span><span class="sxs-lookup"><span data-stu-id="b8532-107">If you select more than one volume, these volumes will be grouped together toocreate a crash-consistent backup.</span></span>
+   3. <span data-ttu-id="b8532-108">Clique Olá ícone de seta</span><span class="sxs-lookup"><span data-stu-id="b8532-108">Click hello arrow icon</span></span> ![ícone de seta](./media/storsimple-take-backup/HCS_ArrowIcon-include.png)<span data-ttu-id="b8532-110">.</span><span class="sxs-lookup"><span data-stu-id="b8532-110">.</span></span> 
       
       ![Adicionar-política-cópia-de-segurança](./media/storsimple-take-backup/HCS_AddBackupPolicyWizard1M-include.png)
-3. No Olá **definir uma agenda** página:
+3. <span data-ttu-id="b8532-112">No Olá **definir uma agenda** página:</span><span class="sxs-lookup"><span data-stu-id="b8532-112">On hello **Define a schedule** page:</span></span>
    
-   1. Selecione o tipo de Olá da cópia de segurança da Olá na lista pendente. Para restauros mais rápidos, selecione **Instantâneo Local**. Para resiliência de dados, selecione **Instantâneo Nuvem**.
-   2. Especifique a frequência de cópia de segurança de Olá em minutos, horas, dias ou semanas.
-   3. Selecione um tempo de retenção. Opções de retenção de Olá dependem da frequência de cópia de segurança de Olá. Por exemplo, para uma política diária, retenção de Olá pode ser especificada em semanas, enquanto que o período de retenção para uma política mensal é em meses.
-   4. Selecione Olá Iniciar hora e data de política de cópia de segurança de Olá.
-   5. Selecione Olá **ativar** política de caixa de verificação tooenable Olá cópia. 
-   6. Clique Olá ícone de verificação ![ícone de verificação](./media/storsimple-take-backup/HCS_CheckIcon-include.png) política de Olá toosave.
+   1. <span data-ttu-id="b8532-113">Selecione o tipo de Olá da cópia de segurança da Olá na lista pendente.</span><span class="sxs-lookup"><span data-stu-id="b8532-113">Select hello type of backup from hello drop-down list.</span></span> <span data-ttu-id="b8532-114">Para restauros mais rápidos, selecione **Instantâneo Local**.</span><span class="sxs-lookup"><span data-stu-id="b8532-114">For faster restores, select **Local Snapshot**.</span></span> <span data-ttu-id="b8532-115">Para resiliência de dados, selecione **Instantâneo Nuvem**.</span><span class="sxs-lookup"><span data-stu-id="b8532-115">For data resiliency, select **Cloud Snapshot**.</span></span>
+   2. <span data-ttu-id="b8532-116">Especifique a frequência de cópia de segurança de Olá em minutos, horas, dias ou semanas.</span><span class="sxs-lookup"><span data-stu-id="b8532-116">Specify hello backup frequency in minutes, hours, days, or weeks.</span></span>
+   3. <span data-ttu-id="b8532-117">Selecione um tempo de retenção.</span><span class="sxs-lookup"><span data-stu-id="b8532-117">Select a retention time.</span></span> <span data-ttu-id="b8532-118">Opções de retenção de Olá dependem da frequência de cópia de segurança de Olá.</span><span class="sxs-lookup"><span data-stu-id="b8532-118">hello retention choices depend on hello backup frequency.</span></span> <span data-ttu-id="b8532-119">Por exemplo, para uma política diária, retenção de Olá pode ser especificada em semanas, enquanto que o período de retenção para uma política mensal é em meses.</span><span class="sxs-lookup"><span data-stu-id="b8532-119">For example, for a daily policy, hello retention can be specified in weeks, whereas retention for a monthly policy is in months.</span></span>
+   4. <span data-ttu-id="b8532-120">Selecione Olá Iniciar hora e data de política de cópia de segurança de Olá.</span><span class="sxs-lookup"><span data-stu-id="b8532-120">Select hello starting time and date for hello backup policy.</span></span>
+   5. <span data-ttu-id="b8532-121">Selecione Olá **ativar** política de caixa de verificação tooenable Olá cópia.</span><span class="sxs-lookup"><span data-stu-id="b8532-121">Select hello **Enable** check box tooenable hello backup policy.</span></span> 
+   6. <span data-ttu-id="b8532-122">Clique Olá ícone de verificação</span><span class="sxs-lookup"><span data-stu-id="b8532-122">Click hello check icon</span></span> ![ícone de verificação](./media/storsimple-take-backup/HCS_CheckIcon-include.png) <span data-ttu-id="b8532-124">política de Olá toosave.</span><span class="sxs-lookup"><span data-stu-id="b8532-124">toosave hello policy.</span></span>
       
       ![Adicionar-política-cópia-de-segurança](./media/storsimple-take-backup/HCS_AddBackupPolicyWizard2M-include.png)
       
-      Tem agora uma política de cópia de segurança que criará as cópias de segurança agendadas dos dados do seu volume.
+      <span data-ttu-id="b8532-126">Tem agora uma política de cópia de segurança que criará as cópias de segurança agendadas dos dados do seu volume.</span><span class="sxs-lookup"><span data-stu-id="b8532-126">You now have a backup policy that will create scheduled backups of your volume data.</span></span>
 
-Concluiu a configuração do dispositivo Olá. 
+<span data-ttu-id="b8532-127">Concluiu a configuração do dispositivo Olá.</span><span class="sxs-lookup"><span data-stu-id="b8532-127">You have completed hello device configuration.</span></span> 
 
-![Vídeo disponível](./media/storsimple-take-backup/Video_icon.png) **Vídeo disponível**
+<span data-ttu-id="b8532-128">![Vídeo disponível](./media/storsimple-take-backup/Video_icon.png) **Vídeo disponível**</span><span class="sxs-lookup"><span data-stu-id="b8532-128">![Video available](./media/storsimple-take-backup/Video_icon.png) **Video available**</span></span>
 
-toowatch um vídeo que demonstra como tootake uma cópia de segurança do StorSimple, clique em [aqui](https://azure.microsoft.com/documentation/videos/take-a-storsimple-backup/).
+<span data-ttu-id="b8532-129">toowatch um vídeo que demonstra como tootake uma cópia de segurança do StorSimple, clique em [aqui](https://azure.microsoft.com/documentation/videos/take-a-storsimple-backup/).</span><span class="sxs-lookup"><span data-stu-id="b8532-129">toowatch a video that demonstrates how tootake a StorSimple backup, click [here](https://azure.microsoft.com/documentation/videos/take-a-storsimple-backup/).</span></span>
 

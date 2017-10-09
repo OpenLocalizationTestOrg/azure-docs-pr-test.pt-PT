@@ -1,21 +1,21 @@
 
-#### <a name="tooconfigure-remote-management-on-cloud-appliance"></a>gestão remota do tooconfigure no dispositivo de nuvem
+#### <a name="tooconfigure-remote-management-on-cloud-appliance"></a><span data-ttu-id="39424-101">gestão remota do tooconfigure no dispositivo de nuvem</span><span class="sxs-lookup"><span data-stu-id="39424-101">tooconfigure remote management on cloud appliance</span></span>
 
-1. No serviço Gestor de Dispositivos do StorSimple, clique em **Dispositivos**. Selecione e clique em seu dispositivo de nuvem da lista de Olá do serviço ligado toohello de dispositivos.
-    ![Aplicação da cloud selecionada pelo StorSimple](./media/storsimple-8000-configure-remote-management-http-device/sca-remote-manage1.png)
+1. <span data-ttu-id="39424-102">No serviço Gestor de Dispositivos do StorSimple, clique em **Dispositivos**.</span><span class="sxs-lookup"><span data-stu-id="39424-102">In your StorSimple Device Manager service, click **Devices**.</span></span> <span data-ttu-id="39424-103">Selecione e clique em seu dispositivo de nuvem da lista de Olá do serviço ligado toohello de dispositivos.</span><span class="sxs-lookup"><span data-stu-id="39424-103">Select and click your cloud appliance from hello list of devices connected toohello service.</span></span>
+    <span data-ttu-id="39424-104">![Aplicação da cloud selecionada pelo StorSimple](./media/storsimple-8000-configure-remote-management-http-device/sca-remote-manage1.png)</span><span class="sxs-lookup"><span data-stu-id="39424-104">![StorSimple select cloud appliance](./media/storsimple-8000-configure-remote-management-http-device/sca-remote-manage1.png)</span></span>
 
-2. Aceda demasiado**definições > segurança** tooopen Olá **definições de segurança** painel.
+2. <span data-ttu-id="39424-105">Aceda demasiado**definições > segurança** tooopen Olá **definições de segurança** painel.</span><span class="sxs-lookup"><span data-stu-id="39424-105">Go too**Settings > Security** tooopen hello **Security settings** blade.</span></span>
 
      ![Definições de segurança do StorSimple](./media/storsimple-8000-configure-remote-management-http-device/sca-remote-manage2.png)
 
-3. Aceda toohello **gestão remota** secção. Clique na caixa **Gestão remota**.
-     ![Gestão remota do StorSimple](./media/storsimple-8000-configure-remote-management-http-device/sca-remote-manage3.png)
+3. <span data-ttu-id="39424-107">Aceda toohello **gestão remota** secção.</span><span class="sxs-lookup"><span data-stu-id="39424-107">Go toohello **Remote Management** section.</span></span> <span data-ttu-id="39424-108">Clique na caixa **Gestão remota**.</span><span class="sxs-lookup"><span data-stu-id="39424-108">Click **Remote management** box.</span></span>
+     <span data-ttu-id="39424-109">![Gestão remota do StorSimple](./media/storsimple-8000-configure-remote-management-http-device/sca-remote-manage3.png)</span><span class="sxs-lookup"><span data-stu-id="39424-109">![StorSimple remote manangement](./media/storsimple-8000-configure-remote-management-http-device/sca-remote-manage3.png)</span></span>
 
-4. No Olá **gestão remota** painel:
+4. <span data-ttu-id="39424-110">No Olá **gestão remota** painel:</span><span class="sxs-lookup"><span data-stu-id="39424-110">In hello **Remote management** blade:</span></span>
 
-    1. Certifique-se de que **Ativar administração remota** está ativada.
-    2. predefinição de Olá é tooconnect através de HTTPS. Pode escolher tooconnect através de HTTP. A ligação através de HTTP é aceitável apenas em redes fidedignas. Certifique-se de que o HTTP está ativado.
-    3. A partir da barra de comando de Olá, Olá parte superior do painel, clique em **... Mais** e, em seguida, clique em **Transferir certificado** toodownload um certificado de gestão remota. Pode especificar uma localização na qual toosave este ficheiro. Este certificado deve ser instalado num computador de cliente ou anfitrião Olá que utilize o dispositivo de nuvem tooconnect toohello.
+    1. <span data-ttu-id="39424-111">Certifique-se de que **Ativar administração remota** está ativada.</span><span class="sxs-lookup"><span data-stu-id="39424-111">Ensure **Enable remote administration** is enabled.</span></span>
+    2. <span data-ttu-id="39424-112">predefinição de Olá é tooconnect através de HTTPS.</span><span class="sxs-lookup"><span data-stu-id="39424-112">hello default is tooconnect over HTTPS.</span></span> <span data-ttu-id="39424-113">Pode escolher tooconnect através de HTTP.</span><span class="sxs-lookup"><span data-stu-id="39424-113">You can choose tooconnect using HTTP.</span></span> <span data-ttu-id="39424-114">A ligação através de HTTP é aceitável apenas em redes fidedignas.</span><span class="sxs-lookup"><span data-stu-id="39424-114">Connecting over HTTP is acceptable only on trusted networks.</span></span> <span data-ttu-id="39424-115">Certifique-se de que o HTTP está ativado.</span><span class="sxs-lookup"><span data-stu-id="39424-115">Ensure that HTTP is enabled.</span></span>
+    3. <span data-ttu-id="39424-116">A partir da barra de comando de Olá, Olá parte superior do painel, clique em **... Mais** e, em seguida, clique em **Transferir certificado** toodownload um certificado de gestão remota.</span><span class="sxs-lookup"><span data-stu-id="39424-116">From hello command bar at hello top of blade, click **... More** and then click **Download certificate** toodownload a remote management certificate.</span></span> <span data-ttu-id="39424-117">Pode especificar uma localização na qual toosave este ficheiro.</span><span class="sxs-lookup"><span data-stu-id="39424-117">You can specify a location in which toosave this file.</span></span> <span data-ttu-id="39424-118">Este certificado deve ser instalado num computador de cliente ou anfitrião Olá que utilize o dispositivo de nuvem tooconnect toohello.</span><span class="sxs-lookup"><span data-stu-id="39424-118">This certificate should be installed on hello client or host machine that you use tooconnect toohello cloud appliance.</span></span>
 
         ![Painel Gestão remota](./media/storsimple-8000-configure-remote-management-http-device/sca-remote-manage4.png)
-5. Clique em **guardar** e quando solicitado, confirme as alterações de Olá.
+5. <span data-ttu-id="39424-120">Clique em **guardar** e quando solicitado, confirme as alterações de Olá.</span><span class="sxs-lookup"><span data-stu-id="39424-120">Click **Save** and when prompted, confirm hello changes.</span></span>

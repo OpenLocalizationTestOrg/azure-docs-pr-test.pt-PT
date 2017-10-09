@@ -1,6 +1,6 @@
-## <a name="prerequisite-install-hello-azure-powershell-module"></a>Pré-requisito: Instalar Olá módulo do PowerShell do Azure
+## <a name="prerequisite-install-hello-azure-powershell-module"></a><span data-ttu-id="bb073-101">Pré-requisito: Instalar Olá módulo do PowerShell do Azure</span><span class="sxs-lookup"><span data-stu-id="bb073-101">Prerequisite: Install hello Azure PowerShell Module</span></span>
 
-Olá tooperform os passos neste artigo, irá precisar de demasiado[tooinstall e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs) e siga as instruções de Olá todos os toohello de forma Olá terminar toosign no Azure e selecionar a sua subscrição.
+<span data-ttu-id="bb073-102">Olá tooperform os passos neste artigo, irá precisar de demasiado[tooinstall e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs) e siga as instruções de Olá todos os toohello de forma Olá terminar toosign no Azure e selecionar a sua subscrição.</span><span class="sxs-lookup"><span data-stu-id="bb073-102">tooperform hello steps in this article, you'll need too[tooinstall and configure Azure PowerShell](/powershell/azureps-cmdlets-docs) and follow hello instructions all hello way toohello end toosign into Azure and select your subscription.</span></span>
 
 > [!NOTE]
-> Se não tiver uma conta do Azure, irá precisar de uma. Subscreva [uma avaliação gratuita aqui](../articles/active-directory/sign-up-organization.md).
+> <span data-ttu-id="bb073-103">Se não tiver uma conta do Azure, irá precisar de uma.</span><span class="sxs-lookup"><span data-stu-id="bb073-103">If you don't have an Azure account, you'll need one.</span></span> <span data-ttu-id="bb073-104">Subscreva [uma avaliação gratuita aqui](../articles/active-directory/sign-up-organization.md).</span><span class="sxs-lookup"><span data-stu-id="bb073-104">Go sign up for a [free trial here](../articles/active-directory/sign-up-organization.md).</span></span>

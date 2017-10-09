@@ -21,35 +21,35 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="how-toocreate-nsgs-classic-in-powershell"></a>Como toocreate NSGs (clássica) no PowerShell
+# <a name="how-toocreate-nsgs-classic-in-powershell"></a><span data-ttu-id="50908-103">Como toocreate NSGs (clássica) no PowerShell</span><span class="sxs-lookup"><span data-stu-id="50908-103">How toocreate NSGs (classic) in PowerShell</span></span>
 [!INCLUDE [virtual-networks-create-nsg-selectors-classic-include](../../includes/virtual-networks-create-nsg-selectors-classic-include.md)]
 
 [!INCLUDE [virtual-networks-create-nsg-intro-include](../../includes/virtual-networks-create-nsg-intro-include.md)]
 
 [!INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
-Este artigo abrange o modelo de implementação clássica Olá. Também pode [criar NSGs no modelo de implementação do Resource Manager Olá](virtual-networks-create-nsg-arm-ps.md).
+<span data-ttu-id="50908-104">Este artigo abrange o modelo de implementação clássica Olá.</span><span class="sxs-lookup"><span data-stu-id="50908-104">This article covers hello classic deployment model.</span></span> <span data-ttu-id="50908-105">Também pode [criar NSGs no modelo de implementação do Resource Manager Olá](virtual-networks-create-nsg-arm-ps.md).</span><span class="sxs-lookup"><span data-stu-id="50908-105">You can also [create NSGs in hello Resource Manager deployment model](virtual-networks-create-nsg-arm-ps.md).</span></span>
 
 [!INCLUDE [virtual-networks-create-nsg-scenario-include](../../includes/virtual-networks-create-nsg-scenario-include.md)]
 
-exemplo de Olá PowerShell comandos abaixo esperam num ambiente simple já criado com base no cenário de Olá acima. Se pretender que os comandos de Olá toorun como são apresentados neste documento, primeiro criar ambiente de teste de Olá por [criar uma VNet](virtual-networks-create-vnet-classic-netcfg-ps.md).
+<span data-ttu-id="50908-106">exemplo de Olá PowerShell comandos abaixo esperam num ambiente simple já criado com base no cenário de Olá acima.</span><span class="sxs-lookup"><span data-stu-id="50908-106">hello sample PowerShell commands below expect a simple environment already created based on hello scenario above.</span></span> <span data-ttu-id="50908-107">Se pretender que os comandos de Olá toorun como são apresentados neste documento, primeiro criar ambiente de teste de Olá por [criar uma VNet](virtual-networks-create-vnet-classic-netcfg-ps.md).</span><span class="sxs-lookup"><span data-stu-id="50908-107">If you want toorun hello commands as they are displayed in this document, first build hello test environment by [creating a VNet](virtual-networks-create-vnet-classic-netcfg-ps.md).</span></span>
 
-## <a name="how-toocreate-hello-nsg-for-hello-front-end-subnet"></a>Como toocreate Olá NSG para sub-rede Olá de front-end
-toocreate com o nome de um NSG denominado **NSG-front-end** com base no cenário de Olá acima, siga os passos de Olá abaixo:
+## <a name="how-toocreate-hello-nsg-for-hello-front-end-subnet"></a><span data-ttu-id="50908-108">Como toocreate Olá NSG para sub-rede Olá de front-end</span><span class="sxs-lookup"><span data-stu-id="50908-108">How toocreate hello NSG for hello front-end subnet</span></span>
+<span data-ttu-id="50908-109">toocreate com o nome de um NSG denominado **NSG-front-end** com base no cenário de Olá acima, siga os passos de Olá abaixo:</span><span class="sxs-lookup"><span data-stu-id="50908-109">toocreate an NSG named named **NSG-FrontEnd** based on hello scenario above, follow hello steps below:</span></span>
 
-1. Se nunca tiver utilizado o Azure PowerShell, consulte o artigo [como tooInstall e configurar o Azure PowerShell](/powershell/azure/overview) e siga as instruções de Olá todos os toohello de forma Olá terminar toosign no Azure e selecionar a sua subscrição.
-2. Criar um grupo de segurança de rede com o nome **NSG-front-end**.
+1. <span data-ttu-id="50908-110">Se nunca tiver utilizado o Azure PowerShell, consulte o artigo [como tooInstall e configurar o Azure PowerShell](/powershell/azure/overview) e siga as instruções de Olá todos os toohello de forma Olá terminar toosign no Azure e selecionar a sua subscrição.</span><span class="sxs-lookup"><span data-stu-id="50908-110">If you have never used Azure PowerShell, see [How tooInstall and Configure Azure PowerShell](/powershell/azure/overview) and follow hello instructions all hello way toohello end toosign into Azure and select your subscription.</span></span>
+2. <span data-ttu-id="50908-111">Criar um grupo de segurança de rede com o nome **NSG-front-end**.</span><span class="sxs-lookup"><span data-stu-id="50908-111">Create a network security group named **NSG-FrontEnd**.</span></span>
    
         New-AzureNetworkSecurityGroup -Name "NSG-FrontEnd" -Location uswest `
             -Label "Front end subnet NSG"
    
-    Resultado esperado:
+    <span data-ttu-id="50908-112">Resultado esperado:</span><span class="sxs-lookup"><span data-stu-id="50908-112">Expected output:</span></span>
 
         Name         Location   Label               
         
         NSG-FrontEnd West US     Front end subnet NSG
 
-3. Crie uma regra de segurança que permite o acesso a partir da Internet de Olá tooport 3389.
+3. <span data-ttu-id="50908-113">Crie uma regra de segurança que permite o acesso a partir da Internet de Olá tooport 3389.</span><span class="sxs-lookup"><span data-stu-id="50908-113">Create a security rule allowing access from hello Internet tooport 3389.</span></span>
    
         Get-AzureNetworkSecurityGroup -Name "NSG-FrontEnd" `
         | Set-AzureNetworkSecurityRule -Name rdp-rule `
@@ -57,7 +57,7 @@ toocreate com o nome de um NSG denominado **NSG-front-end** com base no cenário
             -SourceAddressPrefix Internet  -SourcePortRange '*' `
             -DestinationAddressPrefix '*' -DestinationPortRange '3389'
    
-    Resultado esperado:
+    <span data-ttu-id="50908-114">Resultado esperado:</span><span class="sxs-lookup"><span data-stu-id="50908-114">Expected output:</span></span>
    
         Name     : NSG-FrontEnd
         Location : Central US
@@ -85,7 +85,7 @@ toocreate com o nome de um NSG denominado **NSG-front-end** com base no cenário
                    OUTBOUND                                                                                                      
                    DENY ALL OUTBOUND    65500     Deny     *               *             *                *              *
 
-1. Crie uma regra de segurança que permite o acesso a partir da Internet de Olá tooport 80.
+1. <span data-ttu-id="50908-115">Crie uma regra de segurança que permite o acesso a partir da Internet de Olá tooport 80.</span><span class="sxs-lookup"><span data-stu-id="50908-115">Create a security rule allowing access from hello Internet tooport 80.</span></span>
    
         Get-AzureNetworkSecurityGroup -Name "NSG-FrontEnd" `
         | Set-AzureNetworkSecurityRule -Name web-rule `
@@ -93,7 +93,7 @@ toocreate com o nome de um NSG denominado **NSG-front-end** com base no cenário
             -SourceAddressPrefix Internet  -SourcePortRange '*' `
             -DestinationAddressPrefix '*' -DestinationPortRange '80'
    
-    Resultado esperado:
+    <span data-ttu-id="50908-116">Resultado esperado:</span><span class="sxs-lookup"><span data-stu-id="50908-116">Expected output:</span></span>
 
         Name     : NSG-FrontEnd
         Location : Central US
@@ -123,18 +123,18 @@ toocreate com o nome de um NSG denominado **NSG-front-end** com base no cenário
                    OUTBOUND                                                                                                      
                    DENY ALL OUTBOUND    65500     Deny     *               *             *                *              *   
 
-## <a name="how-toocreate-hello-nsg-for-hello-back-end-subnet"></a>Como toocreate Olá NSG para Olá novamente terminar sub-rede
-1. Criar um grupo de segurança de rede com o nome **NSG-back-end**.
+## <a name="how-toocreate-hello-nsg-for-hello-back-end-subnet"></a><span data-ttu-id="50908-117">Como toocreate Olá NSG para Olá novamente terminar sub-rede</span><span class="sxs-lookup"><span data-stu-id="50908-117">How toocreate hello NSG for hello back end subnet</span></span>
+1. <span data-ttu-id="50908-118">Criar um grupo de segurança de rede com o nome **NSG-back-end**.</span><span class="sxs-lookup"><span data-stu-id="50908-118">Create a network security group named **NSG-BackEnd**.</span></span>
    
         New-AzureNetworkSecurityGroup -Name "NSG-BackEnd" -Location uswest `
             -Label "Back end subnet NSG"
    
-    Resultado esperado:
+    <span data-ttu-id="50908-119">Resultado esperado:</span><span class="sxs-lookup"><span data-stu-id="50908-119">Expected output:</span></span>
    
         Name        Location   Label              
         
         NSG-BackEnd West US    Back end subnet NSG
-2. Crie uma regra de segurança que permite o acesso a partir de Olá front-end sub-rede tooport 1433 (porta predefinida utilizada pelo SQL Server).
+2. <span data-ttu-id="50908-120">Crie uma regra de segurança que permite o acesso a partir de Olá front-end sub-rede tooport 1433 (porta predefinida utilizada pelo SQL Server).</span><span class="sxs-lookup"><span data-stu-id="50908-120">Create a security rule allowing access from hello front end subnet tooport 1433 (default port used by SQL Server).</span></span>
    
         Get-AzureNetworkSecurityGroup -Name "NSG-FrontEnd" `
         | Set-AzureNetworkSecurityRule -Name rdp-rule `
@@ -142,7 +142,7 @@ toocreate com o nome de um NSG denominado **NSG-front-end** com base no cenário
             -SourceAddressPrefix 192.168.1.0/24  -SourcePortRange '*' `
             -DestinationAddressPrefix '*' -DestinationPortRange '1433'
    
-    Resultado esperado:
+    <span data-ttu-id="50908-121">Resultado esperado:</span><span class="sxs-lookup"><span data-stu-id="50908-121">Expected output:</span></span>
    
         Name     : NSG-BackEnd
         Location : Central US
@@ -170,7 +170,7 @@ toocreate com o nome de um NSG denominado **NSG-front-end** com base no cenário
                    OUTBOUND                                                                                                      
                    DENY ALL OUTBOUND    65500     Deny     *               *             *                *              *      
 
-1. Crie uma regra de segurança a bloquear o acesso de Olá sub-rede toohello Internet.
+1. <span data-ttu-id="50908-122">Crie uma regra de segurança a bloquear o acesso de Olá sub-rede toohello Internet.</span><span class="sxs-lookup"><span data-stu-id="50908-122">Create a security rule blocking access from hello subnet toohello Internet.</span></span>
    
         Get-AzureNetworkSecurityGroup -Name "NSG-BackEnd" `
         | Set-AzureNetworkSecurityRule -Name block-internet `
@@ -178,7 +178,7 @@ toocreate com o nome de um NSG denominado **NSG-front-end** com base no cenário
             -SourceAddressPrefix '*'  -SourcePortRange '*' `
             -DestinationAddressPrefix Internet -DestinationPortRange '*'
    
-    Resultado esperado:
+    <span data-ttu-id="50908-123">Resultado esperado:</span><span class="sxs-lookup"><span data-stu-id="50908-123">Expected output:</span></span>
    
         Name     : NSG-BackEnd
         Location : Central US

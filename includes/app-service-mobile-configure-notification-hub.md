@@ -1,11 +1,11 @@
-Olá funcionalidade de Mobile Apps do App Service do Azure utiliza [Notification Hubs do Azure] toosend pushes, pelo que irá configurar um hub de notificação para a sua aplicação móvel.
+<span data-ttu-id="4405a-101">Olá funcionalidade de Mobile Apps do App Service do Azure utiliza [Notification Hubs do Azure] toosend pushes, pelo que irá configurar um hub de notificação para a sua aplicação móvel.</span><span class="sxs-lookup"><span data-stu-id="4405a-101">hello Mobile Apps feature of Azure App Service uses [Azure Notification Hubs] toosend pushes, so you will be configuring a notification hub for your mobile app.</span></span>
 
-1. No Olá [portal do Azure], aceda demasiado**serviços aplicacionais**e, em seguida, clique em sua back-end de aplicação. Em **definições**, clique em **Push**.
-2. Clique em **Connect** tooadd uma aplicação de toohello de recursos de hub de notificação. Pode criar um hub ou ligar tooan um existente.
+1. <span data-ttu-id="4405a-102">No Olá [portal do Azure], aceda demasiado**serviços aplicacionais**e, em seguida, clique em sua back-end de aplicação.</span><span class="sxs-lookup"><span data-stu-id="4405a-102">In hello [Azure portal], go too**App Services**, and then click your app back end.</span></span> <span data-ttu-id="4405a-103">Em **definições**, clique em **Push**.</span><span class="sxs-lookup"><span data-stu-id="4405a-103">Under **Settings**, click **Push**.</span></span>
+2. <span data-ttu-id="4405a-104">Clique em **Connect** tooadd uma aplicação de toohello de recursos de hub de notificação.</span><span class="sxs-lookup"><span data-stu-id="4405a-104">Click **Connect** tooadd a notification hub resource toohello app.</span></span> <span data-ttu-id="4405a-105">Pode criar um hub ou ligar tooan um existente.</span><span class="sxs-lookup"><span data-stu-id="4405a-105">You can either create a hub or connect tooan existing one.</span></span>
 
     ![](./media/app-service-mobile-create-notification-hub/configure-hub-flow.png)
 
-Agora ligou um projeto de back-end das Mobile Apps tooyour do notification hub. Mais tarde, irá configurar este notification hub tooconnect tooa plataforma notificação system (PNS) toopush toodevices.
+<span data-ttu-id="4405a-106">Agora ligou um projeto de back-end das Mobile Apps tooyour do notification hub.</span><span class="sxs-lookup"><span data-stu-id="4405a-106">Now you have connected a notification hub tooyour Mobile Apps back-end project.</span></span> <span data-ttu-id="4405a-107">Mais tarde, irá configurar este notification hub tooconnect tooa plataforma notificação system (PNS) toopush toodevices.</span><span class="sxs-lookup"><span data-stu-id="4405a-107">Later you will configure this notification hub tooconnect tooa platform notification system (PNS) toopush toodevices.</span></span>
 
 [portal do Azure]: https://portal.azure.com/
 [Notification Hubs do Azure]: https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-push-notification-overview/

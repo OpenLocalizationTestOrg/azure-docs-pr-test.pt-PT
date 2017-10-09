@@ -1,16 +1,16 @@
-Eis como toouse Olá **Service Bus - quando é recebida uma mensagem numa fila** acionar tooinitiate um fluxo de trabalho de aplicação lógica, quando um novo item é enviado tooa fila do Service Bus.  
+<span data-ttu-id="1d29a-101">Eis como toouse Olá **Service Bus - quando é recebida uma mensagem numa fila** acionar tooinitiate um fluxo de trabalho de aplicação lógica, quando um novo item é enviado tooa fila do Service Bus.</span><span class="sxs-lookup"><span data-stu-id="1d29a-101">Here's how toouse hello **Service Bus - When a message is received in a queue** trigger tooinitiate a logic app workflow when a new item is sent tooa Service Bus queue.</span></span>  
 
 > [!NOTE]
-> Será pedido toosign com a cadeia de ligação do Service Bus se não tiver criado uma ligação tooService barramento.  
+> <span data-ttu-id="1d29a-102">Será pedido toosign com a cadeia de ligação do Service Bus se não tiver criado uma ligação tooService barramento.</span><span class="sxs-lookup"><span data-stu-id="1d29a-102">You will be prompted toosign in with your Service Bus connection string if you have not already created a connection tooService Bus.</span></span>  
 > 
 > 
 
-1. Na caixa de pesquisa de Olá no designer de aplicações de lógica de Olá, introduza **service bus**. Em seguida, selecione Olá **Service Bus - quando é recebida uma mensagem numa fila** acionador.  
-   ![Imagem de Acionador de barramento de serviço 1](./media/connectors-create-api-servicebus/trigger-1.png)   
-2. Olá **quando é recebida uma mensagem numa fila** é apresentada a caixa de diálogo.  
-   ![Imagem de Acionador de barramento de serviço 2](./media/connectors-create-api-servicebus/trigger-2.png)   
-3. Introduza o nome de Olá do Olá fila do Service Bus que gostaria de Olá toomonitor de Acionador.   
+1. <span data-ttu-id="1d29a-103">Na caixa de pesquisa de Olá no designer de aplicações de lógica de Olá, introduza **service bus**.</span><span class="sxs-lookup"><span data-stu-id="1d29a-103">In hello search box on hello logic apps designer, enter **service bus**.</span></span> <span data-ttu-id="1d29a-104">Em seguida, selecione Olá **Service Bus - quando é recebida uma mensagem numa fila** acionador.</span><span class="sxs-lookup"><span data-stu-id="1d29a-104">Then select hello **Service Bus - When a message is received in a queue** trigger.</span></span>  
+   <span data-ttu-id="1d29a-105">![Imagem de Acionador de barramento de serviço 1](./media/connectors-create-api-servicebus/trigger-1.png)</span><span class="sxs-lookup"><span data-stu-id="1d29a-105">![Service Bus trigger image 1](./media/connectors-create-api-servicebus/trigger-1.png)</span></span>   
+2. <span data-ttu-id="1d29a-106">Olá **quando é recebida uma mensagem numa fila** é apresentada a caixa de diálogo.</span><span class="sxs-lookup"><span data-stu-id="1d29a-106">hello **When a message is received in a queue** dialog box is displayed.</span></span>  
+   <span data-ttu-id="1d29a-107">![Imagem de Acionador de barramento de serviço 2](./media/connectors-create-api-servicebus/trigger-2.png)</span><span class="sxs-lookup"><span data-stu-id="1d29a-107">![Service Bus trigger image 2](./media/connectors-create-api-servicebus/trigger-2.png)</span></span>   
+3. <span data-ttu-id="1d29a-108">Introduza o nome de Olá do Olá fila do Service Bus que gostaria de Olá toomonitor de Acionador.</span><span class="sxs-lookup"><span data-stu-id="1d29a-108">Enter hello name of hello Service Bus queue you would like hello trigger toomonitor.</span></span>   
    ![Imagem de Acionador de Service Bus 3](./media/connectors-create-api-servicebus/trigger-3.png)   
 
-Neste momento, a aplicação lógica foi configurada com um acionador. Quando é recebido um novo item na fila de Olá que selecionou, acionador Olá irá iniciar a execução da Olá outros acionadores e ações no fluxo de trabalho Olá.    
+<span data-ttu-id="1d29a-110">Neste momento, a aplicação lógica foi configurada com um acionador.</span><span class="sxs-lookup"><span data-stu-id="1d29a-110">At this point, your logic app has been configured with a trigger.</span></span> <span data-ttu-id="1d29a-111">Quando é recebido um novo item na fila de Olá que selecionou, acionador Olá irá iniciar a execução da Olá outros acionadores e ações no fluxo de trabalho Olá.</span><span class="sxs-lookup"><span data-stu-id="1d29a-111">When a new item is received in hello queue you selected, hello trigger will begin a run of hello other triggers and actions in hello workflow.</span></span>    
 

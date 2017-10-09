@@ -1,8 +1,8 @@
 
-toodeploy Olá recursos tooAzure, deve ter sessão iniciada no tooyour conta do Azure e tem de utilizar o módulo do Azure Resource Manager Olá. toolearn sobre como utilizar o Azure Resource Manager com o Azure PowerShell ou a CLI do Azure, consulte:
+<span data-ttu-id="9771c-101">toodeploy Olá recursos tooAzure, deve ter sessão iniciada no tooyour conta do Azure e tem de utilizar o módulo do Azure Resource Manager Olá.</span><span class="sxs-lookup"><span data-stu-id="9771c-101">toodeploy hello resources tooAzure, you must be logged in tooyour Azure account and you must use hello Azure Resource Manager module.</span></span> <span data-ttu-id="9771c-102">toolearn sobre como utilizar o Azure Resource Manager com o Azure PowerShell ou a CLI do Azure, consulte:</span><span class="sxs-lookup"><span data-stu-id="9771c-102">toolearn about using Azure Resource Manager with either Azure PowerShell or Azure CLI, see:</span></span>
 
-* [Utilizar o Azure PowerShell com o Azure Resource Manager](../articles/azure-resource-manager/powershell-azure-resource-manager.md)
-* [Utilizar hello CLI do Azure para Mac, Linux e Windows com a gestão de recursos do Azure](../articles/azure-resource-manager/xplat-cli-azure-resource-manager.md).
+* [<span data-ttu-id="9771c-103">Utilizar o Azure PowerShell com o Azure Resource Manager</span><span class="sxs-lookup"><span data-stu-id="9771c-103">Using Azure PowerShell with Azure Resource Manager</span></span>](../articles/azure-resource-manager/powershell-azure-resource-manager.md)
+* <span data-ttu-id="9771c-104">[Utilizar hello CLI do Azure para Mac, Linux e Windows com a gestão de recursos do Azure](../articles/azure-resource-manager/xplat-cli-azure-resource-manager.md).</span><span class="sxs-lookup"><span data-stu-id="9771c-104">[Using hello Azure CLI for Mac, Linux, and Windows with Azure Resource Management](../articles/azure-resource-manager/xplat-cli-azure-resource-manager.md).</span></span>
 
-Olá exemplos a seguir partem do princípio de que já tem um grupo de recursos na sua conta com o nome especificado Olá. 
+<span data-ttu-id="9771c-105">Olá exemplos a seguir partem do princípio de que já tem um grupo de recursos na sua conta com o nome especificado Olá.</span><span class="sxs-lookup"><span data-stu-id="9771c-105">hello following examples assume you already have a resource group in your account with hello specified name.</span></span> 
 

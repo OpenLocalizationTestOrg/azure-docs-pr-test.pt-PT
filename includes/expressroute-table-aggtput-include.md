@@ -1,7 +1,7 @@
-|  | **Débito do Gateway do ExpressRoute (cópia de segurança para)** | **Coexistência do ExpressRoute e do Gateway de VPN** |
+|  | <span data-ttu-id="a7909-101">**Débito do Gateway do ExpressRoute (cópia de segurança para)**</span><span class="sxs-lookup"><span data-stu-id="a7909-101">**ExpressRoute Gateway throughput (up to)**</span></span> | <span data-ttu-id="a7909-102">**Coexistência do ExpressRoute e do Gateway de VPN**</span><span class="sxs-lookup"><span data-stu-id="a7909-102">**VPN Gateway and ExpressRoute coexist**</span></span> |
 | --- | --- | --- |
-| **SKU básico (preterido)** |500 Mbps |Não |
-| **Standard SKU** |1000 Mbps |Sim |
-| **SKU de elevado desempenho** |2000 Mbps |Sim |
-| **SKU de desempenho Ultra** |9000 Mbps |Sim |
+| <span data-ttu-id="a7909-103">**SKU básico (preterido)**</span><span class="sxs-lookup"><span data-stu-id="a7909-103">**Basic SKU (deprecated)**</span></span> |<span data-ttu-id="a7909-104">500 Mbps</span><span class="sxs-lookup"><span data-stu-id="a7909-104">500 Mbps</span></span> |<span data-ttu-id="a7909-105">Não</span><span class="sxs-lookup"><span data-stu-id="a7909-105">No</span></span> |
+| <span data-ttu-id="a7909-106">**Standard SKU**</span><span class="sxs-lookup"><span data-stu-id="a7909-106">**Standard SKU**</span></span> |<span data-ttu-id="a7909-107">1000 Mbps</span><span class="sxs-lookup"><span data-stu-id="a7909-107">1000 Mbps</span></span> |<span data-ttu-id="a7909-108">Sim</span><span class="sxs-lookup"><span data-stu-id="a7909-108">Yes</span></span> |
+| <span data-ttu-id="a7909-109">**SKU de elevado desempenho**</span><span class="sxs-lookup"><span data-stu-id="a7909-109">**High Performance SKU**</span></span> |<span data-ttu-id="a7909-110">2000 Mbps</span><span class="sxs-lookup"><span data-stu-id="a7909-110">2000 Mbps</span></span> |<span data-ttu-id="a7909-111">Sim</span><span class="sxs-lookup"><span data-stu-id="a7909-111">Yes</span></span> |
+| <span data-ttu-id="a7909-112">**SKU de desempenho Ultra**</span><span class="sxs-lookup"><span data-stu-id="a7909-112">**Ultra Performance SKU**</span></span> |<span data-ttu-id="a7909-113">9000 Mbps</span><span class="sxs-lookup"><span data-stu-id="a7909-113">9000 Mbps</span></span> |<span data-ttu-id="a7909-114">Sim</span><span class="sxs-lookup"><span data-stu-id="a7909-114">Yes</span></span> |
 

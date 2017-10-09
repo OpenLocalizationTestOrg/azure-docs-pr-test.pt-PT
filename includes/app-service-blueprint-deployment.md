@@ -1,7 +1,7 @@
-* [Implementar um tooAzure de aplicação do serviço de aplicações](../articles/app-service-web/web-sites-deploy.md)
-* [Configurar o controlo de origem e a integração contínua](../articles/app-service-web/app-service-continuous-deployment.md)
-* [Implementações de teste com as ranhuras de implementação](../articles/app-service-web/web-sites-staged-publishing.md)
-* [Publicação e controlo de acesso (RBAC) baseado em funções](https://azure.microsoft.com/blog/rbac-and-azure-websites-publishing/)
+* [<span data-ttu-id="14177-101">Implementar um tooAzure de aplicação do serviço de aplicações</span><span class="sxs-lookup"><span data-stu-id="14177-101">Deploying an app tooAzure App Service</span></span>](../articles/app-service-web/web-sites-deploy.md)
+* [<span data-ttu-id="14177-102">Configurar o controlo de origem e a integração contínua</span><span class="sxs-lookup"><span data-stu-id="14177-102">Configuring source control and continuous integration</span></span>](../articles/app-service-web/app-service-continuous-deployment.md)
+* [<span data-ttu-id="14177-103">Implementações de teste com as ranhuras de implementação</span><span class="sxs-lookup"><span data-stu-id="14177-103">Staging deployments with deployment slots</span></span>](../articles/app-service-web/web-sites-staged-publishing.md)
+* [<span data-ttu-id="14177-104">Publicação e controlo de acesso (RBAC) baseado em funções</span><span class="sxs-lookup"><span data-stu-id="14177-104">Publishing and Role Based Access Control (RBAC)</span></span>](https://azure.microsoft.com/blog/rbac-and-azure-websites-publishing/)
 
-## <a name="videos"></a>Vídeos
-* [Automatizar o fluxo de trabalho de implementação de Olá para gestão de versões](https://azure.microsoft.com/resources/videos/azurecon-2015-manage-code-changes-to-web-apps-using-the-devops-features-of-azure-app-service-and-visual-studio-release-management/)
+## <a name="videos"></a><span data-ttu-id="14177-105">Vídeos</span><span class="sxs-lookup"><span data-stu-id="14177-105">Videos</span></span>
+* [<span data-ttu-id="14177-106">Automatizar o fluxo de trabalho de implementação de Olá para gestão de versões</span><span class="sxs-lookup"><span data-stu-id="14177-106">Automating hello deployment workflow for release management</span></span>](https://azure.microsoft.com/resources/videos/azurecon-2015-manage-code-changes-to-web-apps-using-the-devops-features-of-azure-app-service-and-visual-studio-release-management/)

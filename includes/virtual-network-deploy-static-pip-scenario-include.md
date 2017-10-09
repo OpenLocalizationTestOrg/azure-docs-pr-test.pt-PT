@@ -1,9 +1,9 @@
-## <a name="scenario"></a>Cenário
-Este documento irá guiá-lo através de uma implementação que utiliza um endereço IP público estático atribuído tooa máquina de virtual (VM). Neste cenário, terá de uma única VM com o seu próprio endereço IP público estático. Olá VM faz parte de uma sub-rede designada **front-end** e também tem um endereço IP privado estático (**192.168.1.101**) nessa sub-rede.
+## <a name="scenario"></a><span data-ttu-id="14995-101">Cenário</span><span class="sxs-lookup"><span data-stu-id="14995-101">Scenario</span></span>
+<span data-ttu-id="14995-102">Este documento irá guiá-lo através de uma implementação que utiliza um endereço IP público estático atribuído tooa máquina de virtual (VM).</span><span class="sxs-lookup"><span data-stu-id="14995-102">This document will walk through a deployment that uses a static public IP address allocated tooa virtual machine (VM).</span></span> <span data-ttu-id="14995-103">Neste cenário, terá de uma única VM com o seu próprio endereço IP público estático.</span><span class="sxs-lookup"><span data-stu-id="14995-103">In this scenario, you have a single VM with its own static public IP address.</span></span> <span data-ttu-id="14995-104">Olá VM faz parte de uma sub-rede designada **front-end** e também tem um endereço IP privado estático (**192.168.1.101**) nessa sub-rede.</span><span class="sxs-lookup"><span data-stu-id="14995-104">hello VM is part of a subnet named **FrontEnd** and also has a static private IP address (**192.168.1.101**) in that subnet.</span></span>
 
-Poderá ser necessário um endereço IP estático para servidores web que necessitam de ligações de SSL no qual Olá SSL certificado é ligado tooan IP endereço. 
+<span data-ttu-id="14995-105">Poderá ser necessário um endereço IP estático para servidores web que necessitam de ligações de SSL no qual Olá SSL certificado é ligado tooan IP endereço.</span><span class="sxs-lookup"><span data-stu-id="14995-105">You may need a static IP address for web servers that require SSL connections in which hello SSL certificate is linked tooan IP address.</span></span> 
 
 ![DESCRIÇÃO DA IMAGEM](./media/virtual-network-deploy-static-pip-scenario-include/figure1.png)
 
-Pode seguir passos Olá abaixo ambiente de Olá toodeploy apresentado na figura Olá acima.
+<span data-ttu-id="14995-107">Pode seguir passos Olá abaixo ambiente de Olá toodeploy apresentado na figura Olá acima.</span><span class="sxs-lookup"><span data-stu-id="14995-107">You can follow hello steps below toodeploy hello environment shown in hello figure above.</span></span>
 

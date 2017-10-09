@@ -1,4 +1,4 @@
-| Recurso | Limite |
+| <span data-ttu-id="dbd24-101">Recurso</span><span class="sxs-lookup"><span data-stu-id="dbd24-101">Resource</span></span> | <span data-ttu-id="dbd24-102">Limite</span><span class="sxs-lookup"><span data-stu-id="dbd24-102">Limit</span></span> |
 | --- | --- |
-| Subscrições de Eventos por região |1000 |
-| Tópicos Personalizados por região |20 |
+| <span data-ttu-id="dbd24-103">Subscrições de Eventos por região</span><span class="sxs-lookup"><span data-stu-id="dbd24-103">Event Subscriptions per region</span></span> |<span data-ttu-id="dbd24-104">1000</span><span class="sxs-lookup"><span data-stu-id="dbd24-104">1000</span></span> |
+| <span data-ttu-id="dbd24-105">Tópicos Personalizados por região</span><span class="sxs-lookup"><span data-stu-id="dbd24-105">Custom Topics per region</span></span> |<span data-ttu-id="dbd24-106">20</span><span class="sxs-lookup"><span data-stu-id="dbd24-106">20</span></span> |

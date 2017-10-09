@@ -1,20 +1,20 @@
-## <a name="view-hello-telemetry"></a>Telemetria de visualizações de Olá
+## <a name="view-hello-telemetry"></a><span data-ttu-id="9e5e5-101">Telemetria de visualizações de Olá</span><span class="sxs-lookup"><span data-stu-id="9e5e5-101">View hello telemetry</span></span>
 
-Olá Raspberry Pi agora está a enviar solução de monitorização remota telemetria toohello. Pode ver a telemetria de Olá no dashboard da solução Olá. Também pode enviar mensagens tooyour Raspberry Pi a partir do dashboard de solução Olá.
+<span data-ttu-id="9e5e5-102">Olá Raspberry Pi agora está a enviar solução de monitorização remota telemetria toohello.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-102">hello Raspberry Pi is now sending telemetry toohello remote monitoring solution.</span></span> <span data-ttu-id="9e5e5-103">Pode ver a telemetria de Olá no dashboard da solução Olá.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-103">You can view hello telemetry on hello solution dashboard.</span></span> <span data-ttu-id="9e5e5-104">Também pode enviar mensagens tooyour Raspberry Pi a partir do dashboard de solução Olá.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-104">You can also send messages tooyour Raspberry Pi from hello solution dashboard.</span></span>
 
-- Navegue toohello dashboard da solução.
-- Selecione o seu dispositivo no Olá **dispositivo tooView** pendente.
-- a telemetria de Olá de Olá Raspberry Pi apresenta no dashboard de Olá.
+- <span data-ttu-id="9e5e5-105">Navegue toohello dashboard da solução.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-105">Navigate toohello solution dashboard.</span></span>
+- <span data-ttu-id="9e5e5-106">Selecione o seu dispositivo no Olá **dispositivo tooView** pendente.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-106">Select your device in hello **Device tooView** dropdown.</span></span>
+- <span data-ttu-id="9e5e5-107">a telemetria de Olá de Olá Raspberry Pi apresenta no dashboard de Olá.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-107">hello telemetry from hello Raspberry Pi displays on hello dashboard.</span></span>
 
 ![Apresentar a telemetria de Olá Raspberry Pi][img-telemetry-display]
 
-## <a name="initiate-hello-firmware-update"></a>Iniciar a atualização de firmware Olá
+## <a name="initiate-hello-firmware-update"></a><span data-ttu-id="9e5e5-109">Iniciar a atualização de firmware Olá</span><span class="sxs-lookup"><span data-stu-id="9e5e5-109">Initiate hello firmware update</span></span>
 
-processo de atualização de firmware Olá transfere e instala uma versão atualizada da aplicação de cliente de dispositivo Olá em Olá Raspberry Pi. Para obter mais informações sobre o processo de atualização de firmware Olá, consulte a descrição de Olá padrão de atualização de firmware Olá no [descrição geral da gestão de dispositivos do IoT hub][lnk-update-pattern].
+<span data-ttu-id="9e5e5-110">processo de atualização de firmware Olá transfere e instala uma versão atualizada da aplicação de cliente de dispositivo Olá em Olá Raspberry Pi.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-110">hello firmware update process downloads and installs an updated version of hello device client application on hello Raspberry Pi.</span></span> <span data-ttu-id="9e5e5-111">Para obter mais informações sobre o processo de atualização de firmware Olá, consulte a descrição de Olá padrão de atualização de firmware Olá no [descrição geral da gestão de dispositivos do IoT hub][lnk-update-pattern].</span><span class="sxs-lookup"><span data-stu-id="9e5e5-111">For more information about hello firmware update process, see hello description of hello firmware update pattern in [Overview of device management with IoT Hub][lnk-update-pattern].</span></span>
 
-Iniciar o processo de atualização de firmware Olá ao invocar um método no dispositivo Olá. Este método é assíncrono e devolve assim que o processo de atualização de Olá começa. Olá dispositivo utiliza comunicadas solução do propriedades toonotify Olá sobre progresso Olá da atualização de Olá.
+<span data-ttu-id="9e5e5-112">Iniciar o processo de atualização de firmware Olá ao invocar um método no dispositivo Olá.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-112">You initiate hello firmware update process by invoking a method on hello device.</span></span> <span data-ttu-id="9e5e5-113">Este método é assíncrono e devolve assim que o processo de atualização de Olá começa.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-113">This method is asynchronous, and returns as soon as hello update process begins.</span></span> <span data-ttu-id="9e5e5-114">Olá dispositivo utiliza comunicadas solução do propriedades toonotify Olá sobre progresso Olá da atualização de Olá.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-114">hello device uses reported properties toonotify hello solution about hello progress of hello update.</span></span>
 
-Invocar métodos no seu Raspberry Pi a partir do dashboard de solução Olá. Quando Olá Raspberry Pi ligado pela primeira vez toohello solução de monitorização remota, envia informações sobre métodos de Olá suporta. 
+<span data-ttu-id="9e5e5-115">Invocar métodos no seu Raspberry Pi a partir do dashboard de solução Olá.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-115">You invoke methods on your Raspberry Pi from hello solution dashboard.</span></span> <span data-ttu-id="9e5e5-116">Quando Olá Raspberry Pi ligado pela primeira vez toohello solução de monitorização remota, envia informações sobre métodos de Olá suporta.</span><span class="sxs-lookup"><span data-stu-id="9e5e5-116">When hello Raspberry Pi first connects toohello remote monitoring solution, it sends information about hello methods it supports.</span></span> 
 
 [img-telemetry-display]: media/iot-suite-raspberry-pi-kit-view-telemetry-advanced/telemetry.png
 [lnk-update-pattern]: ../articles/iot-hub/iot-hub-device-management-overview.md

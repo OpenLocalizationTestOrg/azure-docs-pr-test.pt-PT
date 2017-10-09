@@ -21,16 +21,16 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="query-data-from-hello-azure-time-series-insights-environment-using-c"></a>Consultar dados a partir do ambiente de Olá informações de séries de tempo do Azure com c#
+# <a name="query-data-from-hello-azure-time-series-insights-environment-using-c"></a><span data-ttu-id="c0665-103">Consultar dados a partir do ambiente de Olá informações de séries de tempo do Azure com c#</span><span class="sxs-lookup"><span data-stu-id="c0665-103">Query data from hello Azure Time Series Insights environment using C#</span></span>
 
-Neste exemplo c# demonstra como dados tooquery Olá ambiente de informações de séries de tempo do Azure.
-exemplo de Olá mostra vários exemplos básicos de utilização da API de consulta:
-1. Como um passo de preparação, adquirir token de acesso de Olá através de Olá API do Azure Active Directory. Transmitir este token no Olá `Authorization` cabeçalho de cada pedido de API de consulta. Para configurar aplicações não interativa, consulte [autenticação e autorização](time-series-insights-authentication-and-authorization.md). Além disso, certifique-se de todas as constantes de Olá definidas no início de Olá de exemplo de Olá estão definidas corretamente.
-2. lista de Olá dos ambientes Olá utilizador tem toois acesso obtido. Um dos ambientes de Olá é captado como ambiente de Olá de interesse e mais dados está a ser consultados para este ambiente.
-3. Como um exemplo de pedido HTTPS, são solicitados dados de disponibilidade para o ambiente de Olá de interesse.
-4. Como um exemplo de pedido de socket web, são pedidos agrega dados de eventos para o ambiente de Olá de interesse. São solicitados dados para o intervalo de tempo de disponibilidade todo Olá.
+<span data-ttu-id="c0665-104">Neste exemplo c# demonstra como dados tooquery Olá ambiente de informações de séries de tempo do Azure.</span><span class="sxs-lookup"><span data-stu-id="c0665-104">This C# example demonstrates how tooquery data from hello Azure Time Series Insights environment.</span></span>
+<span data-ttu-id="c0665-105">exemplo de Olá mostra vários exemplos básicos de utilização da API de consulta:</span><span class="sxs-lookup"><span data-stu-id="c0665-105">hello sample shows several basic examples of Query API usage:</span></span>
+1. <span data-ttu-id="c0665-106">Como um passo de preparação, adquirir token de acesso de Olá através de Olá API do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="c0665-106">As a preparation step, acquire hello access token through hello Azure Active Directory API.</span></span> <span data-ttu-id="c0665-107">Transmitir este token no Olá `Authorization` cabeçalho de cada pedido de API de consulta.</span><span class="sxs-lookup"><span data-stu-id="c0665-107">Pass this token in hello `Authorization` header of every Query API request.</span></span> <span data-ttu-id="c0665-108">Para configurar aplicações não interativa, consulte [autenticação e autorização](time-series-insights-authentication-and-authorization.md).</span><span class="sxs-lookup"><span data-stu-id="c0665-108">For setting up non-interactive applications, see [Authentication and authorization](time-series-insights-authentication-and-authorization.md).</span></span> <span data-ttu-id="c0665-109">Além disso, certifique-se de todas as constantes de Olá definidas no início de Olá de exemplo de Olá estão definidas corretamente.</span><span class="sxs-lookup"><span data-stu-id="c0665-109">Also, ensure all hello constants defined at hello beginning of hello sample are correctly set.</span></span>
+2. <span data-ttu-id="c0665-110">lista de Olá dos ambientes Olá utilizador tem toois acesso obtido.</span><span class="sxs-lookup"><span data-stu-id="c0665-110">hello list of environments that hello user has access toois obtained.</span></span> <span data-ttu-id="c0665-111">Um dos ambientes de Olá é captado como ambiente de Olá de interesse e mais dados está a ser consultados para este ambiente.</span><span class="sxs-lookup"><span data-stu-id="c0665-111">One of hello environments is picked up as hello environment of interest, and further data is queried for this environment.</span></span>
+3. <span data-ttu-id="c0665-112">Como um exemplo de pedido HTTPS, são solicitados dados de disponibilidade para o ambiente de Olá de interesse.</span><span class="sxs-lookup"><span data-stu-id="c0665-112">As an example of HTTPS request, availability data is requested for hello environment of interest.</span></span>
+4. <span data-ttu-id="c0665-113">Como um exemplo de pedido de socket web, são pedidos agrega dados de eventos para o ambiente de Olá de interesse.</span><span class="sxs-lookup"><span data-stu-id="c0665-113">As an example of web socket request, event aggregates data is requested for hello environment of interest.</span></span> <span data-ttu-id="c0665-114">São solicitados dados para o intervalo de tempo de disponibilidade todo Olá.</span><span class="sxs-lookup"><span data-stu-id="c0665-114">Data is requested for hello whole availability time range.</span></span>
 
-## <a name="c-example"></a>Exemplo do c#
+## <a name="c-example"></a><span data-ttu-id="c0665-115">Exemplo do c#</span><span class="sxs-lookup"><span data-stu-id="c0665-115">C# example</span></span>
 
 ```csharp
 using System;
@@ -300,6 +300,6 @@ namespace TimeSeriesInsightsQuerySample
 }
 ```
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="c0665-116">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="c0665-116">Next steps</span></span>
 
-Para obter a referência de API de consulta completa Olá, consulte Olá [API de consulta](/rest/api/time-series-insights/time-series-insights-reference-queryapi) documento.
+<span data-ttu-id="c0665-117">Para obter a referência de API de consulta completa Olá, consulte Olá [API de consulta](/rest/api/time-series-insights/time-series-insights-reference-queryapi) documento.</span><span class="sxs-lookup"><span data-stu-id="c0665-117">For hello full Query API reference, see hello [Query API](/rest/api/time-series-insights/time-series-insights-reference-queryapi) document.</span></span>

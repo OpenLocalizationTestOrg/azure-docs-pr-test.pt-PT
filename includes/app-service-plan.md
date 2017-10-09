@@ -1,8 +1,8 @@
-Um [plano do App Service](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) Especifica a localização de Olá, tamanho e funcionalidades do farm de servidores web do Olá que aloja a aplicação. Pode poupar dinheiro quando várias aplicações de alojamento configurando Olá web apps tooshare um único plano de serviço de aplicações.
+<span data-ttu-id="dc53d-101">Um [plano do App Service](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) Especifica a localização de Olá, tamanho e funcionalidades do farm de servidores web do Olá que aloja a aplicação.</span><span class="sxs-lookup"><span data-stu-id="dc53d-101">An [App Service plan](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) specifies hello location, size, and features of hello web server farm that hosts your app.</span></span> <span data-ttu-id="dc53d-102">Pode poupar dinheiro quando várias aplicações de alojamento configurando Olá web apps tooshare um único plano de serviço de aplicações.</span><span class="sxs-lookup"><span data-stu-id="dc53d-102">You can save money when hosting multiple apps by configuring hello web apps tooshare a single App Service plan.</span></span>
 
-Os planos do Serviço de Aplicações definem:
+<span data-ttu-id="dc53d-103">Os planos do Serviço de Aplicações definem:</span><span class="sxs-lookup"><span data-stu-id="dc53d-103">App Service plans define:</span></span>
 
-* Região (por exemplo: Norte da Europa, Leste dos EUA, Sudeste da Ásia)
-* Tamanho da instância (pequena, média, grande)
-* Contagem de escalas (1 too20 instâncias)
-* SKU (Gratuito, Partilhado, Básico, Standard ou Premium)
+* <span data-ttu-id="dc53d-104">Região (por exemplo: Norte da Europa, Leste dos EUA, Sudeste da Ásia)</span><span class="sxs-lookup"><span data-stu-id="dc53d-104">Region (for example: North Europe, East US, or Southeast Asia)</span></span>
+* <span data-ttu-id="dc53d-105">Tamanho da instância (pequena, média, grande)</span><span class="sxs-lookup"><span data-stu-id="dc53d-105">Instance size (small, medium, or large)</span></span>
+* <span data-ttu-id="dc53d-106">Contagem de escalas (1 too20 instâncias)</span><span class="sxs-lookup"><span data-stu-id="dc53d-106">Scale count (1 too20 instances)</span></span>
+* <span data-ttu-id="dc53d-107">SKU (Gratuito, Partilhado, Básico, Standard ou Premium)</span><span class="sxs-lookup"><span data-stu-id="dc53d-107">SKU (Free, Shared, Basic, Standard, or Premium)</span></span>

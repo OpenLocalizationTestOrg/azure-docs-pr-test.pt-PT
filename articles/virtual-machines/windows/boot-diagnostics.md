@@ -21,6 +21,6 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="how-toouse-boot-diagnostics-tootroubleshoot-windows-virtual-machines-in-azure"></a>Como toouse efetuar o arranque de máquinas virtuais do diagnóstico tootroubleshoot Windows no Azure
+# <a name="how-toouse-boot-diagnostics-tootroubleshoot-windows-virtual-machines-in-azure"></a><span data-ttu-id="5c681-103">Como toouse efetuar o arranque de máquinas virtuais do diagnóstico tootroubleshoot Windows no Azure</span><span class="sxs-lookup"><span data-stu-id="5c681-103">How toouse boot diagnostics tootroubleshoot Windows virtual machines in Azure</span></span>
 
 [!INCLUDE [virtual-machines-common-boot-diagnostics](../../../includes/virtual-machines-common-boot-diagnostics.md)]

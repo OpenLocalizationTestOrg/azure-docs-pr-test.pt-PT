@@ -21,25 +21,25 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="linux-vm-extension-configuration-samples"></a>Exemplos de configuração das extensões de VM com Linux
+# <a name="linux-vm-extension-configuration-samples"></a><span data-ttu-id="58a3e-103">Exemplos de configuração das extensões de VM com Linux</span><span class="sxs-lookup"><span data-stu-id="58a3e-103">Linux VM extension configuration samples</span></span>
 > [!div class="op_single_selector"]
-> * [PowerShell – modelo](../windows/extensions-configuration-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-> * [CLI - modelo](../windows/extensions-configuration-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+> * [<span data-ttu-id="58a3e-104">PowerShell – modelo</span><span class="sxs-lookup"><span data-stu-id="58a3e-104">PowerShell - Template</span></span>](../windows/extensions-configuration-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+> * [<span data-ttu-id="58a3e-105">CLI - modelo</span><span class="sxs-lookup"><span data-stu-id="58a3e-105">CLI - Template</span></span>](../windows/extensions-configuration-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 > 
 > 
 
 <br>
 
-Este artigo fornece uma configuração de exemplo para a configuração de extensões de VM do Azure para VMs com Linux.
+<span data-ttu-id="58a3e-106">Este artigo fornece uma configuração de exemplo para a configuração de extensões de VM do Azure para VMs com Linux.</span><span class="sxs-lookup"><span data-stu-id="58a3e-106">This article provides sample configuration for configuring Azure VM extensions for Linux VMs.</span></span>
 
-toolearn mais informações sobre estas extensões clique aqui: [descrição geral de extensões de VM do Azure.](../windows/extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+<span data-ttu-id="58a3e-107">toolearn mais informações sobre estas extensões clique aqui: [descrição geral de extensões de VM do Azure.](../windows/extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)</span><span class="sxs-lookup"><span data-stu-id="58a3e-107">toolearn more about these extensions click here : [Azure VM Extensions Overview.](../windows/extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)</span></span>
 
-toolearn mais informações sobre a criação de modelos de extensão clique aqui: [criação de modelos de extensão.](../windows/extensions-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+<span data-ttu-id="58a3e-108">toolearn mais informações sobre a criação de modelos de extensão clique aqui: [criação de modelos de extensão.](../windows/extensions-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)</span><span class="sxs-lookup"><span data-stu-id="58a3e-108">toolearn more about authoring extension templates click here : [Authoring Extension Templates.](../windows/extensions-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)</span></span>
 
-Este artigo apresenta uma lista de valores de configuração esperado para algumas das Olá extensões de Linux.
+<span data-ttu-id="58a3e-109">Este artigo apresenta uma lista de valores de configuração esperado para algumas das Olá extensões de Linux.</span><span class="sxs-lookup"><span data-stu-id="58a3e-109">This article lists expected configuration values for some of hello Linux Extensions.</span></span>
 
-## <a name="sample-template-snippet-for-vm-extensions"></a>Fragmento de modelo de exemplo para extensões de VM.
-fragmento de modelo de Olá para implementar a procura de extensões seguinte forma:
+## <a name="sample-template-snippet-for-vm-extensions"></a><span data-ttu-id="58a3e-110">Fragmento de modelo de exemplo para extensões de VM.</span><span class="sxs-lookup"><span data-stu-id="58a3e-110">Sample template snippet for VM Extensions.</span></span>
+<span data-ttu-id="58a3e-111">fragmento de modelo de Olá para implementar a procura de extensões seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="58a3e-111">hello template snippet for Deploying extensions looks as following:</span></span>
 
       {
       "type": "Microsoft.Compute/virtualMachines/extensions",
@@ -59,7 +59,7 @@ fragmento de modelo de Olá para implementar a procura de extensões seguinte fo
       }
       }
 
-## <a name="sample-template-snippet-for-vm-extensions-with-vm-scale-sets"></a>Fragmento de modelo de exemplo para extensões de VM com conjuntos de dimensionamento de VM.
+## <a name="sample-template-snippet-for-vm-extensions-with-vm-scale-sets"></a><span data-ttu-id="58a3e-112">Fragmento de modelo de exemplo para extensões de VM com conjuntos de dimensionamento de VM.</span><span class="sxs-lookup"><span data-stu-id="58a3e-112">Sample template snippet for VM Extensions with VM Scale Sets.</span></span>
           {
            "type":"Microsoft.Compute/virtualMachineScaleSets",
           ....
@@ -80,11 +80,11 @@ fragmento de modelo de Olá para implementar a procura de extensões seguinte fo
                   }
                 }
 
-Antes de implementar a extensão de Olá. Verifique a versão mais recente da extensão Olá e substituir typeHandlerVersion"Olá" com a versão atual mais recente de Olá.
+<span data-ttu-id="58a3e-113">Antes de implementar a extensão de Olá. Verifique a versão mais recente da extensão Olá e substituir typeHandlerVersion"Olá" com a versão atual mais recente de Olá.</span><span class="sxs-lookup"><span data-stu-id="58a3e-113">Before deploying hello extension please check hello latest extension version and replace hello "typeHandlerVersion" with hello current latest version.</span></span>
 
-Resto do artigo Olá fornece configurações de exemplo para extensões de VM do Linux.
+<span data-ttu-id="58a3e-114">Resto do artigo Olá fornece configurações de exemplo para extensões de VM do Linux.</span><span class="sxs-lookup"><span data-stu-id="58a3e-114">Rest of hello article provides sample configurations for Linux VM Extensions.</span></span>
 
-### <a name="cloudlink-securevm-agent"></a>CloudLink SecureVM agente
+### <a name="cloudlink-securevm-agent"></a><span data-ttu-id="58a3e-115">CloudLink SecureVM agente</span><span class="sxs-lookup"><span data-stu-id="58a3e-115">CloudLink SecureVM Agent</span></span>
           {
             "publisher": "CloudLinkEMC.SecureVM",
             "type": "CloudLinkSecureVMLinuxAgent",
@@ -94,7 +94,7 @@ Resto do artigo Olá fornece configurações de exemplo para extensões de VM do
             }
           }
 
-### <a name="customscript-extension-for-linux"></a>Extensão CustomScript para Linux.
+### <a name="customscript-extension-for-linux"></a><span data-ttu-id="58a3e-116">Extensão CustomScript para Linux.</span><span class="sxs-lookup"><span data-stu-id="58a3e-116">CustomScript Extension for Linux.</span></span>
     {
         "publisher": " Microsoft.Azure.Extensions",
         "type": "CustomScript",
@@ -109,7 +109,7 @@ Resto do artigo Olá fornece configurações de exemplo para extensões de VM do
     }
 
 
-### <a name="datadog-agent"></a>Agente de Datadog
+### <a name="datadog-agent"></a><span data-ttu-id="58a3e-117">Agente de Datadog</span><span class="sxs-lookup"><span data-stu-id="58a3e-117">Datadog Agent</span></span>
         {
           "publisher": "Datadog.Agent",
           "type": "DatadogLinuxAgent",
@@ -119,7 +119,7 @@ Resto do artigo Olá fornece configurações de exemplo para extensões de VM do
           }
         }
 
-### <a name="chef-agent"></a>Agente de chef
+### <a name="chef-agent"></a><span data-ttu-id="58a3e-118">Agente de chef</span><span class="sxs-lookup"><span data-stu-id="58a3e-118">Chef Agent</span></span>
         {
           "publisher": "Chef.Bootstrap.WindowsAzure",
           "type": "CentosChefClient|LinuxChefClient",
@@ -131,8 +131,8 @@ Resto do artigo Olá fornece configurações de exemplo para extensões de VM do
           }
         }
 
-### <a name="vm-access-extension-password-reset"></a>Extensão de acesso VM (reposição de palavra-passe)
-Para o esquema atualizada Consulte toohello [VMAccessForLinux documentação](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)
+### <a name="vm-access-extension-password-reset"></a><span data-ttu-id="58a3e-119">Extensão de acesso VM (reposição de palavra-passe)</span><span class="sxs-lookup"><span data-stu-id="58a3e-119">VM Access Extension (Password Reset)</span></span>
+<span data-ttu-id="58a3e-120">Para o esquema atualizada Consulte toohello [VMAccessForLinux documentação](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)</span><span class="sxs-lookup"><span data-stu-id="58a3e-120">For updated schema refer toohello [VMAccessForLinux Documentation](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)</span></span>
 
         {
           "publisher": "Microsoft.OSTCExtensions",
@@ -147,8 +147,8 @@ Para o esquema atualizada Consulte toohello [VMAccessForLinux documentação](ht
           }
         }
 
-### <a name="os-patching"></a>Aplicação de patches de SO
-Para o esquema atualizada Consulte toohello [OSPatching documentação](https://github.com/Azure/azure-linux-extensions/tree/master/OSPatching)
+### <a name="os-patching"></a><span data-ttu-id="58a3e-121">Aplicação de patches de SO</span><span class="sxs-lookup"><span data-stu-id="58a3e-121">OS Patching</span></span>
+<span data-ttu-id="58a3e-122">Para o esquema atualizada Consulte toohello [OSPatching documentação](https://github.com/Azure/azure-linux-extensions/tree/master/OSPatching)</span><span class="sxs-lookup"><span data-stu-id="58a3e-122">For updated schema refer toohello [OSPatching Documentation](https://github.com/Azure/azure-linux-extensions/tree/master/OSPatching)</span></span>
 
         {
         "publisher": "Microsoft.OSTCExtensions",
@@ -172,8 +172,8 @@ Para o esquema atualizada Consulte toohello [OSPatching documentação](https://
         }
         }
 
-### <a name="docker-extension"></a>Extensão de docker
-Para o esquema atualizada Consulte toohello [documentação da extensão de Docker](https://github.com/Azure/azure-docker-extension/blob/master/README.md#1-configuration-schema)
+### <a name="docker-extension"></a><span data-ttu-id="58a3e-123">Extensão de docker</span><span class="sxs-lookup"><span data-stu-id="58a3e-123">Docker Extension</span></span>
+<span data-ttu-id="58a3e-124">Para o esquema atualizada Consulte toohello [documentação da extensão de Docker](https://github.com/Azure/azure-docker-extension/blob/master/README.md#1-configuration-schema)</span><span class="sxs-lookup"><span data-stu-id="58a3e-124">For updated schema refer toohello [Docker Extension Documentation](https://github.com/Azure/azure-docker-extension/blob/master/README.md#1-configuration-schema)</span></span>
 
         {
           "publisher": "Microsoft.Azure.Extensions ",
@@ -215,9 +215,9 @@ Para o esquema atualizada Consulte toohello [documentação da extensão de Dock
         ]
         }
 
-Nos exemplos de Olá acima, substitua o número de versão Olá número da versão mais recente Olá.
+<span data-ttu-id="58a3e-125">Nos exemplos de Olá acima, substitua o número de versão Olá número da versão mais recente Olá.</span><span class="sxs-lookup"><span data-stu-id="58a3e-125">In hello examples above, replace hello version number with hello latest version number.</span></span>
 
-Segue-se um modelo VM completo para criar uma VM com Linux com uma extensão:
+<span data-ttu-id="58a3e-126">Segue-se um modelo VM completo para criar uma VM com Linux com uma extensão:</span><span class="sxs-lookup"><span data-stu-id="58a3e-126">Here is a full VM template for creating a Linux VM with an extension:</span></span>
 
-[Extensão de Script personalizado numa VM com Linux](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/)
+[<span data-ttu-id="58a3e-127">Extensão de Script personalizado numa VM com Linux</span><span class="sxs-lookup"><span data-stu-id="58a3e-127">Custom Script Extension on a Linux VM</span></span>](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/)
 

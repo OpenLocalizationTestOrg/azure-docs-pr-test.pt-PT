@@ -1,8 +1,8 @@
-Olá limites a seguir aplicam-se apenas ao utilizar o Olá do Azure Resource Manager e grupos de recursos do Azure.
+<span data-ttu-id="f8795-101">Olá limites a seguir aplicam-se apenas ao utilizar o Olá do Azure Resource Manager e grupos de recursos do Azure.</span><span class="sxs-lookup"><span data-stu-id="f8795-101">hello following limits apply when using hello Azure Resource Manager and Azure Resource Groups only.</span></span>
 
-| Recurso | Limite Predefinido |
+| <span data-ttu-id="f8795-102">Recurso</span><span class="sxs-lookup"><span data-stu-id="f8795-102">Resource</span></span> | <span data-ttu-id="f8795-103">Limite Predefinido</span><span class="sxs-lookup"><span data-stu-id="f8795-103">Default Limit</span></span> |
 | --- | --- |
-| Operações de gestão de conta de armazenamento (leitura) |800 por 5 minutos |
-| Operações de gestão de conta de armazenamento (escrita) |200 por hora |
-| Operações de gestão de conta de armazenamento (lista) |100 por 5 minutos |
+| <span data-ttu-id="f8795-104">Operações de gestão de conta de armazenamento (leitura)</span><span class="sxs-lookup"><span data-stu-id="f8795-104">Storage account management operations (read)</span></span> |<span data-ttu-id="f8795-105">800 por 5 minutos</span><span class="sxs-lookup"><span data-stu-id="f8795-105">800 per 5 minutes</span></span> |
+| <span data-ttu-id="f8795-106">Operações de gestão de conta de armazenamento (escrita)</span><span class="sxs-lookup"><span data-stu-id="f8795-106">Storage account management operations (write)</span></span> |<span data-ttu-id="f8795-107">200 por hora</span><span class="sxs-lookup"><span data-stu-id="f8795-107">200 per hour</span></span> |
+| <span data-ttu-id="f8795-108">Operações de gestão de conta de armazenamento (lista)</span><span class="sxs-lookup"><span data-stu-id="f8795-108">Storage account management operations (list)</span></span> |<span data-ttu-id="f8795-109">100 por 5 minutos</span><span class="sxs-lookup"><span data-stu-id="f8795-109">100 per 5 minutes</span></span> |
 

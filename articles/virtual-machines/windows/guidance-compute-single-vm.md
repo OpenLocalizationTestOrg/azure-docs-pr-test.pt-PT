@@ -21,7 +21,7 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="best-practices-for-running-a-windows-vm-on-azure"></a>Melhores práticas para executar uma VM Windows no Azure
+# <a name="best-practices-for-running-a-windows-vm-on-azure"></a><span data-ttu-id="3bb95-103">Melhores práticas para executar uma VM Windows no Azure</span><span class="sxs-lookup"><span data-stu-id="3bb95-103">Best Practices for running a Windows VM on Azure</span></span>
 [!INCLUDE [pnp-header](../../../includes/guidance-pnp-header-include.md)]
 
 [!INCLUDE [gudiance-comput-single-vm-windows](../../../includes/guidance-compute-single-vm-windows.md)]

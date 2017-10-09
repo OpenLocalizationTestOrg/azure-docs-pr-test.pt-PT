@@ -1,18 +1,18 @@
-Esta passagem, ficará a saber como toouse Olá **Salesforce - quando é criado um objecto** acionar tooinitiate um fluxo de trabalho de aplicação lógica, quando é criado um novo fabrico no Salesforce.
+<span data-ttu-id="bcf32-101">Esta passagem, ficará a saber como toouse Olá **Salesforce - quando é criado um objecto** acionar tooinitiate um fluxo de trabalho de aplicação lógica, quando é criado um novo fabrico no Salesforce.</span><span class="sxs-lookup"><span data-stu-id="bcf32-101">In this walk-through, you will learn how toouse hello **Salesforce - When an object is created** trigger tooinitiate a logic app workflow when a new lead is created in your Salesforce.</span></span>
 
 > [!NOTE]
-> Irá obter toosign que lhes é pedida a sua conta do Salesforce se não tiver já criado uma *ligação* tooSalesforce.  
+> <span data-ttu-id="bcf32-102">Irá obter toosign que lhes é pedida a sua conta do Salesforce se não tiver já criado uma *ligação* tooSalesforce.</span><span class="sxs-lookup"><span data-stu-id="bcf32-102">You will get prompted toosign into your Salesforce account if you have not already created a *connection* tooSalesforce.</span></span>  
 > 
 > 
 
-1. Introduza *salesforce* na caixa de pesquisa de Olá no designer de aplicações de lógica de Olá, em seguida, selecione Olá **Salesforce - quando é criado um objecto** acionador.  
-   ![Imagem de Acionador de Salesforce 1](./media/connectors-create-api-salesforce/trigger-1.png)   
-2. Olá **quando é criado um objecto** controlo é apresentado.  
-   ![Imagem de Acionador de Salesforce 2](./media/connectors-create-api-salesforce/trigger-2.png)   
-3. Selecione Olá **tipo de objeto** , em seguida, selecione *levar* da lista de Olá de objetos. Neste passo, é com a indicação de que está a criar um acionador que irá notificar a sua aplicação lógica sempre que é criado um novo fabrico no Salesforce.   
-   ![Imagem de Acionador de Salesforce 3](./media/connectors-create-api-salesforce/trigger-3.png)   
-4. E já está. Criou o acionador de Olá. No entanto, terá de toocreate pelo menos uma ação na ordem toomake isto uma aplicação lógica válida.    
+1. <span data-ttu-id="bcf32-103">Introduza *salesforce* na caixa de pesquisa de Olá no designer de aplicações de lógica de Olá, em seguida, selecione Olá **Salesforce - quando é criado um objecto** acionador.</span><span class="sxs-lookup"><span data-stu-id="bcf32-103">Enter *salesforce* in hello search box on hello logic apps designer then select hello **Salesforce - When an object is created**  trigger.</span></span>  
+   <span data-ttu-id="bcf32-104">![Imagem de Acionador de Salesforce 1](./media/connectors-create-api-salesforce/trigger-1.png)</span><span class="sxs-lookup"><span data-stu-id="bcf32-104">![Salesforce trigger image 1](./media/connectors-create-api-salesforce/trigger-1.png)</span></span>   
+2. <span data-ttu-id="bcf32-105">Olá **quando é criado um objecto** controlo é apresentado.</span><span class="sxs-lookup"><span data-stu-id="bcf32-105">hello **When an object is created** control is displayed.</span></span>  
+   <span data-ttu-id="bcf32-106">![Imagem de Acionador de Salesforce 2](./media/connectors-create-api-salesforce/trigger-2.png)</span><span class="sxs-lookup"><span data-stu-id="bcf32-106">![Salesforce trigger image 2](./media/connectors-create-api-salesforce/trigger-2.png)</span></span>   
+3. <span data-ttu-id="bcf32-107">Selecione Olá **tipo de objeto** , em seguida, selecione *levar* da lista de Olá de objetos.</span><span class="sxs-lookup"><span data-stu-id="bcf32-107">Select hello **Object Type** then select *Lead* from hello list of objects.</span></span> <span data-ttu-id="bcf32-108">Neste passo, é com a indicação de que está a criar um acionador que irá notificar a sua aplicação lógica sempre que é criado um novo fabrico no Salesforce.</span><span class="sxs-lookup"><span data-stu-id="bcf32-108">In this step you are indicating that you are creating a trigger that will notify your logic app whenever a new lead is created in Salesforce.</span></span>   
+   <span data-ttu-id="bcf32-109">![Imagem de Acionador de Salesforce 3](./media/connectors-create-api-salesforce/trigger-3.png)</span><span class="sxs-lookup"><span data-stu-id="bcf32-109">![Salesforce trigger image 3](./media/connectors-create-api-salesforce/trigger-3.png)</span></span>   
+4. <span data-ttu-id="bcf32-110">E já está.</span><span class="sxs-lookup"><span data-stu-id="bcf32-110">That's it.</span></span> <span data-ttu-id="bcf32-111">Criou o acionador de Olá.</span><span class="sxs-lookup"><span data-stu-id="bcf32-111">You've created hello trigger.</span></span> <span data-ttu-id="bcf32-112">No entanto, terá de toocreate pelo menos uma ação na ordem toomake isto uma aplicação lógica válida.</span><span class="sxs-lookup"><span data-stu-id="bcf32-112">However, you need toocreate at least one action in order toomake this a valid logic app.</span></span>    
    ![Imagem de Acionador de Salesforce 4](./media/connectors-create-api-salesforce/trigger-4.png)   
 
-Neste momento, a aplicação lógica foi configurada com um acionador que começará a execução da Olá outros acionadores e ações no fluxo de trabalho Olá quando é criado um novo item na sua Salesforce.  
+<span data-ttu-id="bcf32-114">Neste momento, a aplicação lógica foi configurada com um acionador que começará a execução da Olá outros acionadores e ações no fluxo de trabalho Olá quando é criado um novo item na sua Salesforce.</span><span class="sxs-lookup"><span data-stu-id="bcf32-114">At this point, your logic app has been configured with a trigger that will begin a run of hello other triggers and actions in hello workflow when a new item is created in your Salesforce.</span></span>  
 

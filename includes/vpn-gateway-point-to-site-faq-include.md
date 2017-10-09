@@ -1,47 +1,47 @@
-### <a name="what-client-operating-systems-can-i-use-with-point-to-site"></a>Que sistemas operativos cliente posso utilizar com a ligação Ponto a Site?
+### <a name="what-client-operating-systems-can-i-use-with-point-to-site"></a><span data-ttu-id="7f9fa-101">Que sistemas operativos cliente posso utilizar com a ligação Ponto a Site?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-101">What client operating systems can I use with Point-to-Site?</span></span>
 
-é suportado Olá os seguintes sistemas operativos cliente:
+<span data-ttu-id="7f9fa-102">é suportado Olá os seguintes sistemas operativos cliente:</span><span class="sxs-lookup"><span data-stu-id="7f9fa-102">hello following client operating systems are supported:</span></span>
 
-* Windows 7 (32 e 64 bits)
-* Windows Server 2008 R2 (apenas 64 bits)
-* Windows 8 (32 e 64 bits)
-* Windows 8.1 (32 e 64 bits)
-* Windows Server 2012 (apenas 64 bits)
-* Windows Server 2012 R2 (apenas 64 bits)
-* Windows 10
+* <span data-ttu-id="7f9fa-103">Windows 7 (32 e 64 bits)</span><span class="sxs-lookup"><span data-stu-id="7f9fa-103">Windows 7 (32-bit and 64-bit)</span></span>
+* <span data-ttu-id="7f9fa-104">Windows Server 2008 R2 (apenas 64 bits)</span><span class="sxs-lookup"><span data-stu-id="7f9fa-104">Windows Server 2008 R2 (64-bit only)</span></span>
+* <span data-ttu-id="7f9fa-105">Windows 8 (32 e 64 bits)</span><span class="sxs-lookup"><span data-stu-id="7f9fa-105">Windows 8 (32-bit and 64-bit)</span></span>
+* <span data-ttu-id="7f9fa-106">Windows 8.1 (32 e 64 bits)</span><span class="sxs-lookup"><span data-stu-id="7f9fa-106">Windows 8.1 (32-bit and 64-bit)</span></span>
+* <span data-ttu-id="7f9fa-107">Windows Server 2012 (apenas 64 bits)</span><span class="sxs-lookup"><span data-stu-id="7f9fa-107">Windows Server 2012 (64-bit only)</span></span>
+* <span data-ttu-id="7f9fa-108">Windows Server 2012 R2 (apenas 64 bits)</span><span class="sxs-lookup"><span data-stu-id="7f9fa-108">Windows Server 2012 R2 (64-bit only)</span></span>
+* <span data-ttu-id="7f9fa-109">Windows 10</span><span class="sxs-lookup"><span data-stu-id="7f9fa-109">Windows 10</span></span>
 
-### <a name="can-i-use-any-software-vpn-client-for-point-to-site-that-supports-sstp"></a>Posso utilizar qualquer cliente VPN de software para a ligação Ponto a Site que suporte SSTP?
+### <a name="can-i-use-any-software-vpn-client-for-point-to-site-that-supports-sstp"></a><span data-ttu-id="7f9fa-110">Posso utilizar qualquer cliente VPN de software para a ligação Ponto a Site que suporte SSTP?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-110">Can I use any software VPN client for Point-to-Site that supports SSTP?</span></span>
 
-Não. O suporte está limitadas apenas toohello Windows versões do sistema operativo listadas acima.
+<span data-ttu-id="7f9fa-111">Não.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-111">No.</span></span> <span data-ttu-id="7f9fa-112">O suporte está limitadas apenas toohello Windows versões do sistema operativo listadas acima.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-112">Support is limited only toohello Windows operating system versions listed above.</span></span>
 
-### <a name="how-many-vpn-client-endpoints-can-i-have-in-my-point-to-site-configuration"></a>Quantos pontos finais de cliente VPN posso ter na minha configuração Ponto a Site?
+### <a name="how-many-vpn-client-endpoints-can-i-have-in-my-point-to-site-configuration"></a><span data-ttu-id="7f9fa-113">Quantos pontos finais de cliente VPN posso ter na minha configuração Ponto a Site?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-113">How many VPN client endpoints can I have in my Point-to-Site configuration?</span></span>
 
-Fornecemos suporte de cópia de segurança too128 VPN clientes toobe tooconnect capaz de tooa rede virtual no Olá mesmo tempo.
+<span data-ttu-id="7f9fa-114">Fornecemos suporte de cópia de segurança too128 VPN clientes toobe tooconnect capaz de tooa rede virtual no Olá mesmo tempo.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-114">We support up too128 VPN clients toobe able tooconnect tooa virtual network at hello same time.</span></span>
 
-### <a name="can-i-use-my-own-internal-pki-root-ca-for-point-to-site-connectivity"></a>Posso utilizar AC de raiz de PKI interna para a conetividade Ponto a Site?
+### <a name="can-i-use-my-own-internal-pki-root-ca-for-point-to-site-connectivity"></a><span data-ttu-id="7f9fa-115">Posso utilizar AC de raiz de PKI interna para a conetividade Ponto a Site?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-115">Can I use my own internal PKI root CA for Point-to-Site connectivity?</span></span>
 
-Sim. Anteriormente, só podiam ser utilizados os certificados de raiz autoassinados. Ainda pode carregar 20 certificados de raiz.
+<span data-ttu-id="7f9fa-116">Sim.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-116">Yes.</span></span> <span data-ttu-id="7f9fa-117">Anteriormente, só podiam ser utilizados os certificados de raiz autoassinados.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-117">Previously, only self-signed root certificates could be used.</span></span> <span data-ttu-id="7f9fa-118">Ainda pode carregar 20 certificados de raiz.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-118">You can still upload 20 root certificates.</span></span>
 
-### <a name="can-i-traverse-proxies-and-firewalls-using-point-to-site-capability"></a>Posso atravessar proxies e firewalls com a capacidade Ponto a Site?
+### <a name="can-i-traverse-proxies-and-firewalls-using-point-to-site-capability"></a><span data-ttu-id="7f9fa-119">Posso atravessar proxies e firewalls com a capacidade Ponto a Site?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-119">Can I traverse proxies and firewalls using Point-to-Site capability?</span></span>
 
-Sim. Utilizamos o SSTP (Secure Socket Tunneling Protocol) tootunnel através de firewalls. Este túnel aparece como uma ligação HTTPs.
+<span data-ttu-id="7f9fa-120">Sim.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-120">Yes.</span></span> <span data-ttu-id="7f9fa-121">Utilizamos o SSTP (Secure Socket Tunneling Protocol) tootunnel através de firewalls.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-121">We use SSTP (Secure Socket Tunneling Protocol) tootunnel through firewalls.</span></span> <span data-ttu-id="7f9fa-122">Este túnel aparece como uma ligação HTTPs.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-122">This tunnel will appear as an HTTPs connection.</span></span>
 
-### <a name="if-i-restart-a-client-computer-configured-for-point-to-site-will-hello-vpn-automatically-reconnect"></a>Se reiniciar o computador cliente configurado para ponto a Site, será hello VPN restabelece ligação automaticamente?
+### <a name="if-i-restart-a-client-computer-configured-for-point-to-site-will-hello-vpn-automatically-reconnect"></a><span data-ttu-id="7f9fa-123">Se reiniciar o computador cliente configurado para ponto a Site, será hello VPN restabelece ligação automaticamente?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-123">If I restart a client computer configured for Point-to-Site, will hello VPN automatically reconnect?</span></span>
 
-Por predefinição, computador de cliente Olá não restabelece ligação de VPN Olá automaticamente.
+<span data-ttu-id="7f9fa-124">Por predefinição, computador de cliente Olá não restabelece ligação de VPN Olá automaticamente.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-124">By default, hello client computer will not reestablish hello VPN connection automatically.</span></span>
 
-### <a name="does-point-to-site-support-auto-reconnect-and-ddns-on-hello-vpn-clients"></a>Ponto a Site suporta restabelecimento de ligação automático e DDNS nos Olá clientes VPN?
+### <a name="does-point-to-site-support-auto-reconnect-and-ddns-on-hello-vpn-clients"></a><span data-ttu-id="7f9fa-125">Ponto a Site suporta restabelecimento de ligação automático e DDNS nos Olá clientes VPN?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-125">Does Point-to-Site support auto-reconnect and DDNS on hello VPN clients?</span></span>
 
-Atualmente, o restabelecimento de ligação automático e DDNS não são suportados nas VPNs Ponto a Site.
+<span data-ttu-id="7f9fa-126">Atualmente, o restabelecimento de ligação automático e DDNS não são suportados nas VPNs Ponto a Site.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-126">Auto-reconnect and DDNS are currently not supported in Point-to-Site VPNs.</span></span>
 
-### <a name="can-i-have-site-to-site-and-point-to-site-configurations-coexist-for-hello-same-virtual-network"></a>Posso ter Site a Site e configurações ponto a Site coexistem para Olá mesma rede virtual?
+### <a name="can-i-have-site-to-site-and-point-to-site-configurations-coexist-for-hello-same-virtual-network"></a><span data-ttu-id="7f9fa-127">Posso ter Site a Site e configurações ponto a Site coexistem para Olá mesma rede virtual?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-127">Can I have Site-to-Site and Point-to-Site configurations coexist for hello same virtual network?</span></span>
 
-Sim. Ambas as soluções funcionarão se tiver um tipo de VPN RouteBased para o gateway. Para o modelo de implementação clássica Olá, é necessário um gateway dinâmico. Fazemos não suporte ponto a Site para gateways de VPN de encaminhamento estático ou gateways que utilizem Olá `-VpnType PolicyBased` cmdlet.
+<span data-ttu-id="7f9fa-128">Sim.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-128">Yes.</span></span> <span data-ttu-id="7f9fa-129">Ambas as soluções funcionarão se tiver um tipo de VPN RouteBased para o gateway.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-129">Both these solutions will work if you have a RouteBased VPN type for your gateway.</span></span> <span data-ttu-id="7f9fa-130">Para o modelo de implementação clássica Olá, é necessário um gateway dinâmico.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-130">For hello classic deployment model, you need a dynamic gateway.</span></span> <span data-ttu-id="7f9fa-131">Fazemos não suporte ponto a Site para gateways de VPN de encaminhamento estático ou gateways que utilizem Olá `-VpnType PolicyBased` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-131">We do not support Point-to-Site for static routing VPN gateways or gateways using hello `-VpnType PolicyBased` cmdlet.</span></span>
 
-### <a name="can-i-configure-a-point-to-site-client-tooconnect-toomultiple-virtual-networks-at-hello-same-time"></a>Pode configurar um ponto a Site cliente tooconnect toomultiple redes virtuais no Olá mesmo tempo?
+### <a name="can-i-configure-a-point-to-site-client-tooconnect-toomultiple-virtual-networks-at-hello-same-time"></a><span data-ttu-id="7f9fa-132">Pode configurar um ponto a Site cliente tooconnect toomultiple redes virtuais no Olá mesmo tempo?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-132">Can I configure a Point-to-Site client tooconnect toomultiple virtual networks at hello same time?</span></span>
 
-Sim, é possível. Mas redes virtuais Olá não podem ter prefixos IP sobrepostos e espaços de endereços de Olá ponto a Site não pode sobrepor entre redes virtuais Olá.
+<span data-ttu-id="7f9fa-133">Sim, é possível.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-133">Yes, it is possible.</span></span> <span data-ttu-id="7f9fa-134">Mas redes virtuais Olá não podem ter prefixos IP sobrepostos e espaços de endereços de Olá ponto a Site não pode sobrepor entre redes virtuais Olá.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-134">But hello virtual networks cannot have overlapping IP prefixes and hello Point-to-Site address spaces must not overlap between hello virtual networks.</span></span>
 
-### <a name="how-much-throughput-can-i-expect-through-site-to-site-or-point-to-site-connections"></a>Que débito posso esperar através das ligações Site a Site ou Ponto a Site?
+### <a name="how-much-throughput-can-i-expect-through-site-to-site-or-point-to-site-connections"></a><span data-ttu-id="7f9fa-135">Que débito posso esperar através das ligações Site a Site ou Ponto a Site?</span><span class="sxs-lookup"><span data-stu-id="7f9fa-135">How much throughput can I expect through Site-to-Site or Point-to-Site connections?</span></span>
 
-É difícil toomaintain débito exato de Olá de túneis VPN de Olá. O IPsec e SSTP são protocolos VPN extremamente encriptados. O débito também é limitado pela latência Olá e largura de banda entre o local e Olá Internet.
+<span data-ttu-id="7f9fa-136">É difícil toomaintain débito exato de Olá de túneis VPN de Olá.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-136">It's difficult toomaintain hello exact throughput of hello VPN tunnels.</span></span> <span data-ttu-id="7f9fa-137">O IPsec e SSTP são protocolos VPN extremamente encriptados.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-137">IPsec and SSTP are crypto-heavy VPN protocols.</span></span> <span data-ttu-id="7f9fa-138">O débito também é limitado pela latência Olá e largura de banda entre o local e Olá Internet.</span><span class="sxs-lookup"><span data-stu-id="7f9fa-138">Throughput is also limited by hello latency and bandwidth between your premises and hello Internet.</span></span>

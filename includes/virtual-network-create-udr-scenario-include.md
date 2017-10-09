@@ -1,14 +1,14 @@
-## <a name="scenario"></a>Cenário
-toobetter mostram como toocreate UDRs, este documento utilizará cenário Olá abaixo.
+## <a name="scenario"></a><span data-ttu-id="e521f-101">Cenário</span><span class="sxs-lookup"><span data-stu-id="e521f-101">Scenario</span></span>
+<span data-ttu-id="e521f-102">toobetter mostram como toocreate UDRs, este documento utilizará cenário Olá abaixo.</span><span class="sxs-lookup"><span data-stu-id="e521f-102">toobetter illustrate how toocreate UDRs, this document will use hello scenario below.</span></span>
 
 ![DESCRIÇÃO DA IMAGEM](./media/virtual-network-create-udr-scenario-include/figure1.png)
 
-Neste cenário, irá criar um UDR para Olá *sub-rede de fim da frente* e outro UDR para Olá *da sub-rede Back end* , conforme descrito abaixo: 
+<span data-ttu-id="e521f-104">Neste cenário, irá criar um UDR para Olá *sub-rede de fim da frente* e outro UDR para Olá *da sub-rede Back end* , conforme descrito abaixo:</span><span class="sxs-lookup"><span data-stu-id="e521f-104">In this scenario you will create one UDR for hello *Front end subnet* and another UDR for hello *Back end subnet* , as described below:</span></span> 
 
-* **UDR-front-end**. Olá front-end UDR será aplicado toohello *front-end* sub-rede e contêm uma rota:    
-  * **RouteToBackend**. Esta rota irá enviar todos os toohello de sub-rede de back-end do tráfego toohello **FW1** máquina virtual.
-* **UDR-back-end**. Olá de back-end UDR serão aplicado toohello *back-end* sub-rede e contêm uma rota:    
-  * **RouteToFrontend**. Esta rota irá enviar todos os toohello de sub-rede do front-end toohello tráfego **FW1** máquina virtual.
+* <span data-ttu-id="e521f-105">**UDR-front-end**.</span><span class="sxs-lookup"><span data-stu-id="e521f-105">**UDR-FrontEnd**.</span></span> <span data-ttu-id="e521f-106">Olá front-end UDR será aplicado toohello *front-end* sub-rede e contêm uma rota:</span><span class="sxs-lookup"><span data-stu-id="e521f-106">hello front end UDR will be applied toohello *FrontEnd* subnet, and contain one route:</span></span>    
+  * <span data-ttu-id="e521f-107">**RouteToBackend**.</span><span class="sxs-lookup"><span data-stu-id="e521f-107">**RouteToBackend**.</span></span> <span data-ttu-id="e521f-108">Esta rota irá enviar todos os toohello de sub-rede de back-end do tráfego toohello **FW1** máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="e521f-108">This route will send all traffic toohello back end subnet toohello **FW1** virtual machine.</span></span>
+* <span data-ttu-id="e521f-109">**UDR-back-end**.</span><span class="sxs-lookup"><span data-stu-id="e521f-109">**UDR-BackEnd**.</span></span> <span data-ttu-id="e521f-110">Olá de back-end UDR serão aplicado toohello *back-end* sub-rede e contêm uma rota:</span><span class="sxs-lookup"><span data-stu-id="e521f-110">hello back end UDR will be applied toohello *BackEnd* subnet, and contain one route:</span></span>    
+  * <span data-ttu-id="e521f-111">**RouteToFrontend**.</span><span class="sxs-lookup"><span data-stu-id="e521f-111">**RouteToFrontend**.</span></span> <span data-ttu-id="e521f-112">Esta rota irá enviar todos os toohello de sub-rede do front-end toohello tráfego **FW1** máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="e521f-112">This route will send all traffic toohello front end subnet toohello **FW1** virtual machine.</span></span>
 
-combinação de Olá destas rotas irá garantir que todo o tráfego destinado a partir de uma sub-rede tooanother será encaminhado toohello **FW1** máquina virtual, que está a ser utilizada como uma aplicação virtual. Também precisa de tooturn no reencaminhamento IP para essa VM, tooensure pode receber o tráfego destinado tooother VMs.
+<span data-ttu-id="e521f-113">combinação de Olá destas rotas irá garantir que todo o tráfego destinado a partir de uma sub-rede tooanother será encaminhado toohello **FW1** máquina virtual, que está a ser utilizada como uma aplicação virtual.</span><span class="sxs-lookup"><span data-stu-id="e521f-113">hello combination of these routes will ensure that all traffic destined from one subnet tooanother will be routed toohello **FW1** virtual machine, which is being used as a virtual appliance.</span></span> <span data-ttu-id="e521f-114">Também precisa de tooturn no reencaminhamento IP para essa VM, tooensure pode receber o tráfego destinado tooother VMs.</span><span class="sxs-lookup"><span data-stu-id="e521f-114">You also need tooturn on IP forwarding for that VM, tooensure it can receive traffic destined tooother VMs.</span></span>
 

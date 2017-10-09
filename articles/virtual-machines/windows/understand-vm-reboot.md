@@ -20,6 +20,6 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="understand-a-system-reboot-for-azure-vm"></a>Compreender um reinício do sistema da VM do Azure
+# <a name="understand-a-system-reboot-for-azure-vm"></a><span data-ttu-id="5e048-103">Compreender um reinício do sistema da VM do Azure</span><span class="sxs-lookup"><span data-stu-id="5e048-103">Understand a system reboot for Azure VM</span></span>
 
 [!INCLUDE [virtual-machines-understand-vm-reboot](../../../includes/virtual-machines-understand-vm-reboot.md)]
