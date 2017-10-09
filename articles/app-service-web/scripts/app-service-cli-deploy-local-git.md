@@ -22,38 +22,38 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="create-a-web-app-and-deploy-code-from-a-local-git-repository"></a>Criar uma aplicação web e implementar o código do repositório de Git local
+# <a name="create-a-web-app-and-deploy-code-from-a-local-git-repository"></a><span data-ttu-id="da7d4-103">Criar uma aplicação web e implementar o código do repositório de Git local</span><span class="sxs-lookup"><span data-stu-id="da7d4-103">Create a web app and deploy code from a local Git repository</span></span>
 
-Este script de exemplo cria uma aplicação web no App Service com os respetivos recursos relacionados e, em seguida, implementa o código de aplicação web num repositório de Git local.
+<span data-ttu-id="da7d4-104">Este script de exemplo cria uma aplicação web no App Service com os respetivos recursos relacionados e, em seguida, implementa o código de aplicação web num repositório de Git local.</span><span class="sxs-lookup"><span data-stu-id="da7d4-104">This sample script creates a web app in App Service with its related resources, and then deploys your web app code in a local Git repository.</span></span>
 
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Se escolher tooinstall e utilizar Olá CLI localmente, este tópico requer que estiver a executar Olá CLI do Azure versão 2.0 ou posterior. Executar `az --version` versão de Olá toofind. Se precisar de tooinstall ou atualização, consulte [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+<span data-ttu-id="da7d4-105">Se escolher tooinstall e utilizar Olá CLI localmente, este tópico requer que estiver a executar Olá CLI do Azure versão 2.0 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="da7d4-105">If you choose tooinstall and use hello CLI locally, this topic requires that you are running hello Azure CLI version 2.0 or later.</span></span> <span data-ttu-id="da7d4-106">Executar `az --version` versão de Olá toofind.</span><span class="sxs-lookup"><span data-stu-id="da7d4-106">Run `az --version` toofind hello version.</span></span> <span data-ttu-id="da7d4-107">Se precisar de tooinstall ou atualização, consulte [instalar o Azure CLI 2.0]( /cli/azure/install-azure-cli).</span><span class="sxs-lookup"><span data-stu-id="da7d4-107">If you need tooinstall or upgrade, see [Install Azure CLI 2.0]( /cli/azure/install-azure-cli).</span></span> 
 
-## <a name="sample-script"></a>Script de exemplo
+## <a name="sample-script"></a><span data-ttu-id="da7d4-108">Script de exemplo</span><span class="sxs-lookup"><span data-stu-id="da7d4-108">Sample script</span></span>
 
 [!code-azurecli-interactive[main](../../../cli_scripts/app-service/deploy-local-git/deploy-local-git.sh?highlight=3-5 "Create a web app and deploy code from a local Git repository")]
 
 [!INCLUDE [cli-script-clean-up](../../../includes/cli-script-clean-up.md)]
 
-## <a name="script-explanation"></a>Explicação de script
+## <a name="script-explanation"></a><span data-ttu-id="da7d4-109">Explicação de script</span><span class="sxs-lookup"><span data-stu-id="da7d4-109">Script explanation</span></span>
 
-Este script utiliza Olá os seguintes comandos. Cada comando na tabela de Olá contém ligações a documentação específica toocommand.
+<span data-ttu-id="da7d4-110">Este script utiliza Olá os seguintes comandos.</span><span class="sxs-lookup"><span data-stu-id="da7d4-110">This script uses hello following commands.</span></span> <span data-ttu-id="da7d4-111">Cada comando na tabela de Olá contém ligações a documentação específica toocommand.</span><span class="sxs-lookup"><span data-stu-id="da7d4-111">Each command in hello table links toocommand specific documentation.</span></span>
 
-| Comando | Notas |
+| <span data-ttu-id="da7d4-112">Comando</span><span class="sxs-lookup"><span data-stu-id="da7d4-112">Command</span></span> | <span data-ttu-id="da7d4-113">Notas</span><span class="sxs-lookup"><span data-stu-id="da7d4-113">Notes</span></span> |
 |---|---|
-| [Criar grupo AZ](https://docs.microsoft.com/cli/azure/group#create) | Cria um grupo de recursos na qual todos os recursos são armazenados. |
-| [Criar plano de serviço aplicacional AZ](https://docs.microsoft.com/cli/azure/appservice/plan#create) | Cria um plano de serviço de aplicações. |
-| [Criar AZ webapp](https://docs.microsoft.com/cli/azure/webapp#create) | Cria uma aplicação web do Azure. |
-| [utilizador AZ webapp implementação definido](https://review.docs.microsoft.com/cli/azure/webapp/deployment/user#set) | Define as credenciais de implementação de nível de conta de Olá para serviço de aplicações. |
-| [origem de implementação webapp com AZ-config-local-git](https://review.docs.microsoft.com/cli/azure/webapp/deployment/source#config-local-git) | Cria uma configuração de controlo de origem para um repositório de Git local. |
-| [Procurar de webapp AZ](https://docs.microsoft.com/cli/azure/webapp#browse) | Abra uma aplicação web do Azure num browser. |
+| [<span data-ttu-id="da7d4-114">Criar grupo AZ</span><span class="sxs-lookup"><span data-stu-id="da7d4-114">az group create</span></span>](https://docs.microsoft.com/cli/azure/group#create) | <span data-ttu-id="da7d4-115">Cria um grupo de recursos na qual todos os recursos são armazenados.</span><span class="sxs-lookup"><span data-stu-id="da7d4-115">Creates a resource group in which all resources are stored.</span></span> |
+| [<span data-ttu-id="da7d4-116">Criar plano de serviço aplicacional AZ</span><span class="sxs-lookup"><span data-stu-id="da7d4-116">az appservice plan create</span></span>](https://docs.microsoft.com/cli/azure/appservice/plan#create) | <span data-ttu-id="da7d4-117">Cria um plano de serviço de aplicações.</span><span class="sxs-lookup"><span data-stu-id="da7d4-117">Creates an App Service plan.</span></span> |
+| [<span data-ttu-id="da7d4-118">Criar AZ webapp</span><span class="sxs-lookup"><span data-stu-id="da7d4-118">az webapp create</span></span>](https://docs.microsoft.com/cli/azure/webapp#create) | <span data-ttu-id="da7d4-119">Cria uma aplicação web do Azure.</span><span class="sxs-lookup"><span data-stu-id="da7d4-119">Creates an Azure web app.</span></span> |
+| [<span data-ttu-id="da7d4-120">utilizador AZ webapp implementação definido</span><span class="sxs-lookup"><span data-stu-id="da7d4-120">az webapp deployment user set</span></span>](https://review.docs.microsoft.com/cli/azure/webapp/deployment/user#set) | <span data-ttu-id="da7d4-121">Define as credenciais de implementação de nível de conta de Olá para serviço de aplicações.</span><span class="sxs-lookup"><span data-stu-id="da7d4-121">Sets hello account-level deployment credentials for App Service.</span></span> |
+| [<span data-ttu-id="da7d4-122">origem de implementação webapp com AZ-config-local-git</span><span class="sxs-lookup"><span data-stu-id="da7d4-122">az webapp deployment source config-local-git</span></span>](https://review.docs.microsoft.com/cli/azure/webapp/deployment/source#config-local-git) | <span data-ttu-id="da7d4-123">Cria uma configuração de controlo de origem para um repositório de Git local.</span><span class="sxs-lookup"><span data-stu-id="da7d4-123">Creates a source control configuration for a local Git repository.</span></span> |
+| [<span data-ttu-id="da7d4-124">Procurar de webapp AZ</span><span class="sxs-lookup"><span data-stu-id="da7d4-124">az webapp browse</span></span>](https://docs.microsoft.com/cli/azure/webapp#browse) | <span data-ttu-id="da7d4-125">Abra uma aplicação web do Azure num browser.</span><span class="sxs-lookup"><span data-stu-id="da7d4-125">Open an Azure web app in a browser.</span></span> |
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="da7d4-126">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="da7d4-126">Next steps</span></span>
 
-Para obter mais informações sobre Olá CLI do Azure, consulte [documentação da CLI do Azure](https://docs.microsoft.com/cli/azure/overview).
+<span data-ttu-id="da7d4-127">Para obter mais informações sobre Olá CLI do Azure, consulte [documentação da CLI do Azure](https://docs.microsoft.com/cli/azure/overview).</span><span class="sxs-lookup"><span data-stu-id="da7d4-127">For more information on hello Azure CLI, see [Azure CLI documentation](https://docs.microsoft.com/cli/azure/overview).</span></span>
 
-Exemplos de script de aplicação serviço CLI adicionais podem ser encontrados na Olá [documentação do App Service do Azure](../app-service-cli-samples.md).
+<span data-ttu-id="da7d4-128">Exemplos de script de aplicação serviço CLI adicionais podem ser encontrados na Olá [documentação do App Service do Azure](../app-service-cli-samples.md).</span><span class="sxs-lookup"><span data-stu-id="da7d4-128">Additional App Service CLI script samples can be found in hello [Azure App Service documentation](../app-service-cli-samples.md).</span></span>

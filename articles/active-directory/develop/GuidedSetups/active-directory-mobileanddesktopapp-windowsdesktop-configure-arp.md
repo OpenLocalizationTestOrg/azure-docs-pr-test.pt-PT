@@ -21,15 +21,15 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-## <a name="add-hello-applications-registration-information-tooyour-app"></a>Adicionar a aplicação de tooyour de informações de registo da aplicação Olá
-Neste passo, terá de projeto de tooyour tooadd Olá Id da aplicação.
+## <a name="add-hello-applications-registration-information-tooyour-app"></a><span data-ttu-id="17899-103">Adicionar a aplicação de tooyour de informações de registo da aplicação Olá</span><span class="sxs-lookup"><span data-stu-id="17899-103">Add hello application’s registration information tooyour app</span></span>
+<span data-ttu-id="17899-104">Neste passo, terá de projeto de tooyour tooadd Olá Id da aplicação.</span><span class="sxs-lookup"><span data-stu-id="17899-104">In this step, you need tooadd hello Application Id tooyour project.</span></span>
 
-1.  Abra `App.xaml.cs` e substituir a linha de Olá que contém Olá `ClientId` com:
+1.  <span data-ttu-id="17899-105">Abra `App.xaml.cs` e substituir a linha de Olá que contém Olá `ClientId` com:</span><span class="sxs-lookup"><span data-stu-id="17899-105">Open `App.xaml.cs` and replace hello line containing hello `ClientId` with:</span></span>
 
 ```csharp
 private static string ClientId = "[Enter hello application Id here]";
 ```
 
-### <a name="what-is-next"></a>O que é o seguinte
+### <a name="what-is-next"></a><span data-ttu-id="17899-106">O que é o seguinte</span><span class="sxs-lookup"><span data-stu-id="17899-106">What is Next</span></span>
 
-[Testar e validar](active-directory-mobileanddesktopapp-windowsdesktop-test.md)
+[<span data-ttu-id="17899-107">Testar e validar</span><span class="sxs-lookup"><span data-stu-id="17899-107">Test and Validate</span></span>](active-directory-mobileanddesktopapp-windowsdesktop-test.md)

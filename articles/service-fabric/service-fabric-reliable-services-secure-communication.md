@@ -20,19 +20,19 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="help-secure-communication-for-services-in-azure-service-fabric"></a>Ajudar a comunicação segura para serviços no Azure Service Fabric
+# <a name="help-secure-communication-for-services-in-azure-service-fabric"></a><span data-ttu-id="f4c83-103">Ajudar a comunicação segura para serviços no Azure Service Fabric</span><span class="sxs-lookup"><span data-stu-id="f4c83-103">Help secure communication for services in Azure Service Fabric</span></span>
 > [!div class="op_single_selector"]
-> * [C# no Windows](service-fabric-reliable-services-secure-communication.md)
-> * [Java em Linux](service-fabric-reliable-services-secure-communication-java.md)
+> * [<span data-ttu-id="f4c83-104">C# no Windows</span><span class="sxs-lookup"><span data-stu-id="f4c83-104">C# on Windows</span></span>](service-fabric-reliable-services-secure-communication.md)
+> * [<span data-ttu-id="f4c83-105">Java em Linux</span><span class="sxs-lookup"><span data-stu-id="f4c83-105">Java on Linux</span></span>](service-fabric-reliable-services-secure-communication-java.md)
 >
 >
 
-A segurança é um dos aspetos mais importantes de Olá de comunicação. estrutura da aplicação Olá Reliable Services fornece algumas ferramentas que pode utilizar segurança tooimprove e pilhas de comunicação prebuilt. Este artigo aborda como tooimprove segurança quando estiver a utilizar o serviço Gestão remota e Olá pilha de comunicações do Windows Communication Foundation (WCF).
+<span data-ttu-id="f4c83-106">A segurança é um dos aspetos mais importantes de Olá de comunicação.</span><span class="sxs-lookup"><span data-stu-id="f4c83-106">Security is one of hello most important aspects of communication.</span></span> <span data-ttu-id="f4c83-107">estrutura da aplicação Olá Reliable Services fornece algumas ferramentas que pode utilizar segurança tooimprove e pilhas de comunicação prebuilt.</span><span class="sxs-lookup"><span data-stu-id="f4c83-107">hello Reliable Services application framework provides a few prebuilt communication stacks and tools that you can use tooimprove security.</span></span> <span data-ttu-id="f4c83-108">Este artigo aborda como tooimprove segurança quando estiver a utilizar o serviço Gestão remota e Olá pilha de comunicações do Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="f4c83-108">This article talks about how tooimprove security when you're using service remoting and hello Windows Communication Foundation (WCF) communication stack.</span></span>
 
-## <a name="help-secure-a-service-when-youre-using-service-remoting"></a>Ajudar a proteger um serviço quando estiver a utilizar a comunicação remota do serviço
-Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-communication-remoting.md) que explica como tooset segurança remotamente serviços fiáveis. toohelp proteger um serviço quando estiver a utilizar a comunicação remota do serviço, siga estes passos:
+## <a name="help-secure-a-service-when-youre-using-service-remoting"></a><span data-ttu-id="f4c83-109">Ajudar a proteger um serviço quando estiver a utilizar a comunicação remota do serviço</span><span class="sxs-lookup"><span data-stu-id="f4c83-109">Help secure a service when you're using service remoting</span></span>
+<span data-ttu-id="f4c83-110">Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-communication-remoting.md) que explica como tooset segurança remotamente serviços fiáveis.</span><span class="sxs-lookup"><span data-stu-id="f4c83-110">We are using an existing [example](service-fabric-reliable-services-communication-remoting.md) that explains how tooset up remoting for reliable services.</span></span> <span data-ttu-id="f4c83-111">toohelp proteger um serviço quando estiver a utilizar a comunicação remota do serviço, siga estes passos:</span><span class="sxs-lookup"><span data-stu-id="f4c83-111">toohelp secure a service when you're using service remoting, follow these steps:</span></span>
 
-1. Criar uma interface, `IHelloWorldStateful`, que define os métodos de Olá que estarão disponíveis para uma chamada de procedimento remoto do seu serviço. O serviço irá utilizar `FabricTransportServiceRemotingListener`, que está declarada na Olá `Microsoft.ServiceFabric.Services.Remoting.FabricTransport.Runtime` espaço de nomes. Este é um `ICommunicationListener` implementação que oferece funções de sistema de interação remota.
+1. <span data-ttu-id="f4c83-112">Criar uma interface, `IHelloWorldStateful`, que define os métodos de Olá que estarão disponíveis para uma chamada de procedimento remoto do seu serviço.</span><span class="sxs-lookup"><span data-stu-id="f4c83-112">Create an interface, `IHelloWorldStateful`, that defines hello methods that will be available for a remote procedure call on your service.</span></span> <span data-ttu-id="f4c83-113">O serviço irá utilizar `FabricTransportServiceRemotingListener`, que está declarada na Olá `Microsoft.ServiceFabric.Services.Remoting.FabricTransport.Runtime` espaço de nomes.</span><span class="sxs-lookup"><span data-stu-id="f4c83-113">Your service will use `FabricTransportServiceRemotingListener`, which is declared in hello `Microsoft.ServiceFabric.Services.Remoting.FabricTransport.Runtime` namespace.</span></span> <span data-ttu-id="f4c83-114">Este é um `ICommunicationListener` implementação que oferece funções de sistema de interação remota.</span><span class="sxs-lookup"><span data-stu-id="f4c83-114">This is an `ICommunicationListener` implementation that provides remoting capabilities.</span></span>
 
     ```csharp
     public interface IHelloWorldStateful : IService
@@ -55,11 +55,11 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
         }
     }
     ```
-2. Adicione as definições de escuta e credenciais de segurança.
+2. <span data-ttu-id="f4c83-115">Adicione as definições de escuta e credenciais de segurança.</span><span class="sxs-lookup"><span data-stu-id="f4c83-115">Add listener settings and security credentials.</span></span>
 
-    Certifique-se esse certificado Olá que pretende que o toohelp de toouse proteger que a comunicação de serviço está instalada em todos os nós de Olá num cluster de Olá. Existem duas formas que pode fornecer as definições de escuta e credenciais de segurança:
+    <span data-ttu-id="f4c83-116">Certifique-se esse certificado Olá que pretende que o toohelp de toouse proteger que a comunicação de serviço está instalada em todos os nós de Olá num cluster de Olá.</span><span class="sxs-lookup"><span data-stu-id="f4c83-116">Make sure that hello certificate that you want toouse toohelp secure your service communication is installed on all hello nodes in hello cluster.</span></span> <span data-ttu-id="f4c83-117">Existem duas formas que pode fornecer as definições de escuta e credenciais de segurança:</span><span class="sxs-lookup"><span data-stu-id="f4c83-117">There are two ways that you can provide listener settings and security credentials:</span></span>
 
-   1. Fornecê-los diretamente no código do serviço Olá:
+   1. <span data-ttu-id="f4c83-118">Fornecê-los diretamente no código do serviço Olá:</span><span class="sxs-lookup"><span data-stu-id="f4c83-118">Provide them directly in hello service code:</span></span>
 
        ```csharp
        protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
@@ -92,9 +92,9 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
            return x509Credentials;
        }
        ```
-   2. Fornecê-los utilizando um [o pacote de configuração](service-fabric-application-model.md):
+   2. <span data-ttu-id="f4c83-119">Fornecê-los utilizando um [o pacote de configuração](service-fabric-application-model.md):</span><span class="sxs-lookup"><span data-stu-id="f4c83-119">Provide them by using a [config package](service-fabric-application-model.md):</span></span>
 
-       Adicionar um `TransportSettings` secção no ficheiro de settings.xml Olá.
+       <span data-ttu-id="f4c83-120">Adicionar um `TransportSettings` secção no ficheiro de settings.xml Olá.</span><span class="sxs-lookup"><span data-stu-id="f4c83-120">Add a `TransportSettings` section in hello settings.xml file.</span></span>
 
        ```xml
        <Section Name="HelloWorldStatefulTransportSettings">
@@ -110,7 +110,7 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
        </Section>
        ```
 
-       Neste caso, Olá `CreateServiceReplicaListeners` método terá este aspeto:
+       <span data-ttu-id="f4c83-121">Neste caso, Olá `CreateServiceReplicaListeners` método terá este aspeto:</span><span class="sxs-lookup"><span data-stu-id="f4c83-121">In this case, hello `CreateServiceReplicaListeners` method will look like this:</span></span>
 
        ```csharp
        protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
@@ -124,7 +124,7 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
        }
        ```
 
-        Se adicionar um `TransportSettings` secção no ficheiro de settings.xml Olá, `FabricTransportRemotingListenerSettings ` carregará todas as definições de Olá desta secção por predefinição.
+        <span data-ttu-id="f4c83-122">Se adicionar um `TransportSettings` secção no ficheiro de settings.xml Olá, `FabricTransportRemotingListenerSettings ` carregará todas as definições de Olá desta secção por predefinição.</span><span class="sxs-lookup"><span data-stu-id="f4c83-122">If you add a `TransportSettings` section in hello settings.xml file , `FabricTransportRemotingListenerSettings ` will load all hello settings from this section by default.</span></span>
 
         ```xml
         <!--"TransportSettings" section .-->
@@ -132,7 +132,7 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
             ...
         </Section>
         ```
-        Neste caso, Olá `CreateServiceReplicaListeners` método terá este aspeto:
+        <span data-ttu-id="f4c83-123">Neste caso, Olá `CreateServiceReplicaListeners` método terá este aspeto:</span><span class="sxs-lookup"><span data-stu-id="f4c83-123">In this case, hello `CreateServiceReplicaListeners` method will look like this:</span></span>
 
         ```csharp
         protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
@@ -145,7 +145,7 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
             };
         }
         ```
-3. Quando chamar métodos num serviço protegido através da utilização de pilha do sistema de interação remota Olá, em vez de utilizar Olá `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxy` classe toocreate um proxy de serviço, utilize `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxyFactory`. Transmita `FabricTransportRemotingSettings`, que contém `SecurityCredentials`.
+3. <span data-ttu-id="f4c83-124">Quando chamar métodos num serviço protegido através da utilização de pilha do sistema de interação remota Olá, em vez de utilizar Olá `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxy` classe toocreate um proxy de serviço, utilize `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxyFactory`.</span><span class="sxs-lookup"><span data-stu-id="f4c83-124">When you call methods on a secured service by using hello remoting stack, instead of using hello `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxy` class toocreate a service proxy, use `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxyFactory`.</span></span> <span data-ttu-id="f4c83-125">Transmita `FabricTransportRemotingSettings`, que contém `SecurityCredentials`.</span><span class="sxs-lookup"><span data-stu-id="f4c83-125">Pass in `FabricTransportRemotingSettings`, which contains `SecurityCredentials`.</span></span>
 
     ```csharp
 
@@ -175,7 +175,7 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
 
     ```
 
-    Se o código de cliente Olá está em execução como parte de um serviço, pode carregar `FabricTransportRemotingSettings` do ficheiro de settings.xml Olá. Crie uma secção de HelloWorldClientTransportSettings é toohello serviço um código semelhante, conforme mostrado anteriormente. Certifique-Olá seguinte código de cliente de toohello alterações:
+    <span data-ttu-id="f4c83-126">Se o código de cliente Olá está em execução como parte de um serviço, pode carregar `FabricTransportRemotingSettings` do ficheiro de settings.xml Olá.</span><span class="sxs-lookup"><span data-stu-id="f4c83-126">If hello client code is running as part of a service, you can load `FabricTransportRemotingSettings` from hello settings.xml file.</span></span> <span data-ttu-id="f4c83-127">Crie uma secção de HelloWorldClientTransportSettings é toohello serviço um código semelhante, conforme mostrado anteriormente.</span><span class="sxs-lookup"><span data-stu-id="f4c83-127">Create a HelloWorldClientTransportSettings section that is similar toohello service code, as shown earlier.</span></span> <span data-ttu-id="f4c83-128">Certifique-Olá seguinte código de cliente de toohello alterações:</span><span class="sxs-lookup"><span data-stu-id="f4c83-128">Make hello following changes toohello client code:</span></span>
 
     ```csharp
     ServiceProxyFactory serviceProxyFactory = new ServiceProxyFactory(
@@ -188,11 +188,11 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
 
     ```
 
-    Se o cliente de Olá não está em execução como parte de um serviço, pode criar um ficheiro de client_name.settings.xml no Olá mesma localização onde é Olá client_name.exe. Em seguida, crie uma secção TransportSettings nesse ficheiro.
+    <span data-ttu-id="f4c83-129">Se o cliente de Olá não está em execução como parte de um serviço, pode criar um ficheiro de client_name.settings.xml no Olá mesma localização onde é Olá client_name.exe.</span><span class="sxs-lookup"><span data-stu-id="f4c83-129">If hello client is not running as part of a service, you can create a client_name.settings.xml file in hello same location where hello client_name.exe is.</span></span> <span data-ttu-id="f4c83-130">Em seguida, crie uma secção TransportSettings nesse ficheiro.</span><span class="sxs-lookup"><span data-stu-id="f4c83-130">Then create a TransportSettings section in that file.</span></span>
 
-    Serviço de toohello semelhante, se adicionar um `TransportSettings` secção cliente settings.xml/client_name.settings.xml, `FabricTransportRemotingSettings` carrega todas as definições de Olá desta secção por predefinição.
+    <span data-ttu-id="f4c83-131">Serviço de toohello semelhante, se adicionar um `TransportSettings` secção cliente settings.xml/client_name.settings.xml, `FabricTransportRemotingSettings` carrega todas as definições de Olá desta secção por predefinição.</span><span class="sxs-lookup"><span data-stu-id="f4c83-131">Similar toohello service, if you add a `TransportSettings` section in client settings.xml/client_name.settings.xml, `FabricTransportRemotingSettings` loads all hello settings from this section by default.</span></span>
 
-    Nesse caso, hello código anterior é ainda mais simplificado:  
+    <span data-ttu-id="f4c83-132">Nesse caso, hello código anterior é ainda mais simplificado:</span><span class="sxs-lookup"><span data-stu-id="f4c83-132">In that case, hello earlier code is even further simplified:</span></span>  
 
     ```csharp
 
@@ -203,10 +203,10 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
 
     ```
 
-## <a name="help-secure-a-service-when-youre-using-a-wcf-based-communication-stack"></a>Ajudar a proteger um serviço quando estiver a utilizar uma pilha de comunicação baseada em WCF
-Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-communication-wcf.md) que explica como tooset segurança uma comunicação baseada em WCF pilha para serviços fiáveis. toohelp proteger um serviço quando estiver a utilizar uma pilha de comunicação baseada em WCF, siga estes passos:
+## <a name="help-secure-a-service-when-youre-using-a-wcf-based-communication-stack"></a><span data-ttu-id="f4c83-133">Ajudar a proteger um serviço quando estiver a utilizar uma pilha de comunicação baseada em WCF</span><span class="sxs-lookup"><span data-stu-id="f4c83-133">Help secure a service when you're using a WCF-based communication stack</span></span>
+<span data-ttu-id="f4c83-134">Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-communication-wcf.md) que explica como tooset segurança uma comunicação baseada em WCF pilha para serviços fiáveis.</span><span class="sxs-lookup"><span data-stu-id="f4c83-134">We are using an existing [example](service-fabric-reliable-services-communication-wcf.md) that explains how tooset up a WCF-based communication stack for reliable services.</span></span> <span data-ttu-id="f4c83-135">toohelp proteger um serviço quando estiver a utilizar uma pilha de comunicação baseada em WCF, siga estes passos:</span><span class="sxs-lookup"><span data-stu-id="f4c83-135">toohelp secure a service when you're using a WCF-based communication stack, follow these steps:</span></span>
 
-1. Para o serviço de Olá, terá do serviço de escuta do toohelp Olá segura WCF comunicação (`WcfCommunicationListener`) que criar. toodo, modificar Olá `CreateServiceReplicaListeners` método.
+1. <span data-ttu-id="f4c83-136">Para o serviço de Olá, terá do serviço de escuta do toohelp Olá segura WCF comunicação (`WcfCommunicationListener`) que criar.</span><span class="sxs-lookup"><span data-stu-id="f4c83-136">For hello service, you need toohelp secure hello WCF communication listener (`WcfCommunicationListener`) that you create.</span></span> <span data-ttu-id="f4c83-137">toodo, modificar Olá `CreateServiceReplicaListeners` método.</span><span class="sxs-lookup"><span data-stu-id="f4c83-137">toodo this, modify hello `CreateServiceReplicaListeners` method.</span></span>
 
     ```csharp
     protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
@@ -243,7 +243,7 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
         return b;
     }
     ```
-2. No cliente Olá, Olá `WcfCommunicationClient` classe que foi criado no Olá anterior [exemplo](service-fabric-reliable-services-communication-wcf.md) permanece inalterado. Precisa de toooverride Olá `CreateClientAsync` método `WcfCommunicationClientFactory`:
+2. <span data-ttu-id="f4c83-138">No cliente Olá, Olá `WcfCommunicationClient` classe que foi criado no Olá anterior [exemplo](service-fabric-reliable-services-communication-wcf.md) permanece inalterado.</span><span class="sxs-lookup"><span data-stu-id="f4c83-138">In hello client, hello `WcfCommunicationClient` class that was created in hello previous [example](service-fabric-reliable-services-communication-wcf.md) remains unchanged.</span></span> <span data-ttu-id="f4c83-139">Precisa de toooverride Olá `CreateClientAsync` método `WcfCommunicationClientFactory`:</span><span class="sxs-lookup"><span data-stu-id="f4c83-139">But you need toooverride hello `CreateClientAsync` method of `WcfCommunicationClientFactory`:</span></span>
 
     ```csharp
     public class SecureWcfCommunicationClientFactory<TServiceContract> : WcfCommunicationClientFactory<TServiceContract> where TServiceContract : class
@@ -293,7 +293,7 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
     }
     ```
 
-    Utilize `SecureWcfCommunicationClientFactory` toocreate um cliente de comunicação de WCF (`WcfCommunicationClient`). Utilize os métodos do serviço Olá cliente tooinvoke.
+    <span data-ttu-id="f4c83-140">Utilize `SecureWcfCommunicationClientFactory` toocreate um cliente de comunicação de WCF (`WcfCommunicationClient`).</span><span class="sxs-lookup"><span data-stu-id="f4c83-140">Use `SecureWcfCommunicationClientFactory` toocreate a WCF communication client (`WcfCommunicationClient`).</span></span> <span data-ttu-id="f4c83-141">Utilize os métodos do serviço Olá cliente tooinvoke.</span><span class="sxs-lookup"><span data-stu-id="f4c83-141">Use hello client tooinvoke service methods.</span></span>
 
     ```csharp
     IServicePartitionResolver partitionResolver = ServicePartitionResolver.GetDefault();
@@ -309,5 +309,5 @@ Estamos a utilizar um existente [exemplo](service-fabric-reliable-services-commu
         client => client.Channel.Add(2, 3)).Result;
     ```
 
-## <a name="next-steps"></a>Passos seguintes
-* [Web API com OWIN nos serviços de fiáveis](service-fabric-reliable-services-communication-webapi.md)
+## <a name="next-steps"></a><span data-ttu-id="f4c83-142">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="f4c83-142">Next steps</span></span>
+* [<span data-ttu-id="f4c83-143">Web API com OWIN nos serviços de fiáveis</span><span class="sxs-lookup"><span data-stu-id="f4c83-143">Web API with OWIN in Reliable Services</span></span>](service-fabric-reliable-services-communication-webapi.md)

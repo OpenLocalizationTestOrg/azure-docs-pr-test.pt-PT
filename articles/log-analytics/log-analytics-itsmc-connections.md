@@ -19,350 +19,350 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="connect-itsm-productsservices-with-it-service-management-connector-preview"></a>Ligar ITSM produtos/serviços com o conector de gestão de serviços de TI (pré-visualização)
-Este artigo fornece informações sobre como tooconnect sua tooIT de produtos/serviços ITSM conector do serviço de gestão no OMS e centralmente gerir itens de trabalho. Obter mais informações sobre o conector de gestão de serviços de TI, consulte [descrição geral](log-analytics-itsmc-overview.md).
+# <a name="connect-itsm-productsservices-with-it-service-management-connector-preview"></a><span data-ttu-id="3f317-103">Ligar ITSM produtos/serviços com o conector de gestão de serviços de TI (pré-visualização)</span><span class="sxs-lookup"><span data-stu-id="3f317-103">Connect ITSM products/services with IT Service Management Connector (Preview)</span></span>
+<span data-ttu-id="3f317-104">Este artigo fornece informações sobre como tooconnect sua tooIT de produtos/serviços ITSM conector do serviço de gestão no OMS e centralmente gerir itens de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3f317-104">This article provides information about how tooconnect your ITSM product/service tooIT Service Management Connector in OMS and centrally manage your work items.</span></span> <span data-ttu-id="3f317-105">Obter mais informações sobre o conector de gestão de serviços de TI, consulte [descrição geral](log-analytics-itsmc-overview.md).</span><span class="sxs-lookup"><span data-stu-id="3f317-105">More information about IT Service Management Connector, see [Overview](log-analytics-itsmc-overview.md).</span></span>
 
-Olá produtos/serviços a seguir é suportada:
+<span data-ttu-id="3f317-106">Olá produtos/serviços a seguir é suportada:</span><span class="sxs-lookup"><span data-stu-id="3f317-106">hello following products/services are supported:</span></span>
 
-- [O System Center Service Manager](#connect-system-center-service-manager-to-it-service-management-connector-in-oms)
-- [ServiceNow](#connect-servicenow-to-it-service-management-connector-in-oms)
-- [Provance](#connect-provance-to-it-service-management-connector-in-oms)
-- [Cherwell](#connect-cherwell-to-it-service-management-connector-in-oms)
+- [<span data-ttu-id="3f317-107">O System Center Service Manager</span><span class="sxs-lookup"><span data-stu-id="3f317-107">System Center Service Manager</span></span>](#connect-system-center-service-manager-to-it-service-management-connector-in-oms)
+- [<span data-ttu-id="3f317-108">ServiceNow</span><span class="sxs-lookup"><span data-stu-id="3f317-108">ServiceNow</span></span>](#connect-servicenow-to-it-service-management-connector-in-oms)
+- [<span data-ttu-id="3f317-109">Provance</span><span class="sxs-lookup"><span data-stu-id="3f317-109">Provance</span></span>](#connect-provance-to-it-service-management-connector-in-oms)
+- [<span data-ttu-id="3f317-110">Cherwell</span><span class="sxs-lookup"><span data-stu-id="3f317-110">Cherwell</span></span>](#connect-cherwell-to-it-service-management-connector-in-oms)
 
-## <a name="connect-system-center-service-manager-tooit-service-management-connector-in-oms"></a>Ligar o System Center Service Manager tooIT conector de gestão de serviço no OMS
+## <a name="connect-system-center-service-manager-tooit-service-management-connector-in-oms"></a><span data-ttu-id="3f317-111">Ligar o System Center Service Manager tooIT conector de gestão de serviço no OMS</span><span class="sxs-lookup"><span data-stu-id="3f317-111">Connect System Center Service Manager tooIT Service Management Connector in OMS</span></span>
 
-Olá secções seguintes fornecem detalhes sobre como tooconnect toohello de produto do System Center Service Manager conector de gestão de serviços de TI no OMS.
+<span data-ttu-id="3f317-112">Olá secções seguintes fornecem detalhes sobre como tooconnect toohello de produto do System Center Service Manager conector de gestão de serviços de TI no OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-112">hello following sections provide details about how tooconnect your System Center Service Manager product toohello IT Service Management Connector in OMS.</span></span>
 
-### <a name="prerequisites"></a>Pré-requisitos
+### <a name="prerequisites"></a><span data-ttu-id="3f317-113">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="3f317-113">Prerequisites</span></span>
 
-Certifique-se de que tem Olá pré-requisitos cumpridos os seguintes:
+<span data-ttu-id="3f317-114">Certifique-se de que tem Olá pré-requisitos cumpridos os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3f317-114">Ensure you have hello following prerequisites met:</span></span>
 
-- Conector de gestão do serviço IT instalado.
-Obter mais informações: [configuração](log-analytics-itsmc-overview.md#configuration).
-- Olá aplicação Web do Service Manager (aplicação Web) é implementado e configurado. Informações sobre a aplicação Web são [aqui](#create-and-deploy-service-manager-web-app-service).
-- Ligação híbrida criada e configurada. Obter mais informações: [híbrida de Olá configurar ligação](#configure-the-hybrid-connection).
-- As versões do Service Manager: 2012 R2 ou 2016.
-- A função de utilizador: [operador avançado](https://technet.microsoft.com/library/ff461054.aspx).
+- <span data-ttu-id="3f317-115">Conector de gestão do serviço IT instalado.</span><span class="sxs-lookup"><span data-stu-id="3f317-115">IT Service Management Connector installed.</span></span>
+<span data-ttu-id="3f317-116">Obter mais informações: [configuração](log-analytics-itsmc-overview.md#configuration).</span><span class="sxs-lookup"><span data-stu-id="3f317-116">More information:  [Configuration](log-analytics-itsmc-overview.md#configuration).</span></span>
+- <span data-ttu-id="3f317-117">Olá aplicação Web do Service Manager (aplicação Web) é implementado e configurado.</span><span class="sxs-lookup"><span data-stu-id="3f317-117">hello Service Manager Web application (Web app) is deployed and configured.</span></span> <span data-ttu-id="3f317-118">Informações sobre a aplicação Web são [aqui](#create-and-deploy-service-manager-web-app-service).</span><span class="sxs-lookup"><span data-stu-id="3f317-118">Information on Web app is [here](#create-and-deploy-service-manager-web-app-service).</span></span>
+- <span data-ttu-id="3f317-119">Ligação híbrida criada e configurada.</span><span class="sxs-lookup"><span data-stu-id="3f317-119">Hybrid connection created and configured.</span></span> <span data-ttu-id="3f317-120">Obter mais informações: [híbrida de Olá configurar ligação](#configure-the-hybrid-connection).</span><span class="sxs-lookup"><span data-stu-id="3f317-120">More information: [Configure hello hybrid Connection](#configure-the-hybrid-connection).</span></span>
+- <span data-ttu-id="3f317-121">As versões do Service Manager: 2012 R2 ou 2016.</span><span class="sxs-lookup"><span data-stu-id="3f317-121">Supported versions of Service Manager:  2012 R2 or 2016.</span></span>
+- <span data-ttu-id="3f317-122">A função de utilizador: [operador avançado](https://technet.microsoft.com/library/ff461054.aspx).</span><span class="sxs-lookup"><span data-stu-id="3f317-122">User role:  [Advanced operator](https://technet.microsoft.com/library/ff461054.aspx).</span></span>
 
-### <a name="connection-procedure"></a>Procedimento de ligação
+### <a name="connection-procedure"></a><span data-ttu-id="3f317-123">Procedimento de ligação</span><span class="sxs-lookup"><span data-stu-id="3f317-123">Connection procedure</span></span>
 
-Utilize Olá tooconnect procedimento a seguir a toohello de instância do System Center Service Manager conector de gestão de serviços de TI:
+<span data-ttu-id="3f317-124">Utilize Olá tooconnect procedimento a seguir a toohello de instância do System Center Service Manager conector de gestão de serviços de TI:</span><span class="sxs-lookup"><span data-stu-id="3f317-124">Use hello following procedure tooconnect your System Center Service Manager instance toohello IT Service Management Connector:</span></span>
 
-1. Aceda demasiado**OMS** >**definições** > **origens ligadas**.
-2. Selecione **ITSM conector,** clique **Adicionar nova ligação**.
+1. <span data-ttu-id="3f317-125">Aceda demasiado**OMS** >**definições** > **origens ligadas**.</span><span class="sxs-lookup"><span data-stu-id="3f317-125">Go too**OMS** >**Settings** > **Connected Sources**.</span></span>
+2. <span data-ttu-id="3f317-126">Selecione **ITSM conector,** clique **Adicionar nova ligação**.</span><span class="sxs-lookup"><span data-stu-id="3f317-126">Select **ITSM Connector,** click **Add New Connection**.</span></span>
 
-    ![Do Service manager ](./media/log-analytics-itsmc/itsmc-service-manager-connection.png)
-3. Fornecer informações de Olá, conforme descrito em Olá a tabela seguinte e clique em **guardar** ligação de Olá toocreate:
+    ![<span data-ttu-id="3f317-127">Do Service manager</span><span class="sxs-lookup"><span data-stu-id="3f317-127">Service manager</span></span> ](./media/log-analytics-itsmc/itsmc-service-manager-connection.png)
+3. <span data-ttu-id="3f317-128">Fornecer informações de Olá, conforme descrito em Olá a tabela seguinte e clique em **guardar** ligação de Olá toocreate:</span><span class="sxs-lookup"><span data-stu-id="3f317-128">Provide hello information as described in hello following table, and click **Save** toocreate hello connection:</span></span>
 
 > [!NOTE]
-> Todos os parâmetros são obrigatórios.
+> <span data-ttu-id="3f317-129">Todos os parâmetros são obrigatórios.</span><span class="sxs-lookup"><span data-stu-id="3f317-129">All these parameters are mandatory.</span></span>
 
-| **Campo** | **Descrição** |
+| <span data-ttu-id="3f317-130">**Campo**</span><span class="sxs-lookup"><span data-stu-id="3f317-130">**Field**</span></span> | <span data-ttu-id="3f317-131">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="3f317-131">**Description**</span></span> |
 | --- | --- |
-| **Nome**   | Escreva um nome para a instância do System Center Service Manager Olá que pretende que o tooconnect com Olá conector de gestão de serviços de TI.  Utilize este nome mais tarde quando configurar os itens de trabalho nesta instância / ver a análise de registos detalhados. |
-| **Selecione o tipo de ligação**   | Selecione **do System Center Service Manager**. |
-| **URL do servidor**   | Introduza o URL de Olá do Olá aplicação Web do Service Manager. Obter mais informações sobre a aplicação Web do Service Manager são [aqui](#create-and-deploy-service-manager-web-app-service).
-| **ID de cliente**   | Escreva o ID de cliente de Olá que gerado (utilizando o script automático Olá) para autenticar a aplicação Web de Olá. Mais informações sobre o script de Olá automatizada [aqui.](log-analytics-itsmc-service-manager-script.md)|
-| **Segredo do cliente**   | Segredo do cliente do tipo Olá, gerado para este ID.   |
-| **Âmbito de sincronização de dados**   | Selecione itens de trabalho do Service Manager Olá que pretende que o toosync através de Olá conector de gestão de serviços de TI.  Estes itens são importados para análise de registos de trabalho. **Opções:** incidentes, pedidos de alteração.|
-| **Dados de sincronização** | Escreva o número de Olá dos últimos dias que pretende que os dados de Olá do. **Limite máximo**: 120 dias. |
-| **Criar um novo item de configuração na solução ITSM** | Selecione esta opção se pretender que os itens de configuração de Olá toocreate no produto ITSM Olá. Quando selecionada, o OMS cria Olá afetado CIs como itens de configuração (em caso de não existente CIs) no Olá suportados sistema ITSM. **Predefinição**: desativado. |
+| <span data-ttu-id="3f317-132">**Nome**</span><span class="sxs-lookup"><span data-stu-id="3f317-132">**Name**</span></span>   | <span data-ttu-id="3f317-133">Escreva um nome para a instância do System Center Service Manager Olá que pretende que o tooconnect com Olá conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-133">Type a name for hello System Center Service Manager instance that you want tooconnect with hello IT Service Management Connector.</span></span>  <span data-ttu-id="3f317-134">Utilize este nome mais tarde quando configurar os itens de trabalho nesta instância / ver a análise de registos detalhados.</span><span class="sxs-lookup"><span data-stu-id="3f317-134">You use this name later when you configure work items in this instance/ view detailed log analytics.</span></span> |
+| <span data-ttu-id="3f317-135">**Selecione o tipo de ligação**</span><span class="sxs-lookup"><span data-stu-id="3f317-135">**Select Connection type**</span></span>   | <span data-ttu-id="3f317-136">Selecione **do System Center Service Manager**.</span><span class="sxs-lookup"><span data-stu-id="3f317-136">Select **System Center Service Manager**.</span></span> |
+| <span data-ttu-id="3f317-137">**URL do servidor**</span><span class="sxs-lookup"><span data-stu-id="3f317-137">**Server URL**</span></span>   | <span data-ttu-id="3f317-138">Introduza o URL de Olá do Olá aplicação Web do Service Manager.</span><span class="sxs-lookup"><span data-stu-id="3f317-138">Type hello URL of hello Service Manager Web app.</span></span> <span data-ttu-id="3f317-139">Obter mais informações sobre a aplicação Web do Service Manager são [aqui](#create-and-deploy-service-manager-web-app-service).</span><span class="sxs-lookup"><span data-stu-id="3f317-139">More information about Service Manager Web app is [here](#create-and-deploy-service-manager-web-app-service).</span></span>
+| <span data-ttu-id="3f317-140">**ID de cliente**</span><span class="sxs-lookup"><span data-stu-id="3f317-140">**Client ID**</span></span>   | <span data-ttu-id="3f317-141">Escreva o ID de cliente de Olá que gerado (utilizando o script automático Olá) para autenticar a aplicação Web de Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-141">Type hello client ID that you generated (using hello automatic script) for authenticating hello Web app.</span></span> <span data-ttu-id="3f317-142">Mais informações sobre o script de Olá automatizada [aqui.](log-analytics-itsmc-service-manager-script.md)</span><span class="sxs-lookup"><span data-stu-id="3f317-142">More information about hello automated script is [here.](log-analytics-itsmc-service-manager-script.md)</span></span>|
+| <span data-ttu-id="3f317-143">**Segredo do cliente**</span><span class="sxs-lookup"><span data-stu-id="3f317-143">**Client Secret**</span></span>   | <span data-ttu-id="3f317-144">Segredo do cliente do tipo Olá, gerado para este ID.</span><span class="sxs-lookup"><span data-stu-id="3f317-144">Type hello client secret, generated for this ID.</span></span>   |
+| <span data-ttu-id="3f317-145">**Âmbito de sincronização de dados**</span><span class="sxs-lookup"><span data-stu-id="3f317-145">**Data Sync Scope**</span></span>   | <span data-ttu-id="3f317-146">Selecione itens de trabalho do Service Manager Olá que pretende que o toosync através de Olá conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-146">Select hello Service Manager work items that you want toosync through hello IT Service Management Connector.</span></span>  <span data-ttu-id="3f317-147">Estes itens são importados para análise de registos de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3f317-147">These work items are imported into Log Analytics.</span></span> <span data-ttu-id="3f317-148">**Opções:** incidentes, pedidos de alteração.</span><span class="sxs-lookup"><span data-stu-id="3f317-148">**Options:**  Incidents, Change Requests.</span></span>|
+| <span data-ttu-id="3f317-149">**Dados de sincronização**</span><span class="sxs-lookup"><span data-stu-id="3f317-149">**Sync Data**</span></span> | <span data-ttu-id="3f317-150">Escreva o número de Olá dos últimos dias que pretende que os dados de Olá do.</span><span class="sxs-lookup"><span data-stu-id="3f317-150">Type hello number of past days that you want hello data from.</span></span> <span data-ttu-id="3f317-151">**Limite máximo**: 120 dias.</span><span class="sxs-lookup"><span data-stu-id="3f317-151">**Maximum limit**: 120 days.</span></span> |
+| <span data-ttu-id="3f317-152">**Criar um novo item de configuração na solução ITSM**</span><span class="sxs-lookup"><span data-stu-id="3f317-152">**Create new configuration item in ITSM solution**</span></span> | <span data-ttu-id="3f317-153">Selecione esta opção se pretender que os itens de configuração de Olá toocreate no produto ITSM Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-153">Select this option if you want toocreate hello configuration items in hello ITSM product.</span></span> <span data-ttu-id="3f317-154">Quando selecionada, o OMS cria Olá afetado CIs como itens de configuração (em caso de não existente CIs) no Olá suportados sistema ITSM.</span><span class="sxs-lookup"><span data-stu-id="3f317-154">When selected, OMS creates hello affected CIs as configuration items (in case of non-existing CIs) in hello supported ITSM system.</span></span> <span data-ttu-id="3f317-155">**Predefinição**: desativado.</span><span class="sxs-lookup"><span data-stu-id="3f317-155">**Default**: disabled.</span></span> |
 
-Quando ligado com êxito e sincronizada com êxito:
+<span data-ttu-id="3f317-156">Quando ligado com êxito e sincronizada com êxito:</span><span class="sxs-lookup"><span data-stu-id="3f317-156">When successfully connected, and synced:</span></span>
 
-- Itens de trabalho selecionado do Service Manager são importados para o OMS **análise de registos.** Pode ver o resumo de Olá destes itens de trabalho no mosaico de conector de gestão de serviços de TI Olá.
+- <span data-ttu-id="3f317-157">Itens de trabalho selecionado do Service Manager são importados para o OMS **análise de registos.**</span><span class="sxs-lookup"><span data-stu-id="3f317-157">Selected work items from Service Manager are imported into OMS **Log Analytics.**</span></span> <span data-ttu-id="3f317-158">Pode ver o resumo de Olá destes itens de trabalho no mosaico de conector de gestão de serviços de TI Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-158">You can view hello summary of these work items on hello IT Service Management Connector tile.</span></span>
 
-- Da OMS, pode criar incidentes a partir dos alertas do OMS ou de pesquisa de registo, nesta instância do Service Manager.
+- <span data-ttu-id="3f317-159">Da OMS, pode criar incidentes a partir dos alertas do OMS ou de pesquisa de registo, nesta instância do Service Manager.</span><span class="sxs-lookup"><span data-stu-id="3f317-159">From OMS, you can create incidents from OMS alerts or from log search, in this Service Manager instance.</span></span>
 
-Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).
+<span data-ttu-id="3f317-160">Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).</span><span class="sxs-lookup"><span data-stu-id="3f317-160">More information: [Create ITSM work items for OMS alerts](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) and [Create ITSM work items from OMS logs](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).</span></span>
 
-### <a name="create-and-deploy-service-manager-web-app-service"></a>Criar e implementar o serviço de aplicações web do Service Manager
+### <a name="create-and-deploy-service-manager-web-app-service"></a><span data-ttu-id="3f317-161">Criar e implementar o serviço de aplicações web do Service Manager</span><span class="sxs-lookup"><span data-stu-id="3f317-161">Create and deploy Service Manager web app service</span></span>
 
-tooconnect Olá Gestor do serviço no local com Olá conector de gestão de serviços de TI na OMS, a Microsoft criou uma aplicação Web do Service Manager no Olá GitHub.
+<span data-ttu-id="3f317-162">tooconnect Olá Gestor do serviço no local com Olá conector de gestão de serviços de TI na OMS, a Microsoft criou uma aplicação Web do Service Manager no Olá GitHub.</span><span class="sxs-lookup"><span data-stu-id="3f317-162">tooconnect hello on-premises Service Manager with hello IT Service Management Connector on OMS, Microsoft has created a Service Manager Web app on hello GitHub.</span></span>
 
-tooset cópia de segurança Olá ITSM Web aplicação para o Gestor do serviço, Olá seguintes:
+<span data-ttu-id="3f317-163">tooset cópia de segurança Olá ITSM Web aplicação para o Gestor do serviço, Olá seguintes:</span><span class="sxs-lookup"><span data-stu-id="3f317-163">tooset up hello ITSM Web app for your Service Manager, do hello following:</span></span>
 
-- **Aplicação de Web de Olá implementar** – implementar a aplicação Web de Olá, definir propriedades de Olá e autenticar com o Azure AD. Pode implementar a aplicação web de Olá utilizando Olá [automatizada script](log-analytics-itsmc-service-manager-script.md) que Microsoft tem lhe forneceu.
-- **Configurar a ligação híbrida de Olá** - [configurar esta ligação](#configure-the-hybrid-connection), manualmente.
+- <span data-ttu-id="3f317-164">**Aplicação de Web de Olá implementar** – implementar a aplicação Web de Olá, definir propriedades de Olá e autenticar com o Azure AD.</span><span class="sxs-lookup"><span data-stu-id="3f317-164">**Deploy hello Web app** – Deploy hello Web app, set hello properties, and authenticate with Azure AD.</span></span> <span data-ttu-id="3f317-165">Pode implementar a aplicação web de Olá utilizando Olá [automatizada script](log-analytics-itsmc-service-manager-script.md) que Microsoft tem lhe forneceu.</span><span class="sxs-lookup"><span data-stu-id="3f317-165">You can deploy hello web app by using hello [automated script](log-analytics-itsmc-service-manager-script.md) that Microsoft has provided you.</span></span>
+- <span data-ttu-id="3f317-166">**Configurar a ligação híbrida de Olá** - [configurar esta ligação](#configure-the-hybrid-connection), manualmente.</span><span class="sxs-lookup"><span data-stu-id="3f317-166">**Configure hello hybrid connection** - [Configure this connection](#configure-the-hybrid-connection), manually.</span></span>
 
-#### <a name="deploy-hello-web-app"></a>Implementar a aplicação web de Olá
-Olá utilize automatizada [script](log-analytics-itsmc-service-manager-script.md) toodeploy Olá aplicação Web, definir propriedades de Olá e autenticar com o Azure AD.
+#### <a name="deploy-hello-web-app"></a><span data-ttu-id="3f317-167">Implementar a aplicação web de Olá</span><span class="sxs-lookup"><span data-stu-id="3f317-167">Deploy hello web app</span></span>
+<span data-ttu-id="3f317-168">Olá utilize automatizada [script](log-analytics-itsmc-service-manager-script.md) toodeploy Olá aplicação Web, definir propriedades de Olá e autenticar com o Azure AD.</span><span class="sxs-lookup"><span data-stu-id="3f317-168">Use hello automated [script](log-analytics-itsmc-service-manager-script.md) toodeploy hello Web app, set hello properties, and authenticate with Azure AD.</span></span>
 
-Execute o script de Olá fornecendo Olá os detalhes necessários:
+<span data-ttu-id="3f317-169">Execute o script de Olá fornecendo Olá os detalhes necessários:</span><span class="sxs-lookup"><span data-stu-id="3f317-169">Run hello script by providing hello following required details:</span></span>
 
-- Detalhes da subscrição do Azure
-- Nome do grupo de recursos
-- Localização
-- Detalhes do servidor do Service Manager (nome do servidor, domínio, nome de utilizador e palavra-passe)
-- Prefixo de nome de site para a sua aplicação Web
-- Espaço de nomes de barramento de serviço.
+- <span data-ttu-id="3f317-170">Detalhes da subscrição do Azure</span><span class="sxs-lookup"><span data-stu-id="3f317-170">Azure subscription details</span></span>
+- <span data-ttu-id="3f317-171">Nome do grupo de recursos</span><span class="sxs-lookup"><span data-stu-id="3f317-171">Resource group name</span></span>
+- <span data-ttu-id="3f317-172">Localização</span><span class="sxs-lookup"><span data-stu-id="3f317-172">Location</span></span>
+- <span data-ttu-id="3f317-173">Detalhes do servidor do Service Manager (nome do servidor, domínio, nome de utilizador e palavra-passe)</span><span class="sxs-lookup"><span data-stu-id="3f317-173">Service Manager server details (server name, domain, user name, and password)</span></span>
+- <span data-ttu-id="3f317-174">Prefixo de nome de site para a sua aplicação Web</span><span class="sxs-lookup"><span data-stu-id="3f317-174">Site name prefix for your Web app</span></span>
+- <span data-ttu-id="3f317-175">Espaço de nomes de barramento de serviço.</span><span class="sxs-lookup"><span data-stu-id="3f317-175">ServiceBus Namespace.</span></span>
 
-Olá script cria Olá Web app através da nome Olá que especificou (juntamente com alguns cadeias adicionais toomake-exclusivo). Gera Olá **URL da aplicação Web**, **ID de cliente** e **segredo do cliente**.
+<span data-ttu-id="3f317-176">Olá script cria Olá Web app através da nome Olá que especificou (juntamente com alguns cadeias adicionais toomake-exclusivo).</span><span class="sxs-lookup"><span data-stu-id="3f317-176">hello script creates hello Web app using hello name that you specified (along with few additional strings toomake it unique).</span></span> <span data-ttu-id="3f317-177">Gera Olá **URL da aplicação Web**, **ID de cliente** e **segredo do cliente**.</span><span class="sxs-lookup"><span data-stu-id="3f317-177">It generates hello **Web app URL**, **client ID** and **client secret**.</span></span>
 
-Guardar valores Olá, poderá utilizá-los quando criar uma ligação com o conector de gestão do serviço de TI.
+<span data-ttu-id="3f317-178">Guardar valores Olá, poderá utilizá-los quando criar uma ligação com o conector de gestão do serviço de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-178">Save hello values, you use them when you create a connection with IT Service Management Connector.</span></span>
 
-**Verifique a instalação da aplicação Olá Web**
+<span data-ttu-id="3f317-179">**Verifique a instalação da aplicação Olá Web**</span><span class="sxs-lookup"><span data-stu-id="3f317-179">**Check hello Web app installation**</span></span>
 
-1. Aceda demasiado**portal do Azure** > **recursos**.
-2. Selecione a aplicação Web de Olá, clique em **definições** > **definições da aplicação**.
-3. Confirme as informações de Olá sobre a instância do Service Manager Olá fornecida no momento de Olá da implementação de aplicação Olá através de script de Olá.
+1. <span data-ttu-id="3f317-180">Aceda demasiado**portal do Azure** > **recursos**.</span><span class="sxs-lookup"><span data-stu-id="3f317-180">Go too**Azure portal** > **Resources**.</span></span>
+2. <span data-ttu-id="3f317-181">Selecione a aplicação Web de Olá, clique em **definições** > **definições da aplicação**.</span><span class="sxs-lookup"><span data-stu-id="3f317-181">Select hello Web app, click **Settings** > **Application Settings**.</span></span>
+3. <span data-ttu-id="3f317-182">Confirme as informações de Olá sobre a instância do Service Manager Olá fornecida no momento de Olá da implementação de aplicação Olá através de script de Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-182">Confirm hello information about hello Service Manager instance that you provided at hello time of deploying hello app through hello script.</span></span>
 
-### <a name="configure-hello-hybrid-connection"></a>Configurar a ligação híbrida de Olá
+### <a name="configure-hello-hybrid-connection"></a><span data-ttu-id="3f317-183">Configurar a ligação híbrida de Olá</span><span class="sxs-lookup"><span data-stu-id="3f317-183">Configure hello hybrid connection</span></span>
 
-Utilize Olá seguir o procedimento tooconfigure Olá da ligação híbrida que se liga a instância do Service Manager Olá com Olá conector de gestão de serviços de TI no OMS.
+<span data-ttu-id="3f317-184">Utilize Olá seguir o procedimento tooconfigure Olá da ligação híbrida que se liga a instância do Service Manager Olá com Olá conector de gestão de serviços de TI no OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-184">Use hello following procedure tooconfigure hello hybrid connection that connects hello Service Manager instance with hello IT Service Management Connector in OMS.</span></span>
 
-1. Localizar Olá aplicação Web do Service Manager, em **recursos Azure**.
-2. Clique em **definições** > **redes**.
-3. Em **ligações híbridas**, clique em **configurar pontos finais da sua ligação híbrida**.
+1. <span data-ttu-id="3f317-185">Localizar Olá aplicação Web do Service Manager, em **recursos Azure**.</span><span class="sxs-lookup"><span data-stu-id="3f317-185">Find hello Service Manager Web app, under **Azure Resources**.</span></span>
+2. <span data-ttu-id="3f317-186">Clique em **definições** > **redes**.</span><span class="sxs-lookup"><span data-stu-id="3f317-186">Click **Settings** > **Networking**.</span></span>
+3. <span data-ttu-id="3f317-187">Em **ligações híbridas**, clique em **configurar pontos finais da sua ligação híbrida**.</span><span class="sxs-lookup"><span data-stu-id="3f317-187">Under **Hybrid Connections**, click **Configure your hybrid connection endpoints**.</span></span>
 
     ![Rede de ligação híbrida](./media/log-analytics-itsmc/itsmc-hybrid-connection-networking-and-end-points.png)
-4. No Olá **ligações híbridas** painel, clique em **adicionar ligação híbrida**.
+4. <span data-ttu-id="3f317-189">No Olá **ligações híbridas** painel, clique em **adicionar ligação híbrida**.</span><span class="sxs-lookup"><span data-stu-id="3f317-189">In hello **Hybrid Connections** blade, click **Add hybrid connection**.</span></span>
 
     ![Adicionar ligação híbrida](./media/log-analytics-itsmc/itsmc-new-hybrid-connection-add.png)
 
-5. No Olá **as ligações híbridas de adicionar** painel, clique em **híbrida de criar nova ligação**.
+5. <span data-ttu-id="3f317-191">No Olá **as ligações híbridas de adicionar** painel, clique em **híbrida de criar nova ligação**.</span><span class="sxs-lookup"><span data-stu-id="3f317-191">In hello **Add Hybrid Connections** blade, click **Create new hybrid Connection**.</span></span>
 
     ![Nova ligação híbrida](./media/log-analytics-itsmc/itsmc-create-new-hybrid-connection.png)
 
-6. Escreva Olá os seguintes valores:
+6. <span data-ttu-id="3f317-193">Escreva Olá os seguintes valores:</span><span class="sxs-lookup"><span data-stu-id="3f317-193">Type hello following values:</span></span>
 
-    - **Nome do ponto final**: Especifique um nome da ligação híbrida nova do Olá.
-    -  **Anfitrião de ponto final**: FQDN do servidor de gestão do Service Manager Olá.
-    - **Porta do ponto final**: escreva 5724
-    - **Espaço de nomes de barramento de serviço**: Utilize um espaço de nomes de barramento de serviço existente ou crie um novo.
-    - **Localização**: selecione a localização de Olá.
-    -  **Nome**: especificar um barramento de serviço do nome toohello se estiver a criar.
+    - <span data-ttu-id="3f317-194">**Nome do ponto final**: Especifique um nome da ligação híbrida nova do Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-194">**EndPoint Name**: Specify a name for hello new Hybrid connection.</span></span>
+    -  <span data-ttu-id="3f317-195">**Anfitrião de ponto final**: FQDN do servidor de gestão do Service Manager Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-195">**EndPoint Host**: FQDN of hello Service Manager management server.</span></span>
+    - <span data-ttu-id="3f317-196">**Porta do ponto final**: escreva 5724</span><span class="sxs-lookup"><span data-stu-id="3f317-196">**EndPoint Port**: Type 5724</span></span>
+    - <span data-ttu-id="3f317-197">**Espaço de nomes de barramento de serviço**: Utilize um espaço de nomes de barramento de serviço existente ou crie um novo.</span><span class="sxs-lookup"><span data-stu-id="3f317-197">**Servicebus namespace**: Use an existing servicebus namespace or create a new one.</span></span>
+    - <span data-ttu-id="3f317-198">**Localização**: selecione a localização de Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-198">**Location**: select hello location.</span></span>
+    -  <span data-ttu-id="3f317-199">**Nome**: especificar um barramento de serviço do nome toohello se estiver a criar.</span><span class="sxs-lookup"><span data-stu-id="3f317-199">**Name**: Specify a name toohello servicebus if you are creating it.</span></span>
 
     ![Valores de ligação híbrida](./media/log-analytics-itsmc/itsmc-new-hybrid-connection-values.png)
-6. Clique em **OK** tooclose Olá **criar a ligação híbrida** painel e iniciar a criação da ligação híbrida Olá.
+6. <span data-ttu-id="3f317-201">Clique em **OK** tooclose Olá **criar a ligação híbrida** painel e iniciar a criação da ligação híbrida Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-201">Click **OK** tooclose hello **Create hybrid connection** blade and start creating hello hybrid connection.</span></span>
 
-    Depois da ligação híbrida Olá é criada, será apresentado no painel de Olá.
+    <span data-ttu-id="3f317-202">Depois da ligação híbrida Olá é criada, será apresentado no painel de Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-202">Once hello Hybrid connection is created, it is displayed under hello blade.</span></span>
 
-7. Após a criação da ligação híbrida Olá, selecione a ligação de Olá e clique em **adicionar selecionada da ligação híbrida**.
+7. <span data-ttu-id="3f317-203">Após a criação da ligação híbrida Olá, selecione a ligação de Olá e clique em **adicionar selecionada da ligação híbrida**.</span><span class="sxs-lookup"><span data-stu-id="3f317-203">After hello hybrid connection is created, select hello connection and click **Add selected hybrid connection**.</span></span>
 
     ![Nova ligação híbrida](./media/log-analytics-itsmc/itsmc-new-hybrid-connection-added.png)
 
-#### <a name="configure-hello-listener-setup"></a>Configurar a configuração do serviço de escuta Olá
+#### <a name="configure-hello-listener-setup"></a><span data-ttu-id="3f317-205">Configurar a configuração do serviço de escuta Olá</span><span class="sxs-lookup"><span data-stu-id="3f317-205">Configure hello listener setup</span></span>
 
-Utilize Olá seguir o procedimento tooconfigure Olá escuta a configuração da ligação híbrida de Olá.
+<span data-ttu-id="3f317-206">Utilize Olá seguir o procedimento tooconfigure Olá escuta a configuração da ligação híbrida de Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-206">Use hello following procedure tooconfigure hello listener setup for hello hybrid connection.</span></span>
 
-1. No Olá **ligações híbridas** painel, clique em **transferência Olá Gestor de ligações** e instalá-lo na máquina de olá onde a instância do System Center Service Manager está em execução.
+1. <span data-ttu-id="3f317-207">No Olá **ligações híbridas** painel, clique em **transferência Olá Gestor de ligações** e instalá-lo na máquina de olá onde a instância do System Center Service Manager está em execução.</span><span class="sxs-lookup"><span data-stu-id="3f317-207">In hello **Hybrid Connections** blade, click **Download hello Connection Manager** and install it on hello machine where System Center Service Manager instance is running.</span></span>
 
-    Depois de concluída, a instalação de Olá **IU do Gestor de ligações híbridas** opção está disponível em **iniciar** menu.
+    <span data-ttu-id="3f317-208">Depois de concluída, a instalação de Olá **IU do Gestor de ligações híbridas** opção está disponível em **iniciar** menu.</span><span class="sxs-lookup"><span data-stu-id="3f317-208">Once hello installation is complete, **Hybrid Connection Manager UI** option is available under **Start** menu.</span></span>
 
-2. Clique em **IU do Gestor de ligações híbridas** , será solicitado para as suas credenciais do Azure.
+2. <span data-ttu-id="3f317-209">Clique em **IU do Gestor de ligações híbridas** , será solicitado para as suas credenciais do Azure.</span><span class="sxs-lookup"><span data-stu-id="3f317-209">Click **Hybrid Connection Manager UI** , you will be prompted for your Azure credentials.</span></span>
 
-3. Início de sessão com as suas credenciais do Azure e selecionar a sua subscrição onde foi criado Olá da ligação híbrida.
+3. <span data-ttu-id="3f317-210">Início de sessão com as suas credenciais do Azure e selecionar a sua subscrição onde foi criado Olá da ligação híbrida.</span><span class="sxs-lookup"><span data-stu-id="3f317-210">Login with your Azure credentials and select your subscription where hello Hybrid connection was created.</span></span>
 
-4. Clique em **Guardar**.
+4. <span data-ttu-id="3f317-211">Clique em **Guardar**.</span><span class="sxs-lookup"><span data-stu-id="3f317-211">Click **Save**.</span></span>
 
-A ligação híbrida foi ligada com êxito.
+<span data-ttu-id="3f317-212">A ligação híbrida foi ligada com êxito.</span><span class="sxs-lookup"><span data-stu-id="3f317-212">Your hybrid connection is successfully connected.</span></span>
 
 ![ligação híbrida com êxito](./media/log-analytics-itsmc/itsmc-hybrid-connection-listener-set-up-successful.png)
 > [!NOTE]
 
-> Após a criação da ligação híbrida Olá, verificar e testar a ligação de Olá, visitando Olá implementar a aplicação de Web do Service Manager. Certifique-se de que a ligação de Olá é efetuada com êxito antes de tentar tooconnect toohello conector de gestão de serviços de TI no OMS.
+> <span data-ttu-id="3f317-214">Após a criação da ligação híbrida Olá, verificar e testar a ligação de Olá, visitando Olá implementar a aplicação de Web do Service Manager.</span><span class="sxs-lookup"><span data-stu-id="3f317-214">After hello hybrid connection is created, verify and test hello connection by visiting hello deployed Service Manager Web app.</span></span> <span data-ttu-id="3f317-215">Certifique-se de que a ligação de Olá é efetuada com êxito antes de tentar tooconnect toohello conector de gestão de serviços de TI no OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-215">Ensure hello connection is successful before you try tooconnect toohello IT Service Management Connector in OMS.</span></span>
 
-Olá imagem seguinte mostra os detalhes de Olá de uma ligação com êxito:
+<span data-ttu-id="3f317-216">Olá imagem seguinte mostra os detalhes de Olá de uma ligação com êxito:</span><span class="sxs-lookup"><span data-stu-id="3f317-216">hello following image shows hello details of a successful connection:</span></span>
 
 ![Teste de ligação híbrida](./media/log-analytics-itsmc/itsmc-hybrid-connection-test.png)
 
-## <a name="connect-servicenow-tooit-service-management-connector-in-oms"></a>Ligar o ServiceNow tooIT conector de gestão de serviço no OMS
+## <a name="connect-servicenow-tooit-service-management-connector-in-oms"></a><span data-ttu-id="3f317-218">Ligar o ServiceNow tooIT conector de gestão de serviço no OMS</span><span class="sxs-lookup"><span data-stu-id="3f317-218">Connect ServiceNow tooIT Service Management Connector in OMS</span></span>
 
-Olá secções seguintes fornecem detalhes sobre como tooconnect toohello de produto do ServiceNow conector de gestão de serviços de TI no OMS.
+<span data-ttu-id="3f317-219">Olá secções seguintes fornecem detalhes sobre como tooconnect toohello de produto do ServiceNow conector de gestão de serviços de TI no OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-219">hello following sections provide details about how tooconnect your ServiceNow product toohello IT Service Management Connector in OMS.</span></span>
 
-### <a name="prerequisites"></a>Pré-requisitos
+### <a name="prerequisites"></a><span data-ttu-id="3f317-220">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="3f317-220">Prerequisites</span></span>
 
-Certifique-se de que tem Olá pré-requisitos cumpridos os seguintes:
+<span data-ttu-id="3f317-221">Certifique-se de que tem Olá pré-requisitos cumpridos os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3f317-221">Ensure you have hello following prerequisites met:</span></span>
 
-- Conector de gestão do serviço IT instalado. Obter mais informações: [configuração.](log-analytics-itsmc-overview.md#configuration)
-- ServiceNow suportadas versões – Fuji, Geneva, Helsinki.
+- <span data-ttu-id="3f317-222">Conector de gestão do serviço IT instalado.</span><span class="sxs-lookup"><span data-stu-id="3f317-222">IT Service Management Connector installed.</span></span> <span data-ttu-id="3f317-223">Obter mais informações: [configuração.](log-analytics-itsmc-overview.md#configuration)</span><span class="sxs-lookup"><span data-stu-id="3f317-223">More information: [Configuration.](log-analytics-itsmc-overview.md#configuration)</span></span>
+- <span data-ttu-id="3f317-224">ServiceNow suportadas versões – Fuji, Geneva, Helsinki.</span><span class="sxs-lookup"><span data-stu-id="3f317-224">ServiceNow supported versions – Fuji, Geneva, Helsinki.</span></span>
 
-Administradores do ServiceNow tem de fazer Olá seguir na sua instância do ServiceNow:
-- Geram o ID de cliente e o segredo de cliente para o produto de ServiceNow Olá. Para obter informações sobre como ver toogenerate ID de cliente e o segredo, [configuração de OAuth](http://wiki.servicenow.com/index.php?title=OAuth_Setup).
-- Instale Olá aplicações de utilizador para a integração da Microsoft OMS (ServiceNow aplicação). [Saiba mais](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.0 ).
-- Crie função de utilizador de integração para a aplicação de utilizador de Olá instalada. Informações sobre como é a função de utilizador de integração de Olá toocreate [aqui](#create-integration-user-role-in-servicenow-app).
+<span data-ttu-id="3f317-225">Administradores do ServiceNow tem de fazer Olá seguir na sua instância do ServiceNow:</span><span class="sxs-lookup"><span data-stu-id="3f317-225">ServiceNow Admins must do hello following in their ServiceNow instance:</span></span>
+- <span data-ttu-id="3f317-226">Geram o ID de cliente e o segredo de cliente para o produto de ServiceNow Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-226">Generate client ID and client secret for hello ServiceNow product.</span></span> <span data-ttu-id="3f317-227">Para obter informações sobre como ver toogenerate ID de cliente e o segredo, [configuração de OAuth](http://wiki.servicenow.com/index.php?title=OAuth_Setup).</span><span class="sxs-lookup"><span data-stu-id="3f317-227">For information on how toogenerate client ID and secret, see [OAuth Setup](http://wiki.servicenow.com/index.php?title=OAuth_Setup).</span></span>
+- <span data-ttu-id="3f317-228">Instale Olá aplicações de utilizador para a integração da Microsoft OMS (ServiceNow aplicação).</span><span class="sxs-lookup"><span data-stu-id="3f317-228">Install hello User App for Microsoft OMS integration (ServiceNow app).</span></span> <span data-ttu-id="3f317-229">[Saiba mais](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.0 ).</span><span class="sxs-lookup"><span data-stu-id="3f317-229">[Learn more](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.0 ).</span></span>
+- <span data-ttu-id="3f317-230">Crie função de utilizador de integração para a aplicação de utilizador de Olá instalada.</span><span class="sxs-lookup"><span data-stu-id="3f317-230">Create integration user role for hello user app installed.</span></span> <span data-ttu-id="3f317-231">Informações sobre como é a função de utilizador de integração de Olá toocreate [aqui](#create-integration-user-role-in-servicenow-app).</span><span class="sxs-lookup"><span data-stu-id="3f317-231">Information on how toocreate hello integration user role is [here](#create-integration-user-role-in-servicenow-app).</span></span>
 
 
-### <a name="connection-procedure"></a>**Procedimento de ligação**
+### <a name="connection-procedure"></a><span data-ttu-id="3f317-232">**Procedimento de ligação**</span><span class="sxs-lookup"><span data-stu-id="3f317-232">**Connection procedure**</span></span>
 
-Utilize Olá procedimento toocreate uma ligação de ServiceNow os seguintes:
+<span data-ttu-id="3f317-233">Utilize Olá procedimento toocreate uma ligação de ServiceNow os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3f317-233">Use hello following procedure toocreate a ServiceNow connection:</span></span>
 
-1. Aceda demasiado**OMS** > **definições** > **origens ligadas**.
-2. Selecione **ITSM conector,** clique **Adicionar nova ligação**.
+1. <span data-ttu-id="3f317-234">Aceda demasiado**OMS** > **definições** > **origens ligadas**.</span><span class="sxs-lookup"><span data-stu-id="3f317-234">Go too**OMS** > **Settings** > **Connected Sources**.</span></span>
+2. <span data-ttu-id="3f317-235">Selecione **ITSM conector,** clique **Adicionar nova ligação**.</span><span class="sxs-lookup"><span data-stu-id="3f317-235">Select **ITSM Connector,** click **Add New Connection**.</span></span>
 
     ![Ligação de ServiceNow](./media/log-analytics-itsmc/itsmc-servicenow-connection.png)
 
-3. Fornecer informações de Olá, conforme descrito em Olá a tabela seguinte e clique em **guardar** ligação de Olá toocreate:
+3. <span data-ttu-id="3f317-237">Fornecer informações de Olá, conforme descrito em Olá a tabela seguinte e clique em **guardar** ligação de Olá toocreate:</span><span class="sxs-lookup"><span data-stu-id="3f317-237">Provide hello information as described in hello following table, and click **Save** toocreate hello connection:</span></span>
 
 > [!NOTE]
-> Todos os parâmetros são obrigatórios.
+> <span data-ttu-id="3f317-238">Todos os parâmetros são obrigatórios.</span><span class="sxs-lookup"><span data-stu-id="3f317-238">All these parameters are mandatory.</span></span>
 
-| **Campo** | **Descrição** |
+| <span data-ttu-id="3f317-239">**Campo**</span><span class="sxs-lookup"><span data-stu-id="3f317-239">**Field**</span></span> | <span data-ttu-id="3f317-240">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="3f317-240">**Description**</span></span> |
 | --- | --- |
-| **Nome**   | Escreva um nome para a instância do ServiceNow Olá que pretende que o tooconnect com Olá conector de gestão de serviços de TI.  Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados. |
-| **Selecione o tipo de ligação**   | Selecione **ServiceNow**. |
-| **Nome de Utilizador**   | Escreva o nome de utilizador de integração Olá que criou no Olá ServiceNow aplicação toosupport Olá ligação toohello conector de gestão de serviços de TI. Obter mais informações: [ServiceNow criar função de utilizador de aplicação](#create-integration-user-role-in-servicenow-app).|
-| **Palavra-passe**   | Escreva a palavra-passe de Olá associada este nome de utilizador. **Tenha em atenção**: nome de utilizador e palavra-passe são utilizados para gerar tokens de autenticação apenas e não são armazenadas em qualquer lugar no serviço do Olá OMS.  |
-| **URL do servidor**   | Escreva o URL de Olá de instância do ServiceNow Olá que pretende que o tooconnect tooIT conector do serviço de gestão. |
-| **ID de cliente**   | Escreva o ID de cliente de Olá que pretende toouse para autenticação de OAuth2, o que é gerado anteriormente.  Obter mais informações sobre a geração de ID de cliente e o segredo: [configuração de OAuth](http://wiki.servicenow.com/index.php?title=OAuth_Setup). |
-| **Segredo do cliente**   | Segredo do cliente do tipo Olá, gerado para este ID.   |
-| **Âmbito de sincronização de dados**   | Selecione itens de trabalho de ServiceNow Olá que pretende que o tooOMS toosync, através de Olá conector de gestão de serviços de TI.  valores de Olá selecionado são importados para análise de registos.   **Opções:** incidentes e pedidos de alteração.|
-| **Dados de sincronização** | Escreva o número de Olá dos últimos dias que pretende que os dados de Olá do. **Limite máximo**: 120 dias. |
-| **Criar um novo item de configuração na solução ITSM** | Selecione esta opção se pretender que os itens de configuração de Olá toocreate no produto ITSM Olá. Quando selecionada, o OMS cria Olá afetado CIs como itens de configuração (em caso de não existente CIs) no Olá suportados sistema ITSM. **Predefinição**: desativado. |
+| <span data-ttu-id="3f317-241">**Nome**</span><span class="sxs-lookup"><span data-stu-id="3f317-241">**Name**</span></span>   | <span data-ttu-id="3f317-242">Escreva um nome para a instância do ServiceNow Olá que pretende que o tooconnect com Olá conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-242">Type a name for hello ServiceNow instance that you want tooconnect with hello IT Service Management Connector.</span></span>  <span data-ttu-id="3f317-243">Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados.</span><span class="sxs-lookup"><span data-stu-id="3f317-243">You use this name later in OMS when you configure work items in this ITSM/ view detailed log analytics.</span></span> |
+| <span data-ttu-id="3f317-244">**Selecione o tipo de ligação**</span><span class="sxs-lookup"><span data-stu-id="3f317-244">**Select Connection type**</span></span>   | <span data-ttu-id="3f317-245">Selecione **ServiceNow**.</span><span class="sxs-lookup"><span data-stu-id="3f317-245">Select **ServiceNow**.</span></span> |
+| <span data-ttu-id="3f317-246">**Nome de Utilizador**</span><span class="sxs-lookup"><span data-stu-id="3f317-246">**Username**</span></span>   | <span data-ttu-id="3f317-247">Escreva o nome de utilizador de integração Olá que criou no Olá ServiceNow aplicação toosupport Olá ligação toohello conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-247">Type hello integration user name that you created in hello ServiceNow app toosupport hello connection toohello IT Service Management Connector.</span></span> <span data-ttu-id="3f317-248">Obter mais informações: [ServiceNow criar função de utilizador de aplicação](#create-integration-user-role-in-servicenow-app).</span><span class="sxs-lookup"><span data-stu-id="3f317-248">More information: [Create ServiceNow app user role](#create-integration-user-role-in-servicenow-app).</span></span>|
+| <span data-ttu-id="3f317-249">**Palavra-passe**</span><span class="sxs-lookup"><span data-stu-id="3f317-249">**Password**</span></span>   | <span data-ttu-id="3f317-250">Escreva a palavra-passe de Olá associada este nome de utilizador.</span><span class="sxs-lookup"><span data-stu-id="3f317-250">Type hello password associated with this user name.</span></span> <span data-ttu-id="3f317-251">**Tenha em atenção**: nome de utilizador e palavra-passe são utilizados para gerar tokens de autenticação apenas e não são armazenadas em qualquer lugar no serviço do Olá OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-251">**Note**: User name and password are used for generating authentication tokens only, and are not stored anywhere within hello OMS service.</span></span>  |
+| <span data-ttu-id="3f317-252">**URL do servidor**</span><span class="sxs-lookup"><span data-stu-id="3f317-252">**Server URL**</span></span>   | <span data-ttu-id="3f317-253">Escreva o URL de Olá de instância do ServiceNow Olá que pretende que o tooconnect tooIT conector do serviço de gestão.</span><span class="sxs-lookup"><span data-stu-id="3f317-253">Type hello URL of hello ServiceNow instance that you want tooconnect tooIT Service Management Connector.</span></span> |
+| <span data-ttu-id="3f317-254">**ID de cliente**</span><span class="sxs-lookup"><span data-stu-id="3f317-254">**Client ID**</span></span>   | <span data-ttu-id="3f317-255">Escreva o ID de cliente de Olá que pretende toouse para autenticação de OAuth2, o que é gerado anteriormente.</span><span class="sxs-lookup"><span data-stu-id="3f317-255">Type hello client ID that you want toouse for OAuth2 Authentication, which you generated earlier.</span></span>  <span data-ttu-id="3f317-256">Obter mais informações sobre a geração de ID de cliente e o segredo: [configuração de OAuth](http://wiki.servicenow.com/index.php?title=OAuth_Setup).</span><span class="sxs-lookup"><span data-stu-id="3f317-256">More information on generating client ID and secret:   [OAuth Setup](http://wiki.servicenow.com/index.php?title=OAuth_Setup).</span></span> |
+| <span data-ttu-id="3f317-257">**Segredo do cliente**</span><span class="sxs-lookup"><span data-stu-id="3f317-257">**Client Secret**</span></span>   | <span data-ttu-id="3f317-258">Segredo do cliente do tipo Olá, gerado para este ID.</span><span class="sxs-lookup"><span data-stu-id="3f317-258">Type hello client secret, generated for this ID.</span></span>   |
+| <span data-ttu-id="3f317-259">**Âmbito de sincronização de dados**</span><span class="sxs-lookup"><span data-stu-id="3f317-259">**Data Sync Scope**</span></span>   | <span data-ttu-id="3f317-260">Selecione itens de trabalho de ServiceNow Olá que pretende que o tooOMS toosync, através de Olá conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-260">Select hello ServiceNow work items that you want toosync tooOMS, through hello IT Service Management Connector.</span></span>  <span data-ttu-id="3f317-261">valores de Olá selecionado são importados para análise de registos.</span><span class="sxs-lookup"><span data-stu-id="3f317-261">hello selected values are imported into log analytics.</span></span>   <span data-ttu-id="3f317-262">**Opções:** incidentes e pedidos de alteração.</span><span class="sxs-lookup"><span data-stu-id="3f317-262">**Options:**  Incidents and Change Requests.</span></span>|
+| <span data-ttu-id="3f317-263">**Dados de sincronização**</span><span class="sxs-lookup"><span data-stu-id="3f317-263">**Sync Data**</span></span> | <span data-ttu-id="3f317-264">Escreva o número de Olá dos últimos dias que pretende que os dados de Olá do.</span><span class="sxs-lookup"><span data-stu-id="3f317-264">Type hello number of past days that you want hello data from.</span></span> <span data-ttu-id="3f317-265">**Limite máximo**: 120 dias.</span><span class="sxs-lookup"><span data-stu-id="3f317-265">**Maximum limit**: 120 days.</span></span> |
+| <span data-ttu-id="3f317-266">**Criar um novo item de configuração na solução ITSM**</span><span class="sxs-lookup"><span data-stu-id="3f317-266">**Create new configuration item in ITSM solution**</span></span> | <span data-ttu-id="3f317-267">Selecione esta opção se pretender que os itens de configuração de Olá toocreate no produto ITSM Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-267">Select this option if you want toocreate hello configuration items in hello ITSM product.</span></span> <span data-ttu-id="3f317-268">Quando selecionada, o OMS cria Olá afetado CIs como itens de configuração (em caso de não existente CIs) no Olá suportados sistema ITSM.</span><span class="sxs-lookup"><span data-stu-id="3f317-268">When selected, OMS creates hello affected CIs as configuration items (in case of non-existing CIs) in hello supported ITSM system.</span></span> <span data-ttu-id="3f317-269">**Predefinição**: desativado.</span><span class="sxs-lookup"><span data-stu-id="3f317-269">**Default**: disabled.</span></span> |
 
 
-Quando ligado com êxito e sincronizada com êxito:
+<span data-ttu-id="3f317-270">Quando ligado com êxito e sincronizada com êxito:</span><span class="sxs-lookup"><span data-stu-id="3f317-270">When successfully connected, and synced:</span></span>
 
-- Selecionar itens da ligação do ServiceNow são importados para análise de registos do OMS de trabalho.  Pode ver o resumo de Olá destes itens de trabalho no mosaico de conector de gestão de serviços de TI Olá.
-- Pode criar incidentes, alertas e eventos de pesquisa de alertas do OMS ou de registo nesta instância do ServiceNow.  
+- <span data-ttu-id="3f317-271">Selecionar itens da ligação do ServiceNow são importados para análise de registos do OMS de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3f317-271">Selected work items from ServiceNow connection are imported into OMS Log Analytics.</span></span>  <span data-ttu-id="3f317-272">Pode ver o resumo de Olá destes itens de trabalho no mosaico de conector de gestão de serviços de TI Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-272">You can view hello summary of these work items on hello IT Service Management Connector tile.</span></span>
+- <span data-ttu-id="3f317-273">Pode criar incidentes, alertas e eventos de pesquisa de alertas do OMS ou de registo nesta instância do ServiceNow.</span><span class="sxs-lookup"><span data-stu-id="3f317-273">You can create incidents, alerts, and events from OMS Alerts or log search in this ServiceNow instance.</span></span>  
 
 
-Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).
+<span data-ttu-id="3f317-274">Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).</span><span class="sxs-lookup"><span data-stu-id="3f317-274">More information: [Create ITSM work items for OMS alerts](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) and [Create ITSM work items from OMS logs](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).</span></span>
 
-### <a name="create-integration-user-role-in-servicenow-app"></a>Criar função de utilizador de integração na aplicação do ServiceNow
+### <a name="create-integration-user-role-in-servicenow-app"></a><span data-ttu-id="3f317-275">Criar função de utilizador de integração na aplicação do ServiceNow</span><span class="sxs-lookup"><span data-stu-id="3f317-275">Create integration user role in ServiceNow app</span></span>
 
-Olá de utilizador seguinte procedimento:
+<span data-ttu-id="3f317-276">Olá de utilizador seguinte procedimento:</span><span class="sxs-lookup"><span data-stu-id="3f317-276">User hello following procedure:</span></span>
 
-1.  Visite Olá [ServiceNow arquivo](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.0) e instalar Olá **aplicação de utilizador para ServiceNow e a integração do Microsoft OMS** na sua instância do ServiceNow.
-2.  Após a instalação, visite Olá deixado barra de navegação da instância do ServiceNow Olá, procurar e selecione integrador de Microsoft OMS.  
-3.  Clique em **lista de verificação de instalação**.
+1.  <span data-ttu-id="3f317-277">Visite Olá [ServiceNow arquivo](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.0) e instalar Olá **aplicação de utilizador para ServiceNow e a integração do Microsoft OMS** na sua instância do ServiceNow.</span><span class="sxs-lookup"><span data-stu-id="3f317-277">Visit hello [ServiceNow store](https://store.servicenow.com/sn_appstore_store.do#!/store/application/ab0265b2dbd53200d36cdc50cf961980/1.0.0) and install hello **User App for ServiceNow and Microsoft OMS Integration** into your ServiceNow Instance.</span></span>
+2.  <span data-ttu-id="3f317-278">Após a instalação, visite Olá deixado barra de navegação da instância do ServiceNow Olá, procurar e selecione integrador de Microsoft OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-278">After installation, visit hello left navigation bar of hello ServiceNow instance, search, and select Microsoft OMS integrator.</span></span>  
+3.  <span data-ttu-id="3f317-279">Clique em **lista de verificação de instalação**.</span><span class="sxs-lookup"><span data-stu-id="3f317-279">Click **Installation Checklist**.</span></span>
 
-    Estado de Olá é apresentado como **não concluir** se é a função de utilizador Olá ainda toobe criado.
+    <span data-ttu-id="3f317-280">Estado de Olá é apresentado como **não concluir** se é a função de utilizador Olá ainda toobe criado.</span><span class="sxs-lookup"><span data-stu-id="3f317-280">hello status is displayed as  **Not complete** if hello user role is yet toobe created.</span></span>
 
-4.  No texto Olá caixas, em seguida demasiado**criar o utilizador de integração**, introduza Olá o nome de utilizador para o utilizador Olá que possam ligar toohello conector de gestão de serviços de TI no OMS.
-5.  Introduza a palavra-passe de Olá para este utilizador e clique em **OK**.  
+4.  <span data-ttu-id="3f317-281">No texto Olá caixas, em seguida demasiado**criar o utilizador de integração**, introduza Olá o nome de utilizador para o utilizador Olá que possam ligar toohello conector de gestão de serviços de TI no OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-281">In hello text boxes, next too**Create integration user**, enter hello user name for hello user that can connect toohello IT Service Management Connector in OMS.</span></span>
+5.  <span data-ttu-id="3f317-282">Introduza a palavra-passe de Olá para este utilizador e clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="3f317-282">Enter hello password for this user, and click **OK**.</span></span>  
 
 >[!NOTE]
 
-> Utilize o ligação do ServiceNow toomake Olá estas credenciais no OMS.
+> <span data-ttu-id="3f317-283">Utilize o ligação do ServiceNow toomake Olá estas credenciais no OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-283">You use these credentials toomake hello ServiceNow connection in OMS.</span></span>
 
-Olá utilizador recentemente criado será apresentada com as funções predefinidas do Olá atribuídas.
+<span data-ttu-id="3f317-284">Olá utilizador recentemente criado será apresentada com as funções predefinidas do Olá atribuídas.</span><span class="sxs-lookup"><span data-stu-id="3f317-284">hello newly created user is displayed with hello default roles assigned.</span></span>
 
-Funções predefinidas:
-- personalize_choices
-- import_transformer
--   x_mioms_microsoft.User
--   ITIL
--   template_editor
--   view_changer
+<span data-ttu-id="3f317-285">Funções predefinidas:</span><span class="sxs-lookup"><span data-stu-id="3f317-285">Default roles:</span></span>
+- <span data-ttu-id="3f317-286">personalize_choices</span><span class="sxs-lookup"><span data-stu-id="3f317-286">personalize_choices</span></span>
+- <span data-ttu-id="3f317-287">import_transformer</span><span class="sxs-lookup"><span data-stu-id="3f317-287">import_transformer</span></span>
+-   <span data-ttu-id="3f317-288">x_mioms_microsoft.User</span><span class="sxs-lookup"><span data-stu-id="3f317-288">x_mioms_microsoft.user</span></span>
+-   <span data-ttu-id="3f317-289">ITIL</span><span class="sxs-lookup"><span data-stu-id="3f317-289">itil</span></span>
+-   <span data-ttu-id="3f317-290">template_editor</span><span class="sxs-lookup"><span data-stu-id="3f317-290">template_editor</span></span>
+-   <span data-ttu-id="3f317-291">view_changer</span><span class="sxs-lookup"><span data-stu-id="3f317-291">view_changer</span></span>
 
-Depois do utilizador Olá foi criado com êxito, Olá estado **Verifique a lista de verificação de instalação** move tooCompleted, listagem detalhes Olá Olá da função de utilizador criados para a aplicação Olá.
+<span data-ttu-id="3f317-292">Depois do utilizador Olá foi criado com êxito, Olá estado **Verifique a lista de verificação de instalação** move tooCompleted, listagem detalhes Olá Olá da função de utilizador criados para a aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-292">Once hello user is successfully created, hello status of **Check Installation Checklist** moves tooCompleted, listing hello details of hello user role created for hello app.</span></span>
 
 > [!NOTE]
 
-> tooallow toocreate um utilizador **alertas** e **eventos** no ServiceNow da OMS:
+> <span data-ttu-id="3f317-293">tooallow toocreate um utilizador **alertas** e **eventos** no ServiceNow da OMS:</span><span class="sxs-lookup"><span data-stu-id="3f317-293">tooallow a user toocreate **alerts** and **events** in ServiceNow from OMS:</span></span>
 
-> - Certifique-se de que ter o módulo de gestão de eventos de Olá instalada na sua instância do ServiceNow.
+> - <span data-ttu-id="3f317-294">Certifique-se de que ter o módulo de gestão de eventos de Olá instalada na sua instância do ServiceNow.</span><span class="sxs-lookup"><span data-stu-id="3f317-294">Ensure you have hello Event Management module Installed on your ServiceNow instance.</span></span>
 
-> - Adicione Olá utilizador de integração de toohello funções os seguintes:
->      - evt_mgmt_integration
->      - evt_mgmt_operator  
+> - <span data-ttu-id="3f317-295">Adicione Olá utilizador de integração de toohello funções os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3f317-295">Add hello following roles toohello integration user:</span></span>
+>      - <span data-ttu-id="3f317-296">evt_mgmt_integration</span><span class="sxs-lookup"><span data-stu-id="3f317-296">evt_mgmt_integration</span></span>
+>      - <span data-ttu-id="3f317-297">evt_mgmt_operator</span><span class="sxs-lookup"><span data-stu-id="3f317-297">evt_mgmt_operator</span></span>  
 
 
-## <a name="connect-provance-tooit-service-management-connector-in-oms"></a>Ligar Provance tooIT conector de gestão de serviço no OMS
+## <a name="connect-provance-tooit-service-management-connector-in-oms"></a><span data-ttu-id="3f317-298">Ligar Provance tooIT conector de gestão de serviço no OMS</span><span class="sxs-lookup"><span data-stu-id="3f317-298">Connect Provance tooIT Service Management Connector in OMS</span></span>
 
-Olá secções seguintes fornecem detalhes sobre como tooconnect toohello de produto do Provance conector de gestão de serviços de TI no OMS.
+<span data-ttu-id="3f317-299">Olá secções seguintes fornecem detalhes sobre como tooconnect toohello de produto do Provance conector de gestão de serviços de TI no OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-299">hello following sections provide details about how tooconnect your Provance product toohello IT Service Management Connector in OMS.</span></span>
 
-### <a name="prerequisites"></a>Pré-requisitos
+### <a name="prerequisites"></a><span data-ttu-id="3f317-300">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="3f317-300">Prerequisites</span></span>
 
-Certifique-se de que tem Olá pré-requisitos cumpridos os seguintes:
+<span data-ttu-id="3f317-301">Certifique-se de que tem Olá pré-requisitos cumpridos os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3f317-301">Ensure you have hello following prerequisites met:</span></span>
 
-- Conector de gestão do serviço IT instalado. Obter mais informações: [configuração](log-analytics-itsmc-overview.md#configuration).
-- Aplicação de provance deve ser registada com o Azure AD - e ID de cliente é disponibilizado. Para obter informações detalhadas, consulte [como autenticação do Active Directory de tooconfigure](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md).
-- A função de utilizador: administrador.
+- <span data-ttu-id="3f317-302">Conector de gestão do serviço IT instalado.</span><span class="sxs-lookup"><span data-stu-id="3f317-302">IT Service Management Connector installed.</span></span> <span data-ttu-id="3f317-303">Obter mais informações: [configuração](log-analytics-itsmc-overview.md#configuration).</span><span class="sxs-lookup"><span data-stu-id="3f317-303">More information: [Configuration](log-analytics-itsmc-overview.md#configuration).</span></span>
+- <span data-ttu-id="3f317-304">Aplicação de provance deve ser registada com o Azure AD - e ID de cliente é disponibilizado.</span><span class="sxs-lookup"><span data-stu-id="3f317-304">Provance App should be registered with Azure AD - and client ID is made available.</span></span> <span data-ttu-id="3f317-305">Para obter informações detalhadas, consulte [como autenticação do Active Directory de tooconfigure](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md).</span><span class="sxs-lookup"><span data-stu-id="3f317-305">For detailed information, see [how tooconfigure active directory authentication](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md).</span></span>
+- <span data-ttu-id="3f317-306">A função de utilizador: administrador.</span><span class="sxs-lookup"><span data-stu-id="3f317-306">User role:  Administrator.</span></span>
 
-### <a name="connection-procedure"></a>Procedimento de ligação
+### <a name="connection-procedure"></a><span data-ttu-id="3f317-307">Procedimento de ligação</span><span class="sxs-lookup"><span data-stu-id="3f317-307">Connection Procedure</span></span>
 
-Utilize Olá procedimento toocreate uma ligação de Provance os seguintes:
+<span data-ttu-id="3f317-308">Utilize Olá procedimento toocreate uma ligação de Provance os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3f317-308">Use hello following procedure toocreate a Provance connection:</span></span>
 
-1. Aceda demasiado**OMS** > **definições** > **origens ligadas**.
-2. Selecione **ITSM conector,** clique **Adicionar nova ligação**.  
+1. <span data-ttu-id="3f317-309">Aceda demasiado**OMS** > **definições** > **origens ligadas**.</span><span class="sxs-lookup"><span data-stu-id="3f317-309">Go too**OMS** > **Settings** > **Connected Sources**.</span></span>
+2. <span data-ttu-id="3f317-310">Selecione **ITSM conector,** clique **Adicionar nova ligação**.</span><span class="sxs-lookup"><span data-stu-id="3f317-310">Select **ITSM Connector,** click **Add New Connection**.</span></span>  
 
     ![Ligação provance](./media/log-analytics-itsmc/itsmc-provance-connection.png)
-3. Fornecer informações de Olá, conforme descrito em Olá a tabela seguinte e clique em **guardar** ligação de Olá toocreate.
+3. <span data-ttu-id="3f317-312">Fornecer informações de Olá, conforme descrito em Olá a tabela seguinte e clique em **guardar** ligação de Olá toocreate.</span><span class="sxs-lookup"><span data-stu-id="3f317-312">Provide hello information as described in hello following table, and click **Save** toocreate hello connection.</span></span>
 
 > [!NOTE]
-> Todos os parâmetros são obrigatórios.
+> <span data-ttu-id="3f317-313">Todos os parâmetros são obrigatórios.</span><span class="sxs-lookup"><span data-stu-id="3f317-313">All these parameters are mandatory.</span></span>
 
-| **Campo** | **Descrição** |
+| <span data-ttu-id="3f317-314">**Campo**</span><span class="sxs-lookup"><span data-stu-id="3f317-314">**Field**</span></span> | <span data-ttu-id="3f317-315">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="3f317-315">**Description**</span></span> |
 | --- | --- |
-| **Nome**   | Escreva um nome para a instância de Provance Olá que pretende que o tooconnect com Olá conector de gestão de serviços de TI.  Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados. |
-| **Selecione o tipo de ligação**   | Selecione **Provance**. |
-| **Nome de Utilizador**   | Escreva o nome de utilizador de Olá que possam ligar toohello conector de gestão de serviços de TI.    |
-| **Palavra-passe**   | Escreva a palavra-passe de Olá associada este nome de utilizador. **Nota:** nome de utilizador e palavra-passe são utilizados para gerar tokens de autenticação apenas e não são armazenadas em qualquer lugar no serviço do Olá OMS. _|
-| **URL do servidor**   | Escreva o URL de Olá da sua instância Provance que pretende que o tooconnect tooIT conector do serviço de gestão. |
-| **ID de cliente**   | Escreva o ID de cliente de Olá para autenticar esta ligação, que gerou na sua instância Provance.  Obter mais informações sobre o ID de cliente, consulte [como autenticação do Active Directory de tooconfigure](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md). |
-| **Âmbito de sincronização de dados**   | Selecione itens de trabalho Olá Provance que pretende que o tooOMS toosync, através de Olá conector de gestão de serviços de TI.  Estes itens são importados para análise de registos de trabalho.   **Opções:** incidentes, pedidos de alteração.|
-| **Dados de sincronização** | Escreva o número de Olá dos últimos dias que pretende que os dados de Olá do. **Limite máximo**: 120 dias. |
-| **Criar um novo item de configuração na solução ITSM** | Selecione esta opção se pretender que os itens de configuração de Olá toocreate no produto ITSM Olá. Quando selecionada, o OMS cria Olá afetado CIs como itens de configuração (em caso de não existente CIs) no Olá suportados sistema ITSM. **Predefinição**: desativado.|
+| <span data-ttu-id="3f317-316">**Nome**</span><span class="sxs-lookup"><span data-stu-id="3f317-316">**Name**</span></span>   | <span data-ttu-id="3f317-317">Escreva um nome para a instância de Provance Olá que pretende que o tooconnect com Olá conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-317">Type a name for hello Provance instance that you want tooconnect with hello IT Service Management Connector.</span></span>  <span data-ttu-id="3f317-318">Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados.</span><span class="sxs-lookup"><span data-stu-id="3f317-318">You use this name later in OMS when you configure work items in this ITSM/ view detailed log analytics.</span></span> |
+| <span data-ttu-id="3f317-319">**Selecione o tipo de ligação**</span><span class="sxs-lookup"><span data-stu-id="3f317-319">**Select Connection type**</span></span>   | <span data-ttu-id="3f317-320">Selecione **Provance**.</span><span class="sxs-lookup"><span data-stu-id="3f317-320">Select **Provance**.</span></span> |
+| <span data-ttu-id="3f317-321">**Nome de Utilizador**</span><span class="sxs-lookup"><span data-stu-id="3f317-321">**Username**</span></span>   | <span data-ttu-id="3f317-322">Escreva o nome de utilizador de Olá que possam ligar toohello conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-322">Type hello user name that can connect toohello IT Service Management Connector.</span></span>    |
+| <span data-ttu-id="3f317-323">**Palavra-passe**</span><span class="sxs-lookup"><span data-stu-id="3f317-323">**Password**</span></span>   | <span data-ttu-id="3f317-324">Escreva a palavra-passe de Olá associada este nome de utilizador.</span><span class="sxs-lookup"><span data-stu-id="3f317-324">Type hello password associated with this user name.</span></span> <span data-ttu-id="3f317-325">**Nota:** nome de utilizador e palavra-passe são utilizados para gerar tokens de autenticação apenas e não são armazenadas em qualquer lugar no serviço do Olá OMS. _</span><span class="sxs-lookup"><span data-stu-id="3f317-325">**Note:** User name and password are used for generating authentication tokens only, and are not stored anywhere within hello OMS service._</span></span>|
+| <span data-ttu-id="3f317-326">**URL do servidor**</span><span class="sxs-lookup"><span data-stu-id="3f317-326">**Server URL**</span></span>   | <span data-ttu-id="3f317-327">Escreva o URL de Olá da sua instância Provance que pretende que o tooconnect tooIT conector do serviço de gestão.</span><span class="sxs-lookup"><span data-stu-id="3f317-327">Type hello URL of your Provance instance that you want tooconnect tooIT Service Management Connector.</span></span> |
+| <span data-ttu-id="3f317-328">**ID de cliente**</span><span class="sxs-lookup"><span data-stu-id="3f317-328">**Client ID**</span></span>   | <span data-ttu-id="3f317-329">Escreva o ID de cliente de Olá para autenticar esta ligação, que gerou na sua instância Provance.</span><span class="sxs-lookup"><span data-stu-id="3f317-329">Type hello client ID for authenticating this connection, which you generated in your Provance instance.</span></span>  <span data-ttu-id="3f317-330">Obter mais informações sobre o ID de cliente, consulte [como autenticação do Active Directory de tooconfigure](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md).</span><span class="sxs-lookup"><span data-stu-id="3f317-330">More information on client ID, see [how tooconfigure active directory authentication](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md).</span></span> |
+| <span data-ttu-id="3f317-331">**Âmbito de sincronização de dados**</span><span class="sxs-lookup"><span data-stu-id="3f317-331">**Data Sync Scope**</span></span>   | <span data-ttu-id="3f317-332">Selecione itens de trabalho Olá Provance que pretende que o tooOMS toosync, através de Olá conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-332">Select hello Provance work items that you want toosync tooOMS, through hello IT Service Management Connector.</span></span>  <span data-ttu-id="3f317-333">Estes itens são importados para análise de registos de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3f317-333">These work items are imported into log analytics.</span></span>   <span data-ttu-id="3f317-334">**Opções:** incidentes, pedidos de alteração.</span><span class="sxs-lookup"><span data-stu-id="3f317-334">**Options:**   Incidents, Change Requests.</span></span>|
+| <span data-ttu-id="3f317-335">**Dados de sincronização**</span><span class="sxs-lookup"><span data-stu-id="3f317-335">**Sync Data**</span></span> | <span data-ttu-id="3f317-336">Escreva o número de Olá dos últimos dias que pretende que os dados de Olá do.</span><span class="sxs-lookup"><span data-stu-id="3f317-336">Type hello number of past days that you want hello data from.</span></span> <span data-ttu-id="3f317-337">**Limite máximo**: 120 dias.</span><span class="sxs-lookup"><span data-stu-id="3f317-337">**Maximum limit**: 120 days.</span></span> |
+| <span data-ttu-id="3f317-338">**Criar um novo item de configuração na solução ITSM**</span><span class="sxs-lookup"><span data-stu-id="3f317-338">**Create new configuration item in ITSM solution**</span></span> | <span data-ttu-id="3f317-339">Selecione esta opção se pretender que os itens de configuração de Olá toocreate no produto ITSM Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-339">Select this option if you want toocreate hello configuration items in hello ITSM product.</span></span> <span data-ttu-id="3f317-340">Quando selecionada, o OMS cria Olá afetado CIs como itens de configuração (em caso de não existente CIs) no Olá suportados sistema ITSM.</span><span class="sxs-lookup"><span data-stu-id="3f317-340">When selected, OMS creates hello affected CIs as configuration items (in case of non-existing CIs) in hello supported ITSM system.</span></span> <span data-ttu-id="3f317-341">**Predefinição**: desativado.</span><span class="sxs-lookup"><span data-stu-id="3f317-341">**Default**: disabled.</span></span>|
 
-Quando ligado com êxito e sincronizada com êxito:
+<span data-ttu-id="3f317-342">Quando ligado com êxito e sincronizada com êxito:</span><span class="sxs-lookup"><span data-stu-id="3f317-342">When successfully connected, and synced:</span></span>
 
-- Itens de trabalho selecionados da ligação de Provance são importados para o OMS **análise de registos.**  Pode ver o resumo de Olá destes itens de trabalho no mosaico de conector de gestão de serviços de TI Olá.
-- Pode criar incidentes e eventos de alertas do OMS ou de pesquisa de registo nesta instância Provance.
+- <span data-ttu-id="3f317-343">Itens de trabalho selecionados da ligação de Provance são importados para o OMS **análise de registos.**</span><span class="sxs-lookup"><span data-stu-id="3f317-343">Selected work items from Provance connection are imported into OMS **Log Analytics.**</span></span>  <span data-ttu-id="3f317-344">Pode ver o resumo de Olá destes itens de trabalho no mosaico de conector de gestão de serviços de TI Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-344">You can view hello summary of these work items on hello IT Service Management Connector tile.</span></span>
+- <span data-ttu-id="3f317-345">Pode criar incidentes e eventos de alertas do OMS ou de pesquisa de registo nesta instância Provance.</span><span class="sxs-lookup"><span data-stu-id="3f317-345">You can create incidents and events from OMS Alerts or Log Search in this Provance instance.</span></span>
 
-Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).
+<span data-ttu-id="3f317-346">Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).</span><span class="sxs-lookup"><span data-stu-id="3f317-346">More information: [Create ITSM work items for OMS alerts](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) and [Create ITSM work items from OMS logs](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).</span></span>
 
-## <a name="connect-cherwell-tooit-service-management-connector-in-oms"></a>Ligar Cherwell tooIT conector de gestão de serviço no OMS
+## <a name="connect-cherwell-tooit-service-management-connector-in-oms"></a><span data-ttu-id="3f317-347">Ligar Cherwell tooIT conector de gestão de serviço no OMS</span><span class="sxs-lookup"><span data-stu-id="3f317-347">Connect Cherwell tooIT Service Management Connector in OMS</span></span>
 
-Olá secções seguintes fornecem detalhes sobre como tooconnect toohello de produto do Cherwell conector de gestão de serviços de TI no OMS.
+<span data-ttu-id="3f317-348">Olá secções seguintes fornecem detalhes sobre como tooconnect toohello de produto do Cherwell conector de gestão de serviços de TI no OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-348">hello following sections provide details about how tooconnect your Cherwell product toohello IT Service Management Connector in OMS.</span></span>
 
-### <a name="prerequisites"></a>Pré-requisitos
+### <a name="prerequisites"></a><span data-ttu-id="3f317-349">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="3f317-349">Prerequisites</span></span>
 
-Certifique-se de que tem Olá pré-requisitos cumpridos os seguintes:
+<span data-ttu-id="3f317-350">Certifique-se de que tem Olá pré-requisitos cumpridos os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3f317-350">Ensure you have hello following prerequisites met:</span></span>
 
-- Conector de gestão do serviço IT instalado. Obter mais informações: [configuração](log-analytics-itsmc-overview.md#configuration).
-- ID de cliente gerado. Obter mais informações: [geram o ID de cliente para Cherwell](#generate-client-id-for-cherwell).
-- A função de utilizador: administrador.
+- <span data-ttu-id="3f317-351">Conector de gestão do serviço IT instalado.</span><span class="sxs-lookup"><span data-stu-id="3f317-351">IT Service Management Connector installed.</span></span> <span data-ttu-id="3f317-352">Obter mais informações: [configuração](log-analytics-itsmc-overview.md#configuration).</span><span class="sxs-lookup"><span data-stu-id="3f317-352">More information: [Configuration](log-analytics-itsmc-overview.md#configuration).</span></span>
+- <span data-ttu-id="3f317-353">ID de cliente gerado.</span><span class="sxs-lookup"><span data-stu-id="3f317-353">Client ID generated.</span></span> <span data-ttu-id="3f317-354">Obter mais informações: [geram o ID de cliente para Cherwell](#generate-client-id-for-cherwell).</span><span class="sxs-lookup"><span data-stu-id="3f317-354">More information: [Generate client ID for Cherwell](#generate-client-id-for-cherwell).</span></span>
+- <span data-ttu-id="3f317-355">A função de utilizador: administrador.</span><span class="sxs-lookup"><span data-stu-id="3f317-355">User role:  Administrator.</span></span>
 
-### <a name="connection-procedure"></a>Procedimento de ligação
+### <a name="connection-procedure"></a><span data-ttu-id="3f317-356">Procedimento de ligação</span><span class="sxs-lookup"><span data-stu-id="3f317-356">Connection Procedure</span></span>
 
-Utilize Olá procedimento toocreate uma ligação de Cherwell os seguintes:
+<span data-ttu-id="3f317-357">Utilize Olá procedimento toocreate uma ligação de Cherwell os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3f317-357">Use hello following procedure toocreate a Cherwell connection:</span></span>
 
-1. Aceda demasiado**OMS** >  **definições** > **origens ligadas**.
-2. Selecione **ITSM conector** clique **Adicionar nova ligação**.  
+1. <span data-ttu-id="3f317-358">Aceda demasiado**OMS** >  **definições** > **origens ligadas**.</span><span class="sxs-lookup"><span data-stu-id="3f317-358">Go too**OMS** >  **Settings** > **Connected Sources**.</span></span>
+2. <span data-ttu-id="3f317-359">Selecione **ITSM conector** clique **Adicionar nova ligação**.</span><span class="sxs-lookup"><span data-stu-id="3f317-359">Select **ITSM Connector** click **Add New Connection**.</span></span>  
 
     ![Id de utilizador Cherwell](./media/log-analytics-itsmc/itsmc-cherwell-connection.png)
 
-3. Fornecer informações de Olá, conforme descrito em Olá a tabela seguinte e clique em **guardar** ligação de Olá toocreate.
+3. <span data-ttu-id="3f317-361">Fornecer informações de Olá, conforme descrito em Olá a tabela seguinte e clique em **guardar** ligação de Olá toocreate.</span><span class="sxs-lookup"><span data-stu-id="3f317-361">Provide hello information as described in hello following table, and click  **Save** toocreate hello connection.</span></span>
 
 > [!NOTE]
-> Todos os parâmetros são obrigatórios.
+> <span data-ttu-id="3f317-362">Todos os parâmetros são obrigatórios.</span><span class="sxs-lookup"><span data-stu-id="3f317-362">All these parameters are mandatory.</span></span>
 
-| **Campo** | **Descrição** |
+| <span data-ttu-id="3f317-363">**Campo**</span><span class="sxs-lookup"><span data-stu-id="3f317-363">**Field**</span></span> | <span data-ttu-id="3f317-364">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="3f317-364">**Description**</span></span> |
 | --- | --- |
-| **Nome**   | Escreva um nome para a instância de Cherwell Olá que pretende que o tooconnect toohello conector de gestão de serviços de TI.  Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados. |
-| **Selecione o tipo de ligação**   | Selecione **Cherwell.** |
-| **Nome de Utilizador**   | Escreva o nome de utilizador de Cherwell Olá que possam ligar toohello conector de gestão de serviços de TI. |
-| **Palavra-passe**   | Escreva a palavra-passe de Olá associada este nome de utilizador. **Nota:** nome de utilizador e palavra-passe são utilizados para gerar tokens de autenticação apenas e não são armazenadas em qualquer lugar no serviço do Olá OMS.|
-| **URL do servidor**   | Escreva o URL de Olá da sua instância Cherwell que pretende que o tooconnect tooIT conector do serviço de gestão. |
-| **ID de cliente**   | Escreva o ID de cliente de Olá para autenticar esta ligação, que gerou na sua instância Cherwell.   |
-| **Âmbito de sincronização de dados**   | Selecione itens de trabalho Olá Cherwell que pretende que o toosync através de Olá conector de gestão de serviços de TI.  Estes itens são importados para análise de registos de trabalho.   **Opções:** incidentes, pedidos de alteração. |
-| **Dados de sincronização** | Escreva o número de Olá dos últimos dias que pretende que os dados de Olá do. **Limite máximo**: 120 dias. |
-| **Criar um novo item de configuração na solução ITSM** | Selecione esta opção se pretender que os itens de configuração de Olá toocreate no produto ITSM Olá. Quando selecionada, o OMS cria Olá afetado CIs como itens de configuração (em caso de não existente CIs) no Olá suportados sistema ITSM. **Predefinição**: desativado. |
+| <span data-ttu-id="3f317-365">**Nome**</span><span class="sxs-lookup"><span data-stu-id="3f317-365">**Name**</span></span>   | <span data-ttu-id="3f317-366">Escreva um nome para a instância de Cherwell Olá que pretende que o tooconnect toohello conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-366">Type a name for hello Cherwell instance that you want tooconnect toohello IT Service Management Connector.</span></span>  <span data-ttu-id="3f317-367">Utilize este nome mais tarde no OMS quando configurar os itens de trabalho neste ITSM / ver a análise de registos detalhados.</span><span class="sxs-lookup"><span data-stu-id="3f317-367">You use this name later in OMS when you configure work items in this ITSM/ view detailed log analytics.</span></span> |
+| <span data-ttu-id="3f317-368">**Selecione o tipo de ligação**</span><span class="sxs-lookup"><span data-stu-id="3f317-368">**Select Connection type**</span></span>   | <span data-ttu-id="3f317-369">Selecione **Cherwell.**</span><span class="sxs-lookup"><span data-stu-id="3f317-369">Select **Cherwell.**</span></span> |
+| <span data-ttu-id="3f317-370">**Nome de Utilizador**</span><span class="sxs-lookup"><span data-stu-id="3f317-370">**Username**</span></span>   | <span data-ttu-id="3f317-371">Escreva o nome de utilizador de Cherwell Olá que possam ligar toohello conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-371">Type hello Cherwell user name that can connect toohello IT Service Management Connector.</span></span> |
+| <span data-ttu-id="3f317-372">**Palavra-passe**</span><span class="sxs-lookup"><span data-stu-id="3f317-372">**Password**</span></span>   | <span data-ttu-id="3f317-373">Escreva a palavra-passe de Olá associada este nome de utilizador.</span><span class="sxs-lookup"><span data-stu-id="3f317-373">Type hello password associated with this user name.</span></span> <span data-ttu-id="3f317-374">**Nota:** nome de utilizador e palavra-passe são utilizados para gerar tokens de autenticação apenas e não são armazenadas em qualquer lugar no serviço do Olá OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-374">**Note:** User name and password are used for generating authentication tokens only, and are not stored anywhere within hello OMS service.</span></span>|
+| <span data-ttu-id="3f317-375">**URL do servidor**</span><span class="sxs-lookup"><span data-stu-id="3f317-375">**Server URL**</span></span>   | <span data-ttu-id="3f317-376">Escreva o URL de Olá da sua instância Cherwell que pretende que o tooconnect tooIT conector do serviço de gestão.</span><span class="sxs-lookup"><span data-stu-id="3f317-376">Type hello URL of your Cherwell instance that you want tooconnect tooIT Service Management Connector.</span></span> |
+| <span data-ttu-id="3f317-377">**ID de cliente**</span><span class="sxs-lookup"><span data-stu-id="3f317-377">**Client ID**</span></span>   | <span data-ttu-id="3f317-378">Escreva o ID de cliente de Olá para autenticar esta ligação, que gerou na sua instância Cherwell.</span><span class="sxs-lookup"><span data-stu-id="3f317-378">Type hello client ID for authenticating this connection, which you generated in your Cherwell instance.</span></span>   |
+| <span data-ttu-id="3f317-379">**Âmbito de sincronização de dados**</span><span class="sxs-lookup"><span data-stu-id="3f317-379">**Data Sync Scope**</span></span>   | <span data-ttu-id="3f317-380">Selecione itens de trabalho Olá Cherwell que pretende que o toosync através de Olá conector de gestão de serviços de TI.</span><span class="sxs-lookup"><span data-stu-id="3f317-380">Select hello Cherwell work items that you want toosync through hello IT Service Management Connector.</span></span>  <span data-ttu-id="3f317-381">Estes itens são importados para análise de registos de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3f317-381">These work items are imported into log analytics.</span></span>   <span data-ttu-id="3f317-382">**Opções:** incidentes, pedidos de alteração.</span><span class="sxs-lookup"><span data-stu-id="3f317-382">**Options:**  Incidents, Change Requests.</span></span> |
+| <span data-ttu-id="3f317-383">**Dados de sincronização**</span><span class="sxs-lookup"><span data-stu-id="3f317-383">**Sync Data**</span></span> | <span data-ttu-id="3f317-384">Escreva o número de Olá dos últimos dias que pretende que os dados de Olá do.</span><span class="sxs-lookup"><span data-stu-id="3f317-384">Type hello number of past days that you want hello data from.</span></span> <span data-ttu-id="3f317-385">**Limite máximo**: 120 dias.</span><span class="sxs-lookup"><span data-stu-id="3f317-385">**Maximum limit**: 120 days.</span></span> |
+| <span data-ttu-id="3f317-386">**Criar um novo item de configuração na solução ITSM**</span><span class="sxs-lookup"><span data-stu-id="3f317-386">**Create new configuration item in ITSM solution**</span></span> | <span data-ttu-id="3f317-387">Selecione esta opção se pretender que os itens de configuração de Olá toocreate no produto ITSM Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-387">Select this option if you want toocreate hello configuration items in hello ITSM product.</span></span> <span data-ttu-id="3f317-388">Quando selecionada, o OMS cria Olá afetado CIs como itens de configuração (em caso de não existente CIs) no Olá suportados sistema ITSM.</span><span class="sxs-lookup"><span data-stu-id="3f317-388">When selected, OMS creates hello affected CIs as configuration items (in case of non-existing CIs) in hello supported ITSM system.</span></span> <span data-ttu-id="3f317-389">**Predefinição**: desativado.</span><span class="sxs-lookup"><span data-stu-id="3f317-389">**Default**: disabled.</span></span> |
 
-Quando ligado com êxito e sincronizada com êxito:
+<span data-ttu-id="3f317-390">Quando ligado com êxito e sincronizada com êxito:</span><span class="sxs-lookup"><span data-stu-id="3f317-390">When successfully connected, and synced:</span></span>
 
-- Selecionar itens a partir desta ligação Cherwell são importados para análise de registos do OMS de trabalho. Pode ver o resumo de Olá destes itens de trabalho no mosaico de conector de gestão de serviços de TI Olá.
-- Pode criar incidentes e eventos nesta instância Cherwell da OMS. Obter mais informações: criar itens de trabalho ITSM para alertas do OMS e criar ITSM de trabalho itens de registos do OMS.
+- <span data-ttu-id="3f317-391">Selecionar itens a partir desta ligação Cherwell são importados para análise de registos do OMS de trabalho.</span><span class="sxs-lookup"><span data-stu-id="3f317-391">Selected work items from this Cherwell connection are imported into OMS Log Analytics.</span></span> <span data-ttu-id="3f317-392">Pode ver o resumo de Olá destes itens de trabalho no mosaico de conector de gestão de serviços de TI Olá.</span><span class="sxs-lookup"><span data-stu-id="3f317-392">You can view hello summary of these work items  on hello IT Service Management Connector tile.</span></span>
+- <span data-ttu-id="3f317-393">Pode criar incidentes e eventos nesta instância Cherwell da OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-393">You can create incidents and events in this Cherwell instance from OMS.</span></span> <span data-ttu-id="3f317-394">Obter mais informações: criar itens de trabalho ITSM para alertas do OMS e criar ITSM de trabalho itens de registos do OMS.</span><span class="sxs-lookup"><span data-stu-id="3f317-394">More information: Create ITSM work items for OMS alerts and Create ITSM work items from OMS logs.</span></span>
 
-Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).
+<span data-ttu-id="3f317-395">Obter mais informações: [itens de trabalho de criar ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) e [itens de trabalho de criar ITSM do OMS registos](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).</span><span class="sxs-lookup"><span data-stu-id="3f317-395">More information: [Create ITSM work items for OMS alerts](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts) and [Create ITSM work items from OMS logs](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs).</span></span>
 
-### <a name="generate-client-id-for-cherwell"></a>Geram o ID de cliente para Cherwell
+### <a name="generate-client-id-for-cherwell"></a><span data-ttu-id="3f317-396">Geram o ID de cliente para Cherwell</span><span class="sxs-lookup"><span data-stu-id="3f317-396">Generate client ID for Cherwell</span></span>
 
-toogenerate hello/chave de ID de cliente para Cherwell, utilize Olá seguinte procedimento:
+<span data-ttu-id="3f317-397">toogenerate hello/chave de ID de cliente para Cherwell, utilize Olá seguinte procedimento:</span><span class="sxs-lookup"><span data-stu-id="3f317-397">toogenerate hello client ID/key for Cherwell, use hello following procedure:</span></span>
 
-1. Inicie sessão no tooyour Cherwell instância como administrador.
-2. Clique em **segurança** > **as definições de cliente de API de REST editar**.
-3. Selecione **criar novo cliente** > **segredo do cliente**.
+1. <span data-ttu-id="3f317-398">Inicie sessão no tooyour Cherwell instância como administrador.</span><span class="sxs-lookup"><span data-stu-id="3f317-398">Log in tooyour Cherwell instance as admin.</span></span>
+2. <span data-ttu-id="3f317-399">Clique em **segurança** > **as definições de cliente de API de REST editar**.</span><span class="sxs-lookup"><span data-stu-id="3f317-399">Click **Security** > **Edit REST API client settings**.</span></span>
+3. <span data-ttu-id="3f317-400">Selecione **criar novo cliente** > **segredo do cliente**.</span><span class="sxs-lookup"><span data-stu-id="3f317-400">Select **Create new client** > **client secret**.</span></span>
 
     ![Id de utilizador Cherwell](./media/log-analytics-itsmc/itsmc-cherwell-client-id.png)
 
 
-## <a name="next-steps"></a>Passos seguintes
- - [Criar itens de trabalho ITSM para alertas do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts)
+## <a name="next-steps"></a><span data-ttu-id="3f317-402">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="3f317-402">Next steps</span></span>
+ - [<span data-ttu-id="3f317-403">Criar itens de trabalho ITSM para alertas do OMS</span><span class="sxs-lookup"><span data-stu-id="3f317-403">Create ITSM work items for OMS alerts</span></span>](log-analytics-itsmc-overview.md#create-itsm-work-items-for-oms-alerts)
 
- - [Criar itens de trabalho ITSM a partir de registos do OMS](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs)
+ - [<span data-ttu-id="3f317-404">Criar itens de trabalho ITSM a partir de registos do OMS</span><span class="sxs-lookup"><span data-stu-id="3f317-404">Create ITSM work items from OMS logs</span></span>](log-analytics-itsmc-overview.md#create-itsm-work-items-from-oms-logs)
 
-- [Análise de registos de vista da ligação](log-analytics-itsmc-overview.md#using-the-solution)
+- [<span data-ttu-id="3f317-405">Análise de registos de vista da ligação</span><span class="sxs-lookup"><span data-stu-id="3f317-405">View log analytics for your connection</span></span>](log-analytics-itsmc-overview.md#using-the-solution)

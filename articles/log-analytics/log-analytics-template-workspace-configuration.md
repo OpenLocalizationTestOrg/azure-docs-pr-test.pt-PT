@@ -20,37 +20,37 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="manage-log-analytics-using-azure-resource-manager-templates"></a>Gerir a análise de registo com modelos Azure Resource Manager
-Pode utilizar [modelos Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) toocreate e configurar áreas de trabalho de análise de registos. Exemplos de tarefas Olá, que pode realizar com modelos incluem:
+# <a name="manage-log-analytics-using-azure-resource-manager-templates"></a><span data-ttu-id="b8e3b-103">Gerir a análise de registo com modelos Azure Resource Manager</span><span class="sxs-lookup"><span data-stu-id="b8e3b-103">Manage Log Analytics using Azure Resource Manager templates</span></span>
+<span data-ttu-id="b8e3b-104">Pode utilizar [modelos Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) toocreate e configurar áreas de trabalho de análise de registos.</span><span class="sxs-lookup"><span data-stu-id="b8e3b-104">You can use [Azure Resource Manager templates](../azure-resource-manager/resource-group-authoring-templates.md) toocreate and configure Log Analytics workspaces.</span></span> <span data-ttu-id="b8e3b-105">Exemplos de tarefas Olá, que pode realizar com modelos incluem:</span><span class="sxs-lookup"><span data-stu-id="b8e3b-105">Examples of hello tasks you can perform with templates include:</span></span>
 
-* Criar áreas de trabalho
-* Adicionar uma solução
-* Criar procuras guardadas
-* Criar um grupo de computadores
-* Ativar a recolha de registos de IIS a partir de computadores com o agente do Windows hello instalado
-* Recolher contadores de desempenho de computadores com Linux e Windows
-* Recolher eventos do syslog nos computadores com Linux 
-* Recolher eventos de registos de eventos do Windows
-* Recolher registos de eventos personalizados
-* Adicionar Olá registo análise agente tooan máquina virtual do Azure
-* Configurar registo análise tooindex dados recolhidos através de diagnóstico do Azure
+* <span data-ttu-id="b8e3b-106">Criar áreas de trabalho</span><span class="sxs-lookup"><span data-stu-id="b8e3b-106">Create a workspace</span></span>
+* <span data-ttu-id="b8e3b-107">Adicionar uma solução</span><span class="sxs-lookup"><span data-stu-id="b8e3b-107">Add a solution</span></span>
+* <span data-ttu-id="b8e3b-108">Criar procuras guardadas</span><span class="sxs-lookup"><span data-stu-id="b8e3b-108">Create saved searches</span></span>
+* <span data-ttu-id="b8e3b-109">Criar um grupo de computadores</span><span class="sxs-lookup"><span data-stu-id="b8e3b-109">Create a computer group</span></span>
+* <span data-ttu-id="b8e3b-110">Ativar a recolha de registos de IIS a partir de computadores com o agente do Windows hello instalado</span><span class="sxs-lookup"><span data-stu-id="b8e3b-110">Enable collection of IIS logs from computers with hello Windows agent installed</span></span>
+* <span data-ttu-id="b8e3b-111">Recolher contadores de desempenho de computadores com Linux e Windows</span><span class="sxs-lookup"><span data-stu-id="b8e3b-111">Collect performance counters from Linux and Windows computers</span></span>
+* <span data-ttu-id="b8e3b-112">Recolher eventos do syslog nos computadores com Linux</span><span class="sxs-lookup"><span data-stu-id="b8e3b-112">Collect events from syslog on Linux computers</span></span> 
+* <span data-ttu-id="b8e3b-113">Recolher eventos de registos de eventos do Windows</span><span class="sxs-lookup"><span data-stu-id="b8e3b-113">Collect events from Windows event logs</span></span>
+* <span data-ttu-id="b8e3b-114">Recolher registos de eventos personalizados</span><span class="sxs-lookup"><span data-stu-id="b8e3b-114">Collect custom event logs</span></span>
+* <span data-ttu-id="b8e3b-115">Adicionar Olá registo análise agente tooan máquina virtual do Azure</span><span class="sxs-lookup"><span data-stu-id="b8e3b-115">Add hello log analytics agent tooan Azure virtual machine</span></span>
+* <span data-ttu-id="b8e3b-116">Configurar registo análise tooindex dados recolhidos através de diagnóstico do Azure</span><span class="sxs-lookup"><span data-stu-id="b8e3b-116">Configure log analytics tooindex data collected using Azure diagnostics</span></span>
 
-Este artigo fornece um modelo de exemplos que ilustram algumas Olá da configuração de que pode realizar a partir de modelos.
+<span data-ttu-id="b8e3b-117">Este artigo fornece um modelo de exemplos que ilustram algumas Olá da configuração de que pode realizar a partir de modelos.</span><span class="sxs-lookup"><span data-stu-id="b8e3b-117">This article provides a template samples that illustrate some of hello configuration that you can perform from templates.</span></span>
 
-## <a name="create-and-configure-a-log-analytics-workspace"></a>Criar e configurar uma área de trabalho de análise do registo
-Olá exemplo de modelo seguinte ilustra como:
+## <a name="create-and-configure-a-log-analytics-workspace"></a><span data-ttu-id="b8e3b-118">Criar e configurar uma área de trabalho de análise do registo</span><span class="sxs-lookup"><span data-stu-id="b8e3b-118">Create and configure a Log Analytics Workspace</span></span>
+<span data-ttu-id="b8e3b-119">Olá exemplo de modelo seguinte ilustra como:</span><span class="sxs-lookup"><span data-stu-id="b8e3b-119">hello following template sample illustrates how to:</span></span>
 
-1. Criar uma área de trabalho, incluindo a retenção de dados da definição
-2. Adicione a área de trabalho de toohello de soluções
-3. Criar procuras guardadas
-4. Criar um grupo de computadores
-5. Ativar a recolha de registos de IIS a partir de computadores com o agente do Windows hello instalado
-6. Recolher contadores de desempenho disco lógico a partir de computadores com Linux (% de Inodes utilizados; Megabytes livres; % De espaço; utilizado Transferências/seg do disco; Leituras de disco/seg; Escritas de disco/seg)
-7. Recolher eventos syslog de computadores com Linux
-8. Recolher eventos de erro e aviso de Olá registo de eventos de aplicações a partir de computadores com o Windows
-9. Recolher contador de desempenho Memória \ Mbytes disponíveis a partir de computadores Windows
-10. Recolher um registo personalizado 
-11. Recolher registos de IIS e os registos de eventos do Windows escritos pela conta de armazenamento de tooa de diagnóstico do Azure
+1. <span data-ttu-id="b8e3b-120">Criar uma área de trabalho, incluindo a retenção de dados da definição</span><span class="sxs-lookup"><span data-stu-id="b8e3b-120">Create a workspace, including setting data retention</span></span>
+2. <span data-ttu-id="b8e3b-121">Adicione a área de trabalho de toohello de soluções</span><span class="sxs-lookup"><span data-stu-id="b8e3b-121">Add solutions toohello workspace</span></span>
+3. <span data-ttu-id="b8e3b-122">Criar procuras guardadas</span><span class="sxs-lookup"><span data-stu-id="b8e3b-122">Create saved searches</span></span>
+4. <span data-ttu-id="b8e3b-123">Criar um grupo de computadores</span><span class="sxs-lookup"><span data-stu-id="b8e3b-123">Create a computer group</span></span>
+5. <span data-ttu-id="b8e3b-124">Ativar a recolha de registos de IIS a partir de computadores com o agente do Windows hello instalado</span><span class="sxs-lookup"><span data-stu-id="b8e3b-124">Enable collection of IIS logs from computers with hello Windows agent installed</span></span>
+6. <span data-ttu-id="b8e3b-125">Recolher contadores de desempenho disco lógico a partir de computadores com Linux (% de Inodes utilizados; Megabytes livres; % De espaço; utilizado Transferências/seg do disco; Leituras de disco/seg; Escritas de disco/seg)</span><span class="sxs-lookup"><span data-stu-id="b8e3b-125">Collect Logical Disk perf counters from Linux computers (% Used Inodes; Free Megabytes; % Used Space; Disk Transfers/sec; Disk Reads/sec; Disk Writes/sec)</span></span>
+7. <span data-ttu-id="b8e3b-126">Recolher eventos syslog de computadores com Linux</span><span class="sxs-lookup"><span data-stu-id="b8e3b-126">Collect syslog events from Linux computers</span></span>
+8. <span data-ttu-id="b8e3b-127">Recolher eventos de erro e aviso de Olá registo de eventos de aplicações a partir de computadores com o Windows</span><span class="sxs-lookup"><span data-stu-id="b8e3b-127">Collect Error and Warning events from hello Application Event Log from Windows computers</span></span>
+9. <span data-ttu-id="b8e3b-128">Recolher contador de desempenho Memória \ Mbytes disponíveis a partir de computadores Windows</span><span class="sxs-lookup"><span data-stu-id="b8e3b-128">Collect Memory Available Mbytes performance counter from Windows computers</span></span>
+10. <span data-ttu-id="b8e3b-129">Recolher um registo personalizado</span><span class="sxs-lookup"><span data-stu-id="b8e3b-129">Collect a custom log</span></span> 
+11. <span data-ttu-id="b8e3b-130">Recolher registos de IIS e os registos de eventos do Windows escritos pela conta de armazenamento de tooa de diagnóstico do Azure</span><span class="sxs-lookup"><span data-stu-id="b8e3b-130">Collect IIS logs and Windows Event logs written by Azure diagnostics tooa storage account</span></span>
 
 ```
 {
@@ -426,34 +426,34 @@ Olá exemplo de modelo seguinte ilustra como:
 }
 
 ```
-### <a name="deploying-hello-sample-template"></a>Implementar a modelo de exemplo de Olá
-modelo de exemplo de Olá toodeploy:
+### <a name="deploying-hello-sample-template"></a><span data-ttu-id="b8e3b-131">Implementar a modelo de exemplo de Olá</span><span class="sxs-lookup"><span data-stu-id="b8e3b-131">Deploying hello sample template</span></span>
+<span data-ttu-id="b8e3b-132">modelo de exemplo de Olá toodeploy:</span><span class="sxs-lookup"><span data-stu-id="b8e3b-132">toodeploy hello sample template:</span></span>
 
-1. Guardar exemplo anexado Olá num ficheiro, por exemplo`azuredeploy.json` 
-2. Editar Olá modelo toohave Olá configuração que pretende
-3. Utilização do PowerShell ou Olá linha de comandos toodeploy Olá modelo
+1. <span data-ttu-id="b8e3b-133">Guardar exemplo anexado Olá num ficheiro, por exemplo`azuredeploy.json`</span><span class="sxs-lookup"><span data-stu-id="b8e3b-133">Save hello attached sample in a file, for example `azuredeploy.json`</span></span> 
+2. <span data-ttu-id="b8e3b-134">Editar Olá modelo toohave Olá configuração que pretende</span><span class="sxs-lookup"><span data-stu-id="b8e3b-134">Edit hello template toohave hello configuration you want</span></span>
+3. <span data-ttu-id="b8e3b-135">Utilização do PowerShell ou Olá linha de comandos toodeploy Olá modelo</span><span class="sxs-lookup"><span data-stu-id="b8e3b-135">Use PowerShell or hello command line toodeploy hello template</span></span>
 
-#### <a name="powershell"></a>PowerShell
+#### <a name="powershell"></a><span data-ttu-id="b8e3b-136">PowerShell</span><span class="sxs-lookup"><span data-stu-id="b8e3b-136">PowerShell</span></span>
 `New-AzureRmResourceGroupDeployment -Name <deployment-name> -ResourceGroupName <resource-group-name> -TemplateFile azuredeploy.json`
 
-#### <a name="command-line"></a>Linha de comandos
+#### <a name="command-line"></a><span data-ttu-id="b8e3b-137">Linha de comandos</span><span class="sxs-lookup"><span data-stu-id="b8e3b-137">Command line</span></span>
 ```
 azure config mode arm
 azure group deployment create <my-resource-group> <my-deployment-name> --TemplateFile azuredeploy.json
 ```
 
 
-## <a name="example-resource-manager-templates"></a>Modelos de Gestor de recursos de exemplo
-Galeria de modelo de início rápido do Azure Olá inclui vários modelos para análise de registos, incluindo:
+## <a name="example-resource-manager-templates"></a><span data-ttu-id="b8e3b-138">Modelos de Gestor de recursos de exemplo</span><span class="sxs-lookup"><span data-stu-id="b8e3b-138">Example Resource Manager templates</span></span>
+<span data-ttu-id="b8e3b-139">Galeria de modelo de início rápido do Azure Olá inclui vários modelos para análise de registos, incluindo:</span><span class="sxs-lookup"><span data-stu-id="b8e3b-139">hello Azure quickstart template gallery includes several templates for Log Analytics, including:</span></span>
 
-* [Implementar uma máquina virtual com o Windows hello extensão da VM de análise do registo](https://azure.microsoft.com/documentation/templates/201-oms-extension-windows-vm/)
-* [Implementar uma máquina virtual com Linux com Olá extensão da VM de análise do registo](https://azure.microsoft.com/documentation/templates/201-oms-extension-ubuntu-vm/)
-* [Monitorizar o Azure Site Recovery com uma área de trabalho de análise de registos existente](https://azure.microsoft.com/documentation/templates/asr-oms-monitoring/)
-* [Monitorizar com uma área de trabalho de análise de registos existente de Web Apps do Azure](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
-* [Monitorizar com uma área de trabalho de análise de registos existente do SQL Azure](https://azure.microsoft.com/documentation/templates/101-sqlazure-oms-monitoring/)
-* [Implementar um cluster do Service Fabric e monitorizá-lo com uma área de trabalho de análise de registos existente](https://azure.microsoft.com/documentation/templates/service-fabric-oms/)
-* [Implementar um cluster do Service Fabric e crie um toomonitor da área de trabalho de análise de registos](https://azure.microsoft.com/documentation/templates/service-fabric-vmss-oms/)
+* [<span data-ttu-id="b8e3b-140">Implementar uma máquina virtual com o Windows hello extensão da VM de análise do registo</span><span class="sxs-lookup"><span data-stu-id="b8e3b-140">Deploy a virtual machine running Windows with hello Log Analytics VM extension</span></span>](https://azure.microsoft.com/documentation/templates/201-oms-extension-windows-vm/)
+* [<span data-ttu-id="b8e3b-141">Implementar uma máquina virtual com Linux com Olá extensão da VM de análise do registo</span><span class="sxs-lookup"><span data-stu-id="b8e3b-141">Deploy a virtual machine running Linux with hello Log Analytics VM extension</span></span>](https://azure.microsoft.com/documentation/templates/201-oms-extension-ubuntu-vm/)
+* [<span data-ttu-id="b8e3b-142">Monitorizar o Azure Site Recovery com uma área de trabalho de análise de registos existente</span><span class="sxs-lookup"><span data-stu-id="b8e3b-142">Monitor Azure Site Recovery using an existing Log Analytics workspace</span></span>](https://azure.microsoft.com/documentation/templates/asr-oms-monitoring/)
+* [<span data-ttu-id="b8e3b-143">Monitorizar com uma área de trabalho de análise de registos existente de Web Apps do Azure</span><span class="sxs-lookup"><span data-stu-id="b8e3b-143">Monitor Azure Web Apps using an existing Log Analytics workspace</span></span>](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
+* [<span data-ttu-id="b8e3b-144">Monitorizar com uma área de trabalho de análise de registos existente do SQL Azure</span><span class="sxs-lookup"><span data-stu-id="b8e3b-144">Monitor SQL Azure using an existing Log Analytics workspace</span></span>](https://azure.microsoft.com/documentation/templates/101-sqlazure-oms-monitoring/)
+* [<span data-ttu-id="b8e3b-145">Implementar um cluster do Service Fabric e monitorizá-lo com uma área de trabalho de análise de registos existente</span><span class="sxs-lookup"><span data-stu-id="b8e3b-145">Deploy a Service Fabric cluster and monitor it with an existing Log Analytics workspace</span></span>](https://azure.microsoft.com/documentation/templates/service-fabric-oms/)
+* [<span data-ttu-id="b8e3b-146">Implementar um cluster do Service Fabric e crie um toomonitor da área de trabalho de análise de registos</span><span class="sxs-lookup"><span data-stu-id="b8e3b-146">Deploy a Service Fabric cluster and create a Log Analytics workspace toomonitor it</span></span>](https://azure.microsoft.com/documentation/templates/service-fabric-vmss-oms/)
 
-## <a name="next-steps"></a>Passos seguintes
-* [Implementar agentes em VMs do Azure através de modelos do Resource Manager](log-analytics-azure-vm-extension.md)
+## <a name="next-steps"></a><span data-ttu-id="b8e3b-147">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="b8e3b-147">Next steps</span></span>
+* [<span data-ttu-id="b8e3b-148">Implementar agentes em VMs do Azure através de modelos do Resource Manager</span><span class="sxs-lookup"><span data-stu-id="b8e3b-148">Deploy agents into Azure VMs using Resource Manager templates</span></span>](log-analytics-azure-vm-extension.md)
 

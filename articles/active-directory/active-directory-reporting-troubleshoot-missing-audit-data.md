@@ -21,25 +21,25 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="i-cant-find-some-actions-that-i-performed-in-hello-azure-active-directory-activity-log"></a>Não é possível localizar o algumas ações que efetuar a no registo de atividade do Azure Active Directory Olá
+# <a name="i-cant-find-some-actions-that-i-performed-in-hello-azure-active-directory-activity-log"></a><span data-ttu-id="72ea7-103">Não é possível localizar o algumas ações que efetuar a no registo de atividade do Azure Active Directory Olá</span><span class="sxs-lookup"><span data-stu-id="72ea7-103">I can’t find some actions that I performed in hello Azure Active Directory activity log</span></span>
 
 
-## <a name="symptoms"></a>Sintomas
+## <a name="symptoms"></a><span data-ttu-id="72ea7-104">Sintomas</span><span class="sxs-lookup"><span data-stu-id="72ea7-104">Symptoms</span></span>
 
-Posso efetuar algumas ações na Olá portal do Azure e esperados os registos de auditoria de Olá toosee para essas ações Olá `Activity logs > Audit Logs` painel, mas como posso não é possível encontrá-los.
+<span data-ttu-id="72ea7-105">Posso efetuar algumas ações na Olá portal do Azure e esperados os registos de auditoria de Olá toosee para essas ações Olá `Activity logs > Audit Logs` painel, mas como posso não é possível encontrá-los.</span><span class="sxs-lookup"><span data-stu-id="72ea7-105">I performed some actions in hello Azure portal and expected toosee hello audit logs for those actions in hello `Activity logs > Audit Logs` blade, but I can’t find them.</span></span>
 
  ![Relatórios](./media/active-directory-reporting-troubleshoot-missing-audit-data/01.png)
  
 
-## <a name="cause"></a>Causa
+## <a name="cause"></a><span data-ttu-id="72ea7-107">Causa</span><span class="sxs-lookup"><span data-stu-id="72ea7-107">Cause</span></span>
 
-Ações não aparecem imediatamente no registo de auditoria de atividade Olá. -Pode tomar entre 15 minutos de registos de auditoria do tooan hora toosee Olá no portal de Olá da hora de Olá Olá operação é executada.
+<span data-ttu-id="72ea7-108">Ações não aparecem imediatamente no registo de auditoria de atividade Olá.</span><span class="sxs-lookup"><span data-stu-id="72ea7-108">Actions don’t appear immediately in hello Activity Audit log.</span></span> <span data-ttu-id="72ea7-109">-Pode tomar entre 15 minutos de registos de auditoria do tooan hora toosee Olá no portal de Olá da hora de Olá Olá operação é executada.</span><span class="sxs-lookup"><span data-stu-id="72ea7-109">It can take anywhere from 15 minutes tooan hour toosee hello audit logs in hello portal from hello time hello operation is performed.</span></span>
 
-## <a name="resolution"></a>Resolução
+## <a name="resolution"></a><span data-ttu-id="72ea7-110">Resolução</span><span class="sxs-lookup"><span data-stu-id="72ea7-110">Resolution</span></span>
 
-Aguarde a hora de tooan de 15 minutos e ver se as ações de Olá aparecem no registo de Olá. Se continuar a não serem visualizadas, emita um pedido de suporte e vamos analisar o problema.
+<span data-ttu-id="72ea7-111">Aguarde a hora de tooan de 15 minutos e ver se as ações de Olá aparecem no registo de Olá.</span><span class="sxs-lookup"><span data-stu-id="72ea7-111">Wait for 15 minutes tooan hour and see if hello actions appear in hello log.</span></span> <span data-ttu-id="72ea7-112">Se continuar a não serem visualizadas, emita um pedido de suporte e vamos analisar o problema.</span><span class="sxs-lookup"><span data-stu-id="72ea7-112">If you still don’t see them, please raise a support ticket with us and we will look into it.</span></span>
 
 
-## <a name="next-steps"></a>Passos seguintes
-Consulte Olá [Azure Active Directory reporting FAQ](active-directory-reporting-faq.md).
+## <a name="next-steps"></a><span data-ttu-id="72ea7-113">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="72ea7-113">Next steps</span></span>
+<span data-ttu-id="72ea7-114">Consulte Olá [Azure Active Directory reporting FAQ](active-directory-reporting-faq.md).</span><span class="sxs-lookup"><span data-stu-id="72ea7-114">See hello [Azure Active Directory reporting FAQ](active-directory-reporting-faq.md).</span></span>
 

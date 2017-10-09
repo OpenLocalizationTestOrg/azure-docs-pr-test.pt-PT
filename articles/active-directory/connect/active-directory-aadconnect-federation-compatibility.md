@@ -20,315 +20,313 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="azure-ad-federation-compatibility-list"></a>Lista de compatibilidades de federação do Azure AD
-Azure Active Directory fornece o início de sessão único em e modulação de segurança de acesso de aplicação para Office 365 e outros serviços Online da Microsoft para implementações de apenas na nuvem e de híbrida sem necessidade de qualquer solução de terceiros. Office 365, como a maioria dos Serviços Online da Microsoft, está integrado com o Azure Active Directory para serviços de diretório, autenticação e autorização. Azure Active Directory fornece também toothousands de início de sessão único de aplicações SaaS e no local as aplicações web. Consulte Galeria de aplicações do Azure Active Directory Olá para aplicações SaaS suportadas.
+# <a name="azure-ad-federation-compatibility-list"></a><span data-ttu-id="11d5d-103">Lista de compatibilidades de federação do Azure AD</span><span class="sxs-lookup"><span data-stu-id="11d5d-103">Azure AD federation compatibility list</span></span>
+<span data-ttu-id="11d5d-104">Azure Active Directory fornece o início de sessão único em e modulação de segurança de acesso de aplicação para Office 365 e outros serviços Online da Microsoft para implementações de apenas na nuvem e de híbrida sem necessidade de qualquer solução de terceiros.</span><span class="sxs-lookup"><span data-stu-id="11d5d-104">Azure Active Directory provides single-sign on and enhanced application access security for Office 365 and other Microsoft Online services for hybrid and cloud-only implementations without requiring any non-Microsoft solution.</span></span> <span data-ttu-id="11d5d-105">Office 365, como a maioria dos Serviços Online da Microsoft, está integrado com o Azure Active Directory para serviços de diretório, autenticação e autorização.</span><span class="sxs-lookup"><span data-stu-id="11d5d-105">Office 365, like most of Microsoft’s Online services, is integrated with Azure Active Directory for directory services, authentication and authorization.</span></span> <span data-ttu-id="11d5d-106">Azure Active Directory fornece também toothousands de início de sessão único de aplicações SaaS e no local as aplicações web.</span><span class="sxs-lookup"><span data-stu-id="11d5d-106">Azure Active Directory also provides single sign-on toothousands of SaaS applications and on-premises web applications.</span></span> <span data-ttu-id="11d5d-107">Consulte Galeria de aplicações do Azure Active Directory Olá para aplicações SaaS suportadas.</span><span class="sxs-lookup"><span data-stu-id="11d5d-107">Please see hello Azure Active Directory application gallery for supported SaaS applications.</span></span>
 
-Nas organizações que tenham investido em soluções de Federação de terceiros, este tópico contém orientações para configurar início de sessão único para os respetivos utilizadores do Windows Server Active Directory com o Microsoft Online services utilizando fornecedores de identidade de terceiros Olá "do Azure Active Directory Federação compatibilidade lista" abaixo. 
+<span data-ttu-id="11d5d-108">Nas organizações que tenham investido em soluções de Federação de terceiros, este tópico contém orientações para configurar início de sessão único para os respetivos utilizadores do Windows Server Active Directory com o Microsoft Online services utilizando fornecedores de identidade de terceiros Olá "do Azure Active Directory Federação compatibilidade lista" abaixo.</span><span class="sxs-lookup"><span data-stu-id="11d5d-108">For organizations that have invested in non-Microsoft federation solutions, this topic contains guidance for configuring single sign-on for their Windows Server Active Directory users with Microsoft Online services by using non-Microsoft identity providers from hello “Azure Active Directory federation compatibility list” below.</span></span> 
 
 ![](./media/active-directory-aadconnect-federation-compatibility/oxford2.jpg)   
-[Grupo de computadores Oxford](http://oxfordcomputergroup.com/), uma terceiros em nome da Microsoft, testada estes único início de sessão experiências utilizando fornecedores de identidade de terceiros em relação a um conjunto de casos de utilização comuns com o Azure Active Directory.
+<span data-ttu-id="11d5d-109">[Grupo de computadores Oxford](http://oxfordcomputergroup.com/), uma terceiros em nome da Microsoft, testada estes único início de sessão experiências utilizando fornecedores de identidade de terceiros em relação a um conjunto de casos de utilização comuns com o Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="11d5d-109">[Oxford Computer Group](http://oxfordcomputergroup.com/), a third-party, on behalf of Microsoft, tested these single sign-on experiences using non-Microsoft identity providers against a set of use cases common with Azure Active Directory.</span></span>
 
-Para informações sobre como obter o seu fornecedor de identidade de terceiros listado aqui, contacte o grupo de computador do Oxford em [ idp@oxfordcomputergroup.com ](mailto:idp@oxfordcomputergroup.com).
-
-> [!IMPORTANT]
-> Grupo de computadores Oxford testado funcionalidade para Federação de Olá apenas um destes cenários de início de sessão único. Grupo de computadores Oxford não tiver sido executada qualquer teste de sincronização de Olá, autenticação de dois fatores, etc. os componentes destes cenários de início de sessão único.
-> 
-> Utilização de início de sessão por ID alternativo tooUPN também é testada não no programa.
-> 
-> 
-
-* [Azure Active Directory](#azure-active-directory)
-* [4.5 o início de sessão único AuthAnvil](#authanvil-single-sign-on-45)
-* [BIG-IP com o Gestor de políticas de acesso BIG-IP ver. 11.3 x – 11, 6x](#big-ip-with-access-policy-manager-big-ip-ver-113x--116x) 
-* [BitGlass](#bitglass)
-* [Nuvem segura de AC](#ca-secure-cloud) 
-* [AC SiteMinder 12.52](#ca-siteminder-1252-sp1-cumulative-release-4) 
-* [Centrify](#centrify) 
-* [Dell um Gestor de acesso de nuvem de identidade v7.1](#dell-one-identity-cloud-access-manager-v71) 
-* [Autenticação DigitalPersona compostos](#digitalpersona-composite-authentication)
-* [IBM Tivoli federado 6.2.2 do Identity Manager](#ibm-tivoli-federated-identity-manager-622) 
-* [IceWall Federação versão 3.0](#icewall-federation-version-30) 
-* [Memority](#memority)
-* [Gestor de acesso de NetIQ 4. x](#netiq-access-manager-4x) 
-* [Okta](#okta) 
-* [OneLogin](#onelogin) 
-* [Serviços de Federação de servidor do Virtual identidade IDM ideal](#optimal-idm-virtual-identity-server-federation-services) 
-* [PingFederate 6.11, 7.2, 8. x](#pingfederate-611-72-8x)
-* [RadiantOne CFS 3.0](#radiantone-cfs-30) 
-* [Sailpoint IdentityNow](#sailpoint-identitynow)
-* [SecureAuth IdP 7.2.0](#secureauth-idp-720) 
-* [Inicie sessão & go 5.3](#signgo-53) 
-* [Porta de serviço Online da tecnologia de SoftBank](#softbank)
-* [Área de trabalho VMware um](#vmware-workspace-one)
-
-
+<span data-ttu-id="11d5d-110">Para informações sobre como obter o seu fornecedor de identidade de terceiros listado aqui, contacte o grupo de computador do Oxford em [ idp@oxfordcomputergroup.com ](mailto:idp@oxfordcomputergroup.com).</span><span class="sxs-lookup"><span data-stu-id="11d5d-110">For information on how you can get your third-party identity provider listed here, contact Oxford Computer Group at [idp@oxfordcomputergroup.com](mailto:idp@oxfordcomputergroup.com).</span></span>
 
 > [!IMPORTANT]
-> Uma vez que estes são os produtos de terceiros, a Microsoft fornece suporte para implementação de Olá, configuração, resolução de problemas, melhores práticas, etc. problemas e perguntas sobre estes fornecedores de identidade. Para suporte e perguntas sobre estes fornecedores de identidade, contacte diretamente a terceiros Olá suportado.
+> <span data-ttu-id="11d5d-111">Grupo de computadores Oxford testado funcionalidade para Federação de Olá apenas um destes cenários de início de sessão único.</span><span class="sxs-lookup"><span data-stu-id="11d5d-111">Oxford Computer Group tested only hello federation functionality of these single sign-on scenarios.</span></span> <span data-ttu-id="11d5d-112">Grupo de computadores Oxford não tiver sido executada qualquer teste de sincronização de Olá, autenticação de dois fatores, etc. os componentes destes cenários de início de sessão único.</span><span class="sxs-lookup"><span data-stu-id="11d5d-112">Oxford Computer Group did not perform any testing of hello synchronization, two-factor authentication, etc. components of these single sign-on scenarios.</span></span>
 > 
-> Estes fornecedores de identidade de terceiros foram testados para interoperabilidade com a utilização de WS-Federation e apenas os protocolos de WS-Trust cloud services da Microsoft. A testar não incluiu através do protocolo SAML Olá.
+> <span data-ttu-id="11d5d-113">Utilização de início de sessão por ID alternativo tooUPN também é testada não no programa.</span><span class="sxs-lookup"><span data-stu-id="11d5d-113">Use of Sign-in by Alternate ID tooUPN is also not tested in this program.</span></span>
+> 
+> 
+
+* [<span data-ttu-id="11d5d-114">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="11d5d-114">Azure Active Directory</span></span>](#azure-active-directory)
+* [<span data-ttu-id="11d5d-115">4.5 o início de sessão único AuthAnvil</span><span class="sxs-lookup"><span data-stu-id="11d5d-115">AuthAnvil Single Sign On 4.5</span></span>](#authanvil-single-sign-on-45)
+* [<span data-ttu-id="11d5d-116">BIG-IP com o Gestor de políticas de acesso BIG-IP ver. 11.3 x – 11, 6x</span><span class="sxs-lookup"><span data-stu-id="11d5d-116">BIG-IP with Access Policy Manager BIG-IP ver. 11.3x – 11.6x</span></span>](#big-ip-with-access-policy-manager-big-ip-ver-113x--116x) 
+* [<span data-ttu-id="11d5d-117">BitGlass</span><span class="sxs-lookup"><span data-stu-id="11d5d-117">BitGlass</span></span>](#bitglass)
+* [<span data-ttu-id="11d5d-118">Nuvem segura de AC</span><span class="sxs-lookup"><span data-stu-id="11d5d-118">CA Secure Cloud</span></span>](#ca-secure-cloud) 
+* [<span data-ttu-id="11d5d-119">AC SiteMinder 12.52</span><span class="sxs-lookup"><span data-stu-id="11d5d-119">CA SiteMinder 12.52</span></span>](#ca-siteminder-1252-sp1-cumulative-release-4) 
+* [<span data-ttu-id="11d5d-120">Centrify</span><span class="sxs-lookup"><span data-stu-id="11d5d-120">Centrify</span></span>](#centrify) 
+* [<span data-ttu-id="11d5d-121">Dell um Gestor de acesso de nuvem de identidade v7.1</span><span class="sxs-lookup"><span data-stu-id="11d5d-121">Dell One Identity Cloud Access Manager v7.1</span></span>](#dell-one-identity-cloud-access-manager-v71) 
+* [<span data-ttu-id="11d5d-122">Autenticação DigitalPersona compostos</span><span class="sxs-lookup"><span data-stu-id="11d5d-122">DigitalPersona Composite Authentication</span></span>](#digitalpersona-composite-authentication)
+* [<span data-ttu-id="11d5d-123">IBM Tivoli federado 6.2.2 do Identity Manager</span><span class="sxs-lookup"><span data-stu-id="11d5d-123">IBM Tivoli Federated Identity Manager 6.2.2</span></span>](#ibm-tivoli-federated-identity-manager-622) 
+* [<span data-ttu-id="11d5d-124">IceWall Federação versão 3.0</span><span class="sxs-lookup"><span data-stu-id="11d5d-124">IceWall Federation Version 3.0</span></span>](#icewall-federation-version-30) 
+* [<span data-ttu-id="11d5d-125">Memority</span><span class="sxs-lookup"><span data-stu-id="11d5d-125">Memority</span></span>](#memority)
+* [<span data-ttu-id="11d5d-126">Gestor de acesso de NetIQ 4. x</span><span class="sxs-lookup"><span data-stu-id="11d5d-126">NetIQ Access Manager 4.x</span></span>](#netiq-access-manager-4x) 
+* [<span data-ttu-id="11d5d-127">Okta</span><span class="sxs-lookup"><span data-stu-id="11d5d-127">Okta</span></span>](#okta) 
+* [<span data-ttu-id="11d5d-128">OneLogin</span><span class="sxs-lookup"><span data-stu-id="11d5d-128">OneLogin</span></span>](#onelogin) 
+* [<span data-ttu-id="11d5d-129">Serviços de Federação de servidor do Virtual identidade IDM ideal</span><span class="sxs-lookup"><span data-stu-id="11d5d-129">Optimal IDM Virtual Identity Server Federation Services</span></span>](#optimal-idm-virtual-identity-server-federation-services) 
+* [<span data-ttu-id="11d5d-130">PingFederate 6.11, 7.2, 8. x</span><span class="sxs-lookup"><span data-stu-id="11d5d-130">PingFederate 6.11, 7.2, 8.x</span></span>](#pingfederate-611-72-8x)
+* [<span data-ttu-id="11d5d-131">RadiantOne CFS 3.0</span><span class="sxs-lookup"><span data-stu-id="11d5d-131">RadiantOne CFS 3.0</span></span>](#radiantone-cfs-30) 
+* [<span data-ttu-id="11d5d-132">Sailpoint IdentityNow</span><span class="sxs-lookup"><span data-stu-id="11d5d-132">Sailpoint IdentityNow</span></span>](#sailpoint-identitynow)
+* [<span data-ttu-id="11d5d-133">SecureAuth IdP 7.2.0</span><span class="sxs-lookup"><span data-stu-id="11d5d-133">SecureAuth IdP 7.2.0</span></span>](#secureauth-idp-720) 
+* [<span data-ttu-id="11d5d-134">Inicie sessão & go 5.3</span><span class="sxs-lookup"><span data-stu-id="11d5d-134">Sign&go 5.3</span></span>](#signgo-53) 
+* [<span data-ttu-id="11d5d-135">Porta de serviço Online da tecnologia de SoftBank</span><span class="sxs-lookup"><span data-stu-id="11d5d-135">SoftBank Technology Online Service Gate</span></span>](#softbank)
+* [<span data-ttu-id="11d5d-136">Área de trabalho VMware um</span><span class="sxs-lookup"><span data-stu-id="11d5d-136">VMware Workspace One</span></span>](#vmware-workspace-one)
+
+
+
+> [!IMPORTANT]
+> <span data-ttu-id="11d5d-137">Uma vez que estes são os produtos de terceiros, a Microsoft fornece suporte para implementação de Olá, configuração, resolução de problemas, melhores práticas, etc. problemas e perguntas sobre estes fornecedores de identidade.</span><span class="sxs-lookup"><span data-stu-id="11d5d-137">Since these are third-party products, Microsoft does not provide support for hello deployment, configuration, troubleshooting, best practices, etc. issues and questions regarding these identity providers.</span></span> <span data-ttu-id="11d5d-138">Para suporte e perguntas sobre estes fornecedores de identidade, contacte diretamente a terceiros Olá suportado.</span><span class="sxs-lookup"><span data-stu-id="11d5d-138">For support and questions regarding these identity providers, contact hello supported third-parties directly.</span></span>
+> 
+> <span data-ttu-id="11d5d-139">Estes fornecedores de identidade de terceiros foram testados para interoperabilidade com a utilização de WS-Federation e apenas os protocolos de WS-Trust cloud services da Microsoft.</span><span class="sxs-lookup"><span data-stu-id="11d5d-139">These third-party identity providers were tested for interoperability with Microsoft cloud services using WS-Federation and WS-Trust protocols only.</span></span> <span data-ttu-id="11d5d-140">A testar não incluiu através do protocolo SAML Olá.</span><span class="sxs-lookup"><span data-stu-id="11d5d-140">Testing did not include using hello SAML protocol.</span></span>
 > 
 
 
-## <a name="azure-active-directory"></a>Azure Active Directory
+## <a name="azure-active-directory"></a><span data-ttu-id="11d5d-141">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="11d5d-141">Azure Active Directory</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão: 
+<span data-ttu-id="11d5d-142">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão:</span><span class="sxs-lookup"><span data-stu-id="11d5d-142">hello following is hello scenario support matrix for this sign-on experience:</span></span> 
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-143">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-143">Client</span></span> | <span data-ttu-id="11d5d-144">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-144">Support</span></span> | <span data-ttu-id="11d5d-145">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-145">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
-| Aplicações modernas utilizam a ADAL, tais como o Office 2016 |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-146">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-146">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-147">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-147">Supported</span></span> |<span data-ttu-id="11d5d-148">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-148">None</span></span> |
+| <span data-ttu-id="11d5d-149">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-149">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-150">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-150">Supported</span></span> |<span data-ttu-id="11d5d-151">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-151">None</span></span> |
+| <span data-ttu-id="11d5d-152">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-152">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-153">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-153">Supported</span></span> |<span data-ttu-id="11d5d-154">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-154">None</span></span> |
+| <span data-ttu-id="11d5d-155">Aplicações modernas utilizam a ADAL, tais como o Office 2016</span><span class="sxs-lookup"><span data-stu-id="11d5d-155">Modern Applications using ADAL such as Office 2016</span></span> |<span data-ttu-id="11d5d-156">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-156">Supported</span></span> |<span data-ttu-id="11d5d-157">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-157">None</span></span> |
 
-Para obter mais informações sobre como utilizar o Azure Active Directory com o AD FS, consulte [serviços de Federação do Active Directory (ADFS)](active-directory-aadconnect-get-started-custom.md#configuring-federation-with-ad-fs).
+<span data-ttu-id="11d5d-158">Para obter mais informações sobre como utilizar o Azure Active Directory com o AD FS, consulte [serviços de Federação do Active Directory (ADFS)](active-directory-aadconnect-get-started-custom.md#configuring-federation-with-ad-fs).</span><span class="sxs-lookup"><span data-stu-id="11d5d-158">For more information about using Azure Active Directory with AD FS see [Active Directory Federation Services (ADFS)](active-directory-aadconnect-get-started-custom.md#configuring-federation-with-ad-fs).</span></span>
 
-Para obter mais informações sobre como utilizar o Azure Active Directory com sincronização de palavra-passe Consulte [do Azure AD Connect](active-directory-aadconnect.md).
+<span data-ttu-id="11d5d-159">Para obter mais informações sobre como utilizar o Azure Active Directory com sincronização de palavra-passe Consulte [do Azure AD Connect](active-directory-aadconnect.md).</span><span class="sxs-lookup"><span data-stu-id="11d5d-159">For more information about using Azure Active Directory with Password sync see [Azure AD Connect](active-directory-aadconnect.md).</span></span>
 
-## <a name="authanvil-single-sign-on-45"></a>4.5 o início de sessão único AuthAnvil
+## <a name="authanvil-single-sign-on-45"></a><span data-ttu-id="11d5d-160">4.5 o início de sessão único AuthAnvil</span><span class="sxs-lookup"><span data-stu-id="11d5d-160">AuthAnvil Single Sign On 4.5</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-161">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-161">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-162">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-162">Client</span></span> | <span data-ttu-id="11d5d-163">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-163">Support</span></span> | <span data-ttu-id="11d5d-164">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-164">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Não é suportada a autenticação integrada do Windows |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Não é suportada a autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-165">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-165">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-166">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-166">Supported</span></span> |<span data-ttu-id="11d5d-167">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-167">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-168">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-168">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-169">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-169">Supported</span></span> |<span data-ttu-id="11d5d-170">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-170">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-171">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-171">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-172">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-172">Supported</span></span> |<span data-ttu-id="11d5d-173">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-173">None</span></span> |
 
-Para obter mais informações, consulte [AuthAnvil início de sessão único.](https://help.scorpionsoft.com/entries/26538603-How-can-I-Configure-Single-Sign-On-for-Office-365-).
+<span data-ttu-id="11d5d-174">Para obter mais informações, consulte [AuthAnvil início de sessão único.](https://help.scorpionsoft.com/entries/26538603-How-can-I-Configure-Single-Sign-On-for-Office-365-).</span><span class="sxs-lookup"><span data-stu-id="11d5d-174">For more information, see [AuthAnvil Single Sign On.](https://help.scorpionsoft.com/entries/26538603-How-can-I-Configure-Single-Sign-On-for-Office-365-).</span></span>
 
 
-## <a name="big-ip-with-access-policy-manager-big-ip-ver-113x--116x"></a>BIG-IP com o Gestor de políticas de acesso BIG-IP ver. 11.3 x – 11, 6x
+## <a name="big-ip-with-access-policy-manager-big-ip-ver-113x--116x"></a><span data-ttu-id="11d5d-175">BIG-IP com o Gestor de políticas de acesso BIG-IP ver.</span><span class="sxs-lookup"><span data-stu-id="11d5d-175">BIG-IP with Access Policy Manager BIG-IP ver.</span></span> <span data-ttu-id="11d5d-176">11.3 x – 11, 6x</span><span class="sxs-lookup"><span data-stu-id="11d5d-176">11.3x – 11.6x</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único: 
+<span data-ttu-id="11d5d-177">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-177">hello following is hello scenario support matrix for this single sign-on experience:</span></span> 
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-178">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-178">Client</span></span> | <span data-ttu-id="11d5d-179">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-179">Support</span></span> | <span data-ttu-id="11d5d-180">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-180">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Não suportado |Não suportado |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-181">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-181">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-182">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-182">Supported</span></span> |<span data-ttu-id="11d5d-183">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-183">None</span></span> |
+| <span data-ttu-id="11d5d-184">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-184">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-185">Não suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-185">Not Supported</span></span> |<span data-ttu-id="11d5d-186">Não suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-186">Not Supported</span></span> |
+| <span data-ttu-id="11d5d-187">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-187">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-188">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-188">Supported</span></span> |<span data-ttu-id="11d5d-189">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-189">None</span></span> |
 
-Para obter mais informações sobre o Gestor de políticas de acesso do BIG-IP, consulte [Gestor de políticas de acesso BIG-IP.](https://f5.com/products/modules/access-policy-manager) 
+<span data-ttu-id="11d5d-190">Para obter mais informações sobre o Gestor de políticas de acesso do BIG-IP, consulte [Gestor de políticas de acesso BIG-IP.](https://f5.com/products/modules/access-policy-manager)</span><span class="sxs-lookup"><span data-stu-id="11d5d-190">For more information about BIG-IP Access Policy Manager, see [BIG-IP Access Policy Manager.](https://f5.com/products/modules/access-policy-manager)</span></span> 
 
-Para obter instruções de Gestor de políticas de acesso BIG-IP de Olá sobre como tooconfigure transferir este tooyour de experiência de início de sessão único de Olá STS tooprovide utilizadores do Active Directory, Olá pdf [BIG-IP](http://www.f5.com/pdf/deployment-guides/microsoft-office-365-idp-dg.pdf).
+<span data-ttu-id="11d5d-191">Para obter instruções de Gestor de políticas de acesso BIG-IP de Olá sobre como tooconfigure transferir este tooyour de experiência de início de sessão único de Olá STS tooprovide utilizadores do Active Directory, Olá pdf [BIG-IP](http://www.f5.com/pdf/deployment-guides/microsoft-office-365-idp-dg.pdf).</span><span class="sxs-lookup"><span data-stu-id="11d5d-191">For hello BIG-IP Access Policy Manager instructions on how tooconfigure this STS tooprovide hello single sign-on experience tooyour Active Directory Users, download hello pdf [BIG-IP](http://www.f5.com/pdf/deployment-guides/microsoft-office-365-idp-dg.pdf).</span></span>
 
-## <a name="bitglass"></a>BitGlass
+## <a name="bitglass"></a><span data-ttu-id="11d5d-192">BitGlass</span><span class="sxs-lookup"><span data-stu-id="11d5d-192">BitGlass</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-193">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-193">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-194">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-194">Client</span></span> | <span data-ttu-id="11d5d-195">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-195">Support</span></span> | <span data-ttu-id="11d5d-196">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-196">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Não é suportada a autenticação integrada do Windows |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Não é suportada a autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-197">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-197">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-198">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-198">Supported</span></span> |<span data-ttu-id="11d5d-199">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-199">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-200">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-200">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-201">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-201">Supported</span></span> |<span data-ttu-id="11d5d-202">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-202">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-203">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-203">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-204">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-204">Supported</span></span> |<span data-ttu-id="11d5d-205">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-205">None</span></span> |
 
-Para obter mais informações sobre BitGlass consulte [BitGlass](http://www.bitglass.com).
+<span data-ttu-id="11d5d-206">Para obter mais informações sobre BitGlass consulte [BitGlass](http://www.bitglass.com).</span><span class="sxs-lookup"><span data-stu-id="11d5d-206">For more information about BitGlass see [BitGlass](http://www.bitglass.com).</span></span>
 
-## <a name="ca-secure-cloud"></a>Nuvem segura de AC
+## <a name="ca-secure-cloud"></a><span data-ttu-id="11d5d-207">Nuvem segura de AC</span><span class="sxs-lookup"><span data-stu-id="11d5d-207">CA Secure Cloud</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-208">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-208">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-209">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-209">Client</span></span> | <span data-ttu-id="11d5d-210">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-210">Support</span></span> | <span data-ttu-id="11d5d-211">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-211">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Não é suportada a autenticação integrada do Windows |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Não é suportada a autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-212">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-212">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-213">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-213">Supported</span></span> |<span data-ttu-id="11d5d-214">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-214">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-215">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-215">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-216">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-216">Supported</span></span> |<span data-ttu-id="11d5d-217">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-217">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-218">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-218">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-219">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-219">Supported</span></span> |<span data-ttu-id="11d5d-220">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-220">None</span></span> |
 
-Para obter mais informações sobre a nuvem de proteger a AC, consulte [AC Secure nuvem](http://www.ca.com/us/products/security-as-a-service.aspx).
+<span data-ttu-id="11d5d-221">Para obter mais informações sobre a nuvem de proteger a AC, consulte [AC Secure nuvem](http://www.ca.com/us/products/security-as-a-service.aspx).</span><span class="sxs-lookup"><span data-stu-id="11d5d-221">For more information about CA Secure Cloud, see [CA Secure Cloud](http://www.ca.com/us/products/security-as-a-service.aspx).</span></span>
 
-## <a name="ca-siteminder-1252-sp1-cumulative-release-4"></a>AC SiteMinder 12.52 SP1 cumulativa versão 4
+## <a name="ca-siteminder-1252-sp1-cumulative-release-4"></a><span data-ttu-id="11d5d-222">AC SiteMinder 12.52 SP1 cumulativa versão 4</span><span class="sxs-lookup"><span data-stu-id="11d5d-222">CA SiteMinder 12.52 SP1 Cumulative Release 4</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único: 
+<span data-ttu-id="11d5d-223">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-223">hello following is hello scenario support matrix for this single sign-on experience:</span></span> 
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-224">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-224">Client</span></span> | <span data-ttu-id="11d5d-225">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-225">Support</span></span> | <span data-ttu-id="11d5d-226">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-226">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-227">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-227">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-228">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-228">Supported</span></span> |<span data-ttu-id="11d5d-229">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-229">None</span></span> |
+| <span data-ttu-id="11d5d-230">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-230">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-231">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-231">Supported</span></span> |<span data-ttu-id="11d5d-232">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-232">None</span></span> |
+| <span data-ttu-id="11d5d-233">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-233">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-234">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-234">Supported</span></span> |<span data-ttu-id="11d5d-235">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-235">None</span></span> |
 
-Para mais informações sobre SiteMinder de AC, consulte [AC SiteMinder Federação](http://www.ca.com/us/products/ca-single-sign-on.html). 
+<span data-ttu-id="11d5d-236">Para mais informações sobre SiteMinder de AC, consulte [AC SiteMinder Federação](http://www.ca.com/us/products/ca-single-sign-on.html).</span><span class="sxs-lookup"><span data-stu-id="11d5d-236">For more information about CA SiteMinder, see [CA SiteMinder Federation](http://www.ca.com/us/products/ca-single-sign-on.html).</span></span> 
 
-## <a name="centrify"></a>Centrify
+## <a name="centrify"></a><span data-ttu-id="11d5d-237">Centrify</span><span class="sxs-lookup"><span data-stu-id="11d5d-237">Centrify</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-238">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-238">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-239">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-239">Client</span></span> | <span data-ttu-id="11d5d-240">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-240">Support</span></span> | <span data-ttu-id="11d5d-241">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-241">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Controlo de acesso de cliente não é suportado |
+| <span data-ttu-id="11d5d-242">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-242">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-243">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-243">Supported</span></span> |<span data-ttu-id="11d5d-244">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-244">None</span></span> |
+| <span data-ttu-id="11d5d-245">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-245">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-246">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-246">Supported</span></span> |<span data-ttu-id="11d5d-247">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-247">None</span></span> |
+| <span data-ttu-id="11d5d-248">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-248">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-249">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-249">Supported</span></span> |<span data-ttu-id="11d5d-250">Controlo de acesso de cliente não é suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-250">Client Access Control is not supported</span></span> |
 
-Para mais informações sobre Centrify, consulte [Centrify](http://www.centrify.com/cloud/apps/single-sign-on-for-office-365.asp).
+<span data-ttu-id="11d5d-251">Para mais informações sobre Centrify, consulte [Centrify](http://www.centrify.com/cloud/apps/single-sign-on-for-office-365.asp).</span><span class="sxs-lookup"><span data-stu-id="11d5d-251">For more information about Centrify, see [Centrify](http://www.centrify.com/cloud/apps/single-sign-on-for-office-365.asp).</span></span>
 
-## <a name="dell-one-identity-cloud-access-manager-v71"></a>Dell um Gestor de acesso de nuvem de identidade v7.1
+## <a name="dell-one-identity-cloud-access-manager-v71"></a><span data-ttu-id="11d5d-252">Dell um Gestor de acesso de nuvem de identidade v7.1</span><span class="sxs-lookup"><span data-stu-id="11d5d-252">Dell One Identity Cloud Access Manager v7.1</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-253">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-253">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-254">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-254">Client</span></span> | <span data-ttu-id="11d5d-255">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-255">Support</span></span> | <span data-ttu-id="11d5d-256">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-256">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-257">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-257">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-258">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-258">Supported</span></span> |<span data-ttu-id="11d5d-259">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-259">None</span></span> |
+| <span data-ttu-id="11d5d-260">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-260">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-261">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-261">Supported</span></span> |<span data-ttu-id="11d5d-262">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-262">None</span></span> |
+| <span data-ttu-id="11d5d-263">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-263">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-264">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-264">Supported</span></span> |<span data-ttu-id="11d5d-265">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-265">None</span></span> |
 
-Para obter mais informações sobre Dell uma identidade de nuvem Gestor de acesso, consulte [Gestor de acesso para Dell uma identidade de nuvem](http://software.dell.com/products/cloud-access-manager).
+<span data-ttu-id="11d5d-266">Para obter mais informações sobre Dell uma identidade de nuvem Gestor de acesso, consulte [Gestor de acesso para Dell uma identidade de nuvem](http://software.dell.com/products/cloud-access-manager).</span><span class="sxs-lookup"><span data-stu-id="11d5d-266">For more information about Dell One Identity Cloud Access Manager, see [Dell One Identity Cloud Access Manager](http://software.dell.com/products/cloud-access-manager).</span></span>
 
- Para Olá obter instruções sobre como tooconfigure este tooyour de experiência de início de sessão único de Olá STS tooprovide utilizadores do Office 365, consulte o artigo [configurar utilizadores do Office 365](http://documents.software.dell.com/dell-one-identity-cloud-access-manager/7.1/how-to-configure-microsoft-office-365). 
+ <span data-ttu-id="11d5d-267">Para Olá obter instruções sobre como tooconfigure este tooyour de experiência de início de sessão único de Olá STS tooprovide utilizadores do Office 365, consulte o artigo [configurar utilizadores do Office 365](http://documents.software.dell.com/dell-one-identity-cloud-access-manager/7.1/how-to-configure-microsoft-office-365).</span><span class="sxs-lookup"><span data-stu-id="11d5d-267">For hello instructions on how tooconfigure this STS tooprovide hello single sign-on experience tooyour Office 365 Users, see [Configure Office 365 Users](http://documents.software.dell.com/dell-one-identity-cloud-access-manager/7.1/how-to-configure-microsoft-office-365).</span></span> 
 
-## <a name="digitalpersona-composite-authentication"></a>Autenticação DigitalPersona compostos  
+## <a name="digitalpersona-composite-authentication"></a><span data-ttu-id="11d5d-268">Autenticação DigitalPersona compostos</span><span class="sxs-lookup"><span data-stu-id="11d5d-268">DigitalPersona Composite Authentication</span></span>  
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-269">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-269">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-270">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-270">Client</span></span> | <span data-ttu-id="11d5d-271">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-271">Support</span></span> | <span data-ttu-id="11d5d-272">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-272">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Não é suportada a autenticação integrada do Windows|
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Não é suportada a autenticação integrada do Windows|
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-273">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-273">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-274">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-274">Supported</span></span> |<span data-ttu-id="11d5d-275">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-275">Integrated Windows Authentication is not supported</span></span>|
+| <span data-ttu-id="11d5d-276">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-276">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-277">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-277">Supported</span></span> |<span data-ttu-id="11d5d-278">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-278">Integrated Windows Authentication is not supported</span></span>|
+| <span data-ttu-id="11d5d-279">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-279">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-280">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-280">Supported</span></span> |<span data-ttu-id="11d5d-281">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-281">None</span></span> |
 
-Para obter mais informações consulte [autenticação composta DigitalPersona](http://www.crossmatch.com/uploadedFiles/Support/Reference_Material/DigitalPersona-Office-365-Deployment-Guide.pdf).
+<span data-ttu-id="11d5d-282">Para obter mais informações consulte [autenticação composta DigitalPersona](http://www.crossmatch.com/uploadedFiles/Support/Reference_Material/DigitalPersona-Office-365-Deployment-Guide.pdf).</span><span class="sxs-lookup"><span data-stu-id="11d5d-282">For more information see [DigitalPersona Composite Authentication](http://www.crossmatch.com/uploadedFiles/Support/Reference_Material/DigitalPersona-Office-365-Deployment-Guide.pdf).</span></span>
 
 
-## <a name="ibm-tivoli-federated-identity-manager-622"></a>IBM Tivoli federado 6.2.2 do Identity Manager
+## <a name="ibm-tivoli-federated-identity-manager-622"></a><span data-ttu-id="11d5d-283">IBM Tivoli federado 6.2.2 do Identity Manager</span><span class="sxs-lookup"><span data-stu-id="11d5d-283">IBM Tivoli Federated Identity Manager 6.2.2</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único: 
+<span data-ttu-id="11d5d-284">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-284">hello following is hello scenario support matrix for this single sign-on experience:</span></span> 
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-285">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-285">Client</span></span> | <span data-ttu-id="11d5d-286">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-286">Support</span></span> | <span data-ttu-id="11d5d-287">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-287">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-288">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-288">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-289">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-289">Supported</span></span> |<span data-ttu-id="11d5d-290">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-290">None</span></span> |
+| <span data-ttu-id="11d5d-291">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-291">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-292">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-292">Supported</span></span> |<span data-ttu-id="11d5d-293">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-293">None</span></span> |
+| <span data-ttu-id="11d5d-294">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-294">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-295">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-295">Supported</span></span> |<span data-ttu-id="11d5d-296">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-296">None</span></span> |
 
-Para obter mais informações sobre o IBM Tivoli federado Identity Manager, consulte [IBM Gestor de acesso de segurança para Microsoft Applications](http://www-01.ibm.com/support/docview.wss?uid=swg24029517).
+<span data-ttu-id="11d5d-297">Para obter mais informações sobre o IBM Tivoli federado Identity Manager, consulte [IBM Gestor de acesso de segurança para Microsoft Applications](http://www-01.ibm.com/support/docview.wss?uid=swg24029517).</span><span class="sxs-lookup"><span data-stu-id="11d5d-297">For more information about IBM Tivoli Federated Identity Manager, see [IBM Security Access Manager for Microsoft Applications](http://www-01.ibm.com/support/docview.wss?uid=swg24029517).</span></span>
 
-## <a name="icewall-federation-version-30"></a>IceWall Federação versão 3.0
+## <a name="icewall-federation-version-30"></a><span data-ttu-id="11d5d-298">IceWall Federação versão 3.0</span><span class="sxs-lookup"><span data-stu-id="11d5d-298">IceWall Federation Version 3.0</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-299">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-299">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-300">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-300">Client</span></span> | <span data-ttu-id="11d5d-301">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-301">Support</span></span> | <span data-ttu-id="11d5d-302">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-302">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Não é suportada a autenticação integrada do Windows |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Não é suportada a autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-303">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-303">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-304">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-304">Supported</span></span> |<span data-ttu-id="11d5d-305">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-305">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-306">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-306">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-307">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-307">Supported</span></span> |<span data-ttu-id="11d5d-308">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-308">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-309">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-309">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-310">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-310">Supported</span></span> |<span data-ttu-id="11d5d-311">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-311">None</span></span> |
 
-Para obter mais informações sobre IceWall Federação, consulte [IceWall Federação versão 3.0](http://h50146.www5.hp.com/products/software/security/icewall/eng/federation/) e [IceWall federação com o Office 365](http://h50146.www5.hp.com/products/software/security/icewall/federation/office365.html).
+<span data-ttu-id="11d5d-312">Para obter mais informações sobre IceWall Federação, consulte [IceWall Federação versão 3.0](http://h50146.www5.hp.com/products/software/security/icewall/eng/federation/) e [IceWall federação com o Office 365](http://h50146.www5.hp.com/products/software/security/icewall/federation/office365.html).</span><span class="sxs-lookup"><span data-stu-id="11d5d-312">For more information about IceWall Federation, see [IceWall Federation Version 3.0](http://h50146.www5.hp.com/products/software/security/icewall/eng/federation/) and [IceWall Federation with Office 365](http://h50146.www5.hp.com/products/software/security/icewall/federation/office365.html).</span></span>
 
-## <a name="memority"></a>Memority
+## <a name="memority"></a><span data-ttu-id="11d5d-313">Memority</span><span class="sxs-lookup"><span data-stu-id="11d5d-313">Memority</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão: 
+<span data-ttu-id="11d5d-314">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão:</span><span class="sxs-lookup"><span data-stu-id="11d5d-314">hello following is hello scenario support matrix for this sign-on experience:</span></span> 
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-315">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-315">Client</span></span> | <span data-ttu-id="11d5d-316">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-316">Support</span></span> | <span data-ttu-id="11d5d-317">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-317">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-318">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-318">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-319">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-319">Supported</span></span> |<span data-ttu-id="11d5d-320">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-320">None</span></span> |
+| <span data-ttu-id="11d5d-321">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-321">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-322">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-322">Supported</span></span> |<span data-ttu-id="11d5d-323">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-323">None</span></span> |
+| <span data-ttu-id="11d5d-324">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-324">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-325">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-325">Supported</span></span> |<span data-ttu-id="11d5d-326">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-326">None</span></span> |
 
-Para obter mais informações sobre como utilizar Memority consulte [Memority](http://www.memority.com).
+<span data-ttu-id="11d5d-327">Para obter mais informações sobre como utilizar Memority consulte [Memority](http://www.memority.com).</span><span class="sxs-lookup"><span data-stu-id="11d5d-327">For more information about using Memority see [Memority](http://www.memority.com).</span></span>
 
 
-## <a name="netiq-access-manager-4x"></a>Gestor de acesso de NetIQ 4. x
+## <a name="netiq-access-manager-4x"></a><span data-ttu-id="11d5d-328">Gestor de acesso de NetIQ 4. x</span><span class="sxs-lookup"><span data-stu-id="11d5d-328">NetIQ Access Manager 4.x</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-329">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-329">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-330">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-330">Client</span></span> | <span data-ttu-id="11d5d-331">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-331">Support</span></span> | <span data-ttu-id="11d5d-332">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-332">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma|
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma|
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-333">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-333">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-334">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-334">Supported</span></span> |<span data-ttu-id="11d5d-335">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-335">None</span></span>|
+| <span data-ttu-id="11d5d-336">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-336">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-337">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-337">Supported</span></span> |<span data-ttu-id="11d5d-338">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-338">None</span></span>|
+| <span data-ttu-id="11d5d-339">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-339">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-340">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-340">Supported</span></span> |<span data-ttu-id="11d5d-341">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-341">None</span></span> |
 
-Para obter mais informações, consulte [Gestor de acesso de NetIQ](https://www.netiq.com/documentation/access-manager-43/admin/data/b65ogn0.html#b12iqp0m).
+<span data-ttu-id="11d5d-342">Para obter mais informações, consulte [Gestor de acesso de NetIQ](https://www.netiq.com/documentation/access-manager-43/admin/data/b65ogn0.html#b12iqp0m).</span><span class="sxs-lookup"><span data-stu-id="11d5d-342">For more information, see [NetIQ Access Manager](https://www.netiq.com/documentation/access-manager-43/admin/data/b65ogn0.html#b12iqp0m).</span></span>
 
-## <a name="okta"></a>Okta
+## <a name="okta"></a><span data-ttu-id="11d5d-343">Okta</span><span class="sxs-lookup"><span data-stu-id="11d5d-343">Okta</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único: 
+<span data-ttu-id="11d5d-344">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-344">hello following is hello scenario support matrix for this single sign-on experience:</span></span> 
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-345">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-345">Client</span></span> | <span data-ttu-id="11d5d-346">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-346">Support</span></span> | <span data-ttu-id="11d5d-347">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-347">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Autenticação integrada do Windows requer a configuração do servidor web adicional e aplicação de Okta. |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-348">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-348">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-349">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-349">Supported</span></span> |<span data-ttu-id="11d5d-350">Autenticação integrada do Windows requer a configuração do servidor web adicional e aplicação de Okta.</span><span class="sxs-lookup"><span data-stu-id="11d5d-350">Integrated Windows Authentication requires setup of additional web server and Okta application.</span></span> |
+| <span data-ttu-id="11d5d-351">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-351">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-352">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-352">Supported</span></span> |<span data-ttu-id="11d5d-353">Autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-353">Integrated Windows Authentication</span></span> |
+| <span data-ttu-id="11d5d-354">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-354">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-355">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-355">Supported</span></span> |<span data-ttu-id="11d5d-356">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-356">None</span></span> |
 
-Para mais informações sobre Okta, consulte [Okta](https://www.okta.com/).
+<span data-ttu-id="11d5d-357">Para mais informações sobre Okta, consulte [Okta](https://www.okta.com/).</span><span class="sxs-lookup"><span data-stu-id="11d5d-357">For more information about Okta, see [Okta](https://www.okta.com/).</span></span>
 
-## <a name="onelogin"></a>OneLogin
+## <a name="onelogin"></a><span data-ttu-id="11d5d-358">OneLogin</span><span class="sxs-lookup"><span data-stu-id="11d5d-358">OneLogin</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único: 
+<span data-ttu-id="11d5d-359">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-359">hello following is hello scenario support matrix for this single sign-on experience:</span></span> 
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-360">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-360">Client</span></span> | <span data-ttu-id="11d5d-361">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-361">Support</span></span> | <span data-ttu-id="11d5d-362">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-362">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Autenticação integrada do Windows |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-363">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-363">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-364">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-364">Supported</span></span> |<span data-ttu-id="11d5d-365">Autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-365">Integrated Windows Authentication</span></span> |
+| <span data-ttu-id="11d5d-366">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-366">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-367">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-367">Supported</span></span> |<span data-ttu-id="11d5d-368">Autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-368">Integrated Windows Authentication</span></span> |
+| <span data-ttu-id="11d5d-369">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-369">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-370">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-370">Supported</span></span> |<span data-ttu-id="11d5d-371">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-371">None</span></span> |
 
-Para mais informações sobre OneLogin, consulte [OneLogin](https://www.onelogin.com/).
+<span data-ttu-id="11d5d-372">Para mais informações sobre OneLogin, consulte [OneLogin](https://www.onelogin.com/).</span><span class="sxs-lookup"><span data-stu-id="11d5d-372">For more information about OneLogin, see [OneLogin](https://www.onelogin.com/).</span></span>
 
-## <a name="optimal-idm-virtual-identity-server-federation-services"></a>Serviços de Federação de servidor do Virtual identidade IDM ideal
+## <a name="optimal-idm-virtual-identity-server-federation-services"></a><span data-ttu-id="11d5d-373">Serviços de Federação de servidor do Virtual identidade IDM ideal</span><span class="sxs-lookup"><span data-stu-id="11d5d-373">Optimal IDM Virtual Identity Server Federation Services</span></span>
 
-seguinte Olá é Olá matriz de suporte de cenário esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-374">seguinte Olá é Olá matriz de suporte de cenário esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-374">hello following is hello scenario support matrix this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-375">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-375">Client</span></span> | <span data-ttu-id="11d5d-376">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-376">Support</span></span> | <span data-ttu-id="11d5d-377">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-377">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |
+| <span data-ttu-id="11d5d-378">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-378">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-379">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-379">Supported</span></span> |<span data-ttu-id="11d5d-380">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-380">None</span></span> |
+| <span data-ttu-id="11d5d-381">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-381">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-382">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-382">Supported</span></span> |<span data-ttu-id="11d5d-383">Autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-383">Integrated Windows Authentication</span></span> |
+| <span data-ttu-id="11d5d-384">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-384">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-385">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-385">Supported</span></span> |
 
-Para obter mais informações sobre o cliente Consulte de políticas de acesso [tooOffice de limitar o acesso a 365 serviços com base no Olá localização do cliente de Olá](https://technet.microsoft.com/library/hh526961.aspx).
-
-
+<span data-ttu-id="11d5d-386">Para obter mais informações sobre o cliente Consulte de políticas de acesso [tooOffice de limitar o acesso a 365 serviços com base no Olá localização do cliente de Olá](https://technet.microsoft.com/library/hh526961.aspx).</span><span class="sxs-lookup"><span data-stu-id="11d5d-386">For more information about client access polices see [Limiting Access tooOffice 365 Services Based on hello Location of hello Client](https://technet.microsoft.com/library/hh526961.aspx).</span></span>
 
 
 
-## <a name="pingfederate-611-72-8x"></a>PingFederate 6.11, 7.2, 8. x
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
 
-| Cliente | Suporte | Exceções |
+## <a name="pingfederate-611-72-8x"></a><span data-ttu-id="11d5d-387">PingFederate 6.11, 7.2, 8. x</span><span class="sxs-lookup"><span data-stu-id="11d5d-387">PingFederate 6.11, 7.2, 8.x</span></span>
+
+<span data-ttu-id="11d5d-388">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-388">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
+
+| <span data-ttu-id="11d5d-389">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-389">Client</span></span> | <span data-ttu-id="11d5d-390">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-390">Support</span></span> | <span data-ttu-id="11d5d-391">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-391">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-392">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-392">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-393">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-393">Supported</span></span> |<span data-ttu-id="11d5d-394">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-394">None</span></span> |
+| <span data-ttu-id="11d5d-395">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-395">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-396">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-396">Supported</span></span> |<span data-ttu-id="11d5d-397">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-397">None</span></span> |
+| <span data-ttu-id="11d5d-398">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-398">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-399">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-399">Supported</span></span> |<span data-ttu-id="11d5d-400">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-400">None</span></span> |
 
-Para Olá PingFederate obter instruções sobre como tooconfigure este STS tooprovide Olá-início de sessão único experiência de utilizadores do Active Directory tooyour, consulte um dos seguintes Olá: 
+<span data-ttu-id="11d5d-401">Para Olá PingFederate obter instruções sobre como tooconfigure este STS tooprovide Olá-início de sessão único experiência de utilizadores do Active Directory tooyour, consulte um dos seguintes Olá:</span><span class="sxs-lookup"><span data-stu-id="11d5d-401">For hello PingFederate instructions on how tooconfigure this STS tooprovide hello single sign-on experience tooyour Active Directory users, see one of hello following:</span></span> 
 
-- [PingFederate 6.11](http://go.microsoft.com/fwlink/?LinkID=266321)
-- [PingFederate 7.2](http://documentation.pingidentity.com/display/PF72/PingFederate+7.2)
-- [PingFederate 8. x](http://documentation.pingidentity.com/display/PFS/SSO+to+Office+365+Introduction)
+- [<span data-ttu-id="11d5d-402">PingFederate 6.11</span><span class="sxs-lookup"><span data-stu-id="11d5d-402">PingFederate 6.11</span></span>](http://go.microsoft.com/fwlink/?LinkID=266321)
+- [<span data-ttu-id="11d5d-403">PingFederate 7.2</span><span class="sxs-lookup"><span data-stu-id="11d5d-403">PingFederate 7.2</span></span>](http://documentation.pingidentity.com/display/PF72/PingFederate+7.2)
+- [<span data-ttu-id="11d5d-404">PingFederate 8. x</span><span class="sxs-lookup"><span data-stu-id="11d5d-404">PingFederate 8.x</span></span>](http://documentation.pingidentity.com/display/PFS/SSO+to+Office+365+Introduction)
 
-## <a name="radiantone-cfs-30"></a>RadiantOne CFS 3.0
+## <a name="radiantone-cfs-30"></a><span data-ttu-id="11d5d-405">RadiantOne CFS 3.0</span><span class="sxs-lookup"><span data-stu-id="11d5d-405">RadiantOne CFS 3.0</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único: 
+<span data-ttu-id="11d5d-406">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-406">hello following is hello scenario support matrix for this single sign-on experience:</span></span> 
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-407">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-407">Client</span></span> | <span data-ttu-id="11d5d-408">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-408">Support</span></span> | <span data-ttu-id="11d5d-409">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-409">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-410">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-410">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-411">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-411">Supported</span></span> |<span data-ttu-id="11d5d-412">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-412">None</span></span> |
+| <span data-ttu-id="11d5d-413">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-413">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-414">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-414">Supported</span></span> |<span data-ttu-id="11d5d-415">Autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-415">Integrated Windows Authentication</span></span> |
+| <span data-ttu-id="11d5d-416">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-416">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-417">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-417">Supported</span></span> |<span data-ttu-id="11d5d-418">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-418">None</span></span> |
 
-Para obter mais informações sobre RadiantOne CFS, consulte [RadiantOne CFS](http://www.radiantlogic.com/products/radiantone-cfs/).
+<span data-ttu-id="11d5d-419">Para obter mais informações sobre RadiantOne CFS, consulte [RadiantOne CFS](http://www.radiantlogic.com/products/radiantone-cfs/).</span><span class="sxs-lookup"><span data-stu-id="11d5d-419">For more information about RadiantOne CFS, see [RadiantOne CFS](http://www.radiantlogic.com/products/radiantone-cfs/).</span></span>
 
-## <a name="sailpoint-identitynow"></a>Sailpoint IdentityNow
+## <a name="sailpoint-identitynow"></a><span data-ttu-id="11d5d-420">Sailpoint IdentityNow</span><span class="sxs-lookup"><span data-stu-id="11d5d-420">Sailpoint IdentityNow</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-421">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-421">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-422">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-422">Client</span></span> | <span data-ttu-id="11d5d-423">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-423">Support</span></span> | <span data-ttu-id="11d5d-424">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-424">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Não é suportada a autenticação integrada do Windows |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Não é suportada a autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-425">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-425">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-426">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-426">Supported</span></span> |<span data-ttu-id="11d5d-427">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-427">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-428">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-428">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-429">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-429">Supported</span></span> |<span data-ttu-id="11d5d-430">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-430">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-431">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-431">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-432">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-432">Supported</span></span> |<span data-ttu-id="11d5d-433">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-433">None</span></span> |
 
-Para obter mais informações, consulte [Sailpoint IdentityNow](https://www.sailpoint.com/idaas-identity-as-a-service-identitynow/).
+<span data-ttu-id="11d5d-434">Para obter mais informações, consulte [Sailpoint IdentityNow](https://www.sailpoint.com/idaas-identity-as-a-service-identitynow/).</span><span class="sxs-lookup"><span data-stu-id="11d5d-434">For more information, see [Sailpoint IdentityNow](https://www.sailpoint.com/idaas-identity-as-a-service-identitynow/).</span></span>
 
-## <a name="secureauth-idp-720"></a>SecureAuth IdP 7.2.0
+## <a name="secureauth-idp-720"></a><span data-ttu-id="11d5d-435">SecureAuth IdP 7.2.0</span><span class="sxs-lookup"><span data-stu-id="11d5d-435">SecureAuth IdP 7.2.0</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único: 
+<span data-ttu-id="11d5d-436">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-436">hello following is hello scenario support matrix for this single sign-on experience:</span></span> 
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-437">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-437">Client</span></span> | <span data-ttu-id="11d5d-438">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-438">Support</span></span> | <span data-ttu-id="11d5d-439">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-439">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Nenhuma |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-440">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-440">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-441">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-441">Supported</span></span> |<span data-ttu-id="11d5d-442">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-442">None</span></span> |
+| <span data-ttu-id="11d5d-443">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-443">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-444">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-444">Supported</span></span> |<span data-ttu-id="11d5d-445">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-445">None</span></span> |
+| <span data-ttu-id="11d5d-446">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-446">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-447">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-447">Supported</span></span> |<span data-ttu-id="11d5d-448">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-448">None</span></span> |
 
-Para mais informações sobre SecureAuth, consulte [SecureAuth IdP](http://go.microsoft.com/?linkid=9845293).
-
-
+<span data-ttu-id="11d5d-449">Para mais informações sobre SecureAuth, consulte [SecureAuth IdP](http://go.microsoft.com/?linkid=9845293).</span><span class="sxs-lookup"><span data-stu-id="11d5d-449">For more information about SecureAuth, see [SecureAuth IdP](http://go.microsoft.com/?linkid=9845293).</span></span>
 
 
 
@@ -341,39 +339,41 @@ Para mais informações sobre SecureAuth, consulte [SecureAuth IdP](http://go.mi
 
 
 
-## <a name="signgo-53"></a>Inicie sessão & go 5.3
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
 
-| Cliente | Suporte | Exceções |
+## <a name="signgo-53"></a><span data-ttu-id="11d5d-450">Inicie sessão & go 5.3</span><span class="sxs-lookup"><span data-stu-id="11d5d-450">Sign&go 5.3</span></span>
+
+<span data-ttu-id="11d5d-451">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-451">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
+
+| <span data-ttu-id="11d5d-452">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-452">Client</span></span> | <span data-ttu-id="11d5d-453">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-453">Support</span></span> | <span data-ttu-id="11d5d-454">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-454">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Contratos de Kerberos suportada |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Nenhuma |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-455">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-455">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-456">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-456">Supported</span></span> |<span data-ttu-id="11d5d-457">Contratos de Kerberos suportada</span><span class="sxs-lookup"><span data-stu-id="11d5d-457">Kerberos Contracts supported</span></span> |
+| <span data-ttu-id="11d5d-458">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-458">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-459">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-459">Supported</span></span> |<span data-ttu-id="11d5d-460">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-460">None</span></span> |
+| <span data-ttu-id="11d5d-461">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-461">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-462">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-462">Supported</span></span> |<span data-ttu-id="11d5d-463">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-463">None</span></span> |
 
-Início de sessão & go 5.3 suporta a autenticação Kerberos através da configuração de um contrato de Kerberos.  Para obter ajuda com esta configuração, contacte o guia de configuração de Olá Ilex ou vista [sessão & go](http://www.ilex-international.com/docs/sign&go_wsfederation_en.pdf)
+<span data-ttu-id="11d5d-464">Início de sessão & go 5.3 suporta a autenticação Kerberos através da configuração de um contrato de Kerberos.</span><span class="sxs-lookup"><span data-stu-id="11d5d-464">Sign&go 5.3 supports Kerberos authentication via configuration of a Kerberos Contract.</span></span>  <span data-ttu-id="11d5d-465">Para obter ajuda com esta configuração, contacte o guia de configuração de Olá Ilex ou vista [sessão & go](http://www.ilex-international.com/docs/sign&go_wsfederation_en.pdf)</span><span class="sxs-lookup"><span data-stu-id="11d5d-465">For assistance with this configuration, please contact Ilex or view hello setup guide [Sign&go](http://www.ilex-international.com/docs/sign&go_wsfederation_en.pdf)</span></span>
 
-## <a name="softbank-technology-online-service-gate"></a>Porta de serviço Online da tecnologia de SoftBank
+## <a name="softbank-technology-online-service-gate"></a><span data-ttu-id="11d5d-466">Porta de serviço Online da tecnologia de SoftBank</span><span class="sxs-lookup"><span data-stu-id="11d5d-466">SoftBank Technology Online Service Gate</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-467">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-467">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-468">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-468">Client</span></span> | <span data-ttu-id="11d5d-469">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-469">Support</span></span> | <span data-ttu-id="11d5d-470">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-470">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Não é suportada a autenticação integrada do Windows |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Não é suportada a autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-471">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-471">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-472">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-472">Supported</span></span> |<span data-ttu-id="11d5d-473">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-473">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-474">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-474">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-475">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-475">Supported</span></span> |<span data-ttu-id="11d5d-476">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-476">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-477">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-477">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-478">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-478">Supported</span></span> |<span data-ttu-id="11d5d-479">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-479">None</span></span> |
 
-Para obter mais informações sobre a porta de serviço Online do SoftBank tecnologia consulte [Softbank](https://www.softbanktech.jp/service/list/osg-pro-ent/)
+<span data-ttu-id="11d5d-480">Para obter mais informações sobre a porta de serviço Online do SoftBank tecnologia consulte [Softbank](https://www.softbanktech.jp/service/list/osg-pro-ent/)</span><span class="sxs-lookup"><span data-stu-id="11d5d-480">For more information about SoftBank Technology Online Service Gate see [Softbank](https://www.softbanktech.jp/service/list/osg-pro-ent/)</span></span>
 
-## <a name="vmware-workspace-one"></a>Área de trabalho VMware um
+## <a name="vmware-workspace-one"></a><span data-ttu-id="11d5d-481">Área de trabalho VMware um</span><span class="sxs-lookup"><span data-stu-id="11d5d-481">VMware Workspace One</span></span>
 
-Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:
+<span data-ttu-id="11d5d-482">Olá que se segue matriz de suporte de cenário Olá para esta experiência de início de sessão único:</span><span class="sxs-lookup"><span data-stu-id="11d5d-482">hello following is hello scenario support matrix for this single sign-on experience:</span></span>
 
-| Cliente | Suporte | Exceções |
+| <span data-ttu-id="11d5d-483">Cliente</span><span class="sxs-lookup"><span data-stu-id="11d5d-483">Client</span></span> | <span data-ttu-id="11d5d-484">Suporte</span><span class="sxs-lookup"><span data-stu-id="11d5d-484">Support</span></span> | <span data-ttu-id="11d5d-485">Exceções</span><span class="sxs-lookup"><span data-stu-id="11d5d-485">Exceptions</span></span> |
 | --- | --- | --- |
-| Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online |Suportado |Não é suportada a autenticação integrada do Windows |
-| Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM |Suportado |Não é suportada a autenticação integrada do Windows |
-| Clientes de e-mail Avançada, tais como o Outlook e ActiveSync |Suportado |Nenhuma |
+| <span data-ttu-id="11d5d-486">Clientes baseados na Web, tais como o acesso Web do Exchange e ao SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="11d5d-486">Web-based clients such as Exchange Web Access and SharePoint Online</span></span> |<span data-ttu-id="11d5d-487">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-487">Supported</span></span> |<span data-ttu-id="11d5d-488">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-488">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-489">Aplicações de clientes avançados, tais como o Lync, a subscrição do Office, CRM</span><span class="sxs-lookup"><span data-stu-id="11d5d-489">Rich client applications such as Lync, Office Subscription, CRM</span></span> |<span data-ttu-id="11d5d-490">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-490">Supported</span></span> |<span data-ttu-id="11d5d-491">Não é suportada a autenticação integrada do Windows</span><span class="sxs-lookup"><span data-stu-id="11d5d-491">Integrated Windows Authentication is not supported</span></span> |
+| <span data-ttu-id="11d5d-492">Clientes de e-mail Avançada, tais como o Outlook e ActiveSync</span><span class="sxs-lookup"><span data-stu-id="11d5d-492">Email-rich clients such as Outlook and ActiveSync</span></span> |<span data-ttu-id="11d5d-493">Suportado</span><span class="sxs-lookup"><span data-stu-id="11d5d-493">Supported</span></span> |<span data-ttu-id="11d5d-494">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="11d5d-494">None</span></span> |
 
-Para obter mais informações sobre consulte [um de área de trabalho do VMware](http://www.vmware.com/pdf/vidm-office365-saml.pdf)
+<span data-ttu-id="11d5d-495">Para obter mais informações sobre consulte [um de área de trabalho do VMware](http://www.vmware.com/pdf/vidm-office365-saml.pdf)</span><span class="sxs-lookup"><span data-stu-id="11d5d-495">For more information about see [VMware Workspace One](http://www.vmware.com/pdf/vidm-office365-saml.pdf)</span></span>
 

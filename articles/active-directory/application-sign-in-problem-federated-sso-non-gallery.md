@@ -19,223 +19,223 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="problems-signing-in-tooa-non-gallery-application-configured-for-federated-single-sign-on"></a>Problemas de início de sessão na aplicação de Galeria não tooa configurada para federado-início de sessão único
+# <a name="problems-signing-in-tooa-non-gallery-application-configured-for-federated-single-sign-on"></a><span data-ttu-id="6c9fc-103">Problemas de início de sessão na aplicação de Galeria não tooa configurada para federado-início de sessão único</span><span class="sxs-lookup"><span data-stu-id="6c9fc-103">Problems signing in tooa non-gallery application configured for federated single sign-on</span></span>
 
-tootroubleshoot o problema, tem de configuração da aplicação Olá tooverify no Azure AD como seguir:
+<span data-ttu-id="6c9fc-104">tootroubleshoot o problema, tem de configuração da aplicação Olá tooverify no Azure AD como seguir:</span><span class="sxs-lookup"><span data-stu-id="6c9fc-104">tootroubleshoot your problem, you need tooverify hello application configuration in Azure AD as follow:</span></span>
 
--   Seguiu todos os passos de configuração de Olá de Olá aplicação de galeria do Azure AD.
+-   <span data-ttu-id="6c9fc-105">Seguiu todos os passos de configuração de Olá de Olá aplicação de galeria do Azure AD.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-105">You have followed all hello configuration steps for hello Azure AD gallery application.</span></span>
 
--   corresponder estes valores esperados na aplicação Olá Olá identificador e o URL de resposta configurado no AAD
+-   <span data-ttu-id="6c9fc-106">corresponder estes valores esperados na aplicação Olá Olá identificador e o URL de resposta configurado no AAD</span><span class="sxs-lookup"><span data-stu-id="6c9fc-106">hello Identifier and Reply URL configured in AAD match they expected values in hello application</span></span>
 
--   Atribuiu utilizadores toohello aplicação
+-   <span data-ttu-id="6c9fc-107">Atribuiu utilizadores toohello aplicação</span><span class="sxs-lookup"><span data-stu-id="6c9fc-107">You have assigned users toohello application</span></span>
 
-## <a name="application-not-found-in-directory"></a>Não foi encontrada no diretório de aplicação
+## <a name="application-not-found-in-directory"></a><span data-ttu-id="6c9fc-108">Não foi encontrada no diretório de aplicação</span><span class="sxs-lookup"><span data-stu-id="6c9fc-108">Application not found in directory</span></span>
 
-*AADSTS70001 de erro: A aplicação com o identificador 'https://contoso.com' não foi encontrada no diretório de Olá*.
+<span data-ttu-id="6c9fc-109">*AADSTS70001 de erro: A aplicação com o identificador 'https://contoso.com' não foi encontrada no diretório de Olá*.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-109">*Error AADSTS70001: Application with Identifier ‘https://contoso.com’ was not found in hello directory*.</span></span>
 
-**Uma causa possível**
+<span data-ttu-id="6c9fc-110">**Uma causa possível**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-110">**Possible cause**</span></span>
 
-atributo de emissor Olá envia de Olá aplicação tooAzure que AD no pedido SAML Olá não corresponde ao valor do identificador de Olá configurado na aplicação Olá do Azure AD.
+<span data-ttu-id="6c9fc-111">atributo de emissor Olá envia de Olá aplicação tooAzure que AD no pedido SAML Olá não corresponde ao valor do identificador de Olá configurado na aplicação Olá do Azure AD.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-111">hello Issuer attribute sends from hello application tooAzure AD in hello SAML request doesn’t match hello Identifier value configured in hello application Azure AD.</span></span>
 
-**Resolução**
+<span data-ttu-id="6c9fc-112">**Resolução**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-112">**Resolution**</span></span>
 
-Certifique-se esse atributo de emissor Olá no pedido SAML Olá correspondência Olá valor do identificador configurado no Azure AD:
+<span data-ttu-id="6c9fc-113">Certifique-se esse atributo de emissor Olá no pedido SAML Olá correspondência Olá valor do identificador configurado no Azure AD:</span><span class="sxs-lookup"><span data-stu-id="6c9fc-113">Ensure that hello Issuer attribute in hello SAML request it’s matching hello Identifier value configured in Azure AD:</span></span>
 
-1.  Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global** ou **Co-administrador.**
+1.  <span data-ttu-id="6c9fc-114">Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global** ou **Co-administrador.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-114">Open hello [**Azure Portal**](https://portal.azure.com/) and sign in as a **Global Administrator** or **Co-admin.**</span></span>
 
-2.  Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá.
+2.  <span data-ttu-id="6c9fc-115">Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-115">Open hello **Azure Active Directory Extension** by clicking **More services** at hello bottom of hello main left hand navigation menu.</span></span>
 
-3.  Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item.
+3.  <span data-ttu-id="6c9fc-116">Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-116">Type in **“Azure Active Directory**” in hello filter search box and select hello **Azure Active Directory** item.</span></span>
 
-4.  Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory.
+4.  <span data-ttu-id="6c9fc-117">Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-117">click **Enterprise Applications** from hello Azure Active Directory left hand navigation menu.</span></span>
 
-5.  Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações.
+5.  <span data-ttu-id="6c9fc-118">Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-118">click **All Applications** tooview a list of all your applications.</span></span>
 
-   * Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**
+   * <span data-ttu-id="6c9fc-119">Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-119">If you do not see hello application you want show up here, use hello **Filter** control at hello top of hello **All Applications List** and set hello **Show** option too**All Applications.**</span></span>
 
-6.  Selecione aplicação Olá pretende tooconfigure-início de sessão único.
+6.  <span data-ttu-id="6c9fc-120">Selecione aplicação Olá pretende tooconfigure-início de sessão único.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-120">Select hello application you want tooconfigure single sign-on.</span></span>
 
-7.  Quando carrega a aplicação Olá, clique em Olá **de sessão único-** do menu de navegação esquerdo da aplicação Olá.
+7.  <span data-ttu-id="6c9fc-121">Quando carrega a aplicação Olá, clique em Olá **de sessão único-** do menu de navegação esquerdo da aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-121">Once hello application loads, click hello **Single sign-on** from hello application’s left hand navigation menu.</span></span>
 
-8.  <span id="_Hlk477190042" class="anchor"></span>Aceda demasiado**domínios e URLs** secção. Certifique-se de que o valor na caixa de texto valor Olá para o valor do identificador de Olá apresentado no registo de erros Olá correspondência de identificador de Olá Olá.
+8.  <span data-ttu-id="6c9fc-122"><span id="_Hlk477190042" class="anchor"></span>Aceda demasiado**domínios e URLs** secção.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-122"><span id="_Hlk477190042" class="anchor"></span>Go too**Domain and URLs** section.</span></span> <span data-ttu-id="6c9fc-123">Certifique-se de que o valor na caixa de texto valor Olá para o valor do identificador de Olá apresentado no registo de erros Olá correspondência de identificador de Olá Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-123">Verify that hello value in hello Identifier textbox is matching hello value for hello identifier value displayed in hello error.</span></span>
 
-Depois de ter atualizado o valor do identificador de Olá no Azure AD e de Olá valor correspondente envia pela aplicação Olá no pedido SAML Olá, deve ser capaz de toosign na aplicação toohello.
+<span data-ttu-id="6c9fc-124">Depois de ter atualizado o valor do identificador de Olá no Azure AD e de Olá valor correspondente envia pela aplicação Olá no pedido SAML Olá, deve ser capaz de toosign na aplicação toohello.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-124">After you have updated hello Identifier value in Azure AD and it’s matching hello value sends by hello application in hello SAML request, you should be able toosign in toohello application.</span></span>
 
-## <a name="hello-reply-address-does-not-match-hello-reply-addresses-configured-for-hello-application"></a>endereço de resposta de Olá não correspondem aos endereços de resposta de Olá configurados para a aplicação Olá. 
+## <a name="hello-reply-address-does-not-match-hello-reply-addresses-configured-for-hello-application"></a><span data-ttu-id="6c9fc-125">endereço de resposta de Olá não correspondem aos endereços de resposta de Olá configurados para a aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-125">hello reply address does not match hello reply addresses configured for hello application.</span></span> 
 
-*AADSTS50011 de erro: o endereço de resposta de Olá 'https://contoso.com' não correspondem aos endereços de resposta de Olá configurados para a aplicação Olá* 
+<span data-ttu-id="6c9fc-126">*AADSTS50011 de erro: o endereço de resposta de Olá 'https://contoso.com' não correspondem aos endereços de resposta de Olá configurados para a aplicação Olá*</span><span class="sxs-lookup"><span data-stu-id="6c9fc-126">*Error AADSTS50011: hello reply address ‘https://contoso.com’ does not match hello reply addresses configured for hello application*</span></span> 
 
-**Uma causa possível** 
+<span data-ttu-id="6c9fc-127">**Uma causa possível**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-127">**Possible cause**</span></span> 
 
-Olá AssertionConsumerServiceURL valor no pedido SAML Olá não corresponde ao valor de URL de resposta de Olá ou padrão configurado no Azure AD. Olá AssertionConsumerServiceURL valor no pedido SAML Olá é URL Olá, consulte o erro de Olá. 
+<span data-ttu-id="6c9fc-128">Olá AssertionConsumerServiceURL valor no pedido SAML Olá não corresponde ao valor de URL de resposta de Olá ou padrão configurado no Azure AD.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-128">hello AssertionConsumerServiceURL value in hello SAML request doesn't match hello Reply URL value or pattern configured in Azure AD.</span></span> <span data-ttu-id="6c9fc-129">Olá AssertionConsumerServiceURL valor no pedido SAML Olá é URL Olá, consulte o erro de Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-129">hello AssertionConsumerServiceURL value in hello SAML request is hello URL you see in hello error.</span></span> 
 
-**Resolução** 
+<span data-ttu-id="6c9fc-130">**Resolução**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-130">**Resolution**</span></span> 
 
-Certifique-se de que o valor AssertionConsumerServiceURL Olá no pedido SAML Olá de correspondente Olá valor do URL de resposta configurado no Azure AD. 
+<span data-ttu-id="6c9fc-131">Certifique-se de que o valor AssertionConsumerServiceURL Olá no pedido SAML Olá de correspondente Olá valor do URL de resposta configurado no Azure AD.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-131">Ensure that hello AssertionConsumerServiceURL value in hello SAML request it's matching hello Reply URL value configured in Azure AD.</span></span> 
  
-1.  Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global** ou **Co-administrador.** 
+1.  <span data-ttu-id="6c9fc-132">Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global** ou **Co-administrador.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-132">Open hello [**Azure Portal**](https://portal.azure.com/) and sign in as a **Global Administrator** or **Co-admin.**</span></span> 
 
-2.  Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá. 
+2.  <span data-ttu-id="6c9fc-133">Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-133">Open hello **Azure Active Directory Extension** by clicking **More services** at hello bottom of hello main left hand navigation menu.</span></span> 
 
-3.  Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item. 
+3.  <span data-ttu-id="6c9fc-134">Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-134">Type in **“Azure Active Directory**” in hello filter search box and select hello **Azure Active Directory** item.</span></span> 
 
-4.  Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory. 
+4.  <span data-ttu-id="6c9fc-135">Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-135">click **Enterprise Applications** from hello Azure Active Directory left hand navigation menu.</span></span> 
 
-5.  Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações. 
+5.  <span data-ttu-id="6c9fc-136">Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-136">click **All Applications** tooview a list of all your applications.</span></span> 
 
-  * Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**
+  * <span data-ttu-id="6c9fc-137">Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-137">If you do not see hello application you want show up here, use hello **Filter** control at hello top of hello **All Applications List** and       set hello **Show** option too**All Applications.**</span></span>
   
-6.  Selecionar aplicação Olá pretende tooconfigure-início de sessão único
+6.  <span data-ttu-id="6c9fc-138">Selecionar aplicação Olá pretende tooconfigure-início de sessão único</span><span class="sxs-lookup"><span data-stu-id="6c9fc-138">Select hello application you want tooconfigure single sign-on</span></span>
 
-7.  Quando carrega a aplicação Olá, clique em Olá **de sessão único-** do menu de navegação esquerdo da aplicação Olá.
+7.  <span data-ttu-id="6c9fc-139">Quando carrega a aplicação Olá, clique em Olá **de sessão único-** do menu de navegação esquerdo da aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-139">Once hello application loads, click hello **Single sign-on** from hello application’s left hand navigation menu.</span></span>
 
-8.  Aceda demasiado**domínios e URLs** secção. Certifique-se ou Atualize o valor Olá Olá de toomatch AssertionConsumerServiceURL valor no pedido SAML Olá do Olá URL de resposta caixa de texto.
+8.  <span data-ttu-id="6c9fc-140">Aceda demasiado**domínios e URLs** secção.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-140">Go too**Domain and URLs** section.</span></span> <span data-ttu-id="6c9fc-141">Certifique-se ou Atualize o valor Olá Olá de toomatch AssertionConsumerServiceURL valor no pedido SAML Olá do Olá URL de resposta caixa de texto.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-141">Verify or update hello value in hello Reply URL textbox toomatch hello AssertionConsumerServiceURL value in hello SAML request.</span></span>
 
-  * Se não vir a caixa de texto de URL de resposta de Olá, selecione Olá **Mostrar avançadas definições de URL** caixa de verificação. 
+  * <span data-ttu-id="6c9fc-142">Se não vir a caixa de texto de URL de resposta de Olá, selecione Olá **Mostrar avançadas definições de URL** caixa de verificação.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-142">If you don't see hello Reply URL textbox, select hello **Show advanced URL settings** checkbox.</span></span> 
 
-Depois de ter atualizado o valor do URL de resposta de Olá no Azure AD e tem de correspondência do valor de Olá envia pela aplicação Olá em Olá pedido SAML, deve ser capaz de toosign na aplicação toohello.
+<span data-ttu-id="6c9fc-143">Depois de ter atualizado o valor do URL de resposta de Olá no Azure AD e tem de correspondência do valor de Olá envia pela aplicação Olá em Olá pedido SAML, deve ser capaz de toosign na aplicação toohello.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-143">After you have updated hello Reply URL value in Azure AD and it’s matching hello value sends by hello application in hello SAML request, you should be able toosign in toohello application.</span></span>
 
-## <a name="user-not-assigned-a-role"></a>Não atribuído uma função de utilizador
+## <a name="user-not-assigned-a-role"></a><span data-ttu-id="6c9fc-144">Não atribuído uma função de utilizador</span><span class="sxs-lookup"><span data-stu-id="6c9fc-144">User not assigned a role</span></span>
 
-*Erro AADSTS50105: Olá com sessão iniciada utilizador 'brian@contoso.com' não está atribuído a função de tooa para aplicação Olá*
+<span data-ttu-id="6c9fc-145">*Erro AADSTS50105: Olá com sessão iniciada utilizador 'brian@contoso.com' não está atribuído a função de tooa para aplicação Olá*</span><span class="sxs-lookup"><span data-stu-id="6c9fc-145">*Error AADSTS50105: hello signed in user 'brian@contoso.com' is not assigned tooa role for hello application*</span></span>
 
-**Uma causa possível**
+<span data-ttu-id="6c9fc-146">**Uma causa possível**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-146">**Possible cause**</span></span>
 
-Olá tem não foi concedido ao utilizador acesso toohello aplicação no Azure AD.
+<span data-ttu-id="6c9fc-147">Olá tem não foi concedido ao utilizador acesso toohello aplicação no Azure AD.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-147">hello user has not been granted access toohello application in Azure AD.</span></span>
 
-**Resolução**
+<span data-ttu-id="6c9fc-148">**Resolução**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-148">**Resolution**</span></span>
 
-tooassign um ou mais aplicações de tooan utilizadores diretamente, siga os passos de Olá abaixo:
+<span data-ttu-id="6c9fc-149">tooassign um ou mais aplicações de tooan utilizadores diretamente, siga os passos de Olá abaixo:</span><span class="sxs-lookup"><span data-stu-id="6c9fc-149">tooassign one or more users tooan application directly, follow hello steps below:</span></span>
 
-1.  Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global.**
+1.  <span data-ttu-id="6c9fc-150">Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-150">Open hello [**Azure Portal**](https://portal.azure.com/) and sign in as a **Global Administrator.**</span></span>
 
-2.  Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá.
+2.  <span data-ttu-id="6c9fc-151">Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-151">Open hello **Azure Active Directory Extension** by clicking **More services** at hello bottom of hello main left hand navigation menu.</span></span>
 
-3.  Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item.
+3.  <span data-ttu-id="6c9fc-152">Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-152">Type in **“Azure Active Directory**” in hello filter search box and select hello **Azure Active Directory** item.</span></span>
 
-4.  Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory.
+4.  <span data-ttu-id="6c9fc-153">Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-153">click **Enterprise Applications** from hello Azure Active Directory left hand navigation menu.</span></span>
 
-5.  Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações.
+5.  <span data-ttu-id="6c9fc-154">Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-154">click **All Applications** tooview a list of all your applications.</span></span>
 
-  * Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**
+  * <span data-ttu-id="6c9fc-155">Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-155">If you do not see hello application you want show up here, use hello **Filter** control at hello top of hello **All Applications List** and set hello **Show** option too**All Applications.**</span></span>
 
-6.  Selecione aplicação Olá pretende tooassign uma lista de Olá de toofrom do utilizador.
+6.  <span data-ttu-id="6c9fc-156">Selecione aplicação Olá pretende tooassign uma lista de Olá de toofrom do utilizador.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-156">Select hello application you want tooassign a user toofrom hello list.</span></span>
 
-7.  Quando carrega a aplicação Olá, clique em **utilizadores e grupos** do menu de navegação esquerdo da aplicação Olá.
+7.  <span data-ttu-id="6c9fc-157">Quando carrega a aplicação Olá, clique em **utilizadores e grupos** do menu de navegação esquerdo da aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-157">Once hello application loads, click **Users and Groups** from hello application’s left hand navigation menu.</span></span>
 
-8.  Clique em Olá **adicionar** botão por cima Olá **utilizadores e grupos** Olá de tooopen lista **adicionar atribuição** painel.
+8.  <span data-ttu-id="6c9fc-158">Clique em Olá **adicionar** botão por cima Olá **utilizadores e grupos** Olá de tooopen lista **adicionar atribuição** painel.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-158">Click hello **Add** button on top of hello **Users and Groups** list tooopen hello **Add Assignment** blade.</span></span>
 
-9.  Clique em Olá **utilizadores e grupos** Seletor de Olá **adicionar atribuição** painel.
+9.  <span data-ttu-id="6c9fc-159">Clique em Olá **utilizadores e grupos** Seletor de Olá **adicionar atribuição** painel.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-159">click hello **Users and groups** selector from hello **Add Assignment** blade.</span></span>
 
-10. Tipo de Olá **nome completo** ou **endereço de correio eletrónico** do utilizador Olá estiver interessado em atribuir para Olá **pesquisa por nome ou endereço de e-mail** caixa de pesquisa.
+10. <span data-ttu-id="6c9fc-160">Tipo de Olá **nome completo** ou **endereço de correio eletrónico** do utilizador Olá estiver interessado em atribuir para Olá **pesquisa por nome ou endereço de e-mail** caixa de pesquisa.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-160">Type in hello **full name** or **email address** of hello user you are interested in assigning into hello **Search by name or email address** search box.</span></span>
 
-11. Coloque o cursor sobre Olá **utilizador** no Olá lista tooreveal um **caixa de verificação**. Clique em tooadd de fotografias ou logótipo do perfil do Olá caixa de verificação seguinte toohello utilizador seu utilizador toohello **selecionados** lista.
+11. <span data-ttu-id="6c9fc-161">Coloque o cursor sobre Olá **utilizador** no Olá lista tooreveal um **caixa de verificação**.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-161">Hover over hello **user** in hello list tooreveal a **checkbox**.</span></span> <span data-ttu-id="6c9fc-162">Clique em tooadd de fotografias ou logótipo do perfil do Olá caixa de verificação seguinte toohello utilizador seu utilizador toohello **selecionados** lista.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-162">Click hello checkbox next toohello user’s profile photo or logo tooadd your user toohello **Selected** list.</span></span>
 
-12. **Opcional:** se gostaria demasiado**adicionar mais do que um utilizador**, tipo noutra **nome completo** ou **endereço de correio eletrónico** para Olá **pesquisar por nome ou o endereço de correio eletrónico** caixa de pesquisa e clique em Olá caixa de verificação tooadd toohello este utilizador **selecionados** lista.
+12. <span data-ttu-id="6c9fc-163">**Opcional:** se gostaria demasiado**adicionar mais do que um utilizador**, tipo noutra **nome completo** ou **endereço de correio eletrónico** para Olá **pesquisar por nome ou o endereço de correio eletrónico** caixa de pesquisa e clique em Olá caixa de verificação tooadd toohello este utilizador **selecionados** lista.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-163">**Optional:** If you would like too**add more than one user**, type in another **full name** or **email address** into hello **Search by name or email address** search box, and click hello checkbox tooadd this user toohello **Selected** list.</span></span>
 
-13. Quando tiver terminado de selecionar utilizadores, clique em Olá **selecione** botão tooadd-los toohello lista de utilizadores e grupos toobe atribuído toohello aplicação.
+13. <span data-ttu-id="6c9fc-164">Quando tiver terminado de selecionar utilizadores, clique em Olá **selecione** botão tooadd-los toohello lista de utilizadores e grupos toobe atribuído toohello aplicação.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-164">When you are finished selecting users, click hello **Select** button tooadd them toohello list of users and groups toobe assigned toohello application.</span></span>
 
-14. **Opcional:** clique Olá **selecionar função** Seletor no Olá **adicionar atribuição** painel tooselect uma função tooassign toohello utilizadores que selecionou.
+14. <span data-ttu-id="6c9fc-165">**Opcional:** clique Olá **selecionar função** Seletor no Olá **adicionar atribuição** painel tooselect uma função tooassign toohello utilizadores que selecionou.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-165">**Optional:** click hello **Select Role** selector in hello **Add Assignment** blade tooselect a role tooassign toohello users you have selected.</span></span>
 
-15. Clique em Olá **atribuir** botão tooassign Olá aplicação toohello utilizadores selecionados.
+15. <span data-ttu-id="6c9fc-166">Clique em Olá **atribuir** botão tooassign Olá aplicação toohello utilizadores selecionados.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-166">Click hello **Assign** button tooassign hello application toohello selected users.</span></span>
 
-Após um curto período de tempo, os utilizadores Olá que selecionou de ser capaz de toolaunch estas aplicações utilizando Olá métodos descritos na secção de descrição de solução Olá.
+<span data-ttu-id="6c9fc-167">Após um curto período de tempo, os utilizadores Olá que selecionou de ser capaz de toolaunch estas aplicações utilizando Olá métodos descritos na secção de descrição de solução Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-167">After a short period of time, hello users you have selected be able toolaunch these applications using hello methods described in hello solution description section.</span></span>
 
-## <a name="not-a-valid-saml-request"></a>Não um pedido de SAML válido
+## <a name="not-a-valid-saml-request"></a><span data-ttu-id="6c9fc-168">Não um pedido de SAML válido</span><span class="sxs-lookup"><span data-stu-id="6c9fc-168">Not a valid SAML Request</span></span>
 
-*Erro AADSTS75005: Olá do pedido não é uma mensagem de protocolo Saml2 válida.*
+<span data-ttu-id="6c9fc-169">*Erro AADSTS75005: Olá do pedido não é uma mensagem de protocolo Saml2 válida.*</span><span class="sxs-lookup"><span data-stu-id="6c9fc-169">*Error AADSTS75005: hello request is not a valid Saml2 protocol message.*</span></span>
 
-**Uma causa possível**
+<span data-ttu-id="6c9fc-170">**Uma causa possível**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-170">**Possible cause**</span></span>
 
-Azure AD não suporta Olá SAML do pedido enviados pela aplicação Olá para o início de sessão único. Alguns problemas comuns são:
+<span data-ttu-id="6c9fc-171">Azure AD não suporta Olá SAML do pedido enviados pela aplicação Olá para o início de sessão único.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-171">Azure AD doesn’t support hello SAML Request sent by hello application for Single Sign-on.</span></span> <span data-ttu-id="6c9fc-172">Alguns problemas comuns são:</span><span class="sxs-lookup"><span data-stu-id="6c9fc-172">Some common issues are:</span></span>
 
--   Campos necessários no pedido SAML Olá em falta
+-   <span data-ttu-id="6c9fc-173">Campos necessários no pedido SAML Olá em falta</span><span class="sxs-lookup"><span data-stu-id="6c9fc-173">Missing required fields in hello SAML request</span></span>
 
--   Método de pedido codificado de SAML
+-   <span data-ttu-id="6c9fc-174">Método de pedido codificado de SAML</span><span class="sxs-lookup"><span data-stu-id="6c9fc-174">SAML request encoded method</span></span>
 
-**Resolução**
+<span data-ttu-id="6c9fc-175">**Resolução**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-175">**Resolution**</span></span>
 
-1.  Capture pedido SAML. Siga o tutorial Olá no [como toodebug baseados em SAML único início de sessão tooapplications no Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-debugging) toolearn como toocapture Olá SAML do pedido.
+1.  <span data-ttu-id="6c9fc-176">Capture pedido SAML.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-176">Capture SAML request.</span></span> <span data-ttu-id="6c9fc-177">Siga o tutorial Olá no [como toodebug baseados em SAML único início de sessão tooapplications no Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-debugging) toolearn como toocapture Olá SAML do pedido.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-177">follow hello tutorial on [how toodebug SAML-based single sign-on tooapplications in Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-debugging) toolearn how toocapture hello SAML request.</span></span>
 
-2.  Contacte o fabricante da aplicação Olá e partilha:
+2.  <span data-ttu-id="6c9fc-178">Contacte o fabricante da aplicação Olá e partilha:</span><span class="sxs-lookup"><span data-stu-id="6c9fc-178">Contact hello application vendor and share:</span></span>
 
-    -   Pedido SAML
+    -   <span data-ttu-id="6c9fc-179">Pedido SAML</span><span class="sxs-lookup"><span data-stu-id="6c9fc-179">SAML request</span></span>
 
-    -   [Requisitos de protocolo do Azure AD único início de sessão SAML](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference)
+    -   [<span data-ttu-id="6c9fc-180">Requisitos de protocolo do Azure AD único início de sessão SAML</span><span class="sxs-lookup"><span data-stu-id="6c9fc-180">Azure AD Single Sign-on SAML protocol requirements</span></span>](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference)
 
-Eles devem validar que suportam a implementação do Azure AD SAML Olá para o início de sessão único.
+<span data-ttu-id="6c9fc-181">Eles devem validar que suportam a implementação do Azure AD SAML Olá para o início de sessão único.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-181">They should validate they support hello Azure AD SAML implementation for Single Sign-on.</span></span>
 
-## <a name="no-resource-in-requiredresourceaccess-list"></a>Nenhum recurso na lista de requiredResourceAccess
+## <a name="no-resource-in-requiredresourceaccess-list"></a><span data-ttu-id="6c9fc-182">Nenhum recurso na lista de requiredResourceAccess</span><span class="sxs-lookup"><span data-stu-id="6c9fc-182">No resource in requiredResourceAccess list</span></span>
 
-*Erro AADSTS65005: aplicação de cliente de Olá pediu acesso tooresource ' 00000002-0000-0000-c000-000000000000'. Este pedido falhou porque o cliente de Olá não especificou este recurso na lista de requiredResourceAccess*.
+<span data-ttu-id="6c9fc-183">*Erro AADSTS65005: aplicação de cliente de Olá pediu acesso tooresource ' 00000002-0000-0000-c000-000000000000'. Este pedido falhou porque o cliente de Olá não especificou este recurso na lista de requiredResourceAccess*.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-183">*Error AADSTS65005: hello client application has requested access tooresource '00000002-0000-0000-c000-000000000000'. This request has failed because hello client has not specified this resource in its requiredResourceAccess list*.</span></span>
 
-**Uma causa possível**
+<span data-ttu-id="6c9fc-184">**Uma causa possível**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-184">**Possible cause**</span></span>
 
-objeto da aplicação Olá está danificado.
+<span data-ttu-id="6c9fc-185">objeto da aplicação Olá está danificado.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-185">hello application object is corrupted.</span></span>
 
-**Resolução**
+<span data-ttu-id="6c9fc-186">**Resolução**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-186">**Resolution**</span></span>
 
-problema de Olá toosolve, remover Olá aplicação do diretório de Olá. Em seguida, adicionar e reconfigurar aplicação Olá, siga os passos de Olá abaixo:
+<span data-ttu-id="6c9fc-187">problema de Olá toosolve, remover Olá aplicação do diretório de Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-187">toosolve hello problem, remove hello application from hello directory.</span></span> <span data-ttu-id="6c9fc-188">Em seguida, adicionar e reconfigurar aplicação Olá, siga os passos de Olá abaixo:</span><span class="sxs-lookup"><span data-stu-id="6c9fc-188">Then, add and reconfigure hello application, follow hello steps below:</span></span>
 
-1.  Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global** ou **Co-administrador.**
+1.  <span data-ttu-id="6c9fc-189">Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global** ou **Co-administrador.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-189">Open hello [**Azure Portal**](https://portal.azure.com/) and sign in as a **Global Administrator** or **Co-admin.**</span></span>
 
-2.  Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá.
+2.  <span data-ttu-id="6c9fc-190">Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-190">Open hello **Azure Active Directory Extension** by clicking **More services** at hello bottom of hello main left hand navigation menu.</span></span>
 
-3.  Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item.
+3.  <span data-ttu-id="6c9fc-191">Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-191">Type in **“Azure Active Directory**” in hello filter search box and select hello **Azure Active Directory** item.</span></span>
 
-4.  Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory.
+4.  <span data-ttu-id="6c9fc-192">Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-192">click **Enterprise Applications** from hello Azure Active Directory left hand navigation menu.</span></span>
 
-5.  Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações.
+5.  <span data-ttu-id="6c9fc-193">Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-193">click **All Applications** tooview a list of all your applications.</span></span>
 
-  * Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**
+  * <span data-ttu-id="6c9fc-194">Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-194">If you do not see hello application you want show up here, use hello **Filter** control at hello top of hello **All Applications List** and set hello **Show** option too**All Applications.**</span></span>
 
-6.  Selecione aplicação Olá pretende tooconfigure-início de sessão único.
+6.  <span data-ttu-id="6c9fc-195">Selecione aplicação Olá pretende tooconfigure-início de sessão único.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-195">Select hello application you want tooconfigure single sign-on.</span></span>
 
-7.  Clique em **eliminar** em Olá superior esquerdo da aplicação Olá **descrição geral** painel.
+7.  <span data-ttu-id="6c9fc-196">Clique em **eliminar** em Olá superior esquerdo da aplicação Olá **descrição geral** painel.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-196">Click **Delete** at hello top-left of hello application **Overview** blade.</span></span>
 
-8.  Atualizar do Azure AD e adicionar aplicação Olá da galeria do Azure AD Olá. Em seguida, Configure novamente a aplicação Olá.
+8.  <span data-ttu-id="6c9fc-197">Atualizar do Azure AD e adicionar aplicação Olá da galeria do Azure AD Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-197">Refresh Azure AD and Add hello application from hello Azure AD gallery.</span></span> <span data-ttu-id="6c9fc-198">Em seguida, Configure novamente a aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-198">Then, Configure hello application again.</span></span>
 
-Após a reconfiguração da aplicação Olá, deve ser capaz de toosign na aplicação toohello.
+<span data-ttu-id="6c9fc-199">Após a reconfiguração da aplicação Olá, deve ser capaz de toosign na aplicação toohello.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-199">After reconfiguring hello application, you should be able toosign in toohello application.</span></span>
 
-## <a name="certificate-or-key-not-configured"></a>Certificado ou chave não configurado
+## <a name="certificate-or-key-not-configured"></a><span data-ttu-id="6c9fc-200">Certificado ou chave não configurado</span><span class="sxs-lookup"><span data-stu-id="6c9fc-200">Certificate or key not configured</span></span>
 
-Erro AADSTS50003: Nenhuma chave de assinatura configurado.
+<span data-ttu-id="6c9fc-201">Erro AADSTS50003: Nenhuma chave de assinatura configurado.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-201">Error AADSTS50003: No signing key configured.</span></span>
 
-**Uma causa possível**
+<span data-ttu-id="6c9fc-202">**Uma causa possível**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-202">**Possible cause**</span></span>
 
-objeto da aplicação Olá está danificado e do Azure AD não reconhece o certificado de Olá configurado para a aplicação Olá.
+<span data-ttu-id="6c9fc-203">objeto da aplicação Olá está danificado e do Azure AD não reconhece o certificado de Olá configurado para a aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-203">hello application object is corrupted and Azure AD doesn’t recognize hello certificate configured for hello application.</span></span>
 
-**Resolução**
+<span data-ttu-id="6c9fc-204">**Resolução**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-204">**Resolution**</span></span>
 
-toodelete e criar um novo certificado, siga os passos de Olá abaixo:
+<span data-ttu-id="6c9fc-205">toodelete e criar um novo certificado, siga os passos de Olá abaixo:</span><span class="sxs-lookup"><span data-stu-id="6c9fc-205">toodelete and create a new certificate, follow hello steps below:</span></span>
 
-1.  Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global** ou **Co-administrador.**
+1.  <span data-ttu-id="6c9fc-206">Abra Olá [ **Portal do Azure** ](https://portal.azure.com/) e inicie sessão como um **Administrador Global** ou **Co-administrador.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-206">Open hello [**Azure Portal**](https://portal.azure.com/) and sign in as a **Global Administrator** or **Co-admin.**</span></span>
 
-2.  Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá.
+2.  <span data-ttu-id="6c9fc-207">Abra Olá **extensão do Active Directory do Azure** clicando **mais serviços** em Olá parte inferior do menu de navegação esquerda principal Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-207">Open hello **Azure Active Directory Extension** by clicking **More services** at hello bottom of hello main left hand navigation menu.</span></span>
 
-3.  Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item.
+3.  <span data-ttu-id="6c9fc-208">Escreva **"do Azure Active Directory**" na caixa de pesquisa de filtro de Olá e selecione Olá **do Azure Active Directory** item.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-208">Type in **“Azure Active Directory**” in hello filter search box and select hello **Azure Active Directory** item.</span></span>
 
-4.  Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory.
+4.  <span data-ttu-id="6c9fc-209">Clique em **aplicações empresariais** do menu de navegação esquerdo do Olá do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-209">click **Enterprise Applications** from hello Azure Active Directory left hand navigation menu.</span></span>
 
-5.  Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações.
+5.  <span data-ttu-id="6c9fc-210">Clique em **todas as aplicações** tooview uma lista de todas as suas aplicações.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-210">click **All Applications** tooview a list of all your applications.</span></span>
 
-  * Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**
+  * <span data-ttu-id="6c9fc-211">Se não vir aplicação Olá que pretende mostrar aqui, utilize Olá **filtro** controlo, Olá parte superior do Olá **todas as aplicações lista** e conjunto Olá **mostrar** opção demasiado **Todas as aplicações.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-211">If you do not see hello application you want show up here, use hello **Filter** control at hello top of hello **All Applications List** and set hello **Show** option too**All Applications.**</span></span>
 
-6.  Selecione aplicação Olá pretende tooconfigure-início de sessão único.
+6.  <span data-ttu-id="6c9fc-212">Selecione aplicação Olá pretende tooconfigure-início de sessão único.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-212">Select hello application you want tooconfigure single sign-on.</span></span>
 
-7.  Quando carrega a aplicação Olá, clique em Olá **de sessão único-** do menu de navegação esquerdo da aplicação Olá.
+7.  <span data-ttu-id="6c9fc-213">Quando carrega a aplicação Olá, clique em Olá **de sessão único-** do menu de navegação esquerdo da aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-213">Once hello application loads, click hello **Single sign-on** from hello application’s left hand navigation menu.</span></span>
 
-8.  Clique em **criar novo certificado** em Olá **SAML certificado de assinatura** secção.
+8.  <span data-ttu-id="6c9fc-214">Clique em **criar novo certificado** em Olá **SAML certificado de assinatura** secção.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-214">click **Create new certificate** under hello **SAML signing Certificate** section.</span></span>
 
-9.  Selecione a data de expiração. Em seguida, clique em **guardar.**
+9.  <span data-ttu-id="6c9fc-215">Selecione a data de expiração.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-215">Select Expiration date.</span></span> <span data-ttu-id="6c9fc-216">Em seguida, clique em **guardar.**</span><span class="sxs-lookup"><span data-stu-id="6c9fc-216">Then, click **Save.**</span></span>
 
-10. Verifique **tornar o novo certificado ativa** certificado do toooverride Olá Active Directory. Em seguida, clique em **guardar** , Olá parte superior do painel de Olá e aceitar o certificado de rollover de Olá tooactivate.
+10. <span data-ttu-id="6c9fc-217">Verifique **tornar o novo certificado ativa** certificado do toooverride Olá Active Directory.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-217">Check **Make new certificate active** toooverride hello active certificate.</span></span> <span data-ttu-id="6c9fc-218">Em seguida, clique em **guardar** , Olá parte superior do painel de Olá e aceitar o certificado de rollover de Olá tooactivate.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-218">Then, click **Save** at hello top of hello blade and accept tooactivate hello rollover certificate.</span></span>
 
-11. Em Olá **certificado de assinatura de SAML** secção, clique em **remover** tooremove Olá **não utilizados** certificado.
+11. <span data-ttu-id="6c9fc-219">Em Olá **certificado de assinatura de SAML** secção, clique em **remover** tooremove Olá **não utilizados** certificado.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-219">Under hello **SAML Signing Certificate** section, click **remove** tooremove hello **Unused** certificate.</span></span>
 
-## <a name="problem-when-customizing-hello-saml-claims-sent-tooan-application"></a>Problema ao personalizar Olá SAML afirmações enviadas tooan aplicação
+## <a name="problem-when-customizing-hello-saml-claims-sent-tooan-application"></a><span data-ttu-id="6c9fc-220">Problema ao personalizar Olá SAML afirmações enviadas tooan aplicação</span><span class="sxs-lookup"><span data-stu-id="6c9fc-220">Problem when customizing hello SAML claims sent tooan application</span></span>
 
-toolearn como afirmações de atributo do toocustomize Olá SAML enviada tooyour aplicação, consulte [afirmações mapeamento no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-claims-mapping) para obter mais informações.
+<span data-ttu-id="6c9fc-221">toolearn como afirmações de atributo do toocustomize Olá SAML enviada tooyour aplicação, consulte [afirmações mapeamento no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-claims-mapping) para obter mais informações.</span><span class="sxs-lookup"><span data-stu-id="6c9fc-221">toolearn how toocustomize hello SAML attribute claims sent tooyour application, see [Claims mapping in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-claims-mapping) for more information.</span></span>
 
-## <a name="next-steps"></a>Passos seguintes
-[Requisitos de protocolo do Azure AD único início de sessão SAML](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference)
+## <a name="next-steps"></a><span data-ttu-id="6c9fc-222">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="6c9fc-222">Next steps</span></span>
+[<span data-ttu-id="6c9fc-223">Requisitos de protocolo do Azure AD único início de sessão SAML</span><span class="sxs-lookup"><span data-stu-id="6c9fc-223">Azure AD Single Sign-on SAML protocol requirements</span></span>](https://docs.microsoft.com/azure/active-directory/develop/active-directory-single-sign-on-protocol-reference)

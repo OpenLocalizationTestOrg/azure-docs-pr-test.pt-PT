@@ -21,19 +21,19 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="troubleshoot-hdfs-by-using-azure-hdinsight"></a>Resolver problemas de HDFS ao utilizar o Azure HDInsight
+# <a name="troubleshoot-hdfs-by-using-azure-hdinsight"></a><span data-ttu-id="19a3c-104">Resolver problemas de HDFS ao utilizar o Azure HDInsight</span><span class="sxs-lookup"><span data-stu-id="19a3c-104">Troubleshoot HDFS by using Azure HDInsight</span></span>
 
-Saiba mais sobre problemas principais Olá e as resoluções ao trabalhar com múltiplos payloads distribuídas ficheiro sistema Hadoop (HDFS) no Apache Ambari.
+<span data-ttu-id="19a3c-105">Saiba mais sobre problemas principais Olá e as resoluções ao trabalhar com múltiplos payloads distribuídas ficheiro sistema Hadoop (HDFS) no Apache Ambari.</span><span class="sxs-lookup"><span data-stu-id="19a3c-105">Learn about hello top issues and their resolutions when working with Hadoop Distributed File System (HDFS) payloads in Apache Ambari.</span></span>
 
-## <a name="how-do-i-access-local-hdfs-from-inside-a-cluster"></a>Como aceder Olá HDFS local de dentro de um cluster
+## <span data-ttu-id="19a3c-106"><a name="how-do-i-access-local-hdfs-from-inside-a-cluster"></a>Como aceder Olá HDFS local de dentro de um cluster</span><span class="sxs-lookup"><span data-stu-id="19a3c-106"><a name="how-do-i-access-local-hdfs-from-inside-a-cluster"></a>How do I access hello local HDFS from inside a cluster</span></span>
 
-### <a name="issue"></a>Problema
+### <a name="issue"></a><span data-ttu-id="19a3c-107">Problema</span><span class="sxs-lookup"><span data-stu-id="19a3c-107">Issue</span></span>
 
-Olá acesso HDFS locais de Olá código de linha e aplicação de comando, em vez de ao utilizar o Blob storage do Azure ou do Azure Data Lake Store do dentro Olá cluster do HDInsight.   
+<span data-ttu-id="19a3c-108">Olá acesso HDFS locais de Olá código de linha e aplicação de comando, em vez de ao utilizar o Blob storage do Azure ou do Azure Data Lake Store do dentro Olá cluster do HDInsight.</span><span class="sxs-lookup"><span data-stu-id="19a3c-108">Access hello local HDFS from hello command line and application code instead of by using Azure Blob storage or Azure Data Lake Store from inside hello HDInsight cluster.</span></span>   
 
-### <a name="resolution-steps"></a>Passos de resolução
+### <a name="resolution-steps"></a><span data-ttu-id="19a3c-109">Passos de resolução</span><span class="sxs-lookup"><span data-stu-id="19a3c-109">Resolution steps</span></span>
 
-1. Na linha de comandos Olá, utilize `hdfs dfs -D "fs.default.name=hdfs://mycluster/" ...` literalmente, tal como em Olá os seguintes comandos:
+1. <span data-ttu-id="19a3c-110">Na linha de comandos Olá, utilize `hdfs dfs -D "fs.default.name=hdfs://mycluster/" ...` literalmente, tal como em Olá os seguintes comandos:</span><span class="sxs-lookup"><span data-stu-id="19a3c-110">At hello command prompt, use `hdfs dfs -D "fs.default.name=hdfs://mycluster/" ...` literally, as in hello following command:</span></span>
 
     ```apache
     hdiuser@hn0-spark2:~$ hdfs dfs -D "fs.default.name=hdfs://mycluster/" -ls /
@@ -43,7 +43,7 @@ Olá acesso HDFS locais de Olá código de linha e aplicação de comando, em ve
     drwx------   - hdiuser hdfs          0 2016-11-10 22:22 /user
     ```
 
-2. A partir do código de origem, utilize Olá URI `hdfs://mycluster/` literalmente, tal como em Olá aplicação de exemplo a seguir:
+2. <span data-ttu-id="19a3c-111">A partir do código de origem, utilize Olá URI `hdfs://mycluster/` literalmente, tal como em Olá aplicação de exemplo a seguir:</span><span class="sxs-lookup"><span data-stu-id="19a3c-111">From source code, use hello URI `hdfs://mycluster/` literally, as in hello following sample application:</span></span>
 
     ```csharp
     import java.io.IOException;
@@ -68,7 +68,7 @@ Olá acesso HDFS locais de Olá código de linha e aplicação de comando, em ve
     }
     ```
 
-3. Execute Olá compilar o ficheiro. JAR (por exemplo, um ficheiro denominado `java-unit-tests-1.0.jar`) no Olá HDInsight cluster com Olá os seguintes comandos:
+3. <span data-ttu-id="19a3c-112">Execute Olá compilar o ficheiro. JAR (por exemplo, um ficheiro denominado `java-unit-tests-1.0.jar`) no Olá HDInsight cluster com Olá os seguintes comandos:</span><span class="sxs-lookup"><span data-stu-id="19a3c-112">Run hello compiled .jar file (for example, a file named `java-unit-tests-1.0.jar`) on hello HDInsight cluster with hello following command:</span></span>
 
     ```apache
     hdiuser@hn0-spark2:~$ hadoop jar java-unit-tests-1.0.jar JavaUnitTests
@@ -79,21 +79,21 @@ Olá acesso HDFS locais de Olá código de linha e aplicação de comando, em ve
     ```
 
 
-## <a name="how-do-i-force-disable-hdfs-safe-mode-in-a-cluster"></a>Como posso force-desativar modo de segurança do HDFS num cluster
+## <span data-ttu-id="19a3c-113"><a name="how-do-i-force-disable-hdfs-safe-mode-in-a-cluster"></a>Como posso force-desativar modo de segurança do HDFS num cluster</span><span class="sxs-lookup"><span data-stu-id="19a3c-113"><a name="how-do-i-force-disable-hdfs-safe-mode-in-a-cluster"></a>How do I force-disable HDFS safe mode in a cluster</span></span>
 
-### <a name="issue"></a>Problema
+### <a name="issue"></a><span data-ttu-id="19a3c-114">Problema</span><span class="sxs-lookup"><span data-stu-id="19a3c-114">Issue</span></span>
 
-Olá que local HDFS está encravada no modo de segurança num cluster do HDInsight Olá.   
+<span data-ttu-id="19a3c-115">Olá que local HDFS está encravada no modo de segurança num cluster do HDInsight Olá.</span><span class="sxs-lookup"><span data-stu-id="19a3c-115">hello local HDFS is stuck in safe mode on hello HDInsight cluster.</span></span>   
 
-### <a name="detailed-description"></a>Descrição detalhada
+### <a name="detailed-description"></a><span data-ttu-id="19a3c-116">Descrição detalhada</span><span class="sxs-lookup"><span data-stu-id="19a3c-116">Detailed description</span></span>
 
-A falha ocorre quando executa Olá os seguintes comandos do HDFS:
+<span data-ttu-id="19a3c-117">A falha ocorre quando executa Olá os seguintes comandos do HDFS:</span><span class="sxs-lookup"><span data-stu-id="19a3c-117">Failure occurs when you run hello following HDFS command:</span></span>
 
 ```apache
 hdfs dfs -D "fs.default.name=hdfs://mycluster/" -mkdir /temp
 ```
 
-Consulte Olá seguinte erro ao executar o comando de Olá:
+<span data-ttu-id="19a3c-118">Consulte Olá seguinte erro ao executar o comando de Olá:</span><span class="sxs-lookup"><span data-stu-id="19a3c-118">You see hello following error when you run hello command:</span></span>
 
 ```apache
 hdiuser@hn0-spark2:~$ hdfs dfs -D "fs.default.name=hdfs://mycluster/" -mkdir /temp
@@ -147,13 +147,13 @@ It was turned on manually. Use "hdfs dfsadmin -safemode leave" tooturn safe mode
 mkdir: Cannot create directory /temp. Name node is in safe mode.
 ```
 
-### <a name="probable-cause"></a>Causa provável
+### <a name="probable-cause"></a><span data-ttu-id="19a3c-119">Causa provável</span><span class="sxs-lookup"><span data-stu-id="19a3c-119">Probable cause</span></span>
 
-Olá HDInsight cluster foi escalado baixo tooa muito alguns nós. número de Olá de nós está abaixo ou feche o fator de replicação do HDFS toohello.
+<span data-ttu-id="19a3c-120">Olá HDInsight cluster foi escalado baixo tooa muito alguns nós.</span><span class="sxs-lookup"><span data-stu-id="19a3c-120">hello HDInsight cluster has been scaled down tooa very few nodes.</span></span> <span data-ttu-id="19a3c-121">número de Olá de nós está abaixo ou feche o fator de replicação do HDFS toohello.</span><span class="sxs-lookup"><span data-stu-id="19a3c-121">hello number of nodes is below or close toohello HDFS replication factor.</span></span>
 
-### <a name="resolution-steps"></a>Passos de resolução 
+### <a name="resolution-steps"></a><span data-ttu-id="19a3c-122">Passos de resolução</span><span class="sxs-lookup"><span data-stu-id="19a3c-122">Resolution steps</span></span> 
 
-1. Obter o estado de Olá do HDFS num cluster do HDInsight Olá utilizando Olá os seguintes comandos:
+1. <span data-ttu-id="19a3c-123">Obter o estado de Olá do HDFS num cluster do HDInsight Olá utilizando Olá os seguintes comandos:</span><span class="sxs-lookup"><span data-stu-id="19a3c-123">Get hello status of HDFS on hello HDInsight cluster by using hello following commands:</span></span>
 
     ```apache
     hdfs dfsadmin -D "fs.default.name=hdfs://mycluster/" -report
@@ -194,7 +194,7 @@ Olá HDInsight cluster foi escalado baixo tooa muito alguns nós. número de Ol�
     ...
     ```
 
-2. Verificar integridade Olá do HDFS num cluster do HDInsight Olá utilizando Olá os seguintes comandos:
+2. <span data-ttu-id="19a3c-124">Verificar integridade Olá do HDFS num cluster do HDInsight Olá utilizando Olá os seguintes comandos:</span><span class="sxs-lookup"><span data-stu-id="19a3c-124">Check hello integrity of HDFS on hello HDInsight cluster by using hello following commands:</span></span>
 
     ```apache
     hdiuser@hn0-spark2:~$ hdfs fsck -D "fs.default.name=hdfs://mycluster/" /
@@ -227,7 +227,7 @@ Olá HDInsight cluster foi escalado baixo tooa muito alguns nós. número de Ol�
     hello filesystem under path '/' is HEALTHY
     ```
 
-3. Se determinar que não existem nenhum blocos em falta, danificados ou under-replicados ou que podem ser ignorados esses blocos, execute Olá seguir o nó de nome do comando tootake Olá fora do modo de segurança:
+3. <span data-ttu-id="19a3c-125">Se determinar que não existem nenhum blocos em falta, danificados ou under-replicados ou que podem ser ignorados esses blocos, execute Olá seguir o nó de nome do comando tootake Olá fora do modo de segurança:</span><span class="sxs-lookup"><span data-stu-id="19a3c-125">If you determine that there are no missing, corrupt, or under-replicated blocks, or that those blocks can be ignored, run hello following command tootake hello name node out of safe mode:</span></span>
 
     ```apache
     hdfs dfsadmin -D "fs.default.name=hdfs://mycluster/" -safemode leave

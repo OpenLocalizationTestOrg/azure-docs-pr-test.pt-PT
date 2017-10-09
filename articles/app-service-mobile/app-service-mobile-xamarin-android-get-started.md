@@ -20,55 +20,55 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="create-a-xamarinandroid-app"></a>Criar uma Aplicação Xamarin.Android
+# <a name="create-a-xamarinandroid-app"></a><span data-ttu-id="ab2d0-103">Criar uma Aplicação Xamarin.Android</span><span class="sxs-lookup"><span data-stu-id="ab2d0-103">Create a Xamarin.Android App</span></span>
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
-## <a name="overview"></a>Descrição geral
-Este tutorial mostra como tooadd um back-end baseado na nuvem service aplicação xamarin. Android de tooa. Para obter mais informações, consulte [O que são Mobile Apps](app-service-mobile-value-prop.md).
+## <a name="overview"></a><span data-ttu-id="ab2d0-104">Descrição geral</span><span class="sxs-lookup"><span data-stu-id="ab2d0-104">Overview</span></span>
+<span data-ttu-id="ab2d0-105">Este tutorial mostra como tooadd um back-end baseado na nuvem service aplicação xamarin. Android de tooa.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-105">This tutorial shows you how tooadd a cloud-based backend service tooa Xamarin.Android app.</span></span> <span data-ttu-id="ab2d0-106">Para obter mais informações, consulte [O que são Mobile Apps](app-service-mobile-value-prop.md).</span><span class="sxs-lookup"><span data-stu-id="ab2d0-106">For more information, see [What are Mobile Apps](app-service-mobile-value-prop.md).</span></span>
 
-Abaixo é uma captura de ecrã da aplicação Olá concluída:
+<span data-ttu-id="ab2d0-107">Abaixo é uma captura de ecrã da aplicação Olá concluída:</span><span class="sxs-lookup"><span data-stu-id="ab2d0-107">A screenshot from hello completed app is below:</span></span>
 
 ![][0]
 
-A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais de Mobile Apps para aplicações Xamarin.Android.
+<span data-ttu-id="ab2d0-108">A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais de Mobile Apps para aplicações Xamarin.Android.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-108">Completing this tutorial is a prerequisite for all other Mobile Apps tutorials for Xamarin.Android apps.</span></span>
 
-## <a name="prerequisites"></a>Pré-requisitos
-toocomplete neste tutorial, terá de Olá os seguintes pré-requisitos:
+## <a name="prerequisites"></a><span data-ttu-id="ab2d0-109">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="ab2d0-109">Prerequisites</span></span>
+<span data-ttu-id="ab2d0-110">toocomplete neste tutorial, terá de Olá os seguintes pré-requisitos:</span><span class="sxs-lookup"><span data-stu-id="ab2d0-110">toocomplete this tutorial, you need hello following prerequisites:</span></span>
 
-* Uma conta ativa do Azure. Se não tiver uma conta, inscreva-se uma versão de avaliação do Azure e obter cópias de segurança too10 livre Mobile Apps. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Visual Studio com Xamarin. Para obter instruções, consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).
+* <span data-ttu-id="ab2d0-111">Uma conta ativa do Azure.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-111">An active Azure account.</span></span> <span data-ttu-id="ab2d0-112">Se não tiver uma conta, inscreva-se uma versão de avaliação do Azure e obter cópias de segurança too10 livre Mobile Apps.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-112">If you don't have an account, sign up for an Azure trial and get up too10 free Mobile Apps.</span></span> <span data-ttu-id="ab2d0-113">Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).</span><span class="sxs-lookup"><span data-stu-id="ab2d0-113">For details, see [Azure Free Trial](https://azure.microsoft.com/pricing/free-trial/).</span></span>
+* <span data-ttu-id="ab2d0-114">Visual Studio com Xamarin.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-114">Visual Studio with Xamarin.</span></span> <span data-ttu-id="ab2d0-115">Para obter instruções, consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).</span><span class="sxs-lookup"><span data-stu-id="ab2d0-115">See [Setup and install for Visual Studio and Xamarin](https://msdn.microsoft.com/library/mt613162.aspx) for instructions.</span></span>
 
-## <a name="create-an-azure-mobile-app-backend"></a>Criar um back-end da Aplicação Móvel do Azure
-Siga estes passos toocreate um back-end de aplicação móvel.
+## <a name="create-an-azure-mobile-app-backend"></a><span data-ttu-id="ab2d0-116">Criar um back-end da Aplicação Móvel do Azure</span><span class="sxs-lookup"><span data-stu-id="ab2d0-116">Create an Azure Mobile App backend</span></span>
+<span data-ttu-id="ab2d0-117">Siga estes passos toocreate um back-end de aplicação móvel.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-117">Follow these steps toocreate a Mobile App backend.</span></span>
 
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-Acabou de aprovisionar um back-end da Aplicação Móvel do Azure que pode ser utilizado pelas suas aplicações cliente móveis. Em seguida, transferir um projeto de servidor para um simples "todo list" back-end e publicá-lo tooAzure.
+<span data-ttu-id="ab2d0-118">Acabou de aprovisionar um back-end da Aplicação Móvel do Azure que pode ser utilizado pelas suas aplicações cliente móveis.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-118">You have now provisioned an Azure Mobile App backend that can be used by your mobile client applications.</span></span> <span data-ttu-id="ab2d0-119">Em seguida, transferir um projeto de servidor para um simples "todo list" back-end e publicá-lo tooAzure.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-119">Next, download a server project for a simple "todo list" backend and publish it tooAzure.</span></span>
 
-## <a name="configure-hello-server-project"></a>Configurar o projeto de servidor Olá
+## <a name="configure-hello-server-project"></a><span data-ttu-id="ab2d0-120">Configurar o projeto de servidor Olá</span><span class="sxs-lookup"><span data-stu-id="ab2d0-120">Configure hello server project</span></span>
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="download-and-run-hello-xamarinandroid-app"></a>Transferir e executar a aplicação xamarin. Android de Olá
-1. Em **transferir e executar o projeto xamarin. Android**, clique em Olá **transferir** botão.
+## <a name="download-and-run-hello-xamarinandroid-app"></a><span data-ttu-id="ab2d0-121">Transferir e executar a aplicação xamarin. Android de Olá</span><span class="sxs-lookup"><span data-stu-id="ab2d0-121">Download and run hello Xamarin.Android app</span></span>
+1. <span data-ttu-id="ab2d0-122">Em **transferir e executar o projeto xamarin. Android**, clique em Olá **transferir** botão.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-122">Under **Download and run your Xamarin.Android project**, click hello **Download** button.</span></span>
 
-      Guarde o computador local de tooyour ficheiro de projeto comprimido Olá e tome nota do local onde o guardou.
-2. Olá prima **F5** projeto de Olá toobuild da chave e iniciar a aplicação Olá.
-3. Na aplicação Olá, digite um texto significativo, tal como *tutorial Olá concluída* e, em seguida, clique em Olá **adicionar** botão.
+      <span data-ttu-id="ab2d0-123">Guarde o computador local de tooyour ficheiro de projeto comprimido Olá e tome nota do local onde o guardou.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-123">Save hello compressed project file tooyour local computer, and make a note of where you save it.</span></span>
+2. <span data-ttu-id="ab2d0-124">Olá prima **F5** projeto de Olá toobuild da chave e iniciar a aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-124">Press hello **F5** key toobuild hello project and start hello app.</span></span>
+3. <span data-ttu-id="ab2d0-125">Na aplicação Olá, digite um texto significativo, tal como *tutorial Olá concluída* e, em seguida, clique em Olá **adicionar** botão.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-125">In hello app, type meaningful text, such as *Complete hello tutorial* and then click hello **Add** button.</span></span>
 
     ![][10]
 
-    Dados de pedido de Olá são inseridos na tabela TodoItem de Olá. Os itens armazenados na tabela de Olá são devolvidos pelo back-end de aplicação móvel de Olá e os dados são apresentados na lista de Olá.
+    <span data-ttu-id="ab2d0-126">Dados de pedido de Olá são inseridos na tabela TodoItem de Olá.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-126">Data from hello request is inserted into hello TodoItem table.</span></span> <span data-ttu-id="ab2d0-127">Os itens armazenados na tabela de Olá são devolvidos pelo back-end de aplicação móvel de Olá e os dados são apresentados na lista de Olá.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-127">Items stored in hello table are returned by hello mobile app backend, and the data appears in hello list.</span></span>
 
    > [!NOTE]
-   > Pode rever Olá código que acede ao seu tooquery de back-end da aplicação móvel e inserir dados, que se encontra no Olá ficheiro c# ToDoActivity.cs.
+   > <span data-ttu-id="ab2d0-128">Pode rever Olá código que acede ao seu tooquery de back-end da aplicação móvel e inserir dados, que se encontra no Olá ficheiro c# ToDoActivity.cs.</span><span class="sxs-lookup"><span data-stu-id="ab2d0-128">You can review hello code that accesses your mobile app backend tooquery and insert data, which is found in hello ToDoActivity.cs C# file.</span></span>
    >
    >
 
-## <a name="next-steps"></a>Passos seguintes
-* [Adicionar aplicação tooyour de Sincronização Offline](app-service-mobile-xamarin-android-get-started-offline-data.md)
-* [Adicionar autenticação tooyour aplicação](app-service-mobile-xamarin-android-get-started-users.md)
-* [Adicionar a aplicação de xamarin. Android de tooyour de notificações push](app-service-mobile-xamarin-android-get-started-push.md)
-* [Como toouse Olá geridos cliente para Mobile Apps do Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
+## <a name="next-steps"></a><span data-ttu-id="ab2d0-129">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="ab2d0-129">Next steps</span></span>
+* [<span data-ttu-id="ab2d0-130">Adicionar aplicação tooyour de Sincronização Offline</span><span class="sxs-lookup"><span data-stu-id="ab2d0-130">Add Offline Sync tooyour app</span></span>](app-service-mobile-xamarin-android-get-started-offline-data.md)
+* [<span data-ttu-id="ab2d0-131">Adicionar autenticação tooyour aplicação</span><span class="sxs-lookup"><span data-stu-id="ab2d0-131">Add authentication tooyour app </span></span>](app-service-mobile-xamarin-android-get-started-users.md)
+* [<span data-ttu-id="ab2d0-132">Adicionar a aplicação de xamarin. Android de tooyour de notificações push</span><span class="sxs-lookup"><span data-stu-id="ab2d0-132">Add push notifications tooyour Xamarin.Android app</span></span>](app-service-mobile-xamarin-android-get-started-push.md)
+* [<span data-ttu-id="ab2d0-133">Como toouse Olá geridos cliente para Mobile Apps do Azure</span><span class="sxs-lookup"><span data-stu-id="ab2d0-133">How toouse hello managed client for Azure Mobile Apps</span></span>](app-service-mobile-dotnet-how-to-use-client-library.md)
 
 <!-- Images. -->
 [0]: ./media/app-service-mobile-xamarin-android-get-started/mobile-quickstart-completed-android.png

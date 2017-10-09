@@ -20,34 +20,34 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="configuring-azure-media-services-telemetry-with-net"></a>Configurar a telemetria de Media Services do Azure com o .NET
+# <a name="configuring-azure-media-services-telemetry-with-net"></a><span data-ttu-id="4208c-103">Configurar a telemetria de Media Services do Azure com o .NET</span><span class="sxs-lookup"><span data-stu-id="4208c-103">Configuring Azure Media Services telemetry with .NET</span></span>
 
-Este tópico descreve os passos gerais que podem consumir quando configurar a telemetria de serviços de suporte de dados do Azure (AMS) Olá com o .NET SDK. 
+<span data-ttu-id="4208c-104">Este tópico descreve os passos gerais que podem consumir quando configurar a telemetria de serviços de suporte de dados do Azure (AMS) Olá com o .NET SDK.</span><span class="sxs-lookup"><span data-stu-id="4208c-104">This topic describes general steps that you might take when configuring hello Azure Media Services (AMS) telemetry using .NET SDK.</span></span> 
 
 >[!NOTE]
->Para hello explicação detalhada das quais é telemetria do AMS e como tooconsume-lo, consulte Olá [descrição geral](media-services-telemetry-overview.md) tópico.
+><span data-ttu-id="4208c-105">Para hello explicação detalhada das quais é telemetria do AMS e como tooconsume-lo, consulte Olá [descrição geral](media-services-telemetry-overview.md) tópico.</span><span class="sxs-lookup"><span data-stu-id="4208c-105">For hello detailed explanation of what is AMS telemetry and how tooconsume it, see hello [overview](media-services-telemetry-overview.md) topic.</span></span>
 
-Pode consumir dados de telemetria dos Olá seguintes formas:
+<span data-ttu-id="4208c-106">Pode consumir dados de telemetria dos Olá seguintes formas:</span><span class="sxs-lookup"><span data-stu-id="4208c-106">You can consume telemetry data in one of hello following ways:</span></span>
 
-- Ler dados diretamente a partir do armazenamento de tabelas do Azure (por exemplo, utilizando Olá SDK de armazenamento). Para a descrição de Olá das tabelas de armazenamento de telemetria, consulte Olá **consumir informações de telemetria** no [isto](https://msdn.microsoft.com/library/mt742089.aspx) tópico.
+- <span data-ttu-id="4208c-107">Ler dados diretamente a partir do armazenamento de tabelas do Azure (por exemplo, utilizando Olá SDK de armazenamento).</span><span class="sxs-lookup"><span data-stu-id="4208c-107">Read data directly from Azure Table Storage (e.g. using hello Storage SDK).</span></span> <span data-ttu-id="4208c-108">Para a descrição de Olá das tabelas de armazenamento de telemetria, consulte Olá **consumir informações de telemetria** no [isto](https://msdn.microsoft.com/library/mt742089.aspx) tópico.</span><span class="sxs-lookup"><span data-stu-id="4208c-108">For hello description of telemetry storage tables, see hello **Consuming telemetry information** in [this](https://msdn.microsoft.com/library/mt742089.aspx) topic.</span></span>
 
-Ou
+<span data-ttu-id="4208c-109">Ou</span><span class="sxs-lookup"><span data-stu-id="4208c-109">Or</span></span>
 
-- Suporte de Olá de utilização no Olá SDK .NET dos Media Services para a leitura de dados de armazenamento. Este tópico mostra como a telemetria tooenable Olá especificada a conta de AMS e como métricas de Olá tooquery utilizando Olá SDK .NET do Azure Media Services.  
+- <span data-ttu-id="4208c-110">Suporte de Olá de utilização no Olá SDK .NET dos Media Services para a leitura de dados de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="4208c-110">Use hello support in hello Media Services .NET SDK for reading storage data.</span></span> <span data-ttu-id="4208c-111">Este tópico mostra como a telemetria tooenable Olá especificada a conta de AMS e como métricas de Olá tooquery utilizando Olá SDK .NET do Azure Media Services.</span><span class="sxs-lookup"><span data-stu-id="4208c-111">This topic shows how tooenable telemetry for hello specified AMS account and how tooquery hello metrics using hello Azure Media Services .NET SDK.</span></span>  
 
-## <a name="configuring-telemetry-for-a-media-services-account"></a>Configurar a telemetria para uma conta de Media Services
+## <a name="configuring-telemetry-for-a-media-services-account"></a><span data-ttu-id="4208c-112">Configurar a telemetria para uma conta de Media Services</span><span class="sxs-lookup"><span data-stu-id="4208c-112">Configuring telemetry for a Media Services account</span></span>
 
-Olá passos seguintes são necessários tooenable telemetria:
+<span data-ttu-id="4208c-113">Olá passos seguintes são necessários tooenable telemetria:</span><span class="sxs-lookup"><span data-stu-id="4208c-113">hello following steps are needed tooenable telemetry:</span></span>
 
-- Obter credenciais Olá de Olá armazenamento anexada de conta toohello conta dos Media Services. 
-- Criar um ponto final da notificação com **EndPointType** definido demasiado**AzureTable** e endPointAddress apontar toohello tabela de armazenamento.
+- <span data-ttu-id="4208c-114">Obter credenciais Olá de Olá armazenamento anexada de conta toohello conta dos Media Services.</span><span class="sxs-lookup"><span data-stu-id="4208c-114">Get hello credentials of hello storage account attached toohello Media Services account.</span></span> 
+- <span data-ttu-id="4208c-115">Criar um ponto final da notificação com **EndPointType** definido demasiado**AzureTable** e endPointAddress apontar toohello tabela de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="4208c-115">Create a Notification Endpoint with **EndPointType** set too**AzureTable** and endPointAddress pointing toohello storage table.</span></span>
 
         INotificationEndPoint notificationEndPoint = 
                       _context.NotificationEndPoints.Create("monitoring", 
                       NotificationEndPointType.AzureTable,
                       "https://" + _mediaServicesStorageAccountName + ".table.core.windows.net/");
 
-- Definições de criação de uma configuração de monitorização para Olá serviços pretende toomonitor. Mais do que um definições de configuração de monitorização é permitida. 
+- <span data-ttu-id="4208c-116">Definições de criação de uma configuração de monitorização para Olá serviços pretende toomonitor.</span><span class="sxs-lookup"><span data-stu-id="4208c-116">Create a monitoring configuration settings for hello services you want toomonitor.</span></span> <span data-ttu-id="4208c-117">Mais do que um definições de configuração de monitorização é permitida.</span><span class="sxs-lookup"><span data-stu-id="4208c-117">No more than one monitoring configuration settings is allowed.</span></span> 
   
         IMonitoringConfiguration monitoringConfiguration = _context.MonitoringConfigurations.Create(notificationEndPoint.Id,
             new List<ComponentMonitoringSetting>()
@@ -56,21 +56,21 @@ Olá passos seguintes são necessários tooenable telemetria:
                 new ComponentMonitoringSetting(MonitoringComponent.StreamingEndpoint, MonitoringLevel.Normal)
             });
 
-## <a name="consuming-telemetry-information"></a>Consumir informações de telemetria
+## <a name="consuming-telemetry-information"></a><span data-ttu-id="4208c-118">Consumir informações de telemetria</span><span class="sxs-lookup"><span data-stu-id="4208c-118">Consuming telemetry information</span></span>
 
-Para informações sobre consumo de telemetria de informações, consulte [isto](media-services-telemetry-overview.md) tópico.
+<span data-ttu-id="4208c-119">Para informações sobre consumo de telemetria de informações, consulte [isto](media-services-telemetry-overview.md) tópico.</span><span class="sxs-lookup"><span data-stu-id="4208c-119">For information about consuming telemetry information, see [this](media-services-telemetry-overview.md) topic.</span></span>
 
-## <a name="create-and-configure-a-visual-studio-project"></a>Criar e configurar um projeto de Visual Studio
+## <a name="create-and-configure-a-visual-studio-project"></a><span data-ttu-id="4208c-120">Criar e configurar um projeto de Visual Studio</span><span class="sxs-lookup"><span data-stu-id="4208c-120">Create and configure a Visual Studio project</span></span>
 
-1. Configurar o ambiente de desenvolvimento e preencher o ficheiro de App. config Olá com as informações de ligação, conforme descrito em [desenvolvimento de Media Services com .NET](media-services-dotnet-how-to-use.md). 
+1. <span data-ttu-id="4208c-121">Configurar o ambiente de desenvolvimento e preencher o ficheiro de App. config Olá com as informações de ligação, conforme descrito em [desenvolvimento de Media Services com .NET](media-services-dotnet-how-to-use.md).</span><span class="sxs-lookup"><span data-stu-id="4208c-121">Set up your development environment and populate hello app.config file with connection information, as described in [Media Services development with .NET](media-services-dotnet-how-to-use.md).</span></span> 
 
-2. Adicionar Olá seguinte elemento demasiado**appSettings** definida no ficheiro App. config:
+2. <span data-ttu-id="4208c-122">Adicionar Olá seguinte elemento demasiado**appSettings** definida no ficheiro App. config:</span><span class="sxs-lookup"><span data-stu-id="4208c-122">Add hello following element too**appSettings** defined in your app.config file:</span></span>
 
     <add key="StorageAccountName" value="storage_name" />
  
-## <a name="example"></a>Exemplo  
+## <a name="example"></a><span data-ttu-id="4208c-123">Exemplo</span><span class="sxs-lookup"><span data-stu-id="4208c-123">Example</span></span>  
     
-Olá seguinte exemplo mostra como a telemetria tooenable Olá especificar conta de AMS e como métricas de Olá tooquery utilizando Olá SDK .NET do Azure Media Services.  
+<span data-ttu-id="4208c-124">Olá seguinte exemplo mostra como a telemetria tooenable Olá especificar conta de AMS e como métricas de Olá tooquery utilizando Olá SDK .NET do Azure Media Services.</span><span class="sxs-lookup"><span data-stu-id="4208c-124">hello following example shows how tooenable telemetry for hello specified AMS account and how tooquery hello metrics using hello Azure Media Services .NET SDK.</span></span>  
 
     using System;
     using System.Collections.Generic;
@@ -210,10 +210,10 @@ Olá seguinte exemplo mostra como a telemetria tooenable Olá especificar conta 
     }
 
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="4208c-125">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="4208c-125">Next steps</span></span>
 
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Enviar comentários
+## <a name="provide-feedback"></a><span data-ttu-id="4208c-126">Enviar comentários</span><span class="sxs-lookup"><span data-stu-id="4208c-126">Provide feedback</span></span>
 
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]

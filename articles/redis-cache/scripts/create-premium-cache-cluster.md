@@ -21,30 +21,30 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="create-a-premium-azure-redis-cache-with-clustering"></a>Criar uma Cache de Redis do Azure Premium com clustering
+# <a name="create-a-premium-azure-redis-cache-with-clustering"></a><span data-ttu-id="e41da-103">Criar uma Cache de Redis do Azure Premium com clustering</span><span class="sxs-lookup"><span data-stu-id="e41da-103">Create a Premium Azure Redis Cache with clustering</span></span>
 
-Neste cenário, saiba como toocreate ativado um escalão Premium da 6 GB a Cache de Redis do Azure com o clustering e duas partições horizontais.
+<span data-ttu-id="e41da-104">Neste cenário, saiba como toocreate ativado um escalão Premium da 6 GB a Cache de Redis do Azure com o clustering e duas partições horizontais.</span><span class="sxs-lookup"><span data-stu-id="e41da-104">In this scenario, you learn how toocreate a 6 GB Premium tier Azure Redis Cache with clustering enabled and two shards.</span></span>
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
-## <a name="sample-script"></a>Script de exemplo
+## <a name="sample-script"></a><span data-ttu-id="e41da-105">Script de exemplo</span><span class="sxs-lookup"><span data-stu-id="e41da-105">Sample script</span></span>
 
 [!code-azurecli[main](../../../cli_scripts/redis-cache/create-premium-cache-cluster/create-premium-cache-cluster.sh "Azure Redis Cache")]
 
 [!INCLUDE [cli-script-clean-up](../../../includes/redis-cli-script-clean-up.md)]
 
-## <a name="script-explanation"></a>Explicação de script
+## <a name="script-explanation"></a><span data-ttu-id="e41da-106">Explicação de script</span><span class="sxs-lookup"><span data-stu-id="e41da-106">Script explanation</span></span>
 
-Este script utiliza Olá os seguintes comandos toocreate um grupo de recursos e uma cache de redis do escalão Premium com clustering de ativação. Cada comando na tabela de Olá contém ligações a documentação específica toocommand.
+<span data-ttu-id="e41da-107">Este script utiliza Olá os seguintes comandos toocreate um grupo de recursos e uma cache de redis do escalão Premium com clustering de ativação.</span><span class="sxs-lookup"><span data-stu-id="e41da-107">This script uses hello following commands toocreate a resource group and a Premium tier redis cache with clustering enable.</span></span> <span data-ttu-id="e41da-108">Cada comando na tabela de Olá contém ligações a documentação específica toocommand.</span><span class="sxs-lookup"><span data-stu-id="e41da-108">Each command in hello table links toocommand specific documentation.</span></span>
 
-| Comando | Notas |
+| <span data-ttu-id="e41da-109">Comando</span><span class="sxs-lookup"><span data-stu-id="e41da-109">Command</span></span> | <span data-ttu-id="e41da-110">Notas</span><span class="sxs-lookup"><span data-stu-id="e41da-110">Notes</span></span> |
 |---|---|
-| [Criar grupo AZ](https://docs.microsoft.com/cli/azure/group#create) | Cria um grupo de recursos na qual todos os recursos são armazenados. |
-| [Criar AZ redis](https://docs.microsoft.com/cli/azure/redis#create) | Crie uma instância da Cache de Redis. |
+| [<span data-ttu-id="e41da-111">Criar grupo AZ</span><span class="sxs-lookup"><span data-stu-id="e41da-111">az group create</span></span>](https://docs.microsoft.com/cli/azure/group#create) | <span data-ttu-id="e41da-112">Cria um grupo de recursos na qual todos os recursos são armazenados.</span><span class="sxs-lookup"><span data-stu-id="e41da-112">Creates a resource group in which all resources are stored.</span></span> |
+| [<span data-ttu-id="e41da-113">Criar AZ redis</span><span class="sxs-lookup"><span data-stu-id="e41da-113">az redis create</span></span>](https://docs.microsoft.com/cli/azure/redis#create) | <span data-ttu-id="e41da-114">Crie uma instância da Cache de Redis.</span><span class="sxs-lookup"><span data-stu-id="e41da-114">Create Redis Cache instance.</span></span> |
 
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="e41da-115">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="e41da-115">Next steps</span></span>
 
-Para obter mais informações sobre Olá CLI do Azure, consulte [documentação da CLI do Azure](https://docs.microsoft.com/cli/azure/overview).
+<span data-ttu-id="e41da-116">Para obter mais informações sobre Olá CLI do Azure, consulte [documentação da CLI do Azure](https://docs.microsoft.com/cli/azure/overview).</span><span class="sxs-lookup"><span data-stu-id="e41da-116">For more information on hello Azure CLI, see [Azure CLI documentation](https://docs.microsoft.com/cli/azure/overview).</span></span>
 
-Exemplos de script CLI de Cache de Redis do Azure adicionais podem ser encontrados na Olá [documentação de Cache de Redis do Azure](../cli-samples.md).
+<span data-ttu-id="e41da-117">Exemplos de script CLI de Cache de Redis do Azure adicionais podem ser encontrados na Olá [documentação de Cache de Redis do Azure](../cli-samples.md).</span><span class="sxs-lookup"><span data-stu-id="e41da-117">Additional Azure Redis Cache CLI script samples can be found in hello [Azure Redis Cache documentation](../cli-samples.md).</span></span>

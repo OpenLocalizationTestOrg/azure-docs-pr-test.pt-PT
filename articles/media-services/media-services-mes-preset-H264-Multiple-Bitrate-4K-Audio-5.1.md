@@ -20,20 +20,20 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="h264-multiple-bitrate-4k-audio-51"></a>H264 Vários velocidade de transmissão 4K áudio 5.1
-`Media Encoder Standard`Define um conjunto de predefinições, que pode utilizar quando criar tarefas de codificação de codificação. Pode utilizar um `preset name` toospecify no qual o formato de que gostaria de tooencode o ficheiro de suporte de dados. Em alternativa, pode criar os seus próprios JSON ou predefinições baseado em XML (utilizando a codificação UTF-8 ou UTF-16. Em seguida, seria passar codificador personalizado toohello predefinidas de Olá. Para Olá obter lista de todos os Olá predefinido nomes suportados por este `Media Encoder Standard` codificador, consulte [predefinições de tarefas para o codificador de multimédia Standard](media-services-mes-presets-overview.md).  
+# <a name="h264-multiple-bitrate-4k-audio-51"></a><span data-ttu-id="b32cd-103">H264 Vários velocidade de transmissão 4K áudio 5.1</span><span class="sxs-lookup"><span data-stu-id="b32cd-103">H264 Multiple Bitrate 4K Audio 5.1</span></span>
+<span data-ttu-id="b32cd-104">`Media Encoder Standard`Define um conjunto de predefinições, que pode utilizar quando criar tarefas de codificação de codificação.</span><span class="sxs-lookup"><span data-stu-id="b32cd-104">`Media Encoder Standard` defines a set of encoding presets you can use when creating encoding jobs.</span></span> <span data-ttu-id="b32cd-105">Pode utilizar um `preset name` toospecify no qual o formato de que gostaria de tooencode o ficheiro de suporte de dados.</span><span class="sxs-lookup"><span data-stu-id="b32cd-105">You can either use a `preset name` toospecify into which format you would like tooencode your media file.</span></span> <span data-ttu-id="b32cd-106">Em alternativa, pode criar os seus próprios JSON ou predefinições baseado em XML (utilizando a codificação UTF-8 ou UTF-16.</span><span class="sxs-lookup"><span data-stu-id="b32cd-106">Or, you can create your own JSON or XML-based presets (using UTF-8 or UTF-16 encoding.</span></span> <span data-ttu-id="b32cd-107">Em seguida, seria passar codificador personalizado toohello predefinidas de Olá.</span><span class="sxs-lookup"><span data-stu-id="b32cd-107">You would then pass hello custom preset toohello encoder.</span></span> <span data-ttu-id="b32cd-108">Para Olá obter lista de todos os Olá predefinido nomes suportados por este `Media Encoder Standard` codificador, consulte [predefinições de tarefas para o codificador de multimédia Standard](media-services-mes-presets-overview.md).</span><span class="sxs-lookup"><span data-stu-id="b32cd-108">For hello list of all hello preset names supported by this `Media Encoder Standard` encoder, see [Task Presets for Media Encoder Standard](media-services-mes-presets-overview.md).</span></span>  
   
- Este tópico mostra Olá `H264 Multiple Bitrate 4K Audio 5.1` no formato XML e o JSON da configuração predefinida.  
+ <span data-ttu-id="b32cd-109">Este tópico mostra Olá `H264 Multiple Bitrate 4K Audio 5.1` no formato XML e o JSON da configuração predefinida.</span><span class="sxs-lookup"><span data-stu-id="b32cd-109">This topic shows hello `H264 Multiple Bitrate 4K Audio 5.1` preset in XML and JSON format.</span></span>  
   
- Esta predefinição produz um conjunto de 12 ficheiros MP4 alinhada GOP, vão de 20000 kbps de too1000 kbps e AAC 5.1 áudio. Para obter informações detalhadas sobre o perfil, velocidade de transmissão, fazendo a amostragem taxa, etc. Isto da configuração predefinida, examine Olá XML ou JSON definido abaixo. Para uma explicação das significa que cada elemento e os valores válidos de Olá para cada elemento, consulte Olá [esquema codificador de multimédia Standard](media-services-mes-schema.md).  
-  
-> [!NOTE]
->  Pode ser obtido Olá Premium reservado codifica o tipo de unidade de 4K. Para obter mais informações, consulte [como tooScale codificação](https://azure.microsoft.com/en-us/documentation/articles/media-services-portal-encoding-units).  
+ <span data-ttu-id="b32cd-110">Esta predefinição produz um conjunto de 12 ficheiros MP4 alinhada GOP, vão de 20000 kbps de too1000 kbps e AAC 5.1 áudio.</span><span class="sxs-lookup"><span data-stu-id="b32cd-110">This preset produces a set of 12 GOP-aligned MP4 files, ranging from 20000 kbps too1000 kbps, and AAC 5.1 audio.</span></span> <span data-ttu-id="b32cd-111">Para obter informações detalhadas sobre o perfil, velocidade de transmissão, fazendo a amostragem taxa, etc. Isto da configuração predefinida, examine Olá XML ou JSON definido abaixo.</span><span class="sxs-lookup"><span data-stu-id="b32cd-111">For detailed information about profile, bitrate, sampling rate, etc. of this preset, examine hello XML or JSON defined below.</span></span> <span data-ttu-id="b32cd-112">Para uma explicação das significa que cada elemento e os valores válidos de Olá para cada elemento, consulte Olá [esquema codificador de multimédia Standard](media-services-mes-schema.md).</span><span class="sxs-lookup"><span data-stu-id="b32cd-112">For explanations of what each element means, and hello valid values for each element, see hello [Media Encoder Standard schema](media-services-mes-schema.md).</span></span>  
   
 > [!NOTE]
->  Quando modificar Olá `Width` e `Height` valores em camadas, certifique-se de que proporção Olá permanecem consistente. Por exemplo: 1920 x 1080, 1280 x 720, 1080 x 576, 640 x 360. Não deve utilizar uma combinação de proporções, tais como: 1280 x 720, 720 x 480, 640 x 360.  
+>  <span data-ttu-id="b32cd-113">Pode ser obtido Olá Premium reservado codifica o tipo de unidade de 4K.</span><span class="sxs-lookup"><span data-stu-id="b32cd-113">You should get hello Premium reserved unit type with 4K encodes.</span></span> <span data-ttu-id="b32cd-114">Para obter mais informações, consulte [como tooScale codificação](https://azure.microsoft.com/en-us/documentation/articles/media-services-portal-encoding-units).</span><span class="sxs-lookup"><span data-stu-id="b32cd-114">For more information, see [How tooScale Encoding](https://azure.microsoft.com/en-us/documentation/articles/media-services-portal-encoding-units).</span></span>  
   
- XML  
+> [!NOTE]
+>  <span data-ttu-id="b32cd-115">Quando modificar Olá `Width` e `Height` valores em camadas, certifique-se de que proporção Olá permanecem consistente.</span><span class="sxs-lookup"><span data-stu-id="b32cd-115">When modifying hello `Width` and `Height` values across layers, make sure that hello aspect ratio remains consistent.</span></span> <span data-ttu-id="b32cd-116">Por exemplo: 1920 x 1080, 1280 x 720, 1080 x 576, 640 x 360.</span><span class="sxs-lookup"><span data-stu-id="b32cd-116">For example: 1920x1080, 1280x720, 1080x576, 640x360.</span></span> <span data-ttu-id="b32cd-117">Não deve utilizar uma combinação de proporções, tais como: 1280 x 720, 720 x 480, 640 x 360.</span><span class="sxs-lookup"><span data-stu-id="b32cd-117">You should not use a mixture of aspect ratios, such as: 1280x720, 720x480, 640x360.</span></span>  
+  
+ <span data-ttu-id="b32cd-118">XML</span><span class="sxs-lookup"><span data-stu-id="b32cd-118">XML</span></span>  
   
 ```  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -240,7 +240,7 @@ ms.lasthandoff: 10/06/2017
 </Preset>  
 ```  
   
- JSON  
+ <span data-ttu-id="b32cd-119">JSON</span><span class="sxs-lookup"><span data-stu-id="b32cd-119">JSON</span></span>  
   
 ```  
 {  

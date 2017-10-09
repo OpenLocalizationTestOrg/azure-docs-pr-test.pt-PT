@@ -22,9 +22,9 @@ ms.lasthandoff: 10/06/2017
 ---
 [!INCLUDE [iot-secure-your-deployment](../../includes/iot-secure-your-deployment.md)]
 
-## <a name="see-also"></a>Consultar também
-toofurther explorar Olá das capacidades do IoT Hub, consulte:
+## <a name="see-also"></a><span data-ttu-id="87774-104">Consultar também</span><span class="sxs-lookup"><span data-stu-id="87774-104">See also</span></span>
+<span data-ttu-id="87774-105">toofurther explorar Olá das capacidades do IoT Hub, consulte:</span><span class="sxs-lookup"><span data-stu-id="87774-105">toofurther explore hello capabilities of IoT Hub, see:</span></span>
 
-* [Simulando um dispositivo com o Azure IoT Edge][lnk-iotedge]
+* <span data-ttu-id="87774-106">[Simulando um dispositivo com o Azure IoT Edge][lnk-iotedge]</span><span class="sxs-lookup"><span data-stu-id="87774-106">[Simulating a device with Azure IoT Edge][lnk-iotedge]</span></span>
 
 [lnk-iotedge]: iot-hub-linux-iot-edge-simulated-device.md

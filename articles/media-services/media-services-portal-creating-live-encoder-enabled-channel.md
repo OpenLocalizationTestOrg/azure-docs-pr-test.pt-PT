@@ -20,187 +20,187 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="how-tooperform-live-streaming-using-azure-media-services-toocreate-multi-bitrate-streams-with-hello-azure-portal"></a>Como tooperform em direto transmissão em fluxo utilizando toocreate de Media Services do Azure e múltipla fluxos com Olá portal do Azure
+# <a name="how-tooperform-live-streaming-using-azure-media-services-toocreate-multi-bitrate-streams-with-hello-azure-portal"></a><span data-ttu-id="5d4b7-103">Como tooperform em direto transmissão em fluxo utilizando toocreate de Media Services do Azure e múltipla fluxos com Olá portal do Azure</span><span class="sxs-lookup"><span data-stu-id="5d4b7-103">How tooperform live streaming using Azure Media Services toocreate multi-bitrate streams with hello Azure portal</span></span>
 > [!div class="op_single_selector"]
-> * [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
-> * [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
-> * [API REST](https://docs.microsoft.com/rest/api/media/operations/channel)
+> * [<span data-ttu-id="5d4b7-104">Portal</span><span class="sxs-lookup"><span data-stu-id="5d4b7-104">Portal</span></span>](media-services-portal-creating-live-encoder-enabled-channel.md)
+> * [<span data-ttu-id="5d4b7-105">.NET</span><span class="sxs-lookup"><span data-stu-id="5d4b7-105">.NET</span></span>](media-services-dotnet-creating-live-encoder-enabled-channel.md)
+> * [<span data-ttu-id="5d4b7-106">API REST</span><span class="sxs-lookup"><span data-stu-id="5d4b7-106">REST API</span></span>](https://docs.microsoft.com/rest/api/media/operations/channel)
 > 
 > 
 
-Este tutorial explica Olá passos de criação de um **canal** que recebe um velocidade de transmissão única em fluxo em direto e a codifica toomulti transmissão em fluxo.
+<span data-ttu-id="5d4b7-107">Este tutorial explica Olá passos de criação de um **canal** que recebe um velocidade de transmissão única em fluxo em direto e a codifica toomulti transmissão em fluxo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-107">This tutorial walks you through hello steps of creating a **Channel** that receives a single-bitrate live stream and encodes it toomulti-bitrate stream.</span></span>
 
 > [!NOTE]
-> Para obter mais informações concetuais tooChannels relacionados que estão ativados para live encoding, consulte [em direto de transmissão em fluxo através de fluxos de transmissão múltipla toocreate de Media Services do Azure](media-services-manage-live-encoder-enabled-channels.md).
+> <span data-ttu-id="5d4b7-108">Para obter mais informações concetuais tooChannels relacionados que estão ativados para live encoding, consulte [em direto de transmissão em fluxo através de fluxos de transmissão múltipla toocreate de Media Services do Azure](media-services-manage-live-encoder-enabled-channels.md).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-108">For more conceptual information related tooChannels that are enabled for live encoding, see [Live streaming using Azure Media Services toocreate multi-bitrate streams](media-services-manage-live-encoder-enabled-channels.md).</span></span>
 > 
 > 
 
-## <a name="common-live-streaming-scenario"></a>Cenário Comum de Transmissão em Fluxo em Direto
-Olá seguem-se passos gerais referentes à criação de aplicações comuns de transmissão em fluxo em direto.
+## <a name="common-live-streaming-scenario"></a><span data-ttu-id="5d4b7-109">Cenário Comum de Transmissão em Fluxo em Direto</span><span class="sxs-lookup"><span data-stu-id="5d4b7-109">Common Live Streaming Scenario</span></span>
+<span data-ttu-id="5d4b7-110">Olá seguem-se passos gerais referentes à criação de aplicações comuns de transmissão em fluxo em direto.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-110">hello following are general steps involved in creating common live streaming applications.</span></span>
 
 > [!NOTE]
-> Atualmente, Olá máximo recomendado duração de um evento em direto é de 8 horas. Contacte amslived através de Microsoft.com se precisar de toorun um canal durante períodos de tempo mais longos.
+> <span data-ttu-id="5d4b7-111">Atualmente, Olá máximo recomendado duração de um evento em direto é de 8 horas.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-111">Currently, hello max recommended duration of a live event is 8 hours.</span></span> <span data-ttu-id="5d4b7-112">Contacte amslived através de Microsoft.com se precisar de toorun um canal durante períodos de tempo mais longos.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-112">Please contact  amslived at Microsoft.com if you need toorun a Channel for longer periods of time.</span></span>
 > 
 > 
 
-1. Ligue um computador de tooa câmara de vídeo. Inicie e configure um codificador em direto no local que possa enviar uma transmissão em fluxo das Olá seguintes protocolos: RTMP, transmissão em fluxo uniforme ou RTP (MPEG-TS). Para obter mais informações, consulte [Suporte RTMP dos Media Services do Azure e Codificadores em Direto](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. <span data-ttu-id="5d4b7-113">Ligue um computador de tooa câmara de vídeo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-113">Connect a video camera tooa computer.</span></span> <span data-ttu-id="5d4b7-114">Inicie e configure um codificador em direto no local que possa enviar uma transmissão em fluxo das Olá seguintes protocolos: RTMP, transmissão em fluxo uniforme ou RTP (MPEG-TS).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-114">Launch and configure an on-premises live encoder that can output a single bitrate stream in one of hello following protocols: RTMP, Smooth Streaming, or RTP (MPEG-TS).</span></span> <span data-ttu-id="5d4b7-115">Para obter mais informações, consulte [Suporte RTMP dos Media Services do Azure e Codificadores em Direto](http://go.microsoft.com/fwlink/?LinkId=532824).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-115">For more information, see [Azure Media Services RTMP Support and Live Encoders](http://go.microsoft.com/fwlink/?LinkId=532824).</span></span>
    
-    Este passo também pode ser realizado depois de criar o Canal.
-2. Crie e inicie um Canal. 
-3. URL de inserção de obter Olá canal. 
+    <span data-ttu-id="5d4b7-116">Este passo também pode ser realizado depois de criar o Canal.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-116">This step could also be performed after you create your Channel.</span></span>
+2. <span data-ttu-id="5d4b7-117">Crie e inicie um Canal.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-117">Create and start a Channel.</span></span> 
+3. <span data-ttu-id="5d4b7-118">URL de inserção de obter Olá canal.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-118">Retrieve hello Channel ingest URL.</span></span> 
    
-    URL de inserção de Olá é utilizado pelo Olá codificador em direto toosend Olá fluxo toohello canal.
-4. Obter o URL de pré-visualização do canal de Olá. 
+    <span data-ttu-id="5d4b7-119">URL de inserção de Olá é utilizado pelo Olá codificador em direto toosend Olá fluxo toohello canal.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-119">hello ingest URL is used by hello live encoder toosend hello stream toohello Channel.</span></span>
+4. <span data-ttu-id="5d4b7-120">Obter o URL de pré-visualização do canal de Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-120">Retrieve hello Channel preview URL.</span></span> 
    
-    Utilize este tooverify de URL que o canal está a receber corretamente em fluxo em direto Olá.
-5. Crie um evento/programa (que também irá criar um elemento). 
-6. Publica o evento de Olá (que criará um localizador OnDemand para o elemento associado Olá).    
-7. Inicie o evento de Olá quando estiver pronto toostart de transmissão em fluxo e o arquivamento.
-8. Opcionalmente, o codificador em direto Olá pode ser assinalado toostart um anúncio. anúncio de Olá é inserido no fluxo de saída Olá.
-9. Pare o evento de Olá sempre que pretender toostop de transmissão em fluxo e arquivar o evento de Olá.
-10. Eliminar o evento de Olá (e, opcionalmente, elimine o elemento de Olá).   
+    <span data-ttu-id="5d4b7-121">Utilize este tooverify de URL que o canal está a receber corretamente em fluxo em direto Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-121">Use this URL tooverify that your channel is properly receiving hello live stream.</span></span>
+5. <span data-ttu-id="5d4b7-122">Crie um evento/programa (que também irá criar um elemento).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-122">Create an event/program (that will also create an asset).</span></span> 
+6. <span data-ttu-id="5d4b7-123">Publica o evento de Olá (que criará um localizador OnDemand para o elemento associado Olá).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-123">Publish hello event (that will create an  OnDemand locator for hello associated asset).</span></span>    
+7. <span data-ttu-id="5d4b7-124">Inicie o evento de Olá quando estiver pronto toostart de transmissão em fluxo e o arquivamento.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-124">Start hello event when you are ready toostart streaming and archiving.</span></span>
+8. <span data-ttu-id="5d4b7-125">Opcionalmente, o codificador em direto Olá pode ser assinalado toostart um anúncio.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-125">Optionally, hello live encoder can be signaled toostart an advertisement.</span></span> <span data-ttu-id="5d4b7-126">anúncio de Olá é inserido no fluxo de saída Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-126">hello advertisement is inserted in hello output stream.</span></span>
+9. <span data-ttu-id="5d4b7-127">Pare o evento de Olá sempre que pretender toostop de transmissão em fluxo e arquivar o evento de Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-127">Stop hello event whenever you want toostop streaming and archiving hello event.</span></span>
+10. <span data-ttu-id="5d4b7-128">Eliminar o evento de Olá (e, opcionalmente, elimine o elemento de Olá).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-128">Delete hello event (and optionally delete hello asset).</span></span>   
 
-## <a name="in-this-tutorial"></a>Neste tutorial
-Neste tutorial, Olá portal do Azure é Olá tooaccomplish utilizados seguintes tarefas: 
+## <a name="in-this-tutorial"></a><span data-ttu-id="5d4b7-129">Neste tutorial</span><span class="sxs-lookup"><span data-stu-id="5d4b7-129">In this tutorial</span></span>
+<span data-ttu-id="5d4b7-130">Neste tutorial, Olá portal do Azure é Olá tooaccomplish utilizados seguintes tarefas:</span><span class="sxs-lookup"><span data-stu-id="5d4b7-130">In this tutorial, hello Azure portal is used tooaccomplish hello following tasks:</span></span> 
 
-1. Criar um canal que é ativada tooperform em direto codificação.
-2. Get Olá URL de inserção na ordem toosupply-toolive codificador. Codificador em direto Olá utilizará esta sequência do URL tooingest Olá para Olá canal.
-3. Crie um evento/programa (e um elemento).
-4. Publicar Olá elemento e obter URLs de transmissão em fluxo.  
-5. Reproduzir os conteúdos.
-6. Faça a limpeza.
+1. <span data-ttu-id="5d4b7-131">Criar um canal que é ativada tooperform em direto codificação.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-131">Create a channel that is enabled tooperform live encoding.</span></span>
+2. <span data-ttu-id="5d4b7-132">Get Olá URL de inserção na ordem toosupply-toolive codificador.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-132">Get hello Ingest URL in order toosupply it toolive encoder.</span></span> <span data-ttu-id="5d4b7-133">Codificador em direto Olá utilizará esta sequência do URL tooingest Olá para Olá canal.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-133">hello live encoder will use this URL tooingest hello stream into hello Channel.</span></span>
+3. <span data-ttu-id="5d4b7-134">Crie um evento/programa (e um elemento).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-134">Create an event/program (and an asset).</span></span>
+4. <span data-ttu-id="5d4b7-135">Publicar Olá elemento e obter URLs de transmissão em fluxo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-135">Publish hello asset and get streaming URLs.</span></span>  
+5. <span data-ttu-id="5d4b7-136">Reproduzir os conteúdos.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-136">Play your content.</span></span>
+6. <span data-ttu-id="5d4b7-137">Faça a limpeza.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-137">Cleaning up.</span></span>
 
-## <a name="prerequisites"></a>Pré-requisitos
-Olá seguem-se tutorial de Olá toocomplete necessária.
+## <a name="prerequisites"></a><span data-ttu-id="5d4b7-138">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="5d4b7-138">Prerequisites</span></span>
+<span data-ttu-id="5d4b7-139">Olá seguem-se tutorial de Olá toocomplete necessária.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-139">hello following are required toocomplete hello tutorial.</span></span>
 
-* toocomplete neste tutorial, precisa de uma conta do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. 
-  Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Uma conta dos Media Services. toocreate uma conta de Media Services, consulte [criar conta](media-services-portal-create-account.md).
-* Uma câmara Web e um codificador que possa enviar uma transmissão de velocidade de transmissão única.
+* <span data-ttu-id="5d4b7-140">toocomplete neste tutorial, precisa de uma conta do Azure.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-140">toocomplete this tutorial, you need an Azure account.</span></span> <span data-ttu-id="5d4b7-141">Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-141">If you don't have an account, you can create a free trial account in just a couple of minutes.</span></span> 
+  <span data-ttu-id="5d4b7-142">Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-142">For details, see [Azure Free Trial](https://azure.microsoft.com/pricing/free-trial/).</span></span>
+* <span data-ttu-id="5d4b7-143">Uma conta dos Media Services.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-143">A Media Services account.</span></span> <span data-ttu-id="5d4b7-144">toocreate uma conta de Media Services, consulte [criar conta](media-services-portal-create-account.md).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-144">toocreate a Media Services account, see [Create Account](media-services-portal-create-account.md).</span></span>
+* <span data-ttu-id="5d4b7-145">Uma câmara Web e um codificador que possa enviar uma transmissão de velocidade de transmissão única.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-145">A webcam and an encoder that can send a single bitrate live stream.</span></span>
 
-## <a name="create-a-channel"></a>Criar um canal
-1. No Olá [portal do Azure](https://portal.azure.com/), selecione serviços de suporte de dados e, em seguida, clique no nome da sua conta dos Media Services.
-2. Selecione **Transmissão em Direto**.
-3. Selecione **Criação personalizada**. Esta opção permitir-lhe-á criar um canal que está ativado para codificação em direto.
+## <a name="create-a-channel"></a><span data-ttu-id="5d4b7-146">Criar um canal</span><span class="sxs-lookup"><span data-stu-id="5d4b7-146">Create a channel</span></span>
+1. <span data-ttu-id="5d4b7-147">No Olá [portal do Azure](https://portal.azure.com/), selecione serviços de suporte de dados e, em seguida, clique no nome da sua conta dos Media Services.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-147">In hello [Azure portal](https://portal.azure.com/), select Media Services and then click on your Media Services account name.</span></span>
+2. <span data-ttu-id="5d4b7-148">Selecione **Transmissão em Direto**.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-148">Select **Live Streaming**.</span></span>
+3. <span data-ttu-id="5d4b7-149">Selecione **Criação personalizada**.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-149">Select **Custom create**.</span></span> <span data-ttu-id="5d4b7-150">Esta opção permitir-lhe-á criar um canal que está ativado para codificação em direto.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-150">This option will let you create a channel that is enabled for live encoding.</span></span>
    
     ![Criar um canal](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel.png)
-4. Clique em **Definições**.
+4. <span data-ttu-id="5d4b7-152">Clique em **Definições**.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-152">Click on **Settings**.</span></span>
    
-   1. Escolha Olá **Live Encoding** tipo de canal. Este tipo Especifica que pretende que toocreate um canal ativado para live encoding. Que significa Olá velocidade de transmissão única entrada fluxo enviado toohello canal e codificado como uma sequência de transmissão múltipla utilizando as definições do codificador em direto. Para obter mais informações, consulte [em direto de transmissão em fluxo através de fluxos de transmissão múltipla toocreate de Media Services do Azure](media-services-manage-live-encoder-enabled-channels.md). Clique em OK.
-   2. Especifique o nome de um canal.
-   3. Clique em OK em Olá parte inferior do ecrã de Olá.
-5. Selecione Olá **inserção** separador.
+   1. <span data-ttu-id="5d4b7-153">Escolha Olá **Live Encoding** tipo de canal.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-153">Choose hello **Live Encoding** channel type.</span></span> <span data-ttu-id="5d4b7-154">Este tipo Especifica que pretende que toocreate um canal ativado para live encoding.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-154">This type specifies that you want toocreate a Channel that is enabled for live encoding.</span></span> <span data-ttu-id="5d4b7-155">Que significa Olá velocidade de transmissão única entrada fluxo enviado toohello canal e codificado como uma sequência de transmissão múltipla utilizando as definições do codificador em direto.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-155">That means hello incoming single bitrate stream is sent toohello Channel and encoded into a multi-bitrate stream using specified live encoder settings.</span></span> <span data-ttu-id="5d4b7-156">Para obter mais informações, consulte [em direto de transmissão em fluxo através de fluxos de transmissão múltipla toocreate de Media Services do Azure](media-services-manage-live-encoder-enabled-channels.md).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-156">For more information, see [Live streaming using Azure Media Services toocreate multi-bitrate streams](media-services-manage-live-encoder-enabled-channels.md).</span></span> <span data-ttu-id="5d4b7-157">Clique em OK.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-157">Click OK.</span></span>
+   2. <span data-ttu-id="5d4b7-158">Especifique o nome de um canal.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-158">Specify a channel's name.</span></span>
+   3. <span data-ttu-id="5d4b7-159">Clique em OK em Olá parte inferior do ecrã de Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-159">Click OK at hello bottom of hello screen.</span></span>
+5. <span data-ttu-id="5d4b7-160">Selecione Olá **inserção** separador.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-160">Select hello **Ingest** tab.</span></span>
    
-   1. Nesta página, pode selecionar um protocolo de transmissão em fluxo. Para Olá **Live Encoding** são do tipo de canal, opções de protocolo válido:
+   1. <span data-ttu-id="5d4b7-161">Nesta página, pode selecionar um protocolo de transmissão em fluxo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-161">On this page, you can select a streaming protocol.</span></span> <span data-ttu-id="5d4b7-162">Para Olá **Live Encoding** são do tipo de canal, opções de protocolo válido:</span><span class="sxs-lookup"><span data-stu-id="5d4b7-162">For hello **Live Encoding** channel type, valid protocol options are:</span></span>
       
-      * MP4 fragmentado de velocidade de transmissão única (Transmissão em Fluxo Uniforme)
-      * RTMP de velocidade transmissão única
-      * RTP (MPEG-TS): Transmissão de Fluxo de Transporte de MPEG-2 sobre RTP.
+      * <span data-ttu-id="5d4b7-163">MP4 fragmentado de velocidade de transmissão única (Transmissão em Fluxo Uniforme)</span><span class="sxs-lookup"><span data-stu-id="5d4b7-163">Single bitrate Fragmented MP4 (Smooth Streaming)</span></span>
+      * <span data-ttu-id="5d4b7-164">RTMP de velocidade transmissão única</span><span class="sxs-lookup"><span data-stu-id="5d4b7-164">Single bitrate RTMP</span></span>
+      * <span data-ttu-id="5d4b7-165">RTP (MPEG-TS): Transmissão de Fluxo de Transporte de MPEG-2 sobre RTP.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-165">RTP (MPEG-TS): MPEG-2 Transport Stream over RTP.</span></span>
         
-        Para obter explicações detalhadas sobre cada protocolo, consulte [em direto de transmissão em fluxo através de fluxos de transmissão múltipla toocreate de Media Services do Azure](media-services-manage-live-encoder-enabled-channels.md).
+        <span data-ttu-id="5d4b7-166">Para obter explicações detalhadas sobre cada protocolo, consulte [em direto de transmissão em fluxo através de fluxos de transmissão múltipla toocreate de Media Services do Azure](media-services-manage-live-encoder-enabled-channels.md).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-166">For detailed explanation about each protocol, see [Live streaming using Azure Media Services toocreate multi-bitrate streams](media-services-manage-live-encoder-enabled-channels.md).</span></span>
         
-        Não pode alterar a opção de protocolo de Olá ao hello canal ou seus eventos/programas associados estão em execução. Se necessitar de protocolos diferentes, deve criar canais separados para cada protocolo de transmissão em fluxo.  
-   2. Pode aplicar a restrição de IP Olá de inserção. 
+        <span data-ttu-id="5d4b7-167">Não pode alterar a opção de protocolo de Olá ao hello canal ou seus eventos/programas associados estão em execução.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-167">You cannot change hello protocol option while hello Channel or its associated events/programs are running.</span></span> <span data-ttu-id="5d4b7-168">Se necessitar de protocolos diferentes, deve criar canais separados para cada protocolo de transmissão em fluxo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-168">If you require different protocols, you should create separate channels for each streaming protocol.</span></span>  
+   2. <span data-ttu-id="5d4b7-169">Pode aplicar a restrição de IP Olá de inserção.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-169">You can apply IP restriction on hello ingest.</span></span> 
       
-       Pode definir Olá IP endereços que são permitidos tooingest um canal toothis vídeo. Os endereços IP permitidos podem ser especificados como um endereço IP único (por exemplo,  "10.0.0.1"), um intervalo IP com um endereço IP e uma máscara sub-rede CIDR (por exemplo "10.0.0.1/22") ou um intervalo IP com um endereço IP e uma máscara sub-rede de ponto decimal (por exemplo, '10.0.0.1(255.255.252.0)').
+       <span data-ttu-id="5d4b7-170">Pode definir Olá IP endereços que são permitidos tooingest um canal toothis vídeo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-170">You can define hello IP addresses that are allowed tooingest a video toothis channel.</span></span> <span data-ttu-id="5d4b7-171">Os endereços IP permitidos podem ser especificados como um endereço IP único (por exemplo,  "10.0.0.1"), um intervalo IP com um endereço IP e uma máscara sub-rede CIDR (por exemplo "10.0.0.1/22") ou um intervalo IP com um endereço IP e uma máscara sub-rede de ponto decimal (por exemplo, '10.0.0.1(255.255.252.0)').</span><span class="sxs-lookup"><span data-stu-id="5d4b7-171">Allowed IP addresses can be specified as either a single IP address (e.g. '10.0.0.1'), an IP range using an IP address and a CIDR subnet mask (e.g. '10.0.0.1/22'), or an IP range using an IP address and a dotted decimal subnet mask (e.g. '10.0.0.1(255.255.252.0)').</span></span>
       
-       Se não for especificado qualquer endereço IP e não existir nenhuma definição de regra, então, não será permitido qualquer endereço IP. tooallow qualquer endereço IP, crie uma regra e defina 0.0.0.0/0.
-6. No Olá **pré-visualização** separador, aplicar a restrição de IP na pré-visualização Olá.
-7. No Olá **codificação** separador, especifique a predefinição de codificação Olá. 
+       <span data-ttu-id="5d4b7-172">Se não for especificado qualquer endereço IP e não existir nenhuma definição de regra, então, não será permitido qualquer endereço IP.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-172">If no IP addresses are specified and there is no rule definition then no IP address will be allowed.</span></span> <span data-ttu-id="5d4b7-173">tooallow qualquer endereço IP, crie uma regra e defina 0.0.0.0/0.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-173">tooallow any IP address, create a rule and set 0.0.0.0/0.</span></span>
+6. <span data-ttu-id="5d4b7-174">No Olá **pré-visualização** separador, aplicar a restrição de IP na pré-visualização Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-174">On hello **Preview** tab, apply IP restriction on hello preview.</span></span>
+7. <span data-ttu-id="5d4b7-175">No Olá **codificação** separador, especifique a predefinição de codificação Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-175">On hello **Encoding** tab, specify hello encoding preset.</span></span> 
    
-    Olá, atualmente, apenas o sistema é a predefinição, pode selecionar **720p**. toospecify um personalizado predefinido, abra um pedido de suporte da Microsoft. Em seguida, introduza o nome de Olá do Olá predefinição criada para si. 
+    <span data-ttu-id="5d4b7-176">Olá, atualmente, apenas o sistema é a predefinição, pode selecionar **720p**.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-176">Currently, hello only system preset you can select is **Default 720p**.</span></span> <span data-ttu-id="5d4b7-177">toospecify um personalizado predefinido, abra um pedido de suporte da Microsoft.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-177">toospecify a custom preset, open a Microsoft support ticket.</span></span> <span data-ttu-id="5d4b7-178">Em seguida, introduza o nome de Olá do Olá predefinição criada para si.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-178">Then, enter hello name of hello preset created for you.</span></span> 
 
 > [!NOTE]
-> Atualmente, o arranque do canal Olá pode demorar até too30 minutos. A reposição do canal pode demorar até too5 minutos.
+> <span data-ttu-id="5d4b7-179">Atualmente, o arranque do canal Olá pode demorar até too30 minutos.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-179">Currently, hello Channel start can take up too30 minutes.</span></span> <span data-ttu-id="5d4b7-180">A reposição do canal pode demorar até too5 minutos.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-180">Channel reset can take up too5 minutes.</span></span>
 > 
 > 
 
-Assim que tiver criado o canal de Olá, pode clicar em canal de Olá e selecione **definições** onde pode ver as configurações dos canais. 
+<span data-ttu-id="5d4b7-181">Assim que tiver criado o canal de Olá, pode clicar em canal de Olá e selecione **definições** onde pode ver as configurações dos canais.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-181">Once you created hello Channel, you can click on hello channel and select **Settings** where you can view your channels configurations.</span></span> 
 
-Para obter mais informações, consulte [em direto de transmissão em fluxo através de fluxos de transmissão múltipla toocreate de Media Services do Azure](media-services-manage-live-encoder-enabled-channels.md).
+<span data-ttu-id="5d4b7-182">Para obter mais informações, consulte [em direto de transmissão em fluxo através de fluxos de transmissão múltipla toocreate de Media Services do Azure](media-services-manage-live-encoder-enabled-channels.md).</span><span class="sxs-lookup"><span data-stu-id="5d4b7-182">For more information, see [Live streaming using Azure Media Services toocreate multi-bitrate streams](media-services-manage-live-encoder-enabled-channels.md).</span></span>
 
-## <a name="get-ingest-urls"></a>Obter URLs de inserção
-Depois de Olá canal seja criado, pode obter os URLs que irá fornecer o codificador em direto toohello de inserção. codificador Olá utiliza estes URLs tooinput uma transmissão em fluxo em direto.
+## <a name="get-ingest-urls"></a><span data-ttu-id="5d4b7-183">Obter URLs de inserção</span><span class="sxs-lookup"><span data-stu-id="5d4b7-183">Get ingest URLs</span></span>
+<span data-ttu-id="5d4b7-184">Depois de Olá canal seja criado, pode obter os URLs que irá fornecer o codificador em direto toohello de inserção.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-184">Once hello channel is created, you can get ingest URLs that you will provide toohello live encoder.</span></span> <span data-ttu-id="5d4b7-185">codificador Olá utiliza estes URLs tooinput uma transmissão em fluxo em direto.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-185">hello encoder uses these URLs tooinput a live stream.</span></span>
 
 ![ingesturls](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-ingest-urls.png)
 
-## <a name="create-and-manage-events"></a>Criar e gerir eventos
-### <a name="overview"></a>Descrição geral
-Um canal está associado a eventos/programas que permitem a publicação de Olá toocontrol e armazenamento de segmentos numa transmissão em fluxo em direto. Os canais gerem eventos/programas. Olá relação canal e o programa é muito semelhante tootraditional suporte de dados em que um canal tem uma transmissão em fluxo constante de conteúdo e um programa é confinada toosome excedeu o tempo limite de evento nesse canal.
+## <a name="create-and-manage-events"></a><span data-ttu-id="5d4b7-187">Criar e gerir eventos</span><span class="sxs-lookup"><span data-stu-id="5d4b7-187">Create and manage events</span></span>
+### <a name="overview"></a><span data-ttu-id="5d4b7-188">Descrição geral</span><span class="sxs-lookup"><span data-stu-id="5d4b7-188">Overview</span></span>
+<span data-ttu-id="5d4b7-189">Um canal está associado a eventos/programas que permitem a publicação de Olá toocontrol e armazenamento de segmentos numa transmissão em fluxo em direto.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-189">A channel is associated with events/programs that enable you toocontrol hello publishing and storage of segments in a live stream.</span></span> <span data-ttu-id="5d4b7-190">Os canais gerem eventos/programas.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-190">Channels manage events/programs.</span></span> <span data-ttu-id="5d4b7-191">Olá relação canal e o programa é muito semelhante tootraditional suporte de dados em que um canal tem uma transmissão em fluxo constante de conteúdo e um programa é confinada toosome excedeu o tempo limite de evento nesse canal.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-191">hello Channel and Program relationship is very similar tootraditional media where a channel has a constant stream of content and a program is scoped toosome timed event on that channel.</span></span>
 
-Pode especificar Olá número de horas que pretende tooretain Olá registada conteúdo para o evento de Olá por definição Olá **janela de arquivo** comprimento. Este valor pode ser definido a partir de um mínimo de máximo de tooa de 5 minutos de 25 horas. Duração da janela de arquivo dita também Olá período de tempo máximo os clientes podem recuar a partir da posição atual em direto Olá. Eventos podem ser executados durante período de tempo especificado Olá, mas o conteúdo que se situe atrás da duração da janela Olá é continuamente descartado. Este valor desta propriedade também determina o cliente de Olá quanto possam crescer manifestos.
+<span data-ttu-id="5d4b7-192">Pode especificar Olá número de horas que pretende tooretain Olá registada conteúdo para o evento de Olá por definição Olá **janela de arquivo** comprimento.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-192">You can specify hello number of hours you want tooretain hello recorded content for hello event by setting hello **Archive Window** length.</span></span> <span data-ttu-id="5d4b7-193">Este valor pode ser definido a partir de um mínimo de máximo de tooa de 5 minutos de 25 horas.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-193">This value can be set from a minimum of 5 minutes tooa maximum of 25 hours.</span></span> <span data-ttu-id="5d4b7-194">Duração da janela de arquivo dita também Olá período de tempo máximo os clientes podem recuar a partir da posição atual em direto Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-194">Archive window length also dictates hello maximum amount of time clients can seek back in time from hello current live position.</span></span> <span data-ttu-id="5d4b7-195">Eventos podem ser executados durante período de tempo especificado Olá, mas o conteúdo que se situe atrás da duração da janela Olá é continuamente descartado.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-195">Events can run over hello specified amount of time, but content that falls behind hello window length is continuously discarded.</span></span> <span data-ttu-id="5d4b7-196">Este valor desta propriedade também determina o cliente de Olá quanto possam crescer manifestos.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-196">This value of this property also determines how long hello client manifests can grow.</span></span>
 
-Cada evento está associado a um Elemento. recurso do evento de Olá toopublish tem de criar um localizador OnDemand para Olá associados. Ter este localizador irá permitir toobuild um URL de transmissão em fluxo que pode fornecer tooyour clientes.
+<span data-ttu-id="5d4b7-197">Cada evento está associado a um Elemento.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-197">Each event is associated with an Asset.</span></span> <span data-ttu-id="5d4b7-198">recurso do evento de Olá toopublish tem de criar um localizador OnDemand para Olá associados.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-198">toopublish hello event you must create an OnDemand locator for hello associated asset.</span></span> <span data-ttu-id="5d4b7-199">Ter este localizador irá permitir toobuild um URL de transmissão em fluxo que pode fornecer tooyour clientes.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-199">Having this locator will enable you toobuild a streaming URL that you can provide tooyour clients.</span></span>
 
-Um canal suporta até toothree eventos a executar em simultâneo para que possa criar vários arquivos do Olá mesmo fluxo de entrada. Isto permite-lhe toopublish e arquivar diferentes partes de um evento conforme necessário. Por exemplo, o requisito comercial será tooarchive 6 horas de um evento, mas toobroadcast apenas últimos 10 minutos. tooaccomplish isto, terá de toocreate dois em simultâneo com o evento. Um evento está definido tooarchive 6 horas do evento de Olá mas Olá programa não está publicado. Olá outro evento é conjunto tooarchive durante 10 minutos e este está publicado.
+<span data-ttu-id="5d4b7-200">Um canal suporta até toothree eventos a executar em simultâneo para que possa criar vários arquivos do Olá mesmo fluxo de entrada.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-200">A channel supports up toothree concurrently running events so you can create multiple archives of hello same incoming stream.</span></span> <span data-ttu-id="5d4b7-201">Isto permite-lhe toopublish e arquivar diferentes partes de um evento conforme necessário.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-201">This allows you toopublish and archive different parts of an event as needed.</span></span> <span data-ttu-id="5d4b7-202">Por exemplo, o requisito comercial será tooarchive 6 horas de um evento, mas toobroadcast apenas últimos 10 minutos.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-202">For example, your business requirement is tooarchive 6 hours of an event, but toobroadcast only last 10 minutes.</span></span> <span data-ttu-id="5d4b7-203">tooaccomplish isto, terá de toocreate dois em simultâneo com o evento.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-203">tooaccomplish this, you need toocreate two concurrently running event.</span></span> <span data-ttu-id="5d4b7-204">Um evento está definido tooarchive 6 horas do evento de Olá mas Olá programa não está publicado.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-204">One event is set tooarchive 6 hours of hello event but hello program is not published.</span></span> <span data-ttu-id="5d4b7-205">Olá outro evento é conjunto tooarchive durante 10 minutos e este está publicado.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-205">hello other event is set tooarchive for 10 minutes and this program is published.</span></span>
 
-Não deve reutilizar programas existentes para novos eventos. Em vez disso, crie e inicie um novo programa para cada evento.
+<span data-ttu-id="5d4b7-206">Não deve reutilizar programas existentes para novos eventos.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-206">You should not reuse existing programs for new events.</span></span> <span data-ttu-id="5d4b7-207">Em vez disso, crie e inicie um novo programa para cada evento.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-207">Instead, create and start a new program for each event.</span></span>
 
-Inicie um evento/programa quando estiver pronto toostart de transmissão em fluxo e o arquivamento. Pare o evento de Olá sempre que pretender toostop de transmissão em fluxo e arquivar o evento de Olá. 
+<span data-ttu-id="5d4b7-208">Inicie um evento/programa quando estiver pronto toostart de transmissão em fluxo e o arquivamento.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-208">Start an event/program when you are ready toostart streaming and archiving.</span></span> <span data-ttu-id="5d4b7-209">Pare o evento de Olá sempre que pretender toostop de transmissão em fluxo e arquivar o evento de Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-209">Stop hello event whenever you want toostop streaming and archiving hello event.</span></span> 
 
-conteúdo toodelete arquivado, pare e eliminar o evento de Olá e, em seguida, elimine o elemento associado Olá. Não é possível eliminar um recurso que é utilizado pelo evento Olá; evento de Olá deve ser eliminado primeiro. 
+<span data-ttu-id="5d4b7-210">conteúdo toodelete arquivado, pare e eliminar o evento de Olá e, em seguida, elimine o elemento associado Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-210">toodelete archived content, stop and delete hello event and then delete hello associated asset.</span></span> <span data-ttu-id="5d4b7-211">Não é possível eliminar um recurso que é utilizado pelo evento Olá; evento de Olá deve ser eliminado primeiro.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-211">An asset cannot be deleted if it is used by hello event; hello event must be deleted first.</span></span> 
 
-Mesmo depois de parar e eliminar o evento de Olá, Olá utilizadores seria capaz de toostream seu conteúdo arquivado como um vídeo a pedido, desde que não a eliminar o recurso de Olá.
+<span data-ttu-id="5d4b7-212">Mesmo depois de parar e eliminar o evento de Olá, Olá utilizadores seria capaz de toostream seu conteúdo arquivado como um vídeo a pedido, desde que não a eliminar o recurso de Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-212">Even after you stop and delete hello event, hello users would be able toostream your archived content as a video on demand, for as long as you do not delete hello asset.</span></span>
 
-Se pretender Olá tooretain arquivado conteúdo, mas não o tiver disponível para transmissão em fluxo, elimine Olá localizador de transmissão em fluxo.
+<span data-ttu-id="5d4b7-213">Se pretender Olá tooretain arquivado conteúdo, mas não o tiver disponível para transmissão em fluxo, elimine Olá localizador de transmissão em fluxo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-213">If you do want tooretain hello archived content, but not have it available for streaming, delete hello streaming locator.</span></span>
 
-### <a name="createstartstop-events"></a>Criar/iniciar/parar eventos
-Assim que tiver o fluxo de Olá que fluem para canal Olá pode começar a Olá transmissão em fluxo de eventos através da criação de um elemento, programa e localizador de transmissão em fluxo. Isto irá arquivar fluxo Olá e torná-lo tooviewers disponível através de Olá ponto final de transmissão em fluxo. 
+### <a name="createstartstop-events"></a><span data-ttu-id="5d4b7-214">Criar/iniciar/parar eventos</span><span class="sxs-lookup"><span data-stu-id="5d4b7-214">Create/start/stop events</span></span>
+<span data-ttu-id="5d4b7-215">Assim que tiver o fluxo de Olá que fluem para canal Olá pode começar a Olá transmissão em fluxo de eventos através da criação de um elemento, programa e localizador de transmissão em fluxo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-215">Once you have hello stream flowing into hello Channel you can begin hello streaming event by creating an Asset, Program, and Streaming Locator.</span></span> <span data-ttu-id="5d4b7-216">Isto irá arquivar fluxo Olá e torná-lo tooviewers disponível através de Olá ponto final de transmissão em fluxo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-216">This will archive hello stream and make it available tooviewers through hello Streaming Endpoint.</span></span> 
 
 >[!NOTE]
->Quando a sua conta de AMS é criada um **predefinido** ponto final de transmissão em fluxo é adicionada a conta de tooyour no Olá **parado** estado. toostart transmissão em fluxo o conteúdo e tomar partido do empacotamento dinâmico e a encriptação dinâmica, Olá ponto final transmissão a partir do qual pretende que o conteúdo de toostream tem toobe no Olá **executar** estado. 
+><span data-ttu-id="5d4b7-217">Quando a sua conta de AMS é criada um **predefinido** ponto final de transmissão em fluxo é adicionada a conta de tooyour no Olá **parado** estado.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-217">When your AMS account is created a **default** streaming endpoint is added tooyour account in hello **Stopped** state.</span></span> <span data-ttu-id="5d4b7-218">toostart transmissão em fluxo o conteúdo e tomar partido do empacotamento dinâmico e a encriptação dinâmica, Olá ponto final transmissão a partir do qual pretende que o conteúdo de toostream tem toobe no Olá **executar** estado.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-218">toostart streaming your content and take advantage of dynamic packaging and dynamic encryption, hello streaming endpoint from which you want toostream content has toobe in hello **Running** state.</span></span> 
 
-Existem eventos de toostart duas formas: 
+<span data-ttu-id="5d4b7-219">Existem eventos de toostart duas formas:</span><span class="sxs-lookup"><span data-stu-id="5d4b7-219">There are two ways toostart event:</span></span> 
 
-1. De Olá **canal** página, prima **evento em direto** tooadd um novo evento.
+1. <span data-ttu-id="5d4b7-220">De Olá **canal** página, prima **evento em direto** tooadd um novo evento.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-220">From hello **Channel** page, press **Live Event** tooadd a new event.</span></span>
    
-    Especifique: nome do evento, nome do elemento, janela de arquivo e opção de encriptação.
+    <span data-ttu-id="5d4b7-221">Especifique: nome do evento, nome do elemento, janela de arquivo e opção de encriptação.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-221">Specify: event name, asset name, archive window, and encryption option.</span></span>
    
     ![createprogram](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-program.png)
    
-    Se marcou **publicar este evento em direto agora** opção estiver marcada, Olá de evento Olá URLs de publicação será criado.
+    <span data-ttu-id="5d4b7-223">Se marcou **publicar este evento em direto agora** opção estiver marcada, Olá de evento Olá URLs de publicação será criado.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-223">If you left **Publish this live event now** checked, hello event hello PUBLISHING URLs will get created.</span></span>
    
-    Pode premir **iniciar**, sempre que são eventos de Olá toostream pronto.
+    <span data-ttu-id="5d4b7-224">Pode premir **iniciar**, sempre que são eventos de Olá toostream pronto.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-224">You can press **Start**, whenever you are ready toostream hello event.</span></span>
    
-    Depois de iniciar o evento de Olá, pode premir **veja** toostart reprodução Olá conteúdo.
-2. Em alternativa, pode utilizar um atalho e premir **aceda Live** botão Olá **canal** página. Isto irá criar um Elemento de predefinição, Programa e Localizador de Transmissão em Fluxo.
+    <span data-ttu-id="5d4b7-225">Depois de iniciar o evento de Olá, pode premir **veja** toostart reprodução Olá conteúdo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-225">Once you start hello event, you can press **Watch** toostart playing hello content.</span></span>
+2. <span data-ttu-id="5d4b7-226">Em alternativa, pode utilizar um atalho e premir **aceda Live** botão Olá **canal** página.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-226">Alternatively, you can use a shortcut and press **Go Live** button on hello **Channel** page.</span></span> <span data-ttu-id="5d4b7-227">Isto irá criar um Elemento de predefinição, Programa e Localizador de Transmissão em Fluxo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-227">This will create a default Asset, Program, and Streaming Locator.</span></span>
    
-    eventos de Olá é denominado **predefinido** e definir a janela de arquivo de Olá too8 horas.
+    <span data-ttu-id="5d4b7-228">eventos de Olá é denominado **predefinido** e definir a janela de arquivo de Olá too8 horas.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-228">hello event is named **default** and hello archive window is set too8 hours.</span></span>
 
-Pode ver Olá eventos publicados do Olá **evento em direto** página. 
+<span data-ttu-id="5d4b7-229">Pode ver Olá eventos publicados do Olá **evento em direto** página.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-229">You can watch hello published event from hello **Live event** page.</span></span> 
 
-Se clicar em **Off Air**, parará todos os eventos em direto. 
+<span data-ttu-id="5d4b7-230">Se clicar em **Off Air**, parará todos os eventos em direto.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-230">If you click **Off Air**, it will stop all live events.</span></span> 
 
-## <a name="watch-hello-event"></a>Evento de Olá veja
-evento de Olá toowatch, clique em **veja** no Olá Olá Azure portal ou a cópia do URL de transmissão em fluxo e utilizar um leitor da sua preferência. 
+## <a name="watch-hello-event"></a><span data-ttu-id="5d4b7-231">Evento de Olá veja</span><span class="sxs-lookup"><span data-stu-id="5d4b7-231">Watch hello event</span></span>
+<span data-ttu-id="5d4b7-232">evento de Olá toowatch, clique em **veja** no Olá Olá Azure portal ou a cópia do URL de transmissão em fluxo e utilizar um leitor da sua preferência.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-232">toowatch hello event, click **Watch** in hello Azure portal or copy hello streaming URL and use a player of your choice.</span></span> 
 
 ![Criado](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-play-event.png)
 
-Evento em direto converte automaticamente o conteúdo a pedido tooon de eventos quando parado.
+<span data-ttu-id="5d4b7-234">Evento em direto converte automaticamente o conteúdo a pedido tooon de eventos quando parado.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-234">Live event automatically converts events tooon-demand content when stopped.</span></span>
 
-## <a name="clean-up"></a>Limpeza
-Se terminar a transmissão em fluxo de eventos e quiser tooclean recursos Olá aprovisionados anteriormente, siga Olá procedimento a seguir.
+## <a name="clean-up"></a><span data-ttu-id="5d4b7-235">Limpeza</span><span class="sxs-lookup"><span data-stu-id="5d4b7-235">Clean up</span></span>
+<span data-ttu-id="5d4b7-236">Se terminar a transmissão em fluxo de eventos e quiser tooclean recursos Olá aprovisionados anteriormente, siga Olá procedimento a seguir.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-236">If you are done streaming events and want tooclean up hello resources provisioned earlier, follow hello following procedure.</span></span>
 
-* Termine o fluxo de Olá do codificador Olá.
-* Pare o canal de Olá. Depois Olá canal esteja parado, não será cobrado qualquer custo. Quando tiver toostart-la novamente, pode ter hello mesmo URL de inserção por isso não terá de tooreconfigure o codificador.
-* Pode parar o ponto final de transmissão em fluxo, a menos que queira arquivo de Olá tooprovide toocontinue do seu evento em direto como um fluxo a pedido. Se o canal de Olá está no estado parado, não será cobrado qualquer custo.
+* <span data-ttu-id="5d4b7-237">Termine o fluxo de Olá do codificador Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-237">Stop pushing hello stream from hello encoder.</span></span>
+* <span data-ttu-id="5d4b7-238">Pare o canal de Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-238">Stop hello channel.</span></span> <span data-ttu-id="5d4b7-239">Depois Olá canal esteja parado, não será cobrado qualquer custo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-239">Once hello Channel is stopped, it will not incur any charges.</span></span> <span data-ttu-id="5d4b7-240">Quando tiver toostart-la novamente, pode ter hello mesmo URL de inserção por isso não terá de tooreconfigure o codificador.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-240">When you need toostart it again, it will have hello same ingest URL so you won't need tooreconfigure your encoder.</span></span>
+* <span data-ttu-id="5d4b7-241">Pode parar o ponto final de transmissão em fluxo, a menos que queira arquivo de Olá tooprovide toocontinue do seu evento em direto como um fluxo a pedido.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-241">You can stop your Streaming Endpoint, unless you want toocontinue tooprovide hello archive of your live event as an on-demand stream.</span></span> <span data-ttu-id="5d4b7-242">Se o canal de Olá está no estado parado, não será cobrado qualquer custo.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-242">If hello channel is in stopped state, it will not incur any charges.</span></span>
 
-## <a name="view-archived-content"></a>Ver conteúdo arquivado
-Mesmo depois de parar e eliminar o evento de Olá, Olá utilizadores seria capaz de toostream seu conteúdo arquivado como um vídeo a pedido, desde que não a eliminar o recurso de Olá. Não é possível eliminar um recurso que é utilizado por um evento; evento de Olá deve ser eliminado primeiro. 
+## <a name="view-archived-content"></a><span data-ttu-id="5d4b7-243">Ver conteúdo arquivado</span><span class="sxs-lookup"><span data-stu-id="5d4b7-243">View archived content</span></span>
+<span data-ttu-id="5d4b7-244">Mesmo depois de parar e eliminar o evento de Olá, Olá utilizadores seria capaz de toostream seu conteúdo arquivado como um vídeo a pedido, desde que não a eliminar o recurso de Olá.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-244">Even after you stop and delete hello event, hello users would be able toostream your archived content as a video on demand, for as long as you do not delete hello asset.</span></span> <span data-ttu-id="5d4b7-245">Não é possível eliminar um recurso que é utilizado por um evento; evento de Olá deve ser eliminado primeiro.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-245">An asset cannot be deleted if it is used by an event; hello event must be deleted first.</span></span> 
 
-Selecione os recursos de toomanage **definição** e clique em **ativos**.
+<span data-ttu-id="5d4b7-246">Selecione os recursos de toomanage **definição** e clique em **ativos**.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-246">toomanage your assets, select **Setting** and click **Assets**.</span></span>
 
 ![Elementos](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-assets.png)
 
-## <a name="considerations"></a>Considerações
-* Atualmente, Olá máximo recomendado duração de um evento em direto é de 8 horas. Contacte amslived através de Microsoft.com se precisar de toorun um canal durante períodos de tempo mais longos.
-* Certifique-se Olá de transmissão em fluxo ponto final a partir das quais pretende toostream o conteúdo no Olá **executar** estado.
+## <a name="considerations"></a><span data-ttu-id="5d4b7-248">Considerações</span><span class="sxs-lookup"><span data-stu-id="5d4b7-248">Considerations</span></span>
+* <span data-ttu-id="5d4b7-249">Atualmente, Olá máximo recomendado duração de um evento em direto é de 8 horas.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-249">Currently, hello max recommended duration of a live event is 8 hours.</span></span> <span data-ttu-id="5d4b7-250">Contacte amslived através de Microsoft.com se precisar de toorun um canal durante períodos de tempo mais longos.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-250">Please contact amslived at Microsoft.com if you need toorun a Channel for longer periods of time.</span></span>
+* <span data-ttu-id="5d4b7-251">Certifique-se Olá de transmissão em fluxo ponto final a partir das quais pretende toostream o conteúdo no Olá **executar** estado.</span><span class="sxs-lookup"><span data-stu-id="5d4b7-251">Make sure hello streaming endpoint from which you want toostream  your content is in hello **Running** state.</span></span>
 
-## <a name="next-step"></a>Passo seguinte
-Rever os percursos de aprendizagem dos Serviços de Multimédia
+## <a name="next-step"></a><span data-ttu-id="5d4b7-252">Passo seguinte</span><span class="sxs-lookup"><span data-stu-id="5d4b7-252">Next step</span></span>
+<span data-ttu-id="5d4b7-253">Rever os percursos de aprendizagem dos Serviços de Multimédia</span><span class="sxs-lookup"><span data-stu-id="5d4b7-253">Review Media Services learning paths.</span></span>
 
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Enviar comentários
+## <a name="provide-feedback"></a><span data-ttu-id="5d4b7-254">Enviar comentários</span><span class="sxs-lookup"><span data-stu-id="5d4b7-254">Provide feedback</span></span>
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 

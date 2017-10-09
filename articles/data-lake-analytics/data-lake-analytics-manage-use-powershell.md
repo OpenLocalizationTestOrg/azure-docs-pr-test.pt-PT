@@ -20,22 +20,22 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="manage-azure-data-lake-analytics-using-azure-powershell"></a>Gerir a Análise do Azure Data Lake com o Azure PowerShell
+# <a name="manage-azure-data-lake-analytics-using-azure-powershell"></a><span data-ttu-id="00439-103">Gerir a Análise do Azure Data Lake com o Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="00439-103">Manage Azure Data Lake Analytics using Azure PowerShell</span></span>
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
 
-Saiba como toomanage contas de Azure Data Lake Analytics, origens de dados, tarefas e itens de catálogo com o Azure PowerShell. 
+<span data-ttu-id="00439-104">Saiba como toomanage contas de Azure Data Lake Analytics, origens de dados, tarefas e itens de catálogo com o Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="00439-104">Learn how toomanage Azure Data Lake Analytics accounts, data sources, jobs, and catalog items using Azure PowerShell.</span></span> 
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a><span data-ttu-id="00439-105">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="00439-105">Prerequisites</span></span>
 
-Quando criar uma conta de Data Lake Analytics, terá de tooknow:
+<span data-ttu-id="00439-106">Quando criar uma conta de Data Lake Analytics, terá de tooknow:</span><span class="sxs-lookup"><span data-stu-id="00439-106">When creating a Data Lake Analytics account, you need tooknow:</span></span>
 
-* **ID de subscrição**: Olá ID de subscrição do Azure no qual reside a conta de Data Lake Analytics.
-* **Grupo de recursos**: nome de Olá Olá do Azure do grupo de recursos que contém a sua conta do Data Lake Analytics.
-* **O nome de conta do Data Lake Analytics**: Olá conta nome só pode conter letras minúsculas e números.
-* **Conta do Data Lake Store predefinida**: cada conta do Data Lake Analytics tem uma conta do Data Lake Store predefinida. Estas contas tem de constar Olá mesma localização.
-* **Localização**: localização Olá da sua conta do Data Lake Analytics, por exemplo, "EUA Leste 2" ou outro suportado localizações. Localizações suportadas podem ser vistas no nosso [página de preços](https://azure.microsoft.com/pricing/details/data-lake-analytics/).
+* <span data-ttu-id="00439-107">**ID de subscrição**: Olá ID de subscrição do Azure no qual reside a conta de Data Lake Analytics.</span><span class="sxs-lookup"><span data-stu-id="00439-107">**Subscription ID**: hello Azure subscription ID under which your Data Lake Analytics account resides.</span></span>
+* <span data-ttu-id="00439-108">**Grupo de recursos**: nome de Olá Olá do Azure do grupo de recursos que contém a sua conta do Data Lake Analytics.</span><span class="sxs-lookup"><span data-stu-id="00439-108">**Resource group**: hello name of hello Azure resource group that contains your Data Lake Analytics account.</span></span>
+* <span data-ttu-id="00439-109">**O nome de conta do Data Lake Analytics**: Olá conta nome só pode conter letras minúsculas e números.</span><span class="sxs-lookup"><span data-stu-id="00439-109">**Data Lake Analytics account name**: hello account name must only contain lowercase letters and numbers.</span></span>
+* <span data-ttu-id="00439-110">**Conta do Data Lake Store predefinida**: cada conta do Data Lake Analytics tem uma conta do Data Lake Store predefinida.</span><span class="sxs-lookup"><span data-stu-id="00439-110">**Default Data Lake Store account**: Each Data Lake Analytics account has a default Data Lake Store account.</span></span> <span data-ttu-id="00439-111">Estas contas tem de constar Olá mesma localização.</span><span class="sxs-lookup"><span data-stu-id="00439-111">These accounts must be in hello same location.</span></span>
+* <span data-ttu-id="00439-112">**Localização**: localização Olá da sua conta do Data Lake Analytics, por exemplo, "EUA Leste 2" ou outro suportado localizações.</span><span class="sxs-lookup"><span data-stu-id="00439-112">**Location**: hello location of your Data Lake Analytics account, such as "East US 2" or other supported locations.</span></span> <span data-ttu-id="00439-113">Localizações suportadas podem ser vistas no nosso [página de preços](https://azure.microsoft.com/pricing/details/data-lake-analytics/).</span><span class="sxs-lookup"><span data-stu-id="00439-113">Supported locations can be seen on our [pricing page](https://azure.microsoft.com/pricing/details/data-lake-analytics/).</span></span>
 
-fragmentos de PowerShell Olá neste tutorial, utilize estas variáveis toostore estas informações
+<span data-ttu-id="00439-114">fragmentos de PowerShell Olá neste tutorial, utilize estas variáveis toostore estas informações</span><span class="sxs-lookup"><span data-stu-id="00439-114">hello PowerShell snippets in this tutorial use these variables toostore this information</span></span>
 
 ```powershell
 $subId = "<SubscriptionId>"
@@ -45,21 +45,21 @@ $adls = "<DataLakeStoreAccountName>"
 $location = "<Location>"
 ```
 
-## <a name="log-in"></a>Iniciar sessão
+## <a name="log-in"></a><span data-ttu-id="00439-115">Iniciar sessão</span><span class="sxs-lookup"><span data-stu-id="00439-115">Log in</span></span>
 
-Inicie sessão com um id de subscrição.
+<span data-ttu-id="00439-116">Inicie sessão com um id de subscrição.</span><span class="sxs-lookup"><span data-stu-id="00439-116">Log in using a subscription id.</span></span>
 
 ```powershell
 Login-AzureRmAccount -SubscriptionId $subId
 ```
 
-Inicie sessão com um nome de subscrição.
+<span data-ttu-id="00439-117">Inicie sessão com um nome de subscrição.</span><span class="sxs-lookup"><span data-stu-id="00439-117">Log in using a subscription name.</span></span>
 
 ```
 Login-AzureRmAccount -SubscriptionName $subname 
 ```
 
-Olá `Login-AzureRmAccount` cmdlet sempre pede-lhe credenciais. Pode evitar pedidos utilizando Olá os seguintes cmdlets:
+<span data-ttu-id="00439-118">Olá `Login-AzureRmAccount` cmdlet sempre pede-lhe credenciais.</span><span class="sxs-lookup"><span data-stu-id="00439-118">hello `Login-AzureRmAccount` cmdlet  always prompts for credentials.</span></span> <span data-ttu-id="00439-119">Pode evitar pedidos utilizando Olá os seguintes cmdlets:</span><span class="sxs-lookup"><span data-stu-id="00439-119">You can avoid being prompted by using hello following cmdlets:</span></span>
 
 ```powershell
 # Save login session information
@@ -69,71 +69,71 @@ Save-AzureRmProfile -Path D:\profile.json
 Select-AzureRmProfile -Path D:\profile.json 
 ```
 
-## <a name="managing-accounts"></a>Gerir contas
+## <a name="managing-accounts"></a><span data-ttu-id="00439-120">Gerir contas</span><span class="sxs-lookup"><span data-stu-id="00439-120">Managing accounts</span></span>
 
-### <a name="create-a-data-lake-analytics-account"></a>Criar uma conta de Data Lake Analytics
+### <a name="create-a-data-lake-analytics-account"></a><span data-ttu-id="00439-121">Criar uma conta de Data Lake Analytics</span><span class="sxs-lookup"><span data-stu-id="00439-121">Create a Data Lake Analytics account</span></span>
 
-Se ainda não tiver um [grupo de recursos](../azure-resource-manager/resource-group-overview.md#resource-groups) toouse, crie uma. 
+<span data-ttu-id="00439-122">Se ainda não tiver um [grupo de recursos](../azure-resource-manager/resource-group-overview.md#resource-groups) toouse, crie uma.</span><span class="sxs-lookup"><span data-stu-id="00439-122">If you don't already have a [resource group](../azure-resource-manager/resource-group-overview.md#resource-groups) toouse, create one.</span></span> 
 
 ```powershell
 New-AzureRmResourceGroup -Name  $rg -Location $location
 ```
 
-Cada conta de Data Lake Analytics requer uma conta de Data Lake Store predefinida que utiliza para armazenar registos. Pode reutilizar uma conta existente ou criar uma conta. 
+<span data-ttu-id="00439-123">Cada conta de Data Lake Analytics requer uma conta de Data Lake Store predefinida que utiliza para armazenar registos.</span><span class="sxs-lookup"><span data-stu-id="00439-123">Every Data Lake Analytics account requires a default Data Lake Store account that it uses for storing logs.</span></span> <span data-ttu-id="00439-124">Pode reutilizar uma conta existente ou criar uma conta.</span><span class="sxs-lookup"><span data-stu-id="00439-124">You can reuse an existing account or create an account.</span></span> 
 
 ```powershell
 New-AdlStore -ResourceGroupName $rg -Name $adls -Location $location
 ```
 
-Assim que um Grupo de Recursos e uma conta de Data Lake Store estiverem disponíveis, crie uma conta de Data Lake Analytics.
+<span data-ttu-id="00439-125">Assim que um Grupo de Recursos e uma conta de Data Lake Store estiverem disponíveis, crie uma conta de Data Lake Analytics.</span><span class="sxs-lookup"><span data-stu-id="00439-125">Once a Resource Group and Data Lake Store account is available, create a Data Lake Analytics account.</span></span>
 
 ```powershell
 New-AdlAnalyticsAccount -ResourceGroupName $rg -Name $adla -Location $location -DefaultDataLake $adls
 ```
 
-### <a name="get-information-about-an-account"></a>Obter informações sobre uma conta
+### <a name="get-information-about-an-account"></a><span data-ttu-id="00439-126">Obter informações sobre uma conta</span><span class="sxs-lookup"><span data-stu-id="00439-126">Get information about an account</span></span>
 
-Obter informações sobre a uma conta.
+<span data-ttu-id="00439-127">Obter informações sobre a uma conta.</span><span class="sxs-lookup"><span data-stu-id="00439-127">Get details about an account.</span></span>
 
 ```powershell
 Get-AdlAnalyticsAccount -Name $adla
 ```
 
-Verificar a existência de Olá de uma conta de Data Lake Analytics específica. Olá cmdlet devolve um `True` ou `False`.
+<span data-ttu-id="00439-128">Verificar a existência de Olá de uma conta de Data Lake Analytics específica.</span><span class="sxs-lookup"><span data-stu-id="00439-128">Check hello existence of a specific Data Lake Analytics account.</span></span> <span data-ttu-id="00439-129">Olá cmdlet devolve um `True` ou `False`.</span><span class="sxs-lookup"><span data-stu-id="00439-129">hello cmdlet returns either `True` or `False`.</span></span>
 
 ```powershell
 Test-AdlAnalyticsAccount -Name $adla
 ```
 
-Verificar a existência de Olá de uma conta de Data Lake Store específica. Olá cmdlet devolve um `True` ou `False`.
+<span data-ttu-id="00439-130">Verificar a existência de Olá de uma conta de Data Lake Store específica.</span><span class="sxs-lookup"><span data-stu-id="00439-130">Check hello existence of a specific Data Lake Store account.</span></span> <span data-ttu-id="00439-131">Olá cmdlet devolve um `True` ou `False`.</span><span class="sxs-lookup"><span data-stu-id="00439-131">hello cmdlet returns either `True` or `False`.</span></span>
 
 ```powershell
 Test-AdlStoreAccount -Name $adls
 ```
 
-### <a name="listing-accounts"></a>Contas de listagem
+### <a name="listing-accounts"></a><span data-ttu-id="00439-132">Contas de listagem</span><span class="sxs-lookup"><span data-stu-id="00439-132">Listing accounts</span></span>
 
-Contas de análise do Data Lake da lista na subscrição atual Olá.
+<span data-ttu-id="00439-133">Contas de análise do Data Lake da lista na subscrição atual Olá.</span><span class="sxs-lookup"><span data-stu-id="00439-133">List Data Lake Analytics accounts within hello current subscription.</span></span>
 
 ```powershell
 Get-AdlAnalyticsAccount
 ```
 
-Contas de análise do Data Lake da lista dentro de um grupo de recursos específico.
+<span data-ttu-id="00439-134">Contas de análise do Data Lake da lista dentro de um grupo de recursos específico.</span><span class="sxs-lookup"><span data-stu-id="00439-134">List Data Lake Analytics accounts within a specific resource group.</span></span>
 
 ```powershell
 Get-AdlAnalyticsAccount -ResourceGroupName $rg
 ```
 
-## <a name="managing-firewall-rules"></a>Gerir regras de firewall
+## <a name="managing-firewall-rules"></a><span data-ttu-id="00439-135">Gerir regras de firewall</span><span class="sxs-lookup"><span data-stu-id="00439-135">Managing firewall rules</span></span>
 
-Lista de regras de firewall.
+<span data-ttu-id="00439-136">Lista de regras de firewall.</span><span class="sxs-lookup"><span data-stu-id="00439-136">List firewall rules.</span></span>
 
 ```powershell
 Get-AdlAnalyticsFirewallRule -Account $adla
 ```
 
-Adicione uma regra de firewall.
+<span data-ttu-id="00439-137">Adicione uma regra de firewall.</span><span class="sxs-lookup"><span data-stu-id="00439-137">Add a firewall rule.</span></span>
 
 ```powershell
 $ruleName = "Allow access from on-prem server"
@@ -143,13 +143,13 @@ $endIpAddress = "<end IP address>"
 Add-AdlAnalyticsFirewallRule -Account $adla -Name $ruleName -StartIpAddress $startIpAddress -EndIpAddress $endIpAddress
 ```
 
-Altere uma regra de firewall.
+<span data-ttu-id="00439-138">Altere uma regra de firewall.</span><span class="sxs-lookup"><span data-stu-id="00439-138">Change a firewall rule.</span></span>
 
 ```powershell
 Set-AdlAnalyticsFirewallRule -Account $adla -Name $ruleName -StartIpAddress $startIpAddress -EndIpAddress $endIpAddress
 ```
 
-Remova uma regra de firewall.
+<span data-ttu-id="00439-139">Remova uma regra de firewall.</span><span class="sxs-lookup"><span data-stu-id="00439-139">Remove a firewall rule.</span></span>
 
 ```powershell
 Remove-AdlAnalyticsFirewallRule -Account $adla -Name $ruleName
@@ -157,7 +157,7 @@ Remove-AdlAnalyticsFirewallRule -Account $adla -Name $ruleName
 
 
 
-Permitir que os endereços IP do Azure.
+<span data-ttu-id="00439-140">Permitir que os endereços IP do Azure.</span><span class="sxs-lookup"><span data-stu-id="00439-140">Allow Azure IP addresses.</span></span>
 
 ```powershell
 Set-AdlAnalyticsAccount -Name $adla -AllowAzureIpState Enabled
@@ -168,28 +168,28 @@ Set-AdlAnalyticsAccount -Name $adla -FirewallState Enabled
 Set-AdlAnalyticsAccount -Name $adla -FirewallState Disabled
 ```
 
-## <a name="managing-data-sources"></a>Gerir origens de dados
-Atualmente, o Azure Data Lake Analytics suporta Olá as seguintes origens de dados:
+## <a name="managing-data-sources"></a><span data-ttu-id="00439-141">Gerir origens de dados</span><span class="sxs-lookup"><span data-stu-id="00439-141">Managing data sources</span></span>
+<span data-ttu-id="00439-142">Atualmente, o Azure Data Lake Analytics suporta Olá as seguintes origens de dados:</span><span class="sxs-lookup"><span data-stu-id="00439-142">Azure Data Lake Analytics currently supports hello following data sources:</span></span>
 
-* [Azure Data Lake Store](../data-lake-store/data-lake-store-overview.md)
-* [Armazenamento do Azure](../storage/common/storage-introduction.md)
+* [<span data-ttu-id="00439-143">Azure Data Lake Store</span><span class="sxs-lookup"><span data-stu-id="00439-143">Azure Data Lake Store</span></span>](../data-lake-store/data-lake-store-overview.md)
+* [<span data-ttu-id="00439-144">Armazenamento do Azure</span><span class="sxs-lookup"><span data-stu-id="00439-144">Azure Storage</span></span>](../storage/common/storage-introduction.md)
 
-Quando cria uma conta de análise, tem de designar uma origem de dados do Data Lake Store conta toobe Olá predefinido. Olá conta do Data Lake Store predefinida é utilizada registos de auditoria de metadados de tarefa toostore e tarefa. Depois de criar uma conta de Data Lake Analytics, pode adicionar mais contas de Data Lake Store e/ou as contas de armazenamento. 
+<span data-ttu-id="00439-145">Quando cria uma conta de análise, tem de designar uma origem de dados do Data Lake Store conta toobe Olá predefinido.</span><span class="sxs-lookup"><span data-stu-id="00439-145">When you create an Analytics account, you must designate a Data Lake Store account toobe hello default data source.</span></span> <span data-ttu-id="00439-146">Olá conta do Data Lake Store predefinida é utilizada registos de auditoria de metadados de tarefa toostore e tarefa.</span><span class="sxs-lookup"><span data-stu-id="00439-146">hello default Data Lake Store account is used toostore job metadata and job audit logs.</span></span> <span data-ttu-id="00439-147">Depois de criar uma conta de Data Lake Analytics, pode adicionar mais contas de Data Lake Store e/ou as contas de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="00439-147">After you have created a Data Lake Analytics account, you can add additional Data Lake Store accounts and/or Storage accounts.</span></span> 
 
-### <a name="find-hello-default-data-lake-store-account"></a>Localizar a conta de Data Lake Store predefinida Olá
+### <a name="find-hello-default-data-lake-store-account"></a><span data-ttu-id="00439-148">Localizar a conta de Data Lake Store predefinida Olá</span><span class="sxs-lookup"><span data-stu-id="00439-148">Find hello default Data Lake Store account</span></span>
 
 ```powershell
 $adla_acct = Get-AdlAnalyticsAccount -Name $adla
 $dataLakeStoreName = $adla_acct.DefaultDataLakeAccount
 ```
 
-Pode encontrar a conta de Data Lake Store predefinida Olá por filtrar a lista de Olá de origens de dados por Olá `IsDefault` propriedade:
+<span data-ttu-id="00439-149">Pode encontrar a conta de Data Lake Store predefinida Olá por filtrar a lista de Olá de origens de dados por Olá `IsDefault` propriedade:</span><span class="sxs-lookup"><span data-stu-id="00439-149">You can find hello default Data Lake Store account by filtering hello list of datasources by hello `IsDefault` property:</span></span>
 
 ```powershell
 Get-AdlAnalyticsDataSource -Account $adla  | ? { $_.IsDefault } 
 ```
 
-### <a name="add-a-data-source"></a>Adicionar uma origem de dados
+### <a name="add-a-data-source"></a><span data-ttu-id="00439-150">Adicionar uma origem de dados</span><span class="sxs-lookup"><span data-stu-id="00439-150">Add a data source</span></span>
 
 ```powershell
 
@@ -203,7 +203,7 @@ $AzureDataLakeStoreName = "<AzureDataLakeStoreAccountName"
 Add-AdlAnalyticsDataSource -Account $adla -DataLakeStore $AzureDataLakeStoreName 
 ```
 
-### <a name="list-data-sources"></a>Origens de dados de lista
+### <a name="list-data-sources"></a><span data-ttu-id="00439-151">Origens de dados de lista</span><span class="sxs-lookup"><span data-stu-id="00439-151">List data sources</span></span>
 
 ```powershell
 # List all hello data sources
@@ -216,9 +216,9 @@ Get-AdlAnalyticsDataSource -Name $adla | where -Property Type -EQ "DataLakeStore
 Get-AdlAnalyticsDataSource -Name $adla | where -Property Type -EQ "Blob"
 ```
 
-## <a name="submit-u-sql-jobs"></a>Submeter tarefas U-SQL
+## <a name="submit-u-sql-jobs"></a><span data-ttu-id="00439-152">Submeter tarefas U-SQL</span><span class="sxs-lookup"><span data-stu-id="00439-152">Submit U-SQL jobs</span></span>
 
-### <a name="submit-a-string-as-a-u-sql-script"></a>Submeter uma cadeia como um script U-SQL
+### <a name="submit-a-string-as-a-u-sql-script"></a><span data-ttu-id="00439-153">Submeter uma cadeia como um script U-SQL</span><span class="sxs-lookup"><span data-stu-id="00439-153">Submit a string as a U-SQL script</span></span>
 
 ```powershell
 $script = @"
@@ -240,7 +240,7 @@ Submit-AdlJob -AccountName $adla -Script $script -Name "Demo"
 ```
 
 
-### <a name="submit-a-file-as-a-u-sql-script"></a>Submeter um ficheiro como um script U-SQL
+### <a name="submit-a-file-as-a-u-sql-script"></a><span data-ttu-id="00439-154">Submeter um ficheiro como um script U-SQL</span><span class="sxs-lookup"><span data-stu-id="00439-154">Submit a file as a U-SQL script</span></span>
 
 ```powershell
 $scriptpath = "d:\test.usql"
@@ -248,29 +248,29 @@ $script | Out-File $scriptpath
 Submit-AdlJob -AccountName $adla –ScriptPath $scriptpath -Name "Demo"
 ```
 
-## <a name="list-jobs-in-an-account"></a>Lista de tarefas numa conta
+## <a name="list-jobs-in-an-account"></a><span data-ttu-id="00439-155">Lista de tarefas numa conta</span><span class="sxs-lookup"><span data-stu-id="00439-155">List jobs in an account</span></span>
 
-### <a name="list-all-hello-jobs-in-hello-account"></a>Liste todas as tarefas de Olá na conta de Olá. 
+### <a name="list-all-hello-jobs-in-hello-account"></a><span data-ttu-id="00439-156">Liste todas as tarefas de Olá na conta de Olá.</span><span class="sxs-lookup"><span data-stu-id="00439-156">List all hello jobs in hello account.</span></span> 
 
-saída de Olá inclui Olá atualmente em execução de tarefas e essas tarefas que tenham sido concluído recentemente.
+<span data-ttu-id="00439-157">saída de Olá inclui Olá atualmente em execução de tarefas e essas tarefas que tenham sido concluído recentemente.</span><span class="sxs-lookup"><span data-stu-id="00439-157">hello output includes hello currently running jobs and those jobs that have recently completed.</span></span>
 
 ```powershell
 Get-AdlJob -Account $adla
 ```
 
 
-### <a name="list-a-specific-number-of-jobs"></a>Lista de um número específico de tarefas
+### <a name="list-a-specific-number-of-jobs"></a><span data-ttu-id="00439-158">Lista de um número específico de tarefas</span><span class="sxs-lookup"><span data-stu-id="00439-158">List a specific number of jobs</span></span>
 
-Por predefinição a lista de Olá de tarefas é ordenada submeter no tempo. Para que mais recentemente submetido Olá tarefas são apresentados primeiro. Por predefinição, Olá conta ADLA memorizou tarefas durante 180 dias, mas Olá Ge AdlJob cmdlet por predefinição devolve apenas Olá 500 primeiro. Utilize o - toolist parâmetro superior num número específico de tarefas.
+<span data-ttu-id="00439-159">Por predefinição a lista de Olá de tarefas é ordenada submeter no tempo.</span><span class="sxs-lookup"><span data-stu-id="00439-159">By default hello list of jobs is sorted on submit time.</span></span> <span data-ttu-id="00439-160">Para que mais recentemente submetido Olá tarefas são apresentados primeiro.</span><span class="sxs-lookup"><span data-stu-id="00439-160">So hello most recently submitted jobs appear first.</span></span> <span data-ttu-id="00439-161">Por predefinição, Olá conta ADLA memorizou tarefas durante 180 dias, mas Olá Ge AdlJob cmdlet por predefinição devolve apenas Olá 500 primeiro.</span><span class="sxs-lookup"><span data-stu-id="00439-161">By default, hello ADLA account remembers jobs for 180 days, but hello Ge-AdlJob  cmdlet by default returns only hello first 500.</span></span> <span data-ttu-id="00439-162">Utilize o - toolist parâmetro superior num número específico de tarefas.</span><span class="sxs-lookup"><span data-stu-id="00439-162">Use -Top parameter toolist a specific number of jobs.</span></span>
 
 ```powershell
 $jobs = Get-AdlJob -Account $adla -Top 10
 ```
 
 
-### <a name="list-jobs-based-on-hello-value-of-job-property"></a>Tarefas de lista com base no valor de Olá da propriedade de tarefa
+### <a name="list-jobs-based-on-hello-value-of-job-property"></a><span data-ttu-id="00439-163">Tarefas de lista com base no valor de Olá da propriedade de tarefa</span><span class="sxs-lookup"><span data-stu-id="00439-163">List jobs based on hello value of job property</span></span>
 
-Utilizar Olá `-State` parâmetro. Pode combinar qualquer um destes valores:
+<span data-ttu-id="00439-164">Utilizar Olá `-State` parâmetro.</span><span class="sxs-lookup"><span data-stu-id="00439-164">Using hello `-State` parameter.</span></span> <span data-ttu-id="00439-165">Pode combinar qualquer um destes valores:</span><span class="sxs-lookup"><span data-stu-id="00439-165">You can combine any of these values:</span></span>
 
 * `Accepted`
 * `Compiling`
@@ -293,12 +293,12 @@ Get-AdlJob -Account $adla -State Ended
 Get-AdlJob -Account $adla -State Accepted,Compiling,New,Paused,Scheduling,Start
 ```
 
-Olá utilize `-Result` parâmetro toodetect se terminada tarefas foi concluída com êxito. Tem estes valores:
+<span data-ttu-id="00439-166">Olá utilize `-Result` parâmetro toodetect se terminada tarefas foi concluída com êxito.</span><span class="sxs-lookup"><span data-stu-id="00439-166">Use hello `-Result` parameter toodetect whether ended jobs completed successfully.</span></span> <span data-ttu-id="00439-167">Tem estes valores:</span><span class="sxs-lookup"><span data-stu-id="00439-167">It has these values:</span></span>
 
-* Foi cancelada
-* Falha
-* Nenhuma
-* Bem-sucedido
+* <span data-ttu-id="00439-168">Foi cancelada</span><span class="sxs-lookup"><span data-stu-id="00439-168">Cancelled</span></span>
+* <span data-ttu-id="00439-169">Falha</span><span class="sxs-lookup"><span data-stu-id="00439-169">Failed</span></span>
+* <span data-ttu-id="00439-170">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="00439-170">None</span></span>
+* <span data-ttu-id="00439-171">Bem-sucedido</span><span class="sxs-lookup"><span data-stu-id="00439-171">Succeeded</span></span>
 
 ``` powershell
 # List Successful jobs.
@@ -309,13 +309,13 @@ Get-AdlJob -Account $adla -State Ended -Result Failed
 ```
 
 
-Olá `-Submitter` parâmetro ajuda-o a identificar quem submetida uma tarefa.
+<span data-ttu-id="00439-172">Olá `-Submitter` parâmetro ajuda-o a identificar quem submetida uma tarefa.</span><span class="sxs-lookup"><span data-stu-id="00439-172">hello `-Submitter` parameter helps you identify who submitted a job.</span></span>
 
 ```powershell
 Get-AdlJob -Account $adla -Submitter "joe@contoso.com"
 ```
 
-Olá `-SubmittedAfter` é útil em filtragem tooa intervalo de tempo.
+<span data-ttu-id="00439-173">Olá `-SubmittedAfter` é útil em filtragem tooa intervalo de tempo.</span><span class="sxs-lookup"><span data-stu-id="00439-173">hello `-SubmittedAfter` is useful in filtering tooa time range.</span></span>
 
 
 ```powershell
@@ -328,7 +328,7 @@ $d = [DateTime]::Now.AddDays(-7)
 Get-AdlJob -Account $adla -SubmittedAfter $d
 ```
 
-### <a name="common-scenarios-for-listing-jobs"></a>Cenários comuns para listar as tarefas
+### <a name="common-scenarios-for-listing-jobs"></a><span data-ttu-id="00439-174">Cenários comuns para listar as tarefas</span><span class="sxs-lookup"><span data-stu-id="00439-174">Common scenarios for listing jobs</span></span>
 
 
 ```
@@ -343,11 +343,11 @@ Get-AdlJob -Account $adla `
     -Result Failed
 ```
 
-## <a name="filtering-a-list-of-jobs"></a>Filtragem de uma lista de tarefas
+## <a name="filtering-a-list-of-jobs"></a><span data-ttu-id="00439-175">Filtragem de uma lista de tarefas</span><span class="sxs-lookup"><span data-stu-id="00439-175">Filtering a list of jobs</span></span>
 
-Assim que tiver uma lista de tarefas na sua sessão atual do PowerShell. Pode utilizar normal lista de Olá do toofilter de cmdlets do PowerShell.
+<span data-ttu-id="00439-176">Assim que tiver uma lista de tarefas na sua sessão atual do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="00439-176">Once you have a list of jobs in your current PowerShell session.</span></span> <span data-ttu-id="00439-177">Pode utilizar normal lista de Olá do toofilter de cmdlets do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="00439-177">You can use normal PowerShell cmdlets toofilter hello list.</span></span>
 
-Filtro de uma lista de tarefas toohello tarefas submetidas no Olá últimas 24 horas
+<span data-ttu-id="00439-178">Filtro de uma lista de tarefas toohello tarefas submetidas no Olá últimas 24 horas</span><span class="sxs-lookup"><span data-stu-id="00439-178">Filter a list of jobs toohello jobs submitted in hello last 24 hours</span></span>
 
 ```
 $upperdate = Get-Date
@@ -355,7 +355,7 @@ $lowerdate = $upperdate.AddHours(-24)
 $jobs | Where-Object { $_.EndTime -ge $lowerdate }
 ```
 
-Filtrar uma lista de tarefas toohello tarefas que terminado em Olá últimas 24 horas
+<span data-ttu-id="00439-179">Filtrar uma lista de tarefas toohello tarefas que terminado em Olá últimas 24 horas</span><span class="sxs-lookup"><span data-stu-id="00439-179">Filter a list of jobs toohello jobs that ended in hello last 24 hours</span></span>
 
 ```
 $upperdate = Get-Date
@@ -363,15 +363,15 @@ $lowerdate = $upperdate.AddHours(-24)
 $jobs | Where-Object { $_.SubmitTime -ge $lowerdate }
 ```
 
-Filtre uma lista de tarefas de toohello de Tarefas iniciou a execução. Uma tarefa pode falhar no momento da compilação - e, por isso, nunca inicia. Vamos ver tarefas de Olá falhada que realmente começou a ser executada e, em seguida, falhou.
+<span data-ttu-id="00439-180">Filtre uma lista de tarefas de toohello de Tarefas iniciou a execução.</span><span class="sxs-lookup"><span data-stu-id="00439-180">Filter a list of jobs toohello jobs that started running.</span></span> <span data-ttu-id="00439-181">Uma tarefa pode falhar no momento da compilação - e, por isso, nunca inicia.</span><span class="sxs-lookup"><span data-stu-id="00439-181">A job might fail at compile time - and so it never starts.</span></span> <span data-ttu-id="00439-182">Vamos ver tarefas de Olá falhada que realmente começou a ser executada e, em seguida, falhou.</span><span class="sxs-lookup"><span data-stu-id="00439-182">Let's look at hello failed jobs that actually started running and then failed.</span></span>
 
 ```powershell
 $jobs | Where-Object { $_.StartTime -ne $null }
 ```
 
-### <a name="analyzing-a-list-of-jobs"></a>Analisar uma lista de tarefas
+### <a name="analyzing-a-list-of-jobs"></a><span data-ttu-id="00439-183">Analisar uma lista de tarefas</span><span class="sxs-lookup"><span data-stu-id="00439-183">Analyzing a list of jobs</span></span>
 
-Olá utilize `Group-Object` cmdlet tooanalyze uma lista de tarefas.
+<span data-ttu-id="00439-184">Olá utilize `Group-Object` cmdlet tooanalyze uma lista de tarefas.</span><span class="sxs-lookup"><span data-stu-id="00439-184">Use hello `Group-Object` cmdlet tooanalyze a list of jobs.</span></span>
 
 ```
 # Count hello number of jobs by Submitter
@@ -386,7 +386,7 @@ $jobs | Group-Object State | Select -Property Count,Name
 #  Count hello number of jobs by DegreeOfParallelism
 $jobs | Group-Object DegreeOfParallelism | Select -Property Count,Name
 ```
-Quando efetuar uma análise, pode ser útil tooadd propriedades toohello tarefa objetos toomake filtragem e mais simples de agrupamento. Olá fragmento a seguir mostra como tooannotate uma JobInfo com calculada propriedades.
+<span data-ttu-id="00439-185">Quando efetuar uma análise, pode ser útil tooadd propriedades toohello tarefa objetos toomake filtragem e mais simples de agrupamento.</span><span class="sxs-lookup"><span data-stu-id="00439-185">When performing an analysis, it can be useful tooadd properties toohello Job objects toomake filtering and grouping simpler.</span></span> <span data-ttu-id="00439-186">Olá fragmento a seguir mostra como tooannotate uma JobInfo com calculada propriedades.</span><span class="sxs-lookup"><span data-stu-id="00439-186">hello following  snippet shows how tooannotate a JobInfo with calculated properties.</span></span>
 
 ```
 function annotate_job( $j )
@@ -409,9 +409,9 @@ $jobs = Get-AdlJob -Account $adla -Top 10
 $jobs = $jobs | %{ annotate_job( $_ ) }
 ```
 
-## <a name="get-information-about-pipelines-and-recurrences"></a>Obter informações sobre pipelines e recurrences
+## <a name="get-information-about-pipelines-and-recurrences"></a><span data-ttu-id="00439-187">Obter informações sobre pipelines e recurrences</span><span class="sxs-lookup"><span data-stu-id="00439-187">Get information about pipelines and recurrences</span></span>
 
-Olá utilize `Get-AdlJobPipeline` informações de pipeline do cmdlet toosee Olá previamente submetido tarefas.
+<span data-ttu-id="00439-188">Olá utilize `Get-AdlJobPipeline` informações de pipeline do cmdlet toosee Olá previamente submetido tarefas.</span><span class="sxs-lookup"><span data-stu-id="00439-188">Use hello `Get-AdlJobPipeline` cmdlet toosee hello pipeline information previously submitted jobs.</span></span>
 
 ```powershell
 $pipelines = Get-AdlJobPipeline -Account $adla
@@ -419,7 +419,7 @@ $pipelines = Get-AdlJobPipeline -Account $adla
 $pipeline = Get-AdlJobPipeline -Account $adla -PipelineId "<pipeline ID>"
 ```
 
-Olá utilize `Get-AdlJobRecurrence` cmdlet toosee Olá periodicidade as informações de tarefas anteriormente submetidas.
+<span data-ttu-id="00439-189">Olá utilize `Get-AdlJobRecurrence` cmdlet toosee Olá periodicidade as informações de tarefas anteriormente submetidas.</span><span class="sxs-lookup"><span data-stu-id="00439-189">Use hello `Get-AdlJobRecurrence` cmdlet toosee hello recurrence information for previously submitted jobs.</span></span>
 
 ```powershell
 $recurrences = Get-AdlJobRecurrence -Account $adla
@@ -427,53 +427,53 @@ $recurrences = Get-AdlJobRecurrence -Account $adla
 $recurrence = Get-AdlJobRecurrence -Account $adla -RecurrenceId "<recurrence ID>"
 ```
 
-## <a name="get-information-about-a-job"></a>Obter informações sobre uma tarefa
+## <a name="get-information-about-a-job"></a><span data-ttu-id="00439-190">Obter informações sobre uma tarefa</span><span class="sxs-lookup"><span data-stu-id="00439-190">Get information about a job</span></span>
 
-### <a name="get-job-status"></a>Obter estado da tarefa
+### <a name="get-job-status"></a><span data-ttu-id="00439-191">Obter estado da tarefa</span><span class="sxs-lookup"><span data-stu-id="00439-191">Get job status</span></span>
 
-Obter o estado de Olá de uma tarefa específica.
+<span data-ttu-id="00439-192">Obter o estado de Olá de uma tarefa específica.</span><span class="sxs-lookup"><span data-stu-id="00439-192">Get hello status of a specific job.</span></span>
 
 ```powershell
 Get-AdlJob -AccountName $adla -JobId $job.JobId
 ```
 
-### <a name="examine-hello-job-outputs"></a>Examine Olá saídas de tarefa
+### <a name="examine-hello-job-outputs"></a><span data-ttu-id="00439-193">Examine Olá saídas de tarefa</span><span class="sxs-lookup"><span data-stu-id="00439-193">Examine hello job outputs</span></span>
 
-Depois de terminou a tarefa de Olá, verifique se o ficheiro de saída Olá existe por listar ficheiros Olá numa pasta.
+<span data-ttu-id="00439-194">Depois de terminou a tarefa de Olá, verifique se o ficheiro de saída Olá existe por listar ficheiros Olá numa pasta.</span><span class="sxs-lookup"><span data-stu-id="00439-194">After hello job has ended, check if hello output file exists by listing hello files in a folder.</span></span>
 
 ```powershell
 Get-AdlStoreChildItem -Account $adls -Path "/"
 ```
 
-## <a name="manage-running-jobs"></a>Gerir tarefas em execução
+## <a name="manage-running-jobs"></a><span data-ttu-id="00439-195">Gerir tarefas em execução</span><span class="sxs-lookup"><span data-stu-id="00439-195">Manage running jobs</span></span>
 
-### <a name="cancel-a-job"></a>Cancelar uma tarefa
+### <a name="cancel-a-job"></a><span data-ttu-id="00439-196">Cancelar uma tarefa</span><span class="sxs-lookup"><span data-stu-id="00439-196">Cancel a job</span></span>
 
 ```powershell
 Stop-AdlJob -Account $adls -JobID $jobID
 ```
 
-### <a name="wait-for-a-job-toofinish"></a>Aguarde um toofinish de tarefa
+### <a name="wait-for-a-job-toofinish"></a><span data-ttu-id="00439-197">Aguarde um toofinish de tarefa</span><span class="sxs-lookup"><span data-stu-id="00439-197">Wait for a job toofinish</span></span>
 
-Em vez de repetir `Get-AdlAnalyticsJob` até que seja uma tarefa concluída, pode utilizar Olá `Wait-AdlJob` toowait de cmdlet para Olá tarefa tooend.
+<span data-ttu-id="00439-198">Em vez de repetir `Get-AdlAnalyticsJob` até que seja uma tarefa concluída, pode utilizar Olá `Wait-AdlJob` toowait de cmdlet para Olá tarefa tooend.</span><span class="sxs-lookup"><span data-stu-id="00439-198">Instead of repeating `Get-AdlAnalyticsJob` until a job finishes, you can use hello `Wait-AdlJob` cmdlet toowait for hello job tooend.</span></span>
 
 ```powershell
 Wait-AdlJob -Account $adla -JobId $job.JobId
 ```
 
-## <a name="manage-compute-policies"></a>Gerir políticas de computação
+## <a name="manage-compute-policies"></a><span data-ttu-id="00439-199">Gerir políticas de computação</span><span class="sxs-lookup"><span data-stu-id="00439-199">Manage compute policies</span></span>
 
-### <a name="list-existing-compute-policies"></a>Lista as políticas existentes de computação
+### <a name="list-existing-compute-policies"></a><span data-ttu-id="00439-200">Lista as políticas existentes de computação</span><span class="sxs-lookup"><span data-stu-id="00439-200">List existing compute policies</span></span>
 
-Olá `Get-AdlAnalyticsComputePolicy` cmdlet obtém informações sobre as políticas de computação para uma conta de Data Lake Analytics.
+<span data-ttu-id="00439-201">Olá `Get-AdlAnalyticsComputePolicy` cmdlet obtém informações sobre as políticas de computação para uma conta de Data Lake Analytics.</span><span class="sxs-lookup"><span data-stu-id="00439-201">hello `Get-AdlAnalyticsComputePolicy` cmdlet retrieves info about compute policies for a Data Lake Analytics account.</span></span>
 
 ```powershell
 $policies = Get-AdlAnalyticsComputePolicy -Account $adla
 ```
 
-### <a name="create-a-compute-policy"></a>Criar uma política de computação
+### <a name="create-a-compute-policy"></a><span data-ttu-id="00439-202">Criar uma política de computação</span><span class="sxs-lookup"><span data-stu-id="00439-202">Create a compute policy</span></span>
 
-Olá `New-AdlAnalyticsComputePolicy` cmdlet cria uma nova política de computação para uma conta de Data Lake Analytics. Neste exemplo conjuntos Olá toohello disponível de AUs máximo especificado too50 de utilizador e Olá tarefa mínimo prioridade too250.
+<span data-ttu-id="00439-203">Olá `New-AdlAnalyticsComputePolicy` cmdlet cria uma nova política de computação para uma conta de Data Lake Analytics.</span><span class="sxs-lookup"><span data-stu-id="00439-203">hello `New-AdlAnalyticsComputePolicy` cmdlet creates a new compute policy for a Data Lake Analytics account.</span></span> <span data-ttu-id="00439-204">Neste exemplo conjuntos Olá toohello disponível de AUs máximo especificado too50 de utilizador e Olá tarefa mínimo prioridade too250.</span><span class="sxs-lookup"><span data-stu-id="00439-204">This example sets  hello maximum AUs available toohello specified user too50, and hello minimum job priority too250.</span></span>
 
 ```powershell
 $userObjectId = (Get-AzureRmAdUser -SearchString "garymcdaniel@contoso.com").Id
@@ -481,46 +481,46 @@ $userObjectId = (Get-AzureRmAdUser -SearchString "garymcdaniel@contoso.com").Id
 New-AdlAnalyticsComputePolicy -Account $adla -Name "GaryMcDaniel" -ObjectId $objectId -ObjectType User -MaxDegreeOfParallelismPerJob 50 -MinPriorityPerJob 250
 ```
 
-## <a name="check-for-hello-existence-of-a-file"></a>Verifique a existência de Olá de um ficheiro.
+## <a name="check-for-hello-existence-of-a-file"></a><span data-ttu-id="00439-205">Verifique a existência de Olá de um ficheiro.</span><span class="sxs-lookup"><span data-stu-id="00439-205">Check for hello existence of a file.</span></span>
 
 ```powershell
 Test-AdlStoreItem -Account $adls -Path "/data.csv"
 ```
 
-## <a name="uploading-and-downloading"></a>Carregar e transferir
+## <a name="uploading-and-downloading"></a><span data-ttu-id="00439-206">Carregar e transferir</span><span class="sxs-lookup"><span data-stu-id="00439-206">Uploading and downloading</span></span>
 
-Carregar um ficheiro.
+<span data-ttu-id="00439-207">Carregar um ficheiro.</span><span class="sxs-lookup"><span data-stu-id="00439-207">Upload a file.</span></span>
 
 ```powershell
 Import-AdlStoreItem -AccountName $adls -Path "c:\data.tsv" -Destination "/data_copy.csv" 
 ```
 
-Carregar um recursivamente pasta inteira.
+<span data-ttu-id="00439-208">Carregar um recursivamente pasta inteira.</span><span class="sxs-lookup"><span data-stu-id="00439-208">Upload an entire folder recursively.</span></span>
 
 ```powershell
 Import-AdlStoreItem -AccountName $adls -Path "c:\myData\" -Destination "/myData/" -Recurse
 ```
 
-Transferir um ficheiro.
+<span data-ttu-id="00439-209">Transferir um ficheiro.</span><span class="sxs-lookup"><span data-stu-id="00439-209">Download a file.</span></span>
 
 ```powershell
 Export-AdlStoreItem -AccountName $adls -Path "/data.csv" -Destination "c:\data.csv"
 ```
 
-Transferir um recursivamente pasta inteira.
+<span data-ttu-id="00439-210">Transferir um recursivamente pasta inteira.</span><span class="sxs-lookup"><span data-stu-id="00439-210">Download an entire folder recursively.</span></span>
 
 ```powershell
 Export-AdlStoreItem -AccountName $adls -Path "/" -Destination "c:\myData\" -Recurse
 ```
 
 > [!NOTE]
-> Se hello carregar ou processo de transferência seja interrompido, pode tentar processo de Olá tooresume em execução Olá o cmdlet novamente com Olá ``-Resume`` sinalizador.
+> <span data-ttu-id="00439-211">Se hello carregar ou processo de transferência seja interrompido, pode tentar processo de Olá tooresume em execução Olá o cmdlet novamente com Olá ``-Resume`` sinalizador.</span><span class="sxs-lookup"><span data-stu-id="00439-211">If hello upload or download process is interrupted, you can attempt tooresume hello process by running hello cmdlet again with hello ``-Resume`` flag.</span></span>
 
-## <a name="manage-catalog-items"></a>Gerir itens de catálogo
+## <a name="manage-catalog-items"></a><span data-ttu-id="00439-212">Gerir itens de catálogo</span><span class="sxs-lookup"><span data-stu-id="00439-212">Manage catalog items</span></span>
 
-o catálogo de Olá U-SQL é utilizado toostructure dados e o código para que possa ser partilhados por scripts U-SQL. catálogo de Olá permite Olá mais elevado desempenho possível com os dados no Azure Data Lake. Para obter mais informações, veja [Utilizar catálogo U-SQL](data-lake-analytics-use-u-sql-catalog.md).
+<span data-ttu-id="00439-213">o catálogo de Olá U-SQL é utilizado toostructure dados e o código para que possa ser partilhados por scripts U-SQL.</span><span class="sxs-lookup"><span data-stu-id="00439-213">hello U-SQL catalog is used toostructure data and code so they can be shared by U-SQL scripts.</span></span> <span data-ttu-id="00439-214">catálogo de Olá permite Olá mais elevado desempenho possível com os dados no Azure Data Lake.</span><span class="sxs-lookup"><span data-stu-id="00439-214">hello catalog enables hello highest performance possible with data in Azure Data Lake.</span></span> <span data-ttu-id="00439-215">Para obter mais informações, veja [Utilizar catálogo U-SQL](data-lake-analytics-use-u-sql-catalog.md).</span><span class="sxs-lookup"><span data-stu-id="00439-215">For more information, see [Use U-SQL catalog](data-lake-analytics-use-u-sql-catalog.md).</span></span>
 
-### <a name="list-items-in-hello-u-sql-catalog"></a>Itens de lista no catálogo de Olá U-SQL
+### <a name="list-items-in-hello-u-sql-catalog"></a><span data-ttu-id="00439-216">Itens de lista no catálogo de Olá U-SQL</span><span class="sxs-lookup"><span data-stu-id="00439-216">List items in hello U-SQL catalog</span></span>
 
 ```powershell
 # List U-SQL databases
@@ -533,7 +533,7 @@ Get-AdlCatalogItem -Account $adla -ItemType Table -Path "database"
 Get-AdlCatalogItem -Account $adla -ItemType Table -Path "database.schema"
 ```
 
-Liste todas as assemblagens de Olá em todas as bases de dados de Olá numa conta ADLA.
+<span data-ttu-id="00439-217">Liste todas as assemblagens de Olá em todas as bases de dados de Olá numa conta ADLA.</span><span class="sxs-lookup"><span data-stu-id="00439-217">List all hello assemblies in all hello databases in an ADLA Account.</span></span>
 
 ```powershell
 $dbs = Get-AdlCatalogItem -Account $adla -ItemType Database
@@ -550,7 +550,7 @@ foreach ($db in $dbs)
 }
 ```
 
-### <a name="get-details-about-a-catalog-item"></a>Obter detalhes sobre um item de catálogo
+### <a name="get-details-about-a-catalog-item"></a><span data-ttu-id="00439-218">Obter detalhes sobre um item de catálogo</span><span class="sxs-lookup"><span data-stu-id="00439-218">Get details about a catalog item</span></span>
 
 ```powershell
 # Get details of a table
@@ -560,9 +560,9 @@ Get-AdlCatalogItem  -Account $adla -ItemType Table -Path "master.dbo.mytable"
 Test-AdlCatalogItem  -Account $adla -ItemType Database -Path "master"
 ```
 
-### <a name="create-credentials-in-a-catalog"></a>Criar as credenciais no catálogo
+### <a name="create-credentials-in-a-catalog"></a><span data-ttu-id="00439-219">Criar as credenciais no catálogo</span><span class="sxs-lookup"><span data-stu-id="00439-219">Create credentials in a catalog</span></span>
 
-Dentro de uma base de dados do U-SQL, crie um objeto de credencial para uma base de dados alojado no Azure. Atualmente, as credenciais de U-SQL são tipo apenas de Olá de item de catálogo que pode criar através do PowerShell.
+<span data-ttu-id="00439-220">Dentro de uma base de dados do U-SQL, crie um objeto de credencial para uma base de dados alojado no Azure.</span><span class="sxs-lookup"><span data-stu-id="00439-220">Within a U-SQL database, create a credential object for a database hosted in Azure.</span></span> <span data-ttu-id="00439-221">Atualmente, as credenciais de U-SQL são tipo apenas de Olá de item de catálogo que pode criar através do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="00439-221">Currently, U-SQL credentials are hello only type of catalog item that you can create through PowerShell.</span></span>
 
 ```powershell
 $dbName = "master"
@@ -576,9 +576,9 @@ New-AdlCatalogCredential -AccountName $adla `
           -Uri $dbUri
 ```
 
-### <a name="get-basic-information-about-an-adla-account"></a>Obter informações básicas sobre uma conta ADLA
+### <a name="get-basic-information-about-an-adla-account"></a><span data-ttu-id="00439-222">Obter informações básicas sobre uma conta ADLA</span><span class="sxs-lookup"><span data-stu-id="00439-222">Get basic information about an ADLA account</span></span>
 
-Olá seguinte código procura informações básicas sobre a conta de Olá fornecido um nome de conta
+<span data-ttu-id="00439-223">Olá seguinte código procura informações básicas sobre a conta de Olá fornecido um nome de conta</span><span class="sxs-lookup"><span data-stu-id="00439-223">Given an account name, hello following code looks up basic information about hello account</span></span>
 
 ```
 $adla_acct = Get-AdlAnalyticsAccount -Name "saveenrdemoadla"
@@ -601,15 +601,15 @@ Write-Host '$adla' " = ""$adla_name"" "
 Write-Host '$adls' " = ""$adla_defadlsname"" "
 ```
 
-## <a name="working-with-azure"></a>Trabalhar com o Azure
+## <a name="working-with-azure"></a><span data-ttu-id="00439-224">Trabalhar com o Azure</span><span class="sxs-lookup"><span data-stu-id="00439-224">Working with Azure</span></span>
 
-### <a name="get-details-of-azurerm-errors"></a>Obter os detalhes de erros de AzureRm
+### <a name="get-details-of-azurerm-errors"></a><span data-ttu-id="00439-225">Obter os detalhes de erros de AzureRm</span><span class="sxs-lookup"><span data-stu-id="00439-225">Get details of AzureRm errors</span></span>
 
 ```powershell
 Resolve-AzureRmError -Last
 ```
 
-### <a name="verify-if-you-are-running-as-an-administrator"></a>Certifique-se de que se estiver a executar como administrador
+### <a name="verify-if-you-are-running-as-an-administrator"></a><span data-ttu-id="00439-226">Certifique-se de que se estiver a executar como administrador</span><span class="sxs-lookup"><span data-stu-id="00439-226">Verify if you are running as an administrator</span></span>
 
 ```powershell
 function Test-Administrator  
@@ -620,9 +620,9 @@ function Test-Administrator
 }
 ```
 
-### <a name="find-a-tenantid"></a>Localizar um TenantID
+### <a name="find-a-tenantid"></a><span data-ttu-id="00439-227">Localizar um TenantID</span><span class="sxs-lookup"><span data-stu-id="00439-227">Find a TenantID</span></span>
 
-A partir de um nome de subscrição:
+<span data-ttu-id="00439-228">A partir de um nome de subscrição:</span><span class="sxs-lookup"><span data-stu-id="00439-228">From a subscription name:</span></span>
 
 ```powershell
 function Get-TenantIdFromSubcriptionName( [string] $subname )
@@ -634,7 +634,7 @@ function Get-TenantIdFromSubcriptionName( [string] $subname )
 Get-TenantIdFromSubcriptionName "ADLTrainingMS"
 ```
 
-A partir de um id de subscrição:
+<span data-ttu-id="00439-229">A partir de um id de subscrição:</span><span class="sxs-lookup"><span data-stu-id="00439-229">From a subscription id:</span></span>
 
 ```powershell
 function Get-TenantIdFromSubcriptionId( [string] $subid )
@@ -647,7 +647,7 @@ $subid = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 Get-TenantIdFromSubcriptionId $subid
 ```
 
-De um endereço de domínio, como "contoso.com"
+<span data-ttu-id="00439-230">De um endereço de domínio, como "contoso.com"</span><span class="sxs-lookup"><span data-stu-id="00439-230">From a domain address such as "contoso.com"</span></span>
 
 
 ```powershell
@@ -661,7 +661,7 @@ $domain = "contoso.com"
 Get-TenantIdFromDomain $domain
 ```
 
-### <a name="list-all-your-subscriptions-and-tenant-ids"></a>Listar todas as subscrições e ids de inquilino
+### <a name="list-all-your-subscriptions-and-tenant-ids"></a><span data-ttu-id="00439-231">Listar todas as subscrições e ids de inquilino</span><span class="sxs-lookup"><span data-stu-id="00439-231">List all your subscriptions and tenant ids</span></span>
 
 ```powershell
 $subs = Get-AzureRmSubscription
@@ -672,9 +672,9 @@ foreach ($sub in $subs)
 }
 ```
 
-## <a name="create-a-data-lake-analytics-account-using-a-template"></a>Criar uma conta de Data Lake Analytics utilizando um modelo
+## <a name="create-a-data-lake-analytics-account-using-a-template"></a><span data-ttu-id="00439-232">Criar uma conta de Data Lake Analytics utilizando um modelo</span><span class="sxs-lookup"><span data-stu-id="00439-232">Create a Data Lake Analytics account using a template</span></span>
 
-Também pode utilizar um modelo de grupo de recursos do Azure utilizando Olá seguinte script do PowerShell:
+<span data-ttu-id="00439-233">Também pode utilizar um modelo de grupo de recursos do Azure utilizando Olá seguinte script do PowerShell:</span><span class="sxs-lookup"><span data-stu-id="00439-233">You can also use an Azure Resource Group template using hello following  PowerShell script:</span></span>
 
 ```powershell
 $subId = "<Your Azure Subscription ID>"
@@ -698,11 +698,11 @@ $parameters = @{"adlAnalyticsName"=$adla; "adlStoreName"=$adls}
 New-AzureRmResourceGroupDeployment -Name $deploymentName -ResourceGroupName $rg -TemplateFile $armTemplateFile -TemplateParameterObject $parameters 
 ```
 
-Para obter mais informações, consulte [implementar uma aplicação com o modelo Azure Resource Manager](../azure-resource-manager/resource-group-template-deploy.md) e [modelos Authoring Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
+<span data-ttu-id="00439-234">Para obter mais informações, consulte [implementar uma aplicação com o modelo Azure Resource Manager](../azure-resource-manager/resource-group-template-deploy.md) e [modelos Authoring Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).</span><span class="sxs-lookup"><span data-stu-id="00439-234">For more information, see [Deploy an application with Azure Resource Manager template](../azure-resource-manager/resource-group-template-deploy.md) and [Authoring Azure Resource Manager templates](../azure-resource-manager/resource-group-authoring-templates.md).</span></span>
 
-**Modelo de exemplo**
+<span data-ttu-id="00439-235">**Modelo de exemplo**</span><span class="sxs-lookup"><span data-stu-id="00439-235">**Example template**</span></span>
 
-Guardar Olá seguir texto como um `.json` de ficheiros e, em seguida, utilizar Olá precedente modelo de Olá de toouse de script do PowerShell. 
+<span data-ttu-id="00439-236">Guardar Olá seguir texto como um `.json` de ficheiros e, em seguida, utilizar Olá precedente modelo de Olá de toouse de script do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="00439-236">Save hello following text as a `.json` file, and then use hello preceding PowerShell script toouse hello template.</span></span> 
 
 ```json
 {
@@ -759,7 +759,7 @@ Guardar Olá seguir texto como um `.json` de ficheiros e, em seguida, utilizar O
 }
 ```
 
-## <a name="next-steps"></a>Passos seguintes
-* [Descrição geral do Microsoft Azure Data Lake Analytics](data-lake-analytics-overview.md)
-* Introdução ao Data Lake Analytics com [portal do Azure](data-lake-analytics-get-started-portal.md) | [Azure PowerShell](data-lake-analytics-get-started-powershell.md) | [CLI 2.0](data-lake-analytics-get-started-cli2.md)
-* Gerir o Azure Data Lake Analytics com [portal do Azure](data-lake-analytics-manage-use-portal.md) | [Azure PowerShell](data-lake-analytics-manage-use-powershell.md) | [CLI](data-lake-analytics-manage-use-cli.md) 
+## <a name="next-steps"></a><span data-ttu-id="00439-237">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="00439-237">Next steps</span></span>
+* [<span data-ttu-id="00439-238">Descrição geral do Microsoft Azure Data Lake Analytics</span><span class="sxs-lookup"><span data-stu-id="00439-238">Overview of Microsoft Azure Data Lake Analytics</span></span>](data-lake-analytics-overview.md)
+* <span data-ttu-id="00439-239">Introdução ao Data Lake Analytics com [portal do Azure](data-lake-analytics-get-started-portal.md) | [Azure PowerShell](data-lake-analytics-get-started-powershell.md) | [CLI 2.0](data-lake-analytics-get-started-cli2.md)</span><span class="sxs-lookup"><span data-stu-id="00439-239">Get started with Data Lake Analytics using [Azure portal](data-lake-analytics-get-started-portal.md) | [Azure PowerShell](data-lake-analytics-get-started-powershell.md) | [CLI 2.0](data-lake-analytics-get-started-cli2.md)</span></span>
+* <span data-ttu-id="00439-240">Gerir o Azure Data Lake Analytics com [portal do Azure](data-lake-analytics-manage-use-portal.md) | [Azure PowerShell](data-lake-analytics-manage-use-powershell.md) | [CLI](data-lake-analytics-manage-use-cli.md)</span><span class="sxs-lookup"><span data-stu-id="00439-240">Manage Azure Data Lake Analytics using [Azure portal](data-lake-analytics-manage-use-portal.md) | [Azure PowerShell](data-lake-analytics-manage-use-powershell.md) | [CLI](data-lake-analytics-manage-use-cli.md)</span></span> 

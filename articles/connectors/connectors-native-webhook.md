@@ -21,135 +21,135 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="get-started-with-hello-webhook-connector"></a>Introdução ao conector do webhook Olá
+# <a name="get-started-with-hello-webhook-connector"></a><span data-ttu-id="7dbf8-103">Introdução ao conector do webhook Olá</span><span class="sxs-lookup"><span data-stu-id="7dbf8-103">Get started with hello webhook connector</span></span>
 
-Com o acionador e ação de webhook Olá, pode iniciar, colocar em pausa e retomar fluxos tooperform estas tarefas:
+<span data-ttu-id="7dbf8-104">Com o acionador e ação de webhook Olá, pode iniciar, colocar em pausa e retomar fluxos tooperform estas tarefas:</span><span class="sxs-lookup"><span data-stu-id="7dbf8-104">With hello webhook action and trigger, you can start, pause, and resume flows tooperform these tasks:</span></span>
 
-* Acionar a partir de um [Hub de eventos do Azure](https://github.com/logicappsio/EventHubAPI) quando é recebido um item
-* Aguardar a aprovação antes de continuar o fluxo de trabalho
+* <span data-ttu-id="7dbf8-105">Acionar a partir de um [Hub de eventos do Azure](https://github.com/logicappsio/EventHubAPI) quando é recebido um item</span><span class="sxs-lookup"><span data-stu-id="7dbf8-105">Trigger from an [Azure Event Hub](https://github.com/logicappsio/EventHubAPI) when an item is received</span></span>
+* <span data-ttu-id="7dbf8-106">Aguardar a aprovação antes de continuar o fluxo de trabalho</span><span class="sxs-lookup"><span data-stu-id="7dbf8-106">Wait for an approval before continuing a workflow</span></span>
 
-Saiba mais sobre [como toocreate APIs personalizadas que suportam um webhook](../logic-apps/logic-apps-create-api-app.md).
+<span data-ttu-id="7dbf8-107">Saiba mais sobre [como toocreate APIs personalizadas que suportam um webhook](../logic-apps/logic-apps-create-api-app.md).</span><span class="sxs-lookup"><span data-stu-id="7dbf8-107">Learn more about [how toocreate custom APIs that support a webhook](../logic-apps/logic-apps-create-api-app.md).</span></span>
 
-## <a name="use-hello-webhook-trigger"></a>Utilize o trigger de webhook Olá
+## <a name="use-hello-webhook-trigger"></a><span data-ttu-id="7dbf8-108">Utilize o trigger de webhook Olá</span><span class="sxs-lookup"><span data-stu-id="7dbf8-108">Use hello webhook trigger</span></span>
 
-A [ *acionador* ](connectors-overview.md) é um evento que inicia um fluxo de trabalho de aplicação lógica. Um acionador de webhook é baseada em eventos e não depende de consulta para novos itens. Como Olá [acionador pedido](connectors-native-reqres.md), aplicação de lógica de Olá desencadeado Olá instantânea que ocorre um evento. regista o acionador de webhook Olá um *URL de chamada de retorno* tooa serviço e utiliza essa aplicação de lógica do URL toofire Olá como necessário.
+<span data-ttu-id="7dbf8-109">A [ *acionador* ](connectors-overview.md) é um evento que inicia um fluxo de trabalho de aplicação lógica.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-109">A [*trigger*](connectors-overview.md) is an event that starts a logic app workflow.</span></span> <span data-ttu-id="7dbf8-110">Um acionador de webhook é baseada em eventos e não depende de consulta para novos itens.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-110">A webhook trigger is event-based and doesn't rely on polling for new items.</span></span> <span data-ttu-id="7dbf8-111">Como Olá [acionador pedido](connectors-native-reqres.md), aplicação de lógica de Olá desencadeado Olá instantânea que ocorre um evento.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-111">Like hello [request trigger](connectors-native-reqres.md), hello logic app fires hello instant that an event happens.</span></span> <span data-ttu-id="7dbf8-112">regista o acionador de webhook Olá um *URL de chamada de retorno* tooa serviço e utiliza essa aplicação de lógica do URL toofire Olá como necessário.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-112">hello webhook trigger registers a *callback URL* tooa service and uses that URL toofire hello logic app as needed.</span></span>
 
-Eis um exemplo que mostra como tooset segurança um HTTP acionar no Olá Designer de aplicação lógica. Olá passos partem do princípio que já tiver implementado ou que estão a aceder a uma API que se segue Olá [webhook subscrever e anular a subscrição padrão nas aplicações lógicas](../logic-apps/logic-apps-create-api-app.md#webhook-triggers). Olá subscrever chamada é estabelecida sempre que uma aplicação lógica está guardada com um novo webhook ou mudou de tooenabled desativado. Olá anular a subscrição a chamada são efetuados quando um acionador de webhook de aplicação lógica é removido e guardado ou mudou de toodisabled ativado.
+<span data-ttu-id="7dbf8-113">Eis um exemplo que mostra como tooset segurança um HTTP acionar no Olá Designer de aplicação lógica.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-113">Here's an example that shows how tooset up an HTTP trigger in hello Logic App Designer.</span></span> <span data-ttu-id="7dbf8-114">Olá passos partem do princípio que já tiver implementado ou que estão a aceder a uma API que se segue Olá [webhook subscrever e anular a subscrição padrão nas aplicações lógicas](../logic-apps/logic-apps-create-api-app.md#webhook-triggers).</span><span class="sxs-lookup"><span data-stu-id="7dbf8-114">hello steps assume that you have already deployed or are accessing an API that follows hello [webhook subscribe and unsubscribe pattern in logic apps](../logic-apps/logic-apps-create-api-app.md#webhook-triggers).</span></span> <span data-ttu-id="7dbf8-115">Olá subscrever chamada é estabelecida sempre que uma aplicação lógica está guardada com um novo webhook ou mudou de tooenabled desativado.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-115">hello subscribe call is made whenever a logic app is saved with a new webhook, or switched from disabled tooenabled.</span></span> <span data-ttu-id="7dbf8-116">Olá anular a subscrição a chamada são efetuados quando um acionador de webhook de aplicação lógica é removido e guardado ou mudou de toodisabled ativado.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-116">hello unsubscribe call is made when a logic app webhook trigger is removed and saved, or switched from enabled toodisabled.</span></span>
 
-**acionador de webhook tooadd Olá**
+<span data-ttu-id="7dbf8-117">**acionador de webhook tooadd Olá**</span><span class="sxs-lookup"><span data-stu-id="7dbf8-117">**tooadd hello webhook trigger**</span></span>
 
-1. Adicionar Olá **HTTP Webhook** acionador como Olá primeiro passo para uma aplicação lógica.
-2. Preencha os parâmetros de Olá Olá webhook subscrever e anular a subscrição de chamadas.
+1. <span data-ttu-id="7dbf8-118">Adicionar Olá **HTTP Webhook** acionador como Olá primeiro passo para uma aplicação lógica.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-118">Add hello **HTTP Webhook** trigger as hello first step in a logic app.</span></span>
+2. <span data-ttu-id="7dbf8-119">Preencha os parâmetros de Olá Olá webhook subscrever e anular a subscrição de chamadas.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-119">Fill in hello parameters for hello webhook subscribe and unsubscribe calls.</span></span>
 
-   Este passo segue Olá mesmo padrão como Olá [ação HTTP](connectors-native-http.md) formato.
+   <span data-ttu-id="7dbf8-120">Este passo segue Olá mesmo padrão como Olá [ação HTTP](connectors-native-http.md) formato.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-120">This step follows hello same pattern as hello [HTTP action](connectors-native-http.md) format.</span></span>
 
      ![Acionador de HTTP](./media/connectors-native-webhook/using-trigger.png)
 
-3. Adicione pelo menos uma ação.
-4. Clique em **guardar** aplicação de lógica de Olá toopublish. Este Olá de chamadas de passo subscrever o ponto final com Olá chamada de retorno URL necessário tootrigger esta aplicação lógica.
-5. Olá sempre que o serviço torna um `HTTP POST` URL de chamada de retorno toohello, Olá desencadeado de aplicação de lógica e inclui todos os dados transmitidos para o pedido de Olá.
+3. <span data-ttu-id="7dbf8-122">Adicione pelo menos uma ação.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-122">Add at least one action.</span></span>
+4. <span data-ttu-id="7dbf8-123">Clique em **guardar** aplicação de lógica de Olá toopublish.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-123">Click **Save** toopublish hello logic app.</span></span> <span data-ttu-id="7dbf8-124">Este Olá de chamadas de passo subscrever o ponto final com Olá chamada de retorno URL necessário tootrigger esta aplicação lógica.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-124">This step calls hello subscribe endpoint with hello callback URL needed tootrigger this logic app.</span></span>
+5. <span data-ttu-id="7dbf8-125">Olá sempre que o serviço torna um `HTTP POST` URL de chamada de retorno toohello, Olá desencadeado de aplicação de lógica e inclui todos os dados transmitidos para o pedido de Olá.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-125">Whenever hello service makes an `HTTP POST` toohello callback URL, hello logic app fires, and includes any data passed into hello request.</span></span>
 
-## <a name="use-hello-webhook-action"></a>Utilize a ação de webhook Olá
+## <a name="use-hello-webhook-action"></a><span data-ttu-id="7dbf8-126">Utilize a ação de webhook Olá</span><span class="sxs-lookup"><span data-stu-id="7dbf8-126">Use hello webhook action</span></span>
 
-Um [ *ação* ](connectors-overview.md) é uma operação levada a cabo pelo fluxo de trabalho Olá definido numa aplicação lógica. Uma ação do webhook regista um *URL de chamada de retorno* com um serviço e aguarda até que o URL de Olá é chamado antes de a retomar. Olá ["Enviar correio eletrónico aprovação"](connectors-create-api-office365-outlook.md) é um exemplo de um conector que se segue este padrão. Pode expandir este padrão em qualquer serviço através da ação de webhook Olá. 
+<span data-ttu-id="7dbf8-127">Um [ *ação* ](connectors-overview.md) é uma operação levada a cabo pelo fluxo de trabalho Olá definido numa aplicação lógica.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-127">An [*action*](connectors-overview.md) is an operation carried out by hello workflow defined in a logic app.</span></span> <span data-ttu-id="7dbf8-128">Uma ação do webhook regista um *URL de chamada de retorno* com um serviço e aguarda até que o URL de Olá é chamado antes de a retomar.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-128">A webhook action registers a *callback URL* with a service and waits until hello URL is called before resuming.</span></span> <span data-ttu-id="7dbf8-129">Olá ["Enviar correio eletrónico aprovação"](connectors-create-api-office365-outlook.md) é um exemplo de um conector que se segue este padrão.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-129">hello ["Send Approval Email"](connectors-create-api-office365-outlook.md) is an example of a connector that follows this pattern.</span></span> <span data-ttu-id="7dbf8-130">Pode expandir este padrão em qualquer serviço através da ação de webhook Olá.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-130">You can extend this pattern into any service through hello webhook action.</span></span> 
 
-Eis um exemplo que mostra como tooset uma ação de webhook no Olá Designer de aplicação lógica. Estes passos partem do princípio de que já tiver implementado ou que estão a aceder a uma API que se segue Olá [webhook subscrever e anular a subscrição padrão utilizada em aplicações lógicas](../logic-apps/logic-apps-create-api-app.md#webhook-actions). Olá subscrever chamada são efetuados quando uma aplicação lógica executa a ação de webhook Olá. Olá anular a subscrição a chamada são efetuados quando uma execução foi cancelada ao aguardar uma resposta ou, antes de lógica de Olá aplicações de expirar.
+<span data-ttu-id="7dbf8-131">Eis um exemplo que mostra como tooset uma ação de webhook no Olá Designer de aplicação lógica.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-131">Here's an example that shows how tooset up a webhook action in hello Logic App Designer.</span></span> <span data-ttu-id="7dbf8-132">Estes passos partem do princípio de que já tiver implementado ou que estão a aceder a uma API que se segue Olá [webhook subscrever e anular a subscrição padrão utilizada em aplicações lógicas](../logic-apps/logic-apps-create-api-app.md#webhook-actions).</span><span class="sxs-lookup"><span data-stu-id="7dbf8-132">These steps assume that you have already deployed or are accessing an API that follows hello [webhook subscribe and unsubscribe pattern used in logic apps](../logic-apps/logic-apps-create-api-app.md#webhook-actions).</span></span> <span data-ttu-id="7dbf8-133">Olá subscrever chamada são efetuados quando uma aplicação lógica executa a ação de webhook Olá.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-133">hello subscribe call is made when a logic app executes hello webhook action.</span></span> <span data-ttu-id="7dbf8-134">Olá anular a subscrição a chamada são efetuados quando uma execução foi cancelada ao aguardar uma resposta ou, antes de lógica de Olá aplicações de expirar.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-134">hello unsubscribe call is made when a run is canceled while waiting for a response, or before hello logic app times out.</span></span>
 
-**tooadd uma ação do webhook**
+<span data-ttu-id="7dbf8-135">**tooadd uma ação do webhook**</span><span class="sxs-lookup"><span data-stu-id="7dbf8-135">**tooadd a webhook action**</span></span>
 
-1. Escolha **novo passo** > **adicionar uma ação**.
+1. <span data-ttu-id="7dbf8-136">Escolha **novo passo** > **adicionar uma ação**.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-136">Choose **New Step** > **Add an action**.</span></span>
 
-2. Na caixa de pesquisa de Olá, escreva "webhook" toofind Olá **HTTP Webhook** ação.
+2. <span data-ttu-id="7dbf8-137">Na caixa de pesquisa de Olá, escreva "webhook" toofind Olá **HTTP Webhook** ação.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-137">In hello search box, type "webhook" toofind hello **HTTP Webhook** action.</span></span>
 
     ![Selecione a ação de consulta](./media/connectors-native-webhook/using-action-1.png)
 
-3. Preencha os parâmetros de Olá Olá webhook subscrever e anular a subscrição de chamadas
+3. <span data-ttu-id="7dbf8-139">Preencha os parâmetros de Olá Olá webhook subscrever e anular a subscrição de chamadas</span><span class="sxs-lookup"><span data-stu-id="7dbf8-139">Fill in hello parameters for hello webhook subscribe and unsubscribe calls</span></span>
 
-   Este passo segue Olá mesmo padrão como Olá [ação HTTP](connectors-native-http.md) formato.
+   <span data-ttu-id="7dbf8-140">Este passo segue Olá mesmo padrão como Olá [ação HTTP](connectors-native-http.md) formato.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-140">This step follows hello same pattern as hello [HTTP action](connectors-native-http.md) format.</span></span>
 
      ![Ação de consulta concluída](./media/connectors-native-webhook/using-action-2.png)
    
-   Em runtime, Olá chamadas de aplicação lógica Olá subscrever endpoint depois de atingir esse passo.
+   <span data-ttu-id="7dbf8-142">Em runtime, Olá chamadas de aplicação lógica Olá subscrever endpoint depois de atingir esse passo.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-142">At runtime, hello logic app calls hello subscribe endpoint after reaching that step.</span></span>
 
-4. Clique em **guardar** aplicação de lógica de Olá toopublish.
+4. <span data-ttu-id="7dbf8-143">Clique em **guardar** aplicação de lógica de Olá toopublish.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-143">Click **Save** toopublish hello logic app.</span></span>
 
-## <a name="technical-details"></a>Detalhes técnicos
+## <a name="technical-details"></a><span data-ttu-id="7dbf8-144">Detalhes técnicos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-144">Technical details</span></span>
 
-Eis mais detalhes sobre Olá acionadores e ações que webhook suporta.
+<span data-ttu-id="7dbf8-145">Eis mais detalhes sobre Olá acionadores e ações que webhook suporta.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-145">Here are more details about hello triggers and actions that webhook supports.</span></span>
 
-## <a name="webhook-triggers"></a>Acionadores de Webhook
+## <a name="webhook-triggers"></a><span data-ttu-id="7dbf8-146">Acionadores de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-146">Webhook triggers</span></span>
 
-| Ação | Descrição |
+| <span data-ttu-id="7dbf8-147">Ação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-147">Action</span></span> | <span data-ttu-id="7dbf8-148">Descrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-148">Description</span></span> |
 | --- | --- |
-| Webhook de HTTP |Subscreve um serviço de tooa do URL de chamada de retorno que pode chamar a aplicação de lógica de toofire do Olá URL conforme necessário. |
+| <span data-ttu-id="7dbf8-149">Webhook de HTTP</span><span class="sxs-lookup"><span data-stu-id="7dbf8-149">HTTP Webhook</span></span> |<span data-ttu-id="7dbf8-150">Subscreve um serviço de tooa do URL de chamada de retorno que pode chamar a aplicação de lógica de toofire do Olá URL conforme necessário.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-150">Subscribe a callback URL tooa service that can call hello URL toofire logic app as needed.</span></span> |
 
-### <a name="trigger-details"></a>Detalhes de Acionador
+### <a name="trigger-details"></a><span data-ttu-id="7dbf8-151">Detalhes de Acionador</span><span class="sxs-lookup"><span data-stu-id="7dbf8-151">Trigger details</span></span>
 
-#### <a name="http-webhook"></a>Webhook de HTTP
+#### <a name="http-webhook"></a><span data-ttu-id="7dbf8-152">Webhook de HTTP</span><span class="sxs-lookup"><span data-stu-id="7dbf8-152">HTTP Webhook</span></span>
 
-Subscreve um serviço de tooa do URL de chamada de retorno que pode chamar a aplicação de lógica de toofire do Olá URL conforme necessário.
-Um * meios de campo obrigatório.
+<span data-ttu-id="7dbf8-153">Subscreve um serviço de tooa do URL de chamada de retorno que pode chamar a aplicação de lógica de toofire do Olá URL conforme necessário.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-153">Subscribe a callback URL tooa service that can call hello URL toofire logic app as needed.</span></span>
+<span data-ttu-id="7dbf8-154">Um * meios de campo obrigatório.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-154">An * means required field.</span></span>
 
-| Nome a apresentar | Nome da propriedade | Descrição |
+| <span data-ttu-id="7dbf8-155">Nome a apresentar</span><span class="sxs-lookup"><span data-stu-id="7dbf8-155">Display Name</span></span> | <span data-ttu-id="7dbf8-156">Nome da propriedade</span><span class="sxs-lookup"><span data-stu-id="7dbf8-156">Property Name</span></span> | <span data-ttu-id="7dbf8-157">Descrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-157">Description</span></span> |
 | --- | --- | --- |
-| Subscrever o método * |Método |Método de HTTP toouse para subscrever pedido |
-| Subscrever URI * |URI |URI de HTTP toouse para subscrever pedido |
-| Anular a subscrição método * |Método |Toouse de método HTTP para o pedido de anular a subscrição |
-| Anular a subscrição URI * |URI |URI de HTTP toouse para anular a subscrição pedido |
-| Subscrever o corpo |Corpo |Corpo do pedido HTTP para subscrever |
-| Subscrever cabeçalhos |Cabeçalhos |Cabeçalhos de pedido HTTP para subscrever |
-| Subscrever autenticação |Autenticação |Toouse de autenticação HTTP para subscrever. [Consulte o conetor HTTP](connectors-native-http.md#authentication) para obter detalhes |
-| Anular a subscrição de corpo |Corpo |Corpo do pedido HTTP para anular a subscrição |
-| Anular a subscrição cabeçalhos |Cabeçalhos |Cabeçalhos de pedido HTTP para anular a subscrição |
-| Anular a subscrição de autenticação |Autenticação |Toouse de autenticação HTTP para anular a subscrição. [Consulte o conetor HTTP](connectors-native-http.md#authentication) para obter detalhes |
+| <span data-ttu-id="7dbf8-158">Subscrever o método *</span><span class="sxs-lookup"><span data-stu-id="7dbf8-158">Subscribe Method*</span></span> |<span data-ttu-id="7dbf8-159">Método</span><span class="sxs-lookup"><span data-stu-id="7dbf8-159">method</span></span> |<span data-ttu-id="7dbf8-160">Método de HTTP toouse para subscrever pedido</span><span class="sxs-lookup"><span data-stu-id="7dbf8-160">HTTP Method toouse for subscribe request</span></span> |
+| <span data-ttu-id="7dbf8-161">Subscrever URI *</span><span class="sxs-lookup"><span data-stu-id="7dbf8-161">Subscribe URI*</span></span> |<span data-ttu-id="7dbf8-162">URI</span><span class="sxs-lookup"><span data-stu-id="7dbf8-162">uri</span></span> |<span data-ttu-id="7dbf8-163">URI de HTTP toouse para subscrever pedido</span><span class="sxs-lookup"><span data-stu-id="7dbf8-163">HTTP URI toouse for subscribe request</span></span> |
+| <span data-ttu-id="7dbf8-164">Anular a subscrição método *</span><span class="sxs-lookup"><span data-stu-id="7dbf8-164">Unsubscribe Method*</span></span> |<span data-ttu-id="7dbf8-165">Método</span><span class="sxs-lookup"><span data-stu-id="7dbf8-165">method</span></span> |<span data-ttu-id="7dbf8-166">Toouse de método HTTP para o pedido de anular a subscrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-166">HTTP method toouse for unsubscribe request</span></span> |
+| <span data-ttu-id="7dbf8-167">Anular a subscrição URI *</span><span class="sxs-lookup"><span data-stu-id="7dbf8-167">Unsubscribe URI*</span></span> |<span data-ttu-id="7dbf8-168">URI</span><span class="sxs-lookup"><span data-stu-id="7dbf8-168">uri</span></span> |<span data-ttu-id="7dbf8-169">URI de HTTP toouse para anular a subscrição pedido</span><span class="sxs-lookup"><span data-stu-id="7dbf8-169">HTTP URI toouse for unsubscribe request</span></span> |
+| <span data-ttu-id="7dbf8-170">Subscrever o corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-170">Subscribe Body</span></span> |<span data-ttu-id="7dbf8-171">Corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-171">body</span></span> |<span data-ttu-id="7dbf8-172">Corpo do pedido HTTP para subscrever</span><span class="sxs-lookup"><span data-stu-id="7dbf8-172">HTTP request body for subscribe</span></span> |
+| <span data-ttu-id="7dbf8-173">Subscrever cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-173">Subscribe Headers</span></span> |<span data-ttu-id="7dbf8-174">Cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-174">headers</span></span> |<span data-ttu-id="7dbf8-175">Cabeçalhos de pedido HTTP para subscrever</span><span class="sxs-lookup"><span data-stu-id="7dbf8-175">HTTP request headers for subscribe</span></span> |
+| <span data-ttu-id="7dbf8-176">Subscrever autenticação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-176">Subscribe Authentication</span></span> |<span data-ttu-id="7dbf8-177">Autenticação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-177">authentication</span></span> |<span data-ttu-id="7dbf8-178">Toouse de autenticação HTTP para subscrever.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-178">HTTP authentication toouse for subscribe.</span></span> <span data-ttu-id="7dbf8-179">[Consulte o conetor HTTP](connectors-native-http.md#authentication) para obter detalhes</span><span class="sxs-lookup"><span data-stu-id="7dbf8-179">[See HTTP connector](connectors-native-http.md#authentication) for details</span></span> |
+| <span data-ttu-id="7dbf8-180">Anular a subscrição de corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-180">Unsubscribe Body</span></span> |<span data-ttu-id="7dbf8-181">Corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-181">body</span></span> |<span data-ttu-id="7dbf8-182">Corpo do pedido HTTP para anular a subscrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-182">HTTP request body for unsubscribe</span></span> |
+| <span data-ttu-id="7dbf8-183">Anular a subscrição cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-183">Unsubscribe Headers</span></span> |<span data-ttu-id="7dbf8-184">Cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-184">headers</span></span> |<span data-ttu-id="7dbf8-185">Cabeçalhos de pedido HTTP para anular a subscrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-185">HTTP request headers for unsubscribe</span></span> |
+| <span data-ttu-id="7dbf8-186">Anular a subscrição de autenticação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-186">Unsubscribe Authentication</span></span> |<span data-ttu-id="7dbf8-187">Autenticação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-187">authentication</span></span> |<span data-ttu-id="7dbf8-188">Toouse de autenticação HTTP para anular a subscrição.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-188">HTTP authentication toouse for unsubscribe.</span></span> <span data-ttu-id="7dbf8-189">[Consulte o conetor HTTP](connectors-native-http.md#authentication) para obter detalhes</span><span class="sxs-lookup"><span data-stu-id="7dbf8-189">[See HTTP connector](connectors-native-http.md#authentication) for details</span></span> |
 
-**Detalhes de saída**
+<span data-ttu-id="7dbf8-190">**Detalhes de saída**</span><span class="sxs-lookup"><span data-stu-id="7dbf8-190">**Output Details**</span></span>
 
-Pedido de Webhook
+<span data-ttu-id="7dbf8-191">Pedido de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-191">Webhook request</span></span>
 
-| Nome da propriedade | Tipo de dados | Descrição |
+| <span data-ttu-id="7dbf8-192">Nome da propriedade</span><span class="sxs-lookup"><span data-stu-id="7dbf8-192">Property Name</span></span> | <span data-ttu-id="7dbf8-193">Tipo de dados</span><span class="sxs-lookup"><span data-stu-id="7dbf8-193">Data Type</span></span> | <span data-ttu-id="7dbf8-194">Descrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-194">Description</span></span> |
 | --- | --- | --- |
-| Cabeçalhos |objeto |Cabeçalhos de pedido de Webhook |
-| Corpo |objeto |Objeto de pedido de Webhook |
-| Código de estado |Int |Código de estado de pedido de Webhook |
+| <span data-ttu-id="7dbf8-195">Cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-195">Headers</span></span> |<span data-ttu-id="7dbf8-196">objeto</span><span class="sxs-lookup"><span data-stu-id="7dbf8-196">object</span></span> |<span data-ttu-id="7dbf8-197">Cabeçalhos de pedido de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-197">Webhook request headers</span></span> |
+| <span data-ttu-id="7dbf8-198">Corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-198">Body</span></span> |<span data-ttu-id="7dbf8-199">objeto</span><span class="sxs-lookup"><span data-stu-id="7dbf8-199">object</span></span> |<span data-ttu-id="7dbf8-200">Objeto de pedido de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-200">Webhook request object</span></span> |
+| <span data-ttu-id="7dbf8-201">Código de estado</span><span class="sxs-lookup"><span data-stu-id="7dbf8-201">Status Code</span></span> |<span data-ttu-id="7dbf8-202">Int</span><span class="sxs-lookup"><span data-stu-id="7dbf8-202">int</span></span> |<span data-ttu-id="7dbf8-203">Código de estado de pedido de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-203">Webhook request status code</span></span> |
 
-## <a name="webhook-actions"></a>Ações de Webhook
+## <a name="webhook-actions"></a><span data-ttu-id="7dbf8-204">Ações de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-204">Webhook actions</span></span>
 
-| Ação | Descrição |
+| <span data-ttu-id="7dbf8-205">Ação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-205">Action</span></span> | <span data-ttu-id="7dbf8-206">Descrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-206">Description</span></span> |
 | --- | --- |
-| Webhook de HTTP |Subscreve um serviço de tooa do URL de chamada de retorno que pode chamar Olá URL tooresume um passo de fluxo de trabalho, conforme necessário. |
+| <span data-ttu-id="7dbf8-207">Webhook de HTTP</span><span class="sxs-lookup"><span data-stu-id="7dbf8-207">HTTP Webhook</span></span> |<span data-ttu-id="7dbf8-208">Subscreve um serviço de tooa do URL de chamada de retorno que pode chamar Olá URL tooresume um passo de fluxo de trabalho, conforme necessário.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-208">Subscribe a callback URL tooa service that can call hello URL tooresume a workflow step as needed.</span></span> |
 
-### <a name="action-details"></a>Detalhes de ação
+### <a name="action-details"></a><span data-ttu-id="7dbf8-209">Detalhes de ação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-209">Action details</span></span>
 
-#### <a name="http-webhook"></a>Webhook de HTTP
+#### <a name="http-webhook"></a><span data-ttu-id="7dbf8-210">Webhook de HTTP</span><span class="sxs-lookup"><span data-stu-id="7dbf8-210">HTTP Webhook</span></span>
 
-Subscreve um serviço de tooa do URL de chamada de retorno que pode chamar Olá URL tooresume um passo de fluxo de trabalho, conforme necessário.
-Um * meios de campo obrigatório.
+<span data-ttu-id="7dbf8-211">Subscreve um serviço de tooa do URL de chamada de retorno que pode chamar Olá URL tooresume um passo de fluxo de trabalho, conforme necessário.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-211">Subscribe a callback URL tooa service that can call hello URL tooresume a workflow step as needed.</span></span>
+<span data-ttu-id="7dbf8-212">Um * meios de campo obrigatório.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-212">An * means required field.</span></span>
 
-| Nome a apresentar | Nome da propriedade | Descrição |
+| <span data-ttu-id="7dbf8-213">Nome a apresentar</span><span class="sxs-lookup"><span data-stu-id="7dbf8-213">Display Name</span></span> | <span data-ttu-id="7dbf8-214">Nome da propriedade</span><span class="sxs-lookup"><span data-stu-id="7dbf8-214">Property Name</span></span> | <span data-ttu-id="7dbf8-215">Descrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-215">Description</span></span> |
 | --- | --- | --- |
-| Subscrever o método * |Método |Método de HTTP toouse para subscrever pedido |
-| Subscrever URI * |URI |URI de HTTP toouse para subscrever pedido |
-| Anular a subscrição método * |Método |Toouse de método HTTP para o pedido de anular a subscrição |
-| Anular a subscrição URI * |URI |URI de HTTP toouse para anular a subscrição pedido |
-| Subscrever o corpo |Corpo |Corpo do pedido HTTP para subscrever |
-| Subscrever cabeçalhos |Cabeçalhos |Cabeçalhos de pedido HTTP para subscrever |
-| Subscrever autenticação |Autenticação |Toouse de autenticação HTTP para subscrever. [Consulte o conetor HTTP](connectors-native-http.md#authentication) para obter detalhes |
-| Anular a subscrição de corpo |Corpo |Corpo do pedido HTTP para anular a subscrição |
-| Anular a subscrição cabeçalhos |Cabeçalhos |Cabeçalhos de pedido HTTP para anular a subscrição |
-| Anular a subscrição de autenticação |Autenticação |Toouse de autenticação HTTP para anular a subscrição. [Consulte o conetor HTTP](connectors-native-http.md#authentication) para obter detalhes |
+| <span data-ttu-id="7dbf8-216">Subscrever o método *</span><span class="sxs-lookup"><span data-stu-id="7dbf8-216">Subscribe Method*</span></span> |<span data-ttu-id="7dbf8-217">Método</span><span class="sxs-lookup"><span data-stu-id="7dbf8-217">method</span></span> |<span data-ttu-id="7dbf8-218">Método de HTTP toouse para subscrever pedido</span><span class="sxs-lookup"><span data-stu-id="7dbf8-218">HTTP Method toouse for subscribe request</span></span> |
+| <span data-ttu-id="7dbf8-219">Subscrever URI *</span><span class="sxs-lookup"><span data-stu-id="7dbf8-219">Subscribe URI*</span></span> |<span data-ttu-id="7dbf8-220">URI</span><span class="sxs-lookup"><span data-stu-id="7dbf8-220">uri</span></span> |<span data-ttu-id="7dbf8-221">URI de HTTP toouse para subscrever pedido</span><span class="sxs-lookup"><span data-stu-id="7dbf8-221">HTTP URI toouse for subscribe request</span></span> |
+| <span data-ttu-id="7dbf8-222">Anular a subscrição método *</span><span class="sxs-lookup"><span data-stu-id="7dbf8-222">Unsubscribe Method*</span></span> |<span data-ttu-id="7dbf8-223">Método</span><span class="sxs-lookup"><span data-stu-id="7dbf8-223">method</span></span> |<span data-ttu-id="7dbf8-224">Toouse de método HTTP para o pedido de anular a subscrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-224">HTTP method toouse for unsubscribe request</span></span> |
+| <span data-ttu-id="7dbf8-225">Anular a subscrição URI *</span><span class="sxs-lookup"><span data-stu-id="7dbf8-225">Unsubscribe URI*</span></span> |<span data-ttu-id="7dbf8-226">URI</span><span class="sxs-lookup"><span data-stu-id="7dbf8-226">uri</span></span> |<span data-ttu-id="7dbf8-227">URI de HTTP toouse para anular a subscrição pedido</span><span class="sxs-lookup"><span data-stu-id="7dbf8-227">HTTP URI toouse for unsubscribe request</span></span> |
+| <span data-ttu-id="7dbf8-228">Subscrever o corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-228">Subscribe Body</span></span> |<span data-ttu-id="7dbf8-229">Corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-229">body</span></span> |<span data-ttu-id="7dbf8-230">Corpo do pedido HTTP para subscrever</span><span class="sxs-lookup"><span data-stu-id="7dbf8-230">HTTP request body for subscribe</span></span> |
+| <span data-ttu-id="7dbf8-231">Subscrever cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-231">Subscribe Headers</span></span> |<span data-ttu-id="7dbf8-232">Cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-232">headers</span></span> |<span data-ttu-id="7dbf8-233">Cabeçalhos de pedido HTTP para subscrever</span><span class="sxs-lookup"><span data-stu-id="7dbf8-233">HTTP request headers for subscribe</span></span> |
+| <span data-ttu-id="7dbf8-234">Subscrever autenticação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-234">Subscribe Authentication</span></span> |<span data-ttu-id="7dbf8-235">Autenticação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-235">authentication</span></span> |<span data-ttu-id="7dbf8-236">Toouse de autenticação HTTP para subscrever.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-236">HTTP authentication toouse for subscribe.</span></span> <span data-ttu-id="7dbf8-237">[Consulte o conetor HTTP](connectors-native-http.md#authentication) para obter detalhes</span><span class="sxs-lookup"><span data-stu-id="7dbf8-237">[See HTTP connector](connectors-native-http.md#authentication) for details</span></span> |
+| <span data-ttu-id="7dbf8-238">Anular a subscrição de corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-238">Unsubscribe Body</span></span> |<span data-ttu-id="7dbf8-239">Corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-239">body</span></span> |<span data-ttu-id="7dbf8-240">Corpo do pedido HTTP para anular a subscrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-240">HTTP request body for unsubscribe</span></span> |
+| <span data-ttu-id="7dbf8-241">Anular a subscrição cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-241">Unsubscribe Headers</span></span> |<span data-ttu-id="7dbf8-242">Cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-242">headers</span></span> |<span data-ttu-id="7dbf8-243">Cabeçalhos de pedido HTTP para anular a subscrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-243">HTTP request headers for unsubscribe</span></span> |
+| <span data-ttu-id="7dbf8-244">Anular a subscrição de autenticação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-244">Unsubscribe Authentication</span></span> |<span data-ttu-id="7dbf8-245">Autenticação</span><span class="sxs-lookup"><span data-stu-id="7dbf8-245">authentication</span></span> |<span data-ttu-id="7dbf8-246">Toouse de autenticação HTTP para anular a subscrição.</span><span class="sxs-lookup"><span data-stu-id="7dbf8-246">HTTP authentication toouse for unsubscribe.</span></span> <span data-ttu-id="7dbf8-247">[Consulte o conetor HTTP](connectors-native-http.md#authentication) para obter detalhes</span><span class="sxs-lookup"><span data-stu-id="7dbf8-247">[See HTTP connector](connectors-native-http.md#authentication) for details</span></span> |
 
-**Detalhes de saída**
+<span data-ttu-id="7dbf8-248">**Detalhes de saída**</span><span class="sxs-lookup"><span data-stu-id="7dbf8-248">**Output Details**</span></span>
 
-Pedido de Webhook
+<span data-ttu-id="7dbf8-249">Pedido de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-249">Webhook request</span></span>
 
-| Nome da propriedade | Tipo de dados | Descrição |
+| <span data-ttu-id="7dbf8-250">Nome da propriedade</span><span class="sxs-lookup"><span data-stu-id="7dbf8-250">Property Name</span></span> | <span data-ttu-id="7dbf8-251">Tipo de dados</span><span class="sxs-lookup"><span data-stu-id="7dbf8-251">Data Type</span></span> | <span data-ttu-id="7dbf8-252">Descrição</span><span class="sxs-lookup"><span data-stu-id="7dbf8-252">Description</span></span> |
 | --- | --- | --- |
-| Cabeçalhos |objeto |Cabeçalhos de pedido de Webhook |
-| Corpo |objeto |Objeto de pedido de Webhook |
-| Código de estado |Int |Código de estado de pedido de Webhook |
+| <span data-ttu-id="7dbf8-253">Cabeçalhos</span><span class="sxs-lookup"><span data-stu-id="7dbf8-253">Headers</span></span> |<span data-ttu-id="7dbf8-254">objeto</span><span class="sxs-lookup"><span data-stu-id="7dbf8-254">object</span></span> |<span data-ttu-id="7dbf8-255">Cabeçalhos de pedido de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-255">Webhook request headers</span></span> |
+| <span data-ttu-id="7dbf8-256">Corpo</span><span class="sxs-lookup"><span data-stu-id="7dbf8-256">Body</span></span> |<span data-ttu-id="7dbf8-257">objeto</span><span class="sxs-lookup"><span data-stu-id="7dbf8-257">object</span></span> |<span data-ttu-id="7dbf8-258">Objeto de pedido de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-258">Webhook request object</span></span> |
+| <span data-ttu-id="7dbf8-259">Código de estado</span><span class="sxs-lookup"><span data-stu-id="7dbf8-259">Status Code</span></span> |<span data-ttu-id="7dbf8-260">Int</span><span class="sxs-lookup"><span data-stu-id="7dbf8-260">int</span></span> |<span data-ttu-id="7dbf8-261">Código de estado de pedido de Webhook</span><span class="sxs-lookup"><span data-stu-id="7dbf8-261">Webhook request status code</span></span> |
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="7dbf8-262">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="7dbf8-262">Next steps</span></span>
 
-* [Criar uma aplicação lógica](../logic-apps/logic-apps-create-a-logic-app.md)
-* [Localizar outros conectores](apis-list.md)
+* [<span data-ttu-id="7dbf8-263">Criar uma aplicação lógica</span><span class="sxs-lookup"><span data-stu-id="7dbf8-263">Create a logic app</span></span>](../logic-apps/logic-apps-create-a-logic-app.md)
+* [<span data-ttu-id="7dbf8-264">Localizar outros conectores</span><span class="sxs-lookup"><span data-stu-id="7dbf8-264">Find other connectors</span></span>](apis-list.md)

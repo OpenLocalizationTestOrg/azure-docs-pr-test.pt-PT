@@ -20,13 +20,13 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="onedrive-for-business-and-azure-remoteapp"></a>OneDrive para Empresas e Azure RemoteApp
+# <a name="onedrive-for-business-and-azure-remoteapp"></a><span data-ttu-id="dc9be-103">OneDrive para Empresas e Azure RemoteApp</span><span class="sxs-lookup"><span data-stu-id="dc9be-103">OneDrive for Business and Azure RemoteApp</span></span>
 > [!IMPORTANT]
-> O Azure RemoteApp vai ser descontinuado a 31 de agosto de 2017. Olá leitura [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter mais detalhes.
+> <span data-ttu-id="dc9be-104">O Azure RemoteApp vai ser descontinuado a 31 de agosto de 2017.</span><span class="sxs-lookup"><span data-stu-id="dc9be-104">Azure RemoteApp is being discontinued on August 31, 2017.</span></span> <span data-ttu-id="dc9be-105">Olá leitura [anúncio](https://go.microsoft.com/fwlink/?linkid=821148) para obter mais detalhes.</span><span class="sxs-lookup"><span data-stu-id="dc9be-105">Read hello [announcement](https://go.microsoft.com/fwlink/?linkid=821148) for details.</span></span>
 > 
 > 
 
-Olá OneDrive para agente de sincronização de negócio não é suportada com o Azure RemoteApp.
+<span data-ttu-id="dc9be-106">Olá OneDrive para agente de sincronização de negócio não é suportada com o Azure RemoteApp.</span><span class="sxs-lookup"><span data-stu-id="dc9be-106">hello OneDrive for Business sync agent is not supported with Azure RemoteApp.</span></span>
 
-Pode incluir o OneDrive para Empresas numa coleção para utilização com o Office 365. 
+<span data-ttu-id="dc9be-107">Pode incluir o OneDrive para Empresas numa coleção para utilização com o Office 365.</span><span class="sxs-lookup"><span data-stu-id="dc9be-107">You can include OneDrive for Business inside a collection for use with Office 365.</span></span> 
 

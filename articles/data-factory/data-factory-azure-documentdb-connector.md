@@ -20,42 +20,42 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="move-data-tooand-from-azure-cosmos-db-using-azure-data-factory"></a>Mover dados tooand da base de dados do Cosmos do Azure utilizando o Azure Data Factory
-Este artigo explica como toouse Olá atividade de cópia de dados de toomove do Azure Data Factory para/da base de dados do Azure Cosmos (API do DocumentDB). Baseia-se no Olá [atividades de movimentos de dados](data-factory-data-movement-activities.md) artigo, que apresenta uma descrição geral do movimento de dados com a atividade de cópia de Olá. 
+# <a name="move-data-tooand-from-azure-cosmos-db-using-azure-data-factory"></a><span data-ttu-id="c7489-103">Mover dados tooand da base de dados do Cosmos do Azure utilizando o Azure Data Factory</span><span class="sxs-lookup"><span data-stu-id="c7489-103">Move data tooand from Azure Cosmos DB using Azure Data Factory</span></span>
+<span data-ttu-id="c7489-104">Este artigo explica como toouse Olá atividade de cópia de dados de toomove do Azure Data Factory para/da base de dados do Azure Cosmos (API do DocumentDB).</span><span class="sxs-lookup"><span data-stu-id="c7489-104">This article explains how toouse hello Copy Activity in Azure Data Factory toomove data to/from Azure Cosmos DB (DocumentDB API).</span></span> <span data-ttu-id="c7489-105">Baseia-se no Olá [atividades de movimentos de dados](data-factory-data-movement-activities.md) artigo, que apresenta uma descrição geral do movimento de dados com a atividade de cópia de Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-105">It builds on hello [Data Movement Activities](data-factory-data-movement-activities.md) article, which presents a general overview of data movement with hello copy activity.</span></span> 
 
-Pode copiar dados de qualquer origem suportada dados armazenam tooAzure Cosmos DB ou a partir dos dados do Azure Cosmos DB tooany suportado sink armazenam. Para obter uma lista dos arquivos de dados suportados como origens ou sinks pela atividade de cópia de Olá, consulte Olá [arquivos de dados suportados](data-factory-data-movement-activities.md#supported-data-stores-and-formats) tabela. 
+<span data-ttu-id="c7489-106">Pode copiar dados de qualquer origem suportada dados armazenam tooAzure Cosmos DB ou a partir dos dados do Azure Cosmos DB tooany suportado sink armazenam.</span><span class="sxs-lookup"><span data-stu-id="c7489-106">You can copy data from any supported source data store tooAzure Cosmos DB or from Azure Cosmos DB tooany supported sink data store.</span></span> <span data-ttu-id="c7489-107">Para obter uma lista dos arquivos de dados suportados como origens ou sinks pela atividade de cópia de Olá, consulte Olá [arquivos de dados suportados](data-factory-data-movement-activities.md#supported-data-stores-and-formats) tabela.</span><span class="sxs-lookup"><span data-stu-id="c7489-107">For a list of data stores supported as sources or sinks by hello copy activity, see hello [Supported data stores](data-factory-data-movement-activities.md#supported-data-stores-and-formats) table.</span></span> 
 
 > [!IMPORTANT]
-> Conector Cosmos BD Azure suportam apenas a API do DocumentDB.
+> <span data-ttu-id="c7489-108">Conector Cosmos BD Azure suportam apenas a API do DocumentDB.</span><span class="sxs-lookup"><span data-stu-id="c7489-108">Azure Cosmos DB connector only support DocumentDB API.</span></span>
 
-dados de toocopy como-é para/de ficheiros JSON ou de outra coleção Cosmos DB, consulte [documentos JSON de importação/exportação](#importexport-json-documents).
+<span data-ttu-id="c7489-109">dados de toocopy como-é para/de ficheiros JSON ou de outra coleção Cosmos DB, consulte [documentos JSON de importação/exportação](#importexport-json-documents).</span><span class="sxs-lookup"><span data-stu-id="c7489-109">toocopy data as-is to/from JSON files or another Cosmos DB collection, see [Import/Export JSON documents](#importexport-json-documents).</span></span>
 
-## <a name="getting-started"></a>Introdução
-Pode criar um pipeline com uma atividade de cópia move os dados do Azure Cosmos DB utilizando ferramentas diferentes/APIs.
+## <a name="getting-started"></a><span data-ttu-id="c7489-110">Introdução</span><span class="sxs-lookup"><span data-stu-id="c7489-110">Getting started</span></span>
+<span data-ttu-id="c7489-111">Pode criar um pipeline com uma atividade de cópia move os dados do Azure Cosmos DB utilizando ferramentas diferentes/APIs.</span><span class="sxs-lookup"><span data-stu-id="c7489-111">You can create a pipeline with a copy activity that moves data to/from Azure Cosmos DB by using different tools/APIs.</span></span>
 
-Olá toocreate da forma mais fácil um pipeline está toouse Olá **Assistente para copiar**. Consulte [Tutorial: criar um pipeline com o Assistente para copiar](data-factory-copy-data-wizard-tutorial.md) para obter instruções sobre como criar um pipeline com o Assistente de cópia de dados Olá rápida.
+<span data-ttu-id="c7489-112">Olá toocreate da forma mais fácil um pipeline está toouse Olá **Assistente para copiar**.</span><span class="sxs-lookup"><span data-stu-id="c7489-112">hello easiest way toocreate a pipeline is toouse hello **Copy Wizard**.</span></span> <span data-ttu-id="c7489-113">Consulte [Tutorial: criar um pipeline com o Assistente para copiar](data-factory-copy-data-wizard-tutorial.md) para obter instruções sobre como criar um pipeline com o Assistente de cópia de dados Olá rápida.</span><span class="sxs-lookup"><span data-stu-id="c7489-113">See [Tutorial: Create a pipeline using Copy Wizard](data-factory-copy-data-wizard-tutorial.md) for a quick walkthrough on creating a pipeline using hello Copy data wizard.</span></span>
 
-Também pode utilizar Olá seguintes ferramentas toocreate um pipeline: **portal do Azure**, **Visual Studio**, **Azure PowerShell**, **modelo Azure Resource Manager** , **.NET API**, e **REST API**. Consulte [tutorial de atividade de cópia](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) para instruções passo a passo toocreate um pipeline com uma atividade de cópia. 
+<span data-ttu-id="c7489-114">Também pode utilizar Olá seguintes ferramentas toocreate um pipeline: **portal do Azure**, **Visual Studio**, **Azure PowerShell**, **modelo Azure Resource Manager** , **.NET API**, e **REST API**.</span><span class="sxs-lookup"><span data-stu-id="c7489-114">You can also use hello following tools toocreate a pipeline: **Azure portal**, **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager template**, **.NET API**, and **REST API**.</span></span> <span data-ttu-id="c7489-115">Consulte [tutorial de atividade de cópia](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) para instruções passo a passo toocreate um pipeline com uma atividade de cópia.</span><span class="sxs-lookup"><span data-stu-id="c7489-115">See [Copy activity tutorial](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) for step-by-step instructions toocreate a pipeline with a copy activity.</span></span> 
 
-Se utilizar ferramentas de Olá ou APIs, execute Olá os seguintes passos toocreate um pipeline que move o arquivo de dados do tooa sink do arquivo de dados de uma origem de dados: 
+<span data-ttu-id="c7489-116">Se utilizar ferramentas de Olá ou APIs, execute Olá os seguintes passos toocreate um pipeline que move o arquivo de dados do tooa sink do arquivo de dados de uma origem de dados:</span><span class="sxs-lookup"><span data-stu-id="c7489-116">Whether you use hello tools or APIs, you perform hello following steps toocreate a pipeline that moves data from a source data store tooa sink data store:</span></span> 
 
-1. Criar **serviços ligados** fábrica de dados de tooyour de arquivos de dados de entrada e saída de toolink.
-2. Criar **conjuntos de dados** toorepresent de entrada e saída de operação de cópia de dados para Olá. 
-3. Criar um **pipeline** com uma atividade de cópia executa um conjunto de dados como entrada e um conjunto de dados como resultado. 
+1. <span data-ttu-id="c7489-117">Criar **serviços ligados** fábrica de dados de tooyour de arquivos de dados de entrada e saída de toolink.</span><span class="sxs-lookup"><span data-stu-id="c7489-117">Create **linked services** toolink input and output data stores tooyour data factory.</span></span>
+2. <span data-ttu-id="c7489-118">Criar **conjuntos de dados** toorepresent de entrada e saída de operação de cópia de dados para Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-118">Create **datasets** toorepresent input and output data for hello copy operation.</span></span> 
+3. <span data-ttu-id="c7489-119">Criar um **pipeline** com uma atividade de cópia executa um conjunto de dados como entrada e um conjunto de dados como resultado.</span><span class="sxs-lookup"><span data-stu-id="c7489-119">Create a **pipeline** with a copy activity that takes a dataset as an input and a dataset as an output.</span></span> 
 
-Quando utiliza o Assistente de Olá, definições de JSON para estas entidades do Data Factory (serviços ligados, conjuntos de dados e pipeline Olá) são criadas automaticamente para si. Ao utilizar ferramentas/APIs (exceto .NET API), é possível definir estas entidades do Data Factory utilizando o formato JSON Olá.  Para exemplos com definições de JSON para entidades do Data Factory que são utilizados toocopy dados da base de dados do Cosmos, consulte [exemplos JSON](#json-examples) secção deste artigo. 
+<span data-ttu-id="c7489-120">Quando utiliza o Assistente de Olá, definições de JSON para estas entidades do Data Factory (serviços ligados, conjuntos de dados e pipeline Olá) são criadas automaticamente para si.</span><span class="sxs-lookup"><span data-stu-id="c7489-120">When you use hello wizard, JSON definitions for these Data Factory entities (linked services, datasets, and hello pipeline) are automatically created for you.</span></span> <span data-ttu-id="c7489-121">Ao utilizar ferramentas/APIs (exceto .NET API), é possível definir estas entidades do Data Factory utilizando o formato JSON Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-121">When you use tools/APIs (except .NET API), you define these Data Factory entities by using hello JSON format.</span></span>  <span data-ttu-id="c7489-122">Para exemplos com definições de JSON para entidades do Data Factory que são utilizados toocopy dados da base de dados do Cosmos, consulte [exemplos JSON](#json-examples) secção deste artigo.</span><span class="sxs-lookup"><span data-stu-id="c7489-122">For samples with JSON definitions for Data Factory entities that are used toocopy data to/from Cosmos DB, see [JSON examples](#json-examples) section of this article.</span></span> 
 
-Olá seguintes secções fornece detalhes sobre as propriedades JSON que são utilizados toodefine Data Factory entidades específicas tooCosmos DB: 
+<span data-ttu-id="c7489-123">Olá seguintes secções fornece detalhes sobre as propriedades JSON que são utilizados toodefine Data Factory entidades específicas tooCosmos DB:</span><span class="sxs-lookup"><span data-stu-id="c7489-123">hello following sections provide details about JSON properties that are used toodefine Data Factory entities specific tooCosmos DB:</span></span> 
 
-## <a name="linked-service-properties"></a>Propriedades de serviço ligado
-Olá, a tabela seguinte fornece uma descrição para JSON elementos específico tooAzure serviço de base de dados do Cosmos ligado.
+## <a name="linked-service-properties"></a><span data-ttu-id="c7489-124">Propriedades de serviço ligado</span><span class="sxs-lookup"><span data-stu-id="c7489-124">Linked service properties</span></span>
+<span data-ttu-id="c7489-125">Olá, a tabela seguinte fornece uma descrição para JSON elementos específico tooAzure serviço de base de dados do Cosmos ligado.</span><span class="sxs-lookup"><span data-stu-id="c7489-125">hello following table provides description for JSON elements specific tooAzure Cosmos DB linked service.</span></span>
 
-| **Propriedade** | **Descrição** | **Necessário** |
+| <span data-ttu-id="c7489-126">**Propriedade**</span><span class="sxs-lookup"><span data-stu-id="c7489-126">**Property**</span></span> | <span data-ttu-id="c7489-127">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="c7489-127">**Description**</span></span> | <span data-ttu-id="c7489-128">**Necessário**</span><span class="sxs-lookup"><span data-stu-id="c7489-128">**Required**</span></span> |
 | --- | --- | --- |
-| tipo |a propriedade de tipo Olá tem de ser definida: **DocumentDb** |Sim |
-| connectionString |Especifique informações necessárias base de dados do tooconnect tooAzure BD do Cosmos. |Sim |
+| <span data-ttu-id="c7489-129">tipo</span><span class="sxs-lookup"><span data-stu-id="c7489-129">type</span></span> |<span data-ttu-id="c7489-130">a propriedade de tipo Olá tem de ser definida: **DocumentDb**</span><span class="sxs-lookup"><span data-stu-id="c7489-130">hello type property must be set to: **DocumentDb**</span></span> |<span data-ttu-id="c7489-131">Sim</span><span class="sxs-lookup"><span data-stu-id="c7489-131">Yes</span></span> |
+| <span data-ttu-id="c7489-132">connectionString</span><span class="sxs-lookup"><span data-stu-id="c7489-132">connectionString</span></span> |<span data-ttu-id="c7489-133">Especifique informações necessárias base de dados do tooconnect tooAzure BD do Cosmos.</span><span class="sxs-lookup"><span data-stu-id="c7489-133">Specify information needed tooconnect tooAzure Cosmos DB database.</span></span> |<span data-ttu-id="c7489-134">Sim</span><span class="sxs-lookup"><span data-stu-id="c7489-134">Yes</span></span> |
 
-Exemplo:
+<span data-ttu-id="c7489-135">Exemplo:</span><span class="sxs-lookup"><span data-stu-id="c7489-135">Example:</span></span>
 
 ```JSON
 {
@@ -69,16 +69,16 @@ Exemplo:
 }
 ```
 
-## <a name="dataset-properties"></a>Propriedades do conjunto de dados
-Para obter uma lista completa das secções & Propriedades disponíveis para definir os conjuntos de dados Consulte toohello [criar conjuntos de dados](data-factory-create-datasets.md) artigo. As secções como estrutura, disponibilidade e a política de um conjunto de dados JSON são semelhantes para todos os tipos de conjunto de dados (SQL do Azure, Azure blob, tabela do Azure, etc.).
+## <a name="dataset-properties"></a><span data-ttu-id="c7489-136">Propriedades do conjunto de dados</span><span class="sxs-lookup"><span data-stu-id="c7489-136">Dataset properties</span></span>
+<span data-ttu-id="c7489-137">Para obter uma lista completa das secções & Propriedades disponíveis para definir os conjuntos de dados Consulte toohello [criar conjuntos de dados](data-factory-create-datasets.md) artigo.</span><span class="sxs-lookup"><span data-stu-id="c7489-137">For a full list of sections & properties available for defining datasets please refer toohello [Creating datasets](data-factory-create-datasets.md) article.</span></span> <span data-ttu-id="c7489-138">As secções como estrutura, disponibilidade e a política de um conjunto de dados JSON são semelhantes para todos os tipos de conjunto de dados (SQL do Azure, Azure blob, tabela do Azure, etc.).</span><span class="sxs-lookup"><span data-stu-id="c7489-138">Sections like structure, availability, and policy of a dataset JSON are similar for all dataset types (Azure SQL, Azure blob, Azure table, etc.).</span></span>
 
-secção de typeProperties Olá é diferente para cada tipo de conjunto de dados e fornece informações sobre a localização de Olá dos dados de Olá no arquivo de dados de Olá. Olá typeProperties secção Olá conjunto de dados do tipo **DocumentDbCollection** tem Olá seguintes propriedades.
+<span data-ttu-id="c7489-139">secção de typeProperties Olá é diferente para cada tipo de conjunto de dados e fornece informações sobre a localização de Olá dos dados de Olá no arquivo de dados de Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-139">hello typeProperties section is different for each type of dataset and provides information about hello location of hello data in hello data store.</span></span> <span data-ttu-id="c7489-140">Olá typeProperties secção Olá conjunto de dados do tipo **DocumentDbCollection** tem Olá seguintes propriedades.</span><span class="sxs-lookup"><span data-stu-id="c7489-140">hello typeProperties section for hello dataset of type **DocumentDbCollection** has hello following properties.</span></span>
 
-| **Propriedade** | **Descrição** | **Necessário** |
+| <span data-ttu-id="c7489-141">**Propriedade**</span><span class="sxs-lookup"><span data-stu-id="c7489-141">**Property**</span></span> | <span data-ttu-id="c7489-142">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="c7489-142">**Description**</span></span> | <span data-ttu-id="c7489-143">**Necessário**</span><span class="sxs-lookup"><span data-stu-id="c7489-143">**Required**</span></span> |
 | --- | --- | --- |
-| CollectionName |Nome da coleção de documentos do Cosmos DB de Olá. |Sim |
+| <span data-ttu-id="c7489-144">CollectionName</span><span class="sxs-lookup"><span data-stu-id="c7489-144">collectionName</span></span> |<span data-ttu-id="c7489-145">Nome da coleção de documentos do Cosmos DB de Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-145">Name of hello Cosmos DB document collection.</span></span> |<span data-ttu-id="c7489-146">Sim</span><span class="sxs-lookup"><span data-stu-id="c7489-146">Yes</span></span> |
 
-Exemplo:
+<span data-ttu-id="c7489-147">Exemplo:</span><span class="sxs-lookup"><span data-stu-id="c7489-147">Example:</span></span>
 
 ```JSON
 {
@@ -97,63 +97,63 @@ Exemplo:
   }
 }
 ```
-### <a name="schema-by-data-factory"></a>Esquema pela fábrica de dados
-Para os arquivos de dados sem esquema, tais como a base de dados do Azure Cosmos, Olá serviço Data Factory infere esquema Olá dos Olá seguintes formas:  
+### <a name="schema-by-data-factory"></a><span data-ttu-id="c7489-148">Esquema pela fábrica de dados</span><span class="sxs-lookup"><span data-stu-id="c7489-148">Schema by Data Factory</span></span>
+<span data-ttu-id="c7489-149">Para os arquivos de dados sem esquema, tais como a base de dados do Azure Cosmos, Olá serviço Data Factory infere esquema Olá dos Olá seguintes formas:</span><span class="sxs-lookup"><span data-stu-id="c7489-149">For schema-free data stores such as Azure Cosmos DB, hello Data Factory service infers hello schema in one of hello following ways:</span></span>  
 
-1. Se especificar a estrutura de Olá dos dados através da utilização de Olá **estrutura** propriedade na definição do conjunto de dados de Olá, Olá serviço Data Factory honra esta estrutura como esquema de Olá. Neste caso, se uma linha não contém um valor para uma coluna, irá ser fornecido um valor nulo para o mesmo.
-2. Se não especificar a estrutura de Olá dos dados utilizando Olá **estrutura** propriedade na definição do conjunto de dados de Olá, Olá serviço Data Factory infere esquema Olá ao utilizar primeira linha de Olá nos dados de Olá. Neste caso, se a primeira linha de Olá não contém o esquema completa Olá, algumas colunas estará em falta no resultado de Olá da operação de cópia.
+1. <span data-ttu-id="c7489-150">Se especificar a estrutura de Olá dos dados através da utilização de Olá **estrutura** propriedade na definição do conjunto de dados de Olá, Olá serviço Data Factory honra esta estrutura como esquema de Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-150">If you specify hello structure of data by using hello **structure** property in hello dataset definition, hello Data Factory service honors this structure as hello schema.</span></span> <span data-ttu-id="c7489-151">Neste caso, se uma linha não contém um valor para uma coluna, irá ser fornecido um valor nulo para o mesmo.</span><span class="sxs-lookup"><span data-stu-id="c7489-151">In this case, if a row does not contain a value for a column, a null value will be provided for it.</span></span>
+2. <span data-ttu-id="c7489-152">Se não especificar a estrutura de Olá dos dados utilizando Olá **estrutura** propriedade na definição do conjunto de dados de Olá, Olá serviço Data Factory infere esquema Olá ao utilizar primeira linha de Olá nos dados de Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-152">If you do not specify hello structure of data by using hello **structure** property in hello dataset definition, hello Data Factory service infers hello schema by using hello first row in hello data.</span></span> <span data-ttu-id="c7489-153">Neste caso, se a primeira linha de Olá não contém o esquema completa Olá, algumas colunas estará em falta no resultado de Olá da operação de cópia.</span><span class="sxs-lookup"><span data-stu-id="c7489-153">In this case, if hello first row does not contain hello full schema, some columns will be missing in hello result of copy operation.</span></span>
 
-Por conseguinte, para origens de dados sem esquema, Olá procedimento recomendado é estrutura de Olá toospecify dos dados através de Olá **estrutura** propriedade.
+<span data-ttu-id="c7489-154">Por conseguinte, para origens de dados sem esquema, Olá procedimento recomendado é estrutura de Olá toospecify dos dados através de Olá **estrutura** propriedade.</span><span class="sxs-lookup"><span data-stu-id="c7489-154">Therefore, for schema-free data sources, hello best practice is toospecify hello structure of data using hello **structure** property.</span></span>
 
-## <a name="copy-activity-properties"></a>Propriedades da atividade de cópia
-Para obter uma lista completa das secções & Propriedades disponíveis para definir atividades Consulte toohello [criar Pipelines](data-factory-create-pipelines.md) artigo. Propriedades, tais como o nome, descrição e de saída, tabelas e política estão disponíveis para todos os tipos de atividades.
+## <a name="copy-activity-properties"></a><span data-ttu-id="c7489-155">Propriedades da atividade de cópia</span><span class="sxs-lookup"><span data-stu-id="c7489-155">Copy activity properties</span></span>
+<span data-ttu-id="c7489-156">Para obter uma lista completa das secções & Propriedades disponíveis para definir atividades Consulte toohello [criar Pipelines](data-factory-create-pipelines.md) artigo.</span><span class="sxs-lookup"><span data-stu-id="c7489-156">For a full list of sections & properties available for defining activities please refer toohello [Creating Pipelines](data-factory-create-pipelines.md) article.</span></span> <span data-ttu-id="c7489-157">Propriedades, tais como o nome, descrição e de saída, tabelas e política estão disponíveis para todos os tipos de atividades.</span><span class="sxs-lookup"><span data-stu-id="c7489-157">Properties such as name, description, input and output tables, and policy are available for all types of activities.</span></span>
 
 > [!NOTE]
-> Olá atividade de cópia demora apenas uma entrada e produz saída de apenas um.
+> <span data-ttu-id="c7489-158">Olá atividade de cópia demora apenas uma entrada e produz saída de apenas um.</span><span class="sxs-lookup"><span data-stu-id="c7489-158">hello Copy Activity takes only one input and produces only one output.</span></span>
 
-As propriedades disponíveis na secção de typeProperties Olá da atividade de Olá no Olá por outro lado variar com cada tipo de atividade e, em caso de atividade de cópia que variam consoante os tipos de origens e sinks Olá.
+<span data-ttu-id="c7489-159">As propriedades disponíveis na secção de typeProperties Olá da atividade de Olá no Olá por outro lado variar com cada tipo de atividade e, em caso de atividade de cópia que variam consoante os tipos de origens e sinks Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-159">Properties available in hello typeProperties section of hello activity on hello other hand vary with each activity type and in case of Copy activity they vary depending on hello types of sources and sinks.</span></span>
 
-Em caso de atividade de cópia quando a origem é do tipo **DocumentDbCollectionSource** Olá seguintes propriedades está disponível no **typeProperties** secção:
+<span data-ttu-id="c7489-160">Em caso de atividade de cópia quando a origem é do tipo **DocumentDbCollectionSource** Olá seguintes propriedades está disponível no **typeProperties** secção:</span><span class="sxs-lookup"><span data-stu-id="c7489-160">In case of Copy activity when source is of type **DocumentDbCollectionSource** hello following properties are available in **typeProperties** section:</span></span>
 
-| **Propriedade** | **Descrição** | **Valores permitidos** | **Necessário** |
+| <span data-ttu-id="c7489-161">**Propriedade**</span><span class="sxs-lookup"><span data-stu-id="c7489-161">**Property**</span></span> | <span data-ttu-id="c7489-162">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="c7489-162">**Description**</span></span> | <span data-ttu-id="c7489-163">**Valores permitidos**</span><span class="sxs-lookup"><span data-stu-id="c7489-163">**Allowed values**</span></span> | <span data-ttu-id="c7489-164">**Necessário**</span><span class="sxs-lookup"><span data-stu-id="c7489-164">**Required**</span></span> |
 | --- | --- | --- | --- |
-| consulta |Especifique Olá consulta tooread dados. |Suportado pelo Azure Cosmos DB de cadeia de consulta. <br/><br/>Exemplo:`SELECT c.BusinessEntityID, c.PersonType, c.NameStyle, c.Title, c.Name.First AS FirstName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"` |Não <br/><br/>Se não for especificado, Olá instrução de SQL que é executada:`select <columns defined in structure> from mycollection` |
-| nestingSeparator |Caráter especial tooindicate que Olá documento está aninhado |Qualquer caráter. <br/><br/>BD do Cosmos do Azure é um arquivo de NoSQL para documentos JSON, onde são permitidas estruturas aninhadas. O Azure Data Factory permite que a hierarquia de toodenote do utilizador através de nestingSeparator, que é "." no Olá acima exemplos. Com separador Olá, atividade de cópia de Olá irá gerar o objeto de "Name" Olá com elementos três subordinados too"Name.First primeiro, média e última, de acordo com", "Name.Middle" e "Name.Last" Olá definição de tabela. |Não |
+| <span data-ttu-id="c7489-165">consulta</span><span class="sxs-lookup"><span data-stu-id="c7489-165">query</span></span> |<span data-ttu-id="c7489-166">Especifique Olá consulta tooread dados.</span><span class="sxs-lookup"><span data-stu-id="c7489-166">Specify hello query tooread data.</span></span> |<span data-ttu-id="c7489-167">Suportado pelo Azure Cosmos DB de cadeia de consulta.</span><span class="sxs-lookup"><span data-stu-id="c7489-167">Query string supported by Azure Cosmos DB.</span></span> <br/><br/><span data-ttu-id="c7489-168">Exemplo:`SELECT c.BusinessEntityID, c.PersonType, c.NameStyle, c.Title, c.Name.First AS FirstName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"`</span><span class="sxs-lookup"><span data-stu-id="c7489-168">Example: `SELECT c.BusinessEntityID, c.PersonType, c.NameStyle, c.Title, c.Name.First AS FirstName, c.Name.Last AS LastName, c.Suffix, c.EmailPromotion FROM c WHERE c.ModifiedDate > \"2009-01-01T00:00:00\"`</span></span> |<span data-ttu-id="c7489-169">Não</span><span class="sxs-lookup"><span data-stu-id="c7489-169">No</span></span> <br/><br/><span data-ttu-id="c7489-170">Se não for especificado, Olá instrução de SQL que é executada:`select <columns defined in structure> from mycollection`</span><span class="sxs-lookup"><span data-stu-id="c7489-170">If not specified, hello SQL statement that is executed: `select <columns defined in structure> from mycollection`</span></span> |
+| <span data-ttu-id="c7489-171">nestingSeparator</span><span class="sxs-lookup"><span data-stu-id="c7489-171">nestingSeparator</span></span> |<span data-ttu-id="c7489-172">Caráter especial tooindicate que Olá documento está aninhado</span><span class="sxs-lookup"><span data-stu-id="c7489-172">Special character tooindicate that hello document is nested</span></span> |<span data-ttu-id="c7489-173">Qualquer caráter.</span><span class="sxs-lookup"><span data-stu-id="c7489-173">Any character.</span></span> <br/><br/><span data-ttu-id="c7489-174">BD do Cosmos do Azure é um arquivo de NoSQL para documentos JSON, onde são permitidas estruturas aninhadas.</span><span class="sxs-lookup"><span data-stu-id="c7489-174">Azure Cosmos DB is a NoSQL store for JSON documents, where nested structures are allowed.</span></span> <span data-ttu-id="c7489-175">O Azure Data Factory permite que a hierarquia de toodenote do utilizador através de nestingSeparator, que é "."</span><span class="sxs-lookup"><span data-stu-id="c7489-175">Azure Data Factory enables user toodenote hierarchy via nestingSeparator, which is “.”</span></span> <span data-ttu-id="c7489-176">no Olá acima exemplos.</span><span class="sxs-lookup"><span data-stu-id="c7489-176">in hello above examples.</span></span> <span data-ttu-id="c7489-177">Com separador Olá, atividade de cópia de Olá irá gerar o objeto de "Name" Olá com elementos três subordinados too"Name.First primeiro, média e última, de acordo com", "Name.Middle" e "Name.Last" Olá definição de tabela.</span><span class="sxs-lookup"><span data-stu-id="c7489-177">With hello separator, hello copy activity will generate hello “Name” object with three children elements First, Middle and Last, according too“Name.First”, “Name.Middle” and “Name.Last” in hello table definition.</span></span> |<span data-ttu-id="c7489-178">Não</span><span class="sxs-lookup"><span data-stu-id="c7489-178">No</span></span> |
 
-**DocumentDbCollectionSink** suporta Olá seguintes propriedades:
+<span data-ttu-id="c7489-179">**DocumentDbCollectionSink** suporta Olá seguintes propriedades:</span><span class="sxs-lookup"><span data-stu-id="c7489-179">**DocumentDbCollectionSink** supports hello following properties:</span></span>
 
-| **Propriedade** | **Descrição** | **Valores permitidos** | **Necessário** |
+| <span data-ttu-id="c7489-180">**Propriedade**</span><span class="sxs-lookup"><span data-stu-id="c7489-180">**Property**</span></span> | <span data-ttu-id="c7489-181">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="c7489-181">**Description**</span></span> | <span data-ttu-id="c7489-182">**Valores permitidos**</span><span class="sxs-lookup"><span data-stu-id="c7489-182">**Allowed values**</span></span> | <span data-ttu-id="c7489-183">**Necessário**</span><span class="sxs-lookup"><span data-stu-id="c7489-183">**Required**</span></span> |
 | --- | --- | --- | --- |
-| nestingSeparator |É necessário um caráter especial no tooindicate nome de coluna de origem de Olá que aninhada documento. <br/><br/>Por exemplo acima: `Name.First` na saída de Olá tabela produz Olá estrutura JSON no documento de BD do Cosmos Olá os seguintes:<br/><br/>"Nome": {<br/>    "First": "João"<br/>}, |Caráter é utilizado tooseparate níveis de aninhamento.<br/><br/>Valor predefinido é `.` (ponto final). |Caráter é utilizado tooseparate níveis de aninhamento. <br/><br/>Valor predefinido é `.` (ponto final). |
-| WriteBatchSize |Número de paralelo pedidos documentos de toocreate de serviço de base de dados do Cosmos tooAzure.<br/><br/>Pode otimizar o desempenho de Olá ao copiar dados do Cosmos DB utilizando esta propriedade. Pode esperar um desempenho melhor quando aumenta writeBatchSize porque mais pedidos paralelas tooCosmos DB são enviados. No entanto, terá de tooavoid limitação que pode acionar a mensagem de erro de saudação: "taxa é grande pedido".<br/><br/>Limitação é decidida por um número de fatores, incluindo o tamanho de documentos, número de termos de documentos, a indexação de política de coleção de destino, etc. Para operações de cópia, pode utilizar uma melhor toohave Olá da coleção (por exemplo, S3) a maioria das débito disponível (2,500 pedidos unidades por segundo). |Número inteiro |Não (predefinição: 5) |
-| writeBatchTimeout |De tempo de espera para Olá operação toocomplete antes de atingir o tempo limite. |TimeSpan<br/><br/> Exemplo: "00: 30:00" (30 minutos). |Não |
+| <span data-ttu-id="c7489-184">nestingSeparator</span><span class="sxs-lookup"><span data-stu-id="c7489-184">nestingSeparator</span></span> |<span data-ttu-id="c7489-185">É necessário um caráter especial no tooindicate nome de coluna de origem de Olá que aninhada documento.</span><span class="sxs-lookup"><span data-stu-id="c7489-185">A special character in hello source column name tooindicate that nested document is needed.</span></span> <br/><br/><span data-ttu-id="c7489-186">Por exemplo acima: `Name.First` na saída de Olá tabela produz Olá estrutura JSON no documento de BD do Cosmos Olá os seguintes:</span><span class="sxs-lookup"><span data-stu-id="c7489-186">For example above: `Name.First` in hello output table produces hello following JSON structure in hello Cosmos DB document:</span></span><br/><br/><span data-ttu-id="c7489-187">"Nome": {</span><span class="sxs-lookup"><span data-stu-id="c7489-187">"Name": {</span></span><br/>    <span data-ttu-id="c7489-188">"First": "João"</span><span class="sxs-lookup"><span data-stu-id="c7489-188">"First": "John"</span></span><br/><span data-ttu-id="c7489-189">},</span><span class="sxs-lookup"><span data-stu-id="c7489-189">},</span></span> |<span data-ttu-id="c7489-190">Caráter é utilizado tooseparate níveis de aninhamento.</span><span class="sxs-lookup"><span data-stu-id="c7489-190">Character that is used tooseparate nesting levels.</span></span><br/><br/><span data-ttu-id="c7489-191">Valor predefinido é `.` (ponto final).</span><span class="sxs-lookup"><span data-stu-id="c7489-191">Default value is `.` (dot).</span></span> |<span data-ttu-id="c7489-192">Caráter é utilizado tooseparate níveis de aninhamento.</span><span class="sxs-lookup"><span data-stu-id="c7489-192">Character that is used tooseparate nesting levels.</span></span> <br/><br/><span data-ttu-id="c7489-193">Valor predefinido é `.` (ponto final).</span><span class="sxs-lookup"><span data-stu-id="c7489-193">Default value is `.` (dot).</span></span> |
+| <span data-ttu-id="c7489-194">WriteBatchSize</span><span class="sxs-lookup"><span data-stu-id="c7489-194">writeBatchSize</span></span> |<span data-ttu-id="c7489-195">Número de paralelo pedidos documentos de toocreate de serviço de base de dados do Cosmos tooAzure.</span><span class="sxs-lookup"><span data-stu-id="c7489-195">Number of parallel requests tooAzure Cosmos DB service toocreate documents.</span></span><br/><br/><span data-ttu-id="c7489-196">Pode otimizar o desempenho de Olá ao copiar dados do Cosmos DB utilizando esta propriedade.</span><span class="sxs-lookup"><span data-stu-id="c7489-196">You can fine-tune hello performance when copying data to/from Cosmos DB by using this property.</span></span> <span data-ttu-id="c7489-197">Pode esperar um desempenho melhor quando aumenta writeBatchSize porque mais pedidos paralelas tooCosmos DB são enviados.</span><span class="sxs-lookup"><span data-stu-id="c7489-197">You can expect a better performance when you increase writeBatchSize because more parallel requests tooCosmos DB are sent.</span></span> <span data-ttu-id="c7489-198">No entanto, terá de tooavoid limitação que pode acionar a mensagem de erro de saudação: "taxa é grande pedido".</span><span class="sxs-lookup"><span data-stu-id="c7489-198">However you’ll need tooavoid throttling that can throw hello error message: "Request rate is large".</span></span><br/><br/><span data-ttu-id="c7489-199">Limitação é decidida por um número de fatores, incluindo o tamanho de documentos, número de termos de documentos, a indexação de política de coleção de destino, etc. Para operações de cópia, pode utilizar uma melhor toohave Olá da coleção (por exemplo, S3) a maioria das débito disponível (2,500 pedidos unidades por segundo).</span><span class="sxs-lookup"><span data-stu-id="c7489-199">Throttling is decided by a number of factors, including size of documents, number of terms in documents, indexing policy of target collection, etc. For copy operations, you can use a better collection (e.g. S3) toohave hello most throughput available (2,500 request units/second).</span></span> |<span data-ttu-id="c7489-200">Número inteiro</span><span class="sxs-lookup"><span data-stu-id="c7489-200">Integer</span></span> |<span data-ttu-id="c7489-201">Não (predefinição: 5)</span><span class="sxs-lookup"><span data-stu-id="c7489-201">No (default: 5)</span></span> |
+| <span data-ttu-id="c7489-202">writeBatchTimeout</span><span class="sxs-lookup"><span data-stu-id="c7489-202">writeBatchTimeout</span></span> |<span data-ttu-id="c7489-203">De tempo de espera para Olá operação toocomplete antes de atingir o tempo limite.</span><span class="sxs-lookup"><span data-stu-id="c7489-203">Wait time for hello operation toocomplete before it times out.</span></span> |<span data-ttu-id="c7489-204">TimeSpan</span><span class="sxs-lookup"><span data-stu-id="c7489-204">timespan</span></span><br/><br/> <span data-ttu-id="c7489-205">Exemplo: "00: 30:00" (30 minutos).</span><span class="sxs-lookup"><span data-stu-id="c7489-205">Example: “00:30:00” (30 minutes).</span></span> |<span data-ttu-id="c7489-206">Não</span><span class="sxs-lookup"><span data-stu-id="c7489-206">No</span></span> |
 
-## <a name="importexport-json-documents"></a>Documentos JSON para importar/exportar
-Utilizar este conector Cosmos DB, pode facilmente
+## <a name="importexport-json-documents"></a><span data-ttu-id="c7489-207">Documentos JSON para importar/exportar</span><span class="sxs-lookup"><span data-stu-id="c7489-207">Import/Export JSON documents</span></span>
+<span data-ttu-id="c7489-208">Utilizar este conector Cosmos DB, pode facilmente</span><span class="sxs-lookup"><span data-stu-id="c7489-208">Using this Cosmos DB connector, you can easily</span></span>
 
-* Importe documentos JSON de várias origens para Cosmos DB, incluindo o Blob do Azure, Azure Data Lake, sistema de ficheiros no local ou outros arquivos de ficheiros suportados pelo Azure Data Factory.
-* Exporte documentos JSON do Cosmos DB collecton em vários arquivos de ficheiros.
-* Migrar dados entre duas coleções de BD do Cosmos como-é.
+* <span data-ttu-id="c7489-209">Importe documentos JSON de várias origens para Cosmos DB, incluindo o Blob do Azure, Azure Data Lake, sistema de ficheiros no local ou outros arquivos de ficheiros suportados pelo Azure Data Factory.</span><span class="sxs-lookup"><span data-stu-id="c7489-209">Import JSON documents from various sources into Cosmos DB, including Azure Blob, Azure Data Lake, on-premises File System or other file-based stores supported by Azure Data Factory.</span></span>
+* <span data-ttu-id="c7489-210">Exporte documentos JSON do Cosmos DB collecton em vários arquivos de ficheiros.</span><span class="sxs-lookup"><span data-stu-id="c7489-210">Export JSON documents from Cosmos DB collecton into various file-based stores.</span></span>
+* <span data-ttu-id="c7489-211">Migrar dados entre duas coleções de BD do Cosmos como-é.</span><span class="sxs-lookup"><span data-stu-id="c7489-211">Migrate data between two Cosmos DB collections as-is.</span></span>
 
-Copiar do tooachieve agnóstico esse esquema, 
-* Ao utilizar o Assistente para copiar, verifique Olá **"Exportar como-é tooJSON ficheiros ou noutra coleção Cosmos BD"** opção.
-* Quando utilizar a edição de JSON, não especifique secção de "estrutura" Olá dos DataSets de BD do Cosmos nem origem de propriedade de "nestingSeparator" na base de dados do Cosmos/sink na atividade de cópia. tooimport da / tooJSON ficheiros de exportação, no conjunto de dados de arquivo de ficheiros de Olá especificar tipo de formato como "JsonFormat", "filePattern" de configuração e ignorar as definições do formato de Olá rest, consulte [formato JSON](data-factory-supported-file-and-compression-formats.md#json-format) secção em detalhes.
+<span data-ttu-id="c7489-212">Copiar do tooachieve agnóstico esse esquema,</span><span class="sxs-lookup"><span data-stu-id="c7489-212">tooachieve such schema-agnostic copy,</span></span> 
+* <span data-ttu-id="c7489-213">Ao utilizar o Assistente para copiar, verifique Olá **"Exportar como-é tooJSON ficheiros ou noutra coleção Cosmos BD"** opção.</span><span class="sxs-lookup"><span data-stu-id="c7489-213">When using copy wizard, check hello **"Export as-is tooJSON files or Cosmos DB collection"** option.</span></span>
+* <span data-ttu-id="c7489-214">Quando utilizar a edição de JSON, não especifique secção de "estrutura" Olá dos DataSets de BD do Cosmos nem origem de propriedade de "nestingSeparator" na base de dados do Cosmos/sink na atividade de cópia.</span><span class="sxs-lookup"><span data-stu-id="c7489-214">When using JSON editing, do not specify hello "structure" section in Cosmos DB dataset(s) nor "nestingSeparator" property on Cosmos DB source/sink in copy activity.</span></span> <span data-ttu-id="c7489-215">tooimport da / tooJSON ficheiros de exportação, no conjunto de dados de arquivo de ficheiros de Olá especificar tipo de formato como "JsonFormat", "filePattern" de configuração e ignorar as definições do formato de Olá rest, consulte [formato JSON](data-factory-supported-file-and-compression-formats.md#json-format) secção em detalhes.</span><span class="sxs-lookup"><span data-stu-id="c7489-215">tooimport from/export tooJSON files, in hello file store dataset specify format type as "JsonFormat", config "filePattern" and skip hello rest format settings, see [JSON format](data-factory-supported-file-and-compression-formats.md#json-format) section on details.</span></span>
 
-## <a name="json-examples"></a>Exemplos JSON
-Olá exemplos seguintes fornecem definições JSON de exemplo que pode utilizar toocreate um pipeline utilizando [portal do Azure](data-factory-copy-activity-tutorial-using-azure-portal.md) ou [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) ou [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Estes mostram como toocopy tooand de dados da base de dados do Azure Cosmos e armazenamento de Blobs do Azure. No entanto, os dados podem ser copiados **diretamente** de qualquer uma das origens de Olá tooany de Olá sinks indicado [aqui](data-factory-data-movement-activities.md#supported-data-stores-and-formats) utilizando Olá atividade de cópia no Azure Data Factory.
+## <a name="json-examples"></a><span data-ttu-id="c7489-216">Exemplos JSON</span><span class="sxs-lookup"><span data-stu-id="c7489-216">JSON examples</span></span>
+<span data-ttu-id="c7489-217">Olá exemplos seguintes fornecem definições JSON de exemplo que pode utilizar toocreate um pipeline utilizando [portal do Azure](data-factory-copy-activity-tutorial-using-azure-portal.md) ou [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) ou [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md).</span><span class="sxs-lookup"><span data-stu-id="c7489-217">hello following examples provide sample JSON definitions that you can use toocreate a pipeline by using [Azure portal](data-factory-copy-activity-tutorial-using-azure-portal.md) or [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) or [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md).</span></span> <span data-ttu-id="c7489-218">Estes mostram como toocopy tooand de dados da base de dados do Azure Cosmos e armazenamento de Blobs do Azure.</span><span class="sxs-lookup"><span data-stu-id="c7489-218">They show how toocopy data tooand from Azure Cosmos DB and Azure Blob Storage.</span></span> <span data-ttu-id="c7489-219">No entanto, os dados podem ser copiados **diretamente** de qualquer uma das origens de Olá tooany de Olá sinks indicado [aqui](data-factory-data-movement-activities.md#supported-data-stores-and-formats) utilizando Olá atividade de cópia no Azure Data Factory.</span><span class="sxs-lookup"><span data-stu-id="c7489-219">However, data can be copied **directly** from any of hello sources tooany of hello sinks stated [here](data-factory-data-movement-activities.md#supported-data-stores-and-formats) using hello Copy Activity in Azure Data Factory.</span></span>
 
-## <a name="example-copy-data-from-azure-cosmos-db-tooazure-blob"></a>Exemplo: Copiar dados de base de dados do Azure Cosmos tooAzure Blob
-exemplo de Olá abaixo mostra:
+## <a name="example-copy-data-from-azure-cosmos-db-tooazure-blob"></a><span data-ttu-id="c7489-220">Exemplo: Copiar dados de base de dados do Azure Cosmos tooAzure Blob</span><span class="sxs-lookup"><span data-stu-id="c7489-220">Example: Copy data from Azure Cosmos DB tooAzure Blob</span></span>
+<span data-ttu-id="c7489-221">exemplo de Olá abaixo mostra:</span><span class="sxs-lookup"><span data-stu-id="c7489-221">hello sample below shows:</span></span>
 
-1. Um serviço ligado do tipo [DocumentDb](#linked-service-properties).
-2. Um serviço ligado do tipo [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).
-3. Uma entrada [dataset](data-factory-create-datasets.md) do tipo [DocumentDbCollection](#dataset-properties).
-4. Uma saída [dataset](data-factory-create-datasets.md) do tipo [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties).
-5. A [pipeline](data-factory-create-pipelines.md) com atividade de cópia que utiliza [DocumentDbCollectionSource](#copy-activity-properties) e [BlobSink](data-factory-azure-blob-connector.md#copy-activity-properties).
+1. <span data-ttu-id="c7489-222">Um serviço ligado do tipo [DocumentDb](#linked-service-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-222">A linked service of type [DocumentDb](#linked-service-properties).</span></span>
+2. <span data-ttu-id="c7489-223">Um serviço ligado do tipo [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-223">A linked service of type [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).</span></span>
+3. <span data-ttu-id="c7489-224">Uma entrada [dataset](data-factory-create-datasets.md) do tipo [DocumentDbCollection](#dataset-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-224">An input [dataset](data-factory-create-datasets.md) of type [DocumentDbCollection](#dataset-properties).</span></span>
+4. <span data-ttu-id="c7489-225">Uma saída [dataset](data-factory-create-datasets.md) do tipo [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-225">An output [dataset](data-factory-create-datasets.md) of type [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties).</span></span>
+5. <span data-ttu-id="c7489-226">A [pipeline](data-factory-create-pipelines.md) com atividade de cópia que utiliza [DocumentDbCollectionSource](#copy-activity-properties) e [BlobSink](data-factory-azure-blob-connector.md#copy-activity-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-226">A [pipeline](data-factory-create-pipelines.md) with Copy Activity that uses [DocumentDbCollectionSource](#copy-activity-properties) and [BlobSink](data-factory-azure-blob-connector.md#copy-activity-properties).</span></span>
 
-exemplo de Olá copia os dados na base de dados do Azure Cosmos tooAzure Blob. Propriedades JSON de Olá utilizadas nestes exemplos são descritas nas secções seguintes exemplos de Olá.
+<span data-ttu-id="c7489-227">exemplo de Olá copia os dados na base de dados do Azure Cosmos tooAzure Blob.</span><span class="sxs-lookup"><span data-stu-id="c7489-227">hello sample copies data in Azure Cosmos DB tooAzure Blob.</span></span> <span data-ttu-id="c7489-228">Propriedades JSON de Olá utilizadas nestes exemplos são descritas nas secções seguintes exemplos de Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-228">hello JSON properties used in these samples are described in sections following hello samples.</span></span>
 
-**BD do Azure do Cosmos serviço ligado:**
+<span data-ttu-id="c7489-229">**BD do Azure do Cosmos serviço ligado:**</span><span class="sxs-lookup"><span data-stu-id="c7489-229">**Azure Cosmos DB linked service:**</span></span>
 
 ```JSON
 {
@@ -166,7 +166,7 @@ exemplo de Olá copia os dados na base de dados do Azure Cosmos tooAzure Blob. P
   }
 }
 ```
-**Serviço ligado do armazenamento de Blobs do Azure:**
+<span data-ttu-id="c7489-230">**Serviço ligado do armazenamento de Blobs do Azure:**</span><span class="sxs-lookup"><span data-stu-id="c7489-230">**Azure Blob storage linked service:**</span></span>
 
 ```JSON
 {
@@ -179,11 +179,11 @@ exemplo de Olá copia os dados na base de dados do Azure Cosmos tooAzure Blob. P
   }
 }
 ```
-**Conjunto de dados de entrada Document DB do Azure:**
+<span data-ttu-id="c7489-231">**Conjunto de dados de entrada Document DB do Azure:**</span><span class="sxs-lookup"><span data-stu-id="c7489-231">**Azure Document DB input dataset:**</span></span>
 
-exemplo de Olá parte do princípio de que tem uma coleção designada **pessoa** numa base de dados do Azure Cosmos DB.
+<span data-ttu-id="c7489-232">exemplo de Olá parte do princípio de que tem uma coleção designada **pessoa** numa base de dados do Azure Cosmos DB.</span><span class="sxs-lookup"><span data-stu-id="c7489-232">hello sample assumes you have a collection named **Person** in an Azure Cosmos DB database.</span></span>
 
-A definição "external": "true" e a especificação de externalData informações de política Olá do Azure Data Factory service nessa tabela Olá é toohello externo fábrica de dados e não são produzidos por uma atividade no factory de dados de Olá.
+<span data-ttu-id="c7489-233">A definição "external": "true" e a especificação de externalData informações de política Olá do Azure Data Factory service nessa tabela Olá é toohello externo fábrica de dados e não são produzidos por uma atividade no factory de dados de Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-233">Setting “external”: ”true” and specifying externalData policy information hello Azure Data Factory service that hello table is external toohello data factory and not produced by an activity in hello data factory.</span></span>
 
 ```JSON
 {
@@ -203,9 +203,9 @@ A definição "external": "true" e a especificação de externalData informaçõ
 }
 ```
 
-**Conjunto de dados de saída do Blob do Azure:**
+<span data-ttu-id="c7489-234">**Conjunto de dados de saída do Blob do Azure:**</span><span class="sxs-lookup"><span data-stu-id="c7489-234">**Azure Blob output dataset:**</span></span>
 
-Os dados são o blob tooa copiados de novo a cada hora com o caminho de Olá para BLOBs Olá ao refletir datetime específico Olá com granularidade de hora.
+<span data-ttu-id="c7489-235">Os dados são o blob tooa copiados de novo a cada hora com o caminho de Olá para BLOBs Olá ao refletir datetime específico Olá com granularidade de hora.</span><span class="sxs-lookup"><span data-stu-id="c7489-235">Data is copied tooa new blob every hour with hello path for hello blob reflecting hello specific datetime with hour granularity.</span></span>
 
 ```JSON
 {
@@ -228,7 +228,7 @@ Os dados são o blob tooa copiados de novo a cada hora com o caminho de Olá par
   }
 }
 ```
-Documento JSON de exemplo no Olá coleção pessoa numa base de dados do Cosmos DB:
+<span data-ttu-id="c7489-236">Documento JSON de exemplo no Olá coleção pessoa numa base de dados do Cosmos DB:</span><span class="sxs-lookup"><span data-stu-id="c7489-236">Sample JSON document in hello Person collection in a Cosmos DB database:</span></span>
 
 ```JSON
 {
@@ -240,15 +240,15 @@ Documento JSON de exemplo no Olá coleção pessoa numa base de dados do Cosmos 
   }
 }
 ```
-BD do cosmos suporta a consulta de documentos utilizando um SQL Server como a sintaxe por hierárquicos documentos JSON.
+<span data-ttu-id="c7489-237">BD do cosmos suporta a consulta de documentos utilizando um SQL Server como a sintaxe por hierárquicos documentos JSON.</span><span class="sxs-lookup"><span data-stu-id="c7489-237">Cosmos DB supports querying documents using a SQL like syntax over hierarchical JSON documents.</span></span>
 
-Exemplo: 
+<span data-ttu-id="c7489-238">Exemplo:</span><span class="sxs-lookup"><span data-stu-id="c7489-238">Example:</span></span> 
 
 ```sql
 SELECT Person.PersonId, Person.Name.First AS FirstName, Person.Name.Middle as MiddleName, Person.Name.Last AS LastName FROM Person
 ```
 
-seguinte Olá pipeline copia dados a partir Olá coleção de pessoa em Olá tooan de base de dados de base de dados do Azure Cosmos BLOBs do Azure. Como parte da Olá de atividade de cópia de Olá foram especificados conjuntos de dados de entrada e de saída.  
+<span data-ttu-id="c7489-239">seguinte Olá pipeline copia dados a partir Olá coleção de pessoa em Olá tooan de base de dados de base de dados do Azure Cosmos BLOBs do Azure.</span><span class="sxs-lookup"><span data-stu-id="c7489-239">hello following pipeline copies data from hello Person collection in hello Azure Cosmos DB database tooan Azure blob.</span></span> <span data-ttu-id="c7489-240">Como parte da Olá de atividade de cópia de Olá foram especificados conjuntos de dados de entrada e de saída.</span><span class="sxs-lookup"><span data-stu-id="c7489-240">As part of hello copy activity hello input and output datasets have been specified.</span></span>  
 
 ```JSON
 {
@@ -291,18 +291,18 @@ seguinte Olá pipeline copia dados a partir Olá coleção de pessoa em Olá too
   }
 }
 ```
-## <a name="example-copy-data-from-azure-blob-tooazure-cosmos-db"></a>Exemplo: Copiar dados de Blobs do Azure tooAzure Cosmos DB 
-exemplo de Olá abaixo mostra:
+## <a name="example-copy-data-from-azure-blob-tooazure-cosmos-db"></a><span data-ttu-id="c7489-241">Exemplo: Copiar dados de Blobs do Azure tooAzure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="c7489-241">Example: Copy data from Azure Blob tooAzure Cosmos DB</span></span> 
+<span data-ttu-id="c7489-242">exemplo de Olá abaixo mostra:</span><span class="sxs-lookup"><span data-stu-id="c7489-242">hello sample below shows:</span></span>
 
-1. Um serviço ligado do tipo [DocumentDb](#azure-documentdb-linked-service-properties).
-2. Um serviço ligado do tipo [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).
-3. Uma entrada [dataset](data-factory-create-datasets.md) do tipo [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties).
-4. Uma saída [dataset](data-factory-create-datasets.md) do tipo [DocumentDbCollection](#azure-documentdb-dataset-type-properties).
-5. A [pipeline](data-factory-create-pipelines.md) com atividade de cópia que utiliza [BlobSource](data-factory-azure-blob-connector.md#copy-activity-properties) e [DocumentDbCollectionSink](#azure-documentdb-copy-activity-type-properties).
+1. <span data-ttu-id="c7489-243">Um serviço ligado do tipo [DocumentDb](#azure-documentdb-linked-service-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-243">A linked service of type [DocumentDb](#azure-documentdb-linked-service-properties).</span></span>
+2. <span data-ttu-id="c7489-244">Um serviço ligado do tipo [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-244">A linked service of type [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).</span></span>
+3. <span data-ttu-id="c7489-245">Uma entrada [dataset](data-factory-create-datasets.md) do tipo [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-245">An input [dataset](data-factory-create-datasets.md) of type [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties).</span></span>
+4. <span data-ttu-id="c7489-246">Uma saída [dataset](data-factory-create-datasets.md) do tipo [DocumentDbCollection](#azure-documentdb-dataset-type-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-246">An output [dataset](data-factory-create-datasets.md) of type [DocumentDbCollection](#azure-documentdb-dataset-type-properties).</span></span>
+5. <span data-ttu-id="c7489-247">A [pipeline](data-factory-create-pipelines.md) com atividade de cópia que utiliza [BlobSource](data-factory-azure-blob-connector.md#copy-activity-properties) e [DocumentDbCollectionSink](#azure-documentdb-copy-activity-type-properties).</span><span class="sxs-lookup"><span data-stu-id="c7489-247">A [pipeline](data-factory-create-pipelines.md) with Copy Activity that uses [BlobSource](data-factory-azure-blob-connector.md#copy-activity-properties) and [DocumentDbCollectionSink](#azure-documentdb-copy-activity-type-properties).</span></span>
 
-exemplo de Olá copia dados de Blobs do Azure tooAzure Cosmos DB. Propriedades JSON de Olá utilizadas nestes exemplos são descritas nas secções seguintes exemplos de Olá.
+<span data-ttu-id="c7489-248">exemplo de Olá copia dados de Blobs do Azure tooAzure Cosmos DB.</span><span class="sxs-lookup"><span data-stu-id="c7489-248">hello sample copies data from Azure blob tooAzure Cosmos DB.</span></span> <span data-ttu-id="c7489-249">Propriedades JSON de Olá utilizadas nestes exemplos são descritas nas secções seguintes exemplos de Olá.</span><span class="sxs-lookup"><span data-stu-id="c7489-249">hello JSON properties used in these samples are described in sections following hello samples.</span></span>
 
-**Serviço ligado do armazenamento de Blobs do Azure:**
+<span data-ttu-id="c7489-250">**Serviço ligado do armazenamento de Blobs do Azure:**</span><span class="sxs-lookup"><span data-stu-id="c7489-250">**Azure Blob storage linked service:**</span></span>
 
 ```JSON
 {
@@ -315,7 +315,7 @@ exemplo de Olá copia dados de Blobs do Azure tooAzure Cosmos DB. Propriedades J
   }
 }
 ```
-**BD do Azure do Cosmos serviço ligado:**
+<span data-ttu-id="c7489-251">**BD do Azure do Cosmos serviço ligado:**</span><span class="sxs-lookup"><span data-stu-id="c7489-251">**Azure Cosmos DB linked service:**</span></span>
 
 ```JSON
 {
@@ -328,7 +328,7 @@ exemplo de Olá copia dados de Blobs do Azure tooAzure Cosmos DB. Propriedades J
   }
 }
 ```
-**Conjunto de dados de entrada Blob do Azure:**
+<span data-ttu-id="c7489-252">**Conjunto de dados de entrada Blob do Azure:**</span><span class="sxs-lookup"><span data-stu-id="c7489-252">**Azure Blob input dataset:**</span></span>
 
 ```JSON
 {
@@ -371,9 +371,9 @@ exemplo de Olá copia dados de Blobs do Azure tooAzure Cosmos DB. Propriedades J
   }
 }
 ```
-**BD do Azure do Cosmos o conjunto de dados de saída:**
+<span data-ttu-id="c7489-253">**BD do Azure do Cosmos o conjunto de dados de saída:**</span><span class="sxs-lookup"><span data-stu-id="c7489-253">**Azure Cosmos DB output dataset:**</span></span>
 
-exemplo de Olá copia a recolha de dados tooa com o nome "Pessoa".
+<span data-ttu-id="c7489-254">exemplo de Olá copia a recolha de dados tooa com o nome "Pessoa".</span><span class="sxs-lookup"><span data-stu-id="c7489-254">hello sample copies data tooa collection named “Person”.</span></span>
 
 ```JSON
 {
@@ -409,7 +409,7 @@ exemplo de Olá copia a recolha de dados tooa com o nome "Pessoa".
   }
 }
 ```
-seguinte Olá pipeline copia dados de Blobs do Azure toohello coleção de pessoa em Olá BD do Cosmos. Como parte da Olá de atividade de cópia de Olá foram especificados conjuntos de dados de entrada e de saída.
+<span data-ttu-id="c7489-255">seguinte Olá pipeline copia dados de Blobs do Azure toohello coleção de pessoa em Olá BD do Cosmos.</span><span class="sxs-lookup"><span data-stu-id="c7489-255">hello following pipeline copies data from Azure Blob toohello Person collection in hello Cosmos DB.</span></span> <span data-ttu-id="c7489-256">Como parte da Olá de atividade de cópia de Olá foram especificados conjuntos de dados de entrada e de saída.</span><span class="sxs-lookup"><span data-stu-id="c7489-256">As part of hello copy activity hello input and output datasets have been specified.</span></span>
 
 ```JSON
 {
@@ -454,12 +454,12 @@ seguinte Olá pipeline copia dados de Blobs do Azure toohello coleção de pesso
   }
 }
 ```
-Se a entrada de BLOBs de exemplo de Olá é como
+<span data-ttu-id="c7489-257">Se a entrada de BLOBs de exemplo de Olá é como</span><span class="sxs-lookup"><span data-stu-id="c7489-257">If hello sample blob input is as</span></span>
 
 ```
 1,John,,Doe
 ```
-Em seguida, Olá saída JSON na base de dados do Cosmos será como:
+<span data-ttu-id="c7489-258">Em seguida, Olá saída JSON na base de dados do Cosmos será como:</span><span class="sxs-lookup"><span data-stu-id="c7489-258">Then hello output JSON in Cosmos DB will be as:</span></span>
 
 ```JSON
 {
@@ -472,21 +472,21 @@ Em seguida, Olá saída JSON na base de dados do Cosmos será como:
   "id": "a5e8595c-62ec-4554-a118-3940f4ff70b6"
 }
 ```
-BD do Cosmos do Azure é um arquivo de NoSQL para documentos JSON, onde são permitidas estruturas aninhadas. O Azure Data Factory permite que a hierarquia de toodenote do utilizador através de **nestingSeparator**, que é "." Neste exemplo. Com separador Olá, atividade de cópia de Olá irá gerar o objeto de "Name" Olá com elementos três subordinados too"Name.First primeiro, média e última, de acordo com", "Name.Middle" e "Name.Last" Olá definição de tabela.
+<span data-ttu-id="c7489-259">BD do Cosmos do Azure é um arquivo de NoSQL para documentos JSON, onde são permitidas estruturas aninhadas.</span><span class="sxs-lookup"><span data-stu-id="c7489-259">Azure Cosmos DB is a NoSQL store for JSON documents, where nested structures are allowed.</span></span> <span data-ttu-id="c7489-260">O Azure Data Factory permite que a hierarquia de toodenote do utilizador através de **nestingSeparator**, que é "."</span><span class="sxs-lookup"><span data-stu-id="c7489-260">Azure Data Factory enables user toodenote hierarchy via **nestingSeparator**, which is “.”</span></span> <span data-ttu-id="c7489-261">Neste exemplo.</span><span class="sxs-lookup"><span data-stu-id="c7489-261">in this example.</span></span> <span data-ttu-id="c7489-262">Com separador Olá, atividade de cópia de Olá irá gerar o objeto de "Name" Olá com elementos três subordinados too"Name.First primeiro, média e última, de acordo com", "Name.Middle" e "Name.Last" Olá definição de tabela.</span><span class="sxs-lookup"><span data-stu-id="c7489-262">With hello separator, hello copy activity will generate hello “Name” object with three children elements First, Middle and Last, according too“Name.First”, “Name.Middle” and “Name.Last” in hello table definition.</span></span>
 
-## <a name="appendix"></a>Apêndice
-1. **Pergunta:** Olá a atualização de suporte de atividade de cópia de registos existentes?
+## <a name="appendix"></a><span data-ttu-id="c7489-263">Apêndice</span><span class="sxs-lookup"><span data-stu-id="c7489-263">Appendix</span></span>
+1. <span data-ttu-id="c7489-264">**Pergunta:** Olá a atualização de suporte de atividade de cópia de registos existentes?</span><span class="sxs-lookup"><span data-stu-id="c7489-264">**Question:** Does hello Copy Activity support update of existing records?</span></span>
 
-    **Resposta:** não.
-2. **Pergunta:** como funciona uma repetição de um grau de BD do Cosmos tooAzure de cópia com já copiados registos?
+    <span data-ttu-id="c7489-265">**Resposta:** não.</span><span class="sxs-lookup"><span data-stu-id="c7489-265">**Answer:** No.</span></span>
+2. <span data-ttu-id="c7489-266">**Pergunta:** como funciona uma repetição de um grau de BD do Cosmos tooAzure de cópia com já copiados registos?</span><span class="sxs-lookup"><span data-stu-id="c7489-266">**Question:** How does a retry of a copy tooAzure Cosmos DB deal with already copied records?</span></span>
 
-    **Resposta:** se registos tem um campo de "ID" e a operação de cópia de Olá tenta tooinsert um registo com Olá mesmo ID de operação de cópia de Olá emite um erro.  
-3. **Pergunta:** suporta Data Factory [intervalo ou criação de partições de dados com base em hash](../documentdb/documentdb-partition-data.md)?
+    <span data-ttu-id="c7489-267">**Resposta:** se registos tem um campo de "ID" e a operação de cópia de Olá tenta tooinsert um registo com Olá mesmo ID de operação de cópia de Olá emite um erro.</span><span class="sxs-lookup"><span data-stu-id="c7489-267">**Answer:** If records have an "ID" field and hello copy operation tries tooinsert a record with hello same ID, hello copy operation throws an error.</span></span>  
+3. <span data-ttu-id="c7489-268">**Pergunta:** suporta Data Factory [intervalo ou criação de partições de dados com base em hash](../documentdb/documentdb-partition-data.md)?</span><span class="sxs-lookup"><span data-stu-id="c7489-268">**Question:** Does Data Factory support [range or hash-based data partitioning](../documentdb/documentdb-partition-data.md)?</span></span>
 
-    **Resposta:** não.
-4. **Pergunta:** posso especificar mais do que uma coleção de BD do Cosmos do Azure para uma tabela?
+    <span data-ttu-id="c7489-269">**Resposta:** não.</span><span class="sxs-lookup"><span data-stu-id="c7489-269">**Answer:** No.</span></span>
+4. <span data-ttu-id="c7489-270">**Pergunta:** posso especificar mais do que uma coleção de BD do Cosmos do Azure para uma tabela?</span><span class="sxs-lookup"><span data-stu-id="c7489-270">**Question:** Can I specify more than one Azure Cosmos DB collection for a table?</span></span>
 
-    **Resposta:** não. Apenas uma coleção pode ser especificada neste momento.
+    <span data-ttu-id="c7489-271">**Resposta:** não.</span><span class="sxs-lookup"><span data-stu-id="c7489-271">**Answer:** No.</span></span> <span data-ttu-id="c7489-272">Apenas uma coleção pode ser especificada neste momento.</span><span class="sxs-lookup"><span data-stu-id="c7489-272">Only one collection can be specified at this time.</span></span>
 
-## <a name="performance-and-tuning"></a>Desempenho e a otimização
-Consulte [desempenho de atividade de cópia & otimização guia](data-factory-copy-activity-performance.md) toolearn sobre chave factors desse desempenho impacto de movimento de dados (atividade de cópia) no Azure Data Factory e várias formas toooptimize-lo.
+## <a name="performance-and-tuning"></a><span data-ttu-id="c7489-273">Desempenho e a otimização</span><span class="sxs-lookup"><span data-stu-id="c7489-273">Performance and Tuning</span></span>
+<span data-ttu-id="c7489-274">Consulte [desempenho de atividade de cópia & otimização guia](data-factory-copy-activity-performance.md) toolearn sobre chave factors desse desempenho impacto de movimento de dados (atividade de cópia) no Azure Data Factory e várias formas toooptimize-lo.</span><span class="sxs-lookup"><span data-stu-id="c7489-274">See [Copy Activity Performance & Tuning Guide](data-factory-copy-activity-performance.md) toolearn about key factors that impact performance of data movement (Copy Activity) in Azure Data Factory and various ways toooptimize it.</span></span>

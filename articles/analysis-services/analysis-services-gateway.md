@@ -21,72 +21,72 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="connecting-tooon-premises-data-sources-with-azure-on-premises-data-gateway"></a>Ligar a origens de dados de tooon local com o Gateway de dados do Azure no local
-gateway de dados no local Olá atua como uma ponte, fornecer transferência de proteger os dados entre origens de dados no local e os servidores de serviços de análise do Azure na nuvem de Olá. Adição tooworking com vários servidores do Azure Analysis Services Olá mesma região, a versão mais recente do Olá do gateway de Olá também funciona com Azure Logic Apps, Power BI, aplicações de energia e Flow Microsoft. Pode associar vários serviços no Olá mesma região com um único gateway. 
+# <a name="connecting-tooon-premises-data-sources-with-azure-on-premises-data-gateway"></a><span data-ttu-id="981bf-103">Ligar a origens de dados de tooon local com o Gateway de dados do Azure no local</span><span class="sxs-lookup"><span data-stu-id="981bf-103">Connecting tooon-premises data sources with Azure On-premises Data Gateway</span></span>
+<span data-ttu-id="981bf-104">gateway de dados no local Olá atua como uma ponte, fornecer transferência de proteger os dados entre origens de dados no local e os servidores de serviços de análise do Azure na nuvem de Olá.</span><span class="sxs-lookup"><span data-stu-id="981bf-104">hello on-premises data gateway acts as a bridge, providing secure data transfer between on-premises data sources and your Azure Analysis Services servers in hello cloud.</span></span> <span data-ttu-id="981bf-105">Adição tooworking com vários servidores do Azure Analysis Services Olá mesma região, a versão mais recente do Olá do gateway de Olá também funciona com Azure Logic Apps, Power BI, aplicações de energia e Flow Microsoft.</span><span class="sxs-lookup"><span data-stu-id="981bf-105">In addition tooworking with multiple Azure Analysis Services servers in hello same region, hello latest version of hello gateway also works with Azure Logic Apps, Power BI, Power Apps, and Microsoft Flow.</span></span> <span data-ttu-id="981bf-106">Pode associar vários serviços no Olá mesma região com um único gateway.</span><span class="sxs-lookup"><span data-stu-id="981bf-106">You can associate multiple services in hello same region with a single gateway.</span></span> 
 
- Serviços de análise do Azure necessita de um recurso de gateway no Olá mesma região. Por exemplo, se tiver servidores do Azure Analysis Services na região de EUA Leste 2 Olá, precisa de um recurso de gateway na região de EUA Leste 2 Olá. Vários servidores nos EUA Leste 2 podem utilizar Olá mesmo gateway.
+ <span data-ttu-id="981bf-107">Serviços de análise do Azure necessita de um recurso de gateway no Olá mesma região.</span><span class="sxs-lookup"><span data-stu-id="981bf-107">Azure Analysis Services requires a gateway resource in hello same region.</span></span> <span data-ttu-id="981bf-108">Por exemplo, se tiver servidores do Azure Analysis Services na região de EUA Leste 2 Olá, precisa de um recurso de gateway na região de EUA Leste 2 Olá.</span><span class="sxs-lookup"><span data-stu-id="981bf-108">For example, if you have Azure Analysis Services servers in hello East US 2 region, you need a gateway resource in hello East US 2 region.</span></span> <span data-ttu-id="981bf-109">Vários servidores nos EUA Leste 2 podem utilizar Olá mesmo gateway.</span><span class="sxs-lookup"><span data-stu-id="981bf-109">Multiple servers in East US 2 can use hello same gateway.</span></span>
 
-Obter a configuração com Olá de gateway Olá pela primeira vez é um processo de quatro partes:
+<span data-ttu-id="981bf-110">Obter a configuração com Olá de gateway Olá pela primeira vez é um processo de quatro partes:</span><span class="sxs-lookup"><span data-stu-id="981bf-110">Getting setup with hello gateway hello first time is a four-part process:</span></span>
 
-- **Transfira e execute a configuração** -este passo instala um serviço de gateway num computador na sua organização.
+- <span data-ttu-id="981bf-111">**Transfira e execute a configuração** -este passo instala um serviço de gateway num computador na sua organização.</span><span class="sxs-lookup"><span data-stu-id="981bf-111">**Download and run setup** - This step installs a gateway service on a computer in your organization.</span></span>
 
-- **Registar o gateway** - neste passo, especifique um nome e a chave do seu gateway de recuperação e selecione uma região, registar o gateway Olá serviço em nuvem Gateway.
+- <span data-ttu-id="981bf-112">**Registar o gateway** - neste passo, especifique um nome e a chave do seu gateway de recuperação e selecione uma região, registar o gateway Olá serviço em nuvem Gateway.</span><span class="sxs-lookup"><span data-stu-id="981bf-112">**Register your gateway** - In this step, you specify a name and recovery key for your gateway, and select a region, registering your gateway with hello Gateway Cloud Service.</span></span>
 
-- **Crie um recurso de gateway no Azure** -neste passo, cria um recurso de gateway na sua subscrição do Azure.
+- <span data-ttu-id="981bf-113">**Crie um recurso de gateway no Azure** -neste passo, cria um recurso de gateway na sua subscrição do Azure.</span><span class="sxs-lookup"><span data-stu-id="981bf-113">**Create a gateway resource in Azure** - In this step, you create a gateway resource in your Azure subscription.</span></span>
 
-- **Ligar o seu recurso de gateway de tooyour servidores** -depois de ter um recurso de gateway na sua subscrição, pode começar a ligar a sua tooit de servidores.
+- <span data-ttu-id="981bf-114">**Ligar o seu recurso de gateway de tooyour servidores** -depois de ter um recurso de gateway na sua subscrição, pode começar a ligar a sua tooit de servidores.</span><span class="sxs-lookup"><span data-stu-id="981bf-114">**Connect your servers tooyour gateway resource** - Once you have a gateway resource in your subscription, you can begin connecting your servers tooit.</span></span>
 
-Depois de ter um recurso de gateway configurado para a sua subscrição, pode ligar vários servidores e outro tooit de serviços. Só precisa de tooinstall um gateway diferentes e criar recursos de gateway adicionais, se tiver servidores ou outros serviços numa região diferente.
+<span data-ttu-id="981bf-115">Depois de ter um recurso de gateway configurado para a sua subscrição, pode ligar vários servidores e outro tooit de serviços.</span><span class="sxs-lookup"><span data-stu-id="981bf-115">Once you have a gateway resource configured for your subscription, you can connect multiple servers, and other services tooit.</span></span> <span data-ttu-id="981bf-116">Só precisa de tooinstall um gateway diferentes e criar recursos de gateway adicionais, se tiver servidores ou outros serviços numa região diferente.</span><span class="sxs-lookup"><span data-stu-id="981bf-116">You only need tooinstall a different gateway and create additional gateway resources if you have servers or other services in a different region.</span></span>
 
-tooget os primeiros, consulte [instalar e configurar o gateway de dados no local](analysis-services-gateway-install.md).
+<span data-ttu-id="981bf-117">tooget os primeiros, consulte [instalar e configurar o gateway de dados no local](analysis-services-gateway-install.md).</span><span class="sxs-lookup"><span data-stu-id="981bf-117">tooget started right away, see [Install and configure on-premises data gateway](analysis-services-gateway-install.md).</span></span>
 
-## <a name="how-it-works"></a>Como funciona
-gateway de Olá instalar num computador na sua organização é executado como um serviço do Windows, **gateway de dados no local**. Este serviço local está registado no Olá serviço em nuvem do Gateway através do Service Bus do Azure. Em seguida, crie um recurso do gateway de serviço em nuvem Gateway para a sua subscrição do Azure. Os serviços de análise do Azure, servidores, em seguida, são ligados tooyour recurso do gateway. Quando os modelos no seu tooyour de tooconnect de necessidade de servidor no local origens de dados para consultas ou processamento, Olá uma consulta e dados fluxo traverses Olá recurso do gateway, Service Bus do Azure, o serviço de gateway de dados local no local e as origens de dados. 
+## <span data-ttu-id="981bf-118"><a name="how-it-works"></a>Como funciona</span><span class="sxs-lookup"><span data-stu-id="981bf-118"><a name="how-it-works"> </a>How it works</span></span>
+<span data-ttu-id="981bf-119">gateway de Olá instalar num computador na sua organização é executado como um serviço do Windows, **gateway de dados no local**.</span><span class="sxs-lookup"><span data-stu-id="981bf-119">hello gateway you install on a computer in your organization runs as a Windows service, **On-premises data gateway**.</span></span> <span data-ttu-id="981bf-120">Este serviço local está registado no Olá serviço em nuvem do Gateway através do Service Bus do Azure.</span><span class="sxs-lookup"><span data-stu-id="981bf-120">This local service is registered with hello Gateway Cloud Service through Azure Service Bus.</span></span> <span data-ttu-id="981bf-121">Em seguida, crie um recurso do gateway de serviço em nuvem Gateway para a sua subscrição do Azure.</span><span class="sxs-lookup"><span data-stu-id="981bf-121">You then create a gateway resource Gateway Cloud Service for your Azure subscription.</span></span> <span data-ttu-id="981bf-122">Os serviços de análise do Azure, servidores, em seguida, são ligados tooyour recurso do gateway.</span><span class="sxs-lookup"><span data-stu-id="981bf-122">Your Azure Analysis Services servers are then connected tooyour gateway resource.</span></span> <span data-ttu-id="981bf-123">Quando os modelos no seu tooyour de tooconnect de necessidade de servidor no local origens de dados para consultas ou processamento, Olá uma consulta e dados fluxo traverses Olá recurso do gateway, Service Bus do Azure, o serviço de gateway de dados local no local e as origens de dados.</span><span class="sxs-lookup"><span data-stu-id="981bf-123">When models on your server need tooconnect tooyour on-premises data sources for queries or processing, a query and data flow traverses hello gateway resource, Azure Service Bus, hello local on-premises data gateway service, and your data sources.</span></span> 
 
 ![Como funciona](./media/analysis-services-gateway/aas-gateway-how-it-works.png)
 
-Fluxo de dados e consultas:
+<span data-ttu-id="981bf-125">Fluxo de dados e consultas:</span><span class="sxs-lookup"><span data-stu-id="981bf-125">Queries and data flow:</span></span>
 
-1. Uma consulta é criada pelo serviço de nuvem Olá com credenciais de Olá encriptado para a origem de dados do Olá no local. Em seguida, enviou tooa fila para Olá tooprocess de gateway.
-2. o serviço de nuvem do gateway Olá analisa a consulta de Olá e pushes Olá pedido toohello [Service Bus do Azure](https://azure.microsoft.com/documentation/services/service-bus/).
-3. gateway de dados no local Olá consulta Olá Service Bus do Azure para pedidos pendentes.
-4. gateway de Olá obtém consulta Olá, desencripta credenciais Olá e liga toohello origens de dados com essas credenciais.
-5. gateway de Olá envia a origem de dados do Olá consulta toohello para execução.
-6. resultados de Olá são enviados da origem de dados de Olá, gateway de back-toohello e, em seguida, no serviço de nuvem Olá e o seu servidor.
+1. <span data-ttu-id="981bf-126">Uma consulta é criada pelo serviço de nuvem Olá com credenciais de Olá encriptado para a origem de dados do Olá no local.</span><span class="sxs-lookup"><span data-stu-id="981bf-126">A query is created by hello cloud service with hello encrypted credentials for hello on-premises data source.</span></span> <span data-ttu-id="981bf-127">Em seguida, enviou tooa fila para Olá tooprocess de gateway.</span><span class="sxs-lookup"><span data-stu-id="981bf-127">It's then sent tooa queue for hello gateway tooprocess.</span></span>
+2. <span data-ttu-id="981bf-128">o serviço de nuvem do gateway Olá analisa a consulta de Olá e pushes Olá pedido toohello [Service Bus do Azure](https://azure.microsoft.com/documentation/services/service-bus/).</span><span class="sxs-lookup"><span data-stu-id="981bf-128">hello gateway cloud service analyzes hello query and pushes hello request toohello [Azure Service Bus](https://azure.microsoft.com/documentation/services/service-bus/).</span></span>
+3. <span data-ttu-id="981bf-129">gateway de dados no local Olá consulta Olá Service Bus do Azure para pedidos pendentes.</span><span class="sxs-lookup"><span data-stu-id="981bf-129">hello on-premises data gateway polls hello Azure Service Bus for pending requests.</span></span>
+4. <span data-ttu-id="981bf-130">gateway de Olá obtém consulta Olá, desencripta credenciais Olá e liga toohello origens de dados com essas credenciais.</span><span class="sxs-lookup"><span data-stu-id="981bf-130">hello gateway gets hello query, decrypts hello credentials, and connects toohello data sources with those credentials.</span></span>
+5. <span data-ttu-id="981bf-131">gateway de Olá envia a origem de dados do Olá consulta toohello para execução.</span><span class="sxs-lookup"><span data-stu-id="981bf-131">hello gateway sends hello query toohello data source for execution.</span></span>
+6. <span data-ttu-id="981bf-132">resultados de Olá são enviados da origem de dados de Olá, gateway de back-toohello e, em seguida, no serviço de nuvem Olá e o seu servidor.</span><span class="sxs-lookup"><span data-stu-id="981bf-132">hello results are sent from hello data source, back toohello gateway, and then onto hello cloud service and your server.</span></span>
 
-## <a name="windows-service-account"></a>Conta de serviço do Windows
-Olá gateway de dados no local é configurado toouse *NT SERVICE\PBIEgwService* para credenciais de início de sessão de serviço de Windows hello. Por predefinição, ela tem Olá direito de início de sessão como um serviço; no contexto de Olá da máquina de Olá que estiver a instalar o gateway de Olá no. Esta credencial não é Olá mesma conta utilizada tooconnect tooon local as origens de dados ou a sua conta do Azure.  
+## <span data-ttu-id="981bf-133"><a name="windows-service-account"></a>Conta de serviço do Windows</span><span class="sxs-lookup"><span data-stu-id="981bf-133"><a name="windows-service-account"> </a>Windows Service account</span></span>
+<span data-ttu-id="981bf-134">Olá gateway de dados no local é configurado toouse *NT SERVICE\PBIEgwService* para credenciais de início de sessão de serviço de Windows hello.</span><span class="sxs-lookup"><span data-stu-id="981bf-134">hello on-premises data gateway is configured toouse *NT SERVICE\PBIEgwService* for hello Windows service logon credential.</span></span> <span data-ttu-id="981bf-135">Por predefinição, ela tem Olá direito de início de sessão como um serviço; no contexto de Olá da máquina de Olá que estiver a instalar o gateway de Olá no.</span><span class="sxs-lookup"><span data-stu-id="981bf-135">By default, it has hello right of Logon as a service; in hello context of hello machine that you are installing hello gateway on.</span></span> <span data-ttu-id="981bf-136">Esta credencial não é Olá mesma conta utilizada tooconnect tooon local as origens de dados ou a sua conta do Azure.</span><span class="sxs-lookup"><span data-stu-id="981bf-136">This credential is not hello same account used tooconnect tooon-premises data sources or your Azure account.</span></span>  
 
-Se ocorrerem problemas com o seu servidor proxy que devem estar tooauthentication, poderá ser útil toochange hello Windows tooa utilizador de domínio da conta de serviço ou geridos por conta de serviço.
+<span data-ttu-id="981bf-137">Se ocorrerem problemas com o seu servidor proxy que devem estar tooauthentication, poderá ser útil toochange hello Windows tooa utilizador de domínio da conta de serviço ou geridos por conta de serviço.</span><span class="sxs-lookup"><span data-stu-id="981bf-137">If you encounter issues with your proxy server due tooauthentication, you may want toochange hello Windows service account tooa domain user or managed service account.</span></span>
 
-## <a name="ports"></a>Portas
-gateway de Olá cria uma ligação de saída de tooAzure Service Bus. Comunica nas portas de saída: TCP 443 (predefinição), 5671, 5672, 9350 através de 9354.  gateway de Olá não necessita de porta de entrada.
+## <span data-ttu-id="981bf-138"><a name="ports"></a>Portas</span><span class="sxs-lookup"><span data-stu-id="981bf-138"><a name="ports"> </a>Ports</span></span>
+<span data-ttu-id="981bf-139">gateway de Olá cria uma ligação de saída de tooAzure Service Bus.</span><span class="sxs-lookup"><span data-stu-id="981bf-139">hello gateway creates an outbound connection tooAzure Service Bus.</span></span> <span data-ttu-id="981bf-140">Comunica nas portas de saída: TCP 443 (predefinição), 5671, 5672, 9350 através de 9354.</span><span class="sxs-lookup"><span data-stu-id="981bf-140">It communicates on outbound ports: TCP 443 (default), 5671, 5672, 9350 through 9354.</span></span>  <span data-ttu-id="981bf-141">gateway de Olá não necessita de porta de entrada.</span><span class="sxs-lookup"><span data-stu-id="981bf-141">hello gateway does not require inbound ports.</span></span>
 
-Recomendamos que endereços IP de Olá de lista de permissões para a região de dados na sua firewall. Pode transferir Olá [lista IP de centro de dados do Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Esta lista é atualizada semanalmente.
+<span data-ttu-id="981bf-142">Recomendamos que endereços IP de Olá de lista de permissões para a região de dados na sua firewall.</span><span class="sxs-lookup"><span data-stu-id="981bf-142">We recommend you whitelist hello IP addresses for your data region in your firewall.</span></span> <span data-ttu-id="981bf-143">Pode transferir Olá [lista IP de centro de dados do Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).</span><span class="sxs-lookup"><span data-stu-id="981bf-143">You can download hello [Microsoft Azure Datacenter IP list](https://www.microsoft.com/download/details.aspx?id=41653).</span></span> <span data-ttu-id="981bf-144">Esta lista é atualizada semanalmente.</span><span class="sxs-lookup"><span data-stu-id="981bf-144">This list is updated weekly.</span></span>
 
 > [!NOTE]
-> Endereços de IP de Olá listado na lista de IP de Datacenter do Azure Olá estão em notação CIDR. Por exemplo, 10.0.0.0/24 não significa 10.0.0.0 através de 10.0.0.24. Saiba mais sobre Olá [notação CIDR](http://whatismyipaddress.com/cidr).
+> <span data-ttu-id="981bf-145">Endereços de IP de Olá listado na lista de IP de Datacenter do Azure Olá estão em notação CIDR.</span><span class="sxs-lookup"><span data-stu-id="981bf-145">hello IP Addresses listed in hello Azure Datacenter IP list are in CIDR notation.</span></span> <span data-ttu-id="981bf-146">Por exemplo, 10.0.0.0/24 não significa 10.0.0.0 através de 10.0.0.24.</span><span class="sxs-lookup"><span data-stu-id="981bf-146">For example, 10.0.0.0/24 does not mean 10.0.0.0 through 10.0.0.24.</span></span> <span data-ttu-id="981bf-147">Saiba mais sobre Olá [notação CIDR](http://whatismyipaddress.com/cidr).</span><span class="sxs-lookup"><span data-stu-id="981bf-147">Learn more about hello [CIDR notation](http://whatismyipaddress.com/cidr).</span></span>
 >
 >
 
-Olá seguem-se os nomes de domínio Olá totalmente qualificado utilizados pelo Olá gateway.
+<span data-ttu-id="981bf-148">Olá seguem-se os nomes de domínio Olá totalmente qualificado utilizados pelo Olá gateway.</span><span class="sxs-lookup"><span data-stu-id="981bf-148">hello following are hello fully qualified domain names used by hello gateway.</span></span>
 
-| Nomes de domínio | Portas de saída | Descrição |
+| <span data-ttu-id="981bf-149">Nomes de domínio</span><span class="sxs-lookup"><span data-stu-id="981bf-149">Domain names</span></span> | <span data-ttu-id="981bf-150">Portas de saída</span><span class="sxs-lookup"><span data-stu-id="981bf-150">Outbound ports</span></span> | <span data-ttu-id="981bf-151">Descrição</span><span class="sxs-lookup"><span data-stu-id="981bf-151">Description</span></span> |
 | --- | --- | --- |
-| *. powerbi.com |80 |HTTP utilizado toodownload Olá instalador. |
-| *. powerbi.com |443 |HTTPS |
-| *. analysis.windows.net |443 |HTTPS |
-| *. login.windows.net |443 |HTTPS |
-| *. servicebus.windows.net |5671-5672 |(AMQP) do protocolo de colocação de mensagens de avançadas |
-| *. servicebus.windows.net |443, 9350-9354 |Serviços de escuta barramento de serviço de reencaminhamento através de TCP (443 é necessária para a aquisição de token de controlo de acesso) |
-| *. frontend.clouddatahub.net |443 |HTTPS |
-| *. core.windows.net |443 |HTTPS |
-| login.microsoftonline.com |443 |HTTPS |
-| *. msftncsi.com |443 |Utilizar a conectividade à internet tootest esteja inacessível por Olá serviço Power BI gateway Olá. |
-| *.microsoftonline p.com |443 |Utilizado para autenticação, dependendo da configuração. |
+| <span data-ttu-id="981bf-152">*. powerbi.com</span><span class="sxs-lookup"><span data-stu-id="981bf-152">*.powerbi.com</span></span> |<span data-ttu-id="981bf-153">80</span><span class="sxs-lookup"><span data-stu-id="981bf-153">80</span></span> |<span data-ttu-id="981bf-154">HTTP utilizado toodownload Olá instalador.</span><span class="sxs-lookup"><span data-stu-id="981bf-154">HTTP used toodownload hello installer.</span></span> |
+| <span data-ttu-id="981bf-155">*. powerbi.com</span><span class="sxs-lookup"><span data-stu-id="981bf-155">*.powerbi.com</span></span> |<span data-ttu-id="981bf-156">443</span><span class="sxs-lookup"><span data-stu-id="981bf-156">443</span></span> |<span data-ttu-id="981bf-157">HTTPS</span><span class="sxs-lookup"><span data-stu-id="981bf-157">HTTPS</span></span> |
+| <span data-ttu-id="981bf-158">*. analysis.windows.net</span><span class="sxs-lookup"><span data-stu-id="981bf-158">*.analysis.windows.net</span></span> |<span data-ttu-id="981bf-159">443</span><span class="sxs-lookup"><span data-stu-id="981bf-159">443</span></span> |<span data-ttu-id="981bf-160">HTTPS</span><span class="sxs-lookup"><span data-stu-id="981bf-160">HTTPS</span></span> |
+| <span data-ttu-id="981bf-161">*. login.windows.net</span><span class="sxs-lookup"><span data-stu-id="981bf-161">*.login.windows.net</span></span> |<span data-ttu-id="981bf-162">443</span><span class="sxs-lookup"><span data-stu-id="981bf-162">443</span></span> |<span data-ttu-id="981bf-163">HTTPS</span><span class="sxs-lookup"><span data-stu-id="981bf-163">HTTPS</span></span> |
+| <span data-ttu-id="981bf-164">*. servicebus.windows.net</span><span class="sxs-lookup"><span data-stu-id="981bf-164">*.servicebus.windows.net</span></span> |<span data-ttu-id="981bf-165">5671-5672</span><span class="sxs-lookup"><span data-stu-id="981bf-165">5671-5672</span></span> |<span data-ttu-id="981bf-166">(AMQP) do protocolo de colocação de mensagens de avançadas</span><span class="sxs-lookup"><span data-stu-id="981bf-166">Advanced Message Queuing Protocol (AMQP)</span></span> |
+| <span data-ttu-id="981bf-167">*. servicebus.windows.net</span><span class="sxs-lookup"><span data-stu-id="981bf-167">*.servicebus.windows.net</span></span> |<span data-ttu-id="981bf-168">443, 9350-9354</span><span class="sxs-lookup"><span data-stu-id="981bf-168">443, 9350-9354</span></span> |<span data-ttu-id="981bf-169">Serviços de escuta barramento de serviço de reencaminhamento através de TCP (443 é necessária para a aquisição de token de controlo de acesso)</span><span class="sxs-lookup"><span data-stu-id="981bf-169">Listeners on Service Bus Relay over TCP (requires 443 for Access Control token acquisition)</span></span> |
+| <span data-ttu-id="981bf-170">*. frontend.clouddatahub.net</span><span class="sxs-lookup"><span data-stu-id="981bf-170">*.frontend.clouddatahub.net</span></span> |<span data-ttu-id="981bf-171">443</span><span class="sxs-lookup"><span data-stu-id="981bf-171">443</span></span> |<span data-ttu-id="981bf-172">HTTPS</span><span class="sxs-lookup"><span data-stu-id="981bf-172">HTTPS</span></span> |
+| <span data-ttu-id="981bf-173">*. core.windows.net</span><span class="sxs-lookup"><span data-stu-id="981bf-173">*.core.windows.net</span></span> |<span data-ttu-id="981bf-174">443</span><span class="sxs-lookup"><span data-stu-id="981bf-174">443</span></span> |<span data-ttu-id="981bf-175">HTTPS</span><span class="sxs-lookup"><span data-stu-id="981bf-175">HTTPS</span></span> |
+| <span data-ttu-id="981bf-176">login.microsoftonline.com</span><span class="sxs-lookup"><span data-stu-id="981bf-176">login.microsoftonline.com</span></span> |<span data-ttu-id="981bf-177">443</span><span class="sxs-lookup"><span data-stu-id="981bf-177">443</span></span> |<span data-ttu-id="981bf-178">HTTPS</span><span class="sxs-lookup"><span data-stu-id="981bf-178">HTTPS</span></span> |
+| <span data-ttu-id="981bf-179">*. msftncsi.com</span><span class="sxs-lookup"><span data-stu-id="981bf-179">*.msftncsi.com</span></span> |<span data-ttu-id="981bf-180">443</span><span class="sxs-lookup"><span data-stu-id="981bf-180">443</span></span> |<span data-ttu-id="981bf-181">Utilizar a conectividade à internet tootest esteja inacessível por Olá serviço Power BI gateway Olá.</span><span class="sxs-lookup"><span data-stu-id="981bf-181">Used tootest internet connectivity if hello gateway is unreachable by hello Power BI service.</span></span> |
+| <span data-ttu-id="981bf-182">*.microsoftonline p.com</span><span class="sxs-lookup"><span data-stu-id="981bf-182">*.microsoftonline-p.com</span></span> |<span data-ttu-id="981bf-183">443</span><span class="sxs-lookup"><span data-stu-id="981bf-183">443</span></span> |<span data-ttu-id="981bf-184">Utilizado para autenticação, dependendo da configuração.</span><span class="sxs-lookup"><span data-stu-id="981bf-184">Used for authentication depending on configuration.</span></span> |
 
-### <a name="force-https"></a>Forçar a comunicação HTTPS com o Service Bus do Azure
-Pode forçar Olá toocommunicate de gateway com o Service Bus do Azure através de HTTPS em vez do TCP direto; No entanto, fazê-lo, por isso, pode reduzir significativamente desempenho. Pode modificar Olá *Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config* ficheiro alterando o valor Olá `AutoDetect` demasiado`Https`. Este ficheiro está normalmente localizado em *gateway de dados do local com o c:\Programas\Microsoft Files\On*.
+### <span data-ttu-id="981bf-185"><a name="force-https"></a>Forçar a comunicação HTTPS com o Service Bus do Azure</span><span class="sxs-lookup"><span data-stu-id="981bf-185"><a name="force-https"></a>Forcing HTTPS communication with Azure Service Bus</span></span>
+<span data-ttu-id="981bf-186">Pode forçar Olá toocommunicate de gateway com o Service Bus do Azure através de HTTPS em vez do TCP direto; No entanto, fazê-lo, por isso, pode reduzir significativamente desempenho.</span><span class="sxs-lookup"><span data-stu-id="981bf-186">You can force hello gateway toocommunicate with Azure Service Bus by using HTTPS instead of direct TCP; however, doing so can greatly reduce performance.</span></span> <span data-ttu-id="981bf-187">Pode modificar Olá *Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config* ficheiro alterando o valor Olá `AutoDetect` demasiado`Https`.</span><span class="sxs-lookup"><span data-stu-id="981bf-187">You can modify hello *Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config* file by changing hello value from `AutoDetect` too`Https`.</span></span> <span data-ttu-id="981bf-188">Este ficheiro está normalmente localizado em *gateway de dados do local com o c:\Programas\Microsoft Files\On*.</span><span class="sxs-lookup"><span data-stu-id="981bf-188">This file is typically located at *C:\Program Files\On-premises data gateway*.</span></span>
 
 ```
 <setting name="ServiceBusSystemConnectivityModeString" serializeAs="String">
@@ -94,99 +94,114 @@ Pode forçar Olá toocommunicate de gateway com o Service Bus do Azure através 
 </setting>
 ```
 
-## <a name="faq"></a>Perguntas mais frequentes
+## <span data-ttu-id="981bf-189"><a name="faq"></a>Perguntas mais frequentes</span><span class="sxs-lookup"><span data-stu-id="981bf-189"><a name="faq"></a>Frequently asked questions</span></span>
 
-### <a name="general"></a>Geral
+### <a name="general"></a><span data-ttu-id="981bf-190">Geral</span><span class="sxs-lookup"><span data-stu-id="981bf-190">General</span></span>
 
-**Q**: É necessário um gateway para origens de dados na nuvem de Olá, tais como SQL Database do Azure? <br/>
-**A**: não. Um gateway se ligar a origens de dados de tooon local apenas.
+<span data-ttu-id="981bf-191">**Q**: É necessário um gateway para origens de dados na nuvem de Olá, tais como SQL Database do Azure?</span><span class="sxs-lookup"><span data-stu-id="981bf-191">**Q**: Do I need a gateway for data sources in hello cloud, such as Azure SQL Database?</span></span> <br/><span data-ttu-id="981bf-192">
+**A**: não.</span><span class="sxs-lookup"><span data-stu-id="981bf-192">
+**A**: No.</span></span> <span data-ttu-id="981bf-193">Um gateway se ligar a origens de dados de tooon local apenas.</span><span class="sxs-lookup"><span data-stu-id="981bf-193">A gateway connects tooon-premises data sources only.</span></span>
 
-**Q**: gateway de Olá possui toobe instalado no mesmo computador como origem de dados de Olá de Olá? <br/>
-**A**: não. gateway de Olá liga-se a origem de dados de toohello utilizando as informações da ligação de Olá foi fornecidas. Considere gateway Olá como uma aplicação de cliente neste sentido. Olá gateway apenas tem de ser Olá capacidade tooconnect toohello nome do servidor que foi fornecida, normalmente em Olá mesma rede.
+<span data-ttu-id="981bf-194">**Q**: gateway de Olá possui toobe instalado no mesmo computador como origem de dados de Olá de Olá?</span><span class="sxs-lookup"><span data-stu-id="981bf-194">**Q**: Does hello gateway have toobe installed on hello same machine as hello data source?</span></span> <br/><span data-ttu-id="981bf-195">
+**A**: não.</span><span class="sxs-lookup"><span data-stu-id="981bf-195">
+**A**: No.</span></span> <span data-ttu-id="981bf-196">gateway de Olá liga-se a origem de dados de toohello utilizando as informações da ligação de Olá foi fornecidas.</span><span class="sxs-lookup"><span data-stu-id="981bf-196">hello gateway connects toohello data source using hello connection information that was provided.</span></span> <span data-ttu-id="981bf-197">Considere gateway Olá como uma aplicação de cliente neste sentido.</span><span class="sxs-lookup"><span data-stu-id="981bf-197">Consider hello gateway as a client application in this sense.</span></span> <span data-ttu-id="981bf-198">Olá gateway apenas tem de ser Olá capacidade tooconnect toohello nome do servidor que foi fornecida, normalmente em Olá mesma rede.</span><span class="sxs-lookup"><span data-stu-id="981bf-198">hello gateway just needs hello capability tooconnect toohello server name that was provided, typically on hello same network.</span></span>
 
 <a name="why-azure-work-school-account"></a>
 
-**Q**: por que motivo precisa toouse escolar ou profissional toosign de conta no? <br/>
-**A**: pode apenas utilizar um trabalho do Azure conta escolar ou profissional ao instalar o gateway de dados do Olá no local. A conta de início de sessão é armazenada num inquilino gerida pelo Azure Active Directory (Azure AD). Normalmente, o nome de principal de utilizador (UPN) da sua conta do Azure AD corresponde ao endereço de correio eletrónico Olá.
+<span data-ttu-id="981bf-199">**Q**: por que motivo precisa toouse escolar ou profissional toosign de conta no?</span><span class="sxs-lookup"><span data-stu-id="981bf-199">**Q**: Why do I need toouse a work or school account toosign in?</span></span> <br/><span data-ttu-id="981bf-200">
+**A**: pode apenas utilizar um trabalho do Azure conta escolar ou profissional ao instalar o gateway de dados do Olá no local.</span><span class="sxs-lookup"><span data-stu-id="981bf-200">
+**A**: You can only use an Azure work or school account when you install hello on-premises data gateway.</span></span> <span data-ttu-id="981bf-201">A conta de início de sessão é armazenada num inquilino gerida pelo Azure Active Directory (Azure AD).</span><span class="sxs-lookup"><span data-stu-id="981bf-201">Your sign-in account is stored in a tenant that's managed by Azure Active Directory (Azure AD).</span></span> <span data-ttu-id="981bf-202">Normalmente, o nome de principal de utilizador (UPN) da sua conta do Azure AD corresponde ao endereço de correio eletrónico Olá.</span><span class="sxs-lookup"><span data-stu-id="981bf-202">Usually, your Azure AD account's user principal name (UPN) matches hello email address.</span></span>
 
-**Q**: onde são as minhas credenciais armazenadas? <br/>
-**A**: credenciais de Olá que introduziu para uma origem de dados são encriptadas e armazenadas em Olá serviço em nuvem Gateway. credenciais de Olá são desencriptadas no gateway de dados do Olá no local.
+<span data-ttu-id="981bf-203">**Q**: onde são as minhas credenciais armazenadas?</span><span class="sxs-lookup"><span data-stu-id="981bf-203">**Q**: Where are my credentials stored?</span></span> <br/><span data-ttu-id="981bf-204">
+**A**: credenciais de Olá que introduziu para uma origem de dados são encriptadas e armazenadas em Olá serviço em nuvem Gateway.</span><span class="sxs-lookup"><span data-stu-id="981bf-204">
+**A**: hello credentials that you enter for a data source are encrypted and stored in hello Gateway Cloud Service.</span></span> <span data-ttu-id="981bf-205">credenciais de Olá são desencriptadas no gateway de dados do Olá no local.</span><span class="sxs-lookup"><span data-stu-id="981bf-205">hello credentials are decrypted at hello on-premises data gateway.</span></span>
 
-**Q**: existem quaisquer requisitos de largura de banda de rede? <br/>
-**A**: recomendada a sua rede de ligação tem boa débito. Cada ambiente é diferente e resultados de Olá afeta a quantidade de Olá de dados que está a ser enviados. Com o ExpressRoute pode ajudar a tooguarantee um nível de débito no local e Olá centros de dados do Azure.
-Pode utilizar Olá ferramenta de terceiros Azure velocidade teste aplicação toohelp medidor o débito.
+<span data-ttu-id="981bf-206">**Q**: existem quaisquer requisitos de largura de banda de rede?</span><span class="sxs-lookup"><span data-stu-id="981bf-206">**Q**: Are there any requirements for network bandwidth?</span></span> <br/><span data-ttu-id="981bf-207">
+**A**: recomendada a sua rede de ligação tem boa débito.</span><span class="sxs-lookup"><span data-stu-id="981bf-207">
+**A**: It's recommend your network connection has good throughput.</span></span> <span data-ttu-id="981bf-208">Cada ambiente é diferente e resultados de Olá afeta a quantidade de Olá de dados que está a ser enviados.</span><span class="sxs-lookup"><span data-stu-id="981bf-208">Every environment is different, and hello amount of data being sent affects hello results.</span></span> <span data-ttu-id="981bf-209">Com o ExpressRoute pode ajudar a tooguarantee um nível de débito no local e Olá centros de dados do Azure.</span><span class="sxs-lookup"><span data-stu-id="981bf-209">Using ExpressRoute could help tooguarantee a level of throughput between on-premises and hello Azure datacenters.</span></span>
+<span data-ttu-id="981bf-210">Pode utilizar Olá ferramenta de terceiros Azure velocidade teste aplicação toohelp medidor o débito.</span><span class="sxs-lookup"><span data-stu-id="981bf-210">You can use hello third-party tool Azure Speed Test app toohelp gauge your throughput.</span></span>
 
-**Q**: o que é a latência de Olá executar consultas tooa origem de dados do gateway de Olá? O que é a arquitetura de melhor Olá? <br/>
-**A**: tooreduce latência de rede, instalar o gateway de Olá como origem de dados de fecho toohello quanto possível. Se pode instalar o gateway de Olá na origem de dados real de Olá, este proximidade minimiza a latência de Olá introduzida. Considere demasiado Olá centros de dados. Por exemplo, se o serviço utiliza o Centro de dados do Olá EUA oeste e tiver o SQL Server alojado numa VM do Azure, a VM do Azure deve estar no Olá EUA oeste demasiado. Este proximidade minimiza a latência e evita os encargos associados à saída no Olá VM do Azure.
+<span data-ttu-id="981bf-211">**Q**: o que é a latência de Olá executar consultas tooa origem de dados do gateway de Olá?</span><span class="sxs-lookup"><span data-stu-id="981bf-211">**Q**: What is hello latency for running queries tooa data source from hello gateway?</span></span> <span data-ttu-id="981bf-212">O que é a arquitetura de melhor Olá?</span><span class="sxs-lookup"><span data-stu-id="981bf-212">What is hello best architecture?</span></span> <br/><span data-ttu-id="981bf-213">
+**A**: tooreduce latência de rede, instalar o gateway de Olá como origem de dados de fecho toohello quanto possível.</span><span class="sxs-lookup"><span data-stu-id="981bf-213">
+**A**: tooreduce network latency, install hello gateway as close toohello data source as possible.</span></span> <span data-ttu-id="981bf-214">Se pode instalar o gateway de Olá na origem de dados real de Olá, este proximidade minimiza a latência de Olá introduzida.</span><span class="sxs-lookup"><span data-stu-id="981bf-214">If you can install hello gateway on hello actual data source, this proximity minimizes hello latency introduced.</span></span> <span data-ttu-id="981bf-215">Considere demasiado Olá centros de dados.</span><span class="sxs-lookup"><span data-stu-id="981bf-215">Consider hello datacenters too.</span></span> <span data-ttu-id="981bf-216">Por exemplo, se o serviço utiliza o Centro de dados do Olá EUA oeste e tiver o SQL Server alojado numa VM do Azure, a VM do Azure deve estar no Olá EUA oeste demasiado.</span><span class="sxs-lookup"><span data-stu-id="981bf-216">For example, if your service uses hello West US datacenter, and you have SQL Server hosted in an Azure VM, your Azure VM should be in hello West US too.</span></span> <span data-ttu-id="981bf-217">Este proximidade minimiza a latência e evita os encargos associados à saída no Olá VM do Azure.</span><span class="sxs-lookup"><span data-stu-id="981bf-217">This proximity minimizes latency and avoids egress charges on hello Azure VM.</span></span>
 
-**Q**: como são resultados enviados back toohello nuvem? <br/>
-**A**: os resultados são enviados através de Olá Service Bus do Azure.
+<span data-ttu-id="981bf-218">**Q**: como são resultados enviados back toohello nuvem?</span><span class="sxs-lookup"><span data-stu-id="981bf-218">**Q**: How are results sent back toohello cloud?</span></span> <br/><span data-ttu-id="981bf-219">
+**A**: os resultados são enviados através de Olá Service Bus do Azure.</span><span class="sxs-lookup"><span data-stu-id="981bf-219">
+**A**: Results are sent through hello Azure Service Bus.</span></span>
 
-**Q**: existem qualquer gateway toohello de ligações de entrada da nuvem Olá? <br/>
-**A**: não. gateway de Olá utiliza ligações de saída tooAzure Service Bus.
+<span data-ttu-id="981bf-220">**Q**: existem qualquer gateway toohello de ligações de entrada da nuvem Olá?</span><span class="sxs-lookup"><span data-stu-id="981bf-220">**Q**: Are there any inbound connections toohello gateway from hello cloud?</span></span> <br/><span data-ttu-id="981bf-221">
+**A**: não.</span><span class="sxs-lookup"><span data-stu-id="981bf-221">
+**A**: No.</span></span> <span data-ttu-id="981bf-222">gateway de Olá utiliza ligações de saída tooAzure Service Bus.</span><span class="sxs-lookup"><span data-stu-id="981bf-222">hello gateway uses outbound connections tooAzure Service Bus.</span></span>
 
-**Q**: E se bloquear o ligações de saída? O que fazer necessário tooopen? <br/>
-**A**: consulte as portas de Olá e os anfitriões que Olá utiliza de gateway.
+<span data-ttu-id="981bf-223">**Q**: E se bloquear o ligações de saída?</span><span class="sxs-lookup"><span data-stu-id="981bf-223">**Q**: What if I block outbound connections?</span></span> <span data-ttu-id="981bf-224">O que fazer necessário tooopen?</span><span class="sxs-lookup"><span data-stu-id="981bf-224">What do I need tooopen?</span></span> <br/><span data-ttu-id="981bf-225">
+**A**: consulte as portas de Olá e os anfitriões que Olá utiliza de gateway.</span><span class="sxs-lookup"><span data-stu-id="981bf-225">
+**A**: See hello ports and hosts that hello gateway uses.</span></span>
 
-**Q**: O serviço do Windows real Olá denomina?<br/>
-**A**: nos serviços de gateway Olá denomina-se o serviço de gateway de dados no local.
+<span data-ttu-id="981bf-226">**Q**: O serviço do Windows real Olá denomina?</span><span class="sxs-lookup"><span data-stu-id="981bf-226">**Q**: What is hello actual Windows service called?</span></span><br/><span data-ttu-id="981bf-227">
+**A**: nos serviços de gateway Olá denomina-se o serviço de gateway de dados no local.</span><span class="sxs-lookup"><span data-stu-id="981bf-227">
+**A**: In Services, hello gateway is called On-premises data gateway service.</span></span>
 
-**Q**: pode Olá o serviço de gateway do Windows são executado com uma conta do Azure Active Directory? <br/>
-**A**: não. Olá serviço do Windows tem de ter uma conta do Windows válida. Por predefinição, o serviço de Olá é executado com Olá SID de serviço, NT SERVICE\PBIEgwService.
+<span data-ttu-id="981bf-228">**Q**: pode Olá o serviço de gateway do Windows são executado com uma conta do Azure Active Directory?</span><span class="sxs-lookup"><span data-stu-id="981bf-228">**Q**: Can hello gateway Windows service run with an Azure Active Directory account?</span></span> <br/><span data-ttu-id="981bf-229">
+**A**: não.</span><span class="sxs-lookup"><span data-stu-id="981bf-229">
+**A**: No.</span></span> <span data-ttu-id="981bf-230">Olá serviço do Windows tem de ter uma conta do Windows válida.</span><span class="sxs-lookup"><span data-stu-id="981bf-230">hello Windows service must have a valid Windows account.</span></span> <span data-ttu-id="981bf-231">Por predefinição, o serviço de Olá é executado com Olá SID de serviço, NT SERVICE\PBIEgwService.</span><span class="sxs-lookup"><span data-stu-id="981bf-231">By default, hello service runs with hello Service SID, NT SERVICE\PBIEgwService.</span></span>
 
-### <a name="high-availability"></a>Elevada disponibilidade e recuperação após desastre
+### <span data-ttu-id="981bf-232"><a name="high-availability"></a>Elevada disponibilidade e recuperação após desastre</span><span class="sxs-lookup"><span data-stu-id="981bf-232"><a name="high-availability"></a>High availability and disaster recovery</span></span>
 
-**Q**: que opções estão disponíveis para recuperação após desastre? <br/>
-**A**: pode utilizar toorestore de chave de recuperação de Olá ou mover um gateway. Quando instalar o gateway de Olá, especifique a chave de recuperação Olá.
+<span data-ttu-id="981bf-233">**Q**: que opções estão disponíveis para recuperação após desastre?</span><span class="sxs-lookup"><span data-stu-id="981bf-233">**Q**: What options are available for disaster recovery?</span></span> <br/><span data-ttu-id="981bf-234">
+**A**: pode utilizar toorestore de chave de recuperação de Olá ou mover um gateway.</span><span class="sxs-lookup"><span data-stu-id="981bf-234">
+**A**: You can use hello recovery key toorestore or move a gateway.</span></span> <span data-ttu-id="981bf-235">Quando instalar o gateway de Olá, especifique a chave de recuperação Olá.</span><span class="sxs-lookup"><span data-stu-id="981bf-235">When you install hello gateway, specify hello recovery key.</span></span>
 
-**Q**: o que é a vantagem de Olá da chave de recuperação Olá? <br/>
-**A**: chave de recuperação Olá fornece uma forma toomigrate ou recuperar as definições do gateway após desastres.
+<span data-ttu-id="981bf-236">**Q**: o que é a vantagem de Olá da chave de recuperação Olá?</span><span class="sxs-lookup"><span data-stu-id="981bf-236">**Q**: What is hello benefit of hello recovery key?</span></span> <br/><span data-ttu-id="981bf-237">
+**A**: chave de recuperação Olá fornece uma forma toomigrate ou recuperar as definições do gateway após desastres.</span><span class="sxs-lookup"><span data-stu-id="981bf-237">
+**A**: hello recovery key provides a way toomigrate or recover your gateway settings after a disaster.</span></span>
 
-## <a name="troubleshooting"></a>Resolução de problemas
+## <span data-ttu-id="981bf-238"><a name="troubleshooting"></a>Resolução de problemas</span><span class="sxs-lookup"><span data-stu-id="981bf-238"><a name="troubleshooting"> </a>Troubleshooting</span></span>
 
-**Q**: como posso ver quais as consultas estão a ser enviadas a origem de dados no local toohello? <br/>
-**A**: pode ativar o rastreio de consulta, que inclui as consultas de Olá que são enviadas. Lembre-se a consulta de toochange rastreio novamente toohello valor original quando terminar de resolução de problemas. Abandonar o fileparser o rastreio de consulta ativado cria registos de maior.
+<span data-ttu-id="981bf-239">**Q**: como posso ver quais as consultas estão a ser enviadas a origem de dados no local toohello?</span><span class="sxs-lookup"><span data-stu-id="981bf-239">**Q**: How can I see what queries are being sent toohello on-premises data source?</span></span> <br/><span data-ttu-id="981bf-240">
+**A**: pode ativar o rastreio de consulta, que inclui as consultas de Olá que são enviadas.</span><span class="sxs-lookup"><span data-stu-id="981bf-240">
+**A**: You can enable query tracing, which includes hello queries that are sent.</span></span> <span data-ttu-id="981bf-241">Lembre-se a consulta de toochange rastreio novamente toohello valor original quando terminar de resolução de problemas.</span><span class="sxs-lookup"><span data-stu-id="981bf-241">Remember toochange query tracing back toohello original value when done troubleshooting.</span></span> <span data-ttu-id="981bf-242">Abandonar o fileparser o rastreio de consulta ativado cria registos de maior.</span><span class="sxs-lookup"><span data-stu-id="981bf-242">Leaving query tracing turned on creates larger logs.</span></span>
 
-Também pode ver as ferramentas que tenha a sua origem de dados para consultas de rastreio. Por exemplo, pode utilizar o evento expandido ou gerador de perfis do SQL Server para o SQL Server e do Analysis Services.
+<span data-ttu-id="981bf-243">Também pode ver as ferramentas que tenha a sua origem de dados para consultas de rastreio.</span><span class="sxs-lookup"><span data-stu-id="981bf-243">You can also look at tools that your data source has for tracing queries.</span></span> <span data-ttu-id="981bf-244">Por exemplo, pode utilizar o evento expandido ou gerador de perfis do SQL Server para o SQL Server e do Analysis Services.</span><span class="sxs-lookup"><span data-stu-id="981bf-244">For example, you can use Extended Events or SQL Profiler for SQL Server and Analysis Services.</span></span>
 
-**Q**: onde estão os registos do gateway de Olá? <br/>
-**A**: consulte os registos mais tarde deste tópico.
+<span data-ttu-id="981bf-245">**Q**: onde estão os registos do gateway de Olá?</span><span class="sxs-lookup"><span data-stu-id="981bf-245">**Q**: Where are hello gateway logs?</span></span> <br/><span data-ttu-id="981bf-246">
+**A**: consulte os registos mais tarde deste tópico.</span><span class="sxs-lookup"><span data-stu-id="981bf-246">
+**A**: See Logs later in this topic.</span></span>
 
-### <a name="update"></a>Atualizar a versão mais recente toohello
+### <span data-ttu-id="981bf-247"><a name="update"></a>Atualizar a versão mais recente toohello</span><span class="sxs-lookup"><span data-stu-id="981bf-247"><a name="update"></a>Update toohello latest version</span></span>
 
-Muitos problemas podem superfície quando a versão do gateway Olá fica desatualizado. Como boa prática geral, certifique-se de que utiliza a versão mais recente Olá. Se ainda não atualizado gateway Olá durante um mês ou mais, que considere instalar Olá a versão mais recente do gateway de Olá e veja se pode reproduzir o problema de Olá.
+<span data-ttu-id="981bf-248">Muitos problemas podem superfície quando a versão do gateway Olá fica desatualizado.</span><span class="sxs-lookup"><span data-stu-id="981bf-248">Many issues can surface when hello gateway version becomes outdated.</span></span> <span data-ttu-id="981bf-249">Como boa prática geral, certifique-se de que utiliza a versão mais recente Olá.</span><span class="sxs-lookup"><span data-stu-id="981bf-249">As good general practice, make sure that you use hello latest version.</span></span> <span data-ttu-id="981bf-250">Se ainda não atualizado gateway Olá durante um mês ou mais, que considere instalar Olá a versão mais recente do gateway de Olá e veja se pode reproduzir o problema de Olá.</span><span class="sxs-lookup"><span data-stu-id="981bf-250">If you haven't updated hello gateway for a month or longer, you might consider installing hello latest version of hello gateway, and see if you can reproduce hello issue.</span></span>
 
-### <a name="error-failed-tooadd-user-toogroup--2147463168-pbiegwservice-performance-log-users"></a>Erro: Falha tooadd toogroup de utilizador. (-2147463168 PBIEgwService desempenho registo utilizadores)
+### <a name="error-failed-tooadd-user-toogroup--2147463168-pbiegwservice-performance-log-users"></a><span data-ttu-id="981bf-251">Erro: Falha tooadd toogroup de utilizador.</span><span class="sxs-lookup"><span data-stu-id="981bf-251">Error: Failed tooadd user toogroup.</span></span> <span data-ttu-id="981bf-252">(-2147463168 PBIEgwService desempenho registo utilizadores)</span><span class="sxs-lookup"><span data-stu-id="981bf-252">(-2147463168 PBIEgwService Performance Log Users)</span></span>
 
-Pode obter este erro se tentar gateway de Olá tooinstall num controlador de domínio, que não é suportado. Certifique-se de que implementa o gateway de Olá num computador que não é um controlador de domínio.
+<span data-ttu-id="981bf-253">Pode obter este erro se tentar gateway de Olá tooinstall num controlador de domínio, que não é suportado.</span><span class="sxs-lookup"><span data-stu-id="981bf-253">You might get this error if you try tooinstall hello gateway on a domain controller, which isn't supported.</span></span> <span data-ttu-id="981bf-254">Certifique-se de que implementa o gateway de Olá num computador que não é um controlador de domínio.</span><span class="sxs-lookup"><span data-stu-id="981bf-254">Make sure that you deploy hello gateway on a machine that isn't a domain controller.</span></span>
 
-## <a name="logs"></a>Registos
+## <span data-ttu-id="981bf-255"><a name="logs"></a>Registos</span><span class="sxs-lookup"><span data-stu-id="981bf-255"><a name="logs"></a>Logs</span></span>
 
-Ficheiros de registo são um recurso importante quando a resolução de problemas.
+<span data-ttu-id="981bf-256">Ficheiros de registo são um recurso importante quando a resolução de problemas.</span><span class="sxs-lookup"><span data-stu-id="981bf-256">Log files are an important resource when troubleshooting.</span></span>
 
-#### <a name="enterprise-gateway-service-logs"></a>Registos do serviço de gateway de empresa
+#### <a name="enterprise-gateway-service-logs"></a><span data-ttu-id="981bf-257">Registos do serviço de gateway de empresa</span><span class="sxs-lookup"><span data-stu-id="981bf-257">Enterprise gateway service logs</span></span>
 
 `C:\Users\PBIEgwService\AppData\Local\Microsoft\On-premises data gateway\<yyyyymmdd>.<Number>.log`
 
-#### <a name="configuration-logs"></a>Registos de configuração
+#### <a name="configuration-logs"></a><span data-ttu-id="981bf-258">Registos de configuração</span><span class="sxs-lookup"><span data-stu-id="981bf-258">Configuration logs</span></span>
 
 `C:\Users\<username>\AppData\Local\Microsoft\On-premises data gateway\GatewayConfigurator.log`
 
 
 
 
-#### <a name="event-logs"></a>Registos de eventos
+#### <a name="event-logs"></a><span data-ttu-id="981bf-259">Registos de eventos</span><span class="sxs-lookup"><span data-stu-id="981bf-259">Event logs</span></span>
 
-Pode encontrar Olá Data Management Gateway e PowerBIGateway registos em **registos de serviços e aplicações**.
+<span data-ttu-id="981bf-260">Pode encontrar Olá Data Management Gateway e PowerBIGateway registos em **registos de serviços e aplicações**.</span><span class="sxs-lookup"><span data-stu-id="981bf-260">You can find hello Data Management Gateway and PowerBIGateway logs under **Application and Services Logs**.</span></span>
 
 
-## <a name="telemetry"></a>Telemetria
-Telemetria pode ser utilizada para monitorização e resolução de problemas. Por predefinição
+## <span data-ttu-id="981bf-261"><a name="telemetry"></a>Telemetria</span><span class="sxs-lookup"><span data-stu-id="981bf-261"><a name="telemetry"></a>Telemetry</span></span>
+<span data-ttu-id="981bf-262">Telemetria pode ser utilizada para monitorização e resolução de problemas.</span><span class="sxs-lookup"><span data-stu-id="981bf-262">Telemetry can be used for monitoring and troubleshooting.</span></span> <span data-ttu-id="981bf-263">Por predefinição</span><span class="sxs-lookup"><span data-stu-id="981bf-263">By default</span></span>
 
-**tooturn telemetria**
+<span data-ttu-id="981bf-264">**tooturn telemetria**</span><span class="sxs-lookup"><span data-stu-id="981bf-264">**tooturn on telemetry**</span></span>
 
-1.  Verifique o diretório de cliente do gateway do Olá no local dados no computador de Olá. Normalmente, é **gateway de dados de %systemdrive%\Program Files\On local**. Em alternativa, pode abrir uma consola de serviços e verifique Olá caminho tooexecutable: uma propriedade do serviço de gateway de dados do Olá no local.
-2.  No ficheiro de Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config Olá do directory do cliente. Altere Olá SendTelemetry definição tootrue.
+1.  <span data-ttu-id="981bf-265">Verifique o diretório de cliente do gateway do Olá no local dados no computador de Olá.</span><span class="sxs-lookup"><span data-stu-id="981bf-265">Check hello On-premises data gateway client directory on hello computer.</span></span> <span data-ttu-id="981bf-266">Normalmente, é **gateway de dados de %systemdrive%\Program Files\On local**.</span><span class="sxs-lookup"><span data-stu-id="981bf-266">Typically, it is **%systemdrive%\Program Files\On-premises data gateway**.</span></span> <span data-ttu-id="981bf-267">Em alternativa, pode abrir uma consola de serviços e verifique Olá caminho tooexecutable: uma propriedade do serviço de gateway de dados do Olá no local.</span><span class="sxs-lookup"><span data-stu-id="981bf-267">Or, you can open a Services console and check hello Path tooexecutable: A property of hello On-premises data gateway service.</span></span>
+2.  <span data-ttu-id="981bf-268">No ficheiro de Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config Olá do directory do cliente.</span><span class="sxs-lookup"><span data-stu-id="981bf-268">In hello Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config file from client directory.</span></span> <span data-ttu-id="981bf-269">Altere Olá SendTelemetry definição tootrue.</span><span class="sxs-lookup"><span data-stu-id="981bf-269">Change hello SendTelemetry setting tootrue.</span></span>
         
     ```
         <setting name="SendTelemetry" serializeAs="String">
@@ -194,11 +209,11 @@ Telemetria pode ser utilizada para monitorização e resolução de problemas. P
         </setting>
     ```
 
-3.  Guarde as alterações e reinicie o serviço do Windows hello: o serviço de gateway de dados no local.
+3.  <span data-ttu-id="981bf-270">Guarde as alterações e reinicie o serviço do Windows hello: o serviço de gateway de dados no local.</span><span class="sxs-lookup"><span data-stu-id="981bf-270">Save your changes and restart hello Windows service: On-premises data gateway service.</span></span>
 
 
 
 
-## <a name="next-steps"></a>Passos seguintes
-* [Gerir do Analysis Services](analysis-services-manage.md)
-* [Obter dados a partir do Azure Analysis Services](analysis-services-connect.md)
+## <a name="next-steps"></a><span data-ttu-id="981bf-271">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="981bf-271">Next steps</span></span>
+* [<span data-ttu-id="981bf-272">Gerir do Analysis Services</span><span class="sxs-lookup"><span data-stu-id="981bf-272">Manage Analysis Services</span></span>](analysis-services-manage.md)
+* [<span data-ttu-id="981bf-273">Obter dados a partir do Azure Analysis Services</span><span class="sxs-lookup"><span data-stu-id="981bf-273">Get data from Azure Analysis Services</span></span>](analysis-services-connect.md)

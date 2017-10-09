@@ -20,29 +20,29 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="azure-data-factory---customer-case-studies"></a>O Azure Data Factory - casos práticos de clientes
-Data Factory é um serviço de gestão baseado na nuvem informações que automatiza o movimento de Olá e a transformação de dados. Os clientes em indústrias muitos utilizam fábrica de dados e outro serviços do Azure toobuild os seus pipelines de análise e resolverem problemas das suas empresas.  Saiba diretamente a partir dos nossos clientes como e por que motivo está a utilizar o Data Factory.
+# <a name="azure-data-factory---customer-case-studies"></a><span data-ttu-id="a1398-103">O Azure Data Factory - casos práticos de clientes</span><span class="sxs-lookup"><span data-stu-id="a1398-103">Azure Data Factory - Customer case studies</span></span>
+<span data-ttu-id="a1398-104">Data Factory é um serviço de gestão baseado na nuvem informações que automatiza o movimento de Olá e a transformação de dados.</span><span class="sxs-lookup"><span data-stu-id="a1398-104">Data Factory is a cloud-based information management service that automates hello movement and transformation of data.</span></span> <span data-ttu-id="a1398-105">Os clientes em indústrias muitos utilizam fábrica de dados e outro serviços do Azure toobuild os seus pipelines de análise e resolverem problemas das suas empresas.</span><span class="sxs-lookup"><span data-stu-id="a1398-105">Customers across many industries use Data Factory and other Azure services toobuild their analytics pipelines and solve their business problems.</span></span>  <span data-ttu-id="a1398-106">Saiba diretamente a partir dos nossos clientes como e por que motivo está a utilizar o Data Factory.</span><span class="sxs-lookup"><span data-stu-id="a1398-106">Learn directly from our customers how and why they are using Data Factory.</span></span>
 
-## <a name="milliman"></a>Milliman
-[Principais da indústria no Actuarial transformações sólidas Olá insurance](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=20096)
+## <a name="milliman"></a><span data-ttu-id="a1398-107">Milliman</span><span class="sxs-lookup"><span data-stu-id="a1398-107">Milliman</span></span>
+[<span data-ttu-id="a1398-108">Principais da indústria no Actuarial transformações sólidas Olá insurance</span><span class="sxs-lookup"><span data-stu-id="a1398-108">Top Actuarial firm transforms hello insurance industry</span></span>](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=20096)
 
-## <a name="rockwell-automation"></a>Automatização Rockwell
-[Industriais automatização Firm Cuts os custos de cópia de segurança por cento de too90 com soluções de macrodados](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18356)
+## <a name="rockwell-automation"></a><span data-ttu-id="a1398-109">Automatização Rockwell</span><span class="sxs-lookup"><span data-stu-id="a1398-109">Rockwell Automation</span></span>
+[<span data-ttu-id="a1398-110">Industriais automatização Firm Cuts os custos de cópia de segurança por cento de too90 com soluções de macrodados</span><span class="sxs-lookup"><span data-stu-id="a1398-110">Industrial Automation Firm Cuts Costs up too90 Percent with big data Solutions</span></span>](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18356)
 
-## <a name="ziosk"></a>Ziosk
-[O que, de jogos pretende toogo com esse burger? Já pode saber Ziosk.](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18294)
+## <a name="ziosk"></a><span data-ttu-id="a1398-111">Ziosk</span><span class="sxs-lookup"><span data-stu-id="a1398-111">Ziosk</span></span>
+[<span data-ttu-id="a1398-112">O que, de jogos pretende toogo com esse burger? Já pode saber Ziosk.</span><span class="sxs-lookup"><span data-stu-id="a1398-112">What game you want toogo with that burger? Ziosk may already know.</span></span>](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18294)
 
-## <a name="alaska-airlines"></a>Alaska Airlines
-[Tablets companhia aérea utiliza, tooOffer de serviços em nuvem mais interagir In-Flight entretenimento](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=19357)
+## <a name="alaska-airlines"></a><span data-ttu-id="a1398-113">Alaska Airlines</span><span class="sxs-lookup"><span data-stu-id="a1398-113">Alaska Airlines</span></span>
+[<span data-ttu-id="a1398-114">Tablets companhia aérea utiliza, tooOffer de serviços em nuvem mais interagir In-Flight entretenimento</span><span class="sxs-lookup"><span data-stu-id="a1398-114">Airline Uses Tablets, Cloud Services tooOffer More Engaging In-Flight Entertainment</span></span>](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=19357)
 
-## <a name="tacoma-public-schools"></a>Tacoma público escolas
-[Prever estudante dropout riscos, aumentar as taxas de graduation análise de nuvem](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=20703)
+## <a name="tacoma-public-schools"></a><span data-ttu-id="a1398-115">Tacoma público escolas</span><span class="sxs-lookup"><span data-stu-id="a1398-115">Tacoma public schools</span></span>
+[<span data-ttu-id="a1398-116">Prever estudante dropout riscos, aumentar as taxas de graduation análise de nuvem</span><span class="sxs-lookup"><span data-stu-id="a1398-116">Predicting student dropout risks, increasing graduation rates with cloud analytics</span></span>](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=20703)
 
-## <a name="real-madrid-fc"></a>FC real Madrid
-[Real Madrid coloca Olá stadium próximo too450 milhões ventoinhas à volta de globo Olá, com Olá Microsoft Cloud](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=20522)
+## <a name="real-madrid-fc"></a><span data-ttu-id="a1398-117">FC real Madrid</span><span class="sxs-lookup"><span data-stu-id="a1398-117">Real Madrid FC</span></span>
+[<span data-ttu-id="a1398-118">Real Madrid coloca Olá stadium próximo too450 milhões ventoinhas à volta de globo Olá, com Olá Microsoft Cloud</span><span class="sxs-lookup"><span data-stu-id="a1398-118">Real Madrid brings hello stadium closer too450 million fans around hello globe, with hello Microsoft Cloud</span></span>](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=20522)
 
-## <a name="pier-1-imports"></a>Pier 1 Imports
-[Encontrar uma ligação melhor com os clientes através da nuvem Machine Learning](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11257)
+## <a name="pier-1-imports"></a><span data-ttu-id="a1398-119">Pier 1 Imports</span><span class="sxs-lookup"><span data-stu-id="a1398-119">Pier 1 Imports</span></span>
+[<span data-ttu-id="a1398-120">Encontrar uma ligação melhor com os clientes através da nuvem Machine Learning</span><span class="sxs-lookup"><span data-stu-id="a1398-120">Finding a Better Connection with Customers through Cloud Machine Learning</span></span>](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11257)
 
-## <a name="microsoft-studio"></a>Microsoft Studio
-[Entrega epic Xbox experiências analisando centenas de billions de jogos eventos por dia](https://customers.microsoft.com/en-us/story/xboxunlimited)
+## <a name="microsoft-studio"></a><span data-ttu-id="a1398-121">Microsoft Studio</span><span class="sxs-lookup"><span data-stu-id="a1398-121">Microsoft Studio</span></span>
+[<span data-ttu-id="a1398-122">Entrega epic Xbox experiências analisando centenas de billions de jogos eventos por dia</span><span class="sxs-lookup"><span data-stu-id="a1398-122">Delivering epic Xbox experiences by analyzing hundreds of billions of game events each day</span></span>](https://customers.microsoft.com/en-us/story/xboxunlimited)

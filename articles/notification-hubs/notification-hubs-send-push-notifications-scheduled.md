@@ -21,18 +21,18 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="how-to-send-scheduled-notifications"></a>Como: Enviar notificações agendadas
-## <a name="overview"></a>Descrição geral
-Se tiver um cenário no qual pretende toosend uma notificação, a determinada altura no Olá futuras mas não dispõe de uma forma fácil toowake a notificação do código de back-end toosend Olá de ativação. Hubs de notificação de escalão Standard suporta uma funcionalidade que permite-lhe tooschedule notificações dos dias too7 Olá futura.
+# <a name="how-to-send-scheduled-notifications"></a><span data-ttu-id="05aad-104">Como: Enviar notificações agendadas</span><span class="sxs-lookup"><span data-stu-id="05aad-104">How To: Send scheduled notifications</span></span>
+## <a name="overview"></a><span data-ttu-id="05aad-105">Descrição geral</span><span class="sxs-lookup"><span data-stu-id="05aad-105">Overview</span></span>
+<span data-ttu-id="05aad-106">Se tiver um cenário no qual pretende toosend uma notificação, a determinada altura no Olá futuras mas não dispõe de uma forma fácil toowake a notificação do código de back-end toosend Olá de ativação.</span><span class="sxs-lookup"><span data-stu-id="05aad-106">If you have a scenario in which you want toosend a notification at some point in hello future, but do not have an easy way toowake up your back-end code toosend hello notification.</span></span> <span data-ttu-id="05aad-107">Hubs de notificação de escalão Standard suporta uma funcionalidade que permite-lhe tooschedule notificações dos dias too7 Olá futura.</span><span class="sxs-lookup"><span data-stu-id="05aad-107">Standard tier Notification Hubs supports a feature that enables you tooschedule notifications up too7 days in hello future.</span></span>
 
-Quando enviar uma notificação, basta utilizar Olá [ScheduledNotification](https://msdn.microsoft.com/library/microsoft.azure.notificationhubs.schedulednotification.aspx) classe no Olá SDK dos Notification Hubs, conforme mostrado no seguinte exemplo de Olá:
+<span data-ttu-id="05aad-108">Quando enviar uma notificação, basta utilizar Olá [ScheduledNotification](https://msdn.microsoft.com/library/microsoft.azure.notificationhubs.schedulednotification.aspx) classe no Olá SDK dos Notification Hubs, conforme mostrado no seguinte exemplo de Olá:</span><span class="sxs-lookup"><span data-stu-id="05aad-108">When sending a notification, simply use hello [ScheduledNotification](https://msdn.microsoft.com/library/microsoft.azure.notificationhubs.schedulednotification.aspx) class in hello Notification Hubs SDK as shown in hello following example:</span></span>
 
     Notification notification = new AppleNotification("{\"aps\":{\"alert\":\"Happy birthday!\"}}");
     var scheduled = await hub.ScheduleNotificationAsync(notification, new DateTime(2014, 7, 19, 0, 0, 0));
 
-Além disso, pode cancelar uma notificação anteriormente agendada utilizando o respetivo notificationId:
+<span data-ttu-id="05aad-109">Além disso, pode cancelar uma notificação anteriormente agendada utilizando o respetivo notificationId:</span><span class="sxs-lookup"><span data-stu-id="05aad-109">Also, you can cancel a previously scheduled notification using its notificationId:</span></span>
 
     await hub.CancelNotificationAsync(scheduled.ScheduledNotificationId);
 
-Não existem não existem limites no número de Olá de notificações agendadas, que pode enviar.
+<span data-ttu-id="05aad-110">Não existem não existem limites no número de Olá de notificações agendadas, que pode enviar.</span><span class="sxs-lookup"><span data-stu-id="05aad-110">There are no limits on hello number of scheduled notifications you can send.</span></span>
 

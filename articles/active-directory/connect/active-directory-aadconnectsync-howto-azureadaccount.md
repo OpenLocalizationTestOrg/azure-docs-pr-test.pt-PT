@@ -21,35 +21,35 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="azure-ad-connect-sync-how-toomanage-hello-azure-ad-service-account"></a>Sincronização do Azure AD Connect: como conta de serviço toomanage Olá do Azure AD
-conta de serviço de Olá utilizada pelo conector do Azure AD de Olá deveria toobe serviço gratuito. Se precisar de tooreset as respetivas credenciais, em seguida, este tópico é que o utilizador. Por exemplo, se um Administrador Global tiver por erro reposição Olá palavra-passe na conta de serviço Olá através do PowerShell.
+# <a name="azure-ad-connect-sync-how-toomanage-hello-azure-ad-service-account"></a><span data-ttu-id="f1fa4-104">Sincronização do Azure AD Connect: como conta de serviço toomanage Olá do Azure AD</span><span class="sxs-lookup"><span data-stu-id="f1fa4-104">Azure AD Connect sync: How toomanage hello Azure AD service account</span></span>
+<span data-ttu-id="f1fa4-105">conta de serviço de Olá utilizada pelo conector do Azure AD de Olá deveria toobe serviço gratuito.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-105">hello service account used by hello Azure AD Connector is supposed toobe service free.</span></span> <span data-ttu-id="f1fa4-106">Se precisar de tooreset as respetivas credenciais, em seguida, este tópico é que o utilizador.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-106">If you need tooreset its credentials, then this topic is for you.</span></span> <span data-ttu-id="f1fa4-107">Por exemplo, se um Administrador Global tiver por erro reposição Olá palavra-passe na conta de serviço Olá através do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-107">For example, if a Global Administrator has by mistake reset hello password on hello service account using PowerShell.</span></span>
 
-## <a name="reset-hello-credentials"></a>Repor as credenciais de Olá
-Se a conta de serviço Olá definida na Olá conector do Azure AD não consegue contactar o Azure AD devido a problemas de tooauthentication, é possível repor a palavra-passe de Olá.
+## <a name="reset-hello-credentials"></a><span data-ttu-id="f1fa4-108">Repor as credenciais de Olá</span><span class="sxs-lookup"><span data-stu-id="f1fa4-108">Reset hello credentials</span></span>
+<span data-ttu-id="f1fa4-109">Se a conta de serviço Olá definida na Olá conector do Azure AD não consegue contactar o Azure AD devido a problemas de tooauthentication, é possível repor a palavra-passe de Olá.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-109">If hello service account defined on hello Azure AD Connector cannot contact Azure AD due tooauthentication problems, hello password can be reset.</span></span>
 
-1. Inicie sessão no servidor de sincronização do Azure AD Connect toohello e inicie o PowerShell.
-2. Execute `Add-ADSyncAADServiceAccount`.  
-   ![Addadsyncaadserviceaccount de cmdlet do PowerShell](./media/active-directory-aadconnectsync-howto-azureadaccount/addadsyncaadserviceaccount.png)
-3. Forneça as credenciais de Administrador Global do Azure AD.
+1. <span data-ttu-id="f1fa4-110">Inicie sessão no servidor de sincronização do Azure AD Connect toohello e inicie o PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-110">Sign in toohello Azure AD Connect sync server and start PowerShell.</span></span>
+2. <span data-ttu-id="f1fa4-111">Execute `Add-ADSyncAADServiceAccount`.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-111">Run `Add-ADSyncAADServiceAccount`.</span></span>  
+   <span data-ttu-id="f1fa4-112">![Addadsyncaadserviceaccount de cmdlet do PowerShell](./media/active-directory-aadconnectsync-howto-azureadaccount/addadsyncaadserviceaccount.png)</span><span class="sxs-lookup"><span data-stu-id="f1fa4-112">![PowerShell cmdlet addadsyncaadserviceaccount](./media/active-directory-aadconnectsync-howto-azureadaccount/addadsyncaadserviceaccount.png)</span></span>
+3. <span data-ttu-id="f1fa4-113">Forneça as credenciais de Administrador Global do Azure AD.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-113">Provide Azure AD Global admin credentials.</span></span>
 
-Este cmdlet repõe Olá palavra-passe da conta de serviço Olá e atualizá-lo no Azure AD e no motor de sincronização de Olá.
+<span data-ttu-id="f1fa4-114">Este cmdlet repõe Olá palavra-passe da conta de serviço Olá e atualizá-lo no Azure AD e no motor de sincronização de Olá.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-114">This cmdlet resets hello password for hello service account and update it both in Azure AD and in hello sync engine.</span></span>
 
-## <a name="known-issues-these-steps-can-solve"></a>Estes passos podem resolver os problemas conhecidos
-Esta secção se uma lista de erros comunicados pelos clientes que foram corrigidos por um credenciais repor em Olá conta de serviço do Azure AD.
-
-- - -
-Evento 6900  
-servidor de Olá encontrou um erro inesperado ao processar uma notificação de alteração de palavra-passe:  
-AADSTS70002: Erro a validar as credenciais. AADSTS50054: Palavra-passe antiga é utilizado para autenticação.
+## <a name="known-issues-these-steps-can-solve"></a><span data-ttu-id="f1fa4-115">Estes passos podem resolver os problemas conhecidos</span><span class="sxs-lookup"><span data-stu-id="f1fa4-115">Known issues these steps can solve</span></span>
+<span data-ttu-id="f1fa4-116">Esta secção se uma lista de erros comunicados pelos clientes que foram corrigidos por um credenciais repor em Olá conta de serviço do Azure AD.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-116">This section is a list of errors reported by customers that were fixed by a credentials reset on hello Azure AD service account.</span></span>
 
 - - -
-Evento 659  
-Erro ao obter a configuração de sincronização da política de palavra-passe. Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException:  
-AADSTS70002: Erro a validar as credenciais. AADSTS50054: Palavra-passe antiga é utilizado para autenticação.
+<span data-ttu-id="f1fa4-117">Evento 6900</span><span class="sxs-lookup"><span data-stu-id="f1fa4-117">Event 6900</span></span>  
+<span data-ttu-id="f1fa4-118">servidor de Olá encontrou um erro inesperado ao processar uma notificação de alteração de palavra-passe:</span><span class="sxs-lookup"><span data-stu-id="f1fa4-118">hello server encountered an unexpected error while processing a password change notification:</span></span>  
+<span data-ttu-id="f1fa4-119">AADSTS70002: Erro a validar as credenciais.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-119">AADSTS70002: Error validating credentials.</span></span> <span data-ttu-id="f1fa4-120">AADSTS50054: Palavra-passe antiga é utilizado para autenticação.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-120">AADSTS50054: Old password is used for authentication.</span></span>
 
-## <a name="next-steps"></a>Passos seguintes
-**Tópicos de descrição geral**
+- - -
+<span data-ttu-id="f1fa4-121">Evento 659</span><span class="sxs-lookup"><span data-stu-id="f1fa4-121">Event 659</span></span>  
+<span data-ttu-id="f1fa4-122">Erro ao obter a configuração de sincronização da política de palavra-passe.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-122">Error while retrieving password policy sync configuration.</span></span> <span data-ttu-id="f1fa4-123">Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException:</span><span class="sxs-lookup"><span data-stu-id="f1fa4-123">Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException:</span></span>  
+<span data-ttu-id="f1fa4-124">AADSTS70002: Erro a validar as credenciais.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-124">AADSTS70002: Error validating credentials.</span></span> <span data-ttu-id="f1fa4-125">AADSTS50054: Palavra-passe antiga é utilizado para autenticação.</span><span class="sxs-lookup"><span data-stu-id="f1fa4-125">AADSTS50054: Old password is used for authentication.</span></span>
 
-* [Sincronização do Azure AD Connect: Noções e personalizar a sincronização](active-directory-aadconnectsync-whatis.md)
-* [Integrar as identidades no local ao Azure Active Directory](active-directory-aadconnect.md)
+## <a name="next-steps"></a><span data-ttu-id="f1fa4-126">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="f1fa4-126">Next steps</span></span>
+<span data-ttu-id="f1fa4-127">**Tópicos de descrição geral**</span><span class="sxs-lookup"><span data-stu-id="f1fa4-127">**Overview topics**</span></span>
+
+* [<span data-ttu-id="f1fa4-128">Sincronização do Azure AD Connect: Noções e personalizar a sincronização</span><span class="sxs-lookup"><span data-stu-id="f1fa4-128">Azure AD Connect sync: Understand and customize synchronization</span></span>](active-directory-aadconnectsync-whatis.md)
+* [<span data-ttu-id="f1fa4-129">Integrar as identidades no local ao Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="f1fa4-129">Integrating your on-premises identities with Azure Active Directory</span></span>](active-directory-aadconnect.md)
 

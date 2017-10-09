@@ -19,19 +19,19 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="application-insights-export-data-model"></a>Modelo de dados de exportação do Application Insights
-Esta tabela lista as propriedades de Olá de telemetria enviada do Olá [Application Insights](app-insights-overview.md) SDKs toohello portal.
-Irá ver estas propriedades na saída de dados de [exportação contínua](app-insights-export-telemetry.md).
-Também aparecem em filtros de propriedade no [métrica Explorer](app-insights-metrics-explorer.md) e [pesquisa de diagnóstico](app-insights-diagnostic-search.md).
+# <a name="application-insights-export-data-model"></a><span data-ttu-id="70f72-103">Modelo de dados de exportação do Application Insights</span><span class="sxs-lookup"><span data-stu-id="70f72-103">Application Insights Export Data Model</span></span>
+<span data-ttu-id="70f72-104">Esta tabela lista as propriedades de Olá de telemetria enviada do Olá [Application Insights](app-insights-overview.md) SDKs toohello portal.</span><span class="sxs-lookup"><span data-stu-id="70f72-104">This table lists hello properties of telemetry sent from hello [Application Insights](app-insights-overview.md) SDKs toohello portal.</span></span>
+<span data-ttu-id="70f72-105">Irá ver estas propriedades na saída de dados de [exportação contínua](app-insights-export-telemetry.md).</span><span class="sxs-lookup"><span data-stu-id="70f72-105">You'll see these properties in data output from [Continuous Export](app-insights-export-telemetry.md).</span></span>
+<span data-ttu-id="70f72-106">Também aparecem em filtros de propriedade no [métrica Explorer](app-insights-metrics-explorer.md) e [pesquisa de diagnóstico](app-insights-diagnostic-search.md).</span><span class="sxs-lookup"><span data-stu-id="70f72-106">They also appear in property filters in [Metric Explorer](app-insights-metrics-explorer.md) and [Diagnostic Search](app-insights-diagnostic-search.md).</span></span>
 
-Toonote pontos:
+<span data-ttu-id="70f72-107">Toonote pontos:</span><span class="sxs-lookup"><span data-stu-id="70f72-107">Points toonote:</span></span>
 
-* `[0]`nestas tabelas indica que um ponto no caminho de olá onde tenha tooinsert um índice; mas não se encontra sempre 0.
-* Durações de tempo são em décimas de aos microssegundos, por isso, 10000000 = = 1 segundo.
-* As datas e horas são UTC e foram fornecidas no formato ISO de Olá`yyyy-MM-DDThh:mm:ss.sssZ`
+* <span data-ttu-id="70f72-108">`[0]`nestas tabelas indica que um ponto no caminho de olá onde tenha tooinsert um índice; mas não se encontra sempre 0.</span><span class="sxs-lookup"><span data-stu-id="70f72-108">`[0]` in these tables denotes a point in hello path where you have tooinsert an index; but it isn't always 0.</span></span>
+* <span data-ttu-id="70f72-109">Durações de tempo são em décimas de aos microssegundos, por isso, 10000000 = = 1 segundo.</span><span class="sxs-lookup"><span data-stu-id="70f72-109">Time durations are in tenths of a microsecond, so 10000000 == 1 second.</span></span>
+* <span data-ttu-id="70f72-110">As datas e horas são UTC e foram fornecidas no formato ISO de Olá`yyyy-MM-DDThh:mm:ss.sssZ`</span><span class="sxs-lookup"><span data-stu-id="70f72-110">Dates and times are UTC, and are given in hello ISO format `yyyy-MM-DDThh:mm:ss.sssZ`</span></span>
 
 
-## <a name="example"></a>Exemplo
+## <a name="example"></a><span data-ttu-id="70f72-111">Exemplo</span><span class="sxs-lookup"><span data-stu-id="70f72-111">Example</span></span>
     // A server report about an HTTP request
     {
     "request": [
@@ -109,194 +109,194 @@ Toonote pontos:
         "isFirst": true
       }
     }
-  }
+  <span data-ttu-id="70f72-112">}</span><span class="sxs-lookup"><span data-stu-id="70f72-112">}</span></span>
 
-## <a name="context"></a>Contexto
-Todos os tipos de telemetria são acompanhados por uma secção de contexto. Todos estes campos são transmitidos com cada ponto de dados.
+## <a name="context"></a><span data-ttu-id="70f72-113">Contexto</span><span class="sxs-lookup"><span data-stu-id="70f72-113">Context</span></span>
+<span data-ttu-id="70f72-114">Todos os tipos de telemetria são acompanhados por uma secção de contexto.</span><span class="sxs-lookup"><span data-stu-id="70f72-114">All types of telemetry are accompanied by a context section.</span></span> <span data-ttu-id="70f72-115">Todos estes campos são transmitidos com cada ponto de dados.</span><span class="sxs-lookup"><span data-stu-id="70f72-115">Not all of these fields are transmitted with every data point.</span></span>
 
-| Caminho | Tipo | Notas |
+| <span data-ttu-id="70f72-116">Caminho</span><span class="sxs-lookup"><span data-stu-id="70f72-116">Path</span></span> | <span data-ttu-id="70f72-117">Tipo</span><span class="sxs-lookup"><span data-stu-id="70f72-117">Type</span></span> | <span data-ttu-id="70f72-118">Notas</span><span class="sxs-lookup"><span data-stu-id="70f72-118">Notes</span></span> |
 | --- | --- | --- |
-| Context.Custom.dimensions [0] |[] do objeto |Conjunto de pares chave-valor de cadeia pelo parâmetro propriedades personalizadas. Comprimento máximo da chave 100, valores de comprimento de máximo 1024. Mais de 100 valores exclusivos, a propriedade de Olá pode ser pesquisada mas não pode ser utilizada relativamente à segmentação. Chaves de 200 máx. por ikey. |
-| Context.Custom.Metrics [0] |[] do objeto |Pares chave-valor definido pelo parâmetro medidas personalizadas e por TrackMetrics. Comprimento de máximo chave 100, valores podem ser um valor numéricos. |
-| context.data.eventTime |Cadeia |UTC |
-| context.data.isSynthetic |Valor booleano |Pedido aparece toocome de um teste bot ou web. |
-| context.data.samplingRate |Número |Percentagem de telemetria gerada pelo Olá SDK que é enviado tooportal. Intervalo entre 0,0 e 100,0. |
-| Context.Device |objeto |Dispositivo cliente |
-| Context.Device.browser |Cadeia |Chrome,... |
-| context.device.browserVersion |Cadeia |Chrome 48.0,... |
-| context.device.deviceModel |Cadeia | |
-| context.device.deviceName |Cadeia | |
-| Context.Device.ID |Cadeia | |
-| Context.Device.locale |Cadeia |en GB, Alemanha-Alemanha,... |
-| Context.Device.Network |Cadeia | |
-| context.device.oemName |Cadeia | |
-| context.device.osVersion |Cadeia |Sistema operativo do anfitrião |
-| context.device.roleInstance |Cadeia |ID de anfitrião do servidor |
-| context.device.roleName |Cadeia | |
-| Context.Device.Type |Cadeia |PC, Browser,... |
-| Context.location |objeto |Obtida a partir do clientip. |
-| Context.location.City |Cadeia |Derivado clientip, se conhecida |
-| Context.location.ClientIP |Cadeia |Última octagon é too0 anónimos. |
-| Context.location.continent |Cadeia | |
-| Context.location.Country |Cadeia | |
-| Context.location.Province |Cadeia |Distrito |
-| Context.Operation.ID |Cadeia |Itens que têm o mesmo id de operação são apresentadas como itens relacionados no portal de Olá de Olá. Normalmente, id do pedido Olá. |
-| Context.Operation.Name |Cadeia |nome de URL ou a pedido |
-| context.operation.parentId |Cadeia |Permite que os itens relacionados aninhados. |
-| Context.Session.ID |Cadeia |ID de um grupo de operações a partir de Olá mesma origem. Um período de 30 minutos sem uma extremidade de Olá sinais de operação de uma sessão. |
-| context.session.isFirst |Valor booleano | |
-| context.user.accountAcquisitionDate |Cadeia | |
-| context.user.anonAcquisitionDate |Cadeia | |
-| context.user.anonId |Cadeia | |
-| context.user.authAcquisitionDate |Cadeia |[Utilizador autenticado](app-insights-api-custom-events-metrics.md#authenticated-users) |
-| context.user.isAuthenticated |Valor booleano | |
-| internal.data.documentVersion |Cadeia | |
-| INTERNAL.data.ID |Cadeia | |
+| <span data-ttu-id="70f72-119">Context.Custom.dimensions [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-119">context.custom.dimensions [0]</span></span> |<span data-ttu-id="70f72-120">[] do objeto</span><span class="sxs-lookup"><span data-stu-id="70f72-120">object [ ]</span></span> |<span data-ttu-id="70f72-121">Conjunto de pares chave-valor de cadeia pelo parâmetro propriedades personalizadas.</span><span class="sxs-lookup"><span data-stu-id="70f72-121">Key-value string pairs set by custom properties parameter.</span></span> <span data-ttu-id="70f72-122">Comprimento máximo da chave 100, valores de comprimento de máximo 1024.</span><span class="sxs-lookup"><span data-stu-id="70f72-122">Key max length 100, values max length 1024.</span></span> <span data-ttu-id="70f72-123">Mais de 100 valores exclusivos, a propriedade de Olá pode ser pesquisada mas não pode ser utilizada relativamente à segmentação.</span><span class="sxs-lookup"><span data-stu-id="70f72-123">More than 100 unique values, hello property can be searched but cannot be used for segmentation.</span></span> <span data-ttu-id="70f72-124">Chaves de 200 máx. por ikey.</span><span class="sxs-lookup"><span data-stu-id="70f72-124">Max 200 keys per ikey.</span></span> |
+| <span data-ttu-id="70f72-125">Context.Custom.Metrics [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-125">context.custom.metrics [0]</span></span> |<span data-ttu-id="70f72-126">[] do objeto</span><span class="sxs-lookup"><span data-stu-id="70f72-126">object [ ]</span></span> |<span data-ttu-id="70f72-127">Pares chave-valor definido pelo parâmetro medidas personalizadas e por TrackMetrics.</span><span class="sxs-lookup"><span data-stu-id="70f72-127">Key-value pairs set by custom measurements parameter and by TrackMetrics.</span></span> <span data-ttu-id="70f72-128">Comprimento de máximo chave 100, valores podem ser um valor numéricos.</span><span class="sxs-lookup"><span data-stu-id="70f72-128">Key max length 100, values may be numeric.</span></span> |
+| <span data-ttu-id="70f72-129">context.data.eventTime</span><span class="sxs-lookup"><span data-stu-id="70f72-129">context.data.eventTime</span></span> |<span data-ttu-id="70f72-130">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-130">string</span></span> |<span data-ttu-id="70f72-131">UTC</span><span class="sxs-lookup"><span data-stu-id="70f72-131">UTC</span></span> |
+| <span data-ttu-id="70f72-132">context.data.isSynthetic</span><span class="sxs-lookup"><span data-stu-id="70f72-132">context.data.isSynthetic</span></span> |<span data-ttu-id="70f72-133">Valor booleano</span><span class="sxs-lookup"><span data-stu-id="70f72-133">boolean</span></span> |<span data-ttu-id="70f72-134">Pedido aparece toocome de um teste bot ou web.</span><span class="sxs-lookup"><span data-stu-id="70f72-134">Request appears toocome from a bot or web test.</span></span> |
+| <span data-ttu-id="70f72-135">context.data.samplingRate</span><span class="sxs-lookup"><span data-stu-id="70f72-135">context.data.samplingRate</span></span> |<span data-ttu-id="70f72-136">Número</span><span class="sxs-lookup"><span data-stu-id="70f72-136">number</span></span> |<span data-ttu-id="70f72-137">Percentagem de telemetria gerada pelo Olá SDK que é enviado tooportal.</span><span class="sxs-lookup"><span data-stu-id="70f72-137">Percentage of telemetry generated by hello SDK that is sent tooportal.</span></span> <span data-ttu-id="70f72-138">Intervalo entre 0,0 e 100,0.</span><span class="sxs-lookup"><span data-stu-id="70f72-138">Range 0.0-100.0.</span></span> |
+| <span data-ttu-id="70f72-139">Context.Device</span><span class="sxs-lookup"><span data-stu-id="70f72-139">context.device</span></span> |<span data-ttu-id="70f72-140">objeto</span><span class="sxs-lookup"><span data-stu-id="70f72-140">object</span></span> |<span data-ttu-id="70f72-141">Dispositivo cliente</span><span class="sxs-lookup"><span data-stu-id="70f72-141">Client device</span></span> |
+| <span data-ttu-id="70f72-142">Context.Device.browser</span><span class="sxs-lookup"><span data-stu-id="70f72-142">context.device.browser</span></span> |<span data-ttu-id="70f72-143">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-143">string</span></span> |<span data-ttu-id="70f72-144">Chrome,...</span><span class="sxs-lookup"><span data-stu-id="70f72-144">IE, Chrome, ...</span></span> |
+| <span data-ttu-id="70f72-145">context.device.browserVersion</span><span class="sxs-lookup"><span data-stu-id="70f72-145">context.device.browserVersion</span></span> |<span data-ttu-id="70f72-146">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-146">string</span></span> |<span data-ttu-id="70f72-147">Chrome 48.0,...</span><span class="sxs-lookup"><span data-stu-id="70f72-147">Chrome 48.0, ...</span></span> |
+| <span data-ttu-id="70f72-148">context.device.deviceModel</span><span class="sxs-lookup"><span data-stu-id="70f72-148">context.device.deviceModel</span></span> |<span data-ttu-id="70f72-149">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-149">string</span></span> | |
+| <span data-ttu-id="70f72-150">context.device.deviceName</span><span class="sxs-lookup"><span data-stu-id="70f72-150">context.device.deviceName</span></span> |<span data-ttu-id="70f72-151">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-151">string</span></span> | |
+| <span data-ttu-id="70f72-152">Context.Device.ID</span><span class="sxs-lookup"><span data-stu-id="70f72-152">context.device.id</span></span> |<span data-ttu-id="70f72-153">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-153">string</span></span> | |
+| <span data-ttu-id="70f72-154">Context.Device.locale</span><span class="sxs-lookup"><span data-stu-id="70f72-154">context.device.locale</span></span> |<span data-ttu-id="70f72-155">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-155">string</span></span> |<span data-ttu-id="70f72-156">en GB, Alemanha-Alemanha,...</span><span class="sxs-lookup"><span data-stu-id="70f72-156">en-GB, de-DE, ...</span></span> |
+| <span data-ttu-id="70f72-157">Context.Device.Network</span><span class="sxs-lookup"><span data-stu-id="70f72-157">context.device.network</span></span> |<span data-ttu-id="70f72-158">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-158">string</span></span> | |
+| <span data-ttu-id="70f72-159">context.device.oemName</span><span class="sxs-lookup"><span data-stu-id="70f72-159">context.device.oemName</span></span> |<span data-ttu-id="70f72-160">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-160">string</span></span> | |
+| <span data-ttu-id="70f72-161">context.device.osVersion</span><span class="sxs-lookup"><span data-stu-id="70f72-161">context.device.osVersion</span></span> |<span data-ttu-id="70f72-162">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-162">string</span></span> |<span data-ttu-id="70f72-163">Sistema operativo do anfitrião</span><span class="sxs-lookup"><span data-stu-id="70f72-163">Host OS</span></span> |
+| <span data-ttu-id="70f72-164">context.device.roleInstance</span><span class="sxs-lookup"><span data-stu-id="70f72-164">context.device.roleInstance</span></span> |<span data-ttu-id="70f72-165">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-165">string</span></span> |<span data-ttu-id="70f72-166">ID de anfitrião do servidor</span><span class="sxs-lookup"><span data-stu-id="70f72-166">ID of server host</span></span> |
+| <span data-ttu-id="70f72-167">context.device.roleName</span><span class="sxs-lookup"><span data-stu-id="70f72-167">context.device.roleName</span></span> |<span data-ttu-id="70f72-168">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-168">string</span></span> | |
+| <span data-ttu-id="70f72-169">Context.Device.Type</span><span class="sxs-lookup"><span data-stu-id="70f72-169">context.device.type</span></span> |<span data-ttu-id="70f72-170">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-170">string</span></span> |<span data-ttu-id="70f72-171">PC, Browser,...</span><span class="sxs-lookup"><span data-stu-id="70f72-171">PC, Browser, ...</span></span> |
+| <span data-ttu-id="70f72-172">Context.location</span><span class="sxs-lookup"><span data-stu-id="70f72-172">context.location</span></span> |<span data-ttu-id="70f72-173">objeto</span><span class="sxs-lookup"><span data-stu-id="70f72-173">object</span></span> |<span data-ttu-id="70f72-174">Obtida a partir do clientip.</span><span class="sxs-lookup"><span data-stu-id="70f72-174">Derived from clientip.</span></span> |
+| <span data-ttu-id="70f72-175">Context.location.City</span><span class="sxs-lookup"><span data-stu-id="70f72-175">context.location.city</span></span> |<span data-ttu-id="70f72-176">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-176">string</span></span> |<span data-ttu-id="70f72-177">Derivado clientip, se conhecida</span><span class="sxs-lookup"><span data-stu-id="70f72-177">Derived from clientip, if known</span></span> |
+| <span data-ttu-id="70f72-178">Context.location.ClientIP</span><span class="sxs-lookup"><span data-stu-id="70f72-178">context.location.clientip</span></span> |<span data-ttu-id="70f72-179">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-179">string</span></span> |<span data-ttu-id="70f72-180">Última octagon é too0 anónimos.</span><span class="sxs-lookup"><span data-stu-id="70f72-180">Last octagon is anonymized too0.</span></span> |
+| <span data-ttu-id="70f72-181">Context.location.continent</span><span class="sxs-lookup"><span data-stu-id="70f72-181">context.location.continent</span></span> |<span data-ttu-id="70f72-182">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-182">string</span></span> | |
+| <span data-ttu-id="70f72-183">Context.location.Country</span><span class="sxs-lookup"><span data-stu-id="70f72-183">context.location.country</span></span> |<span data-ttu-id="70f72-184">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-184">string</span></span> | |
+| <span data-ttu-id="70f72-185">Context.location.Province</span><span class="sxs-lookup"><span data-stu-id="70f72-185">context.location.province</span></span> |<span data-ttu-id="70f72-186">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-186">string</span></span> |<span data-ttu-id="70f72-187">Distrito</span><span class="sxs-lookup"><span data-stu-id="70f72-187">State or province</span></span> |
+| <span data-ttu-id="70f72-188">Context.Operation.ID</span><span class="sxs-lookup"><span data-stu-id="70f72-188">context.operation.id</span></span> |<span data-ttu-id="70f72-189">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-189">string</span></span> |<span data-ttu-id="70f72-190">Itens que têm o mesmo id de operação são apresentadas como itens relacionados no portal de Olá de Olá.</span><span class="sxs-lookup"><span data-stu-id="70f72-190">Items that have hello same operation id are shown as Related Items in hello portal.</span></span> <span data-ttu-id="70f72-191">Normalmente, id do pedido Olá.</span><span class="sxs-lookup"><span data-stu-id="70f72-191">Usually hello request id.</span></span> |
+| <span data-ttu-id="70f72-192">Context.Operation.Name</span><span class="sxs-lookup"><span data-stu-id="70f72-192">context.operation.name</span></span> |<span data-ttu-id="70f72-193">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-193">string</span></span> |<span data-ttu-id="70f72-194">nome de URL ou a pedido</span><span class="sxs-lookup"><span data-stu-id="70f72-194">url or request name</span></span> |
+| <span data-ttu-id="70f72-195">context.operation.parentId</span><span class="sxs-lookup"><span data-stu-id="70f72-195">context.operation.parentId</span></span> |<span data-ttu-id="70f72-196">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-196">string</span></span> |<span data-ttu-id="70f72-197">Permite que os itens relacionados aninhados.</span><span class="sxs-lookup"><span data-stu-id="70f72-197">Allows nested related items.</span></span> |
+| <span data-ttu-id="70f72-198">Context.Session.ID</span><span class="sxs-lookup"><span data-stu-id="70f72-198">context.session.id</span></span> |<span data-ttu-id="70f72-199">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-199">string</span></span> |<span data-ttu-id="70f72-200">ID de um grupo de operações a partir de Olá mesma origem.</span><span class="sxs-lookup"><span data-stu-id="70f72-200">Id of a group of operations from hello same source.</span></span> <span data-ttu-id="70f72-201">Um período de 30 minutos sem uma extremidade de Olá sinais de operação de uma sessão.</span><span class="sxs-lookup"><span data-stu-id="70f72-201">A period of 30 minutes without an operation signals hello end of a session.</span></span> |
+| <span data-ttu-id="70f72-202">context.session.isFirst</span><span class="sxs-lookup"><span data-stu-id="70f72-202">context.session.isFirst</span></span> |<span data-ttu-id="70f72-203">Valor booleano</span><span class="sxs-lookup"><span data-stu-id="70f72-203">boolean</span></span> | |
+| <span data-ttu-id="70f72-204">context.user.accountAcquisitionDate</span><span class="sxs-lookup"><span data-stu-id="70f72-204">context.user.accountAcquisitionDate</span></span> |<span data-ttu-id="70f72-205">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-205">string</span></span> | |
+| <span data-ttu-id="70f72-206">context.user.anonAcquisitionDate</span><span class="sxs-lookup"><span data-stu-id="70f72-206">context.user.anonAcquisitionDate</span></span> |<span data-ttu-id="70f72-207">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-207">string</span></span> | |
+| <span data-ttu-id="70f72-208">context.user.anonId</span><span class="sxs-lookup"><span data-stu-id="70f72-208">context.user.anonId</span></span> |<span data-ttu-id="70f72-209">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-209">string</span></span> | |
+| <span data-ttu-id="70f72-210">context.user.authAcquisitionDate</span><span class="sxs-lookup"><span data-stu-id="70f72-210">context.user.authAcquisitionDate</span></span> |<span data-ttu-id="70f72-211">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-211">string</span></span> |[<span data-ttu-id="70f72-212">Utilizador autenticado</span><span class="sxs-lookup"><span data-stu-id="70f72-212">Authenticated User</span></span>](app-insights-api-custom-events-metrics.md#authenticated-users) |
+| <span data-ttu-id="70f72-213">context.user.isAuthenticated</span><span class="sxs-lookup"><span data-stu-id="70f72-213">context.user.isAuthenticated</span></span> |<span data-ttu-id="70f72-214">Valor booleano</span><span class="sxs-lookup"><span data-stu-id="70f72-214">boolean</span></span> | |
+| <span data-ttu-id="70f72-215">internal.data.documentVersion</span><span class="sxs-lookup"><span data-stu-id="70f72-215">internal.data.documentVersion</span></span> |<span data-ttu-id="70f72-216">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-216">string</span></span> | |
+| <span data-ttu-id="70f72-217">INTERNAL.data.ID</span><span class="sxs-lookup"><span data-stu-id="70f72-217">internal.data.id</span></span> |<span data-ttu-id="70f72-218">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-218">string</span></span> | |
 
-## <a name="events"></a>Eventos
-Eventos personalizados gerados pelo [trackevent ()](app-insights-api-custom-events-metrics.md#trackevent).
+## <a name="events"></a><span data-ttu-id="70f72-219">Eventos</span><span class="sxs-lookup"><span data-stu-id="70f72-219">Events</span></span>
+<span data-ttu-id="70f72-220">Eventos personalizados gerados pelo [trackevent ()](app-insights-api-custom-events-metrics.md#trackevent).</span><span class="sxs-lookup"><span data-stu-id="70f72-220">Custom events generated by [TrackEvent()](app-insights-api-custom-events-metrics.md#trackevent).</span></span>
 
-| Caminho | Tipo | Notas |
+| <span data-ttu-id="70f72-221">Caminho</span><span class="sxs-lookup"><span data-stu-id="70f72-221">Path</span></span> | <span data-ttu-id="70f72-222">Tipo</span><span class="sxs-lookup"><span data-stu-id="70f72-222">Type</span></span> | <span data-ttu-id="70f72-223">Notas</span><span class="sxs-lookup"><span data-stu-id="70f72-223">Notes</span></span> |
 | --- | --- | --- |
-| Contagem de eventos [0] |número inteiro |100 / ([amostragem](app-insights-sampling.md) taxa). Por exemplo, 4 =&gt; 25%. |
-| nome do evento [0] |Cadeia |Nome do evento.  Comprimento de máximo 250. |
-| url de eventos [0] |Cadeia | |
-| o evento [0] urlData.base |Cadeia | |
-| o evento [0] urlData.host |Cadeia | |
+| <span data-ttu-id="70f72-224">Contagem de eventos [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-224">event [0] count</span></span> |<span data-ttu-id="70f72-225">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-225">integer</span></span> |<span data-ttu-id="70f72-226">100 / ([amostragem](app-insights-sampling.md) taxa).</span><span class="sxs-lookup"><span data-stu-id="70f72-226">100/([sampling](app-insights-sampling.md) rate).</span></span> <span data-ttu-id="70f72-227">Por exemplo, 4 =&gt; 25%.</span><span class="sxs-lookup"><span data-stu-id="70f72-227">For example 4 =&gt; 25%.</span></span> |
+| <span data-ttu-id="70f72-228">nome do evento [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-228">event [0] name</span></span> |<span data-ttu-id="70f72-229">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-229">string</span></span> |<span data-ttu-id="70f72-230">Nome do evento.</span><span class="sxs-lookup"><span data-stu-id="70f72-230">Event name.</span></span>  <span data-ttu-id="70f72-231">Comprimento de máximo 250.</span><span class="sxs-lookup"><span data-stu-id="70f72-231">Max length 250.</span></span> |
+| <span data-ttu-id="70f72-232">url de eventos [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-232">event [0] url</span></span> |<span data-ttu-id="70f72-233">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-233">string</span></span> | |
+| <span data-ttu-id="70f72-234">o evento [0] urlData.base</span><span class="sxs-lookup"><span data-stu-id="70f72-234">event [0] urlData.base</span></span> |<span data-ttu-id="70f72-235">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-235">string</span></span> | |
+| <span data-ttu-id="70f72-236">o evento [0] urlData.host</span><span class="sxs-lookup"><span data-stu-id="70f72-236">event [0] urlData.host</span></span> |<span data-ttu-id="70f72-237">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-237">string</span></span> | |
 
-## <a name="exceptions"></a>Exceções
-Relatórios [exceções](app-insights-asp-net-exceptions.md) em hello do servidor e no browser Olá.
+## <a name="exceptions"></a><span data-ttu-id="70f72-238">Exceções</span><span class="sxs-lookup"><span data-stu-id="70f72-238">Exceptions</span></span>
+<span data-ttu-id="70f72-239">Relatórios [exceções](app-insights-asp-net-exceptions.md) em hello do servidor e no browser Olá.</span><span class="sxs-lookup"><span data-stu-id="70f72-239">Reports [exceptions](app-insights-asp-net-exceptions.md) in hello server and in hello browser.</span></span>
 
-| Caminho | Tipo | Notas |
+| <span data-ttu-id="70f72-240">Caminho</span><span class="sxs-lookup"><span data-stu-id="70f72-240">Path</span></span> | <span data-ttu-id="70f72-241">Tipo</span><span class="sxs-lookup"><span data-stu-id="70f72-241">Type</span></span> | <span data-ttu-id="70f72-242">Notas</span><span class="sxs-lookup"><span data-stu-id="70f72-242">Notes</span></span> |
 | --- | --- | --- |
-| assemblagem basicException [0] |Cadeia | |
-| Contagem de basicException [0] |número inteiro |100 / ([amostragem](app-insights-sampling.md) taxa). Por exemplo, 4 =&gt; 25%. |
-| exceptionGroup basicException [0] |Cadeia | |
-| exceptionType basicException [0] |Cadeia | |
-| failedUserCodeMethod basicException [0] |Cadeia | |
-| failedUserCodeAssembly basicException [0] |Cadeia | |
-| handledAt basicException [0] |Cadeia | |
-| hasFullStack basicException [0] |Valor booleano | |
-| id de basicException [0] |Cadeia | |
-| método de basicException [0] |Cadeia | |
-| mensagem de basicException [0] |Cadeia |Mensagem de exceção. Comprimento de máximo 10k. |
-| outerExceptionMessage basicException [0] |Cadeia | |
-| outerExceptionThrownAtAssembly basicException [0] |Cadeia | |
-| outerExceptionThrownAtMethod basicException [0] |Cadeia | |
-| outerExceptionType basicException [0] |Cadeia | |
-| outerId basicException [0] |Cadeia | |
-| assemblagem de parsedStack [0] basicException [0] |Cadeia | |
-| o nome de ficheiro do basicException [0] parsedStack [0] |Cadeia | |
-| nível de parsedStack [0] basicException [0] |número inteiro | |
-| linha de parsedStack [0] basicException [0] |número inteiro | |
-| método de parsedStack [0] basicException [0] |Cadeia | |
-| pilha basicException [0] |Cadeia |Comprimento de máximo 10 mil |
-| typeName basicException [0] |Cadeia | |
+| <span data-ttu-id="70f72-243">assemblagem basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-243">basicException [0] assembly</span></span> |<span data-ttu-id="70f72-244">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-244">string</span></span> | |
+| <span data-ttu-id="70f72-245">Contagem de basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-245">basicException [0] count</span></span> |<span data-ttu-id="70f72-246">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-246">integer</span></span> |<span data-ttu-id="70f72-247">100 / ([amostragem](app-insights-sampling.md) taxa).</span><span class="sxs-lookup"><span data-stu-id="70f72-247">100/([sampling](app-insights-sampling.md) rate).</span></span> <span data-ttu-id="70f72-248">Por exemplo, 4 =&gt; 25%.</span><span class="sxs-lookup"><span data-stu-id="70f72-248">For example 4 =&gt; 25%.</span></span> |
+| <span data-ttu-id="70f72-249">exceptionGroup basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-249">basicException [0] exceptionGroup</span></span> |<span data-ttu-id="70f72-250">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-250">string</span></span> | |
+| <span data-ttu-id="70f72-251">exceptionType basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-251">basicException [0] exceptionType</span></span> |<span data-ttu-id="70f72-252">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-252">string</span></span> | |
+| <span data-ttu-id="70f72-253">failedUserCodeMethod basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-253">basicException [0] failedUserCodeMethod</span></span> |<span data-ttu-id="70f72-254">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-254">string</span></span> | |
+| <span data-ttu-id="70f72-255">failedUserCodeAssembly basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-255">basicException [0] failedUserCodeAssembly</span></span> |<span data-ttu-id="70f72-256">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-256">string</span></span> | |
+| <span data-ttu-id="70f72-257">handledAt basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-257">basicException [0] handledAt</span></span> |<span data-ttu-id="70f72-258">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-258">string</span></span> | |
+| <span data-ttu-id="70f72-259">hasFullStack basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-259">basicException [0] hasFullStack</span></span> |<span data-ttu-id="70f72-260">Valor booleano</span><span class="sxs-lookup"><span data-stu-id="70f72-260">boolean</span></span> | |
+| <span data-ttu-id="70f72-261">id de basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-261">basicException [0] id</span></span> |<span data-ttu-id="70f72-262">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-262">string</span></span> | |
+| <span data-ttu-id="70f72-263">método de basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-263">basicException [0] method</span></span> |<span data-ttu-id="70f72-264">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-264">string</span></span> | |
+| <span data-ttu-id="70f72-265">mensagem de basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-265">basicException [0] message</span></span> |<span data-ttu-id="70f72-266">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-266">string</span></span> |<span data-ttu-id="70f72-267">Mensagem de exceção.</span><span class="sxs-lookup"><span data-stu-id="70f72-267">Exception message.</span></span> <span data-ttu-id="70f72-268">Comprimento de máximo 10k.</span><span class="sxs-lookup"><span data-stu-id="70f72-268">Max length 10k.</span></span> |
+| <span data-ttu-id="70f72-269">outerExceptionMessage basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-269">basicException [0] outerExceptionMessage</span></span> |<span data-ttu-id="70f72-270">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-270">string</span></span> | |
+| <span data-ttu-id="70f72-271">outerExceptionThrownAtAssembly basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-271">basicException [0] outerExceptionThrownAtAssembly</span></span> |<span data-ttu-id="70f72-272">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-272">string</span></span> | |
+| <span data-ttu-id="70f72-273">outerExceptionThrownAtMethod basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-273">basicException [0] outerExceptionThrownAtMethod</span></span> |<span data-ttu-id="70f72-274">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-274">string</span></span> | |
+| <span data-ttu-id="70f72-275">outerExceptionType basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-275">basicException [0] outerExceptionType</span></span> |<span data-ttu-id="70f72-276">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-276">string</span></span> | |
+| <span data-ttu-id="70f72-277">outerId basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-277">basicException [0] outerId</span></span> |<span data-ttu-id="70f72-278">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-278">string</span></span> | |
+| <span data-ttu-id="70f72-279">assemblagem de parsedStack [0] basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-279">basicException [0] parsedStack [0] assembly</span></span> |<span data-ttu-id="70f72-280">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-280">string</span></span> | |
+| <span data-ttu-id="70f72-281">o nome de ficheiro do basicException [0] parsedStack [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-281">basicException [0] parsedStack [0] fileName</span></span> |<span data-ttu-id="70f72-282">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-282">string</span></span> | |
+| <span data-ttu-id="70f72-283">nível de parsedStack [0] basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-283">basicException [0] parsedStack [0] level</span></span> |<span data-ttu-id="70f72-284">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-284">integer</span></span> | |
+| <span data-ttu-id="70f72-285">linha de parsedStack [0] basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-285">basicException [0] parsedStack [0] line</span></span> |<span data-ttu-id="70f72-286">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-286">integer</span></span> | |
+| <span data-ttu-id="70f72-287">método de parsedStack [0] basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-287">basicException [0] parsedStack [0] method</span></span> |<span data-ttu-id="70f72-288">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-288">string</span></span> | |
+| <span data-ttu-id="70f72-289">pilha basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-289">basicException [0] stack</span></span> |<span data-ttu-id="70f72-290">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-290">string</span></span> |<span data-ttu-id="70f72-291">Comprimento de máximo 10 mil</span><span class="sxs-lookup"><span data-stu-id="70f72-291">Max length 10k</span></span> |
+| <span data-ttu-id="70f72-292">typeName basicException [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-292">basicException [0] typeName</span></span> |<span data-ttu-id="70f72-293">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-293">string</span></span> | |
 
-## <a name="trace-messages"></a>Mensagens de rastreio
-Enviada pelo [TrackTrace](app-insights-api-custom-events-metrics.md#tracktrace)e por Olá [registo adaptadores](app-insights-asp-net-trace-logs.md).
+## <a name="trace-messages"></a><span data-ttu-id="70f72-294">Mensagens de rastreio</span><span class="sxs-lookup"><span data-stu-id="70f72-294">Trace Messages</span></span>
+<span data-ttu-id="70f72-295">Enviada pelo [TrackTrace](app-insights-api-custom-events-metrics.md#tracktrace)e por Olá [registo adaptadores](app-insights-asp-net-trace-logs.md).</span><span class="sxs-lookup"><span data-stu-id="70f72-295">Sent by [TrackTrace](app-insights-api-custom-events-metrics.md#tracktrace), and by hello [logging adapters](app-insights-asp-net-trace-logs.md).</span></span>
 
-| Caminho | Tipo | Notas |
+| <span data-ttu-id="70f72-296">Caminho</span><span class="sxs-lookup"><span data-stu-id="70f72-296">Path</span></span> | <span data-ttu-id="70f72-297">Tipo</span><span class="sxs-lookup"><span data-stu-id="70f72-297">Type</span></span> | <span data-ttu-id="70f72-298">Notas</span><span class="sxs-lookup"><span data-stu-id="70f72-298">Notes</span></span> |
 | --- | --- | --- |
-| a mensagem [0] loggerName |Cadeia | |
-| parâmetros de mensagem [0] |Cadeia | |
-| mensagem [0] em bruto |Cadeia |mensagem do registo Olá, comprimento máximo de 10 mil. |
-| nível de gravidade de mensagem [0] |Cadeia | |
+| <span data-ttu-id="70f72-299">a mensagem [0] loggerName</span><span class="sxs-lookup"><span data-stu-id="70f72-299">message [0] loggerName</span></span> |<span data-ttu-id="70f72-300">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-300">string</span></span> | |
+| <span data-ttu-id="70f72-301">parâmetros de mensagem [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-301">message [0] parameters</span></span> |<span data-ttu-id="70f72-302">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-302">string</span></span> | |
+| <span data-ttu-id="70f72-303">mensagem [0] em bruto</span><span class="sxs-lookup"><span data-stu-id="70f72-303">message [0] raw</span></span> |<span data-ttu-id="70f72-304">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-304">string</span></span> |<span data-ttu-id="70f72-305">mensagem do registo Olá, comprimento máximo de 10 mil.</span><span class="sxs-lookup"><span data-stu-id="70f72-305">hello log message, max length 10k.</span></span> |
+| <span data-ttu-id="70f72-306">nível de gravidade de mensagem [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-306">message [0] severityLevel</span></span> |<span data-ttu-id="70f72-307">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-307">string</span></span> | |
 
-## <a name="remote-dependency"></a>Dependência remota
-Enviada pelo TrackDependency. Utilizado tooreport desempenho e a utilização de [chama toodependencies](app-insights-asp-net-dependencies.md) no servidor de Olá e chamadas AJAX no browser Olá.
+## <a name="remote-dependency"></a><span data-ttu-id="70f72-308">Dependência remota</span><span class="sxs-lookup"><span data-stu-id="70f72-308">Remote dependency</span></span>
+<span data-ttu-id="70f72-309">Enviada pelo TrackDependency.</span><span class="sxs-lookup"><span data-stu-id="70f72-309">Sent by TrackDependency.</span></span> <span data-ttu-id="70f72-310">Utilizado tooreport desempenho e a utilização de [chama toodependencies](app-insights-asp-net-dependencies.md) no servidor de Olá e chamadas AJAX no browser Olá.</span><span class="sxs-lookup"><span data-stu-id="70f72-310">Used tooreport performance and usage of [calls toodependencies](app-insights-asp-net-dependencies.md) in hello server, and AJAX calls in hello browser.</span></span>
 
-| Caminho | Tipo | Notas |
+| <span data-ttu-id="70f72-311">Caminho</span><span class="sxs-lookup"><span data-stu-id="70f72-311">Path</span></span> | <span data-ttu-id="70f72-312">Tipo</span><span class="sxs-lookup"><span data-stu-id="70f72-312">Type</span></span> | <span data-ttu-id="70f72-313">Notas</span><span class="sxs-lookup"><span data-stu-id="70f72-313">Notes</span></span> |
 | --- | --- | --- |
-| async remoteDependency [0] |Valor booleano | |
-| baseName remoteDependency [0] |Cadeia | |
-| commandName remoteDependency [0] |Cadeia |Por exemplo "home/index" |
-| Contagem de remoteDependency [0] |número inteiro |100 / ([amostragem](app-insights-sampling.md) taxa). Por exemplo, 4 =&gt; 25%. |
-| dependencyTypeName remoteDependency [0] |Cadeia |HTTP, SQL,... |
-| durationMetric.value remoteDependency [0] |Número |Tempo da chamada toocompletion da resposta pela dependência |
-| id de remoteDependency [0] |Cadeia | |
-| nome de remoteDependency [0] |Cadeia |URL. Comprimento de máximo 250. |
-| resultCode remoteDependency [0] |Cadeia |de dependência HTTP |
-| êxito remoteDependency [0] |Valor booleano | |
-| tipo de remoteDependency [0] |Cadeia |Http, Sql,... |
-| url de remoteDependency [0] |Cadeia |Comprimento de máximo 2000 |
-| urlData.base remoteDependency [0] |Cadeia |Comprimento de máximo 2000 |
-| urlData.hashTag remoteDependency [0] |Cadeia | |
-| urlData.host remoteDependency [0] |Cadeia |Comprimento de máximo 200 |
+| <span data-ttu-id="70f72-314">async remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-314">remoteDependency [0] async</span></span> |<span data-ttu-id="70f72-315">Valor booleano</span><span class="sxs-lookup"><span data-stu-id="70f72-315">boolean</span></span> | |
+| <span data-ttu-id="70f72-316">baseName remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-316">remoteDependency [0] baseName</span></span> |<span data-ttu-id="70f72-317">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-317">string</span></span> | |
+| <span data-ttu-id="70f72-318">commandName remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-318">remoteDependency [0] commandName</span></span> |<span data-ttu-id="70f72-319">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-319">string</span></span> |<span data-ttu-id="70f72-320">Por exemplo "home/index"</span><span class="sxs-lookup"><span data-stu-id="70f72-320">For example "home/index"</span></span> |
+| <span data-ttu-id="70f72-321">Contagem de remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-321">remoteDependency [0] count</span></span> |<span data-ttu-id="70f72-322">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-322">integer</span></span> |<span data-ttu-id="70f72-323">100 / ([amostragem](app-insights-sampling.md) taxa).</span><span class="sxs-lookup"><span data-stu-id="70f72-323">100/([sampling](app-insights-sampling.md) rate).</span></span> <span data-ttu-id="70f72-324">Por exemplo, 4 =&gt; 25%.</span><span class="sxs-lookup"><span data-stu-id="70f72-324">For example 4 =&gt; 25%.</span></span> |
+| <span data-ttu-id="70f72-325">dependencyTypeName remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-325">remoteDependency [0] dependencyTypeName</span></span> |<span data-ttu-id="70f72-326">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-326">string</span></span> |<span data-ttu-id="70f72-327">HTTP, SQL,...</span><span class="sxs-lookup"><span data-stu-id="70f72-327">HTTP, SQL, ...</span></span> |
+| <span data-ttu-id="70f72-328">durationMetric.value remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-328">remoteDependency [0] durationMetric.value</span></span> |<span data-ttu-id="70f72-329">Número</span><span class="sxs-lookup"><span data-stu-id="70f72-329">number</span></span> |<span data-ttu-id="70f72-330">Tempo da chamada toocompletion da resposta pela dependência</span><span class="sxs-lookup"><span data-stu-id="70f72-330">Time from call toocompletion of response by dependency</span></span> |
+| <span data-ttu-id="70f72-331">id de remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-331">remoteDependency [0] id</span></span> |<span data-ttu-id="70f72-332">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-332">string</span></span> | |
+| <span data-ttu-id="70f72-333">nome de remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-333">remoteDependency [0] name</span></span> |<span data-ttu-id="70f72-334">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-334">string</span></span> |<span data-ttu-id="70f72-335">URL.</span><span class="sxs-lookup"><span data-stu-id="70f72-335">Url.</span></span> <span data-ttu-id="70f72-336">Comprimento de máximo 250.</span><span class="sxs-lookup"><span data-stu-id="70f72-336">Max length 250.</span></span> |
+| <span data-ttu-id="70f72-337">resultCode remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-337">remoteDependency [0] resultCode</span></span> |<span data-ttu-id="70f72-338">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-338">string</span></span> |<span data-ttu-id="70f72-339">de dependência HTTP</span><span class="sxs-lookup"><span data-stu-id="70f72-339">from HTTP dependency</span></span> |
+| <span data-ttu-id="70f72-340">êxito remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-340">remoteDependency [0] success</span></span> |<span data-ttu-id="70f72-341">Valor booleano</span><span class="sxs-lookup"><span data-stu-id="70f72-341">boolean</span></span> | |
+| <span data-ttu-id="70f72-342">tipo de remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-342">remoteDependency [0] type</span></span> |<span data-ttu-id="70f72-343">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-343">string</span></span> |<span data-ttu-id="70f72-344">Http, Sql,...</span><span class="sxs-lookup"><span data-stu-id="70f72-344">Http, Sql,...</span></span> |
+| <span data-ttu-id="70f72-345">url de remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-345">remoteDependency [0] url</span></span> |<span data-ttu-id="70f72-346">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-346">string</span></span> |<span data-ttu-id="70f72-347">Comprimento de máximo 2000</span><span class="sxs-lookup"><span data-stu-id="70f72-347">Max length 2000</span></span> |
+| <span data-ttu-id="70f72-348">urlData.base remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-348">remoteDependency [0] urlData.base</span></span> |<span data-ttu-id="70f72-349">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-349">string</span></span> |<span data-ttu-id="70f72-350">Comprimento de máximo 2000</span><span class="sxs-lookup"><span data-stu-id="70f72-350">Max length 2000</span></span> |
+| <span data-ttu-id="70f72-351">urlData.hashTag remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-351">remoteDependency [0] urlData.hashTag</span></span> |<span data-ttu-id="70f72-352">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-352">string</span></span> | |
+| <span data-ttu-id="70f72-353">urlData.host remoteDependency [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-353">remoteDependency [0] urlData.host</span></span> |<span data-ttu-id="70f72-354">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-354">string</span></span> |<span data-ttu-id="70f72-355">Comprimento de máximo 200</span><span class="sxs-lookup"><span data-stu-id="70f72-355">Max length 200</span></span> |
 
-## <a name="requests"></a>Pedidos
-Enviada pelo [TrackRequest](app-insights-api-custom-events-metrics.md#trackrequest). os módulos de padrão de Olá utilizam este tempo de resposta de servidor tooreports, medido no servidor de Olá.
+## <a name="requests"></a><span data-ttu-id="70f72-356">Pedidos</span><span class="sxs-lookup"><span data-stu-id="70f72-356">Requests</span></span>
+<span data-ttu-id="70f72-357">Enviada pelo [TrackRequest](app-insights-api-custom-events-metrics.md#trackrequest).</span><span class="sxs-lookup"><span data-stu-id="70f72-357">Sent by [TrackRequest](app-insights-api-custom-events-metrics.md#trackrequest).</span></span> <span data-ttu-id="70f72-358">os módulos de padrão de Olá utilizam este tempo de resposta de servidor tooreports, medido no servidor de Olá.</span><span class="sxs-lookup"><span data-stu-id="70f72-358">hello standard modules use this tooreports server response time, measured at hello server.</span></span>
 
-| Caminho | Tipo | Notas |
+| <span data-ttu-id="70f72-359">Caminho</span><span class="sxs-lookup"><span data-stu-id="70f72-359">Path</span></span> | <span data-ttu-id="70f72-360">Tipo</span><span class="sxs-lookup"><span data-stu-id="70f72-360">Type</span></span> | <span data-ttu-id="70f72-361">Notas</span><span class="sxs-lookup"><span data-stu-id="70f72-361">Notes</span></span> |
 | --- | --- | --- |
-| Contagem de pedido [0] |número inteiro |100 / ([amostragem](app-insights-sampling.md) taxa). Por exemplo: 4 =&gt; 25%. |
-| durationMetric.value pedido [0] |Número |Tempo do pedido de tooresponse atrasada. 1e7 = = 1s |
-| id do pedido [0] |Cadeia |Id de operação |
-| nome do pedido [0] |Cadeia |GET/POST + url base.  Comprimento de máximo 250 |
-| responseCode pedido [0] |número inteiro |HTTP resposta enviada tooclient |
-| sucesso de pedido [0] |Valor booleano |Predefinição = = (responseCode &lt; 400) |
-| url do pedido [0] |Cadeia |Não, incluindo anfitriões |
-| urlData.base pedido [0] |Cadeia | |
-| urlData.hashTag pedido [0] |Cadeia | |
-| urlData.host pedido [0] |Cadeia | |
+| <span data-ttu-id="70f72-362">Contagem de pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-362">request [0] count</span></span> |<span data-ttu-id="70f72-363">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-363">integer</span></span> |<span data-ttu-id="70f72-364">100 / ([amostragem](app-insights-sampling.md) taxa).</span><span class="sxs-lookup"><span data-stu-id="70f72-364">100/([sampling](app-insights-sampling.md) rate).</span></span> <span data-ttu-id="70f72-365">Por exemplo: 4 =&gt; 25%.</span><span class="sxs-lookup"><span data-stu-id="70f72-365">For example: 4 =&gt; 25%.</span></span> |
+| <span data-ttu-id="70f72-366">durationMetric.value pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-366">request [0] durationMetric.value</span></span> |<span data-ttu-id="70f72-367">Número</span><span class="sxs-lookup"><span data-stu-id="70f72-367">number</span></span> |<span data-ttu-id="70f72-368">Tempo do pedido de tooresponse atrasada.</span><span class="sxs-lookup"><span data-stu-id="70f72-368">Time from request arriving tooresponse.</span></span> <span data-ttu-id="70f72-369">1e7 = = 1s</span><span class="sxs-lookup"><span data-stu-id="70f72-369">1e7 == 1s</span></span> |
+| <span data-ttu-id="70f72-370">id do pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-370">request [0] id</span></span> |<span data-ttu-id="70f72-371">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-371">string</span></span> |<span data-ttu-id="70f72-372">Id de operação</span><span class="sxs-lookup"><span data-stu-id="70f72-372">Operation id</span></span> |
+| <span data-ttu-id="70f72-373">nome do pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-373">request [0] name</span></span> |<span data-ttu-id="70f72-374">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-374">string</span></span> |<span data-ttu-id="70f72-375">GET/POST + url base.</span><span class="sxs-lookup"><span data-stu-id="70f72-375">GET/POST + url base.</span></span>  <span data-ttu-id="70f72-376">Comprimento de máximo 250</span><span class="sxs-lookup"><span data-stu-id="70f72-376">Max length 250</span></span> |
+| <span data-ttu-id="70f72-377">responseCode pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-377">request [0] responseCode</span></span> |<span data-ttu-id="70f72-378">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-378">integer</span></span> |<span data-ttu-id="70f72-379">HTTP resposta enviada tooclient</span><span class="sxs-lookup"><span data-stu-id="70f72-379">HTTP response sent tooclient</span></span> |
+| <span data-ttu-id="70f72-380">sucesso de pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-380">request [0] success</span></span> |<span data-ttu-id="70f72-381">Valor booleano</span><span class="sxs-lookup"><span data-stu-id="70f72-381">boolean</span></span> |<span data-ttu-id="70f72-382">Predefinição = = (responseCode &lt; 400)</span><span class="sxs-lookup"><span data-stu-id="70f72-382">Default == (responseCode &lt; 400)</span></span> |
+| <span data-ttu-id="70f72-383">url do pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-383">request [0] url</span></span> |<span data-ttu-id="70f72-384">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-384">string</span></span> |<span data-ttu-id="70f72-385">Não, incluindo anfitriões</span><span class="sxs-lookup"><span data-stu-id="70f72-385">Not including host</span></span> |
+| <span data-ttu-id="70f72-386">urlData.base pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-386">request [0] urlData.base</span></span> |<span data-ttu-id="70f72-387">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-387">string</span></span> | |
+| <span data-ttu-id="70f72-388">urlData.hashTag pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-388">request [0] urlData.hashTag</span></span> |<span data-ttu-id="70f72-389">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-389">string</span></span> | |
+| <span data-ttu-id="70f72-390">urlData.host pedido [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-390">request [0] urlData.host</span></span> |<span data-ttu-id="70f72-391">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-391">string</span></span> | |
 
-## <a name="page-view-performance"></a>Desempenho de vista de página
-Enviado pelo browser de Olá. Medidas Olá tempo tooprocess uma página, do utilizador iniciar Olá pedido toodisplay concluída (excluindo as chamadas AJAX assíncrona).
+## <a name="page-view-performance"></a><span data-ttu-id="70f72-392">Desempenho de vista de página</span><span class="sxs-lookup"><span data-stu-id="70f72-392">Page View Performance</span></span>
+<span data-ttu-id="70f72-393">Enviado pelo browser de Olá.</span><span class="sxs-lookup"><span data-stu-id="70f72-393">Sent by hello browser.</span></span> <span data-ttu-id="70f72-394">Medidas Olá tempo tooprocess uma página, do utilizador iniciar Olá pedido toodisplay concluída (excluindo as chamadas AJAX assíncrona).</span><span class="sxs-lookup"><span data-stu-id="70f72-394">Measures hello time tooprocess a page, from user initiating hello request toodisplay complete (excluding async AJAX calls).</span></span>
 
-Mostram valores de contexto SO de cliente e a versão do browser.
+<span data-ttu-id="70f72-395">Mostram valores de contexto SO de cliente e a versão do browser.</span><span class="sxs-lookup"><span data-stu-id="70f72-395">Context values show client OS and browser version.</span></span>
 
-| Caminho | Tipo | Notas |
+| <span data-ttu-id="70f72-396">Caminho</span><span class="sxs-lookup"><span data-stu-id="70f72-396">Path</span></span> | <span data-ttu-id="70f72-397">Tipo</span><span class="sxs-lookup"><span data-stu-id="70f72-397">Type</span></span> | <span data-ttu-id="70f72-398">Notas</span><span class="sxs-lookup"><span data-stu-id="70f72-398">Notes</span></span> |
 | --- | --- | --- |
-| clientProcess.value clientPerformance [0] |número inteiro |Hora de fim da página do Olá HTML toodisplaying hello a receber. |
-| nome de clientPerformance [0] |Cadeia | |
-| networkConnection.value clientPerformance [0] |número inteiro |Tempo decorrido tooestablish uma ligação de rede. |
-| receiveRequest.value clientPerformance [0] |número inteiro |Hora de fim de envio em reply Olá de tooreceiving Olá pedido HTML. |
-| sendRequest.value clientPerformance [0] |número inteiro |Tempo decorrido toosend pedido de Olá HTTP. |
-| total.value clientPerformance [0] |número inteiro |Tempo de iniciar a página de Olá toosend Olá pedido toodisplaying. |
-| url de clientPerformance [0] |Cadeia |URL deste pedido |
-| urlData.base clientPerformance [0] |Cadeia | |
-| urlData.hashTag clientPerformance [0] |Cadeia | |
-| urlData.host clientPerformance [0] |Cadeia | |
-| urlData.protocol clientPerformance [0] |Cadeia | |
+| <span data-ttu-id="70f72-399">clientProcess.value clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-399">clientPerformance [0] clientProcess.value</span></span> |<span data-ttu-id="70f72-400">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-400">integer</span></span> |<span data-ttu-id="70f72-401">Hora de fim da página do Olá HTML toodisplaying hello a receber.</span><span class="sxs-lookup"><span data-stu-id="70f72-401">Time from end of receiving hello HTML toodisplaying hello page.</span></span> |
+| <span data-ttu-id="70f72-402">nome de clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-402">clientPerformance [0] name</span></span> |<span data-ttu-id="70f72-403">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-403">string</span></span> | |
+| <span data-ttu-id="70f72-404">networkConnection.value clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-404">clientPerformance [0] networkConnection.value</span></span> |<span data-ttu-id="70f72-405">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-405">integer</span></span> |<span data-ttu-id="70f72-406">Tempo decorrido tooestablish uma ligação de rede.</span><span class="sxs-lookup"><span data-stu-id="70f72-406">Time taken tooestablish a network connection.</span></span> |
+| <span data-ttu-id="70f72-407">receiveRequest.value clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-407">clientPerformance [0] receiveRequest.value</span></span> |<span data-ttu-id="70f72-408">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-408">integer</span></span> |<span data-ttu-id="70f72-409">Hora de fim de envio em reply Olá de tooreceiving Olá pedido HTML.</span><span class="sxs-lookup"><span data-stu-id="70f72-409">Time from end of sending hello request tooreceiving hello HTML in reply.</span></span> |
+| <span data-ttu-id="70f72-410">sendRequest.value clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-410">clientPerformance [0] sendRequest.value</span></span> |<span data-ttu-id="70f72-411">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-411">integer</span></span> |<span data-ttu-id="70f72-412">Tempo decorrido toosend pedido de Olá HTTP.</span><span class="sxs-lookup"><span data-stu-id="70f72-412">Time from taken toosend hello HTTP request.</span></span> |
+| <span data-ttu-id="70f72-413">total.value clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-413">clientPerformance [0] total.value</span></span> |<span data-ttu-id="70f72-414">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-414">integer</span></span> |<span data-ttu-id="70f72-415">Tempo de iniciar a página de Olá toosend Olá pedido toodisplaying.</span><span class="sxs-lookup"><span data-stu-id="70f72-415">Time from starting toosend hello request toodisplaying hello page.</span></span> |
+| <span data-ttu-id="70f72-416">url de clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-416">clientPerformance [0] url</span></span> |<span data-ttu-id="70f72-417">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-417">string</span></span> |<span data-ttu-id="70f72-418">URL deste pedido</span><span class="sxs-lookup"><span data-stu-id="70f72-418">URL of this request</span></span> |
+| <span data-ttu-id="70f72-419">urlData.base clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-419">clientPerformance [0] urlData.base</span></span> |<span data-ttu-id="70f72-420">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-420">string</span></span> | |
+| <span data-ttu-id="70f72-421">urlData.hashTag clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-421">clientPerformance [0] urlData.hashTag</span></span> |<span data-ttu-id="70f72-422">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-422">string</span></span> | |
+| <span data-ttu-id="70f72-423">urlData.host clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-423">clientPerformance [0] urlData.host</span></span> |<span data-ttu-id="70f72-424">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-424">string</span></span> | |
+| <span data-ttu-id="70f72-425">urlData.protocol clientPerformance [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-425">clientPerformance [0] urlData.protocol</span></span> |<span data-ttu-id="70f72-426">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-426">string</span></span> | |
 
-## <a name="page-views"></a>Vistas de página
-Enviada pelo trackPageView() ou [stopTrackPage](app-insights-api-custom-events-metrics.md#page-views)
+## <a name="page-views"></a><span data-ttu-id="70f72-427">Vistas de página</span><span class="sxs-lookup"><span data-stu-id="70f72-427">Page Views</span></span>
+<span data-ttu-id="70f72-428">Enviada pelo trackPageView() ou [stopTrackPage](app-insights-api-custom-events-metrics.md#page-views)</span><span class="sxs-lookup"><span data-stu-id="70f72-428">Sent by trackPageView() or [stopTrackPage](app-insights-api-custom-events-metrics.md#page-views)</span></span>
 
-| Caminho | Tipo | Notas |
+| <span data-ttu-id="70f72-429">Caminho</span><span class="sxs-lookup"><span data-stu-id="70f72-429">Path</span></span> | <span data-ttu-id="70f72-430">Tipo</span><span class="sxs-lookup"><span data-stu-id="70f72-430">Type</span></span> | <span data-ttu-id="70f72-431">Notas</span><span class="sxs-lookup"><span data-stu-id="70f72-431">Notes</span></span> |
 | --- | --- | --- |
-| Contagem de visualizações [0] |número inteiro |100 / ([amostragem](app-insights-sampling.md) taxa). Por exemplo, 4 =&gt; 25%. |
-| Ver durationMetric.value [0] |número inteiro |Valor, opcionalmente, definido na trackPageView() ou startTrackPage() - stopTrackPage(). Não Olá mesmo como clientPerformance valores. |
-| nome da vista [0] |Cadeia |Título de página.  Comprimento de máximo 250 |
-| url da vista [0] |Cadeia | |
-| Ver urlData.base [0] |Cadeia | |
-| Ver urlData.hashTag [0] |Cadeia | |
-| Ver urlData.host [0] |Cadeia | |
+| <span data-ttu-id="70f72-432">Contagem de visualizações [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-432">view [0] count</span></span> |<span data-ttu-id="70f72-433">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-433">integer</span></span> |<span data-ttu-id="70f72-434">100 / ([amostragem](app-insights-sampling.md) taxa).</span><span class="sxs-lookup"><span data-stu-id="70f72-434">100/([sampling](app-insights-sampling.md) rate).</span></span> <span data-ttu-id="70f72-435">Por exemplo, 4 =&gt; 25%.</span><span class="sxs-lookup"><span data-stu-id="70f72-435">For example 4 =&gt; 25%.</span></span> |
+| <span data-ttu-id="70f72-436">Ver durationMetric.value [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-436">view [0] durationMetric.value</span></span> |<span data-ttu-id="70f72-437">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-437">integer</span></span> |<span data-ttu-id="70f72-438">Valor, opcionalmente, definido na trackPageView() ou startTrackPage() - stopTrackPage().</span><span class="sxs-lookup"><span data-stu-id="70f72-438">Value optionally set in trackPageView() or by startTrackPage() - stopTrackPage().</span></span> <span data-ttu-id="70f72-439">Não Olá mesmo como clientPerformance valores.</span><span class="sxs-lookup"><span data-stu-id="70f72-439">Not hello same as clientPerformance values.</span></span> |
+| <span data-ttu-id="70f72-440">nome da vista [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-440">view [0] name</span></span> |<span data-ttu-id="70f72-441">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-441">string</span></span> |<span data-ttu-id="70f72-442">Título de página.</span><span class="sxs-lookup"><span data-stu-id="70f72-442">Page title.</span></span>  <span data-ttu-id="70f72-443">Comprimento de máximo 250</span><span class="sxs-lookup"><span data-stu-id="70f72-443">Max length 250</span></span> |
+| <span data-ttu-id="70f72-444">url da vista [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-444">view [0] url</span></span> |<span data-ttu-id="70f72-445">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-445">string</span></span> | |
+| <span data-ttu-id="70f72-446">Ver urlData.base [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-446">view [0] urlData.base</span></span> |<span data-ttu-id="70f72-447">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-447">string</span></span> | |
+| <span data-ttu-id="70f72-448">Ver urlData.hashTag [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-448">view [0] urlData.hashTag</span></span> |<span data-ttu-id="70f72-449">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-449">string</span></span> | |
+| <span data-ttu-id="70f72-450">Ver urlData.host [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-450">view [0] urlData.host</span></span> |<span data-ttu-id="70f72-451">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-451">string</span></span> | |
 
-## <a name="availability"></a>Disponibilidade
-Relatórios [testes web de disponibilidade](app-insights-monitor-web-app-availability.md).
+## <a name="availability"></a><span data-ttu-id="70f72-452">Disponibilidade</span><span class="sxs-lookup"><span data-stu-id="70f72-452">Availability</span></span>
+<span data-ttu-id="70f72-453">Relatórios [testes web de disponibilidade](app-insights-monitor-web-app-availability.md).</span><span class="sxs-lookup"><span data-stu-id="70f72-453">Reports [availability web tests](app-insights-monitor-web-app-availability.md).</span></span>
 
-| Caminho | Tipo | Notas |
+| <span data-ttu-id="70f72-454">Caminho</span><span class="sxs-lookup"><span data-stu-id="70f72-454">Path</span></span> | <span data-ttu-id="70f72-455">Tipo</span><span class="sxs-lookup"><span data-stu-id="70f72-455">Type</span></span> | <span data-ttu-id="70f72-456">Notas</span><span class="sxs-lookup"><span data-stu-id="70f72-456">Notes</span></span> |
 | --- | --- | --- |
-| availabilityMetric.name disponibilidade [0] |Cadeia |disponibilidade |
-| availabilityMetric.value disponibilidade [0] |Número |1.0 ou 0,0 |
-| Contagem de disponibilidade [0] |número inteiro |100 / ([amostragem](app-insights-sampling.md) taxa). Por exemplo, 4 =&gt; 25%. |
-| dataSizeMetric.name disponibilidade [0] |Cadeia | |
-| dataSizeMetric.value disponibilidade [0] |número inteiro | |
-| durationMetric.name disponibilidade [0] |Cadeia | |
-| durationMetric.value disponibilidade [0] |Número |Duração de teste. 1e7 = = 1s |
-| mensagem de disponibilidade [0] |Cadeia |Falha de diagnóstico |
-| resultado de disponibilidade [0] |Cadeia |Passagem/falhar |
-| runLocation disponibilidade [0] |Cadeia |Origem de Georreplicação de pedidos de http |
-| testName disponibilidade [0] |Cadeia | |
-| testRunId disponibilidade [0] |Cadeia | |
-| testTimestamp disponibilidade [0] |Cadeia | |
+| <span data-ttu-id="70f72-457">availabilityMetric.name disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-457">availability [0] availabilityMetric.name</span></span> |<span data-ttu-id="70f72-458">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-458">string</span></span> |<span data-ttu-id="70f72-459">disponibilidade</span><span class="sxs-lookup"><span data-stu-id="70f72-459">availability</span></span> |
+| <span data-ttu-id="70f72-460">availabilityMetric.value disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-460">availability [0] availabilityMetric.value</span></span> |<span data-ttu-id="70f72-461">Número</span><span class="sxs-lookup"><span data-stu-id="70f72-461">number</span></span> |<span data-ttu-id="70f72-462">1.0 ou 0,0</span><span class="sxs-lookup"><span data-stu-id="70f72-462">1.0 or 0.0</span></span> |
+| <span data-ttu-id="70f72-463">Contagem de disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-463">availability [0] count</span></span> |<span data-ttu-id="70f72-464">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-464">integer</span></span> |<span data-ttu-id="70f72-465">100 / ([amostragem](app-insights-sampling.md) taxa).</span><span class="sxs-lookup"><span data-stu-id="70f72-465">100/([sampling](app-insights-sampling.md) rate).</span></span> <span data-ttu-id="70f72-466">Por exemplo, 4 =&gt; 25%.</span><span class="sxs-lookup"><span data-stu-id="70f72-466">For example 4 =&gt; 25%.</span></span> |
+| <span data-ttu-id="70f72-467">dataSizeMetric.name disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-467">availability [0] dataSizeMetric.name</span></span> |<span data-ttu-id="70f72-468">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-468">string</span></span> | |
+| <span data-ttu-id="70f72-469">dataSizeMetric.value disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-469">availability [0] dataSizeMetric.value</span></span> |<span data-ttu-id="70f72-470">número inteiro</span><span class="sxs-lookup"><span data-stu-id="70f72-470">integer</span></span> | |
+| <span data-ttu-id="70f72-471">durationMetric.name disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-471">availability [0] durationMetric.name</span></span> |<span data-ttu-id="70f72-472">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-472">string</span></span> | |
+| <span data-ttu-id="70f72-473">durationMetric.value disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-473">availability [0] durationMetric.value</span></span> |<span data-ttu-id="70f72-474">Número</span><span class="sxs-lookup"><span data-stu-id="70f72-474">number</span></span> |<span data-ttu-id="70f72-475">Duração de teste.</span><span class="sxs-lookup"><span data-stu-id="70f72-475">Duration of test.</span></span> <span data-ttu-id="70f72-476">1e7 = = 1s</span><span class="sxs-lookup"><span data-stu-id="70f72-476">1e7==1s</span></span> |
+| <span data-ttu-id="70f72-477">mensagem de disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-477">availability [0] message</span></span> |<span data-ttu-id="70f72-478">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-478">string</span></span> |<span data-ttu-id="70f72-479">Falha de diagnóstico</span><span class="sxs-lookup"><span data-stu-id="70f72-479">Failure diagnostic</span></span> |
+| <span data-ttu-id="70f72-480">resultado de disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-480">availability [0] result</span></span> |<span data-ttu-id="70f72-481">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-481">string</span></span> |<span data-ttu-id="70f72-482">Passagem/falhar</span><span class="sxs-lookup"><span data-stu-id="70f72-482">Pass/Fail</span></span> |
+| <span data-ttu-id="70f72-483">runLocation disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-483">availability [0] runLocation</span></span> |<span data-ttu-id="70f72-484">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-484">string</span></span> |<span data-ttu-id="70f72-485">Origem de Georreplicação de pedidos de http</span><span class="sxs-lookup"><span data-stu-id="70f72-485">Geo source of http req</span></span> |
+| <span data-ttu-id="70f72-486">testName disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-486">availability [0] testName</span></span> |<span data-ttu-id="70f72-487">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-487">string</span></span> | |
+| <span data-ttu-id="70f72-488">testRunId disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-488">availability [0] testRunId</span></span> |<span data-ttu-id="70f72-489">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-489">string</span></span> | |
+| <span data-ttu-id="70f72-490">testTimestamp disponibilidade [0]</span><span class="sxs-lookup"><span data-stu-id="70f72-490">availability [0] testTimestamp</span></span> |<span data-ttu-id="70f72-491">Cadeia</span><span class="sxs-lookup"><span data-stu-id="70f72-491">string</span></span> | |
 
-## <a name="metrics"></a>Métricas
-Gerado por trackmetric ().
+## <a name="metrics"></a><span data-ttu-id="70f72-492">Métricas</span><span class="sxs-lookup"><span data-stu-id="70f72-492">Metrics</span></span>
+<span data-ttu-id="70f72-493">Gerado por trackmetric ().</span><span class="sxs-lookup"><span data-stu-id="70f72-493">Generated by TrackMetric().</span></span>
 
-valor de métrica de Olá for encontrado na context.custom.metrics[0]
+<span data-ttu-id="70f72-494">valor de métrica de Olá for encontrado na context.custom.metrics[0]</span><span class="sxs-lookup"><span data-stu-id="70f72-494">hello metric value is found in context.custom.metrics[0]</span></span>
 
-Por exemplo:
+<span data-ttu-id="70f72-495">Por exemplo:</span><span class="sxs-lookup"><span data-stu-id="70f72-495">For example:</span></span>
 
     {
      "metric": [ ],
@@ -321,8 +321,8 @@ Por exemplo:
          } ] }
     }
 
-## <a name="about-metric-values"></a>Sobre os valores de métricos
-Métricos valores, tanto em relatórios de métricos noutro local, como são reportados com uma estrutura de objeto padrão. Por exemplo:
+## <a name="about-metric-values"></a><span data-ttu-id="70f72-496">Sobre os valores de métricos</span><span class="sxs-lookup"><span data-stu-id="70f72-496">About metric values</span></span>
+<span data-ttu-id="70f72-497">Métricos valores, tanto em relatórios de métricos noutro local, como são reportados com uma estrutura de objeto padrão.</span><span class="sxs-lookup"><span data-stu-id="70f72-497">Metric values, both in metric reports and elsewhere, are reported with a standard object structure.</span></span> <span data-ttu-id="70f72-498">Por exemplo:</span><span class="sxs-lookup"><span data-stu-id="70f72-498">For example:</span></span>
 
       "durationMetric": {
         "name": "contoso.org",
@@ -335,18 +335,18 @@ Métricos valores, tanto em relatórios de métricos noutro local, como são rep
         "sampledValue": 468.71603053650279
       }
 
-Atualmente - Embora isto pode ser alterado na Olá futura - todos os valores comunicados pelas módulos SDK padrão Olá, `count==1` e apenas Olá `name` e `value` campos são úteis. Olá apenas caso em que seriam diferentes seria se escrever as seus próprios chamadas TrackMetric na qual configurou Olá outros parâmetros.
+<span data-ttu-id="70f72-499">Atualmente - Embora isto pode ser alterado na Olá futura - todos os valores comunicados pelas módulos SDK padrão Olá, `count==1` e apenas Olá `name` e `value` campos são úteis.</span><span class="sxs-lookup"><span data-stu-id="70f72-499">Currently - though this might change in hello future - in all values reported from hello standard SDK modules, `count==1` and only hello `name` and `value` fields are useful.</span></span> <span data-ttu-id="70f72-500">Olá apenas caso em que seriam diferentes seria se escrever as seus próprios chamadas TrackMetric na qual configurou Olá outros parâmetros.</span><span class="sxs-lookup"><span data-stu-id="70f72-500">hello only case where they would be different would be if you write your own TrackMetric calls in which you set hello other parameters.</span></span>
 
-Olá objetivo Olá outros campos é tooallow métricas toobe agregado Olá SDK, o portal de toohello tooreduce tráfego. Por exemplo, foi médio as leituras de sucessivas várias antes de enviar cada relatório de métrico. Em seguida, teria de calcular Olá Mín, Máx, desvio-padrão e valor de agregação (sum ou média) e definir o número de toohello de contagem das leituras dos representado pelo relatório de Olá.
+<span data-ttu-id="70f72-501">Olá objetivo Olá outros campos é tooallow métricas toobe agregado Olá SDK, o portal de toohello tooreduce tráfego.</span><span class="sxs-lookup"><span data-stu-id="70f72-501">hello purpose of hello other fields is tooallow metrics toobe aggregated in hello SDK, tooreduce traffic toohello portal.</span></span> <span data-ttu-id="70f72-502">Por exemplo, foi médio as leituras de sucessivas várias antes de enviar cada relatório de métrico.</span><span class="sxs-lookup"><span data-stu-id="70f72-502">For example, you could average several successive readings before sending each metric report.</span></span> <span data-ttu-id="70f72-503">Em seguida, teria de calcular Olá Mín, Máx, desvio-padrão e valor de agregação (sum ou média) e definir o número de toohello de contagem das leituras dos representado pelo relatório de Olá.</span><span class="sxs-lookup"><span data-stu-id="70f72-503">Then you would calculate hello min, max, standard deviation and aggregate value (sum or average) and set count toohello number of readings represented by hello report.</span></span>
 
-Nas tabelas de Olá acima, podemos ter omitido contagem de campos raramente utilizado Olá, min, max, stdDev e sampledValue.
+<span data-ttu-id="70f72-504">Nas tabelas de Olá acima, podemos ter omitido contagem de campos raramente utilizado Olá, min, max, stdDev e sampledValue.</span><span class="sxs-lookup"><span data-stu-id="70f72-504">In hello tables above, we have omitted hello rarely-used fields count, min, max, stdDev and sampledValue.</span></span>
 
-Em vez de pré-agregar métricas, pode utilizar [amostragem](app-insights-sampling.md) se precisar de volume de Olá tooreduce de telemetria.
+<span data-ttu-id="70f72-505">Em vez de pré-agregar métricas, pode utilizar [amostragem](app-insights-sampling.md) se precisar de volume de Olá tooreduce de telemetria.</span><span class="sxs-lookup"><span data-stu-id="70f72-505">Instead of pre-aggregating metrics, you can use [sampling](app-insights-sampling.md) if you need tooreduce hello volume of telemetry.</span></span>
 
-### <a name="durations"></a>Durações
-Exceto indicação em contrário, em durações são representadas no décimas de aos microssegundos, para que 10000000.0 significa 1 segundo.
+### <a name="durations"></a><span data-ttu-id="70f72-506">Durações</span><span class="sxs-lookup"><span data-stu-id="70f72-506">Durations</span></span>
+<span data-ttu-id="70f72-507">Exceto indicação em contrário, em durações são representadas no décimas de aos microssegundos, para que 10000000.0 significa 1 segundo.</span><span class="sxs-lookup"><span data-stu-id="70f72-507">Except where otherwise noted, durations are represented in tenths of a microsecond, so that 10000000.0 means 1 second.</span></span>
 
-## <a name="see-also"></a>Consultar também
-* [Application Insights](app-insights-overview.md)
-* [Exportação contínua](app-insights-export-telemetry.md)
-* [Exemplos de código](app-insights-export-telemetry.md#code-samples)
+## <a name="see-also"></a><span data-ttu-id="70f72-508">Consultar também</span><span class="sxs-lookup"><span data-stu-id="70f72-508">See also</span></span>
+* [<span data-ttu-id="70f72-509">Application Insights</span><span class="sxs-lookup"><span data-stu-id="70f72-509">Application Insights</span></span>](app-insights-overview.md)
+* [<span data-ttu-id="70f72-510">Exportação contínua</span><span class="sxs-lookup"><span data-stu-id="70f72-510">Continuous Export</span></span>](app-insights-export-telemetry.md)
+* [<span data-ttu-id="70f72-511">Exemplos de código</span><span class="sxs-lookup"><span data-stu-id="70f72-511">Code samples</span></span>](app-insights-export-telemetry.md#code-samples)

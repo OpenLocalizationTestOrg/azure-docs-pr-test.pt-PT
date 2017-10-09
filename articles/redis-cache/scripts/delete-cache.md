@@ -21,29 +21,29 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="delete-an-azure-redis-cache"></a>Eliminar uma Cache de Redis do Azure
+# <a name="delete-an-azure-redis-cache"></a><span data-ttu-id="fe681-103">Eliminar uma Cache de Redis do Azure</span><span class="sxs-lookup"><span data-stu-id="fe681-103">Delete an Azure Redis Cache</span></span>
 
-Neste cenário, saiba como toodelete um Azure da Cache de Redis.
+<span data-ttu-id="fe681-104">Neste cenário, saiba como toodelete um Azure da Cache de Redis.</span><span class="sxs-lookup"><span data-stu-id="fe681-104">In this scenario, you learn how toodelete an Azure Redis Cache.</span></span>
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
-## <a name="sample-script"></a>Script de exemplo
+## <a name="sample-script"></a><span data-ttu-id="fe681-105">Script de exemplo</span><span class="sxs-lookup"><span data-stu-id="fe681-105">Sample script</span></span>
 
 [!code-azurecli[main](../../../cli_scripts/redis-cache/delete-cache/delete-cache.sh "Azure Redis Cache")]
 
 [!INCLUDE [cli-script-clean-up](../../../includes/redis-cli-script-clean-up.md)]
 
-## <a name="script-explanation"></a>Explicação de script
+## <a name="script-explanation"></a><span data-ttu-id="fe681-106">Explicação de script</span><span class="sxs-lookup"><span data-stu-id="fe681-106">Script explanation</span></span>
 
-Este script utiliza Olá os seguintes comandos toodelete uma instância da Cache de Redis do Azure. Cada comando na tabela de Olá contém ligações a documentação específica toocommand.
+<span data-ttu-id="fe681-107">Este script utiliza Olá os seguintes comandos toodelete uma instância da Cache de Redis do Azure.</span><span class="sxs-lookup"><span data-stu-id="fe681-107">This script uses hello following commands toodelete an Azure Redis Cache instance.</span></span> <span data-ttu-id="fe681-108">Cada comando na tabela de Olá contém ligações a documentação específica toocommand.</span><span class="sxs-lookup"><span data-stu-id="fe681-108">Each command in hello table links toocommand specific documentation.</span></span>
 
-| Comando | Notas |
+| <span data-ttu-id="fe681-109">Comando</span><span class="sxs-lookup"><span data-stu-id="fe681-109">Command</span></span> | <span data-ttu-id="fe681-110">Notas</span><span class="sxs-lookup"><span data-stu-id="fe681-110">Notes</span></span> |
 |---|---|
-| [eliminação de redis AZ](https://docs.microsoft.com/cli/azure/redis#delete) | Elimine a instância da Cache de Redis. |
+| [<span data-ttu-id="fe681-111">eliminação de redis AZ</span><span class="sxs-lookup"><span data-stu-id="fe681-111">az redis delete</span></span>](https://docs.microsoft.com/cli/azure/redis#delete) | <span data-ttu-id="fe681-112">Elimine a instância da Cache de Redis.</span><span class="sxs-lookup"><span data-stu-id="fe681-112">Delete Redis Cache instance.</span></span> |
 
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="fe681-113">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="fe681-113">Next steps</span></span>
 
-Para obter mais informações sobre Olá CLI do Azure, consulte [documentação da CLI do Azure](https://docs.microsoft.com/cli/azure/overview).
+<span data-ttu-id="fe681-114">Para obter mais informações sobre Olá CLI do Azure, consulte [documentação da CLI do Azure](https://docs.microsoft.com/cli/azure/overview).</span><span class="sxs-lookup"><span data-stu-id="fe681-114">For more information on hello Azure CLI, see [Azure CLI documentation](https://docs.microsoft.com/cli/azure/overview).</span></span>
 
-Exemplos de script CLI de Cache de Redis do Azure adicionais podem ser encontrados na Olá [documentação de Cache de Redis do Azure](../cli-samples.md).
+<span data-ttu-id="fe681-115">Exemplos de script CLI de Cache de Redis do Azure adicionais podem ser encontrados na Olá [documentação de Cache de Redis do Azure](../cli-samples.md).</span><span class="sxs-lookup"><span data-stu-id="fe681-115">Additional Azure Redis Cache CLI script samples can be found in hello [Azure Redis Cache documentation](../cli-samples.md).</span></span>

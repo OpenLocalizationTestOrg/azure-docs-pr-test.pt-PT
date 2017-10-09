@@ -20,88 +20,88 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="editing-textual-runbooks-in-azure-automation"></a>Editar textual runbooks na automatização do Azure
-Olá editor de texto na automatização do Azure pode ser utilizado tooedit [runbooks do PowerShell](automation-runbook-types.md#powershell-runbooks) e [runbooks do fluxo de trabalho do PowerShell](automation-runbook-types.md#powershell-workflow-runbooks). Isto tem funcionalidades típico de Olá de outros editores de código como o intellisense e cor codificação com funcionalidades especiais adicionais tooassist, ao aceder ao toorunbooks comum de recursos.  Este artigo fornece os passos detalhados para executar diferentes funções deste editor.
+# <a name="editing-textual-runbooks-in-azure-automation"></a><span data-ttu-id="9b8e9-103">Editar textual runbooks na automatização do Azure</span><span class="sxs-lookup"><span data-stu-id="9b8e9-103">Editing textual runbooks in Azure Automation</span></span>
+<span data-ttu-id="9b8e9-104">Olá editor de texto na automatização do Azure pode ser utilizado tooedit [runbooks do PowerShell](automation-runbook-types.md#powershell-runbooks) e [runbooks do fluxo de trabalho do PowerShell](automation-runbook-types.md#powershell-workflow-runbooks).</span><span class="sxs-lookup"><span data-stu-id="9b8e9-104">hello textual editor in Azure Automation can be used tooedit [PowerShell runbooks](automation-runbook-types.md#powershell-runbooks) and [PowerShell Workflow runbooks](automation-runbook-types.md#powershell-workflow-runbooks).</span></span> <span data-ttu-id="9b8e9-105">Isto tem funcionalidades típico de Olá de outros editores de código como o intellisense e cor codificação com funcionalidades especiais adicionais tooassist, ao aceder ao toorunbooks comum de recursos.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-105">This has hello typical features of other code editors such as intellisense and color coding  with additional special features tooassist you in accessing resources common toorunbooks.</span></span>  <span data-ttu-id="9b8e9-106">Este artigo fornece os passos detalhados para executar diferentes funções deste editor.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-106">This article provides detailed steps for performing different functions with this editor.</span></span>
 
-editor de texto Olá inclui um código de tooinsert funcionalidade para atividades, recursos e runbooks subordinados num runbook. Em vez de digitar o código de Olá por si, pode selecionar numa lista de recursos disponíveis e código adequado Olá inserido no runbook Olá.
+<span data-ttu-id="9b8e9-107">editor de texto Olá inclui um código de tooinsert funcionalidade para atividades, recursos e runbooks subordinados num runbook.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-107">hello textual editor includes a feature tooinsert code for activities, assets, and child runbooks into a runbook.</span></span> <span data-ttu-id="9b8e9-108">Em vez de digitar o código de Olá por si, pode selecionar numa lista de recursos disponíveis e código adequado Olá inserido no runbook Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-108">Rather than typing in hello code yourself, you can select from a list of available resources and have hello appropriate code inserted into hello runbook.</span></span>
 
-Cada runbook na automatização do Azure tem duas versões, rascunho e a publicada. Editar Olá versão de rascunho de runbook Olá e, em seguida, publica-pode ser executado. Não é possível editar a versão do Olá publicada. Consulte [publicar um runbook](automation-creating-importing-runbook.md#publishing-a-runbook) para obter mais informações.
+<span data-ttu-id="9b8e9-109">Cada runbook na automatização do Azure tem duas versões, rascunho e a publicada.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-109">Each runbook in Azure Automation has two versions, Draft and Published.</span></span> <span data-ttu-id="9b8e9-110">Editar Olá versão de rascunho de runbook Olá e, em seguida, publica-pode ser executado.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-110">You edit hello Draft version of hello runbook and then publish it so it can be executed.</span></span> <span data-ttu-id="9b8e9-111">Não é possível editar a versão do Olá publicada.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-111">hello Published version cannot be edited.</span></span> <span data-ttu-id="9b8e9-112">Consulte [publicar um runbook](automation-creating-importing-runbook.md#publishing-a-runbook) para obter mais informações.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-112">See [Publishing a runbook](automation-creating-importing-runbook.md#publishing-a-runbook) for more information.</span></span>
 
-toowork com [Runbooks gráficos](automation-runbook-types.md#graphical-runbooks), consulte [a criação de gráficos na automatização do Azure](automation-graphical-authoring-intro.md).
+<span data-ttu-id="9b8e9-113">toowork com [Runbooks gráficos](automation-runbook-types.md#graphical-runbooks), consulte [a criação de gráficos na automatização do Azure](automation-graphical-authoring-intro.md).</span><span class="sxs-lookup"><span data-stu-id="9b8e9-113">toowork with [Graphical Runbooks](automation-runbook-types.md#graphical-runbooks), see [Graphical authoring in Azure Automation](automation-graphical-authoring-intro.md).</span></span>
 
-## <a name="tooedit-a-runbook-with-hello-azure-portal"></a>tooedit um runbook com Olá portal do Azure
-Utilize Olá seguir o procedimento tooopen um runbook para edição no editor de texto Olá.
+## <a name="tooedit-a-runbook-with-hello-azure-portal"></a><span data-ttu-id="9b8e9-114">tooedit um runbook com Olá portal do Azure</span><span class="sxs-lookup"><span data-stu-id="9b8e9-114">tooedit a runbook with hello Azure portal</span></span>
+<span data-ttu-id="9b8e9-115">Utilize Olá seguir o procedimento tooopen um runbook para edição no editor de texto Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-115">Use hello following procedure tooopen a runbook for editing in hello textual editor.</span></span>
 
-1. No portal do Azure Olá, selecione a sua conta de automatização.
-2. Clique em Olá **Runbooks** mosaico tooopen Olá lista de runbooks.
-3. Clique no nome de Olá de runbook Olá pretende tooedit e, em seguida, clique em Olá **editar** botão.
-4. Efetue Olá necessário editar.
-5. Clique em **guardar** quando as edições que efectuou estiverem concluídas.
-6. Clique em **publicar** se quiser Olá mais recente versão de rascunho Olá runbook toobe publicado.
+1. <span data-ttu-id="9b8e9-116">No portal do Azure Olá, selecione a sua conta de automatização.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-116">In hello Azure portal, select your automation account.</span></span>
+2. <span data-ttu-id="9b8e9-117">Clique em Olá **Runbooks** mosaico tooopen Olá lista de runbooks.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-117">Click hello **Runbooks** tile tooopen hello list of runbooks.</span></span>
+3. <span data-ttu-id="9b8e9-118">Clique no nome de Olá de runbook Olá pretende tooedit e, em seguida, clique em Olá **editar** botão.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-118">Click hello name of hello runbook you want tooedit and then click hello **Edit** button.</span></span>
+4. <span data-ttu-id="9b8e9-119">Efetue Olá necessário editar.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-119">Perform hello required editing.</span></span>
+5. <span data-ttu-id="9b8e9-120">Clique em **guardar** quando as edições que efectuou estiverem concluídas.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-120">Click **Save** when your edits are complete.</span></span>
+6. <span data-ttu-id="9b8e9-121">Clique em **publicar** se quiser Olá mais recente versão de rascunho Olá runbook toobe publicado.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-121">Click **Publish** if you want hello latest draft version of hello runbook toobe published.</span></span>
 
-### <a name="tooinsert-a-cmdlet-into-a-runbook"></a>tooinsert um cmdlet num runbook
-1. Na tela do editor de texto Olá Olá, posicione o cursor olá onde pretende tooplace Olá cmdlet.
-2. Expanda Olá **Cmdlets** nó Olá controlo da biblioteca.
-3. Expanda o módulo Olá que contém o cmdlet de Olá pretende toouse.
-4. Clique com o botão direito do rato em Olá cmdlet tooinsert e selecione **adicionar toocanvas**.  Se Olá cmdlet tem mais do que um parâmetro definido, será adicionado o conjunto predefinido de Olá.  Também pode expandir Olá cmdlet tooselect um parâmetro diferente definida.
-5. o código de Olá Olá cmdlet é inserido com a lista completa de parâmetros.
-6. Forneça um valor adequado em vez do tipo de dados de Olá rodeado por chavetas <> para os parâmetros necessários.  Remova quaisquer parâmetros, não precisa.
+### <a name="tooinsert-a-cmdlet-into-a-runbook"></a><span data-ttu-id="9b8e9-122">tooinsert um cmdlet num runbook</span><span class="sxs-lookup"><span data-stu-id="9b8e9-122">tooinsert a cmdlet into a runbook</span></span>
+1. <span data-ttu-id="9b8e9-123">Na tela do editor de texto Olá Olá, posicione o cursor olá onde pretende tooplace Olá cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-123">In hello Canvas of hello textual editor, position hello cursor where you want tooplace hello cmdlet.</span></span>
+2. <span data-ttu-id="9b8e9-124">Expanda Olá **Cmdlets** nó Olá controlo da biblioteca.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-124">Expand hello **Cmdlets** node in hello Library control.</span></span>
+3. <span data-ttu-id="9b8e9-125">Expanda o módulo Olá que contém o cmdlet de Olá pretende toouse.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-125">Expand hello module containing hello cmdlet you want toouse.</span></span>
+4. <span data-ttu-id="9b8e9-126">Clique com o botão direito do rato em Olá cmdlet tooinsert e selecione **adicionar toocanvas**.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-126">Right click hello cmdlet tooinsert and select **Add toocanvas**.</span></span>  <span data-ttu-id="9b8e9-127">Se Olá cmdlet tem mais do que um parâmetro definido, será adicionado o conjunto predefinido de Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-127">If hello cmdlet has more than one parameter set, then hello default set will be added.</span></span>  <span data-ttu-id="9b8e9-128">Também pode expandir Olá cmdlet tooselect um parâmetro diferente definida.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-128">You can also expand hello cmdlet tooselect a different parameter set.</span></span>
+5. <span data-ttu-id="9b8e9-129">o código de Olá Olá cmdlet é inserido com a lista completa de parâmetros.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-129">hello code for hello cmdlet is inserted with its entire list of parameters.</span></span>
+6. <span data-ttu-id="9b8e9-130">Forneça um valor adequado em vez do tipo de dados de Olá rodeado por chavetas <> para os parâmetros necessários.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-130">Provide an appropriate value in place of hello data type surrounded by braces <> for any required parameters.</span></span>  <span data-ttu-id="9b8e9-131">Remova quaisquer parâmetros, não precisa.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-131">Remove any parameters you don't need.</span></span>
 
-### <a name="tooinsert-code-for-a-child-runbook-into-a-runbook"></a>código de tooinsert para um runbook subordinado num runbook
-1. Na tela do editor de texto Olá Olá, posicione o cursor de olá onde pretende código de Olá tooplace para Olá [runbook subordinado](automation-child-runbooks.md).
-2. Expanda Olá **Runbooks** nó Olá controlo da biblioteca.
-3. Clique com o botão direito do rato em Olá runbook tooinsert e selecione **adicionar toocanvas**.
-4. código de Olá para o runbook subordinado Olá é inserido com quaisquer marcadores de posição para quaisquer parâmetros do runbook.
-5. Substitua os marcadores de posição de Olá valores adequados para cada parâmetro.
+### <a name="tooinsert-code-for-a-child-runbook-into-a-runbook"></a><span data-ttu-id="9b8e9-132">código de tooinsert para um runbook subordinado num runbook</span><span class="sxs-lookup"><span data-stu-id="9b8e9-132">tooinsert code for a child runbook into a runbook</span></span>
+1. <span data-ttu-id="9b8e9-133">Na tela do editor de texto Olá Olá, posicione o cursor de olá onde pretende código de Olá tooplace para Olá [runbook subordinado](automation-child-runbooks.md).</span><span class="sxs-lookup"><span data-stu-id="9b8e9-133">In hello Canvas of hello textual editor, position hello cursor where you want tooplace hello code for hello [child runbook](automation-child-runbooks.md).</span></span>
+2. <span data-ttu-id="9b8e9-134">Expanda Olá **Runbooks** nó Olá controlo da biblioteca.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-134">Expand hello **Runbooks** node in hello Library control.</span></span>
+3. <span data-ttu-id="9b8e9-135">Clique com o botão direito do rato em Olá runbook tooinsert e selecione **adicionar toocanvas**.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-135">Right click hello runbook tooinsert and select **Add toocanvas**.</span></span>
+4. <span data-ttu-id="9b8e9-136">código de Olá para o runbook subordinado Olá é inserido com quaisquer marcadores de posição para quaisquer parâmetros do runbook.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-136">hello code for hello child runbook is inserted with any placeholders for any runbook parameters.</span></span>
+5. <span data-ttu-id="9b8e9-137">Substitua os marcadores de posição de Olá valores adequados para cada parâmetro.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-137">Replace hello placeholders with appropriate values for each parameter.</span></span>
 
-### <a name="tooinsert-an-asset-into-a-runbook"></a>tooinsert um recurso num runbook
-1. Na tela do editor de texto Olá Olá, posicione o cursor olá onde pretende código de Olá tooplace para o runbook subordinado Olá.
-2. Expanda Olá **ativos** nó Olá controlo da biblioteca.
-3. Expanda o nó de Olá para o tipo de Olá do recurso que pretende.
-4. Clique com o botão direito do rato em Olá asset tooinsert e selecione **adicionar toocanvas**.  Para [recursos de variável](automation-variables.md), selecione **adicionar "Obter variável" toocanvas** ou **adicionar "Definir variável" toocanvas** dependendo se pretende tooget ou definir Olá variável.
-5. código de Olá para o recurso de Olá é inserido no runbook Olá.
+### <a name="tooinsert-an-asset-into-a-runbook"></a><span data-ttu-id="9b8e9-138">tooinsert um recurso num runbook</span><span class="sxs-lookup"><span data-stu-id="9b8e9-138">tooinsert an asset into a runbook</span></span>
+1. <span data-ttu-id="9b8e9-139">Na tela do editor de texto Olá Olá, posicione o cursor olá onde pretende código de Olá tooplace para o runbook subordinado Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-139">In hello Canvas of hello textual editor, position hello cursor where you want tooplace hello code for hello child runbook.</span></span>
+2. <span data-ttu-id="9b8e9-140">Expanda Olá **ativos** nó Olá controlo da biblioteca.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-140">Expand hello **Assets** node in hello Library control.</span></span>
+3. <span data-ttu-id="9b8e9-141">Expanda o nó de Olá para o tipo de Olá do recurso que pretende.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-141">Expand hello node for hello type of asset you want.</span></span>
+4. <span data-ttu-id="9b8e9-142">Clique com o botão direito do rato em Olá asset tooinsert e selecione **adicionar toocanvas**.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-142">Right click hello asset tooinsert and select **Add toocanvas**.</span></span>  <span data-ttu-id="9b8e9-143">Para [recursos de variável](automation-variables.md), selecione **adicionar "Obter variável" toocanvas** ou **adicionar "Definir variável" toocanvas** dependendo se pretende tooget ou definir Olá variável.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-143">For [variable assets](automation-variables.md), select either **Add "Get Variable" toocanvas** or **Add "Set Variable" toocanvas** depending on whether you want tooget or set hello variable.</span></span>
+5. <span data-ttu-id="9b8e9-144">código de Olá para o recurso de Olá é inserido no runbook Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-144">hello code for hello asset is inserted into hello runbook.</span></span>
 
-## <a name="tooedit-a-runbook-with-hello-azure-portal"></a>tooedit um runbook com Olá portal do Azure
-Utilize Olá seguir o procedimento tooopen um runbook para edição no editor de texto Olá.
+## <a name="tooedit-a-runbook-with-hello-azure-portal"></a><span data-ttu-id="9b8e9-145">tooedit um runbook com Olá portal do Azure</span><span class="sxs-lookup"><span data-stu-id="9b8e9-145">tooedit a runbook with hello Azure portal</span></span>
+<span data-ttu-id="9b8e9-146">Utilize Olá seguir o procedimento tooopen um runbook para edição no editor de texto Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-146">Use hello following procedure tooopen a runbook for editing in hello textual editor.</span></span>
 
-1. No portal do Azure Olá, selecione **automatização** e, em seguida, em seguida, clique em nome de Olá de uma conta de automatização.
-2. Selecione Olá **Runbooks** separador.
-3. Clique no nome de Olá de runbook Olá pretende tooedit e, em seguida, selecione Olá **autor** separador.
-4. Clique em Olá **editar** botão na Olá parte inferior do ecrã de Olá.
-5. Efetue Olá necessário editar.
-6. Clique em **guardar** quando as edições que efectuou estiverem concluídas.
-7. Clique em **publicar** se quiser Olá mais recente versão de rascunho Olá runbook toobe publicado.
+1. <span data-ttu-id="9b8e9-147">No portal do Azure Olá, selecione **automatização** e, em seguida, em seguida, clique em nome de Olá de uma conta de automatização.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-147">In hello Azure portal, select **Automation** and then then click hello name of an automation account.</span></span>
+2. <span data-ttu-id="9b8e9-148">Selecione Olá **Runbooks** separador.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-148">Select hello **Runbooks** tab.</span></span>
+3. <span data-ttu-id="9b8e9-149">Clique no nome de Olá de runbook Olá pretende tooedit e, em seguida, selecione Olá **autor** separador.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-149">Click hello name of hello runbook you want tooedit and then select hello **Author** tab.</span></span>
+4. <span data-ttu-id="9b8e9-150">Clique em Olá **editar** botão na Olá parte inferior do ecrã de Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-150">Click hello **Edit** button at hello bottom of hello screen.</span></span>
+5. <span data-ttu-id="9b8e9-151">Efetue Olá necessário editar.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-151">Perform hello required editing.</span></span>
+6. <span data-ttu-id="9b8e9-152">Clique em **guardar** quando as edições que efectuou estiverem concluídas.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-152">Click **Save** when your edits are complete.</span></span>
+7. <span data-ttu-id="9b8e9-153">Clique em **publicar** se quiser Olá mais recente versão de rascunho Olá runbook toobe publicado.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-153">Click **Publish** if you want hello latest draft version of hello runbook toobe published.</span></span>
 
-### <a name="tooinsert-an-activity-into-a-runbook"></a>tooinsert uma atividade num Runbook
-1. Na tela do editor de texto Olá Olá, posicione o cursor olá onde pretende que a atividade de Olá tooplace.
-2. Na Olá na parte inferior do ecrã de Olá, clique em **inserir** e, em seguida, **atividade**.
-3. No Olá **módulo de integração** coluna, o módulo Olá select que contém a atividade de Olá.
-4. No Olá **atividade** painel, selecione uma atividade.
-5. No Olá **Descrição** coluna, tenha em atenção Olá descrição da atividade de Olá. Opcionalmente, pode clicar em ver detalhadas ajudar toolaunch ajuda para a atividade de Olá no browser Olá.
-6. Clique em seta para a direita Olá.  Se a atividade de Olá tiver parâmetros, estes serão apresentados para sua informação.
-7. Clique no botão de verificação Olá.  Código toorun Olá atividade será inserida no runbook Olá.
-8. Se a atividade de Olá necessitar de parâmetros, forneça um valor adequado em vez do tipo de dados de Olá rodeado por chavetas <>.
+### <a name="tooinsert-an-activity-into-a-runbook"></a><span data-ttu-id="9b8e9-154">tooinsert uma atividade num Runbook</span><span class="sxs-lookup"><span data-stu-id="9b8e9-154">tooinsert an activity into a Runbook</span></span>
+1. <span data-ttu-id="9b8e9-155">Na tela do editor de texto Olá Olá, posicione o cursor olá onde pretende que a atividade de Olá tooplace.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-155">In hello Canvas of hello textual editor, position hello cursor where you want tooplace hello activity.</span></span>
+2. <span data-ttu-id="9b8e9-156">Na Olá na parte inferior do ecrã de Olá, clique em **inserir** e, em seguida, **atividade**.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-156">At hello bottom of hello screen, click **Insert** and then **Activity**.</span></span>
+3. <span data-ttu-id="9b8e9-157">No Olá **módulo de integração** coluna, o módulo Olá select que contém a atividade de Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-157">In hello **Integration Module** column, select hello module that contains hello activity.</span></span>
+4. <span data-ttu-id="9b8e9-158">No Olá **atividade** painel, selecione uma atividade.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-158">In hello **Activity** pane, select an activity.</span></span>
+5. <span data-ttu-id="9b8e9-159">No Olá **Descrição** coluna, tenha em atenção Olá descrição da atividade de Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-159">In hello **Description** column, note hello description of hello activity.</span></span> <span data-ttu-id="9b8e9-160">Opcionalmente, pode clicar em ver detalhadas ajudar toolaunch ajuda para a atividade de Olá no browser Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-160">Optionally, you can click View detailed help toolaunch help for hello activity in hello browser.</span></span>
+6. <span data-ttu-id="9b8e9-161">Clique em seta para a direita Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-161">Click hello right arrow.</span></span>  <span data-ttu-id="9b8e9-162">Se a atividade de Olá tiver parâmetros, estes serão apresentados para sua informação.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-162">If hello activity has parameters, they will be listed for your information.</span></span>
+7. <span data-ttu-id="9b8e9-163">Clique no botão de verificação Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-163">Click hello check button.</span></span>  <span data-ttu-id="9b8e9-164">Código toorun Olá atividade será inserida no runbook Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-164">Code toorun hello activity will be inserted into hello runbook.</span></span>
+8. <span data-ttu-id="9b8e9-165">Se a atividade de Olá necessitar de parâmetros, forneça um valor adequado em vez do tipo de dados de Olá rodeado por chavetas <>.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-165">If hello activity requires parameters, provide an appropriate value in place of hello data type surrounded by braces <>.</span></span>
 
-### <a name="tooinsert-code-for-a-child-runbook-into-a-runbook"></a>código de tooinsert para um runbook subordinado num runbook
-1. Na tela do editor de texto Olá Olá, posicione o cursor de olá onde pretende tooplace Olá [runbook subordinado](automation-child-runbooks.md).
-2. Na Olá na parte inferior do ecrã de Olá, clique em **inserir** e, em seguida, **Runbook**.
-3. Selecione Olá runbook tooinsert da coluna de center Olá e clique em seta para a direita Olá.
-4. Se Olá runbook tiver parâmetros, estes serão apresentados para sua informação.
-5. Clique no botão de verificação Olá.  Código toorun Olá selecionado runbook será inserido no runbook atual Olá.
-6. Se o runbook Olá necessitar de parâmetros, forneça um valor adequado em vez do tipo de dados de Olá rodeado por chavetas <>.
+### <a name="tooinsert-code-for-a-child-runbook-into-a-runbook"></a><span data-ttu-id="9b8e9-166">código de tooinsert para um runbook subordinado num runbook</span><span class="sxs-lookup"><span data-stu-id="9b8e9-166">tooinsert code for a child runbook into a runbook</span></span>
+1. <span data-ttu-id="9b8e9-167">Na tela do editor de texto Olá Olá, posicione o cursor de olá onde pretende tooplace Olá [runbook subordinado](automation-child-runbooks.md).</span><span class="sxs-lookup"><span data-stu-id="9b8e9-167">In hello Canvas of hello textual editor, position hello cursor where you want tooplace hello [child runbook](automation-child-runbooks.md).</span></span>
+2. <span data-ttu-id="9b8e9-168">Na Olá na parte inferior do ecrã de Olá, clique em **inserir** e, em seguida, **Runbook**.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-168">At hello bottom of hello screen, click **Insert** and then **Runbook**.</span></span>
+3. <span data-ttu-id="9b8e9-169">Selecione Olá runbook tooinsert da coluna de center Olá e clique em seta para a direita Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-169">Select hello runbook tooinsert from hello center column and click hello right arrow.</span></span>
+4. <span data-ttu-id="9b8e9-170">Se Olá runbook tiver parâmetros, estes serão apresentados para sua informação.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-170">If hello runbook has parameters, they will be listed for your information.</span></span>
+5. <span data-ttu-id="9b8e9-171">Clique no botão de verificação Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-171">Click hello check button.</span></span>  <span data-ttu-id="9b8e9-172">Código toorun Olá selecionado runbook será inserido no runbook atual Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-172">Code toorun hello selected runbook will be inserted into hello current runbook.</span></span>
+6. <span data-ttu-id="9b8e9-173">Se o runbook Olá necessitar de parâmetros, forneça um valor adequado em vez do tipo de dados de Olá rodeado por chavetas <>.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-173">If hello runbook requires parameters, provide an appropriate value in place of hello data type surrounded by braces <>.</span></span>
 
-### <a name="tooinsert-an-asset-into-a-runbook"></a>tooinsert um recurso num runbook
-1. Na tela do editor de texto Olá Olá, posicione o cursor olá onde pretende que o recurso de Olá tooplace Olá atividade tooretrieve.
-2. Na Olá na parte inferior do ecrã de Olá, clique em **inserir** e, em seguida, **definição**.
-3. No Olá **ação da definição** coluna, acção de Olá selecione que pretende.
-4. Selecione recursos disponíveis de Olá na coluna de center Olá.
-5. Clique no botão de verificação Olá.  Code tooget ou conjunto Olá asset será inserido no runbook Olá.
+### <a name="tooinsert-an-asset-into-a-runbook"></a><span data-ttu-id="9b8e9-174">tooinsert um recurso num runbook</span><span class="sxs-lookup"><span data-stu-id="9b8e9-174">tooinsert an asset into a runbook</span></span>
+1. <span data-ttu-id="9b8e9-175">Na tela do editor de texto Olá Olá, posicione o cursor olá onde pretende que o recurso de Olá tooplace Olá atividade tooretrieve.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-175">In hello Canvas of hello textual editor, position hello cursor where you want tooplace hello activity tooretrieve hello asset.</span></span>
+2. <span data-ttu-id="9b8e9-176">Na Olá na parte inferior do ecrã de Olá, clique em **inserir** e, em seguida, **definição**.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-176">At hello bottom of hello screen, click **Insert** and then **Setting**.</span></span>
+3. <span data-ttu-id="9b8e9-177">No Olá **ação da definição** coluna, acção de Olá selecione que pretende.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-177">In hello **Setting Action** column, select hello action that you want.</span></span>
+4. <span data-ttu-id="9b8e9-178">Selecione recursos disponíveis de Olá na coluna de center Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-178">Select from hello available assets in hello center column.</span></span>
+5. <span data-ttu-id="9b8e9-179">Clique no botão de verificação Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-179">Click hello check button.</span></span>  <span data-ttu-id="9b8e9-180">Code tooget ou conjunto Olá asset será inserido no runbook Olá.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-180">Code tooget or set hello asset will be inserted into hello runbook.</span></span>
 
-## <a name="tooedit-an-azure-automation-runbook-using-windows-powershell"></a>tooedit um runbook de automatização do Azure com o Windows PowerShell
-tooedit um runbook com o Windows PowerShell, utilize Olá editor à sua escolha e guarde-o ficheiro. ps1 tooa. Pode utilizar Olá [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) cmdlet tooretrieve Olá conteúdo Olá runbook e, em seguida, [conjunto AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) cmdlet tooreplace Olá existente rascunho de runbook com Olá modificar um.
+## <a name="tooedit-an-azure-automation-runbook-using-windows-powershell"></a><span data-ttu-id="9b8e9-181">tooedit um runbook de automatização do Azure com o Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="9b8e9-181">tooedit an Azure Automation runbook using Windows PowerShell</span></span>
+<span data-ttu-id="9b8e9-182">tooedit um runbook com o Windows PowerShell, utilize Olá editor à sua escolha e guarde-o ficheiro. ps1 tooa.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-182">tooedit a runbook with Windows PowerShell, you use hello editor of your choice and save it tooa .ps1 file.</span></span> <span data-ttu-id="9b8e9-183">Pode utilizar Olá [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) cmdlet tooretrieve Olá conteúdo Olá runbook e, em seguida, [conjunto AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) cmdlet tooreplace Olá existente rascunho de runbook com Olá modificar um.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-183">You can use hello [Get-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/getazurerunbookdefinition) cmdlet tooretrieve hello contents of hello runbook and then [Set-AzureAutomationRunbookDefinition](http://aka.ms/runbookauthor/cmdlet/setazurerunbookdefinition) cmdlet tooreplace hello existing draft runbook with hello modified one.</span></span>
 
-### <a name="tooretrieve-hello-contents-of-a-runbook-using-windows-powershell"></a>tooRetrieve Olá conteúdos de um Runbook através do Windows PowerShell
-Olá comandos de exemplo a seguir mostra como tooretrieve Olá script para um runbook e guardá-lo tooa ficheiro de script. Neste exemplo, a versão de rascunho de Olá é obtido. Também é versão de publicada Olá tooretrieve possíveis de runbook Olá apesar de não pode ser alterada nesta versão.
+### <a name="tooretrieve-hello-contents-of-a-runbook-using-windows-powershell"></a><span data-ttu-id="9b8e9-184">tooRetrieve Olá conteúdos de um Runbook através do Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="9b8e9-184">tooRetrieve hello Contents of a Runbook Using Windows PowerShell</span></span>
+<span data-ttu-id="9b8e9-185">Olá comandos de exemplo a seguir mostra como tooretrieve Olá script para um runbook e guardá-lo tooa ficheiro de script.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-185">hello following sample commands show how tooretrieve hello script for a runbook and save it tooa script file.</span></span> <span data-ttu-id="9b8e9-186">Neste exemplo, a versão de rascunho de Olá é obtido.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-186">In this example, hello Draft version is retrieved.</span></span> <span data-ttu-id="9b8e9-187">Também é versão de publicada Olá tooretrieve possíveis de runbook Olá apesar de não pode ser alterada nesta versão.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-187">It is also possible tooretrieve hello Published version of hello runbook although this version cannot be changed.</span></span>
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
@@ -112,8 +112,8 @@ Olá comandos de exemplo a seguir mostra como tooretrieve Olá script para um ru
 
     Out-File -InputObject $runbookContent -FilePath $scriptPath
 
-### <a name="toochange-hello-contents-of-a-runbook-using-windows-powershell"></a>tooChange Olá conteúdos de um Runbook através do Windows PowerShell
-Olá comandos de exemplo seguintes mostram como tooreplace Olá conteúdo existente de um runbook com conteúdos de Olá de um ficheiro de script. Tenha em atenção que isto é Olá mesmo procedimento como de exemplo [tooimport um runbook a partir de um ficheiro de script com o Windows PowerShell](automation-creating-importing-runbook.md).
+### <a name="toochange-hello-contents-of-a-runbook-using-windows-powershell"></a><span data-ttu-id="9b8e9-188">tooChange Olá conteúdos de um Runbook através do Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="9b8e9-188">tooChange hello Contents of a Runbook Using Windows PowerShell</span></span>
+<span data-ttu-id="9b8e9-189">Olá comandos de exemplo seguintes mostram como tooreplace Olá conteúdo existente de um runbook com conteúdos de Olá de um ficheiro de script.</span><span class="sxs-lookup"><span data-stu-id="9b8e9-189">hello following sample commands show how tooreplace hello existing contents of a runbook with hello contents of a script file.</span></span> <span data-ttu-id="9b8e9-190">Tenha em atenção que isto é Olá mesmo procedimento como de exemplo [tooimport um runbook a partir de um ficheiro de script com o Windows PowerShell](automation-creating-importing-runbook.md).</span><span class="sxs-lookup"><span data-stu-id="9b8e9-190">Note that this is hello same sample procedure as in [tooimport a runbook from a script file with Windows PowerShell](automation-creating-importing-runbook.md).</span></span>
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
@@ -122,12 +122,12 @@ Olá comandos de exemplo seguintes mostram como tooreplace Olá conteúdo existe
     Set-AzureAutomationRunbookDefinition -AutomationAccountName $automationAccountName -Name $runbookName -Path $scriptPath -Overwrite
     Publish-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName
 
-## <a name="related-articles"></a>Artigos relacionados
-* [Criar ou importar um runbook na automatização do Azure](automation-creating-importing-runbook.md)
-* [Fluxo de trabalho do PowerShell de aprendizagem](automation-powershell-workflow.md)
-* [Gráfico de criação na automatização do Azure](automation-graphical-authoring-intro.md)
-* [Certificados](automation-certificates.md)
-* [Ligações](automation-connections.md)
-* [Credenciais](automation-credentials.md)
-* [Agendas](automation-schedules.md)
-* [Variáveis](automation-variables.md)
+## <a name="related-articles"></a><span data-ttu-id="9b8e9-191">Artigos relacionados</span><span class="sxs-lookup"><span data-stu-id="9b8e9-191">Related articles</span></span>
+* [<span data-ttu-id="9b8e9-192">Criar ou importar um runbook na automatização do Azure</span><span class="sxs-lookup"><span data-stu-id="9b8e9-192">Creating or importing a runbook in Azure Automation</span></span>](automation-creating-importing-runbook.md)
+* [<span data-ttu-id="9b8e9-193">Fluxo de trabalho do PowerShell de aprendizagem</span><span class="sxs-lookup"><span data-stu-id="9b8e9-193">Learning PowerShell workflow</span></span>](automation-powershell-workflow.md)
+* [<span data-ttu-id="9b8e9-194">Gráfico de criação na automatização do Azure</span><span class="sxs-lookup"><span data-stu-id="9b8e9-194">Graphical authoring in Azure Automation</span></span>](automation-graphical-authoring-intro.md)
+* [<span data-ttu-id="9b8e9-195">Certificados</span><span class="sxs-lookup"><span data-stu-id="9b8e9-195">Certificates</span></span>](automation-certificates.md)
+* [<span data-ttu-id="9b8e9-196">Ligações</span><span class="sxs-lookup"><span data-stu-id="9b8e9-196">Connections</span></span>](automation-connections.md)
+* [<span data-ttu-id="9b8e9-197">Credenciais</span><span class="sxs-lookup"><span data-stu-id="9b8e9-197">Credentials</span></span>](automation-credentials.md)
+* [<span data-ttu-id="9b8e9-198">Agendas</span><span class="sxs-lookup"><span data-stu-id="9b8e9-198">Schedules</span></span>](automation-schedules.md)
+* [<span data-ttu-id="9b8e9-199">Variáveis</span><span class="sxs-lookup"><span data-stu-id="9b8e9-199">Variables</span></span>](automation-variables.md)

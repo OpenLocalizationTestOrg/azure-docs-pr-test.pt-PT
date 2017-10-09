@@ -22,15 +22,15 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="use-powershell-toosync-between-multiple-azure-sql-databases"></a>Utilizar o PowerShell toosync entre várias bases de dados SQL do Azure
+# <a name="use-powershell-toosync-between-multiple-azure-sql-databases"></a><span data-ttu-id="80c6b-103">Utilizar o PowerShell toosync entre várias bases de dados SQL do Azure</span><span class="sxs-lookup"><span data-stu-id="80c6b-103">Use PowerShell toosync between multiple Azure SQL databases</span></span>
  
-Este exemplo do PowerShell configura toosync de sincronização de dados entre várias bases de dados SQL do Azure.
+<span data-ttu-id="80c6b-104">Este exemplo do PowerShell configura toosync de sincronização de dados entre várias bases de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="80c6b-104">This PowerShell example configures Data Sync toosync between multiple Azure SQL databases.</span></span>
 
-Este exemplo requer Olá Azure PowerShell versão do módulo 4.2 ou posterior. Executar `Get-Module -ListAvailable AzureRM` toofind versão de Olá instalado. Se precisar de tooinstall ou atualização, consulte [módulo Azure PowerShell instalar](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps).
+<span data-ttu-id="80c6b-105">Este exemplo requer Olá Azure PowerShell versão do módulo 4.2 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="80c6b-105">This sample requires hello Azure PowerShell module version 4.2 or later.</span></span> <span data-ttu-id="80c6b-106">Executar `Get-Module -ListAvailable AzureRM` toofind versão de Olá instalado.</span><span class="sxs-lookup"><span data-stu-id="80c6b-106">Run `Get-Module -ListAvailable AzureRM` toofind hello installed version.</span></span> <span data-ttu-id="80c6b-107">Se precisar de tooinstall ou atualização, consulte [módulo Azure PowerShell instalar](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps).</span><span class="sxs-lookup"><span data-stu-id="80c6b-107">If you need tooinstall or upgrade, see [Install Azure PowerShell module](https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps).</span></span>
  
-Executar `Login-AzureRmAccount` toocreate uma ligação com o Azure. 
+<span data-ttu-id="80c6b-108">Executar `Login-AzureRmAccount` toocreate uma ligação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="80c6b-108">Run `Login-AzureRmAccount` toocreate a connection with Azure.</span></span> 
 
-## <a name="sample-script"></a>Script de exemplo
+## <a name="sample-script"></a><span data-ttu-id="80c6b-109">Script de exemplo</span><span class="sxs-lookup"><span data-stu-id="80c6b-109">Sample script</span></span>
 
 ```powershell
 # prerequisites: 
@@ -324,33 +324,33 @@ else
 }
 ```
 
-## <a name="clean-up-deployment"></a>Limpar a implementação
+## <a name="clean-up-deployment"></a><span data-ttu-id="80c6b-110">Limpar a implementação</span><span class="sxs-lookup"><span data-stu-id="80c6b-110">Clean up deployment</span></span>
 
-Depois de executar o script de exemplo de Olá, pode executar Olá seguir o grupo de recursos do comando tooremove Olá e todos os recursos associados à mesma.
+<span data-ttu-id="80c6b-111">Depois de executar o script de exemplo de Olá, pode executar Olá seguir o grupo de recursos do comando tooremove Olá e todos os recursos associados à mesma.</span><span class="sxs-lookup"><span data-stu-id="80c6b-111">After you run hello sample script, you can run hello following command tooremove hello resource group and all resources associated with it.</span></span>
 
 ```powershell
 Remove-AzureRmResourceGroup -ResourceGroupName "myResourceGroup"
 ```
 
-## <a name="script-explanation"></a>Explicação de script
+## <a name="script-explanation"></a><span data-ttu-id="80c6b-112">Explicação de script</span><span class="sxs-lookup"><span data-stu-id="80c6b-112">Script explanation</span></span>
 
-Este script utiliza Olá os seguintes comandos. Cada comando na documentação do Olá tabela ligações toocommand específicos.
+<span data-ttu-id="80c6b-113">Este script utiliza Olá os seguintes comandos.</span><span class="sxs-lookup"><span data-stu-id="80c6b-113">This script uses hello following commands.</span></span> <span data-ttu-id="80c6b-114">Cada comando na documentação do Olá tabela ligações toocommand específicos.</span><span class="sxs-lookup"><span data-stu-id="80c6b-114">Each command in hello table links toocommand-specific documentation.</span></span>
 
-| Comando | Notas |
+| <span data-ttu-id="80c6b-115">Comando</span><span class="sxs-lookup"><span data-stu-id="80c6b-115">Command</span></span> | <span data-ttu-id="80c6b-116">Notas</span><span class="sxs-lookup"><span data-stu-id="80c6b-116">Notes</span></span> |
 |---|---|
-| [Novo AzureRmSqlSyncAgent](/powershell/module/azurerm.sql/New-AzureRmSqlSyncAgent) |  Cria um novo agente de sincronização |
-| [Novo AzureRmSqlSyncAgentKey](/powershell/module/azurerm.sql/New-AzureRmSqlSyncAgentKey) |  Gera a chave de agente Olá associada ao agente de sincronização de Olá |
-| [Get-AzureRmSqlSyncAgentLinkedDatabase](/powershell/module/azurerm.sql/Get-AzureRmSqlSyncAgentLinkedDatabase) |  Obter todas as informações de Olá para Olá agente de sincronização |
-| [Novo AzureRmSqlSyncMember](/powershell/module/azurerm.sql/New-AzureRmSqlSyncMember) |  Adicionar um toohello membro novo grupo de sincronização |
-| [Atualização AzureRmSqlSyncSchema](/powershell/module/azurerm.sql/Update-AzureRmSqlSyncSchema) |  Atualiza as informações de esquema de base de dados de Olá |
-| [Get-AzureRmSqlSyncSchema](/powershell/module/azurerm.sql/Get-AzureRmSqlSyncSchem) |  Obter as informações de esquema de base de dados de Olá |
-| [Atualização AzureRmSqlSyncGroup](/powershell/module/azurerm.sql/Update-AzureRmSqlSyncGroup) |  Atualizações Olá grupo de sincronização |
-| [Início AzureRmSqlSyncGroupSync](/powershell/module/azurerm.sql/Start-AzureRmSqlSyncGroupSync) | Aciona uma sincronização |
-| [Get-AzureRmSqlSyncGroupLog](/powershell/module/azurerm.sql/Get-AzureRmSqlSyncGroupLog) |  Olá verifica o registo de sincronização |
+| [<span data-ttu-id="80c6b-117">Novo AzureRmSqlSyncAgent</span><span class="sxs-lookup"><span data-stu-id="80c6b-117">New-AzureRmSqlSyncAgent</span></span>](/powershell/module/azurerm.sql/New-AzureRmSqlSyncAgent) |  <span data-ttu-id="80c6b-118">Cria um novo agente de sincronização</span><span class="sxs-lookup"><span data-stu-id="80c6b-118">Creates a new Sync Agent</span></span> |
+| [<span data-ttu-id="80c6b-119">Novo AzureRmSqlSyncAgentKey</span><span class="sxs-lookup"><span data-stu-id="80c6b-119">New-AzureRmSqlSyncAgentKey</span></span>](/powershell/module/azurerm.sql/New-AzureRmSqlSyncAgentKey) |  <span data-ttu-id="80c6b-120">Gera a chave de agente Olá associada ao agente de sincronização de Olá</span><span class="sxs-lookup"><span data-stu-id="80c6b-120">Generates hello agent key associated with hello Sync agent</span></span> |
+| [<span data-ttu-id="80c6b-121">Get-AzureRmSqlSyncAgentLinkedDatabase</span><span class="sxs-lookup"><span data-stu-id="80c6b-121">Get-AzureRmSqlSyncAgentLinkedDatabase</span></span>](/powershell/module/azurerm.sql/Get-AzureRmSqlSyncAgentLinkedDatabase) |  <span data-ttu-id="80c6b-122">Obter todas as informações de Olá para Olá agente de sincronização</span><span class="sxs-lookup"><span data-stu-id="80c6b-122">Get all hello information for hello Sync Agent</span></span> |
+| [<span data-ttu-id="80c6b-123">Novo AzureRmSqlSyncMember</span><span class="sxs-lookup"><span data-stu-id="80c6b-123">New-AzureRmSqlSyncMember</span></span>](/powershell/module/azurerm.sql/New-AzureRmSqlSyncMember) |  <span data-ttu-id="80c6b-124">Adicionar um toohello membro novo grupo de sincronização</span><span class="sxs-lookup"><span data-stu-id="80c6b-124">Add a new member toohello Sync Group</span></span> |
+| [<span data-ttu-id="80c6b-125">Atualização AzureRmSqlSyncSchema</span><span class="sxs-lookup"><span data-stu-id="80c6b-125">Update-AzureRmSqlSyncSchema</span></span>](/powershell/module/azurerm.sql/Update-AzureRmSqlSyncSchema) |  <span data-ttu-id="80c6b-126">Atualiza as informações de esquema de base de dados de Olá</span><span class="sxs-lookup"><span data-stu-id="80c6b-126">Refreshes hello database schema information</span></span> |
+| [<span data-ttu-id="80c6b-127">Get-AzureRmSqlSyncSchema</span><span class="sxs-lookup"><span data-stu-id="80c6b-127">Get-AzureRmSqlSyncSchema</span></span>](/powershell/module/azurerm.sql/Get-AzureRmSqlSyncSchem) |  <span data-ttu-id="80c6b-128">Obter as informações de esquema de base de dados de Olá</span><span class="sxs-lookup"><span data-stu-id="80c6b-128">Get hello database schema information</span></span> |
+| [<span data-ttu-id="80c6b-129">Atualização AzureRmSqlSyncGroup</span><span class="sxs-lookup"><span data-stu-id="80c6b-129">Update-AzureRmSqlSyncGroup</span></span>](/powershell/module/azurerm.sql/Update-AzureRmSqlSyncGroup) |  <span data-ttu-id="80c6b-130">Atualizações Olá grupo de sincronização</span><span class="sxs-lookup"><span data-stu-id="80c6b-130">Updates hello Sync Group</span></span> |
+| [<span data-ttu-id="80c6b-131">Início AzureRmSqlSyncGroupSync</span><span class="sxs-lookup"><span data-stu-id="80c6b-131">Start-AzureRmSqlSyncGroupSync</span></span>](/powershell/module/azurerm.sql/Start-AzureRmSqlSyncGroupSync) | <span data-ttu-id="80c6b-132">Aciona uma sincronização</span><span class="sxs-lookup"><span data-stu-id="80c6b-132">Triggers a Sync</span></span> |
+| [<span data-ttu-id="80c6b-133">Get-AzureRmSqlSyncGroupLog</span><span class="sxs-lookup"><span data-stu-id="80c6b-133">Get-AzureRmSqlSyncGroupLog</span></span>](/powershell/module/azurerm.sql/Get-AzureRmSqlSyncGroupLog) |  <span data-ttu-id="80c6b-134">Olá verifica o registo de sincronização</span><span class="sxs-lookup"><span data-stu-id="80c6b-134">Checks hello Sync Log</span></span> |
 |||
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="80c6b-135">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="80c6b-135">Next steps</span></span>
 
-Para obter mais informações sobre o Azure PowerShell, consulte [documentação do Azure PowerShell](/powershell/azure/overview).
+<span data-ttu-id="80c6b-136">Para obter mais informações sobre o Azure PowerShell, consulte [documentação do Azure PowerShell](/powershell/azure/overview).</span><span class="sxs-lookup"><span data-stu-id="80c6b-136">For more information about Azure PowerShell, see [Azure PowerShell documentation](/powershell/azure/overview).</span></span>
 
-Exemplos de script do PowerShell de base de dados do SQL adicionais podem ser encontrados na [scripts do PowerShell de base de dados do SQL Azure](../sql-database-powershell-samples.md).
+<span data-ttu-id="80c6b-137">Exemplos de script do PowerShell de base de dados do SQL adicionais podem ser encontrados na [scripts do PowerShell de base de dados do SQL Azure](../sql-database-powershell-samples.md).</span><span class="sxs-lookup"><span data-stu-id="80c6b-137">Additional SQL Database PowerShell script samples can be found in [Azure SQL Database PowerShell scripts](../sql-database-powershell-samples.md).</span></span>

@@ -20,14 +20,14 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="quotas-and-limitations"></a>Quotas e Limitações
-Este tópico descreve as quotas e limitações associadas com Media Services do Microsoft Azure.
+# <a name="quotas-and-limitations"></a><span data-ttu-id="cee67-103">Quotas e Limitações</span><span class="sxs-lookup"><span data-stu-id="cee67-103">Quotas and Limitations</span></span>
+<span data-ttu-id="cee67-104">Este tópico descreve as quotas e limitações associadas com Media Services do Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="cee67-104">This topic describes quotas and limitations associated with Microsoft Azure Media Services.</span></span>
 
 [!INCLUDE [azure-mediaservices-limits](../../includes/azure-mediaservices-limits.md)]
 
-## <a name="media-services-learning-paths"></a>Percursos de aprendizagem dos Media Services
+## <a name="media-services-learning-paths"></a><span data-ttu-id="cee67-105">Percursos de aprendizagem dos Media Services</span><span class="sxs-lookup"><span data-stu-id="cee67-105">Media Services learning paths</span></span>
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Enviar comentários
+## <a name="provide-feedback"></a><span data-ttu-id="cee67-106">Enviar comentários</span><span class="sxs-lookup"><span data-stu-id="cee67-106">Provide feedback</span></span>
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 

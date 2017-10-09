@@ -19,15 +19,15 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="azure-active-directory-reporting-guide"></a>Guia de relatórios do Azure Active Directory
+# <a name="azure-active-directory-reporting-guide"></a><span data-ttu-id="3a2f9-103">Guia de relatórios do Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="3a2f9-103">Azure Active Directory Reporting Guide</span></span>
 > [!div class="op_single_selector"]
-> * [Portal do Azure](active-directory-reporting-guide.md)
-> * [Portal Clássico do Azure](active-directory-reporting-guide-classic-portal.md)
+> * [<span data-ttu-id="3a2f9-104">Portal do Azure</span><span class="sxs-lookup"><span data-stu-id="3a2f9-104">Azure portal</span></span>](active-directory-reporting-guide.md)
+> * [<span data-ttu-id="3a2f9-105">Portal Clássico do Azure</span><span class="sxs-lookup"><span data-stu-id="3a2f9-105">Azure classic portal</span></span>](active-directory-reporting-guide-classic-portal.md)
 > 
 > 
 
-* [Azure Active Directory reporting - preview](active-directory-reporting-azure-portal.md)
-* [Introdução ao hello do Azure AD Reporting API](active-directory-reporting-api-getting-started.md)
-* [Do Azure Active Directory, eventos de auditoria de relatório](active-directory-reporting-audit-events.md)
-* [Retenção de relatórios do Azure Active Directory](active-directory-reporting-retention.md)
+* [<span data-ttu-id="3a2f9-106">Azure Active Directory reporting - preview</span><span class="sxs-lookup"><span data-stu-id="3a2f9-106">Azure Active Directory reporting - preview</span></span>](active-directory-reporting-azure-portal.md)
+* [<span data-ttu-id="3a2f9-107">Introdução ao hello do Azure AD Reporting API</span><span class="sxs-lookup"><span data-stu-id="3a2f9-107">Getting started with hello Azure AD Reporting API</span></span>](active-directory-reporting-api-getting-started.md)
+* [<span data-ttu-id="3a2f9-108">Do Azure Active Directory, eventos de auditoria de relatório</span><span class="sxs-lookup"><span data-stu-id="3a2f9-108">Azure Active Directory Reporting Audit Events</span></span>](active-directory-reporting-audit-events.md)
+* [<span data-ttu-id="3a2f9-109">Retenção de relatórios do Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="3a2f9-109">Azure Active Directory Reporting Retention</span></span>](active-directory-reporting-retention.md)
 

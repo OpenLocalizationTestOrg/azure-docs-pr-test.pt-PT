@@ -21,27 +21,27 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="get-started-with-hello-office365-video-connector"></a>Introdução ao conector do Office 365 vídeo Olá
-Ligar tooOffice 365 vídeo tooget sobre um vídeo do Office 365, obter uma lista de vídeos e muito mais. Com as vídeo do Office 365, pode:
+# <a name="get-started-with-hello-office365-video-connector"></a><span data-ttu-id="1bf49-103">Introdução ao conector do Office 365 vídeo Olá</span><span class="sxs-lookup"><span data-stu-id="1bf49-103">Get started with hello Office365 Video connector</span></span>
+<span data-ttu-id="1bf49-104">Ligar tooOffice 365 vídeo tooget sobre um vídeo do Office 365, obter uma lista de vídeos e muito mais.</span><span class="sxs-lookup"><span data-stu-id="1bf49-104">Connect tooOffice 365 Video tooget information about an Office 365 video, get a list of videos, and more.</span></span> <span data-ttu-id="1bf49-105">Com as vídeo do Office 365, pode:</span><span class="sxs-lookup"><span data-stu-id="1bf49-105">With Office 365 Video, you can:</span></span>
 
-* Crie o fluxo de negócio com base nos dados de Olá que aproveitar as vídeo do Office 365. 
-* Utilize as ações que verifique o estado de portal vídeo Olá, obter uma lista de todas as vídeo num canal e muito mais. Estas ações obter uma resposta e a saída de Olá disponível para outras ações. Por exemplo, pode utilizar Olá pesquisa do Bing conector toosearch para Office 365 vídeos e, em seguida, utilizar Olá do Office 365 conector vídeo tooget sobre esse vídeo. Se as vídeo Olá aos seus requisitos, pode publicar este vídeo no Facebook. 
+* <span data-ttu-id="1bf49-106">Crie o fluxo de negócio com base nos dados de Olá que aproveitar as vídeo do Office 365.</span><span class="sxs-lookup"><span data-stu-id="1bf49-106">Build your business flow based on hello data you get from Office 365 Video.</span></span> 
+* <span data-ttu-id="1bf49-107">Utilize as ações que verifique o estado de portal vídeo Olá, obter uma lista de todas as vídeo num canal e muito mais.</span><span class="sxs-lookup"><span data-stu-id="1bf49-107">Use actions that check hello video portal status, get a list of all video in a channel, and more.</span></span> <span data-ttu-id="1bf49-108">Estas ações obter uma resposta e a saída de Olá disponível para outras ações.</span><span class="sxs-lookup"><span data-stu-id="1bf49-108">These actions get a response, and then make hello output available for other actions.</span></span> <span data-ttu-id="1bf49-109">Por exemplo, pode utilizar Olá pesquisa do Bing conector toosearch para Office 365 vídeos e, em seguida, utilizar Olá do Office 365 conector vídeo tooget sobre esse vídeo.</span><span class="sxs-lookup"><span data-stu-id="1bf49-109">For example, you can use hello Bing Search connector toosearch for Office 365 videos, and then use hello Office 365 video connector tooget information about that video.</span></span> <span data-ttu-id="1bf49-110">Se as vídeo Olá aos seus requisitos, pode publicar este vídeo no Facebook.</span><span class="sxs-lookup"><span data-stu-id="1bf49-110">If hello video meets your requirements, you can post this video on Facebook.</span></span> 
 
-Pode começar por criar uma aplicação lógica agora, consulte [criar uma aplicação lógica](../logic-apps/logic-apps-create-a-logic-app.md).
+<span data-ttu-id="1bf49-111">Pode começar por criar uma aplicação lógica agora, consulte [criar uma aplicação lógica](../logic-apps/logic-apps-create-a-logic-app.md).</span><span class="sxs-lookup"><span data-stu-id="1bf49-111">You can get started by creating a logic app now, see [Create a logic app](../logic-apps/logic-apps-create-a-logic-app.md).</span></span>
 
-## <a name="create-a-connection-toooffice365-video-connector"></a>Criar um conector de vídeo de tooOffice365 de ligação
-Ao adicionar este tooyour logic apps do conector, tem de iniciar sessão-no tooyour Office 365 vídeo de conta e permitir que as logic apps tooconnect tooyour conta.
+## <a name="create-a-connection-toooffice365-video-connector"></a><span data-ttu-id="1bf49-112">Criar um conector de vídeo de tooOffice365 de ligação</span><span class="sxs-lookup"><span data-stu-id="1bf49-112">Create a connection tooOffice365 Video connector</span></span>
+<span data-ttu-id="1bf49-113">Ao adicionar este tooyour logic apps do conector, tem de iniciar sessão-no tooyour Office 365 vídeo de conta e permitir que as logic apps tooconnect tooyour conta.</span><span class="sxs-lookup"><span data-stu-id="1bf49-113">When you add this connector tooyour logic apps, you must sign-in tooyour Office 365 Video account and allow logic apps tooconnect tooyour account.</span></span>
 
 > [!INCLUDE [Steps toocreate a connection tooOffice 365 Video](../../includes/connectors-create-api-office365video.md)]
 > 
 > 
 
-Depois de criar ligação Olá, introduza as propriedades de vídeo Olá do Office 365, como o nome do inquilino Olá ou canal ID. 
+<span data-ttu-id="1bf49-114">Depois de criar ligação Olá, introduza as propriedades de vídeo Olá do Office 365, como o nome do inquilino Olá ou canal ID.</span><span class="sxs-lookup"><span data-stu-id="1bf49-114">After you create hello connection, you enter hello Office 365 video properties, like hello tenant name or channel ID.</span></span> 
 
 
-## <a name="connector-specific-details"></a>Detalhes específicos do conector
+## <a name="connector-specific-details"></a><span data-ttu-id="1bf49-115">Detalhes específicos do conector</span><span class="sxs-lookup"><span data-stu-id="1bf49-115">Connector-specific details</span></span>
 
-Ver todos os acionadores e ações definidas no swagger Olá e consulte também os limites de Olá [detalhes do conector](/connectors/office365videoconnector/).
+<span data-ttu-id="1bf49-116">Ver todos os acionadores e ações definidas no swagger Olá e consulte também os limites de Olá [detalhes do conector](/connectors/office365videoconnector/).</span><span class="sxs-lookup"><span data-stu-id="1bf49-116">View any triggers and actions defined in hello swagger, and also see any limits in hello [connector details](/connectors/office365videoconnector/).</span></span>
 
-## <a name="more-connectors"></a>Mais conectores
-Voltar atrás toohello [lista APIs](apis-list.md).
+## <a name="more-connectors"></a><span data-ttu-id="1bf49-117">Mais conectores</span><span class="sxs-lookup"><span data-stu-id="1bf49-117">More connectors</span></span>
+<span data-ttu-id="1bf49-118">Voltar atrás toohello [lista APIs](apis-list.md).</span><span class="sxs-lookup"><span data-stu-id="1bf49-118">Go back toohello [APIs list](apis-list.md).</span></span>

@@ -20,68 +20,68 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="choose-hello-azure-multi-factor-authentication-solution-for-you"></a>Escolher a solução de Azure multi-factor Authentication de Olá por si
-Porque existem vários tipos de multi-factor Authentication (MFA) do Azure, é necessário responder a algumas perguntas toofigure, saída qual é a versão é Olá adequada, um toouse.  Estas perguntas são:
+# <a name="choose-hello-azure-multi-factor-authentication-solution-for-you"></a><span data-ttu-id="7a668-104">Escolher a solução de Azure multi-factor Authentication de Olá por si</span><span class="sxs-lookup"><span data-stu-id="7a668-104">Choose hello Azure Multi-Factor Authentication solution for you</span></span>
+<span data-ttu-id="7a668-105">Porque existem vários tipos de multi-factor Authentication (MFA) do Azure, é necessário responder a algumas perguntas toofigure, saída qual é a versão é Olá adequada, um toouse.</span><span class="sxs-lookup"><span data-stu-id="7a668-105">Because there are several flavors of Azure Multi-Factor Authentication (MFA), we must answer a few questions toofigure out which version is hello proper one toouse.</span></span>  <span data-ttu-id="7a668-106">Estas perguntas são:</span><span class="sxs-lookup"><span data-stu-id="7a668-106">Those questions are:</span></span>
 
-* [O que estou a tentar posso toosecure](#what-am-i-trying-to-secure)
-* [Onde estão localizados os utilizadores de Olá](#where-are-the-users-located)
-* [Que funcionalidades preciso?](#what-featured-do-i-need)
+* [<span data-ttu-id="7a668-107">O que estou a tentar posso toosecure</span><span class="sxs-lookup"><span data-stu-id="7a668-107">What am I trying toosecure</span></span>](#what-am-i-trying-to-secure)
+* [<span data-ttu-id="7a668-108">Onde estão localizados os utilizadores de Olá</span><span class="sxs-lookup"><span data-stu-id="7a668-108">Where are hello users located</span></span>](#where-are-the-users-located)
+* [<span data-ttu-id="7a668-109">Que funcionalidades preciso?</span><span class="sxs-lookup"><span data-stu-id="7a668-109">What features do I need?</span></span>](#what-featured-do-i-need)
 
-Olá secções seguintes fornecem orientações sobre como determinar cada uma destas respostas.
+<span data-ttu-id="7a668-110">Olá secções seguintes fornecem orientações sobre como determinar cada uma destas respostas.</span><span class="sxs-lookup"><span data-stu-id="7a668-110">hello following sections provide guidance on determining each of these answers.</span></span>
 
-## <a name="what-am-i-trying-toosecure"></a>O que estou a tentar posso toosecure?
-solução de verificação de dois passos correto de Olá toodetermine, primeiro é necessário responder pergunta sobre Olá que estão a tentar toosecure com um segundo método de autenticação.  É uma aplicação que está no Azure?  Ou um sistema de acesso remoto?  Através da determinação de está a tentar toosecure, iremos pode responder Olá pergunta sobre onde multi-factor Authentication tem de toobe ativada.  
+## <a name="what-am-i-trying-toosecure"></a><span data-ttu-id="7a668-111">O que estou a tentar posso toosecure?</span><span class="sxs-lookup"><span data-stu-id="7a668-111">What am I trying toosecure?</span></span>
+<span data-ttu-id="7a668-112">solução de verificação de dois passos correto de Olá toodetermine, primeiro é necessário responder pergunta sobre Olá que estão a tentar toosecure com um segundo método de autenticação.</span><span class="sxs-lookup"><span data-stu-id="7a668-112">toodetermine hello correct two-step verification solution, first we must answer hello question of what are you trying toosecure with a second method of authentication.</span></span>  <span data-ttu-id="7a668-113">É uma aplicação que está no Azure?</span><span class="sxs-lookup"><span data-stu-id="7a668-113">Is it an application that is in Azure?</span></span>  <span data-ttu-id="7a668-114">Ou um sistema de acesso remoto?</span><span class="sxs-lookup"><span data-stu-id="7a668-114">Or a remote access system?</span></span>  <span data-ttu-id="7a668-115">Através da determinação de está a tentar toosecure, iremos pode responder Olá pergunta sobre onde multi-factor Authentication tem de toobe ativada.</span><span class="sxs-lookup"><span data-stu-id="7a668-115">By determining what we are trying toosecure, we can answer hello question of where Multi-Factor Authentication needs toobe enabled.</span></span>  
 
-| Quais são toosecure tentar | MFA na nuvem de Olá | Servidor MFA |
+| <span data-ttu-id="7a668-116">Quais são toosecure tentar</span><span class="sxs-lookup"><span data-stu-id="7a668-116">What are you trying toosecure</span></span> | <span data-ttu-id="7a668-117">MFA na nuvem de Olá</span><span class="sxs-lookup"><span data-stu-id="7a668-117">MFA in hello cloud</span></span> | <span data-ttu-id="7a668-118">Servidor MFA</span><span class="sxs-lookup"><span data-stu-id="7a668-118">MFA Server</span></span> |
 | --- |:---:|:---:|
-| Aplicações Microsoft originais |● |● |
-| Aplicações de SaaS na Galeria de aplicações de Olá |● |  |
-| Aplicações Web publicadas através do Proxy de Aplicação do Azure AD |● |  |
-| Aplicações IIS não publicadas através do Proxy de Aplicação do Azure AD | |● |
-| Acesso remoto, tais como VPN, RDG | ● | ● |
+| <span data-ttu-id="7a668-119">Aplicações Microsoft originais</span><span class="sxs-lookup"><span data-stu-id="7a668-119">First-party Microsoft apps</span></span> |<span data-ttu-id="7a668-120">●</span><span class="sxs-lookup"><span data-stu-id="7a668-120">●</span></span> |<span data-ttu-id="7a668-121">●</span><span class="sxs-lookup"><span data-stu-id="7a668-121">●</span></span> |
+| <span data-ttu-id="7a668-122">Aplicações de SaaS na Galeria de aplicações de Olá</span><span class="sxs-lookup"><span data-stu-id="7a668-122">SaaS apps in hello app gallery</span></span> |<span data-ttu-id="7a668-123">●</span><span class="sxs-lookup"><span data-stu-id="7a668-123">●</span></span> |  |
+| <span data-ttu-id="7a668-124">Aplicações Web publicadas através do Proxy de Aplicação do Azure AD</span><span class="sxs-lookup"><span data-stu-id="7a668-124">Web applications published through Azure AD App Proxy</span></span> |<span data-ttu-id="7a668-125">●</span><span class="sxs-lookup"><span data-stu-id="7a668-125">●</span></span> |  |
+| <span data-ttu-id="7a668-126">Aplicações IIS não publicadas através do Proxy de Aplicação do Azure AD</span><span class="sxs-lookup"><span data-stu-id="7a668-126">IIS applications not published through Azure AD App Proxy</span></span> | |<span data-ttu-id="7a668-127">●</span><span class="sxs-lookup"><span data-stu-id="7a668-127">●</span></span> |
+| <span data-ttu-id="7a668-128">Acesso remoto, tais como VPN, RDG</span><span class="sxs-lookup"><span data-stu-id="7a668-128">Remote access such as VPN, RDG</span></span> | <span data-ttu-id="7a668-129">●</span><span class="sxs-lookup"><span data-stu-id="7a668-129">●</span></span> | <span data-ttu-id="7a668-130">●</span><span class="sxs-lookup"><span data-stu-id="7a668-130">●</span></span> |
 
-## <a name="where-are-hello-users-located"></a>Onde estão localizados os utilizadores de Olá
-Em seguida, observar onde estão localizados os nossos utilizadores ajuda toodetermine Olá solução correta toouse, se na nuvem de Olá ou Olá, no local com o servidor MFA.
+## <a name="where-are-hello-users-located"></a><span data-ttu-id="7a668-131">Onde estão localizados os utilizadores de Olá</span><span class="sxs-lookup"><span data-stu-id="7a668-131">Where are hello users located</span></span>
+<span data-ttu-id="7a668-132">Em seguida, observar onde estão localizados os nossos utilizadores ajuda toodetermine Olá solução correta toouse, se na nuvem de Olá ou Olá, no local com o servidor MFA.</span><span class="sxs-lookup"><span data-stu-id="7a668-132">Next, looking at where our users are located helps toodetermine hello correct solution toouse, whether in hello cloud or on-premises using hello MFA Server.</span></span>
 
-| Localização do Utilizador | MFA na nuvem de Olá | Servidor MFA |
+| <span data-ttu-id="7a668-133">Localização do Utilizador</span><span class="sxs-lookup"><span data-stu-id="7a668-133">User Location</span></span> | <span data-ttu-id="7a668-134">MFA na nuvem de Olá</span><span class="sxs-lookup"><span data-stu-id="7a668-134">MFA in hello cloud</span></span> | <span data-ttu-id="7a668-135">Servidor MFA</span><span class="sxs-lookup"><span data-stu-id="7a668-135">MFA Server</span></span> |
 | --- |:---:|:---:|
-| Azure Active Directory |● | |
-| Azure AD e AD no local utilizando federação com o AD FS |● |● |
-| Azure AD e AD no local utilizando DirSync, Azure AD Sync, Azure AD Connect - sem sincronização de palavras-passe |● |● |
-| Azure AD e AD no local utilizando DirSync, Azure AD Sync, Azure AD Connect - com sincronização de palavras-passe |● | |
-| Active Directory no local | |● |
+| <span data-ttu-id="7a668-136">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="7a668-136">Azure Active Directory</span></span> |<span data-ttu-id="7a668-137">●</span><span class="sxs-lookup"><span data-stu-id="7a668-137">●</span></span> | |
+| <span data-ttu-id="7a668-138">Azure AD e AD no local utilizando federação com o AD FS</span><span class="sxs-lookup"><span data-stu-id="7a668-138">Azure AD and on-premises AD using federation with AD FS</span></span> |<span data-ttu-id="7a668-139">●</span><span class="sxs-lookup"><span data-stu-id="7a668-139">●</span></span> |<span data-ttu-id="7a668-140">●</span><span class="sxs-lookup"><span data-stu-id="7a668-140">●</span></span> |
+| <span data-ttu-id="7a668-141">Azure AD e AD no local utilizando DirSync, Azure AD Sync, Azure AD Connect - sem sincronização de palavras-passe</span><span class="sxs-lookup"><span data-stu-id="7a668-141">Azure AD and on-premises AD using DirSync, Azure AD Sync, Azure AD Connect - no password sync</span></span> |<span data-ttu-id="7a668-142">●</span><span class="sxs-lookup"><span data-stu-id="7a668-142">●</span></span> |<span data-ttu-id="7a668-143">●</span><span class="sxs-lookup"><span data-stu-id="7a668-143">●</span></span> |
+| <span data-ttu-id="7a668-144">Azure AD e AD no local utilizando DirSync, Azure AD Sync, Azure AD Connect - com sincronização de palavras-passe</span><span class="sxs-lookup"><span data-stu-id="7a668-144">Azure AD and on-premises AD using DirSync, Azure AD Sync, Azure AD Connect - with password sync</span></span> |<span data-ttu-id="7a668-145">●</span><span class="sxs-lookup"><span data-stu-id="7a668-145">●</span></span> | |
+| <span data-ttu-id="7a668-146">Active Directory no local</span><span class="sxs-lookup"><span data-stu-id="7a668-146">On-premises Active Directory</span></span> | |<span data-ttu-id="7a668-147">●</span><span class="sxs-lookup"><span data-stu-id="7a668-147">●</span></span> |
 
-## <a name="what-features-do-i-need"></a>Que funcionalidades preciso?
-Olá tabela seguinte compara as funcionalidades de Olá que estão disponíveis com multi-factor Authentication na nuvem de Olá e com Olá servidor multi-factor Authentication.
+## <a name="what-features-do-i-need"></a><span data-ttu-id="7a668-148">Que funcionalidades preciso?</span><span class="sxs-lookup"><span data-stu-id="7a668-148">What features do I need?</span></span>
+<span data-ttu-id="7a668-149">Olá tabela seguinte compara as funcionalidades de Olá que estão disponíveis com multi-factor Authentication na nuvem de Olá e com Olá servidor multi-factor Authentication.</span><span class="sxs-lookup"><span data-stu-id="7a668-149">hello following table compares hello features that are available with Multi-Factor Authentication in hello cloud and with hello Multi-Factor Authentication Server.</span></span>
 
-| Funcionalidade | MFA na nuvem de Olá | Servidor MFA |
+| <span data-ttu-id="7a668-150">Funcionalidade</span><span class="sxs-lookup"><span data-stu-id="7a668-150">Feature</span></span> | <span data-ttu-id="7a668-151">MFA na nuvem de Olá</span><span class="sxs-lookup"><span data-stu-id="7a668-151">MFA in hello cloud</span></span> | <span data-ttu-id="7a668-152">Servidor MFA</span><span class="sxs-lookup"><span data-stu-id="7a668-152">MFA Server</span></span> |
 | --- |:---:|:---:|
-| Notificação da aplicação móvel como um segundo fator | ● | ● |
-| Código de verificação da aplicação móvel como um segundo fator | ● | ● |
-| Chamada telefónica como segundo fator | ● | ● |
-| SMS unidirecional como segundo fator | ● | ● |
-| SMS bidirecional como segundo fator | | ● |
-| Tokens de Hardware como segundo fator | | ● |
-| Palavras-passe da aplicação para os clientes do Office 365 que não suportam MFA | ● | |
-| Controlo de administração sobre métodos de autenticação | ● | ● |
-| Modo PIN | | ● |
-| Alerta de fraudes |● | ● |
-| Relatórios do MFA |● | ● |
-| Omissão de Uso Individual | | ● |
-| Saudações personalizadas para chamadas telefónicas | ● | ● |
-| ID do autor da chamada personalizável para chamadas telefónicas | ● | ● |
-| IPs Fidedignos | ● | ● |
-| Memorizar MFA para dispositivos fidedignos | ● | |
-| Acesso condicional | ● | ● |
-| Cache |  | ● |
+| <span data-ttu-id="7a668-153">Notificação da aplicação móvel como um segundo fator</span><span class="sxs-lookup"><span data-stu-id="7a668-153">Mobile app notification as a second factor</span></span> | <span data-ttu-id="7a668-154">●</span><span class="sxs-lookup"><span data-stu-id="7a668-154">●</span></span> | <span data-ttu-id="7a668-155">●</span><span class="sxs-lookup"><span data-stu-id="7a668-155">●</span></span> |
+| <span data-ttu-id="7a668-156">Código de verificação da aplicação móvel como um segundo fator</span><span class="sxs-lookup"><span data-stu-id="7a668-156">Mobile app verification code as a second factor</span></span> | <span data-ttu-id="7a668-157">●</span><span class="sxs-lookup"><span data-stu-id="7a668-157">●</span></span> | <span data-ttu-id="7a668-158">●</span><span class="sxs-lookup"><span data-stu-id="7a668-158">●</span></span> |
+| <span data-ttu-id="7a668-159">Chamada telefónica como segundo fator</span><span class="sxs-lookup"><span data-stu-id="7a668-159">Phone call as second factor</span></span> | <span data-ttu-id="7a668-160">●</span><span class="sxs-lookup"><span data-stu-id="7a668-160">●</span></span> | <span data-ttu-id="7a668-161">●</span><span class="sxs-lookup"><span data-stu-id="7a668-161">●</span></span> |
+| <span data-ttu-id="7a668-162">SMS unidirecional como segundo fator</span><span class="sxs-lookup"><span data-stu-id="7a668-162">One-way SMS as second factor</span></span> | <span data-ttu-id="7a668-163">●</span><span class="sxs-lookup"><span data-stu-id="7a668-163">●</span></span> | <span data-ttu-id="7a668-164">●</span><span class="sxs-lookup"><span data-stu-id="7a668-164">●</span></span> |
+| <span data-ttu-id="7a668-165">SMS bidirecional como segundo fator</span><span class="sxs-lookup"><span data-stu-id="7a668-165">Two-way SMS as second factor</span></span> | | <span data-ttu-id="7a668-166">●</span><span class="sxs-lookup"><span data-stu-id="7a668-166">●</span></span> |
+| <span data-ttu-id="7a668-167">Tokens de Hardware como segundo fator</span><span class="sxs-lookup"><span data-stu-id="7a668-167">Hardware Tokens as second factor</span></span> | | <span data-ttu-id="7a668-168">●</span><span class="sxs-lookup"><span data-stu-id="7a668-168">●</span></span> |
+| <span data-ttu-id="7a668-169">Palavras-passe da aplicação para os clientes do Office 365 que não suportam MFA</span><span class="sxs-lookup"><span data-stu-id="7a668-169">App passwords for Office 365 clients that don’t support MFA</span></span> | <span data-ttu-id="7a668-170">●</span><span class="sxs-lookup"><span data-stu-id="7a668-170">●</span></span> | |
+| <span data-ttu-id="7a668-171">Controlo de administração sobre métodos de autenticação</span><span class="sxs-lookup"><span data-stu-id="7a668-171">Admin control over authentication methods</span></span> | <span data-ttu-id="7a668-172">●</span><span class="sxs-lookup"><span data-stu-id="7a668-172">●</span></span> | <span data-ttu-id="7a668-173">●</span><span class="sxs-lookup"><span data-stu-id="7a668-173">●</span></span> |
+| <span data-ttu-id="7a668-174">Modo PIN</span><span class="sxs-lookup"><span data-stu-id="7a668-174">PIN mode</span></span> | | <span data-ttu-id="7a668-175">●</span><span class="sxs-lookup"><span data-stu-id="7a668-175">●</span></span> |
+| <span data-ttu-id="7a668-176">Alerta de fraudes</span><span class="sxs-lookup"><span data-stu-id="7a668-176">Fraud alert</span></span> |<span data-ttu-id="7a668-177">●</span><span class="sxs-lookup"><span data-stu-id="7a668-177">●</span></span> | <span data-ttu-id="7a668-178">●</span><span class="sxs-lookup"><span data-stu-id="7a668-178">●</span></span> |
+| <span data-ttu-id="7a668-179">Relatórios do MFA</span><span class="sxs-lookup"><span data-stu-id="7a668-179">MFA Reports</span></span> |<span data-ttu-id="7a668-180">●</span><span class="sxs-lookup"><span data-stu-id="7a668-180">●</span></span> | <span data-ttu-id="7a668-181">●</span><span class="sxs-lookup"><span data-stu-id="7a668-181">●</span></span> |
+| <span data-ttu-id="7a668-182">Omissão de Uso Individual</span><span class="sxs-lookup"><span data-stu-id="7a668-182">One-Time Bypass</span></span> | | <span data-ttu-id="7a668-183">●</span><span class="sxs-lookup"><span data-stu-id="7a668-183">●</span></span> |
+| <span data-ttu-id="7a668-184">Saudações personalizadas para chamadas telefónicas</span><span class="sxs-lookup"><span data-stu-id="7a668-184">Custom greetings for phone calls</span></span> | <span data-ttu-id="7a668-185">●</span><span class="sxs-lookup"><span data-stu-id="7a668-185">●</span></span> | <span data-ttu-id="7a668-186">●</span><span class="sxs-lookup"><span data-stu-id="7a668-186">●</span></span> |
+| <span data-ttu-id="7a668-187">ID do autor da chamada personalizável para chamadas telefónicas</span><span class="sxs-lookup"><span data-stu-id="7a668-187">Customizable caller ID for phone calls</span></span> | <span data-ttu-id="7a668-188">●</span><span class="sxs-lookup"><span data-stu-id="7a668-188">●</span></span> | <span data-ttu-id="7a668-189">●</span><span class="sxs-lookup"><span data-stu-id="7a668-189">●</span></span> |
+| <span data-ttu-id="7a668-190">IPs Fidedignos</span><span class="sxs-lookup"><span data-stu-id="7a668-190">Trusted IPs</span></span> | <span data-ttu-id="7a668-191">●</span><span class="sxs-lookup"><span data-stu-id="7a668-191">●</span></span> | <span data-ttu-id="7a668-192">●</span><span class="sxs-lookup"><span data-stu-id="7a668-192">●</span></span> |
+| <span data-ttu-id="7a668-193">Memorizar MFA para dispositivos fidedignos</span><span class="sxs-lookup"><span data-stu-id="7a668-193">Remember MFA for trusted devices</span></span> | <span data-ttu-id="7a668-194">●</span><span class="sxs-lookup"><span data-stu-id="7a668-194">●</span></span> | |
+| <span data-ttu-id="7a668-195">Acesso condicional</span><span class="sxs-lookup"><span data-stu-id="7a668-195">Conditional access</span></span> | <span data-ttu-id="7a668-196">●</span><span class="sxs-lookup"><span data-stu-id="7a668-196">●</span></span> | <span data-ttu-id="7a668-197">●</span><span class="sxs-lookup"><span data-stu-id="7a668-197">●</span></span> |
+| <span data-ttu-id="7a668-198">Cache</span><span class="sxs-lookup"><span data-stu-id="7a668-198">Cache</span></span> |  | <span data-ttu-id="7a668-199">●</span><span class="sxs-lookup"><span data-stu-id="7a668-199">●</span></span> |
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="7a668-200">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="7a668-200">Next steps</span></span>
 
-Agora que Determinámos se toouse na nuvem a autenticação multifator ou Olá servidor MFA no local, podemos começar a configurar e utilizar o Azure multi-factor Authentication. **Selecione o ícone de Olá que representa o seu cenário**
+<span data-ttu-id="7a668-201">Agora que Determinámos se toouse na nuvem a autenticação multifator ou Olá servidor MFA no local, podemos começar a configurar e utilizar o Azure multi-factor Authentication.</span><span class="sxs-lookup"><span data-stu-id="7a668-201">Now that we have determined whether toouse cloud multi-factor authentication or hello MFA Server on-premises, we can get started setting up and using Azure Multi-Factor Authentication.</span></span> <span data-ttu-id="7a668-202">**Selecione o ícone de Olá que representa o seu cenário**</span><span class="sxs-lookup"><span data-stu-id="7a668-202">**Select hello icon that represents your scenario**</span></span>
 
 <center>
 
 
 
 
-[![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Servidor](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </center>
+<span data-ttu-id="7a668-203">[![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Servidor](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </center></span><span class="sxs-lookup"><span data-stu-id="7a668-203">[![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Server](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </center></span></span>

@@ -20,72 +20,72 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="integrating-azure-security-center-alerts-with-azure-log-integration"></a>A integração de alertas do Centro de segurança do Azure com a integração de registos do Azure
-Muitas operações de segurança e as equipas de resposta a incidentes dependem de uma solução Security Information and Event Management (SIEM) como Olá ponto para a triagem e investigar alertas de segurança de partida. Com a integração de registo do Azure, pode integrar alertas do Centro de segurança do Azure com a sua solução do SIEM.
+# <a name="integrating-azure-security-center-alerts-with-azure-log-integration"></a><span data-ttu-id="875bb-103">A integração de alertas do Centro de segurança do Azure com a integração de registos do Azure</span><span class="sxs-lookup"><span data-stu-id="875bb-103">Integrating Azure Security Center alerts with Azure log integration</span></span>
+<span data-ttu-id="875bb-104">Muitas operações de segurança e as equipas de resposta a incidentes dependem de uma solução Security Information and Event Management (SIEM) como Olá ponto para a triagem e investigar alertas de segurança de partida.</span><span class="sxs-lookup"><span data-stu-id="875bb-104">Many security operations and incident response teams rely on a Security Information and Event Management (SIEM) solution as hello starting point for triaging and investigating security alerts.</span></span> <span data-ttu-id="875bb-105">Com a integração de registo do Azure, pode integrar alertas do Centro de segurança do Azure com a sua solução do SIEM.</span><span class="sxs-lookup"><span data-stu-id="875bb-105">With Azure Log Integration, you can integrate Azure Security Center alerts with your SIEM solution.</span></span>
 
-Integração de registos do Azure suporta atualmente HP ArcSight, Splunk e IBM QRadar.
+<span data-ttu-id="875bb-106">Integração de registos do Azure suporta atualmente HP ArcSight, Splunk e IBM QRadar.</span><span class="sxs-lookup"><span data-stu-id="875bb-106">Azure log integration currently supports HP ArcSight, Splunk, and IBM QRadar.</span></span>
 
-## <a name="what-logs-can-i-integrate"></a>Os registos que pode a integrar
-Azure produz um vasto conjunto registo para cada serviço. Estes registos são categorizados como:
+## <a name="what-logs-can-i-integrate"></a><span data-ttu-id="875bb-107">Os registos que pode a integrar</span><span class="sxs-lookup"><span data-stu-id="875bb-107">What logs can I integrate?</span></span>
+<span data-ttu-id="875bb-108">Azure produz um vasto conjunto registo para cada serviço.</span><span class="sxs-lookup"><span data-stu-id="875bb-108">Azure produces extensive logging for every service.</span></span> <span data-ttu-id="875bb-109">Estes registos são categorizados como:</span><span class="sxs-lookup"><span data-stu-id="875bb-109">These logs are categorized as:</span></span>
 
-* **Registos de controlo/gestão** que dar visibilidade Olá operações do Azure Resource Manager criar, UPDATE e DELETE. Estes eventos de plane controlo estão anexados no Olá registos de atividade do Azure
-* **Dados Plane registos** que dar visibilidade sobre os eventos de Olá gerados ao utilizar um recurso do Azure. Um exemplo é o registo de eventos do Windows hello, onde pode obter informações sobre eventos de segurança de canal de segurança do Visualizador de eventos Olá. Eventos de plane de dados (que foram gerados por uma máquina virtual ou um serviço do Azure) estão anexados por registos de diagnóstico do Azure.
+* <span data-ttu-id="875bb-110">**Registos de controlo/gestão** que dar visibilidade Olá operações do Azure Resource Manager criar, UPDATE e DELETE.</span><span class="sxs-lookup"><span data-stu-id="875bb-110">**Control/Management logs** that give visibility into hello Azure Resource Manager CREATE, UPDATE, and DELETE operations.</span></span> <span data-ttu-id="875bb-111">Estes eventos de plane controlo estão anexados no Olá registos de atividade do Azure</span><span class="sxs-lookup"><span data-stu-id="875bb-111">These control plane events are surfaced in hello Azure Activity Logs</span></span>
+* <span data-ttu-id="875bb-112">**Dados Plane registos** que dar visibilidade sobre os eventos de Olá gerados ao utilizar um recurso do Azure.</span><span class="sxs-lookup"><span data-stu-id="875bb-112">**Data Plane logs** that give visibility into hello events raised when using an Azure resource.</span></span> <span data-ttu-id="875bb-113">Um exemplo é o registo de eventos do Windows hello, onde pode obter informações sobre eventos de segurança de canal de segurança do Visualizador de eventos Olá.</span><span class="sxs-lookup"><span data-stu-id="875bb-113">An example is hello Windows Event log, where you can get security event information from hello Event Viewer's Security Channel.</span></span> <span data-ttu-id="875bb-114">Eventos de plane de dados (que foram gerados por uma máquina virtual ou um serviço do Azure) estão anexados por registos de diagnóstico do Azure.</span><span class="sxs-lookup"><span data-stu-id="875bb-114">Data plane events (which are generated by a virtual machine or an Azure service) are surfaced by Azure Diagnostic Logs.</span></span>
 
-Integração de registos do Azure suporta atualmente a integração de Olá de:
+<span data-ttu-id="875bb-115">Integração de registos do Azure suporta atualmente a integração de Olá de:</span><span class="sxs-lookup"><span data-stu-id="875bb-115">Azure log integration currently supports hello integration of:</span></span>
 
-* Registos de VM do Azure
-* Registos de auditoria do Azure
-* Alertas do Centro de segurança do Azure
+* <span data-ttu-id="875bb-116">Registos de VM do Azure</span><span class="sxs-lookup"><span data-stu-id="875bb-116">Azure VM logs</span></span>
+* <span data-ttu-id="875bb-117">Registos de auditoria do Azure</span><span class="sxs-lookup"><span data-stu-id="875bb-117">Azure Audit Logs</span></span>
+* <span data-ttu-id="875bb-118">Alertas do Centro de segurança do Azure</span><span class="sxs-lookup"><span data-stu-id="875bb-118">Azure Security Center alerts</span></span>
 
-## <a name="install-azure-log-integration"></a>Instalar a integração de registos do Azure
-Transferir [integração de registos do Azure](https://www.microsoft.com/download/details.aspx?id=53324).
+## <a name="install-azure-log-integration"></a><span data-ttu-id="875bb-119">Instalar a integração de registos do Azure</span><span class="sxs-lookup"><span data-stu-id="875bb-119">Install Azure log integration</span></span>
+<span data-ttu-id="875bb-120">Transferir [integração de registos do Azure](https://www.microsoft.com/download/details.aspx?id=53324).</span><span class="sxs-lookup"><span data-stu-id="875bb-120">Download [Azure log integration](https://www.microsoft.com/download/details.aspx?id=53324).</span></span>
 
-Olá serviço de integração de registos do Azure recolhe dados telemétricos da máquina de Olá no qual está instalado.  Os dados telemétricos recolhidos são:
+<span data-ttu-id="875bb-121">Olá serviço de integração de registos do Azure recolhe dados telemétricos da máquina de Olá no qual está instalado.</span><span class="sxs-lookup"><span data-stu-id="875bb-121">hello Azure log integration service collects telemetry data from hello machine on which it is installed.</span></span>  <span data-ttu-id="875bb-122">Os dados telemétricos recolhidos são:</span><span class="sxs-lookup"><span data-stu-id="875bb-122">Telemetry data collected is:</span></span>
 
-* Exceções que ocorrem durante a execução de integração de registos do Azure
-* Métricas sobre Olá diversas consultas e eventos processados
-* Estatísticas sobre qual Azlog.exe Opções da linha de comandos estão a ser utilizadas
+* <span data-ttu-id="875bb-123">Exceções que ocorrem durante a execução de integração de registos do Azure</span><span class="sxs-lookup"><span data-stu-id="875bb-123">Exceptions that occur during execution of Azure log integration</span></span>
+* <span data-ttu-id="875bb-124">Métricas sobre Olá diversas consultas e eventos processados</span><span class="sxs-lookup"><span data-stu-id="875bb-124">Metrics about hello number of queries and events processed</span></span>
+* <span data-ttu-id="875bb-125">Estatísticas sobre qual Azlog.exe Opções da linha de comandos estão a ser utilizadas</span><span class="sxs-lookup"><span data-stu-id="875bb-125">Statistics about which Azlog.exe command line options are being used</span></span>
 
 > [!NOTE]
-> Pode desativar a recolha de dados de telemetria desmarcando esta opção.
+> <span data-ttu-id="875bb-126">Pode desativar a recolha de dados de telemetria desmarcando esta opção.</span><span class="sxs-lookup"><span data-stu-id="875bb-126">You can turn off collection of telemetry data by unchecking this option.</span></span>
 >
 >
 
-## <a name="integrate-azure-audit-logs-and-security-center-alerts"></a>Integrar alertas do Centro de segurança e os registos de auditoria do Azure
-1. Linha de comandos aberta Olá e **cd** para **c:\Program Files\Microsoft Azure registo integração**.
-2. Executar Olá **azlog createazureid** comando toocreate um [Principal de serviço de diretório do Azure Active Directory](../active-directory/active-directory-application-objects.md) no Azure Active Directory (AD) de Olá inquilinos que alojam Olá subscrições do Azure.
+## <a name="integrate-azure-audit-logs-and-security-center-alerts"></a><span data-ttu-id="875bb-127">Integrar alertas do Centro de segurança e os registos de auditoria do Azure</span><span class="sxs-lookup"><span data-stu-id="875bb-127">Integrate Azure Audit Logs and Security Center alerts</span></span>
+1. <span data-ttu-id="875bb-128">Linha de comandos aberta Olá e **cd** para **c:\Program Files\Microsoft Azure registo integração**.</span><span class="sxs-lookup"><span data-stu-id="875bb-128">Open hello command prompt and **cd** into **c:\Program Files\Microsoft Azure Log Integration**.</span></span>
+2. <span data-ttu-id="875bb-129">Executar Olá **azlog createazureid** comando toocreate um [Principal de serviço de diretório do Azure Active Directory](../active-directory/active-directory-application-objects.md) no Azure Active Directory (AD) de Olá inquilinos que alojam Olá subscrições do Azure.</span><span class="sxs-lookup"><span data-stu-id="875bb-129">Run hello **azlog createazureid** command toocreate an [Azure Active Directory Service Principal](../active-directory/active-directory-application-objects.md) in hello Azure Active Directory (AD) tenants that host hello Azure subscriptions.</span></span>
 
-    É-lhe pedido para o início de sessão do Azure.
-
-   > [!NOTE]
-   > Tem de ser subscrição Olá proprietário ou Coadministrador da subscrição Olá.
-   >
-   >
-
-    Autenticação tooAzure é feito através do Azure AD.  Criar um principal de serviço para a integração de registos do Azure cria Olá do Azure AD identity que é dado acesso tooread de subscrições do Azure.
-3. Executar Olá **azlog autorizar <SubscriptionID>**  comando acesso de leitor tooassign em Olá subscrição toohello principal do serviço criado no passo 2. Se não especificar um **SubscriptionID**, em seguida, o principal de serviço Olá é atribuído Olá leitor função tooall subscrições toowhich tem acesso.
+    <span data-ttu-id="875bb-130">É-lhe pedido para o início de sessão do Azure.</span><span class="sxs-lookup"><span data-stu-id="875bb-130">You are prompted for your Azure login.</span></span>
 
    > [!NOTE]
-   > Poderá ver avisos se executar Olá **autorizar** comando imediatamente após Olá **createazureid** comando. Não há alguma latência entre quando é criada a conta de Olá do Azure AD e quando a conta de Olá está disponível para utilização. Se Aguarde cerca de 10 segundos depois de executar Olá **createazureid** Olá do comando toorun **autorizar** comando, em seguida, a não deve ser apresentado estes avisos.
+   > <span data-ttu-id="875bb-131">Tem de ser subscrição Olá proprietário ou Coadministrador da subscrição Olá.</span><span class="sxs-lookup"><span data-stu-id="875bb-131">You must be hello subscription Owner or a Co-Administrator of hello subscription.</span></span>
    >
    >
-4. Verifique Olá seguir tooconfirm de pastas que Olá ficheiros de JSON do registo de auditoria existem:
 
-   * **c:\Users\azlog\AzureResourceManagerJson**
-   * **c:\Users\azlog\AzureResourceManagerJsonLD**
-5. Verifique Olá tooconfirm pastas alertas do Centro de segurança existentes nos mesmos os seguintes:
+    <span data-ttu-id="875bb-132">Autenticação tooAzure é feito através do Azure AD.</span><span class="sxs-lookup"><span data-stu-id="875bb-132">Authentication tooAzure is done through Azure AD.</span></span>  <span data-ttu-id="875bb-133">Criar um principal de serviço para a integração de registos do Azure cria Olá do Azure AD identity que é dado acesso tooread de subscrições do Azure.</span><span class="sxs-lookup"><span data-stu-id="875bb-133">Creating a service principal for Azure log integration creates hello Azure AD identity that is given access tooread from Azure subscriptions.</span></span>
+3. <span data-ttu-id="875bb-134">Executar Olá **azlog autorizar <SubscriptionID>**  comando acesso de leitor tooassign em Olá subscrição toohello principal do serviço criado no passo 2.</span><span class="sxs-lookup"><span data-stu-id="875bb-134">Run hello **azlog authorize <SubscriptionID>** command tooassign Reader access on hello subscription toohello service principal created in step 2.</span></span> <span data-ttu-id="875bb-135">Se não especificar um **SubscriptionID**, em seguida, o principal de serviço Olá é atribuído Olá leitor função tooall subscrições toowhich tem acesso.</span><span class="sxs-lookup"><span data-stu-id="875bb-135">If you don’t specify a **SubscriptionID**, then hello service principal is assigned hello Reader role tooall subscriptions toowhich you have access.</span></span>
 
-   * **c:\Users\azlog\ AzureSecurityCenterJson**
-   * **c:\Users\azlog\AzureSecurityCenterJsonLD**
-6. Configure Olá SIEM ficheiro reencaminhador conector toohello pasta adequados. procedimento Olá irão variar em Olá SIEM estiver a utilizar.
+   > [!NOTE]
+   > <span data-ttu-id="875bb-136">Poderá ver avisos se executar Olá **autorizar** comando imediatamente após Olá **createazureid** comando.</span><span class="sxs-lookup"><span data-stu-id="875bb-136">You may see warnings if you run hello **authorize** command immediately after hello **createazureid** command.</span></span> <span data-ttu-id="875bb-137">Não há alguma latência entre quando é criada a conta de Olá do Azure AD e quando a conta de Olá está disponível para utilização.</span><span class="sxs-lookup"><span data-stu-id="875bb-137">There is some latency between when hello Azure AD account is created and when hello account is available for use.</span></span> <span data-ttu-id="875bb-138">Se Aguarde cerca de 10 segundos depois de executar Olá **createazureid** Olá do comando toorun **autorizar** comando, em seguida, a não deve ser apresentado estes avisos.</span><span class="sxs-lookup"><span data-stu-id="875bb-138">If you wait about 10 seconds after running hello **createazureid** command toorun hello **authorize** command, then you should not see these warnings.</span></span>
+   >
+   >
+4. <span data-ttu-id="875bb-139">Verifique Olá seguir tooconfirm de pastas que Olá ficheiros de JSON do registo de auditoria existem:</span><span class="sxs-lookup"><span data-stu-id="875bb-139">Check hello following folders tooconfirm that hello Audit log JSON files are there:</span></span>
 
-## <a name="next-steps"></a>Passos seguintes
-toolearn mais informações sobre os registos de atividade do Azure e definições de propriedades, consulte:
+   * <span data-ttu-id="875bb-140">**c:\Users\azlog\AzureResourceManagerJson**</span><span class="sxs-lookup"><span data-stu-id="875bb-140">**c:\Users\azlog\AzureResourceManagerJson**</span></span>
+   * <span data-ttu-id="875bb-141">**c:\Users\azlog\AzureResourceManagerJsonLD**</span><span class="sxs-lookup"><span data-stu-id="875bb-141">**c:\Users\azlog\AzureResourceManagerJsonLD**</span></span>
+5. <span data-ttu-id="875bb-142">Verifique Olá tooconfirm pastas alertas do Centro de segurança existentes nos mesmos os seguintes:</span><span class="sxs-lookup"><span data-stu-id="875bb-142">Check hello following folders tooconfirm that Security Center alerts exist in them:</span></span>
 
-* [Auditar operações com o Resource Manager](../azure-resource-manager/resource-group-audit.md)
+   * <span data-ttu-id="875bb-143">**c:\Users\azlog\ AzureSecurityCenterJson**</span><span class="sxs-lookup"><span data-stu-id="875bb-143">**c:\Users\azlog\ AzureSecurityCenterJson**</span></span>
+   * <span data-ttu-id="875bb-144">**c:\Users\azlog\AzureSecurityCenterJsonLD**</span><span class="sxs-lookup"><span data-stu-id="875bb-144">**c:\Users\azlog\AzureSecurityCenterJsonLD**</span></span>
+6. <span data-ttu-id="875bb-145">Configure Olá SIEM ficheiro reencaminhador conector toohello pasta adequados.</span><span class="sxs-lookup"><span data-stu-id="875bb-145">Configure hello SIEM file forwarder connector toohello appropriate folder.</span></span> <span data-ttu-id="875bb-146">procedimento Olá irão variar em Olá SIEM estiver a utilizar.</span><span class="sxs-lookup"><span data-stu-id="875bb-146">hello procedure will vary based on hello SIEM you are using.</span></span>
 
-toolearn mais acerca do Centro de segurança, consulte o artigo seguinte Olá:
+## <a name="next-steps"></a><span data-ttu-id="875bb-147">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="875bb-147">Next steps</span></span>
+<span data-ttu-id="875bb-148">toolearn mais informações sobre os registos de atividade do Azure e definições de propriedades, consulte:</span><span class="sxs-lookup"><span data-stu-id="875bb-148">toolearn more about Azure Activity Logs and property definitions, see:</span></span>
 
-* [Gestão e de que responde toosecurity alertas no Centro de segurança do Azure](security-center-managing-and-responding-alerts.md) — Saiba como alertas de toosecurity toomanage e respondeu.
-* [FAQ do Centro de segurança do Azure](security-center-faq.md) – encontre as perguntas mais frequentes sobre a utilização do serviço de Olá.
-* [Blogue de segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) — obter Olá mais recentes notícias de segurança do Azure e informações.
+* [<span data-ttu-id="875bb-149">Auditar operações com o Resource Manager</span><span class="sxs-lookup"><span data-stu-id="875bb-149">Audit operations with Resource Manager</span></span>](../azure-resource-manager/resource-group-audit.md)
+
+<span data-ttu-id="875bb-150">toolearn mais acerca do Centro de segurança, consulte o artigo seguinte Olá:</span><span class="sxs-lookup"><span data-stu-id="875bb-150">toolearn more about Security Center, see hello following:</span></span>
+
+* <span data-ttu-id="875bb-151">[Gestão e de que responde toosecurity alertas no Centro de segurança do Azure](security-center-managing-and-responding-alerts.md) — Saiba como alertas de toosecurity toomanage e respondeu.</span><span class="sxs-lookup"><span data-stu-id="875bb-151">[Managing and responding toosecurity alerts in Azure Security Center](security-center-managing-and-responding-alerts.md) — Learn how toomanage and respond toosecurity alerts.</span></span>
+* <span data-ttu-id="875bb-152">[FAQ do Centro de segurança do Azure](security-center-faq.md) – encontre as perguntas mais frequentes sobre a utilização do serviço de Olá.</span><span class="sxs-lookup"><span data-stu-id="875bb-152">[Azure Security Center FAQ](security-center-faq.md) — Find frequently asked questions about using hello service.</span></span>
+* <span data-ttu-id="875bb-153">[Blogue de segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) — obter Olá mais recentes notícias de segurança do Azure e informações.</span><span class="sxs-lookup"><span data-stu-id="875bb-153">[Azure Security blog](http://blogs.msdn.com/b/azuresecurity/) — Get hello latest Azure security news and information.</span></span>

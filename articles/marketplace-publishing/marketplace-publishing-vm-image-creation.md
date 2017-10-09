@@ -20,209 +20,209 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="guide-toocreate-a-virtual-machine-image-for-hello-azure-marketplace"></a>Guia toocreate uma imagem de máquina virtual para Olá Azure Marketplace
-Neste artigo, **passo 2**, explica como preparar Olá de discos rígidos virtuais (VHDs) que irão implementar toohello Azure Marketplace. Os VHDs estão foundation Olá do seu SKU. processo de Olá difere dependendo se está a fornecer um SKU baseado em Windows ou baseado em Linux. Este artigo abrange ambos os cenários. Este processo pode ser executado em paralelo com [conta criação e registo][link-acct-creation].
+# <a name="guide-toocreate-a-virtual-machine-image-for-hello-azure-marketplace"></a><span data-ttu-id="8b531-103">Guia toocreate uma imagem de máquina virtual para Olá Azure Marketplace</span><span class="sxs-lookup"><span data-stu-id="8b531-103">Guide toocreate a virtual machine image for hello Azure Marketplace</span></span>
+<span data-ttu-id="8b531-104">Neste artigo, **passo 2**, explica como preparar Olá de discos rígidos virtuais (VHDs) que irão implementar toohello Azure Marketplace.</span><span class="sxs-lookup"><span data-stu-id="8b531-104">This article, **Step 2**, walks you through preparing hello virtual hard disks (VHDs) that you will deploy toohello Azure Marketplace.</span></span> <span data-ttu-id="8b531-105">Os VHDs estão foundation Olá do seu SKU.</span><span class="sxs-lookup"><span data-stu-id="8b531-105">Your VHDs are hello foundation of your SKU.</span></span> <span data-ttu-id="8b531-106">processo de Olá difere dependendo se está a fornecer um SKU baseado em Windows ou baseado em Linux.</span><span class="sxs-lookup"><span data-stu-id="8b531-106">hello process differs depending on whether you are providing a Linux-based or Windows-based SKU.</span></span> <span data-ttu-id="8b531-107">Este artigo abrange ambos os cenários.</span><span class="sxs-lookup"><span data-stu-id="8b531-107">This article covers both scenarios.</span></span> <span data-ttu-id="8b531-108">Este processo pode ser executado em paralelo com [conta criação e registo][link-acct-creation].</span><span class="sxs-lookup"><span data-stu-id="8b531-108">This process can be performed in parallel with [Account creation and registration][link-acct-creation].</span></span>
 
-## <a name="1-define-offers-and-skus"></a>1. Definir ofertas e SKUs
-Nesta secção, saiba toodefine Olá ofertas e os respetivos SKUs associados.
+## <a name="1-define-offers-and-skus"></a><span data-ttu-id="8b531-109">1. Definir ofertas e SKUs</span><span class="sxs-lookup"><span data-stu-id="8b531-109">1. Define Offers and SKUs</span></span>
+<span data-ttu-id="8b531-110">Nesta secção, saiba toodefine Olá ofertas e os respetivos SKUs associados.</span><span class="sxs-lookup"><span data-stu-id="8b531-110">In this section, you learn toodefine hello offers and their associated SKUs.</span></span>
 
-Uma oferta é tooall um "principal" do respetivos SKUs. Pode ter várias ofertas. Como decidir toostructure suas ofertas está ativo tooyou. Quando é emitida uma oferta toostaging, é enviada juntamente com todos os SKUs. Considere cuidadosamente os identificadores SKU, porque estará visíveis no URL Olá:
+<span data-ttu-id="8b531-111">Uma oferta é tooall um "principal" do respetivos SKUs.</span><span class="sxs-lookup"><span data-stu-id="8b531-111">An offer is a "parent" tooall of its SKUs.</span></span> <span data-ttu-id="8b531-112">Pode ter várias ofertas.</span><span class="sxs-lookup"><span data-stu-id="8b531-112">You can have multiple offers.</span></span> <span data-ttu-id="8b531-113">Como decidir toostructure suas ofertas está ativo tooyou.</span><span class="sxs-lookup"><span data-stu-id="8b531-113">How you decide toostructure your offers is up tooyou.</span></span> <span data-ttu-id="8b531-114">Quando é emitida uma oferta toostaging, é enviada juntamente com todos os SKUs.</span><span class="sxs-lookup"><span data-stu-id="8b531-114">When an offer is pushed toostaging, it is pushed along with all of its SKUs.</span></span> <span data-ttu-id="8b531-115">Considere cuidadosamente os identificadores SKU, porque estará visíveis no URL Olá:</span><span class="sxs-lookup"><span data-stu-id="8b531-115">Carefully consider your SKU identifiers, because they will be visible in hello URL:</span></span>
 
-* Azure.com: http://azure.microsoft.com/marketplace/partners/ {PartnerNamespace} / {OfferIdentifier}-{SKUidentifier}
-* Portal de pré-visualização do Azure: https://portal.azure.com/#gallery/ {PublisherNamespace}. {OfferIdentifier} {SKUIDdentifier}  
+* <span data-ttu-id="8b531-116">Azure.com: http://azure.microsoft.com/marketplace/partners/ {PartnerNamespace} / {OfferIdentifier}-{SKUidentifier}</span><span class="sxs-lookup"><span data-stu-id="8b531-116">Azure.com: http://azure.microsoft.com/marketplace/partners/{PartnerNamespace}/{OfferIdentifier}-{SKUidentifier}</span></span>
+* <span data-ttu-id="8b531-117">Portal de pré-visualização do Azure: https://portal.azure.com/#gallery/ {PublisherNamespace}. {OfferIdentifier} {SKUIDdentifier}</span><span class="sxs-lookup"><span data-stu-id="8b531-117">Azure preview portal: https://portal.azure.com/#gallery/{PublisherNamespace}.{OfferIdentifier}{SKUIDdentifier}</span></span>  
 
-Um SKU é Olá nome comerciais uma imagem de VM. Uma imagem de VM contém disco de um sistema operativo e zero ou mais discos de dados. É, essencialmente, Olá concluída perfil de armazenamento para uma máquina virtual. É necessário um VHD por disco. Os discos de dados, mesmo em branco requerem um toobe VHD criado.
+<span data-ttu-id="8b531-118">Um SKU é Olá nome comerciais uma imagem de VM.</span><span class="sxs-lookup"><span data-stu-id="8b531-118">A SKU is hello commercial name for a VM image.</span></span> <span data-ttu-id="8b531-119">Uma imagem de VM contém disco de um sistema operativo e zero ou mais discos de dados.</span><span class="sxs-lookup"><span data-stu-id="8b531-119">A VM image contains one operating system disk and zero or more data disks.</span></span> <span data-ttu-id="8b531-120">É, essencialmente, Olá concluída perfil de armazenamento para uma máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="8b531-120">It is essentially hello complete storage profile for a virtual machine.</span></span> <span data-ttu-id="8b531-121">É necessário um VHD por disco.</span><span class="sxs-lookup"><span data-stu-id="8b531-121">One VHD is needed per disk.</span></span> <span data-ttu-id="8b531-122">Os discos de dados, mesmo em branco requerem um toobe VHD criado.</span><span class="sxs-lookup"><span data-stu-id="8b531-122">Even blank data disks require a VHD toobe created.</span></span>
 
-Independentemente do sistema operativo que utiliza, adicione apenas Olá número mínimo de discos de dados necessários para Olá SKU. Os clientes não é possível remover discos que fazem parte de uma imagem momento Olá da implementação, mas podem sempre adicionar discos durante ou após a implementação se precisam.
+<span data-ttu-id="8b531-123">Independentemente do sistema operativo que utiliza, adicione apenas Olá número mínimo de discos de dados necessários para Olá SKU.</span><span class="sxs-lookup"><span data-stu-id="8b531-123">Regardless of which operating system you use, add only hello minimum number of data disks needed by hello SKU.</span></span> <span data-ttu-id="8b531-124">Os clientes não é possível remover discos que fazem parte de uma imagem momento Olá da implementação, mas podem sempre adicionar discos durante ou após a implementação se precisam.</span><span class="sxs-lookup"><span data-stu-id="8b531-124">Customers cannot remove disks that are part of an image at hello time of deployment but can always add disks during or after deployment if they need them.</span></span>
 
 > [!IMPORTANT]
-> **Não altere a contagem de discos de uma nova versão da imagem.** Se tem de reconfigurar os discos de dados na imagem de Olá, defina um SKU de novo. Publicar uma nova versão de imagem com as contagens de outro disco tem o potencial de Olá da nova implementação com base na versão de nova imagem Olá em casos de dimensionamento automático, automáticas implementações das soluções através de modelos ARM e outros cenários de última hora.
+> <span data-ttu-id="8b531-125">**Não altere a contagem de discos de uma nova versão da imagem.**</span><span class="sxs-lookup"><span data-stu-id="8b531-125">**Do not change disk count in a new image version.**</span></span> <span data-ttu-id="8b531-126">Se tem de reconfigurar os discos de dados na imagem de Olá, defina um SKU de novo.</span><span class="sxs-lookup"><span data-stu-id="8b531-126">If you must reconfigure Data disks in hello image, define a new SKU.</span></span> <span data-ttu-id="8b531-127">Publicar uma nova versão de imagem com as contagens de outro disco tem o potencial de Olá da nova implementação com base na versão de nova imagem Olá em casos de dimensionamento automático, automáticas implementações das soluções através de modelos ARM e outros cenários de última hora.</span><span class="sxs-lookup"><span data-stu-id="8b531-127">Publishing a new image version with different disk counts will have hello potential of breaking new deployment based on hello new image version in cases of auto-scaling, automatic deployments of solutions through ARM templates and other scenarios.</span></span>
 >
 >
 
-### <a name="11-add-an-offer"></a>1.1 adicionar uma oferta
-1. Inicie sessão no toohello [Portal publicação] [ link-pubportal] utilizando a sua conta vendedor.
-2. Selecione Olá **máquinas virtuais** separador de Olá Portal de publicação. No campo do pedido de entrada de Olá, introduza o nome da oferta. Olá oferta é normalmente Olá nome de produto de Olá ou serviço que planear toosell no Olá Azure Marketplace.
-3. Selecione **Criar**.
+### <a name="11-add-an-offer"></a><span data-ttu-id="8b531-128">1.1 adicionar uma oferta</span><span class="sxs-lookup"><span data-stu-id="8b531-128">1.1 Add an offer</span></span>
+1. <span data-ttu-id="8b531-129">Inicie sessão no toohello [Portal publicação] [ link-pubportal] utilizando a sua conta vendedor.</span><span class="sxs-lookup"><span data-stu-id="8b531-129">Sign in toohello [Publishing Portal][link-pubportal] by using your seller account.</span></span>
+2. <span data-ttu-id="8b531-130">Selecione Olá **máquinas virtuais** separador de Olá Portal de publicação.</span><span class="sxs-lookup"><span data-stu-id="8b531-130">Select hello **Virtual Machines** tab of hello Publishing Portal.</span></span> <span data-ttu-id="8b531-131">No campo do pedido de entrada de Olá, introduza o nome da oferta.</span><span class="sxs-lookup"><span data-stu-id="8b531-131">In hello prompted entry field, enter your offer name.</span></span> <span data-ttu-id="8b531-132">Olá oferta é normalmente Olá nome de produto de Olá ou serviço que planear toosell no Olá Azure Marketplace.</span><span class="sxs-lookup"><span data-stu-id="8b531-132">hello offer name is typically hello name of hello product or service that you plan toosell in hello Azure Marketplace.</span></span>
+3. <span data-ttu-id="8b531-133">Selecione **Criar**.</span><span class="sxs-lookup"><span data-stu-id="8b531-133">Select **Create**.</span></span>
 
-### <a name="12-define-a-sku"></a>1.2 definir um SKU
-Depois de ter adicionado uma oferta, que precisa toodefine e identificar os SKUs. Pode ter vários ofertas e cada oferta pode ter vários SKUs sob a mesma. Quando é emitida uma oferta toostaging, é enviada juntamente com todos os SKUs.
+### <a name="12-define-a-sku"></a><span data-ttu-id="8b531-134">1.2 definir um SKU</span><span class="sxs-lookup"><span data-stu-id="8b531-134">1.2 Define a SKU</span></span>
+<span data-ttu-id="8b531-135">Depois de ter adicionado uma oferta, que precisa toodefine e identificar os SKUs.</span><span class="sxs-lookup"><span data-stu-id="8b531-135">After you have added an offer, you need toodefine and identify your SKUs.</span></span> <span data-ttu-id="8b531-136">Pode ter vários ofertas e cada oferta pode ter vários SKUs sob a mesma.</span><span class="sxs-lookup"><span data-stu-id="8b531-136">You can have multiple offers, and each offer can have multiple SKUs under it.</span></span> <span data-ttu-id="8b531-137">Quando é emitida uma oferta toostaging, é enviada juntamente com todos os SKUs.</span><span class="sxs-lookup"><span data-stu-id="8b531-137">When an offer is pushed toostaging, it is pushed along with all of its SKUs.</span></span>
 
-1. **Adicione um SKU.** Olá SKU requer um identificador, o que é utilizado no URL Olá. Identificador de Olá tem de ser exclusivo no seu perfil de publicação, mas não existe nenhum risco de colisão identificador com outros fabricantes.
+1. <span data-ttu-id="8b531-138">**Adicione um SKU.**</span><span class="sxs-lookup"><span data-stu-id="8b531-138">**Add a SKU.**</span></span> <span data-ttu-id="8b531-139">Olá SKU requer um identificador, o que é utilizado no URL Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-139">hello SKU requires an identifier, which is used in hello URL.</span></span> <span data-ttu-id="8b531-140">Identificador de Olá tem de ser exclusivo no seu perfil de publicação, mas não existe nenhum risco de colisão identificador com outros fabricantes.</span><span class="sxs-lookup"><span data-stu-id="8b531-140">hello identifier must be unique within your publishing profile, but there is no risk of identifier collision with other publishers.</span></span>
 
    > [!NOTE]
-   > oferta de Olá e identificadores SKU são apresentados no URL de oferta Olá no Olá Marketplace.
+   > <span data-ttu-id="8b531-141">oferta de Olá e identificadores SKU são apresentados no URL de oferta Olá no Olá Marketplace.</span><span class="sxs-lookup"><span data-stu-id="8b531-141">hello offer and SKU identifiers are displayed in hello offer URL in hello Marketplace.</span></span>
    >
    >
-2. **Adicione uma descrição sumária para o SKU.** Descrições de resumidas são toocustomers visíveis, pelo que deve efetuá-los facilmente legível. Estas informações não precisam de toobe bloqueada até que a fase de "Push tooStaging" Olá. Até lá, estiver livre tooedit-lo.
-3. Se estiver a utilizar SKUs baseado no Windows, siga as ligações sugeridos Olá tooacquire Olá aprovados versões do Windows Server.
+2. <span data-ttu-id="8b531-142">**Adicione uma descrição sumária para o SKU.**</span><span class="sxs-lookup"><span data-stu-id="8b531-142">**Add a summary description for your SKU.**</span></span> <span data-ttu-id="8b531-143">Descrições de resumidas são toocustomers visíveis, pelo que deve efetuá-los facilmente legível.</span><span class="sxs-lookup"><span data-stu-id="8b531-143">Summary descriptions are visible toocustomers, so you should make them easily readable.</span></span> <span data-ttu-id="8b531-144">Estas informações não precisam de toobe bloqueada até que a fase de "Push tooStaging" Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-144">This information does not need toobe locked until hello "Push tooStaging" phase.</span></span> <span data-ttu-id="8b531-145">Até lá, estiver livre tooedit-lo.</span><span class="sxs-lookup"><span data-stu-id="8b531-145">Until then, you are free tooedit it.</span></span>
+3. <span data-ttu-id="8b531-146">Se estiver a utilizar SKUs baseado no Windows, siga as ligações sugeridos Olá tooacquire Olá aprovados versões do Windows Server.</span><span class="sxs-lookup"><span data-stu-id="8b531-146">If you are using Windows-based SKUs, follow hello suggested links tooacquire hello approved versions of Windows Server.</span></span>
 
-## <a name="2-create-an-azure-compatible-vhd-linux-based"></a>2. Criar um VHD compatível com o Azure (baseado em Linux)
-Esta secção está centrado nas melhores práticas para criar uma imagem VM baseadas em Linux para Olá Azure Marketplace. Para obter instruções passo a passo, consulte toohello a seguinte documentação: [criar e carregar um disco rígido Virtual que contém Olá sistema operativo Linux](../virtual-machines/linux/classic/create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json)
+## <a name="2-create-an-azure-compatible-vhd-linux-based"></a><span data-ttu-id="8b531-147">2. Criar um VHD compatível com o Azure (baseado em Linux)</span><span class="sxs-lookup"><span data-stu-id="8b531-147">2. Create an Azure-compatible VHD (Linux-based)</span></span>
+<span data-ttu-id="8b531-148">Esta secção está centrado nas melhores práticas para criar uma imagem VM baseadas em Linux para Olá Azure Marketplace.</span><span class="sxs-lookup"><span data-stu-id="8b531-148">This section focuses on best practices for creating a Linux-based VM image for hello Azure Marketplace.</span></span> <span data-ttu-id="8b531-149">Para obter instruções passo a passo, consulte toohello a seguinte documentação: [criar e carregar um disco rígido Virtual que contém Olá sistema operativo Linux](../virtual-machines/linux/classic/create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json)</span><span class="sxs-lookup"><span data-stu-id="8b531-149">For a step-by-step walkthrough, refer toohello following documentation: [Creating and Uploading a Virtual Hard Disk that Contains hello Linux Operating System](../virtual-machines/linux/classic/create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json)</span></span>
 
-## <a name="3-create-an-azure-compatible-vhd-windows-based"></a>3. Criar um VHD compatível com o Azure (baseado no Windows)
-Esta secção está centrado nas Olá passos toocreate um SKU baseado no Windows Server para Olá Azure Marketplace.
+## <a name="3-create-an-azure-compatible-vhd-windows-based"></a><span data-ttu-id="8b531-150">3. Criar um VHD compatível com o Azure (baseado no Windows)</span><span class="sxs-lookup"><span data-stu-id="8b531-150">3. Create an Azure-compatible VHD (Windows-based)</span></span>
+<span data-ttu-id="8b531-151">Esta secção está centrado nas Olá passos toocreate um SKU baseado no Windows Server para Olá Azure Marketplace.</span><span class="sxs-lookup"><span data-stu-id="8b531-151">This section focuses on hello steps toocreate a SKU based on Windows Server for hello Azure Marketplace.</span></span>
 
-### <a name="31-ensure-that-you-are-using-hello-correct-base-vhds"></a>Certifique-se 3.1 que está a utilizar Olá corrigir base VHDs
-VHD de sistema de operativo Olá para a imagem VM tem de ser baseada em imagem base aprovado do Azure que contém o Windows Server ou SQL Server.
+### <a name="31-ensure-that-you-are-using-hello-correct-base-vhds"></a><span data-ttu-id="8b531-152">Certifique-se 3.1 que está a utilizar Olá corrigir base VHDs</span><span class="sxs-lookup"><span data-stu-id="8b531-152">3.1 Ensure that you are using hello correct base VHDs</span></span>
+<span data-ttu-id="8b531-153">VHD de sistema de operativo Olá para a imagem VM tem de ser baseada em imagem base aprovado do Azure que contém o Windows Server ou SQL Server.</span><span class="sxs-lookup"><span data-stu-id="8b531-153">hello operating system VHD for your VM image must be based on an Azure-approved base image that contains Windows Server or SQL Server.</span></span>
 
-toobegin, crie uma VM a partir de um Olá seguintes imagens, localizadas em Olá [portal do Microsoft Azure][link-azure-portal]:
+<span data-ttu-id="8b531-154">toobegin, crie uma VM a partir de um Olá seguintes imagens, localizadas em Olá [portal do Microsoft Azure][link-azure-portal]:</span><span class="sxs-lookup"><span data-stu-id="8b531-154">toobegin, create a VM from one of hello following images, located at hello [Microsoft Azure portal][link-azure-portal]:</span></span>
 
-* Windows Server ([2012 R2 Datacenter][link-datactr-2012-r2], [2012 Datacenter][link-datactr-2012], [2008 R2 SP1] [link-datactr-2008-r2])
-* SQL Server 2014 ([Enterprise][link-sql-2014-ent], [padrão][link-sql-2014-std], [Web] [ link-sql-2014-web])
-* SQL Server 2012 SP2 ([Enterprise][link-sql-2012-ent], [padrão][link-sql-2012-std], [Web] [ link-sql-2012-web])
+* <span data-ttu-id="8b531-155">Windows Server ([2012 R2 Datacenter][link-datactr-2012-r2], [2012 Datacenter][link-datactr-2012], [2008 R2 SP1] [link-datactr-2008-r2])</span><span class="sxs-lookup"><span data-stu-id="8b531-155">Windows Server ([2012 R2 Datacenter][link-datactr-2012-r2], [2012 Datacenter][link-datactr-2012], [2008 R2 SP1][link-datactr-2008-r2])</span></span>
+* <span data-ttu-id="8b531-156">SQL Server 2014 ([Enterprise][link-sql-2014-ent], [padrão][link-sql-2014-std], [Web] [ link-sql-2014-web])</span><span class="sxs-lookup"><span data-stu-id="8b531-156">SQL Server 2014 ([Enterprise][link-sql-2014-ent], [Standard][link-sql-2014-std], [Web][link-sql-2014-web])</span></span>
+* <span data-ttu-id="8b531-157">SQL Server 2012 SP2 ([Enterprise][link-sql-2012-ent], [padrão][link-sql-2012-std], [Web] [ link-sql-2012-web])</span><span class="sxs-lookup"><span data-stu-id="8b531-157">SQL Server 2012 SP2 ([Enterprise][link-sql-2012-ent], [Standard][link-sql-2012-std], [Web][link-sql-2012-web])</span></span>
 
-Estas ligações também podem ser encontradas no Olá Portal de publicação na página SKU Olá.
+<span data-ttu-id="8b531-158">Estas ligações também podem ser encontradas no Olá Portal de publicação na página SKU Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-158">These links can also be found in hello Publishing Portal under hello SKU page.</span></span>
 
 > [!TIP]
-> Se estiver a utilizar o portal do Azure atual de Olá ou PowerShell, imagens do Windows Server publicadas no 8 de Setembro de 2014 e posteriores são aprovadas.
+> <span data-ttu-id="8b531-159">Se estiver a utilizar o portal do Azure atual de Olá ou PowerShell, imagens do Windows Server publicadas no 8 de Setembro de 2014 e posteriores são aprovadas.</span><span class="sxs-lookup"><span data-stu-id="8b531-159">If you are using hello current Azure portal or PowerShell, Windows Server images published on September 8, 2014 and later are approved.</span></span>
 >
 >
 
-### <a name="32-create-your-windows-based-vm"></a>3.2 criar a VM com base no Windows
-No portal do Microsoft Azure Olá, pode criar a VM com base numa imagem base aprovada em apenas alguns passos simples. Olá segue-se uma descrição geral do processo de Olá:
+### <a name="32-create-your-windows-based-vm"></a><span data-ttu-id="8b531-160">3.2 criar a VM com base no Windows</span><span class="sxs-lookup"><span data-stu-id="8b531-160">3.2 Create your Windows-based VM</span></span>
+<span data-ttu-id="8b531-161">No portal do Microsoft Azure Olá, pode criar a VM com base numa imagem base aprovada em apenas alguns passos simples.</span><span class="sxs-lookup"><span data-stu-id="8b531-161">From hello Microsoft Azure portal, you can create your VM based on an approved base image in just a few simple steps.</span></span> <span data-ttu-id="8b531-162">Olá segue-se uma descrição geral do processo de Olá:</span><span class="sxs-lookup"><span data-stu-id="8b531-162">hello following is an overview of hello process:</span></span>
 
-1. Na página de imagem base Olá, selecione **criar Máquina Virtual** toobe direcionado toohello novo [portal do Microsoft Azure][link-azure-portal].
+1. <span data-ttu-id="8b531-163">Na página de imagem base Olá, selecione **criar Máquina Virtual** toobe direcionado toohello novo [portal do Microsoft Azure][link-azure-portal].</span><span class="sxs-lookup"><span data-stu-id="8b531-163">From hello base image page, select **Create Virtual Machine** toobe directed toohello new [Microsoft Azure portal][link-azure-portal].</span></span>
 
     ![desenho][img-acom-1]
-2. Inicie sessão no portal de toohello com Olá conta Microsoft e a palavra-passe para Olá pretende toouse de subscrição do Azure.
-3. Siga Olá pede toocreate uma VM utilizando a imagem base Olá que selecionou. Precisa de tooprovide um nome de anfitrião (nome do computador Olá), o nome de utilizador (registado como administrador) e a palavra-passe para Olá VM.
+2. <span data-ttu-id="8b531-165">Inicie sessão no portal de toohello com Olá conta Microsoft e a palavra-passe para Olá pretende toouse de subscrição do Azure.</span><span class="sxs-lookup"><span data-stu-id="8b531-165">Sign in toohello portal with hello Microsoft account and password for hello Azure subscription you want toouse.</span></span>
+3. <span data-ttu-id="8b531-166">Siga Olá pede toocreate uma VM utilizando a imagem base Olá que selecionou.</span><span class="sxs-lookup"><span data-stu-id="8b531-166">Follow hello prompts toocreate a VM by using hello base image you have selected.</span></span> <span data-ttu-id="8b531-167">Precisa de tooprovide um nome de anfitrião (nome do computador Olá), o nome de utilizador (registado como administrador) e a palavra-passe para Olá VM.</span><span class="sxs-lookup"><span data-stu-id="8b531-167">You need tooprovide a host name (name of hello computer), user name (registered as an administrator), and password for hello VM.</span></span>
 
     ![desenho][img-portal-vm-create]
-4. Selecione o tamanho de Olá da Olá VM toodeploy:
+4. <span data-ttu-id="8b531-169">Selecione o tamanho de Olá da Olá VM toodeploy:</span><span class="sxs-lookup"><span data-stu-id="8b531-169">Select hello size of hello VM toodeploy:</span></span>
 
-    a.    Se planear toodevelop Olá VHD no local, tamanho de Olá não importa. Considere a utilização de um dos Olá VMs mais pequenas.
+    <span data-ttu-id="8b531-170">a.</span><span class="sxs-lookup"><span data-stu-id="8b531-170">a.</span></span>    <span data-ttu-id="8b531-171">Se planear toodevelop Olá VHD no local, tamanho de Olá não importa.</span><span class="sxs-lookup"><span data-stu-id="8b531-171">If you plan toodevelop hello VHD on-premises, hello size does not matter.</span></span> <span data-ttu-id="8b531-172">Considere a utilização de um dos Olá VMs mais pequenas.</span><span class="sxs-lookup"><span data-stu-id="8b531-172">Consider using one of hello smaller VMs.</span></span>
 
-    b.    Se planear imagem de Olá toodevelop no Azure, considere utilizar um dos Olá recomendado tamanhos de VM para a imagem selecionada Olá.
+    <span data-ttu-id="8b531-173">b.</span><span class="sxs-lookup"><span data-stu-id="8b531-173">b.</span></span>    <span data-ttu-id="8b531-174">Se planear imagem de Olá toodevelop no Azure, considere utilizar um dos Olá recomendado tamanhos de VM para a imagem selecionada Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-174">If you plan toodevelop hello image in Azure, consider using one of hello recommended VM sizes for hello selected image.</span></span>
 
-    c.    Para obter informações sobre preços, consulte toohello **recomendado escalões de preço** Seletor apresentado no portal de Olá. Este relatório irá fornecer Olá três tamanhos recomendados fornecidos pelo fabricante de Olá. (Neste caso, o publicador de Olá é Microsoft.)
+    <span data-ttu-id="8b531-175">c.</span><span class="sxs-lookup"><span data-stu-id="8b531-175">c.</span></span>    <span data-ttu-id="8b531-176">Para obter informações sobre preços, consulte toohello **recomendado escalões de preço** Seletor apresentado no portal de Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-176">For pricing information, refer toohello **Recommended pricing tiers** selector displayed on hello portal.</span></span> <span data-ttu-id="8b531-177">Este relatório irá fornecer Olá três tamanhos recomendados fornecidos pelo fabricante de Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-177">It will provide hello three recommended sizes provided by hello publisher.</span></span> <span data-ttu-id="8b531-178">(Neste caso, o publicador de Olá é Microsoft.)</span><span class="sxs-lookup"><span data-stu-id="8b531-178">(In this case, hello publisher is Microsoft.)</span></span>
 
     ![desenho][img-portal-vm-size]
-5. Defina as propriedades:
+5. <span data-ttu-id="8b531-180">Defina as propriedades:</span><span class="sxs-lookup"><span data-stu-id="8b531-180">Set properties:</span></span>
 
-    a.    Para uma implementação rápida, pode deixar Olá valores predefinidos das propriedades de Olá em **configuração opcional** e **grupo de recursos**.
+    <span data-ttu-id="8b531-181">a.</span><span class="sxs-lookup"><span data-stu-id="8b531-181">a.</span></span>    <span data-ttu-id="8b531-182">Para uma implementação rápida, pode deixar Olá valores predefinidos das propriedades de Olá em **configuração opcional** e **grupo de recursos**.</span><span class="sxs-lookup"><span data-stu-id="8b531-182">For quick deployment, you can leave hello default values for hello properties under **Optional Configuration** and **Resource Group**.</span></span>
 
-    b.    Em **conta de armazenamento**, opcionalmente, pode selecionar a conta de armazenamento de Olá que Olá sistema operativo VHD será armazenado.
+    <span data-ttu-id="8b531-183">b.</span><span class="sxs-lookup"><span data-stu-id="8b531-183">b.</span></span>    <span data-ttu-id="8b531-184">Em **conta de armazenamento**, opcionalmente, pode selecionar a conta de armazenamento de Olá que Olá sistema operativo VHD será armazenado.</span><span class="sxs-lookup"><span data-stu-id="8b531-184">Under **Storage Account**, you can optionally select hello storage account in which hello operating system VHD will be stored.</span></span>
 
-    c.    Em **grupo de recursos**, opcionalmente, pode selecionar grupo lógico Olá no qual tooplace Olá VM.
-6. Selecione Olá **localização** para a implementação:
+    <span data-ttu-id="8b531-185">c.</span><span class="sxs-lookup"><span data-stu-id="8b531-185">c.</span></span>    <span data-ttu-id="8b531-186">Em **grupo de recursos**, opcionalmente, pode selecionar grupo lógico Olá no qual tooplace Olá VM.</span><span class="sxs-lookup"><span data-stu-id="8b531-186">Under **Resource Group**, you can optionally select hello logical group in which tooplace hello VM.</span></span>
+6. <span data-ttu-id="8b531-187">Selecione Olá **localização** para a implementação:</span><span class="sxs-lookup"><span data-stu-id="8b531-187">Select hello **Location** for deployment:</span></span>
 
-    a.    Se planear toodevelop Olá VHD no local, a localização de Olá não importa o porque irá carregar Olá imagem tooAzure mais tarde.
+    <span data-ttu-id="8b531-188">a.</span><span class="sxs-lookup"><span data-stu-id="8b531-188">a.</span></span>    <span data-ttu-id="8b531-189">Se planear toodevelop Olá VHD no local, a localização de Olá não importa o porque irá carregar Olá imagem tooAzure mais tarde.</span><span class="sxs-lookup"><span data-stu-id="8b531-189">If you plan toodevelop hello VHD on-premises, hello location does not matter because you will upload hello image tooAzure later.</span></span>
 
-    b.    Se planear imagem de Olá toodevelop no Azure, considere utilizar uma das regiões do Microsoft Azure com base em E.U.A. Olá desde o início de Olá. Isto acelera Olá VHD cópia processo que executa a Microsoft em seu nome ao submeter a imagem de certificação.
+    <span data-ttu-id="8b531-190">b.</span><span class="sxs-lookup"><span data-stu-id="8b531-190">b.</span></span>    <span data-ttu-id="8b531-191">Se planear imagem de Olá toodevelop no Azure, considere utilizar uma das regiões do Microsoft Azure com base em E.U.A. Olá desde o início de Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-191">If you plan toodevelop hello image in Azure, consider using one of hello US-based Microsoft Azure regions from hello beginning.</span></span> <span data-ttu-id="8b531-192">Isto acelera Olá VHD cópia processo que executa a Microsoft em seu nome ao submeter a imagem de certificação.</span><span class="sxs-lookup"><span data-stu-id="8b531-192">This speeds up hello VHD copying process that Microsoft performs on your behalf when you submit your image for certification.</span></span>
 
     ![desenho][img-portal-vm-location]
-7. Clique em **Criar**. Olá VM inicia toodeploy. Dentro de minutos, terá uma implementação com êxito e pode começar a imagem de Olá toocreate para o SKU.
+7. <span data-ttu-id="8b531-194">Clique em **Criar**.</span><span class="sxs-lookup"><span data-stu-id="8b531-194">Click **Create**.</span></span> <span data-ttu-id="8b531-195">Olá VM inicia toodeploy.</span><span class="sxs-lookup"><span data-stu-id="8b531-195">hello VM starts toodeploy.</span></span> <span data-ttu-id="8b531-196">Dentro de minutos, terá uma implementação com êxito e pode começar a imagem de Olá toocreate para o SKU.</span><span class="sxs-lookup"><span data-stu-id="8b531-196">Within minutes, you will have a successful deployment and can begin toocreate hello image for your SKU.</span></span>
 
-### <a name="33-develop-your-vhd-in-hello-cloud"></a>3.3 desenvolver o VHD na nuvem de Olá
-Recomendamos vivamente que desenvolver o VHD na nuvem de Olá utilizando o protocolo RDP (Remote Desktop Protocol). Ligar tooRDP com o nome de utilizador de Olá e a palavra-passe especificada durante o aprovisionamento.
+### <a name="33-develop-your-vhd-in-hello-cloud"></a><span data-ttu-id="8b531-197">3.3 desenvolver o VHD na nuvem de Olá</span><span class="sxs-lookup"><span data-stu-id="8b531-197">3.3 Develop your VHD in hello cloud</span></span>
+<span data-ttu-id="8b531-198">Recomendamos vivamente que desenvolver o VHD na nuvem de Olá utilizando o protocolo RDP (Remote Desktop Protocol).</span><span class="sxs-lookup"><span data-stu-id="8b531-198">We strongly recommend that you develop your VHD in hello cloud by using Remote Desktop Protocol (RDP).</span></span> <span data-ttu-id="8b531-199">Ligar tooRDP com o nome de utilizador de Olá e a palavra-passe especificada durante o aprovisionamento.</span><span class="sxs-lookup"><span data-stu-id="8b531-199">You connect tooRDP with hello user name and password specified during provisioning.</span></span>
 
 > [!IMPORTANT]
-> Se desenvolver o VHD no local (que não seja recomendado), consulte [criar uma imagem de máquina virtual no local](marketplace-publishing-vm-image-creation-on-premise.md). Não é necessário se estiver a desenvolver na nuvem de Olá transferir o VHD.
+> <span data-ttu-id="8b531-200">Se desenvolver o VHD no local (que não seja recomendado), consulte [criar uma imagem de máquina virtual no local](marketplace-publishing-vm-image-creation-on-premise.md).</span><span class="sxs-lookup"><span data-stu-id="8b531-200">If you develop your VHD on-premises (which is not recommended), see [Creating a virtual machine image on-premises](marketplace-publishing-vm-image-creation-on-premise.md).</span></span> <span data-ttu-id="8b531-201">Não é necessário se estiver a desenvolver na nuvem de Olá transferir o VHD.</span><span class="sxs-lookup"><span data-stu-id="8b531-201">Downloading your VHD is not necessary if you are developing in hello cloud.</span></span>
 >
 >
 
-**Ligar através de RDP com Olá [portal do Microsoft Azure][link-azure-portal]**
+<span data-ttu-id="8b531-202">**Ligar através de RDP com Olá [portal do Microsoft Azure][link-azure-portal]**</span><span class="sxs-lookup"><span data-stu-id="8b531-202">**Connect via RDP using hello [Microsoft Azure portal][link-azure-portal]**</span></span>
 
-1. Selecione **procurar** > **VMs**.
-2. é aberto o painel de máquinas virtuais de Olá. Certifique-se de que Olá VM que pretende que sejam tooconnect com está em execução e, em seguida, selecione-o na lista de Olá de VMs implementadas.
-3. Abre um painel que descreve Olá selecionado VM. Na parte superior do Olá, clique em **Connect**.
-4. É o nome de utilizador de Olá tooenter pedido e a palavra-passe que especificou durante o aprovisionamento.
+1. <span data-ttu-id="8b531-203">Selecione **procurar** > **VMs**.</span><span class="sxs-lookup"><span data-stu-id="8b531-203">Select **Browse** > **VMs**.</span></span>
+2. <span data-ttu-id="8b531-204">é aberto o painel de máquinas virtuais de Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-204">hello Virtual machines blade opens.</span></span> <span data-ttu-id="8b531-205">Certifique-se de que Olá VM que pretende que sejam tooconnect com está em execução e, em seguida, selecione-o na lista de Olá de VMs implementadas.</span><span class="sxs-lookup"><span data-stu-id="8b531-205">Ensure that hello VM that you want tooconnect with is running, and then select it from hello list of deployed VMs.</span></span>
+3. <span data-ttu-id="8b531-206">Abre um painel que descreve Olá selecionado VM.</span><span class="sxs-lookup"><span data-stu-id="8b531-206">A blade opens that describes hello selected VM.</span></span> <span data-ttu-id="8b531-207">Na parte superior do Olá, clique em **Connect**.</span><span class="sxs-lookup"><span data-stu-id="8b531-207">At hello top, click **Connect**.</span></span>
+4. <span data-ttu-id="8b531-208">É o nome de utilizador de Olá tooenter pedido e a palavra-passe que especificou durante o aprovisionamento.</span><span class="sxs-lookup"><span data-stu-id="8b531-208">You are prompted tooenter hello user name and password that you specified during provisioning.</span></span>
 
-**Ligar através de RDP com o PowerShell**
+<span data-ttu-id="8b531-209">**Ligar através de RDP com o PowerShell**</span><span class="sxs-lookup"><span data-stu-id="8b531-209">**Connect via RDP using PowerShell**</span></span>
 
-toodownload um ficheiro de ambiente de trabalho remoto tooa computador local, utilizar Olá [cmdlet Get-AzureRemoteDesktopFile][link-technet-2]. Ordenar toouse este cmdlet, terá de nome de Olá tooknow do serviço de Olá e nome de Olá VM. Se tiver criado Olá VM de Olá [portal do Microsoft Azure][link-azure-portal], pode encontrar estas informações em propriedades VM:
+<span data-ttu-id="8b531-210">toodownload um ficheiro de ambiente de trabalho remoto tooa computador local, utilizar Olá [cmdlet Get-AzureRemoteDesktopFile][link-technet-2].</span><span class="sxs-lookup"><span data-stu-id="8b531-210">toodownload a remote desktop file tooa local machine, use hello [Get-AzureRemoteDesktopFile cmdlet][link-technet-2].</span></span> <span data-ttu-id="8b531-211">Ordenar toouse este cmdlet, terá de nome de Olá tooknow do serviço de Olá e nome de Olá VM.</span><span class="sxs-lookup"><span data-stu-id="8b531-211">In order toouse this cmdlet, you need tooknow hello name of hello service and name of hello VM.</span></span> <span data-ttu-id="8b531-212">Se tiver criado Olá VM de Olá [portal do Microsoft Azure][link-azure-portal], pode encontrar estas informações em propriedades VM:</span><span class="sxs-lookup"><span data-stu-id="8b531-212">If you created hello VM from hello [Microsoft Azure portal][link-azure-portal], you can find this information under VM properties:</span></span>
 
-1. No portal do Microsoft Azure Olá, selecione **procurar** > **VMs**.
-2. é aberto o painel de máquinas virtuais de Olá. Selecione Olá VM que tenha implementado.
-3. Abre um painel que descreve Olá selecionado VM.
-4. Clique em **Propriedades**.
-5. primeira parte de Olá Olá do nome de domínio é o nome de serviço de Olá. nome de anfitrião Olá é o nome da VM Olá.
+1. <span data-ttu-id="8b531-213">No portal do Microsoft Azure Olá, selecione **procurar** > **VMs**.</span><span class="sxs-lookup"><span data-stu-id="8b531-213">In hello Microsoft Azure portal, select **Browse** > **VMs**.</span></span>
+2. <span data-ttu-id="8b531-214">é aberto o painel de máquinas virtuais de Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-214">hello Virtual machines blade opens.</span></span> <span data-ttu-id="8b531-215">Selecione Olá VM que tenha implementado.</span><span class="sxs-lookup"><span data-stu-id="8b531-215">Select hello VM that you deployed.</span></span>
+3. <span data-ttu-id="8b531-216">Abre um painel que descreve Olá selecionado VM.</span><span class="sxs-lookup"><span data-stu-id="8b531-216">A blade opens that describes hello selected VM.</span></span>
+4. <span data-ttu-id="8b531-217">Clique em **Propriedades**.</span><span class="sxs-lookup"><span data-stu-id="8b531-217">Click **Properties**.</span></span>
+5. <span data-ttu-id="8b531-218">primeira parte de Olá Olá do nome de domínio é o nome de serviço de Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-218">hello first portion of hello domain name is hello service name.</span></span> <span data-ttu-id="8b531-219">nome de anfitrião Olá é o nome da VM Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-219">hello host name is hello VM name.</span></span>
 
     ![desenho][img-portal-vm-rdp]
-6. ficheiro do Olá cmdlet toodownload Olá RDP para ambiente de trabalho do administrador do Olá criado VM toohello local é a seguinte.
+6. <span data-ttu-id="8b531-221">ficheiro do Olá cmdlet toodownload Olá RDP para ambiente de trabalho do administrador do Olá criado VM toohello local é a seguinte.</span><span class="sxs-lookup"><span data-stu-id="8b531-221">hello cmdlet toodownload hello RDP file for hello created VM toohello administrator's local desktop is as follows.</span></span>
 
         Get‐AzureRemoteDesktopFile ‐ServiceName “baseimagevm‐6820cq00” ‐Name “BaseImageVM” –LocalPath “C:\Users\Administrator\Desktop\BaseImageVM.rdp”
 
-Podem encontrar mais informações sobre RDP no MSDN artigo Olá [ligar tooan VM do Azure com RDP ou SSH](http://msdn.microsoft.com/library/azure/dn535788.aspx).
+<span data-ttu-id="8b531-222">Podem encontrar mais informações sobre RDP no MSDN artigo Olá [ligar tooan VM do Azure com RDP ou SSH](http://msdn.microsoft.com/library/azure/dn535788.aspx).</span><span class="sxs-lookup"><span data-stu-id="8b531-222">More information about RDP can be found on MSDN in hello article [Connect tooan Azure VM with RDP or SSH](http://msdn.microsoft.com/library/azure/dn535788.aspx).</span></span>
 
-**Configurar uma VM e criar o SKU**
+<span data-ttu-id="8b531-223">**Configurar uma VM e criar o SKU**</span><span class="sxs-lookup"><span data-stu-id="8b531-223">**Configure a VM and create your SKU**</span></span>
 
-Depois de sistema de operativo Olá que VHD é transferido, utilize o Hyper-v e configurar um toobegin VM criar o SKU. Os passos detalhados podem ser encontrados em Olá seguir TechNet ligação: [instalar o Hyper-v e configurar uma VM](http://technet.microsoft.com/library/hh846766.aspx).
+<span data-ttu-id="8b531-224">Depois de sistema de operativo Olá que VHD é transferido, utilize o Hyper-v e configurar um toobegin VM criar o SKU.</span><span class="sxs-lookup"><span data-stu-id="8b531-224">After hello operating system VHD is downloaded, use Hyper­V and configure a VM toobegin creating your SKU.</span></span> <span data-ttu-id="8b531-225">Os passos detalhados podem ser encontrados em Olá seguir TechNet ligação: [instalar o Hyper-v e configurar uma VM](http://technet.microsoft.com/library/hh846766.aspx).</span><span class="sxs-lookup"><span data-stu-id="8b531-225">Detailed steps can be found at hello following TechNet link: [Install Hyper­V and Configure a VM](http://technet.microsoft.com/library/hh846766.aspx).</span></span>
 
-### <a name="34-choose-hello-correct-vhd-size"></a>3.4 Escolha o tamanho VHD correto Olá
-Olá Windows VHD de sistema operativo da imagem do VM deve ser criado como um VHD de formato fixo de 128 GB.  
+### <a name="34-choose-hello-correct-vhd-size"></a><span data-ttu-id="8b531-226">3.4 Escolha o tamanho VHD correto Olá</span><span class="sxs-lookup"><span data-stu-id="8b531-226">3.4 Choose hello correct VHD size</span></span>
+<span data-ttu-id="8b531-227">Olá Windows VHD de sistema operativo da imagem do VM deve ser criado como um VHD de formato fixo de 128 GB.</span><span class="sxs-lookup"><span data-stu-id="8b531-227">hello Windows operating system VHD in your VM image should be created as a 128-GB fixed-format VHD.</span></span>  
 
-Se o tamanho físico Olá for inferior a 128 GB, Olá VHD deve ser disperso. Olá base do SQL Server imagens do Windows e fornecidas já cumpra estes requisitos, por isso, não altere o tamanho de formato ou Olá de Olá de Olá obtido do VHD.  
+<span data-ttu-id="8b531-228">Se o tamanho físico Olá for inferior a 128 GB, Olá VHD deve ser disperso.</span><span class="sxs-lookup"><span data-stu-id="8b531-228">If hello physical size is less than 128 GB, hello VHD should be sparse.</span></span> <span data-ttu-id="8b531-229">Olá base do SQL Server imagens do Windows e fornecidas já cumpra estes requisitos, por isso, não altere o tamanho de formato ou Olá de Olá de Olá obtido do VHD.</span><span class="sxs-lookup"><span data-stu-id="8b531-229">hello base Windows and SQL Server images provided already meet these requirements, so do not change hello format or hello size of hello VHD obtained.</span></span>  
 
-Os discos de dados podem ser igual a 1 TB. Ao decidir no tamanho do disco Olá, lembre-se de que os clientes não podem redimensionar os VHDs dentro de uma imagem momento Olá da implementação. VHDs de disco de dados devem ser criados como um VHD de formato fixo. Também deve ser dispersos. Os discos de dados podem estar vazios ou conter dados.
+<span data-ttu-id="8b531-230">Os discos de dados podem ser igual a 1 TB.</span><span class="sxs-lookup"><span data-stu-id="8b531-230">Data disks can be as large as 1 TB.</span></span> <span data-ttu-id="8b531-231">Ao decidir no tamanho do disco Olá, lembre-se de que os clientes não podem redimensionar os VHDs dentro de uma imagem momento Olá da implementação.</span><span class="sxs-lookup"><span data-stu-id="8b531-231">When deciding on hello disk size, remember that customers cannot resize VHDs within an image at hello time of deployment.</span></span> <span data-ttu-id="8b531-232">VHDs de disco de dados devem ser criados como um VHD de formato fixo.</span><span class="sxs-lookup"><span data-stu-id="8b531-232">Data disk VHDs should be created as a fixed-format VHD.</span></span> <span data-ttu-id="8b531-233">Também deve ser dispersos.</span><span class="sxs-lookup"><span data-stu-id="8b531-233">They should also be sparse.</span></span> <span data-ttu-id="8b531-234">Os discos de dados podem estar vazios ou conter dados.</span><span class="sxs-lookup"><span data-stu-id="8b531-234">Data disks can be empty or contain data.</span></span>
 
-### <a name="35-install-hello-latest-windows-patches"></a>3.5 instalar patches de Windows mais recentes Olá
-Olá base imagens contêm o correções mais recentes Olá segurança tootheir publicados data. Antes de publicar o sistema de operativo Olá VHD que criou, certifique-se de que o Windows Update foi executada e de que todos os Olá crítico mais recente e atualizações de segurança importante tem sido instaladas.
+### <a name="35-install-hello-latest-windows-patches"></a><span data-ttu-id="8b531-235">3.5 instalar patches de Windows mais recentes Olá</span><span class="sxs-lookup"><span data-stu-id="8b531-235">3.5 Install hello latest Windows patches</span></span>
+<span data-ttu-id="8b531-236">Olá base imagens contêm o correções mais recentes Olá segurança tootheir publicados data.</span><span class="sxs-lookup"><span data-stu-id="8b531-236">hello base images contain hello latest patches up tootheir published date.</span></span> <span data-ttu-id="8b531-237">Antes de publicar o sistema de operativo Olá VHD que criou, certifique-se de que o Windows Update foi executada e de que todos os Olá crítico mais recente e atualizações de segurança importante tem sido instaladas.</span><span class="sxs-lookup"><span data-stu-id="8b531-237">Before publishing hello operating system VHD you have created, ensure that Windows Update has been run and that all hello latest Critical and Important security updates have been installed.</span></span>
 
-### <a name="36-perform-additional-configuration-and-schedule-tasks-as-necessary"></a>3.6 efetuar tarefas adicionais de configuração e a agenda conforme necessário
-Se não for necessária configuração adicional, considere a utilização de uma tarefa agendada que executa no arranque toomake toohello quaisquer alterações final VM após foi implementada:
+### <a name="36-perform-additional-configuration-and-schedule-tasks-as-necessary"></a><span data-ttu-id="8b531-238">3.6 efetuar tarefas adicionais de configuração e a agenda conforme necessário</span><span class="sxs-lookup"><span data-stu-id="8b531-238">3.6 Perform additional configuration and schedule tasks as necessary</span></span>
+<span data-ttu-id="8b531-239">Se não for necessária configuração adicional, considere a utilização de uma tarefa agendada que executa no arranque toomake toohello quaisquer alterações final VM após foi implementada:</span><span class="sxs-lookup"><span data-stu-id="8b531-239">If additional configuration is needed, consider using a scheduled task that runs at startup toomake any final changes toohello VM after it has been deployed:</span></span>
 
-* É uma tarefa de Olá de toohave prática melhor eliminar-se automaticamente após a execução com êxito.
-* Nenhuma configuração deverá confiar em unidades diferentes unidades C ou D, porque são apenas duas unidades de Olá sempre garantidos tooexist. Unidade C é o disco do sistema operativo Olá, não sendo unidade D disco local temporário de Olá.
+* <span data-ttu-id="8b531-240">É uma tarefa de Olá de toohave prática melhor eliminar-se automaticamente após a execução com êxito.</span><span class="sxs-lookup"><span data-stu-id="8b531-240">It is a best practice toohave hello task delete itself upon successful execution.</span></span>
+* <span data-ttu-id="8b531-241">Nenhuma configuração deverá confiar em unidades diferentes unidades C ou D, porque são apenas duas unidades de Olá sempre garantidos tooexist.</span><span class="sxs-lookup"><span data-stu-id="8b531-241">No configuration should rely on drives other than drives C or D, because these are hello only two drives that are always guaranteed tooexist.</span></span> <span data-ttu-id="8b531-242">Unidade C é o disco do sistema operativo Olá, não sendo unidade D disco local temporário de Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-242">Drive C is hello operating system disk, and drive D is hello temporary local disk.</span></span>
 
-### <a name="37-generalize-hello-image"></a>3.7 generalize a imagem de Olá
-Todas as imagens no Olá Azure Marketplace tem de ser reutilizáveis de forma genérica. Por outras palavras, deve ser generalizado VHD de sistema de operativo Olá:
+### <a name="37-generalize-hello-image"></a><span data-ttu-id="8b531-243">3.7 generalize a imagem de Olá</span><span class="sxs-lookup"><span data-stu-id="8b531-243">3.7 Generalize hello image</span></span>
+<span data-ttu-id="8b531-244">Todas as imagens no Olá Azure Marketplace tem de ser reutilizáveis de forma genérica.</span><span class="sxs-lookup"><span data-stu-id="8b531-244">All images in hello Azure Marketplace must be reusable in a generic fashion.</span></span> <span data-ttu-id="8b531-245">Por outras palavras, deve ser generalizado VHD de sistema de operativo Olá:</span><span class="sxs-lookup"><span data-stu-id="8b531-245">In other words, hello operating system VHD must be generalized:</span></span>
 
-* Para o Windows, imagem de Olá deve ser "processado pelo Sysprep" e devem ser efetuadas não configurações que não suportam Olá **sysprep** comando.
-* Pode executar Olá seguintes comandos de Olá diretório % windir%\System32\Sysprep.
+* <span data-ttu-id="8b531-246">Para o Windows, imagem de Olá deve ser "processado pelo Sysprep" e devem ser efetuadas não configurações que não suportam Olá **sysprep** comando.</span><span class="sxs-lookup"><span data-stu-id="8b531-246">For Windows, hello image should be "sysprepped," and no configurations should be done that do not support hello **sysprep** command.</span></span>
+* <span data-ttu-id="8b531-247">Pode executar Olá seguintes comandos de Olá diretório % windir%\System32\Sysprep.</span><span class="sxs-lookup"><span data-stu-id="8b531-247">You can run hello following command from hello directory %windir%\System32\Sysprep.</span></span>
 
         sysprep.exe /generalize /oobe /shutdown
 
-  Orientações sobre como o sistema de operativo toosysprep Olá é fornecido no passo de Olá seguinte artigo do MSDN: [criar e carregar um VHD do Windows Server tooAzure](../virtual-machines/windows/classic/createupload-vhd.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
+  <span data-ttu-id="8b531-248">Orientações sobre como o sistema de operativo toosysprep Olá é fornecido no passo de Olá seguinte artigo do MSDN: [criar e carregar um VHD do Windows Server tooAzure](../virtual-machines/windows/classic/createupload-vhd.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).</span><span class="sxs-lookup"><span data-stu-id="8b531-248">Guidance on how toosysprep hello operating system is provided in Step of hello following MSDN article: [Create and upload a Windows Server VHD tooAzure](../virtual-machines/windows/classic/createupload-vhd.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).</span></span>
 
-## <a name="4-deploy-a-vm-from-your-vhds"></a>4. Implementar uma VM a partir do seu VHDs
-Depois de carregou o VHD (VHD de sistema de operativo Olá generalizado e zero ou mais dados em disco VHDs) tooan conta do storage do Azure, pode registá-los como uma imagem VM de utilizador. Em seguida, pode testar essa imagem. Tenha em atenção que porque o sistema operativo VHD seja generalizado, não é possível diretamente implemente Olá VM fornecendo Olá URL de VHD.
+## <a name="4-deploy-a-vm-from-your-vhds"></a><span data-ttu-id="8b531-249">4. Implementar uma VM a partir do seu VHDs</span><span class="sxs-lookup"><span data-stu-id="8b531-249">4. Deploy a VM from your VHDs</span></span>
+<span data-ttu-id="8b531-250">Depois de carregou o VHD (VHD de sistema de operativo Olá generalizado e zero ou mais dados em disco VHDs) tooan conta do storage do Azure, pode registá-los como uma imagem VM de utilizador.</span><span class="sxs-lookup"><span data-stu-id="8b531-250">After you have uploaded your VHDs (hello generalized operating system VHD and zero or more data disk VHDs) tooan Azure storage account, you can register them as a user VM image.</span></span> <span data-ttu-id="8b531-251">Em seguida, pode testar essa imagem.</span><span class="sxs-lookup"><span data-stu-id="8b531-251">Then you can test that image.</span></span> <span data-ttu-id="8b531-252">Tenha em atenção que porque o sistema operativo VHD seja generalizado, não é possível diretamente implemente Olá VM fornecendo Olá URL de VHD.</span><span class="sxs-lookup"><span data-stu-id="8b531-252">Note that because your operating system VHD is generalized, you cannot directly deploy hello VM by providing hello VHD URL.</span></span>
 
-toolearn mais informações sobre imagens VM, Olá revisão seguintes mensagens de blogue:
+<span data-ttu-id="8b531-253">toolearn mais informações sobre imagens VM, Olá revisão seguintes mensagens de blogue:</span><span class="sxs-lookup"><span data-stu-id="8b531-253">toolearn more about VM images, review hello following blog posts:</span></span>
 
-* [Imagem de VM](https://azure.microsoft.com/blog/vm-image-blog-post/)
-* [VM imagem do PowerShell como](https://azure.microsoft.com/blog/vm-image-powershell-how-to-blog-post/)
-* [Sobre as imagens VM no Azure](https://msdn.microsoft.com/library/azure/dn790290.aspx)
+* [<span data-ttu-id="8b531-254">Imagem de VM</span><span class="sxs-lookup"><span data-stu-id="8b531-254">VM Image</span></span>](https://azure.microsoft.com/blog/vm-image-blog-post/)
+* [<span data-ttu-id="8b531-255">VM imagem do PowerShell como</span><span class="sxs-lookup"><span data-stu-id="8b531-255">VM Image PowerShell How To</span></span>](https://azure.microsoft.com/blog/vm-image-powershell-how-to-blog-post/)
+* [<span data-ttu-id="8b531-256">Sobre as imagens VM no Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-256">About VM images in Azure</span></span>](https://msdn.microsoft.com/library/azure/dn790290.aspx)
 
-### <a name="set-up-hello-necessary-tools-powershell-and-azure-cli"></a>Configurar ferramentas necessário Olá, PowerShell e da CLI do Azure
-* [Como toosetup PowerShell](/powershell/azure/overview)
-* [Como toosetup CLI do Azure](../cli-install-nodejs.md)
+### <a name="set-up-hello-necessary-tools-powershell-and-azure-cli"></a><span data-ttu-id="8b531-257">Configurar ferramentas necessário Olá, PowerShell e da CLI do Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-257">Set up hello necessary tools, PowerShell and Azure CLI</span></span>
+* [<span data-ttu-id="8b531-258">Como toosetup PowerShell</span><span class="sxs-lookup"><span data-stu-id="8b531-258">How toosetup PowerShell</span></span>](/powershell/azure/overview)
+* [<span data-ttu-id="8b531-259">Como toosetup CLI do Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-259">How toosetup Azure CLI</span></span>](../cli-install-nodejs.md)
 
-### <a name="41-create-a-user-vm-image"></a>4.1 criar uma imagem VM de utilizador
-#### <a name="capture-vm"></a>Captura de VM
-Leia as ligações de Olá indicadas abaixo para obter orientações sobre a captura Olá VM ao utilizar a CLI do PowerShell/API/Azure.
+### <a name="41-create-a-user-vm-image"></a><span data-ttu-id="8b531-260">4.1 criar uma imagem VM de utilizador</span><span class="sxs-lookup"><span data-stu-id="8b531-260">4.1 Create a user VM image</span></span>
+#### <a name="capture-vm"></a><span data-ttu-id="8b531-261">Captura de VM</span><span class="sxs-lookup"><span data-stu-id="8b531-261">Capture VM</span></span>
+<span data-ttu-id="8b531-262">Leia as ligações de Olá indicadas abaixo para obter orientações sobre a captura Olá VM ao utilizar a CLI do PowerShell/API/Azure.</span><span class="sxs-lookup"><span data-stu-id="8b531-262">Please read hello links given below for guidance on capturing hello VM using API/PowerShell/Azure CLI.</span></span>
 
-* [API](https://msdn.microsoft.com/library/mt163560.aspx)
-* [PowerShell](../virtual-machines/windows/capture-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [CLI do Azure](../virtual-machines/linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [<span data-ttu-id="8b531-263">API</span><span class="sxs-lookup"><span data-stu-id="8b531-263">API</span></span>](https://msdn.microsoft.com/library/mt163560.aspx)
+* [<span data-ttu-id="8b531-264">PowerShell</span><span class="sxs-lookup"><span data-stu-id="8b531-264">PowerShell</span></span>](../virtual-machines/windows/capture-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [<span data-ttu-id="8b531-265">CLI do Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-265">Azure CLI</span></span>](../virtual-machines/linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-### <a name="generalize-image"></a>Generalize a imagem
-Leia as ligações de Olá indicadas abaixo para obter orientações sobre a captura Olá VM ao utilizar a CLI do PowerShell/API/Azure.
+### <a name="generalize-image"></a><span data-ttu-id="8b531-266">Generalize a imagem</span><span class="sxs-lookup"><span data-stu-id="8b531-266">Generalize Image</span></span>
+<span data-ttu-id="8b531-267">Leia as ligações de Olá indicadas abaixo para obter orientações sobre a captura Olá VM ao utilizar a CLI do PowerShell/API/Azure.</span><span class="sxs-lookup"><span data-stu-id="8b531-267">Please read hello links given below for guidance on capturing hello VM using API/PowerShell/Azure CLI.</span></span>
 
-* [API](https://msdn.microsoft.com/library/mt269439.aspx)
-* [PowerShell](../virtual-machines/windows/capture-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-* [CLI do Azure](../virtual-machines/linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [<span data-ttu-id="8b531-268">API</span><span class="sxs-lookup"><span data-stu-id="8b531-268">API</span></span>](https://msdn.microsoft.com/library/mt269439.aspx)
+* [<span data-ttu-id="8b531-269">PowerShell</span><span class="sxs-lookup"><span data-stu-id="8b531-269">PowerShell</span></span>](../virtual-machines/windows/capture-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [<span data-ttu-id="8b531-270">CLI do Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-270">Azure CLI</span></span>](../virtual-machines/linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-### <a name="42-deploy-a-vm-from-a-user-vm-image"></a>4.2 implementar uma VM a partir de uma imagem VM de utilizador
-toodeploy uma VM a partir de uma imagem de VM de utilizador, pode utilizar Olá atual [portal do Azure](https://manage.windowsazure.com) ou PowerShell.
+### <a name="42-deploy-a-vm-from-a-user-vm-image"></a><span data-ttu-id="8b531-271">4.2 implementar uma VM a partir de uma imagem VM de utilizador</span><span class="sxs-lookup"><span data-stu-id="8b531-271">4.2 Deploy a VM from a user VM image</span></span>
+<span data-ttu-id="8b531-272">toodeploy uma VM a partir de uma imagem de VM de utilizador, pode utilizar Olá atual [portal do Azure](https://manage.windowsazure.com) ou PowerShell.</span><span class="sxs-lookup"><span data-stu-id="8b531-272">toodeploy a VM from a user VM image, you can use hello current [Azure portal](https://manage.windowsazure.com) or PowerShell.</span></span>
 
-**Implementar uma VM a partir do portal do Azure atual Olá**
+<span data-ttu-id="8b531-273">**Implementar uma VM a partir do portal do Azure atual Olá**</span><span class="sxs-lookup"><span data-stu-id="8b531-273">**Deploy a VM from hello current Azure portal**</span></span>
 
-1. Aceda demasiado**novo** > **computação** > **Máquina Virtual** > **da galeria**.
+1. <span data-ttu-id="8b531-274">Aceda demasiado**novo** > **computação** > **Máquina Virtual** > **da galeria**.</span><span class="sxs-lookup"><span data-stu-id="8b531-274">Go too**New** > **Compute** > **Virtual machine** > **From gallery**.</span></span>
 
     ![desenho][img-manage-vm-new]
-2. Aceda demasiado**minhas imagens**, e, em seguida, selecione Olá imagem VM a partir do qual toodeploy uma VM:
+2. <span data-ttu-id="8b531-276">Aceda demasiado**minhas imagens**, e, em seguida, selecione Olá imagem VM a partir do qual toodeploy uma VM:</span><span class="sxs-lookup"><span data-stu-id="8b531-276">Go too**My images**, and then select hello VM image from which toodeploy a VM:</span></span>
 
-   1. Imagem de toowhich pay especial atenção selecionar, porque Olá **minhas imagens** vista apresenta uma lista de imagens do sistema operativo e imagens VM.
-   2. Observar o número de Olá de discos pode ajudar a determinar o tipo de imagem que estiver a implementar, porque a maioria de Olá das imagens da VM tem mais de um disco. No entanto, é possível toohave uma imagem de VM com apenas um único disco de sistema operativo, que, em seguida, teria **número de discos** definir too1.
+   1. <span data-ttu-id="8b531-277">Imagem de toowhich pay especial atenção selecionar, porque Olá **minhas imagens** vista apresenta uma lista de imagens do sistema operativo e imagens VM.</span><span class="sxs-lookup"><span data-stu-id="8b531-277">Pay close attention toowhich image you select, because hello **My images** view lists both operating system images and VM images.</span></span>
+   2. <span data-ttu-id="8b531-278">Observar o número de Olá de discos pode ajudar a determinar o tipo de imagem que estiver a implementar, porque a maioria de Olá das imagens da VM tem mais de um disco.</span><span class="sxs-lookup"><span data-stu-id="8b531-278">Looking at hello number of disks can help determine what type of image you are deploying, because hello majority of VM images have more than one disk.</span></span> <span data-ttu-id="8b531-279">No entanto, é possível toohave uma imagem de VM com apenas um único disco de sistema operativo, que, em seguida, teria **número de discos** definir too1.</span><span class="sxs-lookup"><span data-stu-id="8b531-279">However, it is still possible toohave a VM image with only a single operating system disk, which would then have **Number of disks** set too1.</span></span>
 
       ![desenho][img-manage-vm-select]
-3. Siga o Assistente de criação de VM Olá e especifique o nome da VM Olá, tamanho VM, localização, nome de utilizador e palavra-passe.
+3. <span data-ttu-id="8b531-281">Siga o Assistente de criação de VM Olá e especifique o nome da VM Olá, tamanho VM, localização, nome de utilizador e palavra-passe.</span><span class="sxs-lookup"><span data-stu-id="8b531-281">Follow hello VM creation wizard and specify hello VM name, VM size, location, user name, and password.</span></span>
 
-**Implementar uma VM a partir do PowerShell**
+<span data-ttu-id="8b531-282">**Implementar uma VM a partir do PowerShell**</span><span class="sxs-lookup"><span data-stu-id="8b531-282">**Deploy a VM from PowerShell**</span></span>
 
-toodeploy que uma VM grande de Olá generalizado imagem de VM que acabou de criar, pode utilizar Olá os seguintes cmdlets.
+<span data-ttu-id="8b531-283">toodeploy que uma VM grande de Olá generalizado imagem de VM que acabou de criar, pode utilizar Olá os seguintes cmdlets.</span><span class="sxs-lookup"><span data-stu-id="8b531-283">toodeploy a large VM from hello generalized VM image just created, you can use hello following cmdlets.</span></span>
 
     $img = Get-AzureVMImage -ImageName "myVMImage"
     $user = "user123"
@@ -231,297 +231,297 @@ toodeploy que uma VM grande de Olá generalizado imagem de VM que acabou de cria
     New-AzureVM -ServiceName "VMImageCloudService" -VMs $myVM -Location "West US" -WaitForBoot
 
 > [!IMPORTANT]
-> Consulte [Resolução de problemas comuns quais os problemas encontrados durante a criação do VHD] para obter assistência adicional.
+> <span data-ttu-id="8b531-284">Consulte [Resolução de problemas comuns quais os problemas encontrados durante a criação do VHD] para obter assistência adicional.</span><span class="sxs-lookup"><span data-stu-id="8b531-284">Please refer [Troubleshooting common issues encountered during VHD creation] for additional assistance.</span></span>
 >
 >
 
-## <a name="5-obtain-certification-for-your-vm-image"></a>5. Obter a certificação para a imagem VM
-passo seguinte Olá preparar a imagem VM para Olá Azure Marketplace é toohave que este certificado.
+## <a name="5-obtain-certification-for-your-vm-image"></a><span data-ttu-id="8b531-285">5. Obter a certificação para a imagem VM</span><span class="sxs-lookup"><span data-stu-id="8b531-285">5. Obtain certification for your VM image</span></span>
+<span data-ttu-id="8b531-286">passo seguinte Olá preparar a imagem VM para Olá Azure Marketplace é toohave que este certificado.</span><span class="sxs-lookup"><span data-stu-id="8b531-286">hello next step in preparing your VM image for hello Azure Marketplace is toohave it certified.</span></span>
 
-Este processo inclui a executar uma ferramenta de certificação especial, carregar toohello de resultados de verificação Olá contentor do Azure onde residem os VHDs, adicionar uma oferta, definir o SKU e submeter a VM de imagem de certificação.
+<span data-ttu-id="8b531-287">Este processo inclui a executar uma ferramenta de certificação especial, carregar toohello de resultados de verificação Olá contentor do Azure onde residem os VHDs, adicionar uma oferta, definir o SKU e submeter a VM de imagem de certificação.</span><span class="sxs-lookup"><span data-stu-id="8b531-287">This process includes running a special certification tool, uploading hello verification results toohello Azure container where your VHDs reside, adding an offer, defining your SKU, and submitting your VM image for certification.</span></span>
 
-### <a name="51-download-and-run-hello-certification-test-tool-for-azure-certified"></a>5.1 Transferir e executar Olá ferramenta de teste de certificação para o certificado do Azure
-ferramenta de certificação Olá é executado numa VM em execução, aprovisionada a partir da imagem de VM de utilizador, tooensure Olá imagem de VM é compatível com o Microsoft Azure. Irá verificar que tiverem sido cumpridos orientações Olá e requisitos sobre a preparação do VHD. Olá o resultado da ferramenta de Olá é um relatório de compatibilidade, que deve ser carregado no Olá Portal de publicação ao requerente de certificação.
+### <a name="51-download-and-run-hello-certification-test-tool-for-azure-certified"></a><span data-ttu-id="8b531-288">5.1 Transferir e executar Olá ferramenta de teste de certificação para o certificado do Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-288">5.1 Download and run hello Certification Test Tool for Azure Certified</span></span>
+<span data-ttu-id="8b531-289">ferramenta de certificação Olá é executado numa VM em execução, aprovisionada a partir da imagem de VM de utilizador, tooensure Olá imagem de VM é compatível com o Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="8b531-289">hello certification tool runs on a running VM, provisioned from your user VM image, tooensure that hello VM image is compatible with Microsoft Azure.</span></span> <span data-ttu-id="8b531-290">Irá verificar que tiverem sido cumpridos orientações Olá e requisitos sobre a preparação do VHD.</span><span class="sxs-lookup"><span data-stu-id="8b531-290">It will verify that hello guidance and requirements about preparing your VHD have been met.</span></span> <span data-ttu-id="8b531-291">Olá o resultado da ferramenta de Olá é um relatório de compatibilidade, que deve ser carregado no Olá Portal de publicação ao requerente de certificação.</span><span class="sxs-lookup"><span data-stu-id="8b531-291">hello output of hello tool is a compatibility report, which should be uploaded on hello Publishing Portal while requesting certification.</span></span>
 
-ferramenta de certificação de Olá pode ser utilizada com o Windows e VMs com Linux. Liga-se as VMs baseadas em tooWindows através do PowerShell e liga tooLinux VMs através de SSH.Net:
+<span data-ttu-id="8b531-292">ferramenta de certificação de Olá pode ser utilizada com o Windows e VMs com Linux.</span><span class="sxs-lookup"><span data-stu-id="8b531-292">hello certification tool can be used with both Windows and Linux VMs.</span></span> <span data-ttu-id="8b531-293">Liga-se as VMs baseadas em tooWindows através do PowerShell e liga tooLinux VMs através de SSH.Net:</span><span class="sxs-lookup"><span data-stu-id="8b531-293">It connects tooWindows-based VMs via PowerShell and connects tooLinux VMs via SSH.Net:</span></span>
 
-1. Em primeiro lugar, transfira a ferramenta de certificação de Olá no Olá [site de transferências da Microsoft][link-msft-download].
-2. Abrir a ferramenta de certificação Olá e, em seguida, clique em Olá **Iniciar novo teste** botão.
-3. De Olá **testar informações** ecrã, introduza um nome para a execução do teste Olá.
-4. Indique se a VM reporta ao Linux ou ao Windows. Dependendo do que escolher, selecione opções subsequentes Olá.
+1. <span data-ttu-id="8b531-294">Em primeiro lugar, transfira a ferramenta de certificação de Olá no Olá [site de transferências da Microsoft][link-msft-download].</span><span class="sxs-lookup"><span data-stu-id="8b531-294">First, download hello certification tool at hello [Microsoft download site][link-msft-download].</span></span>
+2. <span data-ttu-id="8b531-295">Abrir a ferramenta de certificação Olá e, em seguida, clique em Olá **Iniciar novo teste** botão.</span><span class="sxs-lookup"><span data-stu-id="8b531-295">Open hello certification tool, and then click hello **Start New Test** button.</span></span>
+3. <span data-ttu-id="8b531-296">De Olá **testar informações** ecrã, introduza um nome para a execução do teste Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-296">From hello **Test Information** screen, enter a name for hello test run.</span></span>
+4. <span data-ttu-id="8b531-297">Indique se a VM reporta ao Linux ou ao Windows.</span><span class="sxs-lookup"><span data-stu-id="8b531-297">Choose whether your VM is on Linux or Windows.</span></span> <span data-ttu-id="8b531-298">Dependendo do que escolher, selecione opções subsequentes Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-298">Depending on which you choose, select hello subsequent options.</span></span>
 
-### <a name="connect-hello-certification-tool-tooa-linux-vm-image"></a>**Ligar Olá certificação ferramenta tooa imagem de VM com Linux**
-1. Modo de autenticação SSH Olá selecione: palavra-passe ou chave de ficheiro.
-2. Se utilizar autenticação baseada em palavra-passe, introduza o nome de sistema de nomes de domínio (DNS) Olá, nome de utilizador e palavra-passe.
-3. Se utilizar a autenticação de ficheiro de chave, introduza o nome DNS de Olá, nome de utilizador e a localização da chave privada.
+### <a name="connect-hello-certification-tool-tooa-linux-vm-image"></a><span data-ttu-id="8b531-299">**Ligar Olá certificação ferramenta tooa imagem de VM com Linux**</span><span class="sxs-lookup"><span data-stu-id="8b531-299">**Connect hello certification tool tooa Linux VM image**</span></span>
+1. <span data-ttu-id="8b531-300">Modo de autenticação SSH Olá selecione: palavra-passe ou chave de ficheiro.</span><span class="sxs-lookup"><span data-stu-id="8b531-300">Select hello SSH authentication mode: password or key file.</span></span>
+2. <span data-ttu-id="8b531-301">Se utilizar autenticação baseada em palavra-passe, introduza o nome de sistema de nomes de domínio (DNS) Olá, nome de utilizador e palavra-passe.</span><span class="sxs-lookup"><span data-stu-id="8b531-301">If using password-­based authentication, enter hello Domain Name System (DNS) name, user name, and password.</span></span>
+3. <span data-ttu-id="8b531-302">Se utilizar a autenticação de ficheiro de chave, introduza o nome DNS de Olá, nome de utilizador e a localização da chave privada.</span><span class="sxs-lookup"><span data-stu-id="8b531-302">If using key file authentication, enter hello DNS name, user name, and private key location.</span></span>
 
    ![Autenticação de palavra-passe da imagem de VM do Linux][img-cert-vm-pswd-lnx]
 
    ![Autenticação de chave de ficheiro de imagem de VM do Linux][img-cert-vm-key-lnx]
 
-### <a name="connect-hello-certification-tool-tooa-windows-based-vm-image"></a>**Ligar a imagem de VM baseadas em Windows hello certificação ferramenta tooa**
-1. Introduza o nome DNS de VM de Olá totalmente qualificado (por exemplo, MyVMName.Cloudapp.net).
-2. Introduza o nome de utilizador Olá e a palavra-passe.
+### <a name="connect-hello-certification-tool-tooa-windows-based-vm-image"></a><span data-ttu-id="8b531-305">**Ligar a imagem de VM baseadas em Windows hello certificação ferramenta tooa**</span><span class="sxs-lookup"><span data-stu-id="8b531-305">**Connect hello certification tool tooa Windows-based VM image**</span></span>
+1. <span data-ttu-id="8b531-306">Introduza o nome DNS de VM de Olá totalmente qualificado (por exemplo, MyVMName.Cloudapp.net).</span><span class="sxs-lookup"><span data-stu-id="8b531-306">Enter hello fully qualified VM DNS name (for example, MyVMName.Cloudapp.net).</span></span>
+2. <span data-ttu-id="8b531-307">Introduza o nome de utilizador Olá e a palavra-passe.</span><span class="sxs-lookup"><span data-stu-id="8b531-307">Enter hello user name and password.</span></span>
 
    ![Autenticação de palavra-passe da imagem de VM do Windows][img-cert-vm-pswd-win]
 
-Depois de selecionar opções corretas Olá para a imagem VM de baseados em Windows ou Linux, selecione **Testar ligação** tooensure que SSH.Net ou o PowerShell tem uma ligação válida para fins de teste. Depois de é estabelecida uma ligação, selecione **seguinte** teste de Olá toostart.
+<span data-ttu-id="8b531-309">Depois de selecionar opções corretas Olá para a imagem VM de baseados em Windows ou Linux, selecione **Testar ligação** tooensure que SSH.Net ou o PowerShell tem uma ligação válida para fins de teste.</span><span class="sxs-lookup"><span data-stu-id="8b531-309">After you have selected hello correct options for your Linux or Windows-based VM image, select **Test Connection** tooensure that SSH.Net or PowerShell has a valid connection for testing purposes.</span></span> <span data-ttu-id="8b531-310">Depois de é estabelecida uma ligação, selecione **seguinte** teste de Olá toostart.</span><span class="sxs-lookup"><span data-stu-id="8b531-310">After a connection is established, select **Next** toostart hello test.</span></span>
 
-Quando Olá teste estiver concluído, irá receber resultados de Olá (passagem/falhar/aviso) para cada elemento de teste.
+<span data-ttu-id="8b531-311">Quando Olá teste estiver concluído, irá receber resultados de Olá (passagem/falhar/aviso) para cada elemento de teste.</span><span class="sxs-lookup"><span data-stu-id="8b531-311">When hello test is complete, you will receive hello results (Pass/Fail/Warning) for each test element.</span></span>
 
 ![Casos de teste para a imagem de VM do Linux][img-cert-vm-test-lnx]
 
 ![Casos de teste para a imagem de VM do Windows][img-cert-vm-test-win]
 
-Se algum dos testes de Olá falhar, a imagem não irá ser certificada. Se isto ocorrer, reveja os requisitos de Olá e efetue as alterações necessárias.
+<span data-ttu-id="8b531-314">Se algum dos testes de Olá falhar, a imagem não irá ser certificada.</span><span class="sxs-lookup"><span data-stu-id="8b531-314">If any of hello tests fail, your image will not be certified.</span></span> <span data-ttu-id="8b531-315">Se isto ocorrer, reveja os requisitos de Olá e efetue as alterações necessárias.</span><span class="sxs-lookup"><span data-stu-id="8b531-315">If this occurs, review hello requirements and make any necessary changes.</span></span>
 
-Depois de Olá automatizada teste, é-lhe perguntado tooprovide de entrada adicionais na sua imagem VM através de um ecrã questionário.  Conclua perguntas Olá e, em seguida, selecione **seguinte**.
+<span data-ttu-id="8b531-316">Depois de Olá automatizada teste, é-lhe perguntado tooprovide de entrada adicionais na sua imagem VM através de um ecrã questionário.</span><span class="sxs-lookup"><span data-stu-id="8b531-316">After hello automated test, you are asked tooprovide additional input on your VM image via a questionnaire screen.</span></span>  <span data-ttu-id="8b531-317">Conclua perguntas Olá e, em seguida, selecione **seguinte**.</span><span class="sxs-lookup"><span data-stu-id="8b531-317">Complete hello questions, and then select **Next**.</span></span>
 
 ![Questionário da ferramenta de certificação][img-cert-vm-questionnaire]
 
 ![Questionário da ferramenta de certificação][img-cert-vm-questionnaire-2]
 
-Depois de concluir questionário Olá, pode fornecer informações adicionais, tais como informações de acesso SSH para Olá imagem de VM com Linux e uma explicação para qualquer avaliações de falha. Pode transferir os resultados do teste Olá e ficheiros de registo para casos de teste de Olá executada no questionário de toohello adição tooyour respostas. Guardar resultados de Olá no Olá mesmo contentor que os VHDs.
+<span data-ttu-id="8b531-320">Depois de concluir questionário Olá, pode fornecer informações adicionais, tais como informações de acesso SSH para Olá imagem de VM com Linux e uma explicação para qualquer avaliações de falha.</span><span class="sxs-lookup"><span data-stu-id="8b531-320">After you have completed hello questionnaire, you can provide additional information such as SSH access information for hello Linux VM image and an explanation for any failed assessments.</span></span> <span data-ttu-id="8b531-321">Pode transferir os resultados do teste Olá e ficheiros de registo para casos de teste de Olá executada no questionário de toohello adição tooyour respostas.</span><span class="sxs-lookup"><span data-stu-id="8b531-321">You can download hello test results and log files for hello executed test cases in addition tooyour answers toohello questionnaire.</span></span> <span data-ttu-id="8b531-322">Guardar resultados de Olá no Olá mesmo contentor que os VHDs.</span><span class="sxs-lookup"><span data-stu-id="8b531-322">Save hello results in hello same container as your VHDs.</span></span>
 
 ![Guardar resultados do teste de certificação][img-cert-vm-results]
 
-### <a name="52-get-hello-shared-access-signature-uri-for-your-vm-images"></a>5.2 obter assinatura de acesso partilhado Olá URI para as imagens VM
-Durante o processo de publicação de Olá, especifique os identificadores de recurso uniforme Olá (URI) que conduzem tooeach de Olá VHDs que criou para o SKU. Microsoft necessita de acesso toothese VHDs durante o processo de certificação Olá. Por conseguinte, terá de toocreate uma URI de assinatura de acesso partilhado para cada VHD. Este é Olá URI que deve ser introduzido no **imagens** separador Olá Portal de publicação.
+### <a name="52-get-hello-shared-access-signature-uri-for-your-vm-images"></a><span data-ttu-id="8b531-324">5.2 obter assinatura de acesso partilhado Olá URI para as imagens VM</span><span class="sxs-lookup"><span data-stu-id="8b531-324">5.2 Get hello shared access signature URI for your VM images</span></span>
+<span data-ttu-id="8b531-325">Durante o processo de publicação de Olá, especifique os identificadores de recurso uniforme Olá (URI) que conduzem tooeach de Olá VHDs que criou para o SKU.</span><span class="sxs-lookup"><span data-stu-id="8b531-325">During hello publishing process, you specify hello uniform resource identifiers (URIs) that lead tooeach of hello VHDs you have created for your SKU.</span></span> <span data-ttu-id="8b531-326">Microsoft necessita de acesso toothese VHDs durante o processo de certificação Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-326">Microsoft needs access toothese VHDs during hello certification process.</span></span> <span data-ttu-id="8b531-327">Por conseguinte, terá de toocreate uma URI de assinatura de acesso partilhado para cada VHD.</span><span class="sxs-lookup"><span data-stu-id="8b531-327">Therefore, you need toocreate a shared access signature URI for each VHD.</span></span> <span data-ttu-id="8b531-328">Este é Olá URI que deve ser introduzido no **imagens** separador Olá Portal de publicação.</span><span class="sxs-lookup"><span data-stu-id="8b531-328">This is hello URI that should be entered in the **Images** tab in hello Publishing Portal.</span></span>
 
-assinatura de acesso partilhado Olá URI criado deve cumprir os requisitos de toohello:
+<span data-ttu-id="8b531-329">assinatura de acesso partilhado Olá URI criado deve cumprir os requisitos de toohello:</span><span class="sxs-lookup"><span data-stu-id="8b531-329">hello shared access signature URI created should adhere toohello following requirements:</span></span>
 
-* Quando a gerar a assinatura de acesso partilhado URIs para os seus VHDs, permissões de leitura e de lista são suficientes. Não forneça acesso de Escrita ou de Eliminação.
-* duração de Olá para acesso deve ser um mínimo de três (3) semanas a partir do quando é criada a assinatura de acesso partilhado Olá URI.
-* toosafeguard para a hora UTC, dia Olá selecione antes Olá data atual. Por exemplo, se Olá data atual for 6 de Outubro de 2014, selecione 5/10/2014.
+* <span data-ttu-id="8b531-330">Quando a gerar a assinatura de acesso partilhado URIs para os seus VHDs, permissões de leitura e de lista são suficientes.</span><span class="sxs-lookup"><span data-stu-id="8b531-330">When generating shared access signature URIs for your VHDs, List and Read­ permissions are sufficient.</span></span> <span data-ttu-id="8b531-331">Não forneça acesso de Escrita ou de Eliminação.</span><span class="sxs-lookup"><span data-stu-id="8b531-331">Do not provide Write or Delete access.</span></span>
+* <span data-ttu-id="8b531-332">duração de Olá para acesso deve ser um mínimo de três (3) semanas a partir do quando é criada a assinatura de acesso partilhado Olá URI.</span><span class="sxs-lookup"><span data-stu-id="8b531-332">hello duration for access should be a minimum of three (3) weeks from when hello shared access signature URI is created.</span></span>
+* <span data-ttu-id="8b531-333">toosafeguard para a hora UTC, dia Olá selecione antes Olá data atual.</span><span class="sxs-lookup"><span data-stu-id="8b531-333">toosafeguard for UTC time, select hello day before hello current date.</span></span> <span data-ttu-id="8b531-334">Por exemplo, se Olá data atual for 6 de Outubro de 2014, selecione 5/10/2014.</span><span class="sxs-lookup"><span data-stu-id="8b531-334">For example, if hello current date is October 6, 2014, select 10/5/2014.</span></span>
 
-URL de SAS que podem ser gerados por várias formas tooshare o VHD para o Azure Marketplace.
-Seguintes são Olá 3 ferramentas recomendadas:
+<span data-ttu-id="8b531-335">URL de SAS que podem ser gerados por várias formas tooshare o VHD para o Azure Marketplace.</span><span class="sxs-lookup"><span data-stu-id="8b531-335">SAS URL can be generated in multiple ways tooshare your VHD for Azure Marketplace.</span></span>
+<span data-ttu-id="8b531-336">Seguintes são Olá 3 ferramentas recomendadas:</span><span class="sxs-lookup"><span data-stu-id="8b531-336">Following are hello 3 recommended tools:</span></span>
 
-1.  Explorador do Storage do Azure
-2.  Explorador de armazenamento da Microsoft
-3.  CLI do Azure
+1.  <span data-ttu-id="8b531-337">Explorador do Storage do Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-337">Azure Storage Explorer</span></span>
+2.  <span data-ttu-id="8b531-338">Explorador de armazenamento da Microsoft</span><span class="sxs-lookup"><span data-stu-id="8b531-338">Microsoft Storage Explorer</span></span>
+3.  <span data-ttu-id="8b531-339">CLI do Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-339">Azure CLI</span></span>
 
-**Explorador de armazenamento do Azure (recomendado para utilizadores do Windows)**
+<span data-ttu-id="8b531-340">**Explorador de armazenamento do Azure (recomendado para utilizadores do Windows)**</span><span class="sxs-lookup"><span data-stu-id="8b531-340">**Azure Storage Explorer (Recommended for Windows Users)**</span></span>
 
-Seguem-se passos de Olá para gerar o SAS URL utilizando o Explorador de armazenamento do Azure
+<span data-ttu-id="8b531-341">Seguem-se passos de Olá para gerar o SAS URL utilizando o Explorador de armazenamento do Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-341">Following are hello steps for generating SAS URL by using Azure Storage Explorer</span></span>
 
-1. Transferir [pré-visualização 6 do Explorador de armazenamento do Azure 3](https://azurestorageexplorer.codeplex.com/) de CodePlex. Aceda demasiado[pré-visualização de 6 do Explorador de armazenamento de Azure](https://azurestorageexplorer.codeplex.com/) e clique em **"Transferir"**.
+1. <span data-ttu-id="8b531-342">Transferir [pré-visualização 6 do Explorador de armazenamento do Azure 3](https://azurestorageexplorer.codeplex.com/) de CodePlex.</span><span class="sxs-lookup"><span data-stu-id="8b531-342">Download [Azure Storage Explorer 6 Preview 3](https://azurestorageexplorer.codeplex.com/) from CodePlex.</span></span> <span data-ttu-id="8b531-343">Aceda demasiado[pré-visualização de 6 do Explorador de armazenamento de Azure](https://azurestorageexplorer.codeplex.com/) e clique em **"Transferir"**.</span><span class="sxs-lookup"><span data-stu-id="8b531-343">Go too[Azure Storage Explorer 6 Preview](https://azurestorageexplorer.codeplex.com/) and click **"Downloads"**.</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_01.png)
 
-2. Transferir [AzureStorageExplorer6Preview3.zip](https://azurestorageexplorer.codeplex.com/downloads/get/891668) e instalar após unzipping-lo.
+2. <span data-ttu-id="8b531-345">Transferir [AzureStorageExplorer6Preview3.zip](https://azurestorageexplorer.codeplex.com/downloads/get/891668) e instalar após unzipping-lo.</span><span class="sxs-lookup"><span data-stu-id="8b531-345">Download [AzureStorageExplorer6Preview3.zip](https://azurestorageexplorer.codeplex.com/downloads/get/891668) and install after unzipping it.</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_02.png)
 
-3. Depois de ser instalado, abra a aplicação Olá.
-4. Clique em **adicionar conta**.
+3. <span data-ttu-id="8b531-347">Depois de ser instalado, abra a aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-347">After it is installed, open hello application.</span></span>
+4. <span data-ttu-id="8b531-348">Clique em **adicionar conta**.</span><span class="sxs-lookup"><span data-stu-id="8b531-348">Click **Add Account**.</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_03.png)
 
-5. Especifique o nome de conta do storage Olá, a chave de conta de armazenamento e o domínio de pontos finais de armazenamento. Este é conta do storage Olá na sua subscrição do Azure onde tiver mantido o VHD no portal do Azure.
+5. <span data-ttu-id="8b531-350">Especifique o nome de conta do storage Olá, a chave de conta de armazenamento e o domínio de pontos finais de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="8b531-350">Specify hello storage account name, storage account key, and storage endpoints domain.</span></span> <span data-ttu-id="8b531-351">Este é conta do storage Olá na sua subscrição do Azure onde tiver mantido o VHD no portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="8b531-351">This is hello storage account in your Azure subscription where you have kept your VHD on Azure portal.</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_04.png)
 
-6. Depois do Explorador de armazenamento do Azure está ligado tooyour conta de armazenamento específico, será iniciada Mostrar todos os Olá contém na conta do storage Olá. Selecione o contentor de olá onde copiou o ficheiro de VHD de disco de sistema operativo de Olá (também discos de dados se estas forem aplicáveis para o seu cenário).
+6. <span data-ttu-id="8b531-353">Depois do Explorador de armazenamento do Azure está ligado tooyour conta de armazenamento específico, será iniciada Mostrar todos os Olá contém na conta do storage Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-353">Once Azure Storage Explorer is connected tooyour specific storage account, it will start showing all of hello contains within hello storage account.</span></span> <span data-ttu-id="8b531-354">Selecione o contentor de olá onde copiou o ficheiro de VHD de disco de sistema operativo de Olá (também discos de dados se estas forem aplicáveis para o seu cenário).</span><span class="sxs-lookup"><span data-stu-id="8b531-354">Select hello container where you copied hello operating system disk VHD file (also data disks if they are applicable for your scenario).</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_05.png)
 
-7. Depois de selecionar o contentor de blob Olá, o Explorador de armazenamento do Azure inicia que mostra os ficheiros de Olá dentro do contentor de Olá. Selecione o ficheiro de imagem de Olá (. vhd) que tem toobe submetido.
+7. <span data-ttu-id="8b531-356">Depois de selecionar o contentor de blob Olá, o Explorador de armazenamento do Azure inicia que mostra os ficheiros de Olá dentro do contentor de Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-356">After selecting hello blob container, Azure Storage Explorer starts showing hello files within hello container.</span></span> <span data-ttu-id="8b531-357">Selecione o ficheiro de imagem de Olá (. vhd) que tem toobe submetido.</span><span class="sxs-lookup"><span data-stu-id="8b531-357">Select hello image file (.vhd) that needs toobe submitted.</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_06.png)
 
-8.  Depois de selecionar o ficheiro. vhd Olá no contentor de Olá, clique em Olá **segurança** separador.
+8.  <span data-ttu-id="8b531-359">Depois de selecionar o ficheiro. vhd Olá no contentor de Olá, clique em Olá **segurança** separador.</span><span class="sxs-lookup"><span data-stu-id="8b531-359">After selecting hello .vhd file in hello container, click hello **Security** tab.</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_07.png)
 
-9.  No Olá **segurança de contentor do Blob** caixa de diálogo, deixe as predefinições de Olá no Olá **nível de acesso** separador e, em seguida, clique em **assinaturas de acesso partilhado** separador.
+9.  <span data-ttu-id="8b531-361">No Olá **segurança de contentor do Blob** caixa de diálogo, deixe as predefinições de Olá no Olá **nível de acesso** separador e, em seguida, clique em **assinaturas de acesso partilhado** separador.</span><span class="sxs-lookup"><span data-stu-id="8b531-361">In hello **Blob Container Security** dialog box, leave hello defaults on hello **Access Level** tab, and then click **Shared Access Signatures** tab.</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_08.png)
 
-10. Siga os passos de Olá abaixo toogenerate uma assinatura de acesso partilhado URI para a imagem. vhd Olá:
+10. <span data-ttu-id="8b531-363">Siga os passos de Olá abaixo toogenerate uma assinatura de acesso partilhado URI para a imagem. vhd Olá:</span><span class="sxs-lookup"><span data-stu-id="8b531-363">Follow hello steps below toogenerate a shared access signature URI for hello .vhd image:</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_09.png)
 
-    a. **Permissão de acesso do:** toosafeguard para a hora UTC, dia Olá selecione antes Olá data atual. Por exemplo, se Olá data atual for 6 de Outubro de 2014, selecione 5/10/2014.
+    <span data-ttu-id="8b531-365">a.</span><span class="sxs-lookup"><span data-stu-id="8b531-365">a.</span></span> <span data-ttu-id="8b531-366">**Permissão de acesso do:** toosafeguard para a hora UTC, dia Olá selecione antes Olá data atual.</span><span class="sxs-lookup"><span data-stu-id="8b531-366">**Access permitted from:** toosafeguard for UTC time, select hello day before hello current date.</span></span> <span data-ttu-id="8b531-367">Por exemplo, se Olá data atual for 6 de Outubro de 2014, selecione 5/10/2014.</span><span class="sxs-lookup"><span data-stu-id="8b531-367">For example, if hello current date is October 6, 2014, select 10/5/2014.</span></span>
 
-    b. **Permissão de acesso à entidade:** Selecione uma data que seja, pelo menos, 3 semanas após Olá **permissão de acesso do** data.
+    <span data-ttu-id="8b531-368">b.</span><span class="sxs-lookup"><span data-stu-id="8b531-368">b.</span></span> <span data-ttu-id="8b531-369">**Permissão de acesso à entidade:** Selecione uma data que seja, pelo menos, 3 semanas após Olá **permissão de acesso do** data.</span><span class="sxs-lookup"><span data-stu-id="8b531-369">**Access permitted to:** Select a date that is at least 3 weeks after hello **Access permitted from** date.</span></span>
 
-    c. **As ações permitidas:** Olá selecione **lista** e **leitura** permissões.
+    <span data-ttu-id="8b531-370">c.</span><span class="sxs-lookup"><span data-stu-id="8b531-370">c.</span></span> <span data-ttu-id="8b531-371">**As ações permitidas:** Olá selecione **lista** e **leitura** permissões.</span><span class="sxs-lookup"><span data-stu-id="8b531-371">**Actions permitted:** Select hello **List** and **Read** permissions.</span></span>
 
-    d. Se tiver selecionado corretamente o ficheiro. vhd, em seguida, o ficheiro é apresentado no **tooaccess do nome do Blob** com extensão VHD.
+    <span data-ttu-id="8b531-372">d.</span><span class="sxs-lookup"><span data-stu-id="8b531-372">d.</span></span> <span data-ttu-id="8b531-373">Se tiver selecionado corretamente o ficheiro. vhd, em seguida, o ficheiro é apresentado no **tooaccess do nome do Blob** com extensão VHD.</span><span class="sxs-lookup"><span data-stu-id="8b531-373">If you have selected your .vhd file correctly, then your file appears in **Blob name tooaccess** with extension .vhd.</span></span>
 
-    e. Clique em **gerar a assinatura**.
+    <span data-ttu-id="8b531-374">e.</span><span class="sxs-lookup"><span data-stu-id="8b531-374">e.</span></span> <span data-ttu-id="8b531-375">Clique em **gerar a assinatura**.</span><span class="sxs-lookup"><span data-stu-id="8b531-375">Click **Generate Signature**.</span></span>
 
-    f. No **gerado partilhado acesso assinatura URI neste contentor**, verifique a existência de Olá seguir conforme realçado acima:
+    <span data-ttu-id="8b531-376">f.</span><span class="sxs-lookup"><span data-stu-id="8b531-376">f.</span></span> <span data-ttu-id="8b531-377">No **gerado partilhado acesso assinatura URI neste contentor**, verifique a existência de Olá seguir conforme realçado acima:</span><span class="sxs-lookup"><span data-stu-id="8b531-377">In **Generated Shared Access Signature URI of this container**, check for hello following as highlighted above:</span></span>
 
-       - Certifique-se de que a imagem de nome de ficheiro e **". vhd"** em Olá URI.
-       - No final de Olá da assinatura de Olá, certifique-se de que **"= rl"** aparece. Isto demonstra que o acesso de leitura e lista foi fornecido com êxito.
-       - No meio da assinatura de Olá, certifique-se de que **"sr = c"** aparece. Isto demonstra que tem acesso ao nível do contentor
+       - <span data-ttu-id="8b531-378">Certifique-se de que a imagem de nome de ficheiro e **". vhd"** em Olá URI.</span><span class="sxs-lookup"><span data-stu-id="8b531-378">Make sure that your image file name and **".vhd"** are in hello URI.</span></span>
+       - <span data-ttu-id="8b531-379">No final de Olá da assinatura de Olá, certifique-se de que **"= rl"** aparece.</span><span class="sxs-lookup"><span data-stu-id="8b531-379">At hello end of hello signature, make sure that **"=rl"** appears.</span></span> <span data-ttu-id="8b531-380">Isto demonstra que o acesso de leitura e lista foi fornecido com êxito.</span><span class="sxs-lookup"><span data-stu-id="8b531-380">This demonstrates that Read and List access was provided successfully.</span></span>
+       - <span data-ttu-id="8b531-381">No meio da assinatura de Olá, certifique-se de que **"sr = c"** aparece.</span><span class="sxs-lookup"><span data-stu-id="8b531-381">In middle of hello signature, make sure that **"sr=c"** appears.</span></span> <span data-ttu-id="8b531-382">Isto demonstra que tem acesso ao nível do contentor</span><span class="sxs-lookup"><span data-stu-id="8b531-382">This demonstrates that you have container level access</span></span>
 
-11. tooensure Olá gerado partilhado funciona URI de assinatura de acesso, clique em **teste no Browser**. Este deve iniciar o processo de transferência Olá.
+11. <span data-ttu-id="8b531-383">tooensure Olá gerado partilhado funciona URI de assinatura de acesso, clique em **teste no Browser**.</span><span class="sxs-lookup"><span data-stu-id="8b531-383">tooensure that hello generated shared access signature URI works, click **Test in Browser**.</span></span> <span data-ttu-id="8b531-384">Este deve iniciar o processo de transferência Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-384">It should start hello download process.</span></span>
 
-12. Copie a assinatura de acesso partilhado Olá URI. Este é Olá URI toopaste para Olá Portal de publicação.
+12. <span data-ttu-id="8b531-385">Copie a assinatura de acesso partilhado Olá URI.</span><span class="sxs-lookup"><span data-stu-id="8b531-385">Copy hello shared access signature URI.</span></span> <span data-ttu-id="8b531-386">Este é Olá URI toopaste para Olá Portal de publicação.</span><span class="sxs-lookup"><span data-stu-id="8b531-386">This is hello URI toopaste into hello Publishing Portal.</span></span>
 
-13. Repita os passos 6-10 para cada VHD no Olá SKU.
+13. <span data-ttu-id="8b531-387">Repita os passos 6-10 para cada VHD no Olá SKU.</span><span class="sxs-lookup"><span data-stu-id="8b531-387">Repeat steps 6-10 for each VHD in hello SKU.</span></span>
 
-**Explorador de armazenamento do Microsoft Azure (Windows/MAC/Linux)**
+<span data-ttu-id="8b531-388">**Explorador de armazenamento do Microsoft Azure (Windows/MAC/Linux)**</span><span class="sxs-lookup"><span data-stu-id="8b531-388">**Microsoft Azure Storage Explorer (Windows/MAC/Linux)**</span></span>
 
-Seguem-se passos de Olá para gerar o SAS URL utilizando o Explorador de armazenamento do Microsoft Azure
+<span data-ttu-id="8b531-389">Seguem-se passos de Olá para gerar o SAS URL utilizando o Explorador de armazenamento do Microsoft Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-389">Following are hello steps for generating SAS URL by using Microsoft Azure Storage Explorer</span></span>
 
-1.  Transferir o formulário do Explorador de armazenamento do Microsoft Azure [http://storageexplorer.com/](http://storageexplorer.com/) Web site. Aceda demasiado[Explorador de armazenamento do Microsoft Azure](http://storageexplorer.com/releasenotes.html) e clique em **"Transferir para Windows"**.
+1.  <span data-ttu-id="8b531-390">Transferir o formulário do Explorador de armazenamento do Microsoft Azure [http://storageexplorer.com/](http://storageexplorer.com/) Web site.</span><span class="sxs-lookup"><span data-stu-id="8b531-390">Download Microsoft Azure Storage Explorer form [http://storageexplorer.com/](http://storageexplorer.com/) website.</span></span> <span data-ttu-id="8b531-391">Aceda demasiado[Explorador de armazenamento do Microsoft Azure](http://storageexplorer.com/releasenotes.html) e clique em **"Transferir para Windows"**.</span><span class="sxs-lookup"><span data-stu-id="8b531-391">Go too[Microsoft Azure Storage Explorer](http://storageexplorer.com/releasenotes.html) and click **“Download for Windows”**.</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_10.png)
 
-2.  Depois de ser instalado, abra a aplicação Olá.
+2.  <span data-ttu-id="8b531-393">Depois de ser instalado, abra a aplicação Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-393">After it is installed, open hello application.</span></span>
 
-3.  Clique em **adicionar conta**.
+3.  <span data-ttu-id="8b531-394">Clique em **adicionar conta**.</span><span class="sxs-lookup"><span data-stu-id="8b531-394">Click **Add Account**.</span></span>
 
-4.  Configurar a subscrição do Explorador de armazenamento do Microsoft Azure tooyour pelo início de sessão na conta tooyour
+4.  <span data-ttu-id="8b531-395">Configurar a subscrição do Explorador de armazenamento do Microsoft Azure tooyour pelo início de sessão na conta tooyour</span><span class="sxs-lookup"><span data-stu-id="8b531-395">Configure Microsoft Azure Storage Explorer tooyour subscription by sign in tooyour account</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_11.png)
 
-5.  Aceda toostorage conta e selecione Olá contentor
+5.  <span data-ttu-id="8b531-397">Aceda toostorage conta e selecione Olá contentor</span><span class="sxs-lookup"><span data-stu-id="8b531-397">Go toostorage account and select hello Container</span></span>
 
-6.  Selecione **"Obter assinatura de acesso de partilha.."** ao utilizar clique direito de Olá **contentor**
+6.  <span data-ttu-id="8b531-398">Selecione **"Obter assinatura de acesso de partilha.."**</span><span class="sxs-lookup"><span data-stu-id="8b531-398">Select **“Get Share Access Signature..”**</span></span> <span data-ttu-id="8b531-399">ao utilizar clique direito de Olá **contentor**</span><span class="sxs-lookup"><span data-stu-id="8b531-399">by using Right Click of hello **container**</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_12.png)
 
-7.  Hora de início de atualização, a hora de expiração e as permissões de acordo com o seguinte
+7.  <span data-ttu-id="8b531-401">Hora de início de atualização, a hora de expiração e as permissões de acordo com o seguinte</span><span class="sxs-lookup"><span data-stu-id="8b531-401">Update Start time, Expiry time and Permissions as per following</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_13.png)
 
-    a.  **Hora de início:** toosafeguard para a hora UTC, dia Olá selecione antes Olá data atual. Por exemplo, se Olá data atual for 6 de Outubro de 2014, selecione 5/10/2014.
+    <span data-ttu-id="8b531-403">a.</span><span class="sxs-lookup"><span data-stu-id="8b531-403">a.</span></span>  <span data-ttu-id="8b531-404">**Hora de início:** toosafeguard para a hora UTC, dia Olá selecione antes Olá data atual.</span><span class="sxs-lookup"><span data-stu-id="8b531-404">**Start Time:** toosafeguard for UTC time, select hello day before hello current date.</span></span> <span data-ttu-id="8b531-405">Por exemplo, se Olá data atual for 6 de Outubro de 2014, selecione 5/10/2014.</span><span class="sxs-lookup"><span data-stu-id="8b531-405">For example, if hello current date is October 6, 2014, select 10/5/2014.</span></span>
 
-    b.  **Hora de expiração:** Selecione uma data que seja, pelo menos, 3 semanas após Olá **hora de início** data.
+    <span data-ttu-id="8b531-406">b.</span><span class="sxs-lookup"><span data-stu-id="8b531-406">b.</span></span>  <span data-ttu-id="8b531-407">**Hora de expiração:** Selecione uma data que seja, pelo menos, 3 semanas após Olá **hora de início** data.</span><span class="sxs-lookup"><span data-stu-id="8b531-407">**Expiry Time:** Select a date that is at least 3 weeks after hello **Start Time** date.</span></span>
 
-    c.  **Permissões:** Olá selecione **lista** e **leitura** permissões
+    <span data-ttu-id="8b531-408">c.</span><span class="sxs-lookup"><span data-stu-id="8b531-408">c.</span></span>  <span data-ttu-id="8b531-409">**Permissões:** Olá selecione **lista** e **leitura** permissões</span><span class="sxs-lookup"><span data-stu-id="8b531-409">**Permissions:** Select hello **List** and **Read** permissions</span></span>
 
-8.  Copie a assinatura de acesso partilhado do contentor URI
+8.  <span data-ttu-id="8b531-410">Copie a assinatura de acesso partilhado do contentor URI</span><span class="sxs-lookup"><span data-stu-id="8b531-410">Copy Container shared access signature URI</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_14.png)
 
-    É gerado URL SAS para o contentor de nível e agora é necessário o nome do VHD tooadd no mesmo.
+    <span data-ttu-id="8b531-412">É gerado URL SAS para o contentor de nível e agora é necessário o nome do VHD tooadd no mesmo.</span><span class="sxs-lookup"><span data-stu-id="8b531-412">Generated SAS URL is for container Level and now we need tooadd VHD name in it.</span></span>
 
-    Formato do URL de SAS ao nível do contentor:`https://testrg009.blob.core.windows.net/vhds?st=2016-04-22T23%3A05%3A00Z&se=2016-04-30T23%3A05%3A00Z&sp=rl&sv=2015-04-05&sr=c&sig=J3twCQZv4L4EurvugRW2klE2l2EFB9XyM6K9FkuVB58%3D`
+    <span data-ttu-id="8b531-413">Formato do URL de SAS ao nível do contentor:`https://testrg009.blob.core.windows.net/vhds?st=2016-04-22T23%3A05%3A00Z&se=2016-04-30T23%3A05%3A00Z&sp=rl&sv=2015-04-05&sr=c&sig=J3twCQZv4L4EurvugRW2klE2l2EFB9XyM6K9FkuVB58%3D`</span><span class="sxs-lookup"><span data-stu-id="8b531-413">Format of Container Level SAS URL: `https://testrg009.blob.core.windows.net/vhds?st=2016-04-22T23%3A05%3A00Z&se=2016-04-30T23%3A05%3A00Z&sp=rl&sv=2015-04-05&sr=c&sig=J3twCQZv4L4EurvugRW2klE2l2EFB9XyM6K9FkuVB58%3D`</span></span>
 
-    Insira o nome do VHD após o nome do contentor Olá no SAS URL tal como indicado abaixo`https://testrg009.blob.core.windows.net/vhds/<VHD NAME>?st=2016-04-22T23%3A05%3A00Z&se=2016-04-30T23%3A05%3A00Z&sp=rl&sv=2015-04-05&sr=c&sig=J3twCQZv4L4EurvugRW2klE2l2EFB9XyM6K9FkuVB58%3D`
+    <span data-ttu-id="8b531-414">Insira o nome do VHD após o nome do contentor Olá no SAS URL tal como indicado abaixo`https://testrg009.blob.core.windows.net/vhds/<VHD NAME>?st=2016-04-22T23%3A05%3A00Z&se=2016-04-30T23%3A05%3A00Z&sp=rl&sv=2015-04-05&sr=c&sig=J3twCQZv4L4EurvugRW2klE2l2EFB9XyM6K9FkuVB58%3D`</span><span class="sxs-lookup"><span data-stu-id="8b531-414">Insert VHD name after hello container name in SAS URL as below `https://testrg009.blob.core.windows.net/vhds/<VHD NAME>?st=2016-04-22T23%3A05%3A00Z&se=2016-04-30T23%3A05%3A00Z&sp=rl&sv=2015-04-05&sr=c&sig=J3twCQZv4L4EurvugRW2klE2l2EFB9XyM6K9FkuVB58%3D`</span></span>
 
-    Exemplo:
+    <span data-ttu-id="8b531-415">Exemplo:</span><span class="sxs-lookup"><span data-stu-id="8b531-415">Example:</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_15.png)
 
-    TestRGVM201631920152.vhd é Olá nome do VHD, será o URL de SAS do VHD`https://testrg009.blob.core.windows.net/vhds/TestRGVM201631920152.vhd?st=2016-04-22T23%3A05%3A00Z&se=2016-04-30T23%3A05%3A00Z&sp=rl&sv=2015-04-05&sr=c&sig=J3twCQZv4L4EurvugRW2klE2l2EFB9XyM6K9FkuVB58%3D`
+    <span data-ttu-id="8b531-417">TestRGVM201631920152.vhd é Olá nome do VHD, será o URL de SAS do VHD`https://testrg009.blob.core.windows.net/vhds/TestRGVM201631920152.vhd?st=2016-04-22T23%3A05%3A00Z&se=2016-04-30T23%3A05%3A00Z&sp=rl&sv=2015-04-05&sr=c&sig=J3twCQZv4L4EurvugRW2klE2l2EFB9XyM6K9FkuVB58%3D`</span><span class="sxs-lookup"><span data-stu-id="8b531-417">TestRGVM201631920152.vhd is hello VHD Name then VHD SAS URL will be `https://testrg009.blob.core.windows.net/vhds/TestRGVM201631920152.vhd?st=2016-04-22T23%3A05%3A00Z&se=2016-04-30T23%3A05%3A00Z&sp=rl&sv=2015-04-05&sr=c&sig=J3twCQZv4L4EurvugRW2klE2l2EFB9XyM6K9FkuVB58%3D`</span></span>
 
-    - Certifique-se de que a imagem de nome de ficheiro e **". vhd"** em Olá URI.
-    - No meio da assinatura de Olá, certifique-se de que **"SP2 = rl"** aparece. Isto demonstra que o acesso de leitura e lista foi fornecido com êxito.
-    - No meio da assinatura de Olá, certifique-se de que **"sr = c"** aparece. Isto demonstra que tem acesso ao nível do contentor
+    - <span data-ttu-id="8b531-418">Certifique-se de que a imagem de nome de ficheiro e **". vhd"** em Olá URI.</span><span class="sxs-lookup"><span data-stu-id="8b531-418">Make sure that your image file name and **".vhd"** are in hello URI.</span></span>
+    - <span data-ttu-id="8b531-419">No meio da assinatura de Olá, certifique-se de que **"SP2 = rl"** aparece.</span><span class="sxs-lookup"><span data-stu-id="8b531-419">In middle of hello signature, make sure that **"sp=rl"** appears.</span></span> <span data-ttu-id="8b531-420">Isto demonstra que o acesso de leitura e lista foi fornecido com êxito.</span><span class="sxs-lookup"><span data-stu-id="8b531-420">This demonstrates that Read and List access was provided successfully.</span></span>
+    - <span data-ttu-id="8b531-421">No meio da assinatura de Olá, certifique-se de que **"sr = c"** aparece.</span><span class="sxs-lookup"><span data-stu-id="8b531-421">In middle of hello signature, make sure that **"sr=c"** appears.</span></span> <span data-ttu-id="8b531-422">Isto demonstra que tem acesso ao nível do contentor</span><span class="sxs-lookup"><span data-stu-id="8b531-422">This demonstrates that you have container level access</span></span>
 
-9.  tooensure Olá funciona URI de assinatura de acesso partilhado gerado, testá-la no browser. Este deve iniciar o processo de transferência Olá
+9.  <span data-ttu-id="8b531-423">tooensure Olá funciona URI de assinatura de acesso partilhado gerado, testá-la no browser.</span><span class="sxs-lookup"><span data-stu-id="8b531-423">tooensure that hello generated shared access signature URI works, test it in browser.</span></span> <span data-ttu-id="8b531-424">Este deve iniciar o processo de transferência Olá</span><span class="sxs-lookup"><span data-stu-id="8b531-424">It should start hello download process</span></span>
 
-10. Copie a assinatura de acesso partilhado Olá URI. Este é Olá URI toopaste para Olá Portal de publicação.
+10. <span data-ttu-id="8b531-425">Copie a assinatura de acesso partilhado Olá URI.</span><span class="sxs-lookup"><span data-stu-id="8b531-425">Copy hello shared access signature URI.</span></span> <span data-ttu-id="8b531-426">Este é Olá URI toopaste para Olá Portal de publicação.</span><span class="sxs-lookup"><span data-stu-id="8b531-426">This is hello URI toopaste into hello Publishing Portal.</span></span>
 
-11. Repita estes passos para cada VHD no Olá SKU.
+11. <span data-ttu-id="8b531-427">Repita estes passos para cada VHD no Olá SKU.</span><span class="sxs-lookup"><span data-stu-id="8b531-427">Repeat these steps for each VHD in hello SKU.</span></span>
 
-**CLI do Azure (recomendado para a integração contínua & de não Windows)**
+<span data-ttu-id="8b531-428">**CLI do Azure (recomendado para a integração contínua & de não Windows)**</span><span class="sxs-lookup"><span data-stu-id="8b531-428">**Azure CLI (Recommended for Non-Windows & Continuous Integration)**</span></span>
 
-Seguem-se passos de Olá para gerar o URL de SAS, utilizando a CLI do Azure
+<span data-ttu-id="8b531-429">Seguem-se passos de Olá para gerar o URL de SAS, utilizando a CLI do Azure</span><span class="sxs-lookup"><span data-stu-id="8b531-429">Following are hello steps for generating SAS URL by using Azure CLI</span></span>
 
-1.  Transferir o Microsoft Azure CLI de [aqui](https://azure.microsoft.com/en-in/documentation/articles/xplat-cli-install/). Também pode encontrar ligações diferentes para  **[Windows](http://aka.ms/webpi-azure-cli)**  e  **[MAC OS](http://aka.ms/mac-azure-cli)**.
+1.  <span data-ttu-id="8b531-430">Transferir o Microsoft Azure CLI de [aqui](https://azure.microsoft.com/en-in/documentation/articles/xplat-cli-install/).</span><span class="sxs-lookup"><span data-stu-id="8b531-430">Download Microsoft Azure CLI from [here](https://azure.microsoft.com/en-in/documentation/articles/xplat-cli-install/).</span></span> <span data-ttu-id="8b531-431">Também pode encontrar ligações diferentes para  **[Windows](http://aka.ms/webpi-azure-cli)**  e  **[MAC OS](http://aka.ms/mac-azure-cli)**.</span><span class="sxs-lookup"><span data-stu-id="8b531-431">You can also find different links for **[Windows](http://aka.ms/webpi-azure-cli)** and **[MAC OS](http://aka.ms/mac-azure-cli)**.</span></span>
 
-2.  Uma vez é transferido, instale o
+2.  <span data-ttu-id="8b531-432">Uma vez é transferido, instale o</span><span class="sxs-lookup"><span data-stu-id="8b531-432">Once it is downloaded, please install</span></span>
 
-3.  Criar um ficheiro de PowerShell com o seguinte código e guardá-lo no local
+3.  <span data-ttu-id="8b531-433">Criar um ficheiro de PowerShell com o seguinte código e guardá-lo no local</span><span class="sxs-lookup"><span data-stu-id="8b531-433">Create a PowerShell file with following code and save it in local</span></span>
 
           $conn="DefaultEndpointsProtocol=https;AccountName=<StorageAccountName>;AccountKey=<Storage Account Key>"
           azure storage container list vhds -c $conn
           azure storage container sas create vhds rl <Permission End Date> -c $conn --start <Permission Start Date>  
 
-    Atualizar seguinte Olá parâmetros acima
+    <span data-ttu-id="8b531-434">Atualizar seguinte Olá parâmetros acima</span><span class="sxs-lookup"><span data-stu-id="8b531-434">Update hello following parameters in above</span></span>
 
-    a. **`<StorageAccountName>`**: Dê o nome da sua conta de armazenamento
+    <span data-ttu-id="8b531-435">a.</span><span class="sxs-lookup"><span data-stu-id="8b531-435">a.</span></span> <span data-ttu-id="8b531-436">**`<StorageAccountName>`**: Dê o nome da sua conta de armazenamento</span><span class="sxs-lookup"><span data-stu-id="8b531-436">**`<StorageAccountName>`**: Give your storage account name</span></span>
 
-    b. **`<Storage Account Key>`**: Dê a sua chave de conta do storage
+    <span data-ttu-id="8b531-437">b.</span><span class="sxs-lookup"><span data-stu-id="8b531-437">b.</span></span> <span data-ttu-id="8b531-438">**`<Storage Account Key>`**: Dê a sua chave de conta do storage</span><span class="sxs-lookup"><span data-stu-id="8b531-438">**`<Storage Account Key>`**: Give your storage account key</span></span>
 
-    c. **`<Permission Start Date>`**: toosafeguard para a hora UTC, dia Olá selecione antes Olá data atual. Por exemplo, se hello data atual for 26 de Outubro de 2016, em seguida, o valor deve ser 25/10/2016
+    <span data-ttu-id="8b531-439">c.</span><span class="sxs-lookup"><span data-stu-id="8b531-439">c.</span></span> <span data-ttu-id="8b531-440">**`<Permission Start Date>`**: toosafeguard para a hora UTC, dia Olá selecione antes Olá data atual.</span><span class="sxs-lookup"><span data-stu-id="8b531-440">**`<Permission Start Date>`**: toosafeguard for UTC time, select hello day before hello current date.</span></span> <span data-ttu-id="8b531-441">Por exemplo, se hello data atual for 26 de Outubro de 2016, em seguida, o valor deve ser 25/10/2016</span><span class="sxs-lookup"><span data-stu-id="8b531-441">For example, if hello current date is October 26, 2016, then value should be 10/25/2016</span></span>
 
-    d. **`<Permission End Date>`**: Selecione uma data que seja, pelo menos, 3 semanas após Olá **data de início**. Em seguida, o valor deve ser **11/02/2016**.
+    <span data-ttu-id="8b531-442">d.</span><span class="sxs-lookup"><span data-stu-id="8b531-442">d.</span></span> <span data-ttu-id="8b531-443">**`<Permission End Date>`**: Selecione uma data que seja, pelo menos, 3 semanas após Olá **data de início**.</span><span class="sxs-lookup"><span data-stu-id="8b531-443">**`<Permission End Date>`**: Select a date that is at least 3 weeks after hello **Start Date**.</span></span> <span data-ttu-id="8b531-444">Em seguida, o valor deve ser **11/02/2016**.</span><span class="sxs-lookup"><span data-stu-id="8b531-444">Then value should be **11/02/2016**.</span></span>
 
-    Segue-se o código de exemplo de Olá depois de atualizar os parâmetros corretos
+    <span data-ttu-id="8b531-445">Segue-se o código de exemplo de Olá depois de atualizar os parâmetros corretos</span><span class="sxs-lookup"><span data-stu-id="8b531-445">Following is hello example code after updating proper parameters</span></span>
 
           $conn="DefaultEndpointsProtocol=https;AccountName=st20151;AccountKey=TIQE5QWMKHpT5q2VnF1bb+NUV7NVMY2xmzVx1rdgIVsw7h0pcI5nMM6+DVFO65i4bQevx21dmrflA91r0Vh2Yw=="
           azure storage container list vhds -c $conn
           azure storage container sas create vhds rl 11/02/2016 -c $conn --start 10/25/2016  
 
-4.  Abra o editor de Powershell com o modo de "Executar como administrador" e abra o ficheiro no passo 3 de #.
+4.  <span data-ttu-id="8b531-446">Abra o editor de Powershell com o modo de "Executar como administrador" e abra o ficheiro no passo 3 de #.</span><span class="sxs-lookup"><span data-stu-id="8b531-446">Open Powershell editor with “Run as Administrator” mode and open file in step #3.</span></span>
 
-5.  Script de execução Olá e irão fornecer que Olá SAS URL para o acesso ao nível do contentor
+5.  <span data-ttu-id="8b531-447">Script de execução Olá e irão fornecer que Olá SAS URL para o acesso ao nível do contentor</span><span class="sxs-lookup"><span data-stu-id="8b531-447">Run hello script and it will provide you hello SAS URL for container level access</span></span>
 
-    Seguinte será resultado Olá Olá SAS assinatura e copie Olá realçado parte um bloco de notas
+    <span data-ttu-id="8b531-448">Seguinte será resultado Olá Olá SAS assinatura e copie Olá realçado parte um bloco de notas</span><span class="sxs-lookup"><span data-stu-id="8b531-448">Following will be hello output of hello SAS Signature and copy hello highlighted part in a notepad</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/img5.2_16.png)
 
-6.  Agora, irá obter SAS URL ao nível do contentor e tem o nome do VHD tooadd no mesmo.
+6.  <span data-ttu-id="8b531-450">Agora, irá obter SAS URL ao nível do contentor e tem o nome do VHD tooadd no mesmo.</span><span class="sxs-lookup"><span data-stu-id="8b531-450">Now you will get container level SAS URL and you need tooadd VHD name in it.</span></span>
 
-    URL do contentor de nível SAS #
+    <span data-ttu-id="8b531-451">URL do contentor de nível SAS #</span><span class="sxs-lookup"><span data-stu-id="8b531-451">Container level SAS URL #</span></span>
 
     `https://st20151.blob.core.windows.net/vhds?st=2016-10-25T07%3A00%3A00Z&se=2016-11-02T07%3A00%3A00Z&sp=rl&sv=2015-12-11&sr=c&sig=wnEw9RfVKeSmVgqDfsDvC9IHhis4x0fc9Hu%2FW4yvBxk%3D`
 
-7.  Insira o nome do VHD após o nome do contentor Olá no URL de SAS conforme mostrado abaixo`https://st20151.blob.core.windows.net/vhds/<VHDName>?st=2016-10-25T07%3A00%3A00Z&se=2016-11-02T07%3A00%3A00Z&sp=rl&sv=2015-12-11&sr=c&sig=wnEw9RfVKeSmVgqDfsDvC9IHhis4x0fc9Hu%2FW4yvBxk%3D`
+7.  <span data-ttu-id="8b531-452">Insira o nome do VHD após o nome do contentor Olá no URL de SAS conforme mostrado abaixo`https://st20151.blob.core.windows.net/vhds/<VHDName>?st=2016-10-25T07%3A00%3A00Z&se=2016-11-02T07%3A00%3A00Z&sp=rl&sv=2015-12-11&sr=c&sig=wnEw9RfVKeSmVgqDfsDvC9IHhis4x0fc9Hu%2FW4yvBxk%3D`</span><span class="sxs-lookup"><span data-stu-id="8b531-452">Insert VHD name after hello container name in SAS URL as shown below `https://st20151.blob.core.windows.net/vhds/<VHDName>?st=2016-10-25T07%3A00%3A00Z&se=2016-11-02T07%3A00%3A00Z&sp=rl&sv=2015-12-11&sr=c&sig=wnEw9RfVKeSmVgqDfsDvC9IHhis4x0fc9Hu%2FW4yvBxk%3D`</span></span>
 
-    Exemplo:
+    <span data-ttu-id="8b531-453">Exemplo:</span><span class="sxs-lookup"><span data-stu-id="8b531-453">Example:</span></span>
 
-    TestRGVM201631920152.vhd é Olá nome do VHD, será o URL de SAS do VHD
+    <span data-ttu-id="8b531-454">TestRGVM201631920152.vhd é Olá nome do VHD, será o URL de SAS do VHD</span><span class="sxs-lookup"><span data-stu-id="8b531-454">TestRGVM201631920152.vhd is hello VHD Name then VHD SAS URL will be</span></span>
 
     `https://st20151.blob.core.windows.net/vhds/ TestRGVM201631920152.vhd?st=2016-10-25T07%3A00%3A00Z&se=2016-11-02T07%3A00%3A00Z&sp=rl&sv=2015-12-11&sr=c&sig=wnEw9RfVKeSmVgqDfsDvC9IHhis4x0fc9Hu%2FW4yvBxk%3D`
 
-    - Certifique-se que o nome de ficheiro de imagem e ". vhd" Olá URI.
-    -   No meio da assinatura de Olá, certifique-se de que "SP2 = rl" aparece. Isto demonstra que o acesso de leitura e lista foi fornecido com êxito.
-    -   No meio da assinatura de Olá, certifique-se de que "sr = c" é apresentada. Isto demonstra que tem acesso ao nível do contentor
+    - <span data-ttu-id="8b531-455">Certifique-se que o nome de ficheiro de imagem e ". vhd" Olá URI.</span><span class="sxs-lookup"><span data-stu-id="8b531-455">Make sure that your image file name and ".vhd" are in hello URI.</span></span>
+    -   <span data-ttu-id="8b531-456">No meio da assinatura de Olá, certifique-se de que "SP2 = rl" aparece.</span><span class="sxs-lookup"><span data-stu-id="8b531-456">In middle of hello signature, make sure that "sp=rl" appears.</span></span> <span data-ttu-id="8b531-457">Isto demonstra que o acesso de leitura e lista foi fornecido com êxito.</span><span class="sxs-lookup"><span data-stu-id="8b531-457">This demonstrates that Read and List access was provided successfully.</span></span>
+    -   <span data-ttu-id="8b531-458">No meio da assinatura de Olá, certifique-se de que "sr = c" é apresentada.</span><span class="sxs-lookup"><span data-stu-id="8b531-458">In middle of hello signature, make sure that "sr=c" appears.</span></span> <span data-ttu-id="8b531-459">Isto demonstra que tem acesso ao nível do contentor</span><span class="sxs-lookup"><span data-stu-id="8b531-459">This demonstrates that you have container level access</span></span>
 
-8.  tooensure Olá funciona URI de assinatura de acesso partilhado gerado, testá-la no browser. Este deve iniciar o processo de transferência Olá
+8.  <span data-ttu-id="8b531-460">tooensure Olá funciona URI de assinatura de acesso partilhado gerado, testá-la no browser.</span><span class="sxs-lookup"><span data-stu-id="8b531-460">tooensure that hello generated shared access signature URI works, test it in browser.</span></span> <span data-ttu-id="8b531-461">Este deve iniciar o processo de transferência Olá</span><span class="sxs-lookup"><span data-stu-id="8b531-461">It should start hello download process</span></span>
 
-9.  Copie a assinatura de acesso partilhado Olá URI. Este é Olá URI toopaste para Olá Portal de publicação.
+9.  <span data-ttu-id="8b531-462">Copie a assinatura de acesso partilhado Olá URI.</span><span class="sxs-lookup"><span data-stu-id="8b531-462">Copy hello shared access signature URI.</span></span> <span data-ttu-id="8b531-463">Este é Olá URI toopaste para Olá Portal de publicação.</span><span class="sxs-lookup"><span data-stu-id="8b531-463">This is hello URI toopaste into hello Publishing Portal.</span></span>
 
-10. Repita estes passos para cada VHD no Olá SKU.
+10. <span data-ttu-id="8b531-464">Repita estes passos para cada VHD no Olá SKU.</span><span class="sxs-lookup"><span data-stu-id="8b531-464">Repeat these steps for each VHD in hello SKU.</span></span>
 
 
-### <a name="53-provide-information-about-hello-vm-image-and-request-certification-in-hello-publishing-portal"></a>5.3 fornecem informações sobre a imagem de VM Olá e solicitar certificação no Olá Portal de publicação
-Depois de ter criado a sua oferta e SKU, deverá introduzir os detalhes da imagem Olá associados com essa SKU:
+### <a name="53-provide-information-about-hello-vm-image-and-request-certification-in-hello-publishing-portal"></a><span data-ttu-id="8b531-465">5.3 fornecem informações sobre a imagem de VM Olá e solicitar certificação no Olá Portal de publicação</span><span class="sxs-lookup"><span data-stu-id="8b531-465">5.3 Provide information about hello VM image and request certification in hello Publishing Portal</span></span>
+<span data-ttu-id="8b531-466">Depois de ter criado a sua oferta e SKU, deverá introduzir os detalhes da imagem Olá associados com essa SKU:</span><span class="sxs-lookup"><span data-stu-id="8b531-466">After you have created your offer and SKU, you should enter hello image details associated with that SKU:</span></span>
 
-1. Aceda toohello [Portal publicação][link-pubportal]e, em seguida, inicie sessão com a sua conta vendedor.
-2. Selecione Olá **imagens da VM** separador.
-3. Identificador de Olá listado em Olá parte superior da página Olá é, na verdade, identificador de oferta de Olá e identificador SKU não Olá.
-4. Preencha as propriedades de Olá em Olá **SKUs** secção.
-5. Em **família de sistemas operativos**, clique em tipo de sistema operativo Olá associado VHD de sistema de operativo Olá.
-6. No Olá **sistema operativo** caixa, descrevem o sistema de operativo Olá. Considere um formato como família do sistema operativo, tipo, versão e atualizações. Um exemplo é "Windows Server Datacenter 2014 R2".
-7. Selecione a cópia de segurança toosix recomendado tamanhos de máquina virtual. Estes são recomendações obtém cliente toohello apresentados no painel de escalão de preço Olá no Olá Portal do Azure quando decidir toopurchase e implementar a imagem. **Estes são apenas recomendações. cliente de Olá é tooselect capaz de qualquer tamanho da VM que permite a discos de Olá especificado na imagem.**
-8. Introduza a versão de Olá. campo de versão Olá encapsula um produto de Olá tooidentify versão semântica e respetivas atualizações:
-   * Versões devem ter o formato de Olá X.Y.Z, onde X, Y e Z são números inteiros.
-   * Imagens de SKUs diferentes podem ter diferentes versões principais e secundárias.
-   * Versões dentro de um SKU só devem ser as alterações incrementais, aumentam a versão de patch Olá (Z do X.Y.Z).
-9. No Olá **URL de VHD de SO** box, introduza a assinatura de acesso partilhado Olá URI criado para VHD de sistema de operativo Olá.
-10. Se existirem discos de dados associados este SKU, selecione Olá unidade lógica número (LUN) toowhich que gostaria este toobe de disco de dados montada após a implementação.
-11. No Olá **LUN X VHD URL** box, introduza a assinatura de acesso partilhado Olá URI criado para dados de primeiro Olá VHD.
+1. <span data-ttu-id="8b531-467">Aceda toohello [Portal publicação][link-pubportal]e, em seguida, inicie sessão com a sua conta vendedor.</span><span class="sxs-lookup"><span data-stu-id="8b531-467">Go toohello [Publishing Portal][link-pubportal], and then sign in with your seller account.</span></span>
+2. <span data-ttu-id="8b531-468">Selecione Olá **imagens da VM** separador.</span><span class="sxs-lookup"><span data-stu-id="8b531-468">Select hello **VM images** tab.</span></span>
+3. <span data-ttu-id="8b531-469">Identificador de Olá listado em Olá parte superior da página Olá é, na verdade, identificador de oferta de Olá e identificador SKU não Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-469">hello identifier listed at hello top of hello page is actually hello offer identifier and not hello SKU identifier.</span></span>
+4. <span data-ttu-id="8b531-470">Preencha as propriedades de Olá em Olá **SKUs** secção.</span><span class="sxs-lookup"><span data-stu-id="8b531-470">Fill out hello properties under hello **SKUs** section.</span></span>
+5. <span data-ttu-id="8b531-471">Em **família de sistemas operativos**, clique em tipo de sistema operativo Olá associado VHD de sistema de operativo Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-471">Under **Operating system family**, click hello operating system type associated with hello operating system VHD.</span></span>
+6. <span data-ttu-id="8b531-472">No Olá **sistema operativo** caixa, descrevem o sistema de operativo Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-472">In hello **Operating system** box, describe hello operating system.</span></span> <span data-ttu-id="8b531-473">Considere um formato como família do sistema operativo, tipo, versão e atualizações.</span><span class="sxs-lookup"><span data-stu-id="8b531-473">Consider a format such as operating system family, type, version, and updates.</span></span> <span data-ttu-id="8b531-474">Um exemplo é "Windows Server Datacenter 2014 R2".</span><span class="sxs-lookup"><span data-stu-id="8b531-474">An example is "Windows Server Datacenter 2014 R2."</span></span>
+7. <span data-ttu-id="8b531-475">Selecione a cópia de segurança toosix recomendado tamanhos de máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="8b531-475">Select up toosix recommended virtual machine sizes.</span></span> <span data-ttu-id="8b531-476">Estes são recomendações obtém cliente toohello apresentados no painel de escalão de preço Olá no Olá Portal do Azure quando decidir toopurchase e implementar a imagem.</span><span class="sxs-lookup"><span data-stu-id="8b531-476">These are recommendations that get displayed toohello customer in hello Pricing tier blade in hello Azure Portal when they decide toopurchase and deploy your image.</span></span> <span data-ttu-id="8b531-477">**Estes são apenas recomendações. cliente de Olá é tooselect capaz de qualquer tamanho da VM que permite a discos de Olá especificado na imagem.**</span><span class="sxs-lookup"><span data-stu-id="8b531-477">**These are only recommendations. hello customer is able tooselect any VM size that accommodates hello disks specified in your image.**</span></span>
+8. <span data-ttu-id="8b531-478">Introduza a versão de Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-478">Enter hello version.</span></span> <span data-ttu-id="8b531-479">campo de versão Olá encapsula um produto de Olá tooidentify versão semântica e respetivas atualizações:</span><span class="sxs-lookup"><span data-stu-id="8b531-479">hello version field encapsulates a semantic version tooidentify hello product and its updates:</span></span>
+   * <span data-ttu-id="8b531-480">Versões devem ter o formato de Olá X.Y.Z, onde X, Y e Z são números inteiros.</span><span class="sxs-lookup"><span data-stu-id="8b531-480">Versions should be of hello form X.Y.Z, where X, Y, and Z are integers.</span></span>
+   * <span data-ttu-id="8b531-481">Imagens de SKUs diferentes podem ter diferentes versões principais e secundárias.</span><span class="sxs-lookup"><span data-stu-id="8b531-481">Images in different SKUs can have different major and minor versions.</span></span>
+   * <span data-ttu-id="8b531-482">Versões dentro de um SKU só devem ser as alterações incrementais, aumentam a versão de patch Olá (Z do X.Y.Z).</span><span class="sxs-lookup"><span data-stu-id="8b531-482">Versions within a SKU should only be incremental changes, which increase hello patch version (Z from X.Y.Z).</span></span>
+9. <span data-ttu-id="8b531-483">No Olá **URL de VHD de SO** box, introduza a assinatura de acesso partilhado Olá URI criado para VHD de sistema de operativo Olá.</span><span class="sxs-lookup"><span data-stu-id="8b531-483">In hello **OS VHD URL** box, enter hello shared access signature URI created for hello operating system VHD.</span></span>
+10. <span data-ttu-id="8b531-484">Se existirem discos de dados associados este SKU, selecione Olá unidade lógica número (LUN) toowhich que gostaria este toobe de disco de dados montada após a implementação.</span><span class="sxs-lookup"><span data-stu-id="8b531-484">If there are data disks associated with this SKU, select hello logical unit number (LUN) toowhich you would like this data disk toobe mounted upon deployment.</span></span>
+11. <span data-ttu-id="8b531-485">No Olá **LUN X VHD URL** box, introduza a assinatura de acesso partilhado Olá URI criado para dados de primeiro Olá VHD.</span><span class="sxs-lookup"><span data-stu-id="8b531-485">In hello **LUN X VHD URL** box, enter hello shared access signature URI created for hello first data VHD.</span></span>
 
     ![desenho](media/marketplace-publishing-vm-image-creation/vm-image-pubportal-skus-3.png)
 
 
-## <a name="common-sas-url-issues--fixes"></a>URL de SAS comum emite & corrige
+## <a name="common-sas-url-issues--fixes"></a><span data-ttu-id="8b531-487">URL de SAS comum emite & corrige</span><span class="sxs-lookup"><span data-stu-id="8b531-487">Common SAS URL issues & fixes</span></span>
 
-|Problema|Mensagem de falha|Corrigir|Ligação de documentação|
+|<span data-ttu-id="8b531-488">Problema</span><span class="sxs-lookup"><span data-stu-id="8b531-488">Issue</span></span>|<span data-ttu-id="8b531-489">Mensagem de falha</span><span class="sxs-lookup"><span data-stu-id="8b531-489">Failure Message</span></span>|<span data-ttu-id="8b531-490">Corrigir</span><span class="sxs-lookup"><span data-stu-id="8b531-490">Fix</span></span>|<span data-ttu-id="8b531-491">Ligação de documentação</span><span class="sxs-lookup"><span data-stu-id="8b531-491">Documentation Link</span></span>|
 |---|---|---|---|
-|Falha ao copiar imagens - "?" não foi encontrado no SAS url|Falha: Copiar as imagens. Toodownload não é possível utilizar o blob fornecido Uri de SAS.|Atualização Olá SAS Url utilizando recomendado ferramentas|[https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
-|Falha ao copiar imagens - "st" e "zar" parâmetros não SAS url|Falha: Copiar as imagens. Toodownload não é possível utilizar o blob fornecido Uri de SAS.|Atualizar Olá SAS Url com datas de início e fim no mesmo|[https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
-|Falha ao copiar imagens - "SP2 = rl" não está num SAS url|Falha: Copiar as imagens. Toodownload não é possível utilizar o blob fornecido Uri de SAS|Atualizar Olá SAS Url com definido como "Leitura" & "lista de permissões|[https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
-|Falha ao copiar imagens - SAS url tem espaços em branco no nome do vhd|Falha: Copiar as imagens. Toodownload não é possível utilizar o blob fornecido Uri de SAS.|Atualizar Olá SAS Url, sem espaços em branco|[https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
-|Falha ao copiar imagens – erro de autorização de Url SAS|Falha: Copiar as imagens. Blob toodownload não é possível devido a erro de tooauthorization|Regenerar Olá SAS Url|[https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|<span data-ttu-id="8b531-492">Falha ao copiar imagens - "?" não foi encontrado no SAS url</span><span class="sxs-lookup"><span data-stu-id="8b531-492">Failure in copying images - "?" is not found in SAS url</span></span>|<span data-ttu-id="8b531-493">Falha: Copiar as imagens.</span><span class="sxs-lookup"><span data-stu-id="8b531-493">Failure: Copying Images.</span></span> <span data-ttu-id="8b531-494">Toodownload não é possível utilizar o blob fornecido Uri de SAS.</span><span class="sxs-lookup"><span data-stu-id="8b531-494">Not able toodownload blob using provided SAS Uri.</span></span>|<span data-ttu-id="8b531-495">Atualização Olá SAS Url utilizando recomendado ferramentas</span><span class="sxs-lookup"><span data-stu-id="8b531-495">Update hello SAS Url using recommended tools</span></span>|[<span data-ttu-id="8b531-496">https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/</span><span class="sxs-lookup"><span data-stu-id="8b531-496">https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/</span></span>](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|<span data-ttu-id="8b531-497">Falha ao copiar imagens - "st" e "zar" parâmetros não SAS url</span><span class="sxs-lookup"><span data-stu-id="8b531-497">Failure in copying images - “st” and “se” parameters not in SAS url</span></span>|<span data-ttu-id="8b531-498">Falha: Copiar as imagens.</span><span class="sxs-lookup"><span data-stu-id="8b531-498">Failure: Copying Images.</span></span> <span data-ttu-id="8b531-499">Toodownload não é possível utilizar o blob fornecido Uri de SAS.</span><span class="sxs-lookup"><span data-stu-id="8b531-499">Not able toodownload blob using provided SAS Uri.</span></span>|<span data-ttu-id="8b531-500">Atualizar Olá SAS Url com datas de início e fim no mesmo</span><span class="sxs-lookup"><span data-stu-id="8b531-500">Update hello SAS Url with Start and End dates on it</span></span>|[<span data-ttu-id="8b531-501">https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/</span><span class="sxs-lookup"><span data-stu-id="8b531-501">https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/</span></span>](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|<span data-ttu-id="8b531-502">Falha ao copiar imagens - "SP2 = rl" não está num SAS url</span><span class="sxs-lookup"><span data-stu-id="8b531-502">Failure in copying images - “sp=rl” not in SAS url</span></span>|<span data-ttu-id="8b531-503">Falha: Copiar as imagens.</span><span class="sxs-lookup"><span data-stu-id="8b531-503">Failure: Copying Images.</span></span> <span data-ttu-id="8b531-504">Toodownload não é possível utilizar o blob fornecido Uri de SAS</span><span class="sxs-lookup"><span data-stu-id="8b531-504">Not able toodownload blob using provided SAS Uri</span></span>|<span data-ttu-id="8b531-505">Atualizar Olá SAS Url com definido como "Leitura" & "lista de permissões</span><span class="sxs-lookup"><span data-stu-id="8b531-505">Update hello SAS Url with permissions set as “Read” & “List</span></span>|[<span data-ttu-id="8b531-506">https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/</span><span class="sxs-lookup"><span data-stu-id="8b531-506">https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/</span></span>](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|<span data-ttu-id="8b531-507">Falha ao copiar imagens - SAS url tem espaços em branco no nome do vhd</span><span class="sxs-lookup"><span data-stu-id="8b531-507">Failure in copying images - SAS url have white spaces in vhd name</span></span>|<span data-ttu-id="8b531-508">Falha: Copiar as imagens.</span><span class="sxs-lookup"><span data-stu-id="8b531-508">Failure: Copying Images.</span></span> <span data-ttu-id="8b531-509">Toodownload não é possível utilizar o blob fornecido Uri de SAS.</span><span class="sxs-lookup"><span data-stu-id="8b531-509">Not able toodownload blob using provided SAS Uri.</span></span>|<span data-ttu-id="8b531-510">Atualizar Olá SAS Url, sem espaços em branco</span><span class="sxs-lookup"><span data-stu-id="8b531-510">Update hello SAS Url without white spaces</span></span>|[<span data-ttu-id="8b531-511">https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/</span><span class="sxs-lookup"><span data-stu-id="8b531-511">https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/</span></span>](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
+|<span data-ttu-id="8b531-512">Falha ao copiar imagens – erro de autorização de Url SAS</span><span class="sxs-lookup"><span data-stu-id="8b531-512">Failure in copying images – SAS Url Authorization error</span></span>|<span data-ttu-id="8b531-513">Falha: Copiar as imagens.</span><span class="sxs-lookup"><span data-stu-id="8b531-513">Failure: Copying Images.</span></span> <span data-ttu-id="8b531-514">Blob toodownload não é possível devido a erro de tooauthorization</span><span class="sxs-lookup"><span data-stu-id="8b531-514">Not able toodownload blob due tooauthorization error</span></span>|<span data-ttu-id="8b531-515">Regenerar Olá SAS Url</span><span class="sxs-lookup"><span data-stu-id="8b531-515">Regenerate hello SAS Url</span></span>|[<span data-ttu-id="8b531-516">https://Azure.microsoft.com/en-us/Documentation/articles/Storage-DotNet-Shared-Access-Signature-Part-1/</span><span class="sxs-lookup"><span data-stu-id="8b531-516">https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/</span></span>](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-shared-access-signature-part-1/)|
 
 
-## <a name="next-step"></a>Passo seguinte
-Depois de terminar com detalhes SKU Olá, pode mover toohello reencaminhar [Guia do Azure Marketplace marketing conteúdo][link-pushstaging]. Esse passo do processo de publicação de Olá, deve fornecer Olá marketing conteúdo, preço e antes de necessárias outras informações demasiado**passo 3: testar a sua VM oferecem no modo de transição**, onde testar vários cenários de caso de utilização antes de implementar Olá oferta toohello Azure Marketplace para visibilidade pública e compra.  
+## <a name="next-step"></a><span data-ttu-id="8b531-517">Passo seguinte</span><span class="sxs-lookup"><span data-stu-id="8b531-517">Next step</span></span>
+<span data-ttu-id="8b531-518">Depois de terminar com detalhes SKU Olá, pode mover toohello reencaminhar [Guia do Azure Marketplace marketing conteúdo][link-pushstaging].</span><span class="sxs-lookup"><span data-stu-id="8b531-518">After you are done with hello SKU details, you can move forward toohello [Azure Marketplace marketing content guide][link-pushstaging].</span></span> <span data-ttu-id="8b531-519">Esse passo do processo de publicação de Olá, deve fornecer Olá marketing conteúdo, preço e antes de necessárias outras informações demasiado**passo 3: testar a sua VM oferecem no modo de transição**, onde testar vários cenários de caso de utilização antes de implementar Olá oferta toohello Azure Marketplace para visibilidade pública e compra.</span><span class="sxs-lookup"><span data-stu-id="8b531-519">In that step of hello publishing process, you provide hello marketing content, pricing, and other information necessary prior too**Step 3: Testing your VM offer in staging**, where you test various use-case scenarios before deploying hello offer toohello Azure Marketplace for public visibility and purchase.</span></span>  
 
-## <a name="see-also"></a>Consultar também
-* [Introdução: como toopublish toohello uma oferta Azure Marketplace](marketplace-publishing-getting-started.md)
+## <a name="see-also"></a><span data-ttu-id="8b531-520">Consultar também</span><span class="sxs-lookup"><span data-stu-id="8b531-520">See also</span></span>
+* [<span data-ttu-id="8b531-521">Introdução: como toopublish toohello uma oferta Azure Marketplace</span><span class="sxs-lookup"><span data-stu-id="8b531-521">Getting started: How toopublish an offer toohello Azure Marketplace</span></span>](marketplace-publishing-getting-started.md)
 
 [img-acom-1]:media/marketplace-publishing-vm-image-creation/vm-image-acom-datacenter.png
 [img-portal-vm-size]:media/marketplace-publishing-vm-image-creation/vm-image-portal-size.png

@@ -20,79 +20,79 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="how-toomanage-hello-global-settings-of-your-application"></a>Como toomanage Olá definições globais da aplicação
-Olá **definições** disponíveis para vary uma aplicação, dependendo da plataforma de Olá de aplicação Olá e permissões de Olá lhe foram concedidas para aplicação Olá de opções de menu. As definições incluem o seguinte Olá: detalhes, projetos, Push nativo, velocidade de Push, etiqueta (app-info) e que a pressão comercial. Olá opção do menu (as informações da aplicação) Tag da secção de definições de Olá pode ser gerido pela sua aplicação (utilizando Olá SDK) ou pelo seu back-end (através de Olá Device API). 
+# <a name="how-toomanage-hello-global-settings-of-your-application"></a><span data-ttu-id="b93f1-103">Como toomanage Olá definições globais da aplicação</span><span class="sxs-lookup"><span data-stu-id="b93f1-103">How toomanage hello global settings of your application</span></span>
+<span data-ttu-id="b93f1-104">Olá **definições** disponíveis para vary uma aplicação, dependendo da plataforma de Olá de aplicação Olá e permissões de Olá lhe foram concedidas para aplicação Olá de opções de menu.</span><span class="sxs-lookup"><span data-stu-id="b93f1-104">hello **Settings** menu options available for an application vary, depending on hello platform of hello application and hello permissions you have been granted for hello application.</span></span> <span data-ttu-id="b93f1-105">As definições incluem o seguinte Olá: detalhes, projetos, Push nativo, velocidade de Push, etiqueta (app-info) e que a pressão comercial.</span><span class="sxs-lookup"><span data-stu-id="b93f1-105">Settings include hello following: Details, Projects, Native Push, Push Speed, Tag (app info), and Commercial Pressure.</span></span> <span data-ttu-id="b93f1-106">Olá opção do menu (as informações da aplicação) Tag da secção de definições de Olá pode ser gerido pela sua aplicação (utilizando Olá SDK) ou pelo seu back-end (através de Olá Device API).</span><span class="sxs-lookup"><span data-stu-id="b93f1-106">hello Tag (app info) menu option of hello Settings section can be managed by your application (using hello SDK) or by your backend (using hello Device API).</span></span> 
 
 > [!NOTE]
-> Muitos secções Olá **Mobile Engagement** portal IU conter Olá **Mostrar ajudar** botão. Prima este botão tooget mais contextuais informações sobre uma secção.
+> <span data-ttu-id="b93f1-107">Muitos secções Olá **Mobile Engagement** portal IU conter Olá **Mostrar ajudar** botão.</span><span class="sxs-lookup"><span data-stu-id="b93f1-107">Many sections of hello **Mobile Engagement** portal UI contain hello **SHOW HELP** button.</span></span> <span data-ttu-id="b93f1-108">Prima este botão tooget mais contextuais informações sobre uma secção.</span><span class="sxs-lookup"><span data-stu-id="b93f1-108">Press this button tooget more contextual information about a section.</span></span>
 > 
 > 
 
-## <a name="details"></a>Detalhes
-Permite-lhe nome de Olá toochange e descrição da sua aplicação, o proprietário de Olá de vista da sua aplicação e as permissões de função. 
+## <a name="details"></a><span data-ttu-id="b93f1-109">Detalhes</span><span class="sxs-lookup"><span data-stu-id="b93f1-109">Details</span></span>
+<span data-ttu-id="b93f1-110">Permite-lhe nome de Olá toochange e descrição da sua aplicação, o proprietário de Olá de vista da sua aplicação e as permissões de função.</span><span class="sxs-lookup"><span data-stu-id="b93f1-110">Allows you toochange hello name and description of your application, view hello owner of your application and your role permissions.</span></span> 
 
-Configuração de análise permite-lhe tooview ou alteração dia Olá semanas iniciar no e Olá tempo de retenção em dias.
+<span data-ttu-id="b93f1-111">Configuração de análise permite-lhe tooview ou alteração dia Olá semanas iniciar no e Olá tempo de retenção em dias.</span><span class="sxs-lookup"><span data-stu-id="b93f1-111">Analytics configuration enables  you tooview or change hello day weeks start on and hello retention time in day(s).</span></span>
 
   ![settings1][46]
 
-## <a name="projects"></a>Projetos
-Permite-lhe tooselect todos os projetos pretende tooappear sua aplicação. 
+## <a name="projects"></a><span data-ttu-id="b93f1-113">Projetos</span><span class="sxs-lookup"><span data-stu-id="b93f1-113">Projects</span></span>
+<span data-ttu-id="b93f1-114">Permite-lhe tooselect todos os projetos pretende tooappear sua aplicação.</span><span class="sxs-lookup"><span data-stu-id="b93f1-114">Allows you tooselect all projects you want your application tooappear in.</span></span> 
 
-Também pode procurar um nome de Olá do projeto e vista, a descrição, o proprietário e as permissões de função de qualquer projeto a aplicação faz parte.
+<span data-ttu-id="b93f1-115">Também pode procurar um nome de Olá do projeto e vista, a descrição, o proprietário e as permissões de função de qualquer projeto a aplicação faz parte.</span><span class="sxs-lookup"><span data-stu-id="b93f1-115">You can also search for a project and view hello name, description, owner and your role permissions of any project your application is part of.</span></span>
 
-Para obter mais informações, consulte: [documentação de IU – home page][Link 13]
+<span data-ttu-id="b93f1-116">Para obter mais informações, consulte: [documentação de IU – home page][Link 13]</span><span class="sxs-lookup"><span data-stu-id="b93f1-116">For more information, see: [UI Documentation – Home][Link 13]</span></span>
 
   ![settings3][48]
 
-## <a name="native-push"></a>Push nativo
-Permite-lhe tooregister um novo certificado ou a eliminação e o certificado existente para utilizam com o push nativo. Push nativo permite que a aplicação de tooyour do Azure Mobile Engagement toopush em qualquer altura, mesmo quando não está em execução. 
+## <a name="native-push"></a><span data-ttu-id="b93f1-118">Push nativo</span><span class="sxs-lookup"><span data-stu-id="b93f1-118">Native Push</span></span>
+<span data-ttu-id="b93f1-119">Permite-lhe tooregister um novo certificado ou a eliminação e o certificado existente para utilizam com o push nativo.</span><span class="sxs-lookup"><span data-stu-id="b93f1-119">Allows you tooregister a new certificate or delete and existing certificate for use with native push.</span></span> <span data-ttu-id="b93f1-120">Push nativo permite que a aplicação de tooyour do Azure Mobile Engagement toopush em qualquer altura, mesmo quando não está em execução.</span><span class="sxs-lookup"><span data-stu-id="b93f1-120">Native Push enables Azure Mobile Engagement toopush tooyour application at any time, even when it is not running.</span></span> 
 
-Depois de fornecer as credenciais ou certificados para, pelo menos, um serviço de Push nativo, pode selecionar "Sempre" quando criar campanhas de alcance bem como o parâmetro de "notifier" Olá de utilização no Olá PUSH API.
+<span data-ttu-id="b93f1-121">Depois de fornecer as credenciais ou certificados para, pelo menos, um serviço de Push nativo, pode selecionar "Sempre" quando criar campanhas de alcance bem como o parâmetro de "notifier" Olá de utilização no Olá PUSH API.</span><span class="sxs-lookup"><span data-stu-id="b93f1-121">After providing credentials or certificates for at least one Native Push service, you can select "Any time" when creating Reach Campaigns, and also use hello "notifier" parameter in hello PUSH API.</span></span>
 
-### <a name="apple-push-notification-service-apns"></a>Serviço Apple Push Notification (APNS)
-tooenable Push nativo com Olá serviço Apple Push Notification, terá de tooregister o certificado. Terá de tipo de Olá toospecify do certificado como desenvolvimento (desenvolvimento) ou de produção (PROD). Em seguida, irá precisar de carregar a palavra-passe do certificado e Olá.
+### <a name="apple-push-notification-service-apns"></a><span data-ttu-id="b93f1-122">Serviço Apple Push Notification (APNS)</span><span class="sxs-lookup"><span data-stu-id="b93f1-122">Apple Push Notification Service (APNS)</span></span>
+<span data-ttu-id="b93f1-123">tooenable Push nativo com Olá serviço Apple Push Notification, terá de tooregister o certificado.</span><span class="sxs-lookup"><span data-stu-id="b93f1-123">tooenable Native Push using hello Apple Push Notification Service you will need tooregister your certificate.</span></span> <span data-ttu-id="b93f1-124">Terá de tipo de Olá toospecify do certificado como desenvolvimento (desenvolvimento) ou de produção (PROD).</span><span class="sxs-lookup"><span data-stu-id="b93f1-124">You will need toospecify hello type of certificate as either development (DEV) or production (PROD).</span></span> <span data-ttu-id="b93f1-125">Em seguida, irá precisar de carregar a palavra-passe do certificado e Olá.</span><span class="sxs-lookup"><span data-stu-id="b93f1-125">Then you will need upload your certificate and hello password.</span></span>
 
-Para obter mais informações, consulte: [documentação do SDK - iOS - como tooPrepare a aplicação para notificações Push da Apple][Link 5]
+<span data-ttu-id="b93f1-126">Para obter mais informações, consulte: [documentação do SDK - iOS - como tooPrepare a aplicação para notificações Push da Apple][Link 5]</span><span class="sxs-lookup"><span data-stu-id="b93f1-126">For more information, see: [SDK Documentation - iOS - How tooPrepare your Application for Apple Push notifications][Link 5]</span></span>
 
 ![settings4][49]
 
-### <a name="windows-push-notification-service-wpns"></a>Serviço de notificações de Push do Windows (WPNS)
-tooenable Push nativo com o serviço de notificação do Windows, tem de fornecer credenciais da sua aplicação. Terá do identificador de segurança (SID) do seu pacote e a chave secreta.
+### <a name="windows-push-notification-service-wpns"></a><span data-ttu-id="b93f1-128">Serviço de notificações de Push do Windows (WPNS)</span><span class="sxs-lookup"><span data-stu-id="b93f1-128">Windows Push Notification Service (WPNS)</span></span>
+<span data-ttu-id="b93f1-129">tooenable Push nativo com o serviço de notificação do Windows, tem de fornecer credenciais da sua aplicação.</span><span class="sxs-lookup"><span data-stu-id="b93f1-129">tooenable Native Push using Windows Notification Service, you must provide your application's credentials.</span></span> <span data-ttu-id="b93f1-130">Terá do identificador de segurança (SID) do seu pacote e a chave secreta.</span><span class="sxs-lookup"><span data-stu-id="b93f1-130">You will need your Package security identifier (SID) and your Secret key.</span></span>
 
 ![settings5][50]
 
-### <a name="google-cloud-messaging-for-android-gcm"></a>Google Cloud Messaging para Android (GCM)
-tooenable Push nativo com GCM, tem de instruções de Olá toofollow do Google. Em seguida, tem de colar uma chave de API simple de servidor, configurada sem restrições IP. Requer uma integração com Olá SDK para Android v1.12.0 +.
+### <a name="google-cloud-messaging-for-android-gcm"></a><span data-ttu-id="b93f1-132">Google Cloud Messaging para Android (GCM)</span><span class="sxs-lookup"><span data-stu-id="b93f1-132">Google Cloud Messaging for Android (GCM)</span></span>
+<span data-ttu-id="b93f1-133">tooenable Push nativo com GCM, tem de instruções de Olá toofollow do Google.</span><span class="sxs-lookup"><span data-stu-id="b93f1-133">tooenable Native Push using GCM, you need toofollow hello instructions from Google.</span></span> <span data-ttu-id="b93f1-134">Em seguida, tem de colar uma chave de API simple de servidor, configurada sem restrições IP.</span><span class="sxs-lookup"><span data-stu-id="b93f1-134">Then you must paste a server simple API key, configured without IP restrictions.</span></span> <span data-ttu-id="b93f1-135">Requer uma integração com Olá SDK para Android v1.12.0 +.</span><span class="sxs-lookup"><span data-stu-id="b93f1-135">Requires integration with hello SDK for Android v1.12.0+.</span></span>
 
-Para obter mais informações, consulte: 
+<span data-ttu-id="b93f1-136">Para obter mais informações, consulte:</span><span class="sxs-lookup"><span data-stu-id="b93f1-136">For more information, see:</span></span> 
 
-* [SDK documentação Android como tooIntegrate GCM][Link 5]
-* [Guia do programador da Google GCM](http://developer.android.com/guide/google/gcm/gs.html)
+* <span data-ttu-id="b93f1-137">[SDK documentação Android como tooIntegrate GCM][Link 5]</span><span class="sxs-lookup"><span data-stu-id="b93f1-137">[SDK Documentation Android How tooIntegrate GCM][Link 5]</span></span>
+* [<span data-ttu-id="b93f1-138">Guia do programador da Google GCM</span><span class="sxs-lookup"><span data-stu-id="b93f1-138">Google Developer GCM Guide</span></span>](http://developer.android.com/guide/google/gcm/gs.html)
 
-### <a name="amazon-device-messaging-for-android-adm"></a>Dispositivo Amazon Messaging para Android (ADM)
-tooenable nativo Push utilizando ADM, tem de fornecer o Amazon <OAuth credentials> constituída por um ID de cliente e o segredo do cliente (requer uma integração com o SDK para Android v2.1.0 +).
+### <a name="amazon-device-messaging-for-android-adm"></a><span data-ttu-id="b93f1-139">Dispositivo Amazon Messaging para Android (ADM)</span><span class="sxs-lookup"><span data-stu-id="b93f1-139">Amazon Device Messaging for Android (ADM)</span></span>
+<span data-ttu-id="b93f1-140">tooenable nativo Push utilizando ADM, tem de fornecer o Amazon <OAuth credentials> constituída por um ID de cliente e o segredo do cliente (requer uma integração com o SDK para Android v2.1.0 +).</span><span class="sxs-lookup"><span data-stu-id="b93f1-140">tooenable Native Push using ADM, you must provide Amazon <OAuth credentials> consisting of a Client ID and Client Secret (Requires integration with SDK for Android v2.1.0+).</span></span>
 
-Para obter mais informações, consulte: 
+<span data-ttu-id="b93f1-141">Para obter mais informações, consulte:</span><span class="sxs-lookup"><span data-stu-id="b93f1-141">For more information, see:</span></span> 
 
-* [SDK documentação Android como tooIntegrate ADM][Link 5]
-* [Documentação de programador da Amazon ADM](https://developer.amazon.com/sdk/adm/credentials.html#Getting)
+* <span data-ttu-id="b93f1-142">[SDK documentação Android como tooIntegrate ADM][Link 5]</span><span class="sxs-lookup"><span data-stu-id="b93f1-142">[SDK Documentation Android How tooIntegrate ADM][Link 5]</span></span>
+* [<span data-ttu-id="b93f1-143">Documentação de programador da Amazon ADM</span><span class="sxs-lookup"><span data-stu-id="b93f1-143">Amazon Developer ADM Documentation</span></span>](https://developer.amazon.com/sdk/adm/credentials.html#Getting)
 
 ![settings6][51]
 
-## <a name="push-speed"></a>Velocidade de push
-Mostra Olá atual velocidade de push da aplicação e permite-lhe toodefine Olá velocidade de push da aplicação.
+## <a name="push-speed"></a><span data-ttu-id="b93f1-145">Velocidade de push</span><span class="sxs-lookup"><span data-stu-id="b93f1-145">Push Speed</span></span>
+<span data-ttu-id="b93f1-146">Mostra Olá atual velocidade de push da aplicação e permite-lhe toodefine Olá velocidade de push da aplicação.</span><span class="sxs-lookup"><span data-stu-id="b93f1-146">Shows hello current push speed of your application and allows you toodefine hello push speed of your application.</span></span>
 
   ![settings7][52]
 
-## <a name="tag-app-info"></a>Etiqueta (app-info)
+## <a name="tag-app-info"></a><span data-ttu-id="b93f1-148">Etiqueta (app-info)</span><span class="sxs-lookup"><span data-stu-id="b93f1-148">Tag (app info)</span></span>
 ![settings11][56]
 
-## <a name="commercial-pressure"></a>Pressão comercial
+## <a name="commercial-pressure"></a><span data-ttu-id="b93f1-150">Pressão comercial</span><span class="sxs-lookup"><span data-stu-id="b93f1-150">Commercial Pressure</span></span>
 ![settings12][57]
 
-## <a name="see-also"></a>Consultar também
-* [Conceitos][Link 6]
-* [Serviço de guia de resolução de problemas][Link 24]
+## <a name="see-also"></a><span data-ttu-id="b93f1-152">Consultar também</span><span class="sxs-lookup"><span data-stu-id="b93f1-152">See also</span></span>
+* <span data-ttu-id="b93f1-153">[Conceitos][Link 6]</span><span class="sxs-lookup"><span data-stu-id="b93f1-153">[Concepts][Link 6]</span></span>
+* <span data-ttu-id="b93f1-154">[Serviço de guia de resolução de problemas][Link 24]</span><span class="sxs-lookup"><span data-stu-id="b93f1-154">[Troubleshooting Guide Service][Link 24]</span></span>
 
 <!--Image references-->
 [1]: ./media/mobile-engagement-user-interface-navigation/navigation1.png

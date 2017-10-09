@@ -20,66 +20,66 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="setting-up-hello-azure-importexport-tool"></a>Configurar Olá ferramenta de importação/exportação do Azure
-Olá ferramenta de importação/exportação do Microsoft Azure é a preparação de unidade de Olá e a ferramenta de reparação que pode utilizar com Olá serviço de importação/exportação do Microsoft Azure. Pode utilizar a ferramenta Olá para Olá seguintes funções:  
+# <a name="setting-up-hello-azure-importexport-tool"></a><span data-ttu-id="6e615-104">Configurar Olá ferramenta de importação/exportação do Azure</span><span class="sxs-lookup"><span data-stu-id="6e615-104">Setting up hello Azure Import/Export Tool</span></span>
+<span data-ttu-id="6e615-105">Olá ferramenta de importação/exportação do Microsoft Azure é a preparação de unidade de Olá e a ferramenta de reparação que pode utilizar com Olá serviço de importação/exportação do Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="6e615-105">hello Microsoft Azure Import/Export Tool is hello drive preparation and repair tool that you can use with hello Microsoft Azure Import/Export service.</span></span> <span data-ttu-id="6e615-106">Pode utilizar a ferramenta Olá para Olá seguintes funções:</span><span class="sxs-lookup"><span data-stu-id="6e615-106">You can use hello tool for hello following functions:</span></span>  
   
--   Antes de criar uma tarefa de importação, pode utilizar esta ferramenta toocopy dados toohello unidades de disco rígido que vai tooship tooa Centro de dados do Windows Azure.  
+-   <span data-ttu-id="6e615-107">Antes de criar uma tarefa de importação, pode utilizar esta ferramenta toocopy dados toohello unidades de disco rígido que vai tooship tooa Centro de dados do Windows Azure.</span><span class="sxs-lookup"><span data-stu-id="6e615-107">Before creating an import job, you can use this tool toocopy data toohello hard drives you are going tooship tooa Windows Azure data center.</span></span>  
   
--   Depois de uma tarefa de importação foi concluída, que pode utilizar esta ferramenta toorepair blobs que foram corrompidos, foram em falta ou em conflito com outros blobs.  
+-   <span data-ttu-id="6e615-108">Depois de uma tarefa de importação foi concluída, que pode utilizar esta ferramenta toorepair blobs que foram corrompidos, foram em falta ou em conflito com outros blobs.</span><span class="sxs-lookup"><span data-stu-id="6e615-108">After an import job has completed, you can use this tool toorepair any blobs that were corrupted, were missing, or conflicted with other blobs.</span></span>  
   
--   Depois de receber Olá unidades de uma tarefa de exportação foi concluída, pode utilizar esta ferramenta toorepair todos os ficheiros que foram danificados ou em falta no Olá unidades.  
+-   <span data-ttu-id="6e615-109">Depois de receber Olá unidades de uma tarefa de exportação foi concluída, pode utilizar esta ferramenta toorepair todos os ficheiros que foram danificados ou em falta no Olá unidades.</span><span class="sxs-lookup"><span data-stu-id="6e615-109">After you receive hello drives from a completed export job, you can use this tool toorepair any files that were corrupted or missing on hello drives.</span></span>  
   
-## <a name="prerequisites"></a>Pré-requisitos  
-Se estiver a preparar unidades para uma tarefa de importação, terá de Olá toomeet os seguintes pré-requisitos:  
+## <a name="prerequisites"></a><span data-ttu-id="6e615-110">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="6e615-110">Prerequisites</span></span>  
+<span data-ttu-id="6e615-111">Se estiver a preparar unidades para uma tarefa de importação, terá de Olá toomeet os seguintes pré-requisitos:</span><span class="sxs-lookup"><span data-stu-id="6e615-111">If you are preparing drives for an import job, you will need toomeet hello following prerequisites:</span></span>  
   
--   Tem de ter uma subscrição do Azure Active Directory.  
+-   <span data-ttu-id="6e615-112">Tem de ter uma subscrição do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="6e615-112">You must have an active Azure subscription.</span></span>  
   
--   A subscrição tem de incluir uma conta de armazenamento com ficheiros de Olá suficiente espaço disponível toostore vai tooimport.  
+-   <span data-ttu-id="6e615-113">A subscrição tem de incluir uma conta de armazenamento com ficheiros de Olá suficiente espaço disponível toostore vai tooimport.</span><span class="sxs-lookup"><span data-stu-id="6e615-113">Your subscription must include a storage account with enough available space toostore hello files you are going tooimport.</span></span>  
   
--   Precisa de, pelo menos, uma das chaves de conta Olá Olá conta de armazenamento.  
+-   <span data-ttu-id="6e615-114">Precisa de, pelo menos, uma das chaves de conta Olá Olá conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="6e615-114">You need at least one of hello account keys for hello storage account.</span></span>  
   
--   Precisa de um computador (Olá "máquina cópia") com o Windows 7, Windows Server 2008 R2 ou um sistema de operativo mais recente do Windows instalada.  
+-   <span data-ttu-id="6e615-115">Precisa de um computador (Olá "máquina cópia") com o Windows 7, Windows Server 2008 R2 ou um sistema de operativo mais recente do Windows instalada.</span><span class="sxs-lookup"><span data-stu-id="6e615-115">You need a computer (hello "copy machine") with Windows 7, Windows Server 2008 R2, or a newer Windows operating system installed.</span></span>  
   
--   Olá .NET Framework 4 tem de estar instalado na máquina de cópia de Olá.  
+-   <span data-ttu-id="6e615-116">Olá .NET Framework 4 tem de estar instalado na máquina de cópia de Olá.</span><span class="sxs-lookup"><span data-stu-id="6e615-116">hello .NET Framework 4 must be installed on hello copy machine.</span></span>  
   
--   O BitLocker tem de estar ativado na máquina de cópia de Olá.  
+-   <span data-ttu-id="6e615-117">O BitLocker tem de estar ativado na máquina de cópia de Olá.</span><span class="sxs-lookup"><span data-stu-id="6e615-117">BitLocker must be enabled on hello copy machine.</span></span>  
   
--   Precisa de uma ou mais unidades que contém toobe dados importado ou unidades de disco rígido vazias 3.5 polegadas SATA ligado toohello máquina de cópia.  
+-   <span data-ttu-id="6e615-118">Precisa de uma ou mais unidades que contém toobe dados importado ou unidades de disco rígido vazias 3.5 polegadas SATA ligado toohello máquina de cópia.</span><span class="sxs-lookup"><span data-stu-id="6e615-118">You will need one or more drives that contains data toobe imported or empty 3.5-inch SATA hard drives connected toohello copy machine.</span></span>  
   
--   ficheiros de Olá planear tooimport têm de estar acessíveis a partir da máquina de cópia de Olá, quer estejam na partilha de rede ou uma unidade de disco rígida local. 
+-   <span data-ttu-id="6e615-119">ficheiros de Olá planear tooimport têm de estar acessíveis a partir da máquina de cópia de Olá, quer estejam na partilha de rede ou uma unidade de disco rígida local.</span><span class="sxs-lookup"><span data-stu-id="6e615-119">hello files you plan tooimport must be accessible from hello copy machine, whether they are on a network share or a local hard drive.</span></span> 
   
-Se está a tentar efetuar toorepair uma importação que parcialmente falhou, terá de:  
+<span data-ttu-id="6e615-120">Se está a tentar efetuar toorepair uma importação que parcialmente falhou, terá de:</span><span class="sxs-lookup"><span data-stu-id="6e615-120">If you are attempting toorepair an import that has partially failed, you will need:</span></span>  
   
--   ficheiros de registo de cópia de Olá  
+-   <span data-ttu-id="6e615-121">ficheiros de registo de cópia de Olá</span><span class="sxs-lookup"><span data-stu-id="6e615-121">hello copy log files</span></span>  
   
--   chave de conta do storage Olá  
+-   <span data-ttu-id="6e615-122">chave de conta do storage Olá</span><span class="sxs-lookup"><span data-stu-id="6e615-122">hello storage account key</span></span>  
   
-  Se está a tentar efetuar toorepair uma exportação que parcialmente falhou, terá de:  
+  <span data-ttu-id="6e615-123">Se está a tentar efetuar toorepair uma exportação que parcialmente falhou, terá de:</span><span class="sxs-lookup"><span data-stu-id="6e615-123">If you are attempting toorepair an export that has partially failed, you will need:</span></span>  
   
--   ficheiros de registo de cópia de Olá  
+-   <span data-ttu-id="6e615-124">ficheiros de registo de cópia de Olá</span><span class="sxs-lookup"><span data-stu-id="6e615-124">hello copy log files</span></span>  
   
--   Olá, ficheiros de manifesto (opcional)  
+-   <span data-ttu-id="6e615-125">Olá, ficheiros de manifesto (opcional)</span><span class="sxs-lookup"><span data-stu-id="6e615-125">hello manifest files (optional)</span></span>  
   
--   chave de conta do storage Olá  
+-   <span data-ttu-id="6e615-126">chave de conta do storage Olá</span><span class="sxs-lookup"><span data-stu-id="6e615-126">hello storage account key</span></span>  
   
-## <a name="installing-hello-azure-importexport-tool"></a>Instalar Olá ferramenta de importação/exportação do Azure  
- Olá ferramenta de importação/exportação do Azure é composto por Olá os seguintes ficheiros:  
+## <a name="installing-hello-azure-importexport-tool"></a><span data-ttu-id="6e615-127">Instalar Olá ferramenta de importação/exportação do Azure</span><span class="sxs-lookup"><span data-stu-id="6e615-127">Installing hello Azure Import/Export Tool</span></span>  
+ <span data-ttu-id="6e615-128">Olá ferramenta de importação/exportação do Azure é composto por Olá os seguintes ficheiros:</span><span class="sxs-lookup"><span data-stu-id="6e615-128">hello Azure Import/Export Tool consists of hello following files:</span></span>  
   
--   WAImportExport.exe  
+-   <span data-ttu-id="6e615-129">WAImportExport.exe</span><span class="sxs-lookup"><span data-stu-id="6e615-129">WAImportExport.exe</span></span>  
   
--   WAImportExport.exe.config  
+-   <span data-ttu-id="6e615-130">WAImportExport.exe.config</span><span class="sxs-lookup"><span data-stu-id="6e615-130">WAImportExport.exe.config</span></span>  
   
--   WAImportExportCore.dll  
+-   <span data-ttu-id="6e615-131">WAImportExportCore.dll</span><span class="sxs-lookup"><span data-stu-id="6e615-131">WAImportExportCore.dll</span></span>  
   
--   WAImportExportRepair.dll  
+-   <span data-ttu-id="6e615-132">WAImportExportRepair.dll</span><span class="sxs-lookup"><span data-stu-id="6e615-132">WAImportExportRepair.dll</span></span>  
   
--   Microsoft.WindowsAzure.Storage.dll  
+-   <span data-ttu-id="6e615-133">Microsoft.WindowsAzure.Storage.dll</span><span class="sxs-lookup"><span data-stu-id="6e615-133">Microsoft.WindowsAzure.Storage.dll</span></span>  
   
--   Hddid.dll  
+-   <span data-ttu-id="6e615-134">Hddid.dll</span><span class="sxs-lookup"><span data-stu-id="6e615-134">Hddid.dll</span></span>  
   
- Copie o diretório de trabalho tooa estes ficheiros, por exemplo, `c:\WAImportExport`. Em seguida, abra uma janela da linha de comandos no modo de administrador e definir Olá acima diretório como o diretório atual.  
+ <span data-ttu-id="6e615-135">Copie o diretório de trabalho tooa estes ficheiros, por exemplo, `c:\WAImportExport`.</span><span class="sxs-lookup"><span data-stu-id="6e615-135">Copy these files tooa working directory, for example, `c:\WAImportExport`.</span></span> <span data-ttu-id="6e615-136">Em seguida, abra uma janela da linha de comandos no modo de administrador e definir Olá acima diretório como o diretório atual.</span><span class="sxs-lookup"><span data-stu-id="6e615-136">Next, open a command line window in Administrator mode, and set hello above directory as current directory.</span></span>  
   
- toooutput ajuda para comandos Olá, execute a ferramenta de Olá sem parâmetros:  
+ <span data-ttu-id="6e615-137">toooutput ajuda para comandos Olá, execute a ferramenta de Olá sem parâmetros:</span><span class="sxs-lookup"><span data-stu-id="6e615-137">toooutput help for hello command, run hello tool without parameters:</span></span>  
   
 ```  
 WAImportExport, a client tool for Microsoft Azure Import/Export service. Microsoft (c) 2013, 2014  
@@ -252,11 +252,11 @@ Examples:
         es\drama /dstdir:movies/drama/ /skipwrite
 ```  
   
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="6e615-138">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="6e615-138">Next steps</span></span>
 
-* [Preparar as unidades de disco rígido para uma tarefa de importação](storage-import-export-tool-preparing-hard-drives-import-v1.md)   
-* [Utilização da unidade de uma tarefa de exportação de pré-visualização](storage-import-export-tool-previewing-drive-usage-export-v1.md)   
-* [Revisão do estado da tarefa com ficheiros de registo de cópia](storage-import-export-tool-reviewing-job-status-v1.md)   
-* [Reparação de uma tarefa de importação](storage-import-export-tool-repairing-an-import-job-v1.md)   
-* [Reparação de uma tarefa de exportação](storage-import-export-tool-repairing-an-export-job-v1.md)   
-* [Resolução de problemas Olá ferramenta de importação/exportação do Azure](storage-import-export-tool-troubleshooting-v1.md)
+* [<span data-ttu-id="6e615-139">Preparar as unidades de disco rígido para uma tarefa de importação</span><span class="sxs-lookup"><span data-stu-id="6e615-139">Preparing hard drives for an import job</span></span>](storage-import-export-tool-preparing-hard-drives-import-v1.md)   
+* [<span data-ttu-id="6e615-140">Utilização da unidade de uma tarefa de exportação de pré-visualização</span><span class="sxs-lookup"><span data-stu-id="6e615-140">Previewing Drive usage for an export job</span></span>](storage-import-export-tool-previewing-drive-usage-export-v1.md)   
+* [<span data-ttu-id="6e615-141">Revisão do estado da tarefa com ficheiros de registo de cópia</span><span class="sxs-lookup"><span data-stu-id="6e615-141">Reviewing job status with copy log files</span></span>](storage-import-export-tool-reviewing-job-status-v1.md)   
+* [<span data-ttu-id="6e615-142">Reparação de uma tarefa de importação</span><span class="sxs-lookup"><span data-stu-id="6e615-142">Repairing an import job</span></span>](storage-import-export-tool-repairing-an-import-job-v1.md)   
+* [<span data-ttu-id="6e615-143">Reparação de uma tarefa de exportação</span><span class="sxs-lookup"><span data-stu-id="6e615-143">Repairing an export job</span></span>](storage-import-export-tool-repairing-an-export-job-v1.md)   
+* [<span data-ttu-id="6e615-144">Resolução de problemas Olá ferramenta de importação/exportação do Azure</span><span class="sxs-lookup"><span data-stu-id="6e615-144">Troubleshooting hello Azure Import/Export Tool</span></span>](storage-import-export-tool-troubleshooting-v1.md)

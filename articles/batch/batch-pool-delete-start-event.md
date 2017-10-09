@@ -18,11 +18,11 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="pool-delete-start-event"></a>Eventos de início de eliminação do conjunto
+# <a name="pool-delete-start-event"></a><span data-ttu-id="c0a58-103">Eventos de início de eliminação do conjunto</span><span class="sxs-lookup"><span data-stu-id="c0a58-103">Pool delete start event</span></span>
 
- Este evento é emitido quando foi iniciada uma operação de eliminação do conjunto. Uma vez que a eliminação do conjunto de Olá é um evento assíncrono, que pode esperar um evento completa de eliminação conjunto toobe emitido depois da operação de eliminação de Olá for concluída.
+ <span data-ttu-id="c0a58-104">Este evento é emitido quando foi iniciada uma operação de eliminação do conjunto.</span><span class="sxs-lookup"><span data-stu-id="c0a58-104">This event is emitted when a pool delete operation has started.</span></span> <span data-ttu-id="c0a58-105">Uma vez que a eliminação do conjunto de Olá é um evento assíncrono, que pode esperar um evento completa de eliminação conjunto toobe emitido depois da operação de eliminação de Olá for concluída.</span><span class="sxs-lookup"><span data-stu-id="c0a58-105">Since hello pool delete is an asynchronous event, you can expect a pool delete complete event toobe emitted once hello delete operation completes.</span></span>
 
- Olá exemplo seguinte mostra corpo Olá de um evento de início de eliminação do conjunto.
+ <span data-ttu-id="c0a58-106">Olá exemplo seguinte mostra corpo Olá de um evento de início de eliminação do conjunto.</span><span class="sxs-lookup"><span data-stu-id="c0a58-106">hello following example shows hello body of a pool delete start event.</span></span>
 
 ```
 {
@@ -30,6 +30,6 @@ ms.lasthandoff: 10/06/2017
 }
 ```
 
-|Elemento|Tipo|Notas|
+|<span data-ttu-id="c0a58-107">Elemento</span><span class="sxs-lookup"><span data-stu-id="c0a58-107">Element</span></span>|<span data-ttu-id="c0a58-108">Tipo</span><span class="sxs-lookup"><span data-stu-id="c0a58-108">Type</span></span>|<span data-ttu-id="c0a58-109">Notas</span><span class="sxs-lookup"><span data-stu-id="c0a58-109">Notes</span></span>|
 |-------------|----------|-----------|
-|ID|Cadeia|id do conjunto de Olá Olá.|
+|<span data-ttu-id="c0a58-110">ID</span><span class="sxs-lookup"><span data-stu-id="c0a58-110">id</span></span>|<span data-ttu-id="c0a58-111">Cadeia</span><span class="sxs-lookup"><span data-stu-id="c0a58-111">String</span></span>|<span data-ttu-id="c0a58-112">id do conjunto de Olá Olá.</span><span class="sxs-lookup"><span data-stu-id="c0a58-112">hello id of hello pool.</span></span>|

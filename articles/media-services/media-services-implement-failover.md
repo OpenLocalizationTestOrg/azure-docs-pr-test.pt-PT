@@ -20,55 +20,55 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="implement-failover-streaming-with-azure-media-services"></a>Implementar ativação pós-falha de transmissão em fluxo com Media Services do Azure
+# <a name="implement-failover-streaming-with-azure-media-services"></a><span data-ttu-id="ee844-103">Implementar ativação pós-falha de transmissão em fluxo com Media Services do Azure</span><span class="sxs-lookup"><span data-stu-id="ee844-103">Implement failover streaming with Azure Media Services</span></span>
 
-Esta explicação passo a passo demonstra como toocopy conteúdo (blobs) a partir de um recurso a outro na redundância de toohandle de ordem para transmissão em fluxo a pedido. Este cenário é útil se pretender que tooset segurança toofail de rede de entrega de conteúdos do Azure através de entre dois centros de dados, em caso de uma falha no Centro de dados de um. Estas instruções utilizam Olá SDK de Media Services do Azure, Olá API de REST dos serviços de suporte de dados do Azure e Olá toodemonstrate SDK de armazenamento do Azure de Olá seguintes tarefas:
+<span data-ttu-id="ee844-104">Esta explicação passo a passo demonstra como toocopy conteúdo (blobs) a partir de um recurso a outro na redundância de toohandle de ordem para transmissão em fluxo a pedido.</span><span class="sxs-lookup"><span data-stu-id="ee844-104">This walkthrough demonstrates how toocopy content (blobs) from one asset into another in order toohandle redundancy for on-demand streaming.</span></span> <span data-ttu-id="ee844-105">Este cenário é útil se pretender que tooset segurança toofail de rede de entrega de conteúdos do Azure através de entre dois centros de dados, em caso de uma falha no Centro de dados de um.</span><span class="sxs-lookup"><span data-stu-id="ee844-105">This scenario is useful if you want tooset up Azure Content Delivery Network toofail over between two datacenters, in case of an outage in one datacenter.</span></span> <span data-ttu-id="ee844-106">Estas instruções utilizam Olá SDK de Media Services do Azure, Olá API de REST dos serviços de suporte de dados do Azure e Olá toodemonstrate SDK de armazenamento do Azure de Olá seguintes tarefas:</span><span class="sxs-lookup"><span data-stu-id="ee844-106">This walkthrough uses hello Azure Media Services SDK, hello Azure Media Services REST API, and hello Azure Storage SDK toodemonstrate hello following tasks:</span></span>
 
-1. Configurar uma conta de Media Services em "Centro de dados A."
-2. Carregue um ficheiro mezanino para um elemento de origem.
-3. Codificar o elemento de Olá em ficheiros MP4 de velocidade vários minutos. 
-4. Crie um localizador de assinatura de acesso partilhado só de leitura. Isto é para Olá origem asset toohave acesso de leitura toohello contentor na conta do storage Olá que está associado Olá elemento de origem.
-5. Obter o nome do contentor Olá do recurso de origem Olá de localizador de assinatura de acesso partilhado só de leitura de Olá criado no passo anterior Olá. Isto é necessário para copiar os blobs entre contas de armazenamento (explicados mais tarde Olá tópico.)
-6. Crie um localizador de origem para o elemento de Olá que foi criado por Olá codificação tarefas. 
+1. <span data-ttu-id="ee844-107">Configurar uma conta de Media Services em "Centro de dados A."</span><span class="sxs-lookup"><span data-stu-id="ee844-107">Set up a Media Services account in "Data Center A."</span></span>
+2. <span data-ttu-id="ee844-108">Carregue um ficheiro mezanino para um elemento de origem.</span><span class="sxs-lookup"><span data-stu-id="ee844-108">Upload a mezzanine file into a source asset.</span></span>
+3. <span data-ttu-id="ee844-109">Codificar o elemento de Olá em ficheiros MP4 de velocidade vários minutos.</span><span class="sxs-lookup"><span data-stu-id="ee844-109">Encode hello asset into multi-bit rate MP4 files.</span></span> 
+4. <span data-ttu-id="ee844-110">Crie um localizador de assinatura de acesso partilhado só de leitura.</span><span class="sxs-lookup"><span data-stu-id="ee844-110">Create a read-only shared access signature locator.</span></span> <span data-ttu-id="ee844-111">Isto é para Olá origem asset toohave acesso de leitura toohello contentor na conta do storage Olá que está associado Olá elemento de origem.</span><span class="sxs-lookup"><span data-stu-id="ee844-111">This is for hello source asset toohave read access toohello container in hello storage account that is associated with hello source asset.</span></span>
+5. <span data-ttu-id="ee844-112">Obter o nome do contentor Olá do recurso de origem Olá de localizador de assinatura de acesso partilhado só de leitura de Olá criado no passo anterior Olá.</span><span class="sxs-lookup"><span data-stu-id="ee844-112">Get hello container name of hello source asset from hello read-only shared access signature locator created in hello previous step.</span></span> <span data-ttu-id="ee844-113">Isto é necessário para copiar os blobs entre contas de armazenamento (explicados mais tarde Olá tópico.)</span><span class="sxs-lookup"><span data-stu-id="ee844-113">This is necessary for copying blobs between storage accounts (explained later in hello topic.)</span></span>
+6. <span data-ttu-id="ee844-114">Crie um localizador de origem para o elemento de Olá que foi criado por Olá codificação tarefas.</span><span class="sxs-lookup"><span data-stu-id="ee844-114">Create an origin locator for hello asset that was created by hello encoding task.</span></span> 
 
-Em seguida, toohandle Olá ativação pós-falha:
+<span data-ttu-id="ee844-115">Em seguida, toohandle Olá ativação pós-falha:</span><span class="sxs-lookup"><span data-stu-id="ee844-115">Then, toohandle hello failover:</span></span>
 
-1. Configurar uma conta de Media Services em "Data Center B."
-2. Crie um elemento vazio de destino no destino Olá conta dos Media Services.
-3. Crie um localizador de assinatura de acesso de escrita partilhado. Isto é para Olá asset vazio toohave acesso de escrita toohello um contentor de destino na conta de armazenamento de destino Olá que está associado Olá elemento de destino.
-4. Utilize blobs de toocopy Olá SDK de armazenamento do Azure (ficheiros de recurso) entre a conta de armazenamento de origem Olá no "Centro de dados A" e a conta de armazenamento de destino de Olá "B. centro de dados" Estas contas de armazenamento estão associadas a recursos de Olá de interesse.
-5. Associe blobs (ficheiros de recurso), que foram copiados toohello contentor de blob de destino com recurso de destino Olá. 
-6. Criar um localizador de origem para o recurso de Olá na "B do Centro de dados" e especifique o ID de localizador Olá que foi gerada para o recurso de Olá na "Centro de dados A."
+1. <span data-ttu-id="ee844-116">Configurar uma conta de Media Services em "Data Center B."</span><span class="sxs-lookup"><span data-stu-id="ee844-116">Set up a Media Services account in "Data Center B."</span></span>
+2. <span data-ttu-id="ee844-117">Crie um elemento vazio de destino no destino Olá conta dos Media Services.</span><span class="sxs-lookup"><span data-stu-id="ee844-117">Create a target empty asset in hello target Media Services account.</span></span>
+3. <span data-ttu-id="ee844-118">Crie um localizador de assinatura de acesso de escrita partilhado.</span><span class="sxs-lookup"><span data-stu-id="ee844-118">Create a write shared access signature locator.</span></span> <span data-ttu-id="ee844-119">Isto é para Olá asset vazio toohave acesso de escrita toohello um contentor de destino na conta de armazenamento de destino Olá que está associado Olá elemento de destino.</span><span class="sxs-lookup"><span data-stu-id="ee844-119">This is for hello target empty asset toohave write access toohello container in hello target storage account that is associated with hello target asset.</span></span>
+4. <span data-ttu-id="ee844-120">Utilize blobs de toocopy Olá SDK de armazenamento do Azure (ficheiros de recurso) entre a conta de armazenamento de origem Olá no "Centro de dados A" e a conta de armazenamento de destino de Olá "B. centro de dados"</span><span class="sxs-lookup"><span data-stu-id="ee844-120">Use hello Azure Storage SDK toocopy blobs (asset files) between hello source storage account in "Data Center A" and hello target storage account in "Data Center B."</span></span> <span data-ttu-id="ee844-121">Estas contas de armazenamento estão associadas a recursos de Olá de interesse.</span><span class="sxs-lookup"><span data-stu-id="ee844-121">These storage accounts are associated with hello assets of interest.</span></span>
+5. <span data-ttu-id="ee844-122">Associe blobs (ficheiros de recurso), que foram copiados toohello contentor de blob de destino com recurso de destino Olá.</span><span class="sxs-lookup"><span data-stu-id="ee844-122">Associate blobs (asset files) that were copied toohello target blob container with hello target asset.</span></span> 
+6. <span data-ttu-id="ee844-123">Criar um localizador de origem para o recurso de Olá na "B do Centro de dados" e especifique o ID de localizador Olá que foi gerada para o recurso de Olá na "Centro de dados A."</span><span class="sxs-lookup"><span data-stu-id="ee844-123">Create an origin locator for hello asset in "Data Center B", and specify hello locator ID that was generated for hello asset in "Data Center A."</span></span>
 
-Este oferece Olá URLs de transmissão em fluxo onde são caminhos relativos de Olá de URLs de Olá Olá mesmo (apenas hello base URLs forem diferentes). 
+<span data-ttu-id="ee844-124">Este oferece Olá URLs de transmissão em fluxo onde são caminhos relativos de Olá de URLs de Olá Olá mesmo (apenas hello base URLs forem diferentes).</span><span class="sxs-lookup"><span data-stu-id="ee844-124">This gives you hello streaming URLs where hello relative paths of hello URLs are hello same (only hello base URLs are different).</span></span> 
 
-Em seguida, toohandle quaisquer falhas, pode criar uma rede de entrega de conteúdos por cima estes localizadores de origem. 
+<span data-ttu-id="ee844-125">Em seguida, toohandle quaisquer falhas, pode criar uma rede de entrega de conteúdos por cima estes localizadores de origem.</span><span class="sxs-lookup"><span data-stu-id="ee844-125">Then, toohandle any outages, you can create a Content Delivery Network on top of these origin locators.</span></span> 
 
-aplicar Olá seguintes considerações:
+<span data-ttu-id="ee844-126">aplicar Olá seguintes considerações:</span><span class="sxs-lookup"><span data-stu-id="ee844-126">hello following considerations apply:</span></span>
 
-* versão atual do Olá do SDK de Media Services não suporta programaticamente gerar informações de IAssetFile que podem associar um recurso de ficheiros de recurso. Em vez disso, utilize Olá API de REST dos serviços de suporte de dados CreateFileInfos toodo esta opção. 
-* Recursos de armazenamento encriptado (AssetCreationOptions.StorageEncrypted) não são suportados para a replicação (porque a chave de encriptação de Olá é diferente em ambas as contas de serviços de suporte de dados). 
-* Se quiser tootake partido do empacotamento dinâmico, certifique-se Olá de transmissão em fluxo ponto final a partir das quais pretende toostream o conteúdo no Olá **executar** estado.
+* <span data-ttu-id="ee844-127">versão atual do Olá do SDK de Media Services não suporta programaticamente gerar informações de IAssetFile que podem associar um recurso de ficheiros de recurso.</span><span class="sxs-lookup"><span data-stu-id="ee844-127">hello current version of Media Services SDK does not support programmatically generating IAssetFile information that would associate an asset with asset files.</span></span> <span data-ttu-id="ee844-128">Em vez disso, utilize Olá API de REST dos serviços de suporte de dados CreateFileInfos toodo esta opção.</span><span class="sxs-lookup"><span data-stu-id="ee844-128">Instead, use hello CreateFileInfos Media Services REST API toodo this.</span></span> 
+* <span data-ttu-id="ee844-129">Recursos de armazenamento encriptado (AssetCreationOptions.StorageEncrypted) não são suportados para a replicação (porque a chave de encriptação de Olá é diferente em ambas as contas de serviços de suporte de dados).</span><span class="sxs-lookup"><span data-stu-id="ee844-129">Storage encrypted assets (AssetCreationOptions.StorageEncrypted) are not supported for replication (because hello encryption key is different in both Media Services accounts).</span></span> 
+* <span data-ttu-id="ee844-130">Se quiser tootake partido do empacotamento dinâmico, certifique-se Olá de transmissão em fluxo ponto final a partir das quais pretende toostream o conteúdo no Olá **executar** estado.</span><span class="sxs-lookup"><span data-stu-id="ee844-130">If you want tootake advantage of dynamic packaging, make sure hello streaming endpoint from which you want toostream  your content is in hello **Running** state.</span></span>
 
 > [!NOTE]
-> Considere utilizar os serviços de suporte de dados de Olá [replicador ferramenta](http://replicator.codeplex.com/) como uma alternativa tooimplementing uma ativação pós-falha de transmissão em fluxo cenário manualmente. Esta ferramenta permite-lhe tooreplicate ativos entre duas contas dos Media Services.
+> <span data-ttu-id="ee844-131">Considere utilizar os serviços de suporte de dados de Olá [replicador ferramenta](http://replicator.codeplex.com/) como uma alternativa tooimplementing uma ativação pós-falha de transmissão em fluxo cenário manualmente.</span><span class="sxs-lookup"><span data-stu-id="ee844-131">Consider using hello Media Services [Replicator Tool](http://replicator.codeplex.com/) as an alternative tooimplementing a failover streaming scenario manually.</span></span> <span data-ttu-id="ee844-132">Esta ferramenta permite-lhe tooreplicate ativos entre duas contas dos Media Services.</span><span class="sxs-lookup"><span data-stu-id="ee844-132">This tool allows you tooreplicate assets across two Media Services accounts.</span></span>
 > 
 > 
 
-## <a name="prerequisites"></a>Pré-requisitos
-* Duas contas dos Media Services numa subscrição Azure nova ou existente. Consulte [como tooCreate uma conta de Media Services](media-services-portal-create-account.md).
-* Sistema operativo: Windows 7, Windows 2008 R2 ou Windows 8.
-* .NET framework 4.5 ou o .NET Framework 4.
-* Visual Studio 2010 SP1 ou versão posterior (Professional, Premium, Ultimate ou Express).
+## <a name="prerequisites"></a><span data-ttu-id="ee844-133">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="ee844-133">Prerequisites</span></span>
+* <span data-ttu-id="ee844-134">Duas contas dos Media Services numa subscrição Azure nova ou existente.</span><span class="sxs-lookup"><span data-stu-id="ee844-134">Two Media Services accounts in a new or existing Azure subscription.</span></span> <span data-ttu-id="ee844-135">Consulte [como tooCreate uma conta de Media Services](media-services-portal-create-account.md).</span><span class="sxs-lookup"><span data-stu-id="ee844-135">See [How tooCreate a Media Services Account](media-services-portal-create-account.md).</span></span>
+* <span data-ttu-id="ee844-136">Sistema operativo: Windows 7, Windows 2008 R2 ou Windows 8.</span><span class="sxs-lookup"><span data-stu-id="ee844-136">Operating system: Windows 7, Windows 2008 R2, or Windows 8.</span></span>
+* <span data-ttu-id="ee844-137">.NET framework 4.5 ou o .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="ee844-137">.NET Framework 4.5 or .NET Framework 4.</span></span>
+* <span data-ttu-id="ee844-138">Visual Studio 2010 SP1 ou versão posterior (Professional, Premium, Ultimate ou Express).</span><span class="sxs-lookup"><span data-stu-id="ee844-138">Visual Studio 2010 SP1 or later version (Professional, Premium, Ultimate, or Express).</span></span>
 
-## <a name="set-up-your-project"></a>Configurar o projeto
-Nesta secção, pode criar e configurar um projeto de aplicação de consola c#.
+## <a name="set-up-your-project"></a><span data-ttu-id="ee844-139">Configurar o projeto</span><span class="sxs-lookup"><span data-stu-id="ee844-139">Set up your project</span></span>
+<span data-ttu-id="ee844-140">Nesta secção, pode criar e configurar um projeto de aplicação de consola c#.</span><span class="sxs-lookup"><span data-stu-id="ee844-140">In this section, you create and set up a C# Console Application project.</span></span>
 
-1. Utilize o Visual Studio toocreate uma nova solução que contém o projeto de aplicação de consola c# Olá. Introduza **HandleRedundancyForOnDemandStreaming** para o nome de Olá e, em seguida, clique em **OK**.
-2. Criar Olá **SupportFiles** pasta Olá mesmo nível como Olá **HandleRedundancyForOnDemandStreaming.csproj** ficheiro de projeto. Em Olá **SupportFiles** pasta, criar Olá **OutputFiles** e **MP4Files** pastas. Copiar um ficheiro mp4 para Olá **MP4Files** pasta. (Neste exemplo, Olá **BigBuckBunny.mp4** ficheiros é utilizado.) 
-3. Utilize **Nuget** tooadd referências tooDLLs relacionados com serviços tooMedia. No **Menu de principal do Visual Studio**, selecione **ferramentas** > **Gestor de pacotes de biblioteca** > **consola do Gestor de pacotes**. Na janela de consola Olá, escreva **Install-Package windowsazure.mediaservices**, e prima Enter.
-4. Adicionar outras referências a que são necessárias para este projeto: System, System e System. Web.
-5. Substitua **utilizando** instruções que foram adicionadas toohello **Programs.cs** ficheiro por predefinição com Olá aqueles os seguintes:
+1. <span data-ttu-id="ee844-141">Utilize o Visual Studio toocreate uma nova solução que contém o projeto de aplicação de consola c# Olá.</span><span class="sxs-lookup"><span data-stu-id="ee844-141">Use Visual Studio toocreate a new solution that contains hello C# Console Application project.</span></span> <span data-ttu-id="ee844-142">Introduza **HandleRedundancyForOnDemandStreaming** para o nome de Olá e, em seguida, clique em **OK**.</span><span class="sxs-lookup"><span data-stu-id="ee844-142">Enter **HandleRedundancyForOnDemandStreaming** for hello name, and then click **OK**.</span></span>
+2. <span data-ttu-id="ee844-143">Criar Olá **SupportFiles** pasta Olá mesmo nível como Olá **HandleRedundancyForOnDemandStreaming.csproj** ficheiro de projeto.</span><span class="sxs-lookup"><span data-stu-id="ee844-143">Create hello **SupportFiles** folder on hello same level as hello **HandleRedundancyForOnDemandStreaming.csproj** project file.</span></span> <span data-ttu-id="ee844-144">Em Olá **SupportFiles** pasta, criar Olá **OutputFiles** e **MP4Files** pastas.</span><span class="sxs-lookup"><span data-stu-id="ee844-144">Under hello **SupportFiles** folder, create hello **OutputFiles** and **MP4Files** folders.</span></span> <span data-ttu-id="ee844-145">Copiar um ficheiro mp4 para Olá **MP4Files** pasta.</span><span class="sxs-lookup"><span data-stu-id="ee844-145">Copy an .mp4 file into hello **MP4Files** folder.</span></span> <span data-ttu-id="ee844-146">(Neste exemplo, Olá **BigBuckBunny.mp4** ficheiros é utilizado.)</span><span class="sxs-lookup"><span data-stu-id="ee844-146">(In this example, hello **BigBuckBunny.mp4** file is used.)</span></span> 
+3. <span data-ttu-id="ee844-147">Utilize **Nuget** tooadd referências tooDLLs relacionados com serviços tooMedia.</span><span class="sxs-lookup"><span data-stu-id="ee844-147">Use **Nuget** tooadd references tooDLLs related tooMedia Services.</span></span> <span data-ttu-id="ee844-148">No **Menu de principal do Visual Studio**, selecione **ferramentas** > **Gestor de pacotes de biblioteca** > **consola do Gestor de pacotes**.</span><span class="sxs-lookup"><span data-stu-id="ee844-148">In **Visual Studio Main Menu**, select **TOOLS** > **Library Package Manager** > **Package Manager Console**.</span></span> <span data-ttu-id="ee844-149">Na janela de consola Olá, escreva **Install-Package windowsazure.mediaservices**, e prima Enter.</span><span class="sxs-lookup"><span data-stu-id="ee844-149">In hello console window, type **Install-Package windowsazure.mediaservices**, and press Enter.</span></span>
+4. <span data-ttu-id="ee844-150">Adicionar outras referências a que são necessárias para este projeto: System, System e System. Web.</span><span class="sxs-lookup"><span data-stu-id="ee844-150">Add other references that are required for this project: System.Configuration, System.Runtime.Serialization, and System.Web.</span></span>
+5. <span data-ttu-id="ee844-151">Substitua **utilizando** instruções que foram adicionadas toohello **Programs.cs** ficheiro por predefinição com Olá aqueles os seguintes:</span><span class="sxs-lookup"><span data-stu-id="ee844-151">Replace **using** statements that were added toohello **Programs.cs** file by default with hello following ones:</span></span>
    
         using System;
         using System.Configuration;
@@ -87,7 +87,7 @@ Nesta secção, pode criar e configurar um projeto de aplicação de consola c#.
         using Microsoft.WindowsAzure.Storage;
         using Microsoft.WindowsAzure.Storage.Blob;
         using Microsoft.WindowsAzure.Storage.Auth;
-6. Adicionar Olá **appSettings** secção toohello **. config** ficheiro e os valores de Olá de atualização com base nos serviços de suporte de dados e armazenamento valores de chaves e nome. 
+6. <span data-ttu-id="ee844-152">Adicionar Olá **appSettings** secção toohello **. config** ficheiro e os valores de Olá de atualização com base nos serviços de suporte de dados e armazenamento valores de chaves e nome.</span><span class="sxs-lookup"><span data-stu-id="ee844-152">Add hello **appSettings** section toohello **.config** file, and update hello values based on your Media Services and Storage key and name values.</span></span> 
    
         <appSettings>
           <add key="MediaServicesAccountNameSource" value="Media-Services-Account-Name-Source"/>
@@ -100,10 +100,10 @@ Nesta secção, pode criar e configurar um projeto de aplicação de consola c#.
           <add key="MediaServicesStorageAccountKeyTarget" value=" Media-Services-Storage-Account-Key-Target" />
         </appSettings>
 
-## <a name="add-code-that-handles-redundancy-for-on-demand-streaming"></a>Adicione o código que processa a redundância para transmissão em fluxo a pedido
-Nesta secção, vai criar redundância de toohandle Olá capacidade.
+## <a name="add-code-that-handles-redundancy-for-on-demand-streaming"></a><span data-ttu-id="ee844-153">Adicione o código que processa a redundância para transmissão em fluxo a pedido</span><span class="sxs-lookup"><span data-stu-id="ee844-153">Add code that handles redundancy for on-demand streaming</span></span>
+<span data-ttu-id="ee844-154">Nesta secção, vai criar redundância de toohandle Olá capacidade.</span><span class="sxs-lookup"><span data-stu-id="ee844-154">In this section, you create hello ability toohandle redundancy.</span></span>
 
-1. Adicione Olá seguir a classe de programa toohello de campos de nível de classe.
+1. <span data-ttu-id="ee844-155">Adicione Olá seguir a classe de programa toohello de campos de nível de classe.</span><span class="sxs-lookup"><span data-stu-id="ee844-155">Add hello following class-level fields toohello Program class.</span></span>
        
         // Read values from hello App.config file.
         private static readonly string MediaServicesAccountNameSource = ConfigurationManager.AppSettings["MediaServicesAccountNameSource"];
@@ -130,7 +130,7 @@ Nesta secção, vai criar redundância de toohandle Olá capacidade.
         static private MediaServicesCredentials _cachedCredentialsSource = null;
         static private MediaServicesCredentials _cachedCredentialsTarget = null;
 
-2. Substitua Olá seguir uma definição de método Olá predefinido principal. Definições de método chamadas a partir de principal são definidas abaixo.
+2. <span data-ttu-id="ee844-156">Substitua Olá seguir uma definição de método Olá predefinido principal.</span><span class="sxs-lookup"><span data-stu-id="ee844-156">Replace hello default Main method definition with hello following one.</span></span> <span data-ttu-id="ee844-157">Definições de método chamadas a partir de principal são definidas abaixo.</span><span class="sxs-lookup"><span data-stu-id="ee844-157">Method definitions that are called from Main are defined below.</span></span>
         
         static void Main(string[] args)
         {
@@ -208,10 +208,10 @@ Nesta secção, vai criar redundância de toohandle Olá capacidade.
                 writeSasLocator.Delete();
         }
 
-3. Olá seguintes definições de método é denominado do principal.
+3. <span data-ttu-id="ee844-158">Olá seguintes definições de método é denominado do principal.</span><span class="sxs-lookup"><span data-stu-id="ee844-158">hello following method definitions are called from Main.</span></span>
 
     >[!NOTE]
-    >Não há um limite de 1.000.000 políticas para diferentes políticas de serviços de suporte de dados (por exemplo, para a política de localizador ou ContentKeyAuthorizationPolicy). Deve utilizar Olá mesmo ID de política, se estiver a utilizar sempre Olá mesmo dias e acesso permissões. Por exemplo, utilize Olá mesmo ID de políticas para os localizadores são tooremain pretendido no local durante muito tempo (políticas não carregamento). Para obter mais informações, consulte [neste tópico](media-services-dotnet-manage-entities.md#limit-access-policies).
+    ><span data-ttu-id="ee844-159">Não há um limite de 1.000.000 políticas para diferentes políticas de serviços de suporte de dados (por exemplo, para a política de localizador ou ContentKeyAuthorizationPolicy).</span><span class="sxs-lookup"><span data-stu-id="ee844-159">There is a limit of 1,000,000 policies for different Media Services policies (for example, for Locator policy or ContentKeyAuthorizationPolicy).</span></span> <span data-ttu-id="ee844-160">Deve utilizar Olá mesmo ID de política, se estiver a utilizar sempre Olá mesmo dias e acesso permissões.</span><span class="sxs-lookup"><span data-stu-id="ee844-160">You should use hello same policy ID if you are always using hello same days and access permissions.</span></span> <span data-ttu-id="ee844-161">Por exemplo, utilize Olá mesmo ID de políticas para os localizadores são tooremain pretendido no local durante muito tempo (políticas não carregamento).</span><span class="sxs-lookup"><span data-stu-id="ee844-161">For example, use hello same ID for policies for locators that are intended tooremain in place for a long time (non-upload policies).</span></span> <span data-ttu-id="ee844-162">Para obter mais informações, consulte [neste tópico](media-services-dotnet-manage-entities.md#limit-access-policies).</span><span class="sxs-lookup"><span data-stu-id="ee844-162">For more information, see [this topic](media-services-dotnet-manage-entities.md#limit-access-policies).</span></span>
 
         public static IAsset CreateAssetAndUploadSingleFile(CloudMediaContext context,
                                                         AssetCreationOptions assetCreationOptions,
@@ -939,12 +939,12 @@ Nesta secção, vai criar redundância de toohandle Olá capacidade.
             return request;
         }
 
-## <a name="next-steps"></a>Passos seguintes
-Pode agora utilizar um pedidos de tooroute do Gestor de tráfego entre dois centros de dados Olá e, por conseguinte, efetuar a ativação pós-falha em caso de quaisquer falhas.
+## <a name="next-steps"></a><span data-ttu-id="ee844-163">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="ee844-163">Next steps</span></span>
+<span data-ttu-id="ee844-164">Pode agora utilizar um pedidos de tooroute do Gestor de tráfego entre dois centros de dados Olá e, por conseguinte, efetuar a ativação pós-falha em caso de quaisquer falhas.</span><span class="sxs-lookup"><span data-stu-id="ee844-164">You can now use a traffic manager tooroute requests between hello two datacenters, and thus fail over in case of any outages.</span></span>
 
-## <a name="media-services-learning-paths"></a>Percursos de aprendizagem dos Media Services
+## <a name="media-services-learning-paths"></a><span data-ttu-id="ee844-165">Percursos de aprendizagem dos Media Services</span><span class="sxs-lookup"><span data-stu-id="ee844-165">Media Services learning paths</span></span>
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Enviar comentários
+## <a name="provide-feedback"></a><span data-ttu-id="ee844-166">Enviar comentários</span><span class="sxs-lookup"><span data-stu-id="ee844-166">Provide feedback</span></span>
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 

@@ -20,26 +20,26 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="cheat-sheet-for-an-automated-data-pipeline-for-azure-machine-learning-predictions"></a>Referência rápida para um pipeline de dados automático para predições do Azure Machine Learning
-Olá **Microsoft Azure Machine Learning automatizada cábula de pipeline de dados** ajuda a navegar através da tecnologia que pode utilizar tooget sua tooyour dados serviço web Machine Learning onde pode ser classificada pela sua preditiva modelo de análise.
+# <a name="cheat-sheet-for-an-automated-data-pipeline-for-azure-machine-learning-predictions"></a><span data-ttu-id="a35df-103">Referência rápida para um pipeline de dados automático para predições do Azure Machine Learning</span><span class="sxs-lookup"><span data-stu-id="a35df-103">Cheat sheet for an automated data pipeline for Azure Machine Learning predictions</span></span>
+<span data-ttu-id="a35df-104">Olá **Microsoft Azure Machine Learning automatizada cábula de pipeline de dados** ajuda a navegar através da tecnologia que pode utilizar tooget sua tooyour dados serviço web Machine Learning onde pode ser classificada pela sua preditiva modelo de análise.</span><span class="sxs-lookup"><span data-stu-id="a35df-104">hello **Microsoft Azure Machine Learning automated data pipeline cheat sheet** helps you navigate through the technology you can use tooget your data tooyour Machine Learning web service where it can be scored by your predictive analytics model.</span></span>
 
-Dependendo se os seus dados estão no local, na nuvem de Olá, transmissão em fluxo ou em tempo real, existem diferentes mecanismos toomove disponíveis Olá dados tooyour web ponto final de serviço para classificação.
-Esta folha de referência explica como que decisões Olá terá toomake e oferece tooarticles de ligações que podem ajudar a desenvolver a sua solução.
+<span data-ttu-id="a35df-105">Dependendo se os seus dados estão no local, na nuvem de Olá, transmissão em fluxo ou em tempo real, existem diferentes mecanismos toomove disponíveis Olá dados tooyour web ponto final de serviço para classificação.</span><span class="sxs-lookup"><span data-stu-id="a35df-105">Depending on whether your data is on-premises, in hello cloud, or streaming real-time, there are different mechanisms available toomove hello data tooyour web service endpoint for scoring.</span></span>
+<span data-ttu-id="a35df-106">Esta folha de referência explica como que decisões Olá terá toomake e oferece tooarticles de ligações que podem ajudar a desenvolver a sua solução.</span><span class="sxs-lookup"><span data-stu-id="a35df-106">This cheat sheet walks you through hello decisions you need toomake, and it offers links tooarticles that can help you develop your solution.</span></span>
 
-## <a name="download-hello-machine-learning-automated-data-pipeline-cheat-sheet"></a>Transferir a folha de referência do pipeline de dados automática do Olá Machine Learning
-Depois de transferir cábula Olá, pode imprimi-lo no tamanho de tabloide (11 x 17 pol.).
+## <a name="download-hello-machine-learning-automated-data-pipeline-cheat-sheet"></a><span data-ttu-id="a35df-107">Transferir a folha de referência do pipeline de dados automática do Olá Machine Learning</span><span class="sxs-lookup"><span data-stu-id="a35df-107">Download hello Machine Learning automated data pipeline cheat sheet</span></span>
+<span data-ttu-id="a35df-108">Depois de transferir cábula Olá, pode imprimi-lo no tamanho de tabloide (11 x 17 pol.).</span><span class="sxs-lookup"><span data-stu-id="a35df-108">Once you download hello cheat sheet, you can print it in tabloid size (11 x 17 in.).</span></span>
 
-Transferir Olá cábula aqui:  **[Microsoft Azure Machine Learning automatizada cábula de pipeline de dados](http://download.microsoft.com/download/C/C/7/CC726F8B-2E6F-4C20-9B6F-AFBEE8253023/microsoft-machine-learning-operationalization-cheat-sheet_v1.pdf)**
+<span data-ttu-id="a35df-109">Transferir Olá cábula aqui:  **[Microsoft Azure Machine Learning automatizada cábula de pipeline de dados](http://download.microsoft.com/download/C/C/7/CC726F8B-2E6F-4C20-9B6F-AFBEE8253023/microsoft-machine-learning-operationalization-cheat-sheet_v1.pdf)**</span><span class="sxs-lookup"><span data-stu-id="a35df-109">Download hello cheat sheet here: **[Microsoft Azure Machine Learning automated data pipeline cheat sheet](http://download.microsoft.com/download/C/C/7/CC726F8B-2E6F-4C20-9B6F-AFBEE8253023/microsoft-machine-learning-operationalization-cheat-sheet_v1.pdf)**</span></span>
 
 ![Descrição geral das funcionalidades do Microsoft Azure Machine Learning Studio][op-cheat-sheet]
 
 [op-cheat-sheet]: ./media/machine-learning-automated-data-pipeline-cheat-sheet/machine-learning-automated-data-pipeline-cheat-sheet_v1.1.png
 
 
-## <a name="more-help-with-machine-learning-studio"></a>Mais ajuda no Machine Learning Studio
-* Para obter uma descrição geral do Microsoft Azure Machine Learning, consulte [toomachine introdução learning no Microsoft Azure](machine-learning-what-is-machine-learning.md).
-* Para obter uma explicação de como toodeploy um serviço web de classificação, consulte [implementar um serviço web do Azure Machine Learning](machine-learning-publish-a-machine-learning-web-service.md).
-* Para ver um debate sobre como tooconsume um serviço web de classificação, consulte [como tooconsume um serviço Web do Azure Machine Learning](machine-learning-consume-web-services.md).
+## <a name="more-help-with-machine-learning-studio"></a><span data-ttu-id="a35df-111">Mais ajuda no Machine Learning Studio</span><span class="sxs-lookup"><span data-stu-id="a35df-111">More help with Machine Learning Studio</span></span>
+* <span data-ttu-id="a35df-112">Para obter uma descrição geral do Microsoft Azure Machine Learning, consulte [toomachine introdução learning no Microsoft Azure](machine-learning-what-is-machine-learning.md).</span><span class="sxs-lookup"><span data-stu-id="a35df-112">For an overview of Microsoft Azure Machine Learning, see [Introduction toomachine learning on Microsoft Azure](machine-learning-what-is-machine-learning.md).</span></span>
+* <span data-ttu-id="a35df-113">Para obter uma explicação de como toodeploy um serviço web de classificação, consulte [implementar um serviço web do Azure Machine Learning](machine-learning-publish-a-machine-learning-web-service.md).</span><span class="sxs-lookup"><span data-stu-id="a35df-113">For an explanation of how toodeploy a scoring web service, see [Deploy an Azure Machine Learning web service](machine-learning-publish-a-machine-learning-web-service.md).</span></span>
+* <span data-ttu-id="a35df-114">Para ver um debate sobre como tooconsume um serviço web de classificação, consulte [como tooconsume um serviço Web do Azure Machine Learning](machine-learning-consume-web-services.md).</span><span class="sxs-lookup"><span data-stu-id="a35df-114">For a discussion of how tooconsume a scoring web service, see [How tooconsume an Azure Machine Learning Web service](machine-learning-consume-web-services.md).</span></span>
 
 [!INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 

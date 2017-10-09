@@ -21,30 +21,30 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="configuring-python-with-azure-app-service-web-apps"></a>Configurar o Python com as Web Apps do App Service do Azure
-Este tutorial descreve as opções de criação e configuração de uma aplicação básica para o Web Server Gateway Interface (WSGI) em conformidade Python no [Web Apps do Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714).
+# <a name="configuring-python-with-azure-app-service-web-apps"></a><span data-ttu-id="699c3-103">Configurar o Python com as Web Apps do App Service do Azure</span><span class="sxs-lookup"><span data-stu-id="699c3-103">Configuring Python with Azure App Service Web Apps</span></span>
+<span data-ttu-id="699c3-104">Este tutorial descreve as opções de criação e configuração de uma aplicação básica para o Web Server Gateway Interface (WSGI) em conformidade Python no [Web Apps do Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714).</span><span class="sxs-lookup"><span data-stu-id="699c3-104">This tutorial describes options for authoring and configuring a basic Web Server Gateway Interface (WSGI) compliant Python application on [Azure App Service Web Apps](http://go.microsoft.com/fwlink/?LinkId=529714).</span></span>
 
-Descreve as funcionalidades adicionais de implementação de Git, tais como o ambiente virtual e a instalação do pacote com o ficheiro requirements.txt.
+<span data-ttu-id="699c3-105">Descreve as funcionalidades adicionais de implementação de Git, tais como o ambiente virtual e a instalação do pacote com o ficheiro requirements.txt.</span><span class="sxs-lookup"><span data-stu-id="699c3-105">It describes additional features of Git deployment, such as virtual environment and package installation using requirements.txt.</span></span>
 
-## <a name="bottle-django-or-flask"></a>Bottle, Django ou Flask?
-Olá, Azure Marketplace contém modelos para estruturas de Olá Bottle, Django e Flask. Se estiver a desenvolver sua primeira aplicação web no App Service do Azure, ou não estiver familiarizado com o Git, recomendamos que siga um destes tutoriais, que incluem instruções passo a passo para a criação de uma aplicação de trabalho a partir da Galeria de Olá utilizando a implementação de Git do Windows ou Mac:
+## <a name="bottle-django-or-flask"></a><span data-ttu-id="699c3-106">Bottle, Django ou Flask?</span><span class="sxs-lookup"><span data-stu-id="699c3-106">Bottle, Django or Flask?</span></span>
+<span data-ttu-id="699c3-107">Olá, Azure Marketplace contém modelos para estruturas de Olá Bottle, Django e Flask.</span><span class="sxs-lookup"><span data-stu-id="699c3-107">hello Azure Marketplace contains templates for hello Bottle, Django and Flask frameworks.</span></span> <span data-ttu-id="699c3-108">Se estiver a desenvolver sua primeira aplicação web no App Service do Azure, ou não estiver familiarizado com o Git, recomendamos que siga um destes tutoriais, que incluem instruções passo a passo para a criação de uma aplicação de trabalho a partir da Galeria de Olá utilizando a implementação de Git do Windows ou Mac:</span><span class="sxs-lookup"><span data-stu-id="699c3-108">If you are developing your first web app in Azure App Service, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from hello gallery using Git deployment from Windows or Mac:</span></span>
 
-* [Criar web apps com Bottle](web-sites-python-create-deploy-bottle-app.md)
-* [Criar web apps com o Django](web-sites-python-create-deploy-django-app.md)
-* [Criar web apps com Flask](web-sites-python-create-deploy-flask-app.md)
+* [<span data-ttu-id="699c3-109">Criar web apps com Bottle</span><span class="sxs-lookup"><span data-stu-id="699c3-109">Creating web apps with Bottle</span></span>](web-sites-python-create-deploy-bottle-app.md)
+* [<span data-ttu-id="699c3-110">Criar web apps com o Django</span><span class="sxs-lookup"><span data-stu-id="699c3-110">Creating web apps with Django</span></span>](web-sites-python-create-deploy-django-app.md)
+* [<span data-ttu-id="699c3-111">Criar web apps com Flask</span><span class="sxs-lookup"><span data-stu-id="699c3-111">Creating web apps with Flask</span></span>](web-sites-python-create-deploy-flask-app.md)
 
-## <a name="web-app-creation-on-azure-portal"></a>Criação da aplicação Web no Portal do Azure
-Este tutorial assume uma existente do Azure subscrição e acesso toohello Portal do Azure.
+## <a name="web-app-creation-on-azure-portal"></a><span data-ttu-id="699c3-112">Criação da aplicação Web no Portal do Azure</span><span class="sxs-lookup"><span data-stu-id="699c3-112">Web app creation on Azure Portal</span></span>
+<span data-ttu-id="699c3-113">Este tutorial assume uma existente do Azure subscrição e acesso toohello Portal do Azure.</span><span class="sxs-lookup"><span data-stu-id="699c3-113">This tutorial assumes an existing Azure subscription and access toohello Azure Portal.</span></span>
 
-Se não tiver uma aplicação web existente, pode criar um Olá [Portal do Azure](https://portal.azure.com).  Clique no botão novo Olá no canto superior esquerdo de Olá, em seguida, clique em **Web + móvel** > **aplicação Web**.
+<span data-ttu-id="699c3-114">Se não tiver uma aplicação web existente, pode criar um Olá [Portal do Azure](https://portal.azure.com).</span><span class="sxs-lookup"><span data-stu-id="699c3-114">If you do not have an existing web app, you can create one from hello [Azure Portal](https://portal.azure.com).</span></span>  <span data-ttu-id="699c3-115">Clique no botão novo Olá no canto superior esquerdo de Olá, em seguida, clique em **Web + móvel** > **aplicação Web**.</span><span class="sxs-lookup"><span data-stu-id="699c3-115">Click hello NEW button in hello top left corner, then click **Web + Mobile** > **Web app**.</span></span>
 
-## <a name="git-publishing"></a>Publicação de Git
-Configurar a publicação de Git para a sua aplicação web recentemente criada ao seguir as instruções de Olá em [tooAzure de implementação de Git Local do serviço de aplicações](app-service-deploy-local-git.md). Este tutorial utiliza o Git toocreate, gerir e publicar o nosso tooAzure de aplicação web Python do serviço de aplicações.
+## <a name="git-publishing"></a><span data-ttu-id="699c3-116">Publicação de Git</span><span class="sxs-lookup"><span data-stu-id="699c3-116">Git Publishing</span></span>
+<span data-ttu-id="699c3-117">Configurar a publicação de Git para a sua aplicação web recentemente criada ao seguir as instruções de Olá em [tooAzure de implementação de Git Local do serviço de aplicações](app-service-deploy-local-git.md).</span><span class="sxs-lookup"><span data-stu-id="699c3-117">Configure Git publishing for your newly created web app by following hello instructions at [Local Git Deployment tooAzure App Service](app-service-deploy-local-git.md).</span></span> <span data-ttu-id="699c3-118">Este tutorial utiliza o Git toocreate, gerir e publicar o nosso tooAzure de aplicação web Python do serviço de aplicações.</span><span class="sxs-lookup"><span data-stu-id="699c3-118">This tutorial uses Git toocreate, manage, and publish our Python web app tooAzure App Service.</span></span>
 
-Depois de publicação de Git configurada, um repositório de Git será criado e associado à sua aplicação web. URL do repositório de Olá será apresentada e henceforth pode ser utilizados toopush dados da nuvem de toohello de ambiente de desenvolvimento local Olá. toopublish aplicações através do Git, certifique-se também é instalado um cliente do Git e utilize Olá instruções fornecidas toopush sua tooAzure de conteúdo de aplicação de web do serviço de aplicações.
+<span data-ttu-id="699c3-119">Depois de publicação de Git configurada, um repositório de Git será criado e associado à sua aplicação web.</span><span class="sxs-lookup"><span data-stu-id="699c3-119">Once Git publishing is set up, a Git repository will be created and associated with your web app.</span></span> <span data-ttu-id="699c3-120">URL do repositório de Olá será apresentada e henceforth pode ser utilizados toopush dados da nuvem de toohello de ambiente de desenvolvimento local Olá.</span><span class="sxs-lookup"><span data-stu-id="699c3-120">hello repository's URL will be displayed and can henceforth be used toopush data from hello local development environment toohello cloud.</span></span> <span data-ttu-id="699c3-121">toopublish aplicações através do Git, certifique-se também é instalado um cliente do Git e utilize Olá instruções fornecidas toopush sua tooAzure de conteúdo de aplicação de web do serviço de aplicações.</span><span class="sxs-lookup"><span data-stu-id="699c3-121">toopublish applications via Git, make sure a Git client is also installed and use hello instructions provided toopush your web app content tooAzure App Service.</span></span>
 
-## <a name="application-overview"></a>Descrição Geral da Aplicação
-Nas secções seguintes Olá, Olá os seguintes ficheiros é criado. Estes devem ser colocados na raiz de Olá do repositório de Git Olá.
+## <a name="application-overview"></a><span data-ttu-id="699c3-122">Descrição Geral da Aplicação</span><span class="sxs-lookup"><span data-stu-id="699c3-122">Application Overview</span></span>
+<span data-ttu-id="699c3-123">Nas secções seguintes Olá, Olá os seguintes ficheiros é criado.</span><span class="sxs-lookup"><span data-stu-id="699c3-123">In hello next sections, hello following files are created.</span></span> <span data-ttu-id="699c3-124">Estes devem ser colocados na raiz de Olá do repositório de Git Olá.</span><span class="sxs-lookup"><span data-stu-id="699c3-124">They should be placed in hello root of hello Git repository.</span></span>
 
     app.py
     requirements.txt
@@ -53,10 +53,10 @@ Nas secções seguintes Olá, Olá os seguintes ficheiros é criado. Estes devem
     ptvs_virtualenv_proxy.py
 
 
-## <a name="wsgi-handler"></a>Processador WSGI
-WSGI é uma norma de Python descrita através de [PEP 3333](http://www.python.org/dev/peps/pep-3333/) definir uma interface entre o servidor de web de Olá e Python. Fornece uma interface padronizada para escrever várias aplicações web e estruturas com o Python. Estruturas de web do Python populares utilizam atualmente WSGI. Oferece de Web Apps do App Service do Azure que suporta para qualquer estruturas; Além disso, utilizadores avançados podem ainda criar os seus próprios, desde que o processador personalizado Olá segue diretrizes de especificação de WSGI Olá.
+## <a name="wsgi-handler"></a><span data-ttu-id="699c3-125">Processador WSGI</span><span class="sxs-lookup"><span data-stu-id="699c3-125">WSGI Handler</span></span>
+<span data-ttu-id="699c3-126">WSGI é uma norma de Python descrita através de [PEP 3333](http://www.python.org/dev/peps/pep-3333/) definir uma interface entre o servidor de web de Olá e Python.</span><span class="sxs-lookup"><span data-stu-id="699c3-126">WSGI is a Python standard described by [PEP 3333](http://www.python.org/dev/peps/pep-3333/) defining an interface between hello web server and Python.</span></span> <span data-ttu-id="699c3-127">Fornece uma interface padronizada para escrever várias aplicações web e estruturas com o Python.</span><span class="sxs-lookup"><span data-stu-id="699c3-127">It provides a standardized interface for writing various web applications and frameworks using Python.</span></span> <span data-ttu-id="699c3-128">Estruturas de web do Python populares utilizam atualmente WSGI.</span><span class="sxs-lookup"><span data-stu-id="699c3-128">Popular Python web frameworks today use WSGI.</span></span> <span data-ttu-id="699c3-129">Oferece de Web Apps do App Service do Azure que suporta para qualquer estruturas; Além disso, utilizadores avançados podem ainda criar os seus próprios, desde que o processador personalizado Olá segue diretrizes de especificação de WSGI Olá.</span><span class="sxs-lookup"><span data-stu-id="699c3-129">Azure App Service Web Apps gives you support for any such frameworks; in addition, advanced users can even author their own as long as hello custom handler follows hello WSGI specification guidelines.</span></span>
 
-Eis um exemplo de um `app.py` que define um processador personalizado:
+<span data-ttu-id="699c3-130">Eis um exemplo de um `app.py` que define um processador personalizado:</span><span class="sxs-lookup"><span data-stu-id="699c3-130">Here's an example of an `app.py` that defines a custom handler:</span></span>
 
     def wsgi_app(environ, start_response):
         status = '200 OK'
@@ -71,41 +71,41 @@ Eis um exemplo de um `app.py` que define um processador personalizado:
         httpd = make_server('localhost', 5555, wsgi_app)
         httpd.serve_forever()
 
-Pode executar esta aplicação localmente com `python app.py`, em seguida, procure demasiado`http://localhost:5555` no seu browser.
+<span data-ttu-id="699c3-131">Pode executar esta aplicação localmente com `python app.py`, em seguida, procure demasiado`http://localhost:5555` no seu browser.</span><span class="sxs-lookup"><span data-stu-id="699c3-131">You can run this application locally with `python app.py`, then browse too`http://localhost:5555` in your web browser.</span></span>
 
-## <a name="virtual-environment"></a>Ambiente virtual
-Embora a aplicação de exemplo de Olá acima não requer quaisquer pacotes externos, é provável que a aplicação irá necessitar de algumas.
+## <a name="virtual-environment"></a><span data-ttu-id="699c3-132">Ambiente virtual</span><span class="sxs-lookup"><span data-stu-id="699c3-132">Virtual Environment</span></span>
+<span data-ttu-id="699c3-133">Embora a aplicação de exemplo de Olá acima não requer quaisquer pacotes externos, é provável que a aplicação irá necessitar de algumas.</span><span class="sxs-lookup"><span data-stu-id="699c3-133">Although hello example app above doesn't require any external packages, it is likely that your application will require some.</span></span>
 
-toohelp gerir as dependências de pacote externo, implementação de Git do Azure suporta a criação de Olá dos ambientes virtuais.
+<span data-ttu-id="699c3-134">toohelp gerir as dependências de pacote externo, implementação de Git do Azure suporta a criação de Olá dos ambientes virtuais.</span><span class="sxs-lookup"><span data-stu-id="699c3-134">toohelp manage external package dependencies, Azure Git deployment supports hello creation of virtual environments.</span></span>
 
-Quando o Azure Deteta um ficheiro requirements.txt na raiz de Olá do repositório de Olá, este cria automaticamente um ambiente virtual com o nome `env`. Isto só ocorre na primeira implementação de hello, ou durante a implementação de após Olá runtime do Python selecionada foi alterada.
+<span data-ttu-id="699c3-135">Quando o Azure Deteta um ficheiro requirements.txt na raiz de Olá do repositório de Olá, este cria automaticamente um ambiente virtual com o nome `env`.</span><span class="sxs-lookup"><span data-stu-id="699c3-135">When Azure detects a requirements.txt in hello root of hello repository, it automatically creates a virtual environment named `env`.</span></span> <span data-ttu-id="699c3-136">Isto só ocorre na primeira implementação de hello, ou durante a implementação de após Olá runtime do Python selecionada foi alterada.</span><span class="sxs-lookup"><span data-stu-id="699c3-136">This only occurs on hello first deployment, or during any deployment after hello selected Python runtime has changed.</span></span>
 
-Provavelmente pretenderá toocreate um ambiente virtual localmente para o desenvolvimento, mas não incluí-la no seu repositório de Git.
+<span data-ttu-id="699c3-137">Provavelmente pretenderá toocreate um ambiente virtual localmente para o desenvolvimento, mas não incluí-la no seu repositório de Git.</span><span class="sxs-lookup"><span data-stu-id="699c3-137">You will probably want toocreate a virtual environment locally for development, but don't include it in your Git repository.</span></span>
 
-## <a name="package-management"></a>Gestão de Pacotes
-Os pacotes listados em requirements.txt são instalados automaticamente no ambiente virtual Olá através do pip. Isto ocorre em todas as implementações, mas o pip saltará a instalação se um pacote já está instalado.
+## <a name="package-management"></a><span data-ttu-id="699c3-138">Gestão de Pacotes</span><span class="sxs-lookup"><span data-stu-id="699c3-138">Package Management</span></span>
+<span data-ttu-id="699c3-139">Os pacotes listados em requirements.txt são instalados automaticamente no ambiente virtual Olá através do pip.</span><span class="sxs-lookup"><span data-stu-id="699c3-139">Packages listed in requirements.txt will be installed automatically in hello virtual environment using pip.</span></span> <span data-ttu-id="699c3-140">Isto ocorre em todas as implementações, mas o pip saltará a instalação se um pacote já está instalado.</span><span class="sxs-lookup"><span data-stu-id="699c3-140">This happens on every deployment, but pip will skip installation if a package is already installed.</span></span>
 
-Exemplo `requirements.txt`:
+<span data-ttu-id="699c3-141">Exemplo `requirements.txt`:</span><span class="sxs-lookup"><span data-stu-id="699c3-141">Example `requirements.txt`:</span></span>
 
     azure==0.8.4
 
 
-## <a name="python-version"></a>Versão do Python
+## <a name="python-version"></a><span data-ttu-id="699c3-142">Versão do Python</span><span class="sxs-lookup"><span data-stu-id="699c3-142">Python Version</span></span>
 [!INCLUDE [web-sites-python-customizing-runtime](../../includes/web-sites-python-customizing-runtime.md)]
 
-Exemplo `runtime.txt`:
+<span data-ttu-id="699c3-143">Exemplo `runtime.txt`:</span><span class="sxs-lookup"><span data-stu-id="699c3-143">Example `runtime.txt`:</span></span>
 
     python-2.7
 
 
-## <a name="webconfig"></a>Web.config
-Terá de toocreate um toospecify do ficheiro Web. config como servidor de Olá deve processar pedidos.
+## <a name="webconfig"></a><span data-ttu-id="699c3-144">Web.config</span><span class="sxs-lookup"><span data-stu-id="699c3-144">Web.config</span></span>
+<span data-ttu-id="699c3-145">Terá de toocreate um toospecify do ficheiro Web. config como servidor de Olá deve processar pedidos.</span><span class="sxs-lookup"><span data-stu-id="699c3-145">You'll need toocreate a web.config file toospecify how hello server should handle requests.</span></span>
 
-Tenha em atenção que se tiver um ficheiro de x.y. config no seu repositório, em que corresponde ao x.y Olá selecionados runtime do Python, em seguida, Azure automaticamente vai copiar ficheiro adequado do Olá como Web. config.
+<span data-ttu-id="699c3-146">Tenha em atenção que se tiver um ficheiro de x.y. config no seu repositório, em que corresponde ao x.y Olá selecionados runtime do Python, em seguida, Azure automaticamente vai copiar ficheiro adequado do Olá como Web. config.</span><span class="sxs-lookup"><span data-stu-id="699c3-146">Note that if you have a web.x.y.config file in your repository, where x.y matches hello selected Python runtime, then Azure will automatically copy hello appropriate file as web.config.</span></span>
 
-Olá exemplos de Web. config seguintes dependem de um script de proxy do ambiente virtual, que está descrito na secção seguinte, Olá.  Funcionam com o processador WSGI Olá utilizado no exemplo de Olá `app.py` acima.
+<span data-ttu-id="699c3-147">Olá exemplos de Web. config seguintes dependem de um script de proxy do ambiente virtual, que está descrito na secção seguinte, Olá.</span><span class="sxs-lookup"><span data-stu-id="699c3-147">hello following web.config examples rely on a virtual environment proxy script, which is described in hello next section.</span></span>  <span data-ttu-id="699c3-148">Funcionam com o processador WSGI Olá utilizado no exemplo de Olá `app.py` acima.</span><span class="sxs-lookup"><span data-stu-id="699c3-148">They work with hello WSGI handler used in hello example `app.py` above.</span></span>
 
-Exemplo `web.config` para Python 2.7:
+<span data-ttu-id="699c3-149">Exemplo `web.config` para Python 2.7:</span><span class="sxs-lookup"><span data-stu-id="699c3-149">Example `web.config` for Python 2.7:</span></span>
 
     <?xml version="1.0"?>
     <configuration>
@@ -155,7 +155,7 @@ Exemplo `web.config` para Python 2.7:
     </configuration>
 
 
-Exemplo `web.config` para Python 3.4:
+<span data-ttu-id="699c3-150">Exemplo `web.config` para Python 3.4:</span><span class="sxs-lookup"><span data-stu-id="699c3-150">Example `web.config` for Python 3.4:</span></span>
 
     <?xml version="1.0"?>
     <configuration>
@@ -203,18 +203,18 @@ Exemplo `web.config` para Python 3.4:
     </configuration>
 
 
-Ficheiros estáticos irão ser processados pelo servidor de web de Olá diretamente, sem passar código Python, para um melhor desempenho.
+<span data-ttu-id="699c3-151">Ficheiros estáticos irão ser processados pelo servidor de web de Olá diretamente, sem passar código Python, para um melhor desempenho.</span><span class="sxs-lookup"><span data-stu-id="699c3-151">Static files will be handled by hello web server directly, without going through Python code, for improved performance.</span></span>
 
-No Olá acima exemplos, localização Olá de ficheiros estáticos de Olá no disco deve corresponder à localização de Olá no URL Olá. Isto significa que um pedido para `http://pythonapp.azurewebsites.net/static/site.css` irá servir o ficheiro de Olá no disco em `\static\site.css`.
+<span data-ttu-id="699c3-152">No Olá acima exemplos, localização Olá de ficheiros estáticos de Olá no disco deve corresponder à localização de Olá no URL Olá.</span><span class="sxs-lookup"><span data-stu-id="699c3-152">In hello above examples, hello location of hello static files on disk should match hello location in hello URL.</span></span> <span data-ttu-id="699c3-153">Isto significa que um pedido para `http://pythonapp.azurewebsites.net/static/site.css` irá servir o ficheiro de Olá no disco em `\static\site.css`.</span><span class="sxs-lookup"><span data-stu-id="699c3-153">This means that a request for `http://pythonapp.azurewebsites.net/static/site.css` will serve hello file on disk at `\static\site.css`.</span></span>
 
-`WSGI_ALT_VIRTUALENV_HANDLER`é aqui que pode especificar o processador WSGI Olá. No Olá acima exemplos, tem `app.wsgi_app` porque o processador de Olá é uma função com o nome `wsgi_app` no `app.py` na pasta raiz de Olá.
+<span data-ttu-id="699c3-154">`WSGI_ALT_VIRTUALENV_HANDLER`é aqui que pode especificar o processador WSGI Olá.</span><span class="sxs-lookup"><span data-stu-id="699c3-154">`WSGI_ALT_VIRTUALENV_HANDLER` is where you specify hello WSGI handler.</span></span> <span data-ttu-id="699c3-155">No Olá acima exemplos, tem `app.wsgi_app` porque o processador de Olá é uma função com o nome `wsgi_app` no `app.py` na pasta raiz de Olá.</span><span class="sxs-lookup"><span data-stu-id="699c3-155">In hello above examples, it's `app.wsgi_app` because hello handler is a function named `wsgi_app` in `app.py` in hello root folder.</span></span>
 
-`PYTHONPATH`pode ser personalizado, mas se instalar todas as suas dependências no ambiente virtual Olá especificando-los no requirements.txt, não deverá ser preciso toochange-lo.
+<span data-ttu-id="699c3-156">`PYTHONPATH`pode ser personalizado, mas se instalar todas as suas dependências no ambiente virtual Olá especificando-los no requirements.txt, não deverá ser preciso toochange-lo.</span><span class="sxs-lookup"><span data-stu-id="699c3-156">`PYTHONPATH` can be customized, but if you install all your dependencies in hello virtual environment by specifying them in requirements.txt, you shouldn't need toochange it.</span></span>
 
-## <a name="virtual-environment-proxy"></a>Proxy de ambiente virtual
-Olá seguinte script é o processador WSGI tooretrieve utilizados Olá, ativar erros de registo e de ambiente virtuais no Olá. É concebida toobe genérico e utilizada sem modificações.
+## <a name="virtual-environment-proxy"></a><span data-ttu-id="699c3-157">Proxy de ambiente virtual</span><span class="sxs-lookup"><span data-stu-id="699c3-157">Virtual Environment Proxy</span></span>
+<span data-ttu-id="699c3-158">Olá seguinte script é o processador WSGI tooretrieve utilizados Olá, ativar erros de registo e de ambiente virtuais no Olá.</span><span class="sxs-lookup"><span data-stu-id="699c3-158">hello following script is used tooretrieve hello WSGI handler, activate hello virtual environment and log errors.</span></span> <span data-ttu-id="699c3-159">É concebida toobe genérico e utilizada sem modificações.</span><span class="sxs-lookup"><span data-stu-id="699c3-159">It is designed toobe generic and used without modifications.</span></span>
 
-Conteúdo do `ptvs_virtualenv_proxy.py`:
+<span data-ttu-id="699c3-160">Conteúdo do `ptvs_virtualenv_proxy.py`:</span><span class="sxs-lookup"><span data-stu-id="699c3-160">Contents of `ptvs_virtualenv_proxy.py`:</span></span>
 
      # ############################################################################
      #
@@ -340,23 +340,23 @@ Conteúdo do `ptvs_virtualenv_proxy.py`:
         return handler
 
 
-## <a name="customize-git-deployment"></a>Personalizar a implementação de Git
+## <a name="customize-git-deployment"></a><span data-ttu-id="699c3-161">Personalizar a implementação de Git</span><span class="sxs-lookup"><span data-stu-id="699c3-161">Customize Git deployment</span></span>
 [!INCLUDE [web-sites-python-customizing-runtime](../../includes/web-sites-python-customizing-deployment.md)]
 
-## <a name="troubleshooting---package-installation"></a>Resolução de problemas - Instalação do Pacote
+## <a name="troubleshooting---package-installation"></a><span data-ttu-id="699c3-162">Resolução de problemas - Instalação do Pacote</span><span class="sxs-lookup"><span data-stu-id="699c3-162">Troubleshooting - Package Installation</span></span>
 [!INCLUDE [web-sites-python-troubleshooting-package-installation](../../includes/web-sites-python-troubleshooting-package-installation.md)]
 
-## <a name="troubleshooting---virtual-environment"></a>Resolução de problemas - Ambiente Virtual
+## <a name="troubleshooting---virtual-environment"></a><span data-ttu-id="699c3-163">Resolução de problemas - Ambiente Virtual</span><span class="sxs-lookup"><span data-stu-id="699c3-163">Troubleshooting - Virtual Environment</span></span>
 [!INCLUDE [web-sites-python-troubleshooting-virtual-environment](../../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
-## <a name="next-steps"></a>Passos seguintes
-Para obter mais informações, consulte Olá [Centro para programadores do Python](/develop/python/).
+## <a name="next-steps"></a><span data-ttu-id="699c3-164">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="699c3-164">Next steps</span></span>
+<span data-ttu-id="699c3-165">Para obter mais informações, consulte Olá [Centro para programadores do Python](/develop/python/).</span><span class="sxs-lookup"><span data-stu-id="699c3-165">For more information, see hello [Python Developer Center](/develop/python/).</span></span>
 
 > [!NOTE]
-> Se quiser tooget iniciado com o App Service do Azure antes de inscrever-se numa conta do Azure, aceda demasiado[experimentar o App Service](https://azure.microsoft.com/try/app-service/), onde, pode criar imediatamente uma aplicação web de arranque de curta duração no App Service. Sem cartões de crédito; sem compromissos.
+> <span data-ttu-id="699c3-166">Se quiser tooget iniciado com o App Service do Azure antes de inscrever-se numa conta do Azure, aceda demasiado[experimentar o App Service](https://azure.microsoft.com/try/app-service/), onde, pode criar imediatamente uma aplicação web de arranque de curta duração no App Service.</span><span class="sxs-lookup"><span data-stu-id="699c3-166">If you want tooget started with Azure App Service before signing up for an Azure account, go too[Try App Service](https://azure.microsoft.com/try/app-service/), where you can immediately create a short-lived starter web app in App Service.</span></span> <span data-ttu-id="699c3-167">Sem cartões de crédito; sem compromissos.</span><span class="sxs-lookup"><span data-stu-id="699c3-167">No credit cards required; no commitments.</span></span>
 > 
 > 
 
-## <a name="whats-changed"></a>O que mudou
-* Para um guia toohello alteração de Web sites tooApp serviço consulte: [App Service do Azure e o respetivo impacto nos serviços do Azure existentes](http://go.microsoft.com/fwlink/?LinkId=529714)
+## <a name="whats-changed"></a><span data-ttu-id="699c3-168">O que mudou</span><span class="sxs-lookup"><span data-stu-id="699c3-168">What's changed</span></span>
+* <span data-ttu-id="699c3-169">Para um guia toohello alteração de Web sites tooApp serviço consulte: [App Service do Azure e o respetivo impacto nos serviços do Azure existentes](http://go.microsoft.com/fwlink/?LinkId=529714)</span><span class="sxs-lookup"><span data-stu-id="699c3-169">For a guide toohello change from Websites tooApp Service see: [Azure App Service and Its Impact on Existing Azure Services](http://go.microsoft.com/fwlink/?LinkId=529714)</span></span>
 

@@ -20,227 +20,227 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="track-b2b-communication-in-hello-microsoft-operations-management-suite-oms"></a>Controlar a comunicação de B2B no Olá Microsoft Operations Management Suite (OMS)
+# <a name="track-b2b-communication-in-hello-microsoft-operations-management-suite-oms"></a><span data-ttu-id="e1c09-103">Controlar a comunicação de B2B no Olá Microsoft Operations Management Suite (OMS)</span><span class="sxs-lookup"><span data-stu-id="e1c09-103">Track B2B communication in hello Microsoft Operations Management Suite (OMS)</span></span>
 
-Após configurar a comunicação de B2B entre duas a executar os processos de negócios ou aplicações através da sua conta de integração, estas entidades podem trocar mensagens entre si. toocheck se estas mensagens são processadas corretamente, pode controlar AS2, X12, e EDIFACT mensagens com [Log Analytics do Azure](../log-analytics/log-analytics-overview.md) no Olá [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md). Por exemplo, pode utilizar estas capacidades de controlo baseada na web para o registo de mensagens:
+<span data-ttu-id="e1c09-104">Após configurar a comunicação de B2B entre duas a executar os processos de negócios ou aplicações através da sua conta de integração, estas entidades podem trocar mensagens entre si.</span><span class="sxs-lookup"><span data-stu-id="e1c09-104">After you set up B2B communication between two running business processes or applications through your integration account, those entities can exchange messages with each other.</span></span> <span data-ttu-id="e1c09-105">toocheck se estas mensagens são processadas corretamente, pode controlar AS2, X12, e EDIFACT mensagens com [Log Analytics do Azure](../log-analytics/log-analytics-overview.md) no Olá [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md).</span><span class="sxs-lookup"><span data-stu-id="e1c09-105">toocheck whether these messages are processed correctly, you can track AS2, X12, and EDIFACT messages with [Azure Log Analytics](../log-analytics/log-analytics-overview.md) in hello [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md).</span></span> <span data-ttu-id="e1c09-106">Por exemplo, pode utilizar estas capacidades de controlo baseada na web para o registo de mensagens:</span><span class="sxs-lookup"><span data-stu-id="e1c09-106">For example, you can use these web-based tracking capabilities for tracking messages:</span></span>
 
-* Contagem de mensagens e o Estado
-* Estado em que as confirmações
-* Correlacionar mensagens com em que as confirmações
-* Descrições de erro detalhadas para falhas
-* Capacidades de pesquisa
+* <span data-ttu-id="e1c09-107">Contagem de mensagens e o Estado</span><span class="sxs-lookup"><span data-stu-id="e1c09-107">Message count and status</span></span>
+* <span data-ttu-id="e1c09-108">Estado em que as confirmações</span><span class="sxs-lookup"><span data-stu-id="e1c09-108">Acknowledgments status</span></span>
+* <span data-ttu-id="e1c09-109">Correlacionar mensagens com em que as confirmações</span><span class="sxs-lookup"><span data-stu-id="e1c09-109">Correlate messages with acknowledgments</span></span>
+* <span data-ttu-id="e1c09-110">Descrições de erro detalhadas para falhas</span><span class="sxs-lookup"><span data-stu-id="e1c09-110">Detailed error descriptions for failures</span></span>
+* <span data-ttu-id="e1c09-111">Capacidades de pesquisa</span><span class="sxs-lookup"><span data-stu-id="e1c09-111">Search capabilities</span></span>
 
-## <a name="requirements"></a>Requisitos
+## <a name="requirements"></a><span data-ttu-id="e1c09-112">Requisitos</span><span class="sxs-lookup"><span data-stu-id="e1c09-112">Requirements</span></span>
 
-* Uma aplicação lógica que esteja configurada com o registo de diagnóstico. Saiba [como toocreate uma aplicação lógica](logic-apps-create-a-logic-app.md) e [como tooset segurança de registo para essa aplicação lógica](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
+* <span data-ttu-id="e1c09-113">Uma aplicação lógica que esteja configurada com o registo de diagnóstico.</span><span class="sxs-lookup"><span data-stu-id="e1c09-113">A logic app that's set up with diagnostics logging.</span></span> <span data-ttu-id="e1c09-114">Saiba [como toocreate uma aplicação lógica](logic-apps-create-a-logic-app.md) e [como tooset segurança de registo para essa aplicação lógica](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).</span><span class="sxs-lookup"><span data-stu-id="e1c09-114">Learn [how toocreate a logic app](logic-apps-create-a-logic-app.md) and [how tooset up logging for that logic app](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).</span></span>
 
-* Uma conta de integração que está configurada com a monitorização e registo. Saiba [como toocreate uma conta de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) e [como tooset cópias de segurança de monitorização e de registo para essa conta](../logic-apps/logic-apps-monitor-b2b-message.md).
+* <span data-ttu-id="e1c09-115">Uma conta de integração que está configurada com a monitorização e registo.</span><span class="sxs-lookup"><span data-stu-id="e1c09-115">An integration account that's set up with monitoring and logging.</span></span> <span data-ttu-id="e1c09-116">Saiba [como toocreate uma conta de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) e [como tooset cópias de segurança de monitorização e de registo para essa conta](../logic-apps/logic-apps-monitor-b2b-message.md).</span><span class="sxs-lookup"><span data-stu-id="e1c09-116">Learn [how toocreate an integration account](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) and [how tooset up monitoring and logging for that account](../logic-apps/logic-apps-monitor-b2b-message.md).</span></span>
 
-* Se ainda não o fez, [publicar dados de diagnóstico tooLog análise](../logic-apps/logic-apps-track-b2b-messages-omsportal.md) no OMS.
+* <span data-ttu-id="e1c09-117">Se ainda não o fez, [publicar dados de diagnóstico tooLog análise](../logic-apps/logic-apps-track-b2b-messages-omsportal.md) no OMS.</span><span class="sxs-lookup"><span data-stu-id="e1c09-117">If you haven't already, [publish diagnostic data tooLog Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md) in OMS.</span></span>
 
 > [!NOTE]
-> Após cumprir requisitos de anteriores Olá, deve ter uma área de trabalho Olá [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md). Deve utilizar Olá mesma OMS área de trabalho para controlar a sua comunicação B2B no OMS. 
+> <span data-ttu-id="e1c09-118">Após cumprir requisitos de anteriores Olá, deve ter uma área de trabalho Olá [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md).</span><span class="sxs-lookup"><span data-stu-id="e1c09-118">After you've met hello previous requirements, you should have a workspace in hello [Operations Management Suite (OMS)](../operations-management-suite/operations-management-suite-overview.md).</span></span> <span data-ttu-id="e1c09-119">Deve utilizar Olá mesma OMS área de trabalho para controlar a sua comunicação B2B no OMS.</span><span class="sxs-lookup"><span data-stu-id="e1c09-119">You should use hello same OMS workspace for tracking your B2B communication in OMS.</span></span> 
 >  
-> Se não tiver uma área de trabalho do OMS, saiba [como toocreate uma área de trabalho do OMS](../log-analytics/log-analytics-get-started.md).
+> <span data-ttu-id="e1c09-120">Se não tiver uma área de trabalho do OMS, saiba [como toocreate uma área de trabalho do OMS](../log-analytics/log-analytics-get-started.md).</span><span class="sxs-lookup"><span data-stu-id="e1c09-120">If you don't have an OMS workspace, learn [how toocreate an OMS workspace](../log-analytics/log-analytics-get-started.md).</span></span>
 
-## <a name="add-hello-logic-apps-b2b-solution-toohello-operations-management-suite-oms"></a>Adicionar Olá Logic Apps B2B solução toohello Operations Management Suite (OMS)
+## <a name="add-hello-logic-apps-b2b-solution-toohello-operations-management-suite-oms"></a><span data-ttu-id="e1c09-121">Adicionar Olá Logic Apps B2B solução toohello Operations Management Suite (OMS)</span><span class="sxs-lookup"><span data-stu-id="e1c09-121">Add hello Logic Apps B2B solution toohello Operations Management Suite (OMS)</span></span>
 
-toohave OMS controlar B2B mensagens para a sua aplicação lógica, tem de adicionar Olá **Logic Apps B2B** portal do OMS solução toohello. Saiba mais sobre [adicionar soluções tooOMS](../log-analytics/log-analytics-get-started.md).
+<span data-ttu-id="e1c09-122">toohave OMS controlar B2B mensagens para a sua aplicação lógica, tem de adicionar Olá **Logic Apps B2B** portal do OMS solução toohello.</span><span class="sxs-lookup"><span data-stu-id="e1c09-122">toohave OMS track B2B messages for your logic app, you must add hello **Logic Apps B2B** solution toohello OMS portal.</span></span> <span data-ttu-id="e1c09-123">Saiba mais sobre [adicionar soluções tooOMS](../log-analytics/log-analytics-get-started.md).</span><span class="sxs-lookup"><span data-stu-id="e1c09-123">Learn more about [adding solutions tooOMS](../log-analytics/log-analytics-get-started.md).</span></span>
 
-1. No Olá [portal do Azure](https://portal.azure.com), escolha **mais serviços**. Procure "análise de registos" e, em seguida, escolha **Log Analytics** conforme mostrado aqui:
+1. <span data-ttu-id="e1c09-124">No Olá [portal do Azure](https://portal.azure.com), escolha **mais serviços**.</span><span class="sxs-lookup"><span data-stu-id="e1c09-124">In hello [Azure portal](https://portal.azure.com), choose **More Services**.</span></span> <span data-ttu-id="e1c09-125">Procure "análise de registos" e, em seguida, escolha **Log Analytics** conforme mostrado aqui:</span><span class="sxs-lookup"><span data-stu-id="e1c09-125">Search for "log analytics", and then choose **Log Analytics** as shown here:</span></span>
 
    ![Localizar a análise de registos](media/logic-apps-track-b2b-messages-omsportal/browseloganalytics.png)
 
-2. Em **Log Analytics**, localize e selecione a sua área de trabalho do OMS. 
+2. <span data-ttu-id="e1c09-127">Em **Log Analytics**, localize e selecione a sua área de trabalho do OMS.</span><span class="sxs-lookup"><span data-stu-id="e1c09-127">Under **Log Analytics**, find and select your OMS workspace.</span></span> 
 
    ![Selecione a sua área de trabalho do OMS](media/logic-apps-track-b2b-messages-omsportal/selectla.png)
 
-3. Em **gestão**, escolha **Portal do OMS**.
+3. <span data-ttu-id="e1c09-129">Em **gestão**, escolha **Portal do OMS**.</span><span class="sxs-lookup"><span data-stu-id="e1c09-129">Under **Management**, choose **OMS Portal**.</span></span>
 
    ![Escolha o portal do OMS](media/logic-apps-track-b2b-messages-omsportal/omsportalpage.png)
 
-4. Depois de abrir a home page do OMS Olá, escolha **soluções galeria**.    
+4. <span data-ttu-id="e1c09-131">Depois de abrir a home page do OMS Olá, escolha **soluções galeria**.</span><span class="sxs-lookup"><span data-stu-id="e1c09-131">After hello OMS home page opens, choose **Solutions Gallery**.</span></span>    
 
    ![Escolha a Galeria de soluções](media/logic-apps-track-b2b-messages-omsportal/omshomepage1.png)
 
-5. Em **todas as soluções**, localizar e escolha **Logic Apps B2B**.     
+5. <span data-ttu-id="e1c09-133">Em **todas as soluções**, localizar e escolha **Logic Apps B2B**.</span><span class="sxs-lookup"><span data-stu-id="e1c09-133">Under **All solutions**, find and choose **Logic Apps B2B**.</span></span>     
 
    ![Escolha as Logic Apps B2B](media/logic-apps-track-b2b-messages-omsportal/omshomepage2.png)
 
-6. Em **Logic Apps B2B**, escolha **adicionar**.
+6. <span data-ttu-id="e1c09-135">Em **Logic Apps B2B**, escolha **adicionar**.</span><span class="sxs-lookup"><span data-stu-id="e1c09-135">Under **Logic Apps B2B**, choose **Add**.</span></span>
 
    ![Escolher adicionar](media/logic-apps-track-b2b-messages-omsportal/omshomepage3.png)
 
-   Na página inicial do Olá OMS, Olá mosaico para **Logic Apps B2B mensagens** aparece. 
-   Este mosaico atualiza a contagem de mensagens hello quando as mensagens B2B são processadas.
+   <span data-ttu-id="e1c09-137">Na página inicial do Olá OMS, Olá mosaico para **Logic Apps B2B mensagens** aparece.</span><span class="sxs-lookup"><span data-stu-id="e1c09-137">On hello OMS home page, hello tile for **Logic Apps B2B Messages** now appears.</span></span> 
+   <span data-ttu-id="e1c09-138">Este mosaico atualiza a contagem de mensagens hello quando as mensagens B2B são processadas.</span><span class="sxs-lookup"><span data-stu-id="e1c09-138">This tile updates hello message count when your B2B messages are processed.</span></span>
 
    ![Página inicial do OMS, Logic Apps B2B mensagens mosaico](media/logic-apps-track-b2b-messages-omsportal/omshomepage4.png)
 
 <a name="message-status-details"></a>
 
-## <a name="track-message-status-and-details-in-hello-operations-management-suite"></a>Controlar o estado de mensagem e os detalhes na Olá Operations Management Suite
+## <a name="track-message-status-and-details-in-hello-operations-management-suite"></a><span data-ttu-id="e1c09-140">Controlar o estado de mensagem e os detalhes na Olá Operations Management Suite</span><span class="sxs-lookup"><span data-stu-id="e1c09-140">Track message status and details in hello Operations Management Suite</span></span>
 
-1. Depois das mensagens B2B são processadas, pode ver o estado de Olá e os detalhes para essas mensagens. Na página inicial do Olá OMS, escolha Olá **Logic Apps B2B mensagens** mosaico.
+1. <span data-ttu-id="e1c09-141">Depois das mensagens B2B são processadas, pode ver o estado de Olá e os detalhes para essas mensagens.</span><span class="sxs-lookup"><span data-stu-id="e1c09-141">After your B2B messages are processed, you can view hello status and details for those messages.</span></span> <span data-ttu-id="e1c09-142">Na página inicial do Olá OMS, escolha Olá **Logic Apps B2B mensagens** mosaico.</span><span class="sxs-lookup"><span data-stu-id="e1c09-142">On hello OMS home page, choose hello **Logic Apps B2B Messages** tile.</span></span>
 
    ![Contagem de mensagens atualizado](media/logic-apps-track-b2b-messages-omsportal/omshomepage6.png)
 
    > [!NOTE]
-   > Por predefinição, Olá **Logic Apps B2B mensagens** mosaico mostra dados com base num único dia. definir o âmbito de dados de Olá toochange tooa de intervalo diferente, escolha o controlo de âmbito de Olá ao hello parte superior da página do OMS Olá:
+   > <span data-ttu-id="e1c09-144">Por predefinição, Olá **Logic Apps B2B mensagens** mosaico mostra dados com base num único dia.</span><span class="sxs-lookup"><span data-stu-id="e1c09-144">By default, hello **Logic Apps B2B Messages** tile shows data based on a single day.</span></span> <span data-ttu-id="e1c09-145">definir o âmbito de dados de Olá toochange tooa de intervalo diferente, escolha o controlo de âmbito de Olá ao hello parte superior da página do OMS Olá:</span><span class="sxs-lookup"><span data-stu-id="e1c09-145">toochange hello data scope tooa different interval, choose hello scope control at hello top of hello OMS page:</span></span>
    > 
    > ![Alterar o âmbito de dados](media/logic-apps-track-b2b-messages-omsportal/change-interval.png)
    >
 
-2. Depois de estado de mensagem de Olá dashboard é apresentado, pode ver mais detalhes sobre um tipo de mensagem específico, que mostra os dados com base num único dia. Escolha o mosaico Olá para **AS2**, **X12**, ou **EDIFACT**.
+2. <span data-ttu-id="e1c09-147">Depois de estado de mensagem de Olá dashboard é apresentado, pode ver mais detalhes sobre um tipo de mensagem específico, que mostra os dados com base num único dia.</span><span class="sxs-lookup"><span data-stu-id="e1c09-147">After hello message status dashboard appears, you can view more details for a specific message type, which shows data based on a single day.</span></span> <span data-ttu-id="e1c09-148">Escolha o mosaico Olá para **AS2**, **X12**, ou **EDIFACT**.</span><span class="sxs-lookup"><span data-stu-id="e1c09-148">Choose hello tile for **AS2**, **X12**, or **EDIFACT**.</span></span>
 
    ![Ver o estado de mensagem](media/logic-apps-track-b2b-messages-omsportal/omshomepage5.png)
 
-   É apresentada uma lista de mensagens em fila para o mosaico escolhido. 
-   toolearn mais informações sobre as propriedades de Olá para cada tipo de mensagem, consulte estas descrições de propriedade de mensagem:
+   <span data-ttu-id="e1c09-150">É apresentada uma lista de mensagens em fila para o mosaico escolhido.</span><span class="sxs-lookup"><span data-stu-id="e1c09-150">A list of messages appears for your chosen tile.</span></span> 
+   <span data-ttu-id="e1c09-151">toolearn mais informações sobre as propriedades de Olá para cada tipo de mensagem, consulte estas descrições de propriedade de mensagem:</span><span class="sxs-lookup"><span data-stu-id="e1c09-151">toolearn more about hello properties for each message type, see these message property descriptions:</span></span>
 
-   * [Propriedades da mensagem AS2](#as2-message-properties)
-   * [Propriedades da mensagem X12](#x12-message-properties)
-   * [Propriedades da mensagem EDIFACT](#EDIFACT-message-properties)
+   * [<span data-ttu-id="e1c09-152">Propriedades da mensagem AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-152">AS2 message properties</span></span>](#as2-message-properties)
+   * [<span data-ttu-id="e1c09-153">Propriedades da mensagem X12</span><span class="sxs-lookup"><span data-stu-id="e1c09-153">X12 message properties</span></span>](#x12-message-properties)
+   * [<span data-ttu-id="e1c09-154">Propriedades da mensagem EDIFACT</span><span class="sxs-lookup"><span data-stu-id="e1c09-154">EDIFACT message properties</span></span>](#EDIFACT-message-properties)
 
-   Por exemplo, aqui está uma lista de mensagens AS2 poderá aspeto:
+   <span data-ttu-id="e1c09-155">Por exemplo, aqui está uma lista de mensagens AS2 poderá aspeto:</span><span class="sxs-lookup"><span data-stu-id="e1c09-155">For example, here's what an AS2 message list might look like:</span></span>
 
    ![Ver mensagens de AS2](media/logic-apps-track-b2b-messages-omsportal/as2messagelist.png)
 
-3. entradas de Olá tooview ou de exportação e saídas para as mensagens específicas, selecione esses mensagens e escolha **transferir**. Quando lhe for pedido, guarde o computador de tooyour de ficheiro. zip do Olá local e, em seguida, a extrair esse ficheiro. 
+3. <span data-ttu-id="e1c09-157">entradas de Olá tooview ou de exportação e saídas para as mensagens específicas, selecione esses mensagens e escolha **transferir**.</span><span class="sxs-lookup"><span data-stu-id="e1c09-157">tooview or export hello inputs and outputs for specific messages, select those messages, and choose **Download**.</span></span> <span data-ttu-id="e1c09-158">Quando lhe for pedido, guarde o computador de tooyour de ficheiro. zip do Olá local e, em seguida, a extrair esse ficheiro.</span><span class="sxs-lookup"><span data-stu-id="e1c09-158">When you're prompted, save hello .zip file tooyour local computer, and then extract that file.</span></span> 
 
-   pasta extraída Olá inclui uma pasta para cada mensagem selecionada. 
-   Se configurar as confirmações, pasta de mensagem de Olá também inclui ficheiros com detalhes de confirmação. 
-   Pasta cada mensagem tem, pelo menos, estes ficheiros: 
+   <span data-ttu-id="e1c09-159">pasta extraída Olá inclui uma pasta para cada mensagem selecionada.</span><span class="sxs-lookup"><span data-stu-id="e1c09-159">hello extracted folder includes a folder for each selected message.</span></span> 
+   <span data-ttu-id="e1c09-160">Se configurar as confirmações, pasta de mensagem de Olá também inclui ficheiros com detalhes de confirmação.</span><span class="sxs-lookup"><span data-stu-id="e1c09-160">If you set up acknowledgements, hello message folder also includes files with acknowledgement details.</span></span> 
+   <span data-ttu-id="e1c09-161">Pasta cada mensagem tem, pelo menos, estes ficheiros:</span><span class="sxs-lookup"><span data-stu-id="e1c09-161">Each message folder has at least these files:</span></span> 
    
-   * Detalhes de payload payload e de saída de entrada de ficheiros legível por humanos com Olá
-   * Ficheiros codificados com Olá entradas e saídas
+   * <span data-ttu-id="e1c09-162">Detalhes de payload payload e de saída de entrada de ficheiros legível por humanos com Olá</span><span class="sxs-lookup"><span data-stu-id="e1c09-162">Human-readable files with hello input payload and output payload details</span></span>
+   * <span data-ttu-id="e1c09-163">Ficheiros codificados com Olá entradas e saídas</span><span class="sxs-lookup"><span data-stu-id="e1c09-163">Encoded files with hello inputs and outputs</span></span>
 
-   Para cada tipo de mensagem, pode encontrar a pasta de Olá e formatos de nome de ficheiro aqui:
+   <span data-ttu-id="e1c09-164">Para cada tipo de mensagem, pode encontrar a pasta de Olá e formatos de nome de ficheiro aqui:</span><span class="sxs-lookup"><span data-stu-id="e1c09-164">For each message type, you can find hello folder and file name formats here:</span></span>
 
-   * [Formatos de nome de pasta e ficheiro AS2](#as2-folder-file-names)
-   * [X12 formatos de nome de pasta e ficheiro](#x12-folder-file-names)
-   * [Formatos de nome de pasta e ficheiro EDIFACT](#edifact-folder-file-names)
+   * [<span data-ttu-id="e1c09-165">Formatos de nome de pasta e ficheiro AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-165">AS2 folder and file name formats</span></span>](#as2-folder-file-names)
+   * [<span data-ttu-id="e1c09-166">X12 formatos de nome de pasta e ficheiro</span><span class="sxs-lookup"><span data-stu-id="e1c09-166">X12 folder and file name formats</span></span>](#x12-folder-file-names)
+   * [<span data-ttu-id="e1c09-167">Formatos de nome de pasta e ficheiro EDIFACT</span><span class="sxs-lookup"><span data-stu-id="e1c09-167">EDIFACT folder and file name formats</span></span>](#edifact-folder-file-names)
 
    ![Transferir ficheiros de mensagens](media/logic-apps-track-b2b-messages-omsportal/download-messages.png)
 
-4. tooview todas as ações que tenham Olá mesmo executam ID, Olá **pesquisa registo** página, escolha uma mensagem a partir da lista de mensagens hello.
+4. <span data-ttu-id="e1c09-169">tooview todas as ações que tenham Olá mesmo executam ID, Olá **pesquisa registo** página, escolha uma mensagem a partir da lista de mensagens hello.</span><span class="sxs-lookup"><span data-stu-id="e1c09-169">tooview all actions that have hello same run ID, on hello **Log Search** page, choose a message from hello message list.</span></span>
 
-   Pode ordenar estas ações por coluna ou procure resultados específicos.
+   <span data-ttu-id="e1c09-170">Pode ordenar estas ações por coluna ou procure resultados específicos.</span><span class="sxs-lookup"><span data-stu-id="e1c09-170">You can sort these actions by column, or search for specific results.</span></span>
 
    ![As ações com Olá mesmo executar o ID](media/logic-apps-track-b2b-messages-omsportal/logsearch.png)
 
-   * resultados de toosearch com consultas prebuilt, escolha **Favoritos**.
+   * <span data-ttu-id="e1c09-172">resultados de toosearch com consultas prebuilt, escolha **Favoritos**.</span><span class="sxs-lookup"><span data-stu-id="e1c09-172">toosearch results with prebuilt queries, choose **Favorites**.</span></span>
 
-   * Saiba [como toobuild consulta adicionando filtros](logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md). 
-   Ou Saiba mais sobre [como toofind dados com o registo de pesquisa na análise de registos](../log-analytics/log-analytics-log-searches.md).
+   * <span data-ttu-id="e1c09-173">Saiba [como toobuild consulta adicionando filtros](logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md).</span><span class="sxs-lookup"><span data-stu-id="e1c09-173">Learn [how toobuild queries by adding filters](logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md).</span></span> 
+   <span data-ttu-id="e1c09-174">Ou Saiba mais sobre [como toofind dados com o registo de pesquisa na análise de registos](../log-analytics/log-analytics-log-searches.md).</span><span class="sxs-lookup"><span data-stu-id="e1c09-174">Or learn more about [how toofind data with log searches in Log Analytics](../log-analytics/log-analytics-log-searches.md).</span></span>
 
-   * consulta de toochange na caixa de pesquisa de Olá, atualização Olá consulta com Olá colunas e valores que pretende que toouse como filtros.
+   * <span data-ttu-id="e1c09-175">consulta de toochange na caixa de pesquisa de Olá, atualização Olá consulta com Olá colunas e valores que pretende que toouse como filtros.</span><span class="sxs-lookup"><span data-stu-id="e1c09-175">toochange query in hello search box, update hello query with hello columns and values that you want toouse as filters.</span></span>
 
 <a name="message-list-property-descriptions"></a>
 
-## <a name="property-descriptions-and-name-formats-for-as2-x12-and-edifact-messages"></a>Descrições das propriedades e formatos de nome para AS2, X12 e mensagens EDIFACT
+## <a name="property-descriptions-and-name-formats-for-as2-x12-and-edifact-messages"></a><span data-ttu-id="e1c09-176">Descrições das propriedades e formatos de nome para AS2, X12 e mensagens EDIFACT</span><span class="sxs-lookup"><span data-stu-id="e1c09-176">Property descriptions and name formats for AS2, X12, and EDIFACT messages</span></span>
 
-Para cada tipo de mensagem, seguem-se descrições de propriedade de Olá e formatos de nome de ficheiros de mensagens transferido.
+<span data-ttu-id="e1c09-177">Para cada tipo de mensagem, seguem-se descrições de propriedade de Olá e formatos de nome de ficheiros de mensagens transferido.</span><span class="sxs-lookup"><span data-stu-id="e1c09-177">For each message type, here are hello property descriptions and name formats for downloaded message files.</span></span>
 
 <a name="as2-message-properties"></a>
 
-### <a name="as2-message-property-descriptions"></a>Descrições de propriedade de mensagem AS2
+### <a name="as2-message-property-descriptions"></a><span data-ttu-id="e1c09-178">Descrições de propriedade de mensagem AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-178">AS2 message property descriptions</span></span>
 
-Seguem-se descrições de propriedade Olá para cada mensagem AS2.
+<span data-ttu-id="e1c09-179">Seguem-se descrições de propriedade Olá para cada mensagem AS2.</span><span class="sxs-lookup"><span data-stu-id="e1c09-179">Here are hello property descriptions for each AS2 message.</span></span>
 
-| Propriedade | Descrição |
+| <span data-ttu-id="e1c09-180">Propriedade</span><span class="sxs-lookup"><span data-stu-id="e1c09-180">Property</span></span> | <span data-ttu-id="e1c09-181">Descrição</span><span class="sxs-lookup"><span data-stu-id="e1c09-181">Description</span></span> |
 | --- | --- |
-| Remetente | parceiro de convidado de Olá especificado no **receber definições**, ou o parceiro de anfitrião Olá especificados em **enviar definições** para um contrato de AS2 |
-| Recetor | parceiro de anfitrião de Olá especificado no **receber definições**, ou o parceiro de convidado Olá especificados em **enviar definições** para um contrato de AS2 |
-| Aplicação Lógica | aplicação de lógica de olá onde são configuradas ações Olá AS2 |
-| Estado | Olá estado de mensagem AS2 <br>Êxito = recebidos ou enviados uma mensagem de AS2 válida. Não existem MDN está definida. <br>Êxito = recebidos ou enviados uma mensagem de AS2 válida. MDN está configurado e recebido ou MDN é enviado. <br>Não foi possível = recebida uma mensagem de AS2 inválida. Não existem MDN está definida. <br>Pendente = recebidos ou enviados uma mensagem de AS2 válida. Configurar a MDN e MDN é esperado. |
-| Confirmação | Olá estado de mensagem MDN <br>Aceite = recebidos ou enviados um MDN positivo. <br>Pendente = a aguardar tooreceive ou enviar um MDN. <br>Rejeitado = recebidos ou enviados um MDN negativo. <br>Não é necessária = MDN não está definido no contrato de Olá. |
-| Direção | Olá direção da mensagem AS2 |
-| ID de correlação | ID de Olá está correlacionada com todos os acionadores de Olá e ações numa aplicação lógica |
-| ID da mensagem | ID de mensagem de Olá AS2 de cabeçalhos de mensagens hello AS2 |
-| Timestamp | tempo de Olá quando Olá AS2 ação processar a mensagem de saudação |
+| <span data-ttu-id="e1c09-182">Remetente</span><span class="sxs-lookup"><span data-stu-id="e1c09-182">Sender</span></span> | <span data-ttu-id="e1c09-183">parceiro de convidado de Olá especificado no **receber definições**, ou o parceiro de anfitrião Olá especificados em **enviar definições** para um contrato de AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-183">hello guest partner specified in **Receive Settings**, or hello host partner specified in **Send Settings** for an AS2 agreement</span></span> |
+| <span data-ttu-id="e1c09-184">Recetor</span><span class="sxs-lookup"><span data-stu-id="e1c09-184">Receiver</span></span> | <span data-ttu-id="e1c09-185">parceiro de anfitrião de Olá especificado no **receber definições**, ou o parceiro de convidado Olá especificados em **enviar definições** para um contrato de AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-185">hello host partner specified in **Receive Settings**, or hello guest partner specified in **Send Settings** for an AS2 agreement</span></span> |
+| <span data-ttu-id="e1c09-186">Aplicação Lógica</span><span class="sxs-lookup"><span data-stu-id="e1c09-186">Logic App</span></span> | <span data-ttu-id="e1c09-187">aplicação de lógica de olá onde são configuradas ações Olá AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-187">hello logic app where hello AS2 actions are set up</span></span> |
+| <span data-ttu-id="e1c09-188">Estado</span><span class="sxs-lookup"><span data-stu-id="e1c09-188">Status</span></span> | <span data-ttu-id="e1c09-189">Olá estado de mensagem AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-189">hello AS2 message status</span></span> <br><span data-ttu-id="e1c09-190">Êxito = recebidos ou enviados uma mensagem de AS2 válida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-190">Success = Received or sent a valid AS2 message.</span></span> <span data-ttu-id="e1c09-191">Não existem MDN está definida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-191">No MDN is set up.</span></span> <br><span data-ttu-id="e1c09-192">Êxito = recebidos ou enviados uma mensagem de AS2 válida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-192">Success = Received or sent a valid AS2 message.</span></span> <span data-ttu-id="e1c09-193">MDN está configurado e recebido ou MDN é enviado.</span><span class="sxs-lookup"><span data-stu-id="e1c09-193">MDN is set up and received, or MDN is sent.</span></span> <br><span data-ttu-id="e1c09-194">Não foi possível = recebida uma mensagem de AS2 inválida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-194">Failed = Received an invalid AS2 message.</span></span> <span data-ttu-id="e1c09-195">Não existem MDN está definida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-195">No MDN is set up.</span></span> <br><span data-ttu-id="e1c09-196">Pendente = recebidos ou enviados uma mensagem de AS2 válida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-196">Pending = Received or sent a valid AS2 message.</span></span> <span data-ttu-id="e1c09-197">Configurar a MDN e MDN é esperado.</span><span class="sxs-lookup"><span data-stu-id="e1c09-197">MDN is set up, and MDN is expected.</span></span> |
+| <span data-ttu-id="e1c09-198">Confirmação</span><span class="sxs-lookup"><span data-stu-id="e1c09-198">Ack</span></span> | <span data-ttu-id="e1c09-199">Olá estado de mensagem MDN</span><span class="sxs-lookup"><span data-stu-id="e1c09-199">hello MDN message status</span></span> <br><span data-ttu-id="e1c09-200">Aceite = recebidos ou enviados um MDN positivo.</span><span class="sxs-lookup"><span data-stu-id="e1c09-200">Accepted = Received or sent a positive MDN.</span></span> <br><span data-ttu-id="e1c09-201">Pendente = a aguardar tooreceive ou enviar um MDN.</span><span class="sxs-lookup"><span data-stu-id="e1c09-201">Pending = Waiting tooreceive or send an MDN.</span></span> <br><span data-ttu-id="e1c09-202">Rejeitado = recebidos ou enviados um MDN negativo.</span><span class="sxs-lookup"><span data-stu-id="e1c09-202">Rejected = Received or sent a negative MDN.</span></span> <br><span data-ttu-id="e1c09-203">Não é necessária = MDN não está definido no contrato de Olá.</span><span class="sxs-lookup"><span data-stu-id="e1c09-203">Not Required = MDN is not set up in hello agreement.</span></span> |
+| <span data-ttu-id="e1c09-204">Direção</span><span class="sxs-lookup"><span data-stu-id="e1c09-204">Direction</span></span> | <span data-ttu-id="e1c09-205">Olá direção da mensagem AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-205">hello AS2 message direction</span></span> |
+| <span data-ttu-id="e1c09-206">ID de correlação</span><span class="sxs-lookup"><span data-stu-id="e1c09-206">Correlation ID</span></span> | <span data-ttu-id="e1c09-207">ID de Olá está correlacionada com todos os acionadores de Olá e ações numa aplicação lógica</span><span class="sxs-lookup"><span data-stu-id="e1c09-207">hello ID that correlates all hello triggers and actions in a logic app</span></span> |
+| <span data-ttu-id="e1c09-208">ID da mensagem</span><span class="sxs-lookup"><span data-stu-id="e1c09-208">Message ID</span></span> | <span data-ttu-id="e1c09-209">ID de mensagem de Olá AS2 de cabeçalhos de mensagens hello AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-209">hello AS2 message ID from hello AS2 message headers</span></span> |
+| <span data-ttu-id="e1c09-210">Timestamp</span><span class="sxs-lookup"><span data-stu-id="e1c09-210">Timestamp</span></span> | <span data-ttu-id="e1c09-211">tempo de Olá quando Olá AS2 ação processar a mensagem de saudação</span><span class="sxs-lookup"><span data-stu-id="e1c09-211">hello time when hello AS2 action processed hello message</span></span> |
 |          |             |
 
 <a name="as2-folder-file-names"></a>
 
-### <a name="as2-name-formats-for-downloaded-message-files"></a>Formatos de nome de AS2 para ficheiros de mensagens transferido
+### <a name="as2-name-formats-for-downloaded-message-files"></a><span data-ttu-id="e1c09-212">Formatos de nome de AS2 para ficheiros de mensagens transferido</span><span class="sxs-lookup"><span data-stu-id="e1c09-212">AS2 name formats for downloaded message files</span></span>
 
-Seguem-se formatos de nome de Olá para cada pasta de mensagem AS2 transferida e ficheiros.
+<span data-ttu-id="e1c09-213">Seguem-se formatos de nome de Olá para cada pasta de mensagem AS2 transferida e ficheiros.</span><span class="sxs-lookup"><span data-stu-id="e1c09-213">Here are hello name formats for each downloaded AS2 message folder and files.</span></span>
 
-| Ficheiro ou pasta | Formato de nome |
+| <span data-ttu-id="e1c09-214">Ficheiro ou pasta</span><span class="sxs-lookup"><span data-stu-id="e1c09-214">Folder or file</span></span> | <span data-ttu-id="e1c09-215">Formato de nome</span><span class="sxs-lookup"><span data-stu-id="e1c09-215">Name format</span></span> |
 | :------------- | :---------- |
-| Pasta de mensagem | [remetente] \_[recetor]\_AS2\_[ID de correlação]\_[ID de mensagem]\_[timestamp] |
-| Entrada, saída e se configurar os ficheiros de confirmação | **Payload de entrada**: [remetente]\_[recetor]\_AS2\_[ID de correlação]\_input_payload.txt </p>**Payload de saída**: [remetente]\_[recetor]\_AS2\_[ID de correlação]\_saída\_payload.txt </p></p>**Entradas**: [remetente]\_[recetor]\_AS2\_[ID de correlação]\_inputs.txt </p></p>**Saídas**: [remetente]\_[recetor]\_AS2\_[ID de correlação]\_outputs.txt |
+| <span data-ttu-id="e1c09-216">Pasta de mensagem</span><span class="sxs-lookup"><span data-stu-id="e1c09-216">Message folder</span></span> | <span data-ttu-id="e1c09-217">[remetente] \_[recetor]\_AS2\_[ID de correlação]\_[ID de mensagem]\_[timestamp]</span><span class="sxs-lookup"><span data-stu-id="e1c09-217">[sender]\_[receiver]\_AS2\_[correlation-ID]\_[message-ID]\_[timestamp]</span></span> |
+| <span data-ttu-id="e1c09-218">Entrada, saída e se configurar os ficheiros de confirmação</span><span class="sxs-lookup"><span data-stu-id="e1c09-218">Input, output, and if set up, acknowledgement files</span></span> | <span data-ttu-id="e1c09-219">**Payload de entrada**: [remetente]\_[recetor]\_AS2\_[ID de correlação]\_input_payload.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-219">**Input payload**: [sender]\_[receiver]\_AS2\_[correlation-ID]\_input_payload.txt</span></span> </p><span data-ttu-id="e1c09-220">**Payload de saída**: [remetente]\_[recetor]\_AS2\_[ID de correlação]\_saída\_payload.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-220">**Output payload**: [sender]\_[receiver]\_AS2\_[correlation-ID]\_output\_payload.txt</span></span> </p></p><span data-ttu-id="e1c09-221">**Entradas**: [remetente]\_[recetor]\_AS2\_[ID de correlação]\_inputs.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-221">**Inputs**: [sender]\_[receiver]\_AS2\_[correlation-ID]\_inputs.txt</span></span> </p></p><span data-ttu-id="e1c09-222">**Saídas**: [remetente]\_[recetor]\_AS2\_[ID de correlação]\_outputs.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-222">**Outputs**: [sender]\_[receiver]\_AS2\_[correlation-ID]\_outputs.txt</span></span> |
 |          |             |
 
 <a name="x12-message-properties"></a>
 
-### <a name="x12-message-property-descriptions"></a>Descrições das propriedades da mensagem X12
+### <a name="x12-message-property-descriptions"></a><span data-ttu-id="e1c09-223">Descrições das propriedades da mensagem X12</span><span class="sxs-lookup"><span data-stu-id="e1c09-223">X12 message property descriptions</span></span>
 
-Seguem-se descrições de propriedade Olá para cada X12 mensagem.
+<span data-ttu-id="e1c09-224">Seguem-se descrições de propriedade Olá para cada X12 mensagem.</span><span class="sxs-lookup"><span data-stu-id="e1c09-224">Here are hello property descriptions for each X12 message.</span></span>
 
-| Propriedade | Descrição |
+| <span data-ttu-id="e1c09-225">Propriedade</span><span class="sxs-lookup"><span data-stu-id="e1c09-225">Property</span></span> | <span data-ttu-id="e1c09-226">Descrição</span><span class="sxs-lookup"><span data-stu-id="e1c09-226">Description</span></span> |
 | --- | --- |
-| Remetente | parceiro de convidado de Olá especificado no **receber definições**, ou o parceiro de anfitrião Olá especificados em **enviar definições** para um X12 contrato |
-| Recetor | parceiro de anfitrião de Olá especificado no **receber definições**, ou o parceiro de convidado de Olá especificado no **enviar definições** para um X12 contrato |
-| Aplicação Lógica | aplicação de lógica de olá onde as ações de Olá X12 estão configuradas |
-| Estado | Estado de mensagem de Olá X12 <br>Êxito = recebidos ou enviados um X12 válido mensagem. Nenhum ack funcional está definida. <br>Êxito = recebidos ou enviados um X12 válido mensagem. Ack funcional está configurado e recebido ou uma confirmação funcional é enviada. <br>Não foi possível = recebidos ou enviados um X12 inválido mensagem. <br>Pendente = recebidos ou enviados um X12 válido mensagem. Configurar a confirmação funcional e prevê-se uma confirmação funcional. |
-| Confirmação | Estado de confirmação (997) funcional <br>Aceite = recebidos ou enviados uma confirmação funcional positivo <br>Rejeitado = recebidos ou enviados uma confirmação negativa de funcional <br>Pendente = era esperado um ack funcional, mas não foi recebido. <br>Pendente = gerou uma confirmação funcional, mas não é possível enviar toopartner. <br>Não é necessária = funcional ack não está configurado. |
-| Direção | direção de mensagem de Olá X12 |
-| ID de correlação | ID de Olá está correlacionada com todos os acionadores de Olá e ações numa aplicação lógica |
-| Tipo de tarifas de mensagens | Olá, tipo de mensagem 12 EDI X |
-| ICN | Olá intercâmbio número de controlo de mensagem de saudação X12 |
-| TSCN | Olá transação definida controlo número para a mensagem de saudação X12 |
-| Timestamp | tempo de Olá ao processar mensagem de saudação a ação de Olá X12 |
+| <span data-ttu-id="e1c09-227">Remetente</span><span class="sxs-lookup"><span data-stu-id="e1c09-227">Sender</span></span> | <span data-ttu-id="e1c09-228">parceiro de convidado de Olá especificado no **receber definições**, ou o parceiro de anfitrião Olá especificados em **enviar definições** para um X12 contrato</span><span class="sxs-lookup"><span data-stu-id="e1c09-228">hello guest partner specified in **Receive Settings**, or hello host partner specified in **Send Settings** for an X12 agreement</span></span> |
+| <span data-ttu-id="e1c09-229">Recetor</span><span class="sxs-lookup"><span data-stu-id="e1c09-229">Receiver</span></span> | <span data-ttu-id="e1c09-230">parceiro de anfitrião de Olá especificado no **receber definições**, ou o parceiro de convidado de Olá especificado no **enviar definições** para um X12 contrato</span><span class="sxs-lookup"><span data-stu-id="e1c09-230">hello host partner specified in **Receive Settings**, or hello guest partner specified in **Send Settings** for an X12 agreement</span></span> |
+| <span data-ttu-id="e1c09-231">Aplicação Lógica</span><span class="sxs-lookup"><span data-stu-id="e1c09-231">Logic App</span></span> | <span data-ttu-id="e1c09-232">aplicação de lógica de olá onde as ações de Olá X12 estão configuradas</span><span class="sxs-lookup"><span data-stu-id="e1c09-232">hello logic app where hello X12 actions are set up</span></span> |
+| <span data-ttu-id="e1c09-233">Estado</span><span class="sxs-lookup"><span data-stu-id="e1c09-233">Status</span></span> | <span data-ttu-id="e1c09-234">Estado de mensagem de Olá X12</span><span class="sxs-lookup"><span data-stu-id="e1c09-234">hello X12 message status</span></span> <br><span data-ttu-id="e1c09-235">Êxito = recebidos ou enviados um X12 válido mensagem.</span><span class="sxs-lookup"><span data-stu-id="e1c09-235">Success = Received or sent a valid X12 message.</span></span> <span data-ttu-id="e1c09-236">Nenhum ack funcional está definida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-236">No functional ack is set up.</span></span> <br><span data-ttu-id="e1c09-237">Êxito = recebidos ou enviados um X12 válido mensagem.</span><span class="sxs-lookup"><span data-stu-id="e1c09-237">Success = Received or sent a valid X12 message.</span></span> <span data-ttu-id="e1c09-238">Ack funcional está configurado e recebido ou uma confirmação funcional é enviada.</span><span class="sxs-lookup"><span data-stu-id="e1c09-238">Functional ack is set up and received, or a functional ack is sent.</span></span> <br><span data-ttu-id="e1c09-239">Não foi possível = recebidos ou enviados um X12 inválido mensagem.</span><span class="sxs-lookup"><span data-stu-id="e1c09-239">Failed = Received or sent an invalid X12 message.</span></span> <br><span data-ttu-id="e1c09-240">Pendente = recebidos ou enviados um X12 válido mensagem.</span><span class="sxs-lookup"><span data-stu-id="e1c09-240">Pending = Received or sent a valid X12 message.</span></span> <span data-ttu-id="e1c09-241">Configurar a confirmação funcional e prevê-se uma confirmação funcional.</span><span class="sxs-lookup"><span data-stu-id="e1c09-241">Functional ack is set up, and a functional ack is expected.</span></span> |
+| <span data-ttu-id="e1c09-242">Confirmação</span><span class="sxs-lookup"><span data-stu-id="e1c09-242">Ack</span></span> | <span data-ttu-id="e1c09-243">Estado de confirmação (997) funcional</span><span class="sxs-lookup"><span data-stu-id="e1c09-243">Functional Ack (997) status</span></span> <br><span data-ttu-id="e1c09-244">Aceite = recebidos ou enviados uma confirmação funcional positivo</span><span class="sxs-lookup"><span data-stu-id="e1c09-244">Accepted = Received or sent a positive functional ack.</span></span> <br><span data-ttu-id="e1c09-245">Rejeitado = recebidos ou enviados uma confirmação negativa de funcional</span><span class="sxs-lookup"><span data-stu-id="e1c09-245">Rejected = Received or sent a negative functional ack.</span></span> <br><span data-ttu-id="e1c09-246">Pendente = era esperado um ack funcional, mas não foi recebido.</span><span class="sxs-lookup"><span data-stu-id="e1c09-246">Pending = Expecting a functional ack but not received.</span></span> <br><span data-ttu-id="e1c09-247">Pendente = gerou uma confirmação funcional, mas não é possível enviar toopartner.</span><span class="sxs-lookup"><span data-stu-id="e1c09-247">Pending = Generated a functional ack but can't send toopartner.</span></span> <br><span data-ttu-id="e1c09-248">Não é necessária = funcional ack não está configurado.</span><span class="sxs-lookup"><span data-stu-id="e1c09-248">Not Required = Functional ack is not set up.</span></span> |
+| <span data-ttu-id="e1c09-249">Direção</span><span class="sxs-lookup"><span data-stu-id="e1c09-249">Direction</span></span> | <span data-ttu-id="e1c09-250">direção de mensagem de Olá X12</span><span class="sxs-lookup"><span data-stu-id="e1c09-250">hello X12 message direction</span></span> |
+| <span data-ttu-id="e1c09-251">ID de correlação</span><span class="sxs-lookup"><span data-stu-id="e1c09-251">Correlation ID</span></span> | <span data-ttu-id="e1c09-252">ID de Olá está correlacionada com todos os acionadores de Olá e ações numa aplicação lógica</span><span class="sxs-lookup"><span data-stu-id="e1c09-252">hello ID that correlates all hello triggers and actions in a logic app</span></span> |
+| <span data-ttu-id="e1c09-253">Tipo de tarifas de mensagens</span><span class="sxs-lookup"><span data-stu-id="e1c09-253">Msg type</span></span> | <span data-ttu-id="e1c09-254">Olá, tipo de mensagem 12 EDI X</span><span class="sxs-lookup"><span data-stu-id="e1c09-254">hello EDI X12 message type</span></span> |
+| <span data-ttu-id="e1c09-255">ICN</span><span class="sxs-lookup"><span data-stu-id="e1c09-255">ICN</span></span> | <span data-ttu-id="e1c09-256">Olá intercâmbio número de controlo de mensagem de saudação X12</span><span class="sxs-lookup"><span data-stu-id="e1c09-256">hello Interchange Control Number for hello X12 message</span></span> |
+| <span data-ttu-id="e1c09-257">TSCN</span><span class="sxs-lookup"><span data-stu-id="e1c09-257">TSCN</span></span> | <span data-ttu-id="e1c09-258">Olá transação definida controlo número para a mensagem de saudação X12</span><span class="sxs-lookup"><span data-stu-id="e1c09-258">hello Transaction Set Control Number for hello X12 message</span></span> |
+| <span data-ttu-id="e1c09-259">Timestamp</span><span class="sxs-lookup"><span data-stu-id="e1c09-259">Timestamp</span></span> | <span data-ttu-id="e1c09-260">tempo de Olá ao processar mensagem de saudação a ação de Olá X12</span><span class="sxs-lookup"><span data-stu-id="e1c09-260">hello time when hello X12 action processed hello message</span></span> |
 |          |             |
 
 <a name="x12-folder-file-names"></a>
 
-### <a name="x12-name-formats-for-downloaded-message-files"></a>Formatos de nome de X12 para ficheiros de mensagens transferido
+### <a name="x12-name-formats-for-downloaded-message-files"></a><span data-ttu-id="e1c09-261">Formatos de nome de X12 para ficheiros de mensagens transferido</span><span class="sxs-lookup"><span data-stu-id="e1c09-261">X12 name formats for downloaded message files</span></span>
 
-Seguem-se formatos de nome de Olá para cada transferido X12 pastas e ficheiros de mensagens.
+<span data-ttu-id="e1c09-262">Seguem-se formatos de nome de Olá para cada transferido X12 pastas e ficheiros de mensagens.</span><span class="sxs-lookup"><span data-stu-id="e1c09-262">Here are hello name formats for each downloaded X12 message folder and files.</span></span>
 
-| Ficheiro ou pasta | Formato de nome |
+| <span data-ttu-id="e1c09-263">Ficheiro ou pasta</span><span class="sxs-lookup"><span data-stu-id="e1c09-263">Folder or file</span></span> | <span data-ttu-id="e1c09-264">Formato de nome</span><span class="sxs-lookup"><span data-stu-id="e1c09-264">Name format</span></span> |
 | :------------- | :---------- |
-| Pasta de mensagem | [remetente] \_[recetor]\_X12\_[número de controlo de intercâmbio]\_[global-controlo-número]\_[transação-set-controlo-número]\_[timestamp] |
-| Entrada, saída e se configurar os ficheiros de confirmação | **Payload de entrada**: [remetente]\_[recetor]\_X12\_[número de controlo de intercâmbio]\_input_payload.txt </p>**Payload de saída**: [remetente]\_[recetor]\_X12\_[número de controlo de intercâmbio]\_saída\_payload.txt </p></p>**Entradas**: [remetente]\_[recetor]\_X12\_[número de controlo de intercâmbio]\_inputs.txt </p></p>**Saídas**: [remetente]\_[recetor]\_X12\_[número de controlo de intercâmbio]\_outputs.txt |
+| <span data-ttu-id="e1c09-265">Pasta de mensagem</span><span class="sxs-lookup"><span data-stu-id="e1c09-265">Message folder</span></span> | <span data-ttu-id="e1c09-266">[remetente] \_[recetor]\_X12\_[número de controlo de intercâmbio]\_[global-controlo-número]\_[transação-set-controlo-número]\_[timestamp]</span><span class="sxs-lookup"><span data-stu-id="e1c09-266">[sender]\_[receiver]\_X12\_[interchange-control-number]\_[global-control-number]\_[transaction-set-control-number]\_[timestamp]</span></span> |
+| <span data-ttu-id="e1c09-267">Entrada, saída e se configurar os ficheiros de confirmação</span><span class="sxs-lookup"><span data-stu-id="e1c09-267">Input, output, and if set up, acknowledgement files</span></span> | <span data-ttu-id="e1c09-268">**Payload de entrada**: [remetente]\_[recetor]\_X12\_[número de controlo de intercâmbio]\_input_payload.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-268">**Input payload**: [sender]\_[receiver]\_X12\_[interchange-control-number]\_input_payload.txt</span></span> </p><span data-ttu-id="e1c09-269">**Payload de saída**: [remetente]\_[recetor]\_X12\_[número de controlo de intercâmbio]\_saída\_payload.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-269">**Output payload**: [sender]\_[receiver]\_X12\_[interchange-control-number]\_output\_payload.txt</span></span> </p></p><span data-ttu-id="e1c09-270">**Entradas**: [remetente]\_[recetor]\_X12\_[número de controlo de intercâmbio]\_inputs.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-270">**Inputs**: [sender]\_[receiver]\_X12\_[interchange-control-number]\_inputs.txt</span></span> </p></p><span data-ttu-id="e1c09-271">**Saídas**: [remetente]\_[recetor]\_X12\_[número de controlo de intercâmbio]\_outputs.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-271">**Outputs**: [sender]\_[receiver]\_X12\_[interchange-control-number]\_outputs.txt</span></span> |
 |          |             |
 
 <a name="EDIFACT-message-properties"></a>
 
-### <a name="edifact-message-property-descriptions"></a>Descrições de propriedade de mensagem EDIFACT
+### <a name="edifact-message-property-descriptions"></a><span data-ttu-id="e1c09-272">Descrições de propriedade de mensagem EDIFACT</span><span class="sxs-lookup"><span data-stu-id="e1c09-272">EDIFACT message property descriptions</span></span>
 
-Seguem-se descrições de propriedade Olá para cada mensagem EDIFACT.
+<span data-ttu-id="e1c09-273">Seguem-se descrições de propriedade Olá para cada mensagem EDIFACT.</span><span class="sxs-lookup"><span data-stu-id="e1c09-273">Here are hello property descriptions for each EDIFACT message.</span></span>
 
-| Propriedade | Descrição |
+| <span data-ttu-id="e1c09-274">Propriedade</span><span class="sxs-lookup"><span data-stu-id="e1c09-274">Property</span></span> | <span data-ttu-id="e1c09-275">Descrição</span><span class="sxs-lookup"><span data-stu-id="e1c09-275">Description</span></span> |
 | --- | --- |
-| Remetente | parceiro de convidado de Olá especificado no **receber definições**, ou o parceiro de anfitrião Olá especificados em **enviar definições** para um contrato de EDIFACT |
-| Recetor | parceiro de anfitrião de Olá especificado no **receber definições**, ou o parceiro de convidado Olá especificados em **enviar definições** para um contrato de EDIFACT |
-| Aplicação Lógica | aplicação de lógica de olá onde as ações de EDIFACT Olá estão configuradas |
-| Estado | Olá estado de mensagem EDIFACT <br>Êxito = recebidos ou enviados uma mensagem EDIFACT válida. Nenhum ack funcional está definida. <br>Êxito = recebidos ou enviados uma mensagem EDIFACT válida. Ack funcional está configurado e recebido ou uma confirmação funcional é enviada. <br>Não foi possível = recebidos ou enviados uma mensagem EDIFACT inválida <br>Pendente = recebidos ou enviados uma mensagem EDIFACT válida. Configurar a confirmação funcional e prevê-se uma confirmação funcional. |
-| Confirmação | Estado de confirmação (997) funcional <br>Aceite = recebidos ou enviados uma confirmação funcional positivo <br>Rejeitado = recebidos ou enviados uma confirmação negativa de funcional <br>Pendente = era esperado um ack funcional, mas não foi recebido. <br>Pendente = gerou uma confirmação funcional, mas não é possível enviar toopartner. <br>Não é necessária = Ack funcional não está configurado. |
-| Direção | Olá direção da mensagem EDIFACT |
-| ID de correlação | ID de Olá está correlacionada com todos os acionadores de Olá e ações numa aplicação lógica |
-| Tipo de tarifas de mensagens | Olá, tipo de mensagem EDIFACT |
-| ICN | Olá intercâmbio número de controlo de mensagem EDIFACT Olá |
-| TSCN | Olá transação definida controlo número de mensagem EDIFACT Olá |
-| Timestamp | tempo de Olá quando Olá ação EDIFACT processar a mensagem de saudação |
+| <span data-ttu-id="e1c09-276">Remetente</span><span class="sxs-lookup"><span data-stu-id="e1c09-276">Sender</span></span> | <span data-ttu-id="e1c09-277">parceiro de convidado de Olá especificado no **receber definições**, ou o parceiro de anfitrião Olá especificados em **enviar definições** para um contrato de EDIFACT</span><span class="sxs-lookup"><span data-stu-id="e1c09-277">hello guest partner specified in **Receive Settings**, or hello host partner specified in **Send Settings** for an EDIFACT agreement</span></span> |
+| <span data-ttu-id="e1c09-278">Recetor</span><span class="sxs-lookup"><span data-stu-id="e1c09-278">Receiver</span></span> | <span data-ttu-id="e1c09-279">parceiro de anfitrião de Olá especificado no **receber definições**, ou o parceiro de convidado Olá especificados em **enviar definições** para um contrato de EDIFACT</span><span class="sxs-lookup"><span data-stu-id="e1c09-279">hello host partner specified in **Receive Settings**, or hello guest partner specified in **Send Settings** for an EDIFACT agreement</span></span> |
+| <span data-ttu-id="e1c09-280">Aplicação Lógica</span><span class="sxs-lookup"><span data-stu-id="e1c09-280">Logic App</span></span> | <span data-ttu-id="e1c09-281">aplicação de lógica de olá onde as ações de EDIFACT Olá estão configuradas</span><span class="sxs-lookup"><span data-stu-id="e1c09-281">hello logic app where hello EDIFACT actions are set up</span></span> |
+| <span data-ttu-id="e1c09-282">Estado</span><span class="sxs-lookup"><span data-stu-id="e1c09-282">Status</span></span> | <span data-ttu-id="e1c09-283">Olá estado de mensagem EDIFACT</span><span class="sxs-lookup"><span data-stu-id="e1c09-283">hello EDIFACT message status</span></span> <br><span data-ttu-id="e1c09-284">Êxito = recebidos ou enviados uma mensagem EDIFACT válida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-284">Success = Received or sent a valid EDIFACT message.</span></span> <span data-ttu-id="e1c09-285">Nenhum ack funcional está definida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-285">No functional ack is set up.</span></span> <br><span data-ttu-id="e1c09-286">Êxito = recebidos ou enviados uma mensagem EDIFACT válida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-286">Success = Received or sent a valid EDIFACT message.</span></span> <span data-ttu-id="e1c09-287">Ack funcional está configurado e recebido ou uma confirmação funcional é enviada.</span><span class="sxs-lookup"><span data-stu-id="e1c09-287">Functional ack is set up and received, or a functional ack is sent.</span></span> <br><span data-ttu-id="e1c09-288">Não foi possível = recebidos ou enviados uma mensagem EDIFACT inválida</span><span class="sxs-lookup"><span data-stu-id="e1c09-288">Failed = Received or sent an invalid EDIFACT message</span></span> <br><span data-ttu-id="e1c09-289">Pendente = recebidos ou enviados uma mensagem EDIFACT válida.</span><span class="sxs-lookup"><span data-stu-id="e1c09-289">Pending = Received or sent a valid EDIFACT message.</span></span> <span data-ttu-id="e1c09-290">Configurar a confirmação funcional e prevê-se uma confirmação funcional.</span><span class="sxs-lookup"><span data-stu-id="e1c09-290">Functional ack is set up, and a functional ack is expected.</span></span> |
+| <span data-ttu-id="e1c09-291">Confirmação</span><span class="sxs-lookup"><span data-stu-id="e1c09-291">Ack</span></span> | <span data-ttu-id="e1c09-292">Estado de confirmação (997) funcional</span><span class="sxs-lookup"><span data-stu-id="e1c09-292">Functional Ack (997) status</span></span> <br><span data-ttu-id="e1c09-293">Aceite = recebidos ou enviados uma confirmação funcional positivo</span><span class="sxs-lookup"><span data-stu-id="e1c09-293">Accepted = Received or sent a positive functional ack.</span></span> <br><span data-ttu-id="e1c09-294">Rejeitado = recebidos ou enviados uma confirmação negativa de funcional</span><span class="sxs-lookup"><span data-stu-id="e1c09-294">Rejected = Received or sent a negative functional ack.</span></span> <br><span data-ttu-id="e1c09-295">Pendente = era esperado um ack funcional, mas não foi recebido.</span><span class="sxs-lookup"><span data-stu-id="e1c09-295">Pending = Expecting a functional ack but not received.</span></span> <br><span data-ttu-id="e1c09-296">Pendente = gerou uma confirmação funcional, mas não é possível enviar toopartner.</span><span class="sxs-lookup"><span data-stu-id="e1c09-296">Pending = Generated a functional ack but can't send toopartner.</span></span> <br><span data-ttu-id="e1c09-297">Não é necessária = Ack funcional não está configurado.</span><span class="sxs-lookup"><span data-stu-id="e1c09-297">Not Required = Functional Ack is not set up.</span></span> |
+| <span data-ttu-id="e1c09-298">Direção</span><span class="sxs-lookup"><span data-stu-id="e1c09-298">Direction</span></span> | <span data-ttu-id="e1c09-299">Olá direção da mensagem EDIFACT</span><span class="sxs-lookup"><span data-stu-id="e1c09-299">hello EDIFACT message direction</span></span> |
+| <span data-ttu-id="e1c09-300">ID de correlação</span><span class="sxs-lookup"><span data-stu-id="e1c09-300">Correlation ID</span></span> | <span data-ttu-id="e1c09-301">ID de Olá está correlacionada com todos os acionadores de Olá e ações numa aplicação lógica</span><span class="sxs-lookup"><span data-stu-id="e1c09-301">hello ID that correlates all hello triggers and actions in a logic app</span></span> |
+| <span data-ttu-id="e1c09-302">Tipo de tarifas de mensagens</span><span class="sxs-lookup"><span data-stu-id="e1c09-302">Msg type</span></span> | <span data-ttu-id="e1c09-303">Olá, tipo de mensagem EDIFACT</span><span class="sxs-lookup"><span data-stu-id="e1c09-303">hello EDIFACT message type</span></span> |
+| <span data-ttu-id="e1c09-304">ICN</span><span class="sxs-lookup"><span data-stu-id="e1c09-304">ICN</span></span> | <span data-ttu-id="e1c09-305">Olá intercâmbio número de controlo de mensagem EDIFACT Olá</span><span class="sxs-lookup"><span data-stu-id="e1c09-305">hello Interchange Control Number for hello EDIFACT message</span></span> |
+| <span data-ttu-id="e1c09-306">TSCN</span><span class="sxs-lookup"><span data-stu-id="e1c09-306">TSCN</span></span> | <span data-ttu-id="e1c09-307">Olá transação definida controlo número de mensagem EDIFACT Olá</span><span class="sxs-lookup"><span data-stu-id="e1c09-307">hello Transaction Set Control Number for hello EDIFACT message</span></span> |
+| <span data-ttu-id="e1c09-308">Timestamp</span><span class="sxs-lookup"><span data-stu-id="e1c09-308">Timestamp</span></span> | <span data-ttu-id="e1c09-309">tempo de Olá quando Olá ação EDIFACT processar a mensagem de saudação</span><span class="sxs-lookup"><span data-stu-id="e1c09-309">hello time when hello EDIFACT action processed hello message</span></span> |
 |          |               |
 
 <a name="edifact-folder-file-names"></a>
 
-### <a name="edifact-name-formats-for-downloaded-message-files"></a>Formatos de nome EDIFACT para ficheiros de mensagens transferido
+### <a name="edifact-name-formats-for-downloaded-message-files"></a><span data-ttu-id="e1c09-310">Formatos de nome EDIFACT para ficheiros de mensagens transferido</span><span class="sxs-lookup"><span data-stu-id="e1c09-310">EDIFACT name formats for downloaded message files</span></span>
 
-Seguem-se formatos de nome de Olá para cada pasta de mensagem EDIFACT transferida e ficheiros.
+<span data-ttu-id="e1c09-311">Seguem-se formatos de nome de Olá para cada pasta de mensagem EDIFACT transferida e ficheiros.</span><span class="sxs-lookup"><span data-stu-id="e1c09-311">Here are hello name formats for each downloaded EDIFACT message folder and files.</span></span>
 
-| Ficheiro ou pasta | Formato de nome |
+| <span data-ttu-id="e1c09-312">Ficheiro ou pasta</span><span class="sxs-lookup"><span data-stu-id="e1c09-312">Folder or file</span></span> | <span data-ttu-id="e1c09-313">Formato de nome</span><span class="sxs-lookup"><span data-stu-id="e1c09-313">Name format</span></span> |
 | :------------- | :---------- |
-| Pasta de mensagem | [remetente] \_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_[global-controlo-número]\_[transação-set-controlo-número]\_[timestamp] |
-| Entrada, saída e se configurar os ficheiros de confirmação | **Payload de entrada**: [remetente]\_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_input_payload.txt </p>**Payload de saída**: [remetente]\_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_saída\_payload.txt </p></p>**Entradas**: [remetente]\_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_inputs.txt </p></p>**Saídas**: [remetente]\_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_outputs.txt |
+| <span data-ttu-id="e1c09-314">Pasta de mensagem</span><span class="sxs-lookup"><span data-stu-id="e1c09-314">Message folder</span></span> | <span data-ttu-id="e1c09-315">[remetente] \_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_[global-controlo-número]\_[transação-set-controlo-número]\_[timestamp]</span><span class="sxs-lookup"><span data-stu-id="e1c09-315">[sender]\_[receiver]\_EDIFACT\_[interchange-control-number]\_[global-control-number]\_[transaction-set-control-number]\_[timestamp]</span></span> |
+| <span data-ttu-id="e1c09-316">Entrada, saída e se configurar os ficheiros de confirmação</span><span class="sxs-lookup"><span data-stu-id="e1c09-316">Input, output, and if set up, acknowledgement files</span></span> | <span data-ttu-id="e1c09-317">**Payload de entrada**: [remetente]\_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_input_payload.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-317">**Input payload**: [sender]\_[receiver]\_EDIFACT\_[interchange-control-number]\_input_payload.txt</span></span> </p><span data-ttu-id="e1c09-318">**Payload de saída**: [remetente]\_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_saída\_payload.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-318">**Output payload**: [sender]\_[receiver]\_EDIFACT\_[interchange-control-number]\_output\_payload.txt</span></span> </p></p><span data-ttu-id="e1c09-319">**Entradas**: [remetente]\_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_inputs.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-319">**Inputs**: [sender]\_[receiver]\_EDIFACT\_[interchange-control-number]\_inputs.txt</span></span> </p></p><span data-ttu-id="e1c09-320">**Saídas**: [remetente]\_[recetor]\_EDIFACT\_[número de controlo de intercâmbio]\_outputs.txt</span><span class="sxs-lookup"><span data-stu-id="e1c09-320">**Outputs**: [sender]\_[receiver]\_EDIFACT\_[interchange-control-number]\_outputs.txt</span></span> |
 |          |             |
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="e1c09-321">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="e1c09-321">Next steps</span></span>
 
-* [Consulta para mensagens B2B no Operations Management Suite](../logic-apps/logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md)
-* [Esquemas de controlo de AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)
-* [Esquemas de controlo de X12](../logic-apps/logic-apps-track-integration-account-x12-tracking-schema.md)
-* [Esquemas de controlo personalizado](../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md)
+* [<span data-ttu-id="e1c09-322">Consulta para mensagens B2B no Operations Management Suite</span><span class="sxs-lookup"><span data-stu-id="e1c09-322">Query for B2B messages in Operations Management Suite</span></span>](../logic-apps/logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md)
+* [<span data-ttu-id="e1c09-323">Esquemas de controlo de AS2</span><span class="sxs-lookup"><span data-stu-id="e1c09-323">AS2 tracking schemas</span></span>](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)
+* [<span data-ttu-id="e1c09-324">Esquemas de controlo de X12</span><span class="sxs-lookup"><span data-stu-id="e1c09-324">X12 tracking schemas</span></span>](../logic-apps/logic-apps-track-integration-account-x12-tracking-schema.md)
+* [<span data-ttu-id="e1c09-325">Esquemas de controlo personalizado</span><span class="sxs-lookup"><span data-stu-id="e1c09-325">Custom tracking schemas</span></span>](../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md)

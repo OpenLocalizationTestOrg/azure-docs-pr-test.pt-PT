@@ -20,40 +20,40 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="quick-reference-for-frequently-used-commands-for-import-jobs"></a>Referência rápida para comandos utilizados com frequência para tarefas de importação
+# <a name="quick-reference-for-frequently-used-commands-for-import-jobs"></a><span data-ttu-id="5428e-103">Referência rápida para comandos utilizados com frequência para tarefas de importação</span><span class="sxs-lookup"><span data-stu-id="5428e-103">Quick reference for frequently used commands for import jobs</span></span>
 
-Este artigo fornece que uma referência rápida para algumas utilizadas frequentemente comandos. Para utilização detalhada, consulte [preparar os discos rígidos de uma tarefa de importação](../storage-import-export-tool-preparing-hard-drives-import.md).
+<span data-ttu-id="5428e-104">Este artigo fornece que uma referência rápida para algumas utilizadas frequentemente comandos.</span><span class="sxs-lookup"><span data-stu-id="5428e-104">This article provides a quick reference for some frequently used commands.</span></span> <span data-ttu-id="5428e-105">Para utilização detalhada, consulte [preparar os discos rígidos de uma tarefa de importação](../storage-import-export-tool-preparing-hard-drives-import.md).</span><span class="sxs-lookup"><span data-stu-id="5428e-105">For detailed usage, see [Preparing Hard Drives for an Import Job](../storage-import-export-tool-preparing-hard-drives-import.md).</span></span>
 
-## <a name="first-session"></a>Primeira sessão
+## <a name="first-session"></a><span data-ttu-id="5428e-106">Primeira sessão</span><span class="sxs-lookup"><span data-stu-id="5428e-106">First session</span></span>
 
 ```
 WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1 /sk:************* /InitialDriveSet:driveset-1.csv /DataSet:dataset-1.csv /logdir:F:\logs
 ```
 
-## <a name="second-session"></a>Segunda sessão
+## <a name="second-session"></a><span data-ttu-id="5428e-107">Segunda sessão</span><span class="sxs-lookup"><span data-stu-id="5428e-107">Second session</span></span>
 
 ```
 WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2 /DataSet:dataset-2.csv
 ```
 
-## <a name="abort-latest-session"></a>Abortar sessão mais recente
+## <a name="abort-latest-session"></a><span data-ttu-id="5428e-108">Abortar sessão mais recente</span><span class="sxs-lookup"><span data-stu-id="5428e-108">Abort latest session</span></span>
 
 ```
 WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2 /AbortSession
 ```
 
-## <a name="resume-latest-interrupted-session"></a>Retomar a mais recente interrompida sessão
+## <a name="resume-latest-interrupted-session"></a><span data-ttu-id="5428e-109">Retomar a mais recente interrompida sessão</span><span class="sxs-lookup"><span data-stu-id="5428e-109">Resume latest interrupted session</span></span>
 
 ```
 WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#3 /ResumeSession
 ```
 
-## <a name="add-drives-toolatest-session"></a>Adicione unidades toolatest sessão
+## <a name="add-drives-toolatest-session"></a><span data-ttu-id="5428e-110">Adicione unidades toolatest sessão</span><span class="sxs-lookup"><span data-stu-id="5428e-110">Add drives toolatest session</span></span>
 
 ```
 WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#3 /AdditionalDriveSet:driveset-2.csv
 ```
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="5428e-111">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="5428e-111">Next steps</span></span>
 
-* [Discos rígidos do tooprepare de fluxo de trabalho de exemplo para uma tarefa de importação](storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow.md)
+* [<span data-ttu-id="5428e-112">Discos rígidos do tooprepare de fluxo de trabalho de exemplo para uma tarefa de importação</span><span class="sxs-lookup"><span data-stu-id="5428e-112">Sample workflow tooprepare hard drives for an import job</span></span>](storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow.md)

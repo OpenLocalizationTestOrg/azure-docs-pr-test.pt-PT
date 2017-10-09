@@ -20,142 +20,142 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="connect-your-linux-computers-toooperations-management-suite-oms"></a>Ligar o seu tooOperations de computadores com Linux Management Suite (OMS) 
+# <a name="connect-your-linux-computers-toooperations-management-suite-oms"></a><span data-ttu-id="bedc5-103">Ligar o seu tooOperations de computadores com Linux Management Suite (OMS)</span><span class="sxs-lookup"><span data-stu-id="bedc5-103">Connect your Linux Computers tooOperations Management Suite (OMS)</span></span> 
 
-Com o Microsoft Operations Management Suite (OMS), pode recolher e atuar sobre dados gerados a partir de computadores com Linux e soluções de contentor como Docker, que reside no seu centro de dados no local, como servidores físicos ou máquinas virtuais, máquinas virtuais num serviço alojado na nuvem como Amazon Web Services (AWS) ou o Microsoft Azure. Também pode utilizar as soluções de gestão disponíveis na OMS, tais como controlo de alterações, as alterações de configuração de tooidentify, e tooproactively de atualizações de software do gestão de atualizações toomanage gerir Olá ciclo de vida das suas VMs do Linux. 
+<span data-ttu-id="bedc5-104">Com o Microsoft Operations Management Suite (OMS), pode recolher e atuar sobre dados gerados a partir de computadores com Linux e soluções de contentor como Docker, que reside no seu centro de dados no local, como servidores físicos ou máquinas virtuais, máquinas virtuais num serviço alojado na nuvem como Amazon Web Services (AWS) ou o Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="bedc5-104">With Microsoft Operations Management Suite (OMS), you can collect and act on data generated from Linux computers and container solutions like Docker, residing in your on-premises data center as physical servers or virtual machines, virtual machines in a cloud-hosted service like Amazon Web Services (AWS) or Microsoft Azure.</span></span> <span data-ttu-id="bedc5-105">Também pode utilizar as soluções de gestão disponíveis na OMS, tais como controlo de alterações, as alterações de configuração de tooidentify, e tooproactively de atualizações de software do gestão de atualizações toomanage gerir Olá ciclo de vida das suas VMs do Linux.</span><span class="sxs-lookup"><span data-stu-id="bedc5-105">You can also use management solutions available in OMS such as Change Tracking, tooidentify configuration changes, and Update Management toomanage software updates tooproactively manage hello lifecycle of your Linux VMs.</span></span> 
 
-Olá agente do OMS Linux comunica saída com Olá serviço OMS através da porta TCP 443, e, se o computador de Olá se liga toocommunicate de servidor de firewall ou proxy tooa através do Olá Internet, reveja [configurar o agente de Olá para utilização com um proxy HTTP servidor ou Gateway do OMS](#configuring-the-agent-for-use-with-an-http-proxy-server-or-oms-gateway) toounderstand que configuração é alterada, será necessário toobe aplicada.  Se estiver a monitorizar o computador de Olá com o System Center 2016 - Operations Manager ou do Operations Manager 2012 R2, pode ser multihomed com Olá OMS do serviço toocollect a dados e o serviço de reencaminhamento toohello e ainda ser monitorizado pelo Operations Manager.  Computadores com Linux monitorizados por um grupo de gestão do Operations Manager que está integrado com o OMS não receber a configuração de origens de dados e reencaminhar recolhidos dados através do grupo de gestão Olá.  agente do OMS Olá não pode ser configurado tooreport toomore a uma área de trabalho.  
+<span data-ttu-id="bedc5-106">Olá agente do OMS Linux comunica saída com Olá serviço OMS através da porta TCP 443, e, se o computador de Olá se liga toocommunicate de servidor de firewall ou proxy tooa através do Olá Internet, reveja [configurar o agente de Olá para utilização com um proxy HTTP servidor ou Gateway do OMS](#configuring-the-agent-for-use-with-an-http-proxy-server-or-oms-gateway) toounderstand que configuração é alterada, será necessário toobe aplicada.</span><span class="sxs-lookup"><span data-stu-id="bedc5-106">hello OMS Agent for Linux communicates outbound with hello OMS service over TCP port 443, and if hello computer connects tooa firewall or proxy server toocommunicate over hello Internet, review [Configuring hello agent for use with an HTTP proxy server or OMS Gateway](#configuring-the-agent-for-use-with-an-http-proxy-server-or-oms-gateway) toounderstand what configuration changes will need toobe applied.</span></span>  <span data-ttu-id="bedc5-107">Se estiver a monitorizar o computador de Olá com o System Center 2016 - Operations Manager ou do Operations Manager 2012 R2, pode ser multihomed com Olá OMS do serviço toocollect a dados e o serviço de reencaminhamento toohello e ainda ser monitorizado pelo Operations Manager.</span><span class="sxs-lookup"><span data-stu-id="bedc5-107">If you are monitoring hello computer with System Center 2016 - Operations Manager or Operations Manager 2012 R2, it can be multi-homed with hello OMS service toocollect data and forward toohello service and still be monitored by Operations Manager.</span></span>  <span data-ttu-id="bedc5-108">Computadores com Linux monitorizados por um grupo de gestão do Operations Manager que está integrado com o OMS não receber a configuração de origens de dados e reencaminhar recolhidos dados através do grupo de gestão Olá.</span><span class="sxs-lookup"><span data-stu-id="bedc5-108">Linux computers monitored by an Operations Manager management group that is integrated with OMS do not receive configuration for data sources and forward collected data through hello management group.</span></span>  <span data-ttu-id="bedc5-109">agente do OMS Olá não pode ser configurado tooreport toomore a uma área de trabalho.</span><span class="sxs-lookup"><span data-stu-id="bedc5-109">hello OMS agent cannot be configured tooreport toomore than one workspace.</span></span>  
 
-Se as políticas de segurança de TI não permitir que os computadores no seu toohello tooconnect de rede à Internet, o agente de Olá pode ser configurado tooconnect toohello OMS Gateway tooreceive as informações de configuração e enviar os dados recolhidos, consoante a solução Olá que tiver ativado. Para obter mais informações e passos sobre como tooconfigure toocommunicate o agente do OMS Linux através do serviço OMS toohello um Gateway do OMS, consulte o artigo [ligar tooOMS de computadores utilizando Olá OMS Gateway](log-analytics-oms-gateway.md).  
+<span data-ttu-id="bedc5-110">Se as políticas de segurança de TI não permitir que os computadores no seu toohello tooconnect de rede à Internet, o agente de Olá pode ser configurado tooconnect toohello OMS Gateway tooreceive as informações de configuração e enviar os dados recolhidos, consoante a solução Olá que tiver ativado.</span><span class="sxs-lookup"><span data-stu-id="bedc5-110">If your IT security policies do not allow computers on your network tooconnect toohello Internet, hello agent can be configured tooconnect toohello OMS Gateway tooreceive configuration information and send collected data depending on hello solution you have enabled.</span></span> <span data-ttu-id="bedc5-111">Para obter mais informações e passos sobre como tooconfigure toocommunicate o agente do OMS Linux através do serviço OMS toohello um Gateway do OMS, consulte o artigo [ligar tooOMS de computadores utilizando Olá OMS Gateway](log-analytics-oms-gateway.md).</span><span class="sxs-lookup"><span data-stu-id="bedc5-111">For more information and steps on how tooconfigure your OMS Linux Agent toocommunicate through an OMS Gateway toohello OMS service, see [Connect computers tooOMS using hello OMS Gateway](log-analytics-oms-gateway.md).</span></span>  
 
-Olá diagrama seguinte ilustra ligação Olá entre computadores com Linux geridos por agente Olá e OMS, incluindo direção Olá e portas.
+<span data-ttu-id="bedc5-112">Olá diagrama seguinte ilustra ligação Olá entre computadores com Linux geridos por agente Olá e OMS, incluindo direção Olá e portas.</span><span class="sxs-lookup"><span data-stu-id="bedc5-112">hello following diagram depicts hello connection between hello agent-managed Linux computers and OMS, including hello direction and ports.</span></span>
 
 ![comunicação do agente direta com diagrama do OMS](./media/log-analytics-agent-linux/log-analytics-agent-linux-communication.png)
 
-## <a name="system-requirements"></a>Requisitos de sistema
-Antes de começar, reveja Olá tooverify detalhes cumpre os pré-requisitos de Olá a seguir.
+## <a name="system-requirements"></a><span data-ttu-id="bedc5-114">Requisitos de sistema</span><span class="sxs-lookup"><span data-stu-id="bedc5-114">System requirements</span></span>
+<span data-ttu-id="bedc5-115">Antes de começar, reveja Olá tooverify detalhes cumpre os pré-requisitos de Olá a seguir.</span><span class="sxs-lookup"><span data-stu-id="bedc5-115">Before starting, review hello following details tooverify you meet hello prerequisites.</span></span>
 
-### <a name="supported-linux-operating-systems"></a>Sistemas operativos Linux suportados
-Olá, seguindo as distribuições do Linux oficialmente é suportada.  No entanto, Olá agente do OMS para Linux também pode executar nos outras distribuições não listadas.
+### <a name="supported-linux-operating-systems"></a><span data-ttu-id="bedc5-116">Sistemas operativos Linux suportados</span><span class="sxs-lookup"><span data-stu-id="bedc5-116">Supported Linux operating systems</span></span>
+<span data-ttu-id="bedc5-117">Olá, seguindo as distribuições do Linux oficialmente é suportada.</span><span class="sxs-lookup"><span data-stu-id="bedc5-117">hello following Linux distributions are officially supported.</span></span>  <span data-ttu-id="bedc5-118">No entanto, Olá agente do OMS para Linux também pode executar nos outras distribuições não listadas.</span><span class="sxs-lookup"><span data-stu-id="bedc5-118">However, hello OMS Agent for Linux might also run on other distributions not listed.</span></span>
 
-* Amazon Linux 2012.09 too2015.09 (x86/x64)
-* CentOS Linux 5, 6 e 7 (x86/x64)
-* Oracle Linux 5, 6 e 7 (x86/x64)
-* Red Hat Enterprise Linux Server 5, 6 e 7 (x86/x64)
-* Debian GNU/Linux 6, 7 e 8 (x86/x64)
-* Ubuntu 12.04 LTS, 14.04 LTS, 15.04, 15.10, 16.04 LTS (x86/x64)
-* SUSE Linux Enterprise Server 11 e 12 (x86/x64)
+* <span data-ttu-id="bedc5-119">Amazon Linux 2012.09 too2015.09 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="bedc5-119">Amazon Linux 2012.09 too2015.09 (x86/x64)</span></span>
+* <span data-ttu-id="bedc5-120">CentOS Linux 5, 6 e 7 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="bedc5-120">CentOS Linux 5, 6, and 7 (x86/x64)</span></span>
+* <span data-ttu-id="bedc5-121">Oracle Linux 5, 6 e 7 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="bedc5-121">Oracle Linux 5, 6, and 7 (x86/x64)</span></span>
+* <span data-ttu-id="bedc5-122">Red Hat Enterprise Linux Server 5, 6 e 7 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="bedc5-122">Red Hat Enterprise Linux Server 5, 6 and 7 (x86/x64)</span></span>
+* <span data-ttu-id="bedc5-123">Debian GNU/Linux 6, 7 e 8 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="bedc5-123">Debian GNU/Linux 6, 7, and 8 (x86/x64)</span></span>
+* <span data-ttu-id="bedc5-124">Ubuntu 12.04 LTS, 14.04 LTS, 15.04, 15.10, 16.04 LTS (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="bedc5-124">Ubuntu 12.04 LTS, 14.04 LTS, 15.04, 15.10, 16.04 LTS (x86/x64)</span></span>
+* <span data-ttu-id="bedc5-125">SUSE Linux Enterprise Server 11 e 12 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="bedc5-125">SUSE Linux Enterprise Server 11 and 12 (x86/x64)</span></span>
 
-### <a name="network"></a>Rede
-informações de Olá abaixo proxy Olá de lista e informações de configuração de firewall necessárias para Olá toocommunicate de agente do Linux com o OMS. O tráfego é de saída do seu serviço do rede toohello OMS. 
+### <a name="network"></a><span data-ttu-id="bedc5-126">Rede</span><span class="sxs-lookup"><span data-stu-id="bedc5-126">Network</span></span>
+<span data-ttu-id="bedc5-127">informações de Olá abaixo proxy Olá de lista e informações de configuração de firewall necessárias para Olá toocommunicate de agente do Linux com o OMS.</span><span class="sxs-lookup"><span data-stu-id="bedc5-127">hello information below list hello proxy and firewall configuration information required for hello Linux agent toocommunicate with OMS.</span></span> <span data-ttu-id="bedc5-128">O tráfego é de saída do seu serviço do rede toohello OMS.</span><span class="sxs-lookup"><span data-stu-id="bedc5-128">Traffic is outbound from your network toohello OMS service.</span></span> 
 
-|Recursos do Agente| Portas |  
+|<span data-ttu-id="bedc5-129">Recursos do Agente</span><span class="sxs-lookup"><span data-stu-id="bedc5-129">Agent Resource</span></span>| <span data-ttu-id="bedc5-130">Portas</span><span class="sxs-lookup"><span data-stu-id="bedc5-130">Ports</span></span> |  
 |------|---------|  
-|*.ods.opinsights.azure.com | Porta 443|   
-|*.oms.opinsights.azure.com | Porta 443|   
-|*.blob.Core.Windows.NET/ | Porta 443|   
-|*.azure-automation.net | Porta 443|  
+|<span data-ttu-id="bedc5-131">*.ods.opinsights.azure.com</span><span class="sxs-lookup"><span data-stu-id="bedc5-131">*.ods.opinsights.azure.com</span></span> | <span data-ttu-id="bedc5-132">Porta 443</span><span class="sxs-lookup"><span data-stu-id="bedc5-132">Port 443</span></span>|   
+|<span data-ttu-id="bedc5-133">*.oms.opinsights.azure.com</span><span class="sxs-lookup"><span data-stu-id="bedc5-133">*.oms.opinsights.azure.com</span></span> | <span data-ttu-id="bedc5-134">Porta 443</span><span class="sxs-lookup"><span data-stu-id="bedc5-134">Port 443</span></span>|   
+|<span data-ttu-id="bedc5-135">*.blob.Core.Windows.NET/</span><span class="sxs-lookup"><span data-stu-id="bedc5-135">*.blob.core.windows.net/</span></span> | <span data-ttu-id="bedc5-136">Porta 443</span><span class="sxs-lookup"><span data-stu-id="bedc5-136">Port 443</span></span>|   
+|<span data-ttu-id="bedc5-137">*.azure-automation.net</span><span class="sxs-lookup"><span data-stu-id="bedc5-137">*.azure-automation.net</span></span> | <span data-ttu-id="bedc5-138">Porta 443</span><span class="sxs-lookup"><span data-stu-id="bedc5-138">Port 443</span></span>|  
 
-### <a name="package-requirements"></a>Requisitos do pacote
+### <a name="package-requirements"></a><span data-ttu-id="bedc5-139">Requisitos do pacote</span><span class="sxs-lookup"><span data-stu-id="bedc5-139">Package requirements</span></span>
 
- **Pacote necessário**   | **Descrição**   | **Versão mínima**
+ <span data-ttu-id="bedc5-140">**Pacote necessário**</span><span class="sxs-lookup"><span data-stu-id="bedc5-140">**Required package**</span></span>   | <span data-ttu-id="bedc5-141">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="bedc5-141">**Description**</span></span>   | <span data-ttu-id="bedc5-142">**Versão mínima**</span><span class="sxs-lookup"><span data-stu-id="bedc5-142">**Minimum version**</span></span>
 --------------------- | --------------------- | -------------------
-Glibc | Biblioteca de C GNU   | 2.5-12 
-OpenSSL | Bibliotecas de OpenSSL | 0.9.8E ou 1.0
-Curl | cURL web cliente | 7.15.5
-Python ctypes | | 
-PAM | Módulos de autenticação incorporável | 
+<span data-ttu-id="bedc5-143">Glibc</span><span class="sxs-lookup"><span data-stu-id="bedc5-143">Glibc</span></span> | <span data-ttu-id="bedc5-144">Biblioteca de C GNU</span><span class="sxs-lookup"><span data-stu-id="bedc5-144">GNU C Library</span></span>   | <span data-ttu-id="bedc5-145">2.5-12</span><span class="sxs-lookup"><span data-stu-id="bedc5-145">2.5-12</span></span> 
+<span data-ttu-id="bedc5-146">OpenSSL</span><span class="sxs-lookup"><span data-stu-id="bedc5-146">Openssl</span></span> | <span data-ttu-id="bedc5-147">Bibliotecas de OpenSSL</span><span class="sxs-lookup"><span data-stu-id="bedc5-147">OpenSSL Libraries</span></span> | <span data-ttu-id="bedc5-148">0.9.8E ou 1.0</span><span class="sxs-lookup"><span data-stu-id="bedc5-148">0.9.8e or 1.0</span></span>
+<span data-ttu-id="bedc5-149">Curl</span><span class="sxs-lookup"><span data-stu-id="bedc5-149">Curl</span></span> | <span data-ttu-id="bedc5-150">cURL web cliente</span><span class="sxs-lookup"><span data-stu-id="bedc5-150">cURL web client</span></span> | <span data-ttu-id="bedc5-151">7.15.5</span><span class="sxs-lookup"><span data-stu-id="bedc5-151">7.15.5</span></span>
+<span data-ttu-id="bedc5-152">Python ctypes</span><span class="sxs-lookup"><span data-stu-id="bedc5-152">Python-ctypes</span></span> | | 
+<span data-ttu-id="bedc5-153">PAM</span><span class="sxs-lookup"><span data-stu-id="bedc5-153">PAM</span></span> | <span data-ttu-id="bedc5-154">Módulos de autenticação incorporável</span><span class="sxs-lookup"><span data-stu-id="bedc5-154">Pluggable authentication Modules</span></span> | 
 
 > [!NOTE]
->  Rsyslog ou syslog ng é necessária toocollect mensagens syslog. daemon de syslog Olá predefinição na versão 5 do Red Hat Enterprise Linux, CentOS, Oracle Linux versão e (sysklog) não é suportado para a recolha de eventos do syslog. dados de syslog toocollect de nesta versão destes distribuições Olá rsyslog daemon deve ser instalado e configurado tooreplace sysklog, 
+>  <span data-ttu-id="bedc5-155">Rsyslog ou syslog ng é necessária toocollect mensagens syslog.</span><span class="sxs-lookup"><span data-stu-id="bedc5-155">Either rsyslog or syslog-ng are required toocollect syslog messages.</span></span> <span data-ttu-id="bedc5-156">daemon de syslog Olá predefinição na versão 5 do Red Hat Enterprise Linux, CentOS, Oracle Linux versão e (sysklog) não é suportado para a recolha de eventos do syslog.</span><span class="sxs-lookup"><span data-stu-id="bedc5-156">hello default syslog daemon on version 5 of Red Hat Enterprise Linux, CentOS, and Oracle Linux version (sysklog) is not supported for syslog event collection.</span></span> <span data-ttu-id="bedc5-157">dados de syslog toocollect de nesta versão destes distribuições Olá rsyslog daemon deve ser instalado e configurado tooreplace sysklog,</span><span class="sxs-lookup"><span data-stu-id="bedc5-157">toocollect syslog data from this version of these distributions, hello rsyslog daemon should be installed and configured tooreplace sysklog,</span></span> 
 
-agente de Olá inclui vários pacotes. Olá ficheiro versão contém Olá pacotes, disponíveis por pacote de shell Olá em execução com os seguintes `--extract`:
+<span data-ttu-id="bedc5-158">agente de Olá inclui vários pacotes.</span><span class="sxs-lookup"><span data-stu-id="bedc5-158">hello agent includes multiple packages.</span></span> <span data-ttu-id="bedc5-159">Olá ficheiro versão contém Olá pacotes, disponíveis por pacote de shell Olá em execução com os seguintes `--extract`:</span><span class="sxs-lookup"><span data-stu-id="bedc5-159">hello release file contains hello following packages, available by running hello shell bundle with `--extract`:</span></span>
 
-**Pacote** | **Versão** | **Descrição**
+<span data-ttu-id="bedc5-160">**Pacote**</span><span class="sxs-lookup"><span data-stu-id="bedc5-160">**Package**</span></span> | <span data-ttu-id="bedc5-161">**Versão**</span><span class="sxs-lookup"><span data-stu-id="bedc5-161">**Version**</span></span> | <span data-ttu-id="bedc5-162">**Descrição**</span><span class="sxs-lookup"><span data-stu-id="bedc5-162">**Description**</span></span>
 ----------- | ----------- | --------------
-omsagent | 1.4.0 | Olá agente do Operations Management Suite para Linux
-omsconfig | 1.1.1 | Agente de configuração para Olá agente do OMS
-OMI | 1.2.0 | Abra o Management Infrastructure (OMI) - uma simples de servidor CIM
-scx | 1.6.3 | Fornecedores de CIM OMI para as métricas de desempenho do sistema operativo
-Apache cimprov | 1.0.1 | Fornecedor para OMI de monitorização do desempenho Apache HTTP Server. Instalado se for detetado Apache HTTP Server.
-MySQL cimprov | 1.0.1 | Desempenho do servidor de MySQL monitorização fornecedor para OMI. Instalado se for detetado MySQL/MariaDB servidor.
-docker cimprov | 1.0.0 | Fornecedor de docker para OMI. Instalado se for detetado Docker.
+<span data-ttu-id="bedc5-163">omsagent</span><span class="sxs-lookup"><span data-stu-id="bedc5-163">omsagent</span></span> | <span data-ttu-id="bedc5-164">1.4.0</span><span class="sxs-lookup"><span data-stu-id="bedc5-164">1.4.0</span></span> | <span data-ttu-id="bedc5-165">Olá agente do Operations Management Suite para Linux</span><span class="sxs-lookup"><span data-stu-id="bedc5-165">hello Operations Management Suite Agent for Linux</span></span>
+<span data-ttu-id="bedc5-166">omsconfig</span><span class="sxs-lookup"><span data-stu-id="bedc5-166">omsconfig</span></span> | <span data-ttu-id="bedc5-167">1.1.1</span><span class="sxs-lookup"><span data-stu-id="bedc5-167">1.1.1</span></span> | <span data-ttu-id="bedc5-168">Agente de configuração para Olá agente do OMS</span><span class="sxs-lookup"><span data-stu-id="bedc5-168">Configuration agent for hello OMS Agent</span></span>
+<span data-ttu-id="bedc5-169">OMI</span><span class="sxs-lookup"><span data-stu-id="bedc5-169">omi</span></span> | <span data-ttu-id="bedc5-170">1.2.0</span><span class="sxs-lookup"><span data-stu-id="bedc5-170">1.2.0</span></span> | <span data-ttu-id="bedc5-171">Abra o Management Infrastructure (OMI) - uma simples de servidor CIM</span><span class="sxs-lookup"><span data-stu-id="bedc5-171">Open Management Infrastructure (OMI) - a lightweight CIM Server</span></span>
+<span data-ttu-id="bedc5-172">scx</span><span class="sxs-lookup"><span data-stu-id="bedc5-172">scx</span></span> | <span data-ttu-id="bedc5-173">1.6.3</span><span class="sxs-lookup"><span data-stu-id="bedc5-173">1.6.3</span></span> | <span data-ttu-id="bedc5-174">Fornecedores de CIM OMI para as métricas de desempenho do sistema operativo</span><span class="sxs-lookup"><span data-stu-id="bedc5-174">OMI CIM Providers for operating system performance metrics</span></span>
+<span data-ttu-id="bedc5-175">Apache cimprov</span><span class="sxs-lookup"><span data-stu-id="bedc5-175">apache-cimprov</span></span> | <span data-ttu-id="bedc5-176">1.0.1</span><span class="sxs-lookup"><span data-stu-id="bedc5-176">1.0.1</span></span> | <span data-ttu-id="bedc5-177">Fornecedor para OMI de monitorização do desempenho Apache HTTP Server.</span><span class="sxs-lookup"><span data-stu-id="bedc5-177">Apache HTTP Server performance monitoring provider for OMI.</span></span> <span data-ttu-id="bedc5-178">Instalado se for detetado Apache HTTP Server.</span><span class="sxs-lookup"><span data-stu-id="bedc5-178">Installed if Apache HTTP Server is detected.</span></span>
+<span data-ttu-id="bedc5-179">MySQL cimprov</span><span class="sxs-lookup"><span data-stu-id="bedc5-179">mysql-cimprov</span></span> | <span data-ttu-id="bedc5-180">1.0.1</span><span class="sxs-lookup"><span data-stu-id="bedc5-180">1.0.1</span></span> | <span data-ttu-id="bedc5-181">Desempenho do servidor de MySQL monitorização fornecedor para OMI.</span><span class="sxs-lookup"><span data-stu-id="bedc5-181">MySQL Server performance monitoring provider for OMI.</span></span> <span data-ttu-id="bedc5-182">Instalado se for detetado MySQL/MariaDB servidor.</span><span class="sxs-lookup"><span data-stu-id="bedc5-182">Installed if MySQL/MariaDB server is detected.</span></span>
+<span data-ttu-id="bedc5-183">docker cimprov</span><span class="sxs-lookup"><span data-stu-id="bedc5-183">docker-cimprov</span></span> | <span data-ttu-id="bedc5-184">1.0.0</span><span class="sxs-lookup"><span data-stu-id="bedc5-184">1.0.0</span></span> | <span data-ttu-id="bedc5-185">Fornecedor de docker para OMI.</span><span class="sxs-lookup"><span data-stu-id="bedc5-185">Docker provider for OMI.</span></span> <span data-ttu-id="bedc5-186">Instalado se for detetado Docker.</span><span class="sxs-lookup"><span data-stu-id="bedc5-186">Installed if Docker is detected.</span></span>
 
-### <a name="compatibility-with-system-center-operations-manager"></a>Compatibilidade com o System Center Operations Manager
-Olá agente do OMS para Linux partilha binários do agente com o agente do System Center Operations Manager Olá. Se instalar Olá agente do OMS para Linux num sistema atualmente gerido pelo Operations Manager, Olá OMI e SCX pacotes na versão mais recente do Olá computador tooa. Esta versão, Olá OMS e System Center 2016 - agentes do Operations Manager/Operations Manager 2012 R2 para Linux são compatíveis. 
+### <a name="compatibility-with-system-center-operations-manager"></a><span data-ttu-id="bedc5-187">Compatibilidade com o System Center Operations Manager</span><span class="sxs-lookup"><span data-stu-id="bedc5-187">Compatibility with System Center Operations Manager</span></span>
+<span data-ttu-id="bedc5-188">Olá agente do OMS para Linux partilha binários do agente com o agente do System Center Operations Manager Olá.</span><span class="sxs-lookup"><span data-stu-id="bedc5-188">hello OMS Agent for Linux shares agent binaries with hello System Center Operations Manager agent.</span></span> <span data-ttu-id="bedc5-189">Se instalar Olá agente do OMS para Linux num sistema atualmente gerido pelo Operations Manager, Olá OMI e SCX pacotes na versão mais recente do Olá computador tooa.</span><span class="sxs-lookup"><span data-stu-id="bedc5-189">If you install hello OMS Agent for Linux on a system currently managed by Operations Manager, it hello OMI and SCX packages on hello computer tooa newer version.</span></span> <span data-ttu-id="bedc5-190">Esta versão, Olá OMS e System Center 2016 - agentes do Operations Manager/Operations Manager 2012 R2 para Linux são compatíveis.</span><span class="sxs-lookup"><span data-stu-id="bedc5-190">In this release, hello OMS and System Center 2016 - Operations Manager/Operations Manager 2012 R2 agents for Linux are compatible.</span></span> 
 
 > [!NOTE]
-> System Center 2012 SP1 e versões anteriores atualmente não são compatíveis ou suportado com Olá agente do OMS para Linux.<br>
-> Se Olá agente do OMS para Linux é computador tooa instalados que não monitorizado pelo Operations Manager e pretende, em seguida, o computador de Olá toomonitor com o Operations Manager, tem de modificar Olá [configuração OMI](#enable-the-oms-agent-for-linux-to-report-to-system-center-operations-manager) anterior computador de Olá toodiscovering. **Este passo é *não* necessário se o agente do Operations Manager Olá está instalado antes de Olá agente do OMS para Linux.**
+> <span data-ttu-id="bedc5-191">System Center 2012 SP1 e versões anteriores atualmente não são compatíveis ou suportado com Olá agente do OMS para Linux.</span><span class="sxs-lookup"><span data-stu-id="bedc5-191">System Center 2012 SP1 and earlier versions are currently not compatible or supported with hello OMS Agent for Linux.</span></span><br>
+> <span data-ttu-id="bedc5-192">Se Olá agente do OMS para Linux é computador tooa instalados que não monitorizado pelo Operations Manager e pretende, em seguida, o computador de Olá toomonitor com o Operations Manager, tem de modificar Olá [configuração OMI](#enable-the-oms-agent-for-linux-to-report-to-system-center-operations-manager) anterior computador de Olá toodiscovering.</span><span class="sxs-lookup"><span data-stu-id="bedc5-192">If hello OMS Agent for Linux is installed tooa computer that is not currently monitored by Operations Manager, and you then wish toomonitor hello computer with Operations Manager, you must modify hello [OMI configuration](#enable-the-oms-agent-for-linux-to-report-to-system-center-operations-manager) prior toodiscovering hello computer.</span></span> <span data-ttu-id="bedc5-193">**Este passo é *não* necessário se o agente do Operations Manager Olá está instalado antes de Olá agente do OMS para Linux.**</span><span class="sxs-lookup"><span data-stu-id="bedc5-193">**This step is *not* needed if hello Operations Manager agent is installed before hello OMS Agent for Linux.**</span></span>
 
-### <a name="system-configuration-changes"></a>Alterações de configuração do sistema
-Depois de instalar Olá agente do OMS para pacotes de Linux, hello seguintes alterações de configuração de todo sistema adicionais são aplicadas. Destes artefactos são removidos quando Olá omsagent pacote foi desinstalado.
+### <a name="system-configuration-changes"></a><span data-ttu-id="bedc5-194">Alterações de configuração do sistema</span><span class="sxs-lookup"><span data-stu-id="bedc5-194">System configuration changes</span></span>
+<span data-ttu-id="bedc5-195">Depois de instalar Olá agente do OMS para pacotes de Linux, hello seguintes alterações de configuração de todo sistema adicionais são aplicadas.</span><span class="sxs-lookup"><span data-stu-id="bedc5-195">After installing hello OMS Agent for Linux packages, hello following additional system-wide configuration changes are applied.</span></span> <span data-ttu-id="bedc5-196">Destes artefactos são removidos quando Olá omsagent pacote foi desinstalado.</span><span class="sxs-lookup"><span data-stu-id="bedc5-196">These artifacts are removed when hello omsagent package is uninstalled.</span></span>
 
-* Um utilizador sem privilégios com o nome: `omsagent` é criado. Este é Olá conta Olá omsagent daemon é executada como.
-* É criado um ficheiro de "incluem" de sudoers em /etc/sudoers.d/omsagent. Autoriza o omsagent toorestart Olá syslog e omsagent daemons. Se o sudo "incluem" diretivas não são suportadas na versão de Olá instalado de sudo, estas entradas são escritas demasiado/etc/sudoers.
-* a configuração de syslog Olá é modificado tooforward um subconjunto do agente de toohello de eventos. Para obter mais informações, consulte Olá **configurar recolha de dados** secção abaixo
+* <span data-ttu-id="bedc5-197">Um utilizador sem privilégios com o nome: `omsagent` é criado.</span><span class="sxs-lookup"><span data-stu-id="bedc5-197">A non-privileged user named: `omsagent` is created.</span></span> <span data-ttu-id="bedc5-198">Este é Olá conta Olá omsagent daemon é executada como.</span><span class="sxs-lookup"><span data-stu-id="bedc5-198">This is hello account hello omsagent daemon runs as.</span></span>
+* <span data-ttu-id="bedc5-199">É criado um ficheiro de "incluem" de sudoers em /etc/sudoers.d/omsagent.</span><span class="sxs-lookup"><span data-stu-id="bedc5-199">A sudoers “include” file is created at /etc/sudoers.d/omsagent.</span></span> <span data-ttu-id="bedc5-200">Autoriza o omsagent toorestart Olá syslog e omsagent daemons.</span><span class="sxs-lookup"><span data-stu-id="bedc5-200">This authorizes omsagent toorestart hello syslog and omsagent daemons.</span></span> <span data-ttu-id="bedc5-201">Se o sudo "incluem" diretivas não são suportadas na versão de Olá instalado de sudo, estas entradas são escritas demasiado/etc/sudoers.</span><span class="sxs-lookup"><span data-stu-id="bedc5-201">If sudo “include” directives are not supported in hello installed version of sudo, these entries are written too/etc/sudoers.</span></span>
+* <span data-ttu-id="bedc5-202">a configuração de syslog Olá é modificado tooforward um subconjunto do agente de toohello de eventos.</span><span class="sxs-lookup"><span data-stu-id="bedc5-202">hello syslog configuration is modified tooforward a subset of events toohello agent.</span></span> <span data-ttu-id="bedc5-203">Para obter mais informações, consulte Olá **configurar recolha de dados** secção abaixo</span><span class="sxs-lookup"><span data-stu-id="bedc5-203">For more information, see hello **Configuring Data Collection** section below</span></span>
 
-### <a name="upgrade-from-a-previous-release"></a>Atualizar a partir de uma versão anterior
-Atualizar a partir de versões anteriores daquele 1.0.0-47 é suportada nesta versão. Efetuar a instalação de Olá com Olá `--upgrade` comando atualiza todos os componentes do Olá toohello mais recente a versão do agente.
+### <a name="upgrade-from-a-previous-release"></a><span data-ttu-id="bedc5-204">Atualizar a partir de uma versão anterior</span><span class="sxs-lookup"><span data-stu-id="bedc5-204">Upgrade from a previous release</span></span>
+<span data-ttu-id="bedc5-205">Atualizar a partir de versões anteriores daquele 1.0.0-47 é suportada nesta versão.</span><span class="sxs-lookup"><span data-stu-id="bedc5-205">Upgrade from versions earlier than 1.0.0-47 is supported in this release.</span></span> <span data-ttu-id="bedc5-206">Efetuar a instalação de Olá com Olá `--upgrade` comando atualiza todos os componentes do Olá toohello mais recente a versão do agente.</span><span class="sxs-lookup"><span data-stu-id="bedc5-206">Performing hello installation with hello `--upgrade` command upgrades all components of hello agent toohello latest version.</span></span>
 
-## <a name="installing-hello-agent"></a>Instalar agente Olá
+## <a name="installing-hello-agent"></a><span data-ttu-id="bedc5-207">Instalar agente Olá</span><span class="sxs-lookup"><span data-stu-id="bedc5-207">Installing hello agent</span></span>
 
-Esta secção descreve como tooinstall Olá agente do OMS para Linux utilizando um bunndle, que contém Debian e RPM pacotes para cada um dos componentes do agente Olá.  Este pode ser instalado diretamente ou extrair pacotes individuais de Olá tooretrieve.  
+<span data-ttu-id="bedc5-208">Esta secção descreve como tooinstall Olá agente do OMS para Linux utilizando um bunndle, que contém Debian e RPM pacotes para cada um dos componentes do agente Olá.</span><span class="sxs-lookup"><span data-stu-id="bedc5-208">This section describes how tooinstall hello OMS Agent for Linux using a bunndle, which contains Debian and RPM packages for each of hello agent components.</span></span>  <span data-ttu-id="bedc5-209">Este pode ser instalado diretamente ou extrair pacotes individuais de Olá tooretrieve.</span><span class="sxs-lookup"><span data-stu-id="bedc5-209">It can be installed directly or extracted tooretrieve hello individual packages.</span></span>  
 
-Primeiro tem do ID da área de trabalho OMS e a chave, o que pode encontrar ao mudar toohello [portal clássico do OMS](https://mms.microsoft.com).  No Olá **descrição geral** página, no menu superior, Olá selecione **definições**e, em seguida, navegue até demasiado**ligado servidores de Sources\Linux**.  Pode ver Olá valor toohello de **ID da área de trabalho** e **chave primária**.  Copie e cole-o no seu editor favorito.    
+<span data-ttu-id="bedc5-210">Primeiro tem do ID da área de trabalho OMS e a chave, o que pode encontrar ao mudar toohello [portal clássico do OMS](https://mms.microsoft.com).</span><span class="sxs-lookup"><span data-stu-id="bedc5-210">First you need your OMS workspace ID and key, which you can find by switching toohello [OMS classic portal](https://mms.microsoft.com).</span></span>  <span data-ttu-id="bedc5-211">No Olá **descrição geral** página, no menu superior, Olá selecione **definições**e, em seguida, navegue até demasiado**ligado servidores de Sources\Linux**.</span><span class="sxs-lookup"><span data-stu-id="bedc5-211">On hello **Overview** page, from hello top menu select **Settings**, and then navigate too**Connected Sources\Linux Servers**.</span></span>  <span data-ttu-id="bedc5-212">Pode ver Olá valor toohello de **ID da área de trabalho** e **chave primária**.</span><span class="sxs-lookup"><span data-stu-id="bedc5-212">You see hello value toohello right of **Workspace ID** and **Primary Key**.</span></span>  <span data-ttu-id="bedc5-213">Copie e cole-o no seu editor favorito.</span><span class="sxs-lookup"><span data-stu-id="bedc5-213">Copy and paste both into your favorite editor.</span></span>    
 
-1. Transferência Olá mais recente [agente do OMS para Linux (x64)](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/download/OMSAgent_GA_v1.4.0-45/omsagent-1.4.0-45.universal.x64.sh) ou [agente do OMS para Linux x86](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/download/OMSAgent_GA_v1.4.0-45/omsagent-1.4.0-45.universal.x86.sh) a partir do GitHub.  
-2. Transferência de Olá pacote adequado (x86 ou x64) tooyour computador Linux utilizando scp/sftp.
-3. Instalar o pacote de Olá utilizando Olá `--install` ou `--upgrade` argumento. 
+1. <span data-ttu-id="bedc5-214">Transferência Olá mais recente [agente do OMS para Linux (x64)](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/download/OMSAgent_GA_v1.4.0-45/omsagent-1.4.0-45.universal.x64.sh) ou [agente do OMS para Linux x86](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/download/OMSAgent_GA_v1.4.0-45/omsagent-1.4.0-45.universal.x86.sh) a partir do GitHub.</span><span class="sxs-lookup"><span data-stu-id="bedc5-214">Download hello latest [OMS Agent for Linux (x64)](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/download/OMSAgent_GA_v1.4.0-45/omsagent-1.4.0-45.universal.x64.sh) or [OMS Agent for Linux x86](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/download/OMSAgent_GA_v1.4.0-45/omsagent-1.4.0-45.universal.x86.sh) from GitHub.</span></span>  
+2. <span data-ttu-id="bedc5-215">Transferência de Olá pacote adequado (x86 ou x64) tooyour computador Linux utilizando scp/sftp.</span><span class="sxs-lookup"><span data-stu-id="bedc5-215">Transfer hello appropriate bundle (x86 or x64) tooyour Linux computer using scp/sftp.</span></span>
+3. <span data-ttu-id="bedc5-216">Instalar o pacote de Olá utilizando Olá `--install` ou `--upgrade` argumento.</span><span class="sxs-lookup"><span data-stu-id="bedc5-216">Install hello bundle by using hello `--install` or `--upgrade` argument.</span></span> 
 
     > [!NOTE]
-    > Se estiverem instalados quaisquer pacotes existentes, como quando o agente do System Center Operations Manager Olá para Linux já está instalado, utilize Olá `--upgrade` argumento. tooconnect tooOperations Management Suite durante a instalação, fornecer Olá `-w <WorkspaceID>` e `-s <Shared Key>` parâmetros.
+    > <span data-ttu-id="bedc5-217">Se estiverem instalados quaisquer pacotes existentes, como quando o agente do System Center Operations Manager Olá para Linux já está instalado, utilize Olá `--upgrade` argumento.</span><span class="sxs-lookup"><span data-stu-id="bedc5-217">If any existing packages are installed such as when hello System Center Operations Manager agent for Linux is already installed, use hello `--upgrade` argument.</span></span> <span data-ttu-id="bedc5-218">tooconnect tooOperations Management Suite durante a instalação, fornecer Olá `-w <WorkspaceID>` e `-s <Shared Key>` parâmetros.</span><span class="sxs-lookup"><span data-stu-id="bedc5-218">tooconnect tooOperations Management Suite during installation, provide hello `-w <WorkspaceID>` and `-s <Shared Key>` parameters.</span></span>
 
 
-#### <a name="tooinstall-and-onboard-directly"></a>tooinstall e do carregar diretamente
+#### <a name="tooinstall-and-onboard-directly"></a><span data-ttu-id="bedc5-219">tooinstall e do carregar diretamente</span><span class="sxs-lookup"><span data-stu-id="bedc5-219">tooinstall and onboard directly</span></span>
 ```
 sudo sh ./omsagent-<version>.universal.x64.sh --upgrade -w <workspace id> -s <shared key>
 ```
 
-#### <a name="tooupgrade-hello-agent-package"></a>pacote de agente de Olá tooupgrade
+#### <a name="tooupgrade-hello-agent-package"></a><span data-ttu-id="bedc5-220">pacote de agente de Olá tooupgrade</span><span class="sxs-lookup"><span data-stu-id="bedc5-220">tooupgrade hello agent package</span></span>
 ```
 sudo sh ./omsagent-<version>.universal.x64.sh --upgrade
 ```
 
-#### <a name="tooinstall-and-onboard-tooa-workspace-in-us-government-cloud"></a>tooinstall e carregar tooa área de trabalho na US Government nuvem
+#### <a name="tooinstall-and-onboard-tooa-workspace-in-us-government-cloud"></a><span data-ttu-id="bedc5-221">tooinstall e carregar tooa área de trabalho na US Government nuvem</span><span class="sxs-lookup"><span data-stu-id="bedc5-221">tooinstall and onboard tooa workspace in US Government Cloud</span></span>
 ```
 sudo sh ./omsagent-<version>.universal.x64.sh --upgrade -w <workspace id> -s <shared key> -d opinsights.azure.us
 ```
 
-## <a name="configuring-hello-agent-for-use-with-an-http-proxy-server-or-oms-gateway"></a>Configurar o agente de Olá para utilização com um servidor de proxy HTTP ou Gateway do OMS
-Olá agente do OMS para Linux suporta comunicar através de um serviço OMS de toohello do OMS Gateway ou servidor de proxy HTTP ou HTTPS.  Autenticação básica e anónima (nome de utilizador/palavra-passe) é suportada.  
+## <a name="configuring-hello-agent-for-use-with-an-http-proxy-server-or-oms-gateway"></a><span data-ttu-id="bedc5-222">Configurar o agente de Olá para utilização com um servidor de proxy HTTP ou Gateway do OMS</span><span class="sxs-lookup"><span data-stu-id="bedc5-222">Configuring hello agent for use with an HTTP proxy server or OMS Gateway</span></span>
+<span data-ttu-id="bedc5-223">Olá agente do OMS para Linux suporta comunicar através de um serviço OMS de toohello do OMS Gateway ou servidor de proxy HTTP ou HTTPS.</span><span class="sxs-lookup"><span data-stu-id="bedc5-223">hello OMS Agent for Linux supports communicating either through an HTTP or HTTPS proxy server or OMS Gateway toohello OMS service.</span></span>  <span data-ttu-id="bedc5-224">Autenticação básica e anónima (nome de utilizador/palavra-passe) é suportada.</span><span class="sxs-lookup"><span data-stu-id="bedc5-224">Both anonymous and basic authentication (username/password) is supported.</span></span>  
 
-### <a name="proxy-configuration"></a>Configuração de proxy
-valor de configuração de proxy Olá tem Olá sintaxe:
+### <a name="proxy-configuration"></a><span data-ttu-id="bedc5-225">Configuração de proxy</span><span class="sxs-lookup"><span data-stu-id="bedc5-225">Proxy configuration</span></span>
+<span data-ttu-id="bedc5-226">valor de configuração de proxy Olá tem Olá sintaxe:</span><span class="sxs-lookup"><span data-stu-id="bedc5-226">hello proxy configuration value has hello following syntax:</span></span>
 
 `[protocol://][user:password@]proxyhost[:port]`
 
-Propriedade|Descrição
+<span data-ttu-id="bedc5-227">Propriedade</span><span class="sxs-lookup"><span data-stu-id="bedc5-227">Property</span></span>|<span data-ttu-id="bedc5-228">Descrição</span><span class="sxs-lookup"><span data-stu-id="bedc5-228">Description</span></span>
 -|-
-Protocolo|http ou https
-utilizador|Nome de utilizador opcional para a autenticação de proxy
-palavra-passe|Palavra-passe opcional para a autenticação de proxy
-proxyhost|Endereço ou o FQDN do servidor do proxy de Olá/OMS Gateway
-porta|Número de porta opcional para o servidor do proxy de Olá/OMS Gateway
+<span data-ttu-id="bedc5-229">Protocolo</span><span class="sxs-lookup"><span data-stu-id="bedc5-229">Protocol</span></span>|<span data-ttu-id="bedc5-230">http ou https</span><span class="sxs-lookup"><span data-stu-id="bedc5-230">http or https</span></span>
+<span data-ttu-id="bedc5-231">utilizador</span><span class="sxs-lookup"><span data-stu-id="bedc5-231">user</span></span>|<span data-ttu-id="bedc5-232">Nome de utilizador opcional para a autenticação de proxy</span><span class="sxs-lookup"><span data-stu-id="bedc5-232">Optional username for proxy authentication</span></span>
+<span data-ttu-id="bedc5-233">palavra-passe</span><span class="sxs-lookup"><span data-stu-id="bedc5-233">password</span></span>|<span data-ttu-id="bedc5-234">Palavra-passe opcional para a autenticação de proxy</span><span class="sxs-lookup"><span data-stu-id="bedc5-234">Optional password for proxy authentication</span></span>
+<span data-ttu-id="bedc5-235">proxyhost</span><span class="sxs-lookup"><span data-stu-id="bedc5-235">proxyhost</span></span>|<span data-ttu-id="bedc5-236">Endereço ou o FQDN do servidor do proxy de Olá/OMS Gateway</span><span class="sxs-lookup"><span data-stu-id="bedc5-236">Address or FQDN of hello proxy server/OMS Gateway</span></span>
+<span data-ttu-id="bedc5-237">porta</span><span class="sxs-lookup"><span data-stu-id="bedc5-237">port</span></span>|<span data-ttu-id="bedc5-238">Número de porta opcional para o servidor do proxy de Olá/OMS Gateway</span><span class="sxs-lookup"><span data-stu-id="bedc5-238">Optional port number for hello proxy server/OMS Gateway</span></span>
 
-Por exemplo: `http://user01:password@proxy01.contoso.com:8080`
+<span data-ttu-id="bedc5-239">Por exemplo: `http://user01:password@proxy01.contoso.com:8080`</span><span class="sxs-lookup"><span data-stu-id="bedc5-239">For example: `http://user01:password@proxy01.contoso.com:8080`</span></span>
 
-servidor de proxy de Olá pode ser especificado durante a instalação ou ao modificar o ficheiro de configuração de proxy.conf Olá após a instalação.   
+<span data-ttu-id="bedc5-240">servidor de proxy de Olá pode ser especificado durante a instalação ou ao modificar o ficheiro de configuração de proxy.conf Olá após a instalação.</span><span class="sxs-lookup"><span data-stu-id="bedc5-240">hello proxy server can be specified during installation or by modifying hello proxy.conf configuration file after installation.</span></span>   
 
-### <a name="specify-proxy-configuration-during-installation"></a>Especificar a configuração de proxy durante a instalação
-Olá `-p` ou `--proxy` argumento do pacote de instalação de omsagent Olá Especifica toouse de configuração de proxy Olá. 
+### <a name="specify-proxy-configuration-during-installation"></a><span data-ttu-id="bedc5-241">Especificar a configuração de proxy durante a instalação</span><span class="sxs-lookup"><span data-stu-id="bedc5-241">Specify proxy configuration during installation</span></span>
+<span data-ttu-id="bedc5-242">Olá `-p` ou `--proxy` argumento do pacote de instalação de omsagent Olá Especifica toouse de configuração de proxy Olá.</span><span class="sxs-lookup"><span data-stu-id="bedc5-242">hello `-p` or `--proxy` argument for hello omsagent installation bundle specifies hello proxy configuration toouse.</span></span> 
 
 ```
 sudo sh ./omsagent-<version>.universal.x64.sh --upgrade -p http://<proxy user>:<proxy password>@<proxy address>:<proxy port> -w <workspace id> -s <shared key>
 ```
 
-### <a name="define-hello-proxy-configuration-in-a-file"></a>Definir a configuração de proxy de Olá num ficheiro
-configuração de proxy de Olá pode ser definida nos ficheiros de Olá `/etc/opt/microsoft/omsagent/proxy.conf` e `/etc/opt/microsoft/omsagent/conf/proxy.conf `. ficheiros de Olá podem ser criados ou editados diretamente, mas as respetivas permissões tem de ser utilizador omiuser Olá de toogrant atualizado permissão de leitura nos ficheiros de Olá. Por exemplo:
+### <a name="define-hello-proxy-configuration-in-a-file"></a><span data-ttu-id="bedc5-243">Definir a configuração de proxy de Olá num ficheiro</span><span class="sxs-lookup"><span data-stu-id="bedc5-243">Define hello proxy configuration in a file</span></span>
+<span data-ttu-id="bedc5-244">configuração de proxy de Olá pode ser definida nos ficheiros de Olá `/etc/opt/microsoft/omsagent/proxy.conf` e `/etc/opt/microsoft/omsagent/conf/proxy.conf `.</span><span class="sxs-lookup"><span data-stu-id="bedc5-244">hello proxy configuration can be set in hello files `/etc/opt/microsoft/omsagent/proxy.conf`  and `/etc/opt/microsoft/omsagent/conf/proxy.conf `.</span></span> <span data-ttu-id="bedc5-245">ficheiros de Olá podem ser criados ou editados diretamente, mas as respetivas permissões tem de ser utilizador omiuser Olá de toogrant atualizado permissão de leitura nos ficheiros de Olá.</span><span class="sxs-lookup"><span data-stu-id="bedc5-245">hello files can be directly created or edited, but their permissions must be updated toogrant hello omiuser user read permission on hello files.</span></span> <span data-ttu-id="bedc5-246">Por exemplo:</span><span class="sxs-lookup"><span data-stu-id="bedc5-246">For example:</span></span>
 ```
 proxyconf="https://proxyuser:proxypassword@proxyserver01:8080"
 sudo echo $proxyconf >>/etc/opt/microsoft/omsagent/proxy.conf
@@ -164,48 +164,48 @@ sudo chmod 600 /etc/opt/microsoft/omsagent/proxy.conf /etc/opt/microsoft/omsagen
 sudo /opt/microsoft/omsagent/bin/service_control restart [<workspace id>]
 ```
 
-### <a name="removing-hello-proxy-configuration"></a>A remover configuração de proxy de Olá
-tooremove uma configuração de proxy definida anteriormente e reverter toodirect conectividade, remova Olá proxy.conf ficheiro:
+### <a name="removing-hello-proxy-configuration"></a><span data-ttu-id="bedc5-247">A remover configuração de proxy de Olá</span><span class="sxs-lookup"><span data-stu-id="bedc5-247">Removing hello proxy configuration</span></span>
+<span data-ttu-id="bedc5-248">tooremove uma configuração de proxy definida anteriormente e reverter toodirect conectividade, remova Olá proxy.conf ficheiro:</span><span class="sxs-lookup"><span data-stu-id="bedc5-248">tooremove a previously defined proxy configuration and revert toodirect connectivity, remove hello proxy.conf file:</span></span>
 ```
 sudo rm /etc/opt/microsoft/omsagent/proxy.conf /etc/opt/microsoft/omsagent/conf/proxy.conf
 sudo /opt/microsoft/omsagent/bin/service_control restart 
 ```
 
-## <a name="onboarding-with-operations-management-suite"></a>Integração com o Operations Management Suite
-Se uma ID da área de trabalho e a chave não foram fornecidas durante a instalação do pacote Olá, os agentes de Olá tem de estar registado, subsequentemente, com o Operations Management Suite.
+## <a name="onboarding-with-operations-management-suite"></a><span data-ttu-id="bedc5-249">Integração com o Operations Management Suite</span><span class="sxs-lookup"><span data-stu-id="bedc5-249">Onboarding with Operations Management Suite</span></span>
+<span data-ttu-id="bedc5-250">Se uma ID da área de trabalho e a chave não foram fornecidas durante a instalação do pacote Olá, os agentes de Olá tem de estar registado, subsequentemente, com o Operations Management Suite.</span><span class="sxs-lookup"><span data-stu-id="bedc5-250">If a workspace ID and key were not provided during hello bundle installation, hello agent must be subsequently registered with Operations Management Suite.</span></span>
 
-### <a name="onboarding-using-hello-command-line"></a>Integração com linha de comandos Olá
-Execute Olá omsadmin.sh comando fornecer o id da área de trabalho de Olá e da chave para a sua área de trabalho. Este comando deve ser executado como raiz (com elevação de sudo):
+### <a name="onboarding-using-hello-command-line"></a><span data-ttu-id="bedc5-251">Integração com linha de comandos Olá</span><span class="sxs-lookup"><span data-stu-id="bedc5-251">Onboarding using hello command line</span></span>
+<span data-ttu-id="bedc5-252">Execute Olá omsadmin.sh comando fornecer o id da área de trabalho de Olá e da chave para a sua área de trabalho.</span><span class="sxs-lookup"><span data-stu-id="bedc5-252">Run hello omsadmin.sh command supplying hello workspace id and key for your workspace.</span></span> <span data-ttu-id="bedc5-253">Este comando deve ser executado como raiz (com elevação de sudo):</span><span class="sxs-lookup"><span data-stu-id="bedc5-253">This command must be run as root (with sudo elevation):</span></span>
 ```
 cd /opt/microsoft/omsagent/bin
 sudo ./omsadmin.sh -w <WorkspaceID> -s <Shared Key>
 ```
 
-### <a name="onboarding-using-a-file"></a>Integração utilizando um ficheiro
-1.  Criar ficheiro de Olá `/etc/omsagent-onboard.conf`. ficheiro de Olá tem de ser legível e gravável para a raiz.
+### <a name="onboarding-using-a-file"></a><span data-ttu-id="bedc5-254">Integração utilizando um ficheiro</span><span class="sxs-lookup"><span data-stu-id="bedc5-254">Onboarding using a file</span></span>
+1.  <span data-ttu-id="bedc5-255">Criar ficheiro de Olá `/etc/omsagent-onboard.conf`.</span><span class="sxs-lookup"><span data-stu-id="bedc5-255">Create hello file `/etc/omsagent-onboard.conf`.</span></span> <span data-ttu-id="bedc5-256">ficheiro de Olá tem de ser legível e gravável para a raiz.</span><span class="sxs-lookup"><span data-stu-id="bedc5-256">hello file must be readable and writable for root.</span></span>
 `sudo vi /etc/omsagent-onboard.conf`
-2.  Inserir Olá seguintes linhas no ficheiro de Olá com o ID e a chave partilhada:
+2.  <span data-ttu-id="bedc5-257">Inserir Olá seguintes linhas no ficheiro de Olá com o ID e a chave partilhada:</span><span class="sxs-lookup"><span data-stu-id="bedc5-257">Insert hello following lines in hello file with your Workspace ID and Shared Key:</span></span>
 
         WORKSPACE_ID=<WorkspaceID>  
         SHARED_KEY=<Shared Key>  
    
-3.  Execute Olá tooOMS tooOnboard de comando a seguir:`sudo /opt/microsoft/omsagent/bin/omsadmin.sh`
-4.  ficheiro de Olá é eliminado do integração com êxito.
+3.  <span data-ttu-id="bedc5-258">Execute Olá tooOMS tooOnboard de comando a seguir:`sudo /opt/microsoft/omsagent/bin/omsadmin.sh`</span><span class="sxs-lookup"><span data-stu-id="bedc5-258">Run hello following command tooOnboard tooOMS: `sudo /opt/microsoft/omsagent/bin/omsadmin.sh`</span></span>
+4.  <span data-ttu-id="bedc5-259">ficheiro de Olá é eliminado do integração com êxito.</span><span class="sxs-lookup"><span data-stu-id="bedc5-259">hello file is deleted on successful onboarding.</span></span>
 
-## <a name="enable-hello-oms-agent-for-linux-tooreport-toosystem-center-operations-manager"></a>Ativar Olá agente do OMS para Linux tooreport tooSystem Center Operations Manager
-Efetue Olá os seguintes passos tooconfigure Olá agente do OMS para o grupo de gestão do Linux tooreport tooa System Center Operations Manager.  
+## <a name="enable-hello-oms-agent-for-linux-tooreport-toosystem-center-operations-manager"></a><span data-ttu-id="bedc5-260">Ativar Olá agente do OMS para Linux tooreport tooSystem Center Operations Manager</span><span class="sxs-lookup"><span data-stu-id="bedc5-260">Enable hello OMS Agent for Linux tooreport tooSystem Center Operations Manager</span></span>
+<span data-ttu-id="bedc5-261">Efetue Olá os seguintes passos tooconfigure Olá agente do OMS para o grupo de gestão do Linux tooreport tooa System Center Operations Manager.</span><span class="sxs-lookup"><span data-stu-id="bedc5-261">Perform hello following steps tooconfigure hello OMS Agent for Linux tooreport tooa System Center Operations Manager management group.</span></span>  
 
-1. Edite o ficheiro de Olá`/etc/opt/omi/conf/omiserver.conf`
-2. Certifique-se de que Olá linha a partir **httpsport =** define a porta de Olá 1270. Tal como:`httpsport=1270`
-3. Reinicie o servidor OMI Olá:`sudo /opt/omi/bin/service_control restart`
+1. <span data-ttu-id="bedc5-262">Edite o ficheiro de Olá`/etc/opt/omi/conf/omiserver.conf`</span><span class="sxs-lookup"><span data-stu-id="bedc5-262">Edit hello file `/etc/opt/omi/conf/omiserver.conf`</span></span>
+2. <span data-ttu-id="bedc5-263">Certifique-se de que Olá linha a partir **httpsport =** define a porta de Olá 1270.</span><span class="sxs-lookup"><span data-stu-id="bedc5-263">Ensure that hello line beginning with **httpsport=** defines hello port 1270.</span></span> <span data-ttu-id="bedc5-264">Tal como:`httpsport=1270`</span><span class="sxs-lookup"><span data-stu-id="bedc5-264">Such as: `httpsport=1270`</span></span>
+3. <span data-ttu-id="bedc5-265">Reinicie o servidor OMI Olá:`sudo /opt/omi/bin/service_control restart`</span><span class="sxs-lookup"><span data-stu-id="bedc5-265">Restart hello OMI server: `sudo /opt/omi/bin/service_control restart`</span></span>
 
-## <a name="agent-logs"></a>Registos do agente
-Olá registos para Olá agente do OMS para Linux pode ser encontrado em: `/var/opt/microsoft/omsagent/<workspace id>/log/` Olá registos para o programa do Olá omsconfig (configuração do agente) pode ser encontrado em: `/var/opt/microsoft/omsconfig/log/` registos de componentes da OMI e SCX Olá (que fornecem dados de métricas de desempenho) podem ser encontrados em:`/var/opt/omi/log/ and /var/opt/microsoft/scx/log`
+## <a name="agent-logs"></a><span data-ttu-id="bedc5-266">Registos do agente</span><span class="sxs-lookup"><span data-stu-id="bedc5-266">Agent logs</span></span>
+<span data-ttu-id="bedc5-267">Olá registos para Olá agente do OMS para Linux pode ser encontrado em: `/var/opt/microsoft/omsagent/<workspace id>/log/` Olá registos para o programa do Olá omsconfig (configuração do agente) pode ser encontrado em: `/var/opt/microsoft/omsconfig/log/` registos de componentes da OMI e SCX Olá (que fornecem dados de métricas de desempenho) podem ser encontrados em:`/var/opt/omi/log/ and /var/opt/microsoft/scx/log`</span><span class="sxs-lookup"><span data-stu-id="bedc5-267">hello logs for hello OMS Agent for Linux can be found at: `/var/opt/microsoft/omsagent/<workspace id>/log/` hello logs for hello omsconfig (agent configuration) program can be found at: `/var/opt/microsoft/omsconfig/log/` Logs for hello OMI and SCX components (which provide performance metrics data) can be found at: `/var/opt/omi/log/ and /var/opt/microsoft/scx/log`</span></span>
 
-### <a name="log-rotation-configuration"></a>Registo rotação configuração # #
-Olá registo rodar configuração omsagent pode ser encontrada em:`/etc/logrotate.d/omsagent-<workspace id>`
+### <a name="log-rotation-configuration"></a><span data-ttu-id="bedc5-268">Registo rotação configuração # #</span><span class="sxs-lookup"><span data-stu-id="bedc5-268">Log rotation configuration##</span></span>
+<span data-ttu-id="bedc5-269">Olá registo rodar configuração omsagent pode ser encontrada em:`/etc/logrotate.d/omsagent-<workspace id>`</span><span class="sxs-lookup"><span data-stu-id="bedc5-269">hello log rotate configuration for omsagent can be found at: `/etc/logrotate.d/omsagent-<workspace id>`</span></span>
 
-Olá predefinições são: 
+<span data-ttu-id="bedc5-270">Olá predefinições são:</span><span class="sxs-lookup"><span data-stu-id="bedc5-270">hello default settings are:</span></span> 
 ```
 /var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log {
     rotate 5
@@ -217,8 +217,8 @@ Olá predefinições são:
 }
 ```
 
-## <a name="uninstalling-hello-oms-agent-for-linux"></a>Desinstalar o agente do OMS de Olá para Linux
-Olá pacotes de agente podem ser desinstaladas através da execução Olá .sh ficheiro com Olá `--purge` argumento, o que remove completamente agente Olá e a respetiva configuração do computador Olá.   
+## <a name="uninstalling-hello-oms-agent-for-linux"></a><span data-ttu-id="bedc5-271">Desinstalar o agente do OMS de Olá para Linux</span><span class="sxs-lookup"><span data-stu-id="bedc5-271">Uninstalling hello OMS Agent for Linux</span></span>
+<span data-ttu-id="bedc5-272">Olá pacotes de agente podem ser desinstaladas através da execução Olá .sh ficheiro com Olá `--purge` argumento, o que remove completamente agente Olá e a respetiva configuração do computador Olá.</span><span class="sxs-lookup"><span data-stu-id="bedc5-272">hello agent packages can be uninstalled by running hello bundle .sh file with hello `--purge` argument, which completely removes hello agent and its configuration from hello computer.</span></span>   
 
 ```
 > sudo rpm -e omsconfig
@@ -226,57 +226,57 @@ Olá pacotes de agente podem ser desinstaladas através da execução Olá .sh f
 > sudo /opt/microsoft/scx/bin/uninstall
 ```
 
-## <a name="troubleshooting"></a>Resolução de problemas
+## <a name="troubleshooting"></a><span data-ttu-id="bedc5-273">Resolução de problemas</span><span class="sxs-lookup"><span data-stu-id="bedc5-273">Troubleshooting</span></span>
 
-### <a name="issue-unable-tooconnect-through-proxy-toooms"></a>Problema: Tooconnect não é possível através do proxy tooOMS
+### <a name="issue-unable-tooconnect-through-proxy-toooms"></a><span data-ttu-id="bedc5-274">Problema: Tooconnect não é possível através do proxy tooOMS</span><span class="sxs-lookup"><span data-stu-id="bedc5-274">Issue: Unable tooconnect through proxy tooOMS</span></span>
 
-#### <a name="probable-causes"></a>Causas prováveis
-* proxy de Olá especificado durante a integração estava incorreta
-* pontos finais de serviço do OMS Olá não são whitelistested no seu centro de dados 
+#### <a name="probable-causes"></a><span data-ttu-id="bedc5-275">Causas prováveis</span><span class="sxs-lookup"><span data-stu-id="bedc5-275">Probable causes</span></span>
+* <span data-ttu-id="bedc5-276">proxy de Olá especificado durante a integração estava incorreta</span><span class="sxs-lookup"><span data-stu-id="bedc5-276">hello proxy specified during onboarding was incorrect</span></span>
+* <span data-ttu-id="bedc5-277">pontos finais de serviço do OMS Olá não são whitelistested no seu centro de dados</span><span class="sxs-lookup"><span data-stu-id="bedc5-277">hello OMS Service Endpoints are not whitelistested in your datacenter</span></span> 
 
-#### <a name="resolutions"></a>Resoluções
-1. Reonboard toohello OMS serviço com Olá agente do OMS para Linux ao utilizar Olá os seguintes comandos com a opção de Olá `-v` ativada. Isto permite uma saída verbosa do agente de Olá ligar através do proxy de Olá toohello serviço OMS. 
+#### <a name="resolutions"></a><span data-ttu-id="bedc5-278">Resoluções</span><span class="sxs-lookup"><span data-stu-id="bedc5-278">Resolutions</span></span>
+1. <span data-ttu-id="bedc5-279">Reonboard toohello OMS serviço com Olá agente do OMS para Linux ao utilizar Olá os seguintes comandos com a opção de Olá `-v` ativada.</span><span class="sxs-lookup"><span data-stu-id="bedc5-279">Reonboard toohello OMS Service with hello OMS Agent for Linux by using hello following command with hello option `-v` enabled.</span></span> <span data-ttu-id="bedc5-280">Isto permite uma saída verbosa do agente de Olá ligar através do proxy de Olá toohello serviço OMS.</span><span class="sxs-lookup"><span data-stu-id="bedc5-280">This allows verbose output of hello agent connecting through hello proxy toohello OMS Service.</span></span> 
 `/opt/microsoft/omsagent/bin/omsadmin.sh -w <OMS Workspace ID> -s <OMS Workspace Key> -p <Proxy Conf> -v`
 
-2. Reveja a secção de Olá [configurar o agente de Olá para utilização com um proxy HTTP server(#configuring the-agent-for-use-with-a-http-proxy-server) tooverify configurou corretamente Olá agente toocommunicate através de um servidor proxy.    
-* Verificação de duplo Olá os seguintes pontos finais de serviço do OMS estão na lista de permissões:
+2. <span data-ttu-id="bedc5-281">Reveja a secção de Olá [configurar o agente de Olá para utilização com um proxy HTTP server(#configuring the-agent-for-use-with-a-http-proxy-server) tooverify configurou corretamente Olá agente toocommunicate através de um servidor proxy.</span><span class="sxs-lookup"><span data-stu-id="bedc5-281">Review hello section [Configuring hello agent for use with an HTTP proxy server(#configuring the-agent-for-use-with-a-http-proxy-server) tooverify you have properly configured hello agent toocommunicate through a proxy server.</span></span>    
+* <span data-ttu-id="bedc5-282">Verificação de duplo Olá os seguintes pontos finais de serviço do OMS estão na lista de permissões:</span><span class="sxs-lookup"><span data-stu-id="bedc5-282">Double check that hello following OMS Service endpoints are whitelisted:</span></span>
 
-    |Recursos do Agente| Portas |  
+    |<span data-ttu-id="bedc5-283">Recursos do Agente</span><span class="sxs-lookup"><span data-stu-id="bedc5-283">Agent Resource</span></span>| <span data-ttu-id="bedc5-284">Portas</span><span class="sxs-lookup"><span data-stu-id="bedc5-284">Ports</span></span> |  
     |------|---------|  
-    |*.ods.opinsights.azure.com | Porta 443|   
-    |*.oms.opinsights.azure.com | Porta 443|   
-    |ods.systemcenteradvisor.com | Porta 443|   
-    |*.blob.Core.Windows.NET/ | Porta 443|   
+    |<span data-ttu-id="bedc5-285">*.ods.opinsights.azure.com</span><span class="sxs-lookup"><span data-stu-id="bedc5-285">*.ods.opinsights.azure.com</span></span> | <span data-ttu-id="bedc5-286">Porta 443</span><span class="sxs-lookup"><span data-stu-id="bedc5-286">Port 443</span></span>|   
+    |<span data-ttu-id="bedc5-287">*.oms.opinsights.azure.com</span><span class="sxs-lookup"><span data-stu-id="bedc5-287">*.oms.opinsights.azure.com</span></span> | <span data-ttu-id="bedc5-288">Porta 443</span><span class="sxs-lookup"><span data-stu-id="bedc5-288">Port 443</span></span>|   
+    |<span data-ttu-id="bedc5-289">ods.systemcenteradvisor.com</span><span class="sxs-lookup"><span data-stu-id="bedc5-289">ods.systemcenteradvisor.com</span></span> | <span data-ttu-id="bedc5-290">Porta 443</span><span class="sxs-lookup"><span data-stu-id="bedc5-290">Port 443</span></span>|   
+    |<span data-ttu-id="bedc5-291">*.blob.Core.Windows.NET/</span><span class="sxs-lookup"><span data-stu-id="bedc5-291">*.blob.core.windows.net/</span></span> | <span data-ttu-id="bedc5-292">Porta 443</span><span class="sxs-lookup"><span data-stu-id="bedc5-292">Port 443</span></span>|   
 
-### <a name="issue-you-receive-a-403-error-when-trying-tooonboard"></a>Problema: Recebe um erro 403 quando tenta tooonboard
+### <a name="issue-you-receive-a-403-error-when-trying-tooonboard"></a><span data-ttu-id="bedc5-293">Problema: Recebe um erro 403 quando tenta tooonboard</span><span class="sxs-lookup"><span data-stu-id="bedc5-293">Issue: You receive a 403 error when trying tooonboard</span></span>
 
-#### <a name="probable-causes"></a>Causas prováveis
-* Data e hora está incorreta no servidor do Linux 
-* ID de área de trabalho e a chave de área de trabalho utilizado não estão corretos
+#### <a name="probable-causes"></a><span data-ttu-id="bedc5-294">Causas prováveis</span><span class="sxs-lookup"><span data-stu-id="bedc5-294">Probable causes</span></span>
+* <span data-ttu-id="bedc5-295">Data e hora está incorreta no servidor do Linux</span><span class="sxs-lookup"><span data-stu-id="bedc5-295">Date and Time is incorrect on Linux Server</span></span> 
+* <span data-ttu-id="bedc5-296">ID de área de trabalho e a chave de área de trabalho utilizado não estão corretos</span><span class="sxs-lookup"><span data-stu-id="bedc5-296">Workspace ID and Workspace Key used are not correct</span></span>
 
-#### <a name="resolution"></a>Resolução
+#### <a name="resolution"></a><span data-ttu-id="bedc5-297">Resolução</span><span class="sxs-lookup"><span data-stu-id="bedc5-297">Resolution</span></span>
 
-1. Verificar o tempo de Olá no seu servidor Linux com data de comando Olá. Se houver tempo Olá + /-15 minutos da hora atual, em seguida, integração irá falhar. toocorrect esta atualização Olá data e/ou o fuso horário do servidor Linux. 
-2. Certifique-se de que instalou a versão mais recente do Olá do Olá agente do OMS para Linux.  versão mais recente Olá agora notifica-o se tempo dissimetrias está a causar falhas de inclusão de Olá.
-3. Reonboard utilizando correto ID e a chave de área de trabalho seguir as instruções de instalação de Olá anterior deste tópico.
+1. <span data-ttu-id="bedc5-298">Verificar o tempo de Olá no seu servidor Linux com data de comando Olá.</span><span class="sxs-lookup"><span data-stu-id="bedc5-298">Check hello time on your Linux server with hello command date.</span></span> <span data-ttu-id="bedc5-299">Se houver tempo Olá + /-15 minutos da hora atual, em seguida, integração irá falhar.</span><span class="sxs-lookup"><span data-stu-id="bedc5-299">If hello time is +/- 15 minutes from current time, then onboarding fails.</span></span> <span data-ttu-id="bedc5-300">toocorrect esta atualização Olá data e/ou o fuso horário do servidor Linux.</span><span class="sxs-lookup"><span data-stu-id="bedc5-300">toocorrect this update hello date and/or timezone of your Linux server.</span></span> 
+2. <span data-ttu-id="bedc5-301">Certifique-se de que instalou a versão mais recente do Olá do Olá agente do OMS para Linux.</span><span class="sxs-lookup"><span data-stu-id="bedc5-301">Verify you have installed hello latest version of hello OMS Agent for Linux.</span></span>  <span data-ttu-id="bedc5-302">versão mais recente Olá agora notifica-o se tempo dissimetrias está a causar falhas de inclusão de Olá.</span><span class="sxs-lookup"><span data-stu-id="bedc5-302">hello newest version now notifies you if time skew is causing hello onboarding failure.</span></span>
+3. <span data-ttu-id="bedc5-303">Reonboard utilizando correto ID e a chave de área de trabalho seguir as instruções de instalação de Olá anterior deste tópico.</span><span class="sxs-lookup"><span data-stu-id="bedc5-303">Reonboard using correct Workspace ID and Workspace Key following hello installation instructions earlier in this topic.</span></span>
 
-### <a name="issue-you-see-a-500-and-404-error-in-hello-log-file-right-after-onboarding"></a>Problema: Vir um erro 404 e 500 no ficheiro de registo Olá imediatamente após a integração
-Este é um problema conhecido que ocorre no primeiro carregamento de dados de Linux para uma área de trabalho do OMS. Isto não afeta os dados que está a ser enviada ou serviço experiência.
+### <a name="issue-you-see-a-500-and-404-error-in-hello-log-file-right-after-onboarding"></a><span data-ttu-id="bedc5-304">Problema: Vir um erro 404 e 500 no ficheiro de registo Olá imediatamente após a integração</span><span class="sxs-lookup"><span data-stu-id="bedc5-304">Issue: You see a 500 and 404 error in hello log file right after onboarding</span></span>
+<span data-ttu-id="bedc5-305">Este é um problema conhecido que ocorre no primeiro carregamento de dados de Linux para uma área de trabalho do OMS.</span><span class="sxs-lookup"><span data-stu-id="bedc5-305">This is a known issue that occurs on first upload of Linux data into an OMS workspace.</span></span> <span data-ttu-id="bedc5-306">Isto não afeta os dados que está a ser enviada ou serviço experiência.</span><span class="sxs-lookup"><span data-stu-id="bedc5-306">This does not affect data being sent or service experience.</span></span>
 
-### <a name="issue--you-are-not-seeing-any-data-in-hello-oms-portal"></a>Problema: Não vir quaisquer dados no portal do OMS Olá
+### <a name="issue--you-are-not-seeing-any-data-in-hello-oms-portal"></a><span data-ttu-id="bedc5-307">Problema: Não vir quaisquer dados no portal do OMS Olá</span><span class="sxs-lookup"><span data-stu-id="bedc5-307">Issue:  You are not seeing any data in hello OMS portal</span></span>
 
-#### <a name="probable-causes"></a>Causas prováveis
+#### <a name="probable-causes"></a><span data-ttu-id="bedc5-308">Causas prováveis</span><span class="sxs-lookup"><span data-stu-id="bedc5-308">Probable causes</span></span>
 
-- Falha de serviço do OMS toohello de integração
-- Ligação toohello OMS serviço está bloqueada
-- Agente do OMS Linux dados de cópia de segurança
+- <span data-ttu-id="bedc5-309">Falha de serviço do OMS toohello de integração</span><span class="sxs-lookup"><span data-stu-id="bedc5-309">Onboarding toohello OMS Service failed</span></span>
+- <span data-ttu-id="bedc5-310">Ligação toohello OMS serviço está bloqueada</span><span class="sxs-lookup"><span data-stu-id="bedc5-310">Connection toohello OMS Service is blocked</span></span>
+- <span data-ttu-id="bedc5-311">Agente do OMS Linux dados de cópia de segurança</span><span class="sxs-lookup"><span data-stu-id="bedc5-311">OMS Agent for Linux data is backed up</span></span>
 
-#### <a name="resolutions"></a>Resoluções
-1. Verifique se integração Olá OMS serviço foi concluída com êxito, verificando se hello seguinte ficheiro:`/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`
-2. Reonboard utilizando Olá `omsadmin.sh` instruções da linha de comandos
-3. Se utilizar um proxy, consulte os passos de resolução de proxy de toohello fornecidos anteriormente.
-4. Em alguns casos, quando Olá agente do OMS para Linux não consegue comunicar com Olá serviço OMS, os dados no agente Olá são toohello em fila o tamanho da memória intermédia completa, que é 50 MB. Olá agente do OMS para Linux deve ser reiniciado executando Olá os seguintes comandos: `/opt/microsoft/omsagent/bin/service_control restart [<workspace id>]`. 
+#### <a name="resolutions"></a><span data-ttu-id="bedc5-312">Resoluções</span><span class="sxs-lookup"><span data-stu-id="bedc5-312">Resolutions</span></span>
+1. <span data-ttu-id="bedc5-313">Verifique se integração Olá OMS serviço foi concluída com êxito, verificando se hello seguinte ficheiro:`/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`</span><span class="sxs-lookup"><span data-stu-id="bedc5-313">Check if onboarding hello OMS Service was successful by checking if hello following file exists: `/etc/opt/microsoft/omsagent/<workspace id>/conf/omsadmin.conf`</span></span>
+2. <span data-ttu-id="bedc5-314">Reonboard utilizando Olá `omsadmin.sh` instruções da linha de comandos</span><span class="sxs-lookup"><span data-stu-id="bedc5-314">Reonboard using hello `omsadmin.sh` command-line instructions</span></span>
+3. <span data-ttu-id="bedc5-315">Se utilizar um proxy, consulte os passos de resolução de proxy de toohello fornecidos anteriormente.</span><span class="sxs-lookup"><span data-stu-id="bedc5-315">If using a proxy, refer toohello proxy resolution steps provided earlier.</span></span>
+4. <span data-ttu-id="bedc5-316">Em alguns casos, quando Olá agente do OMS para Linux não consegue comunicar com Olá serviço OMS, os dados no agente Olá são toohello em fila o tamanho da memória intermédia completa, que é 50 MB.</span><span class="sxs-lookup"><span data-stu-id="bedc5-316">In some cases, when hello OMS Agent for Linux cannot communicate with hello OMS Service, data on hello agent is queued toohello full buffer size, which is 50 MB.</span></span> <span data-ttu-id="bedc5-317">Olá agente do OMS para Linux deve ser reiniciado executando Olá os seguintes comandos: `/opt/microsoft/omsagent/bin/service_control restart [<workspace id>]`.</span><span class="sxs-lookup"><span data-stu-id="bedc5-317">hello OMS Agent for Linux should be restarted by running hello following command: `/opt/microsoft/omsagent/bin/service_control restart [<workspace id>]`.</span></span> 
 
     >[!NOTE]
-    >Este problema ser corrigido 1.1.0-28 de versão do agente e mais tarde.
+    ><span data-ttu-id="bedc5-318">Este problema ser corrigido 1.1.0-28 de versão do agente e mais tarde.</span><span class="sxs-lookup"><span data-stu-id="bedc5-318">This issue is fixed in agent version 1.1.0-28 and later.</span></span>
 > 

@@ -21,15 +21,15 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-## <a name="add-a-controller-toohandle-sign-in-and-sign-out-requests"></a>Adicione um pedidos de início de sessão e fim de sessão de toohandle do controlador
+## <a name="add-a-controller-toohandle-sign-in-and-sign-out-requests"></a><span data-ttu-id="5546c-103">Adicione um pedidos de início de sessão e fim de sessão de toohandle do controlador</span><span class="sxs-lookup"><span data-stu-id="5546c-103">Add a controller toohandle sign-in and sign-out requests</span></span>
 
-Este passo mostra como toocreate um tooexpose controlador novo início de sessão e fim de sessão métodos.
+<span data-ttu-id="5546c-104">Este passo mostra como toocreate um tooexpose controlador novo início de sessão e fim de sessão métodos.</span><span class="sxs-lookup"><span data-stu-id="5546c-104">This step shows how toocreate a new controller tooexpose sign-in and sign-out methods.</span></span>
 
-1.  Clique com o botão direito do rato em Olá `Controllers` pastas e selecione`Add` > `Controller`
-2.  Selecione `MVC (.NET version) Controller – Empty`.
-3.  Clique em *adicionar*
-4.  Nome `HomeController` e clique em *adicionar*
-5.  Adicionar *OWIN* referencia toohello classe:
+1.  <span data-ttu-id="5546c-105">Clique com o botão direito do rato em Olá `Controllers` pastas e selecione`Add` > `Controller`</span><span class="sxs-lookup"><span data-stu-id="5546c-105">Right click hello `Controllers` folder and select `Add` > `Controller`</span></span>
+2.  <span data-ttu-id="5546c-106">Selecione `MVC (.NET version) Controller – Empty`.</span><span class="sxs-lookup"><span data-stu-id="5546c-106">Select `MVC (.NET version) Controller – Empty`.</span></span>
+3.  <span data-ttu-id="5546c-107">Clique em *adicionar*</span><span class="sxs-lookup"><span data-stu-id="5546c-107">Click *Add*</span></span>
+4.  <span data-ttu-id="5546c-108">Nome `HomeController` e clique em *adicionar*</span><span class="sxs-lookup"><span data-stu-id="5546c-108">Name it `HomeController` and click *Add*</span></span>
+5.  <span data-ttu-id="5546c-109">Adicionar *OWIN* referencia toohello classe:</span><span class="sxs-lookup"><span data-stu-id="5546c-109">Add *OWIN* references toohello class:</span></span>
 
 ```csharp
 using Microsoft.Owin.Security;
@@ -39,7 +39,7 @@ using Microsoft.Owin.Security.OpenIdConnect;
 <!-- Workaround for Docs conversion bug -->
 <ol start="6">
 <li>
-Adicione dois métodos de Olá abaixo toohandle início de sessão e fim de sessão tooyour controlador iniciando um desafio de autenticação através de código:
+<span data-ttu-id="5546c-110">Adicione dois métodos de Olá abaixo toohandle início de sessão e fim de sessão tooyour controlador iniciando um desafio de autenticação através de código:</span><span class="sxs-lookup"><span data-stu-id="5546c-110">Add hello two methods below toohandle sign-in and sign-out tooyour controller by initiating an authentication challenge via code:</span></span>
 </li>
 </ol>
 
@@ -69,13 +69,13 @@ public void SignOut()
 }
 ```
 
-## <a name="create-hello-apps-home-page-toosign-in-users-via-a-sign-in-button"></a>Criar toosign de página inicial da aplicação Olá sessão dos utilizadores através de um botão de início de sessão
+## <a name="create-hello-apps-home-page-toosign-in-users-via-a-sign-in-button"></a><span data-ttu-id="5546c-111">Criar toosign de página inicial da aplicação Olá sessão dos utilizadores através de um botão de início de sessão</span><span class="sxs-lookup"><span data-stu-id="5546c-111">Create hello app's home page toosign in users via a sign-in button</span></span>
 
-No Visual Studio, crie um nova vista tooadd Olá início de sessão botão e apresentar informações de utilizador após a autenticação:
+<span data-ttu-id="5546c-112">No Visual Studio, crie um nova vista tooadd Olá início de sessão botão e apresentar informações de utilizador após a autenticação:</span><span class="sxs-lookup"><span data-stu-id="5546c-112">In Visual Studio, create a new view tooadd hello sign-in button and display user information after authentication:</span></span>
 
-1.  Clique com o botão direito do rato em Olá `Views\Home` pastas e selecione`Add View`
-2.  Dê-lhe o nome `Index`.
-3.  Adicione Olá HTML, que inclui Olá início de sessão botão, o ficheiro de toohello os seguintes:
+1.  <span data-ttu-id="5546c-113">Clique com o botão direito do rato em Olá `Views\Home` pastas e selecione`Add View`</span><span class="sxs-lookup"><span data-stu-id="5546c-113">Right click hello `Views\Home` folder and select `Add View`</span></span>
+2.  <span data-ttu-id="5546c-114">Dê-lhe o nome `Index`.</span><span class="sxs-lookup"><span data-stu-id="5546c-114">Name it `Index`.</span></span>
+3.  <span data-ttu-id="5546c-115">Adicione Olá HTML, que inclui Olá início de sessão botão, o ficheiro de toohello os seguintes:</span><span class="sxs-lookup"><span data-stu-id="5546c-115">Add hello following HTML, which includes hello sign-in button, toohello file:</span></span>
 
 ```html
 <html>
@@ -115,18 +115,18 @@ else
 </html>
 ```
 <!--start-collapse-->
-### <a name="more-information"></a>Mais Informações
-> Esta página adiciona um botão de início de sessão no formato SVG com um fundo preto:<br/>![Início de sessão com a Microsoft](media/active-directory-serversidewebapp-aspnetwebappowin-use/aspnetsigninbuttonsample.png)<br/> Para obter mais início de sessão botões, visite toohello [nesta página](https://docs.microsoft.com/azure/active-directory/develop/active-directory-branding-guidelines "diretrizes de imagem corporativa").
+### <a name="more-information"></a><span data-ttu-id="5546c-116">Mais Informações</span><span class="sxs-lookup"><span data-stu-id="5546c-116">More Information</span></span>
+> <span data-ttu-id="5546c-117">Esta página adiciona um botão de início de sessão no formato SVG com um fundo preto:</span><span class="sxs-lookup"><span data-stu-id="5546c-117">This page adds a sign-in button in SVG format with a black background:</span></span><br/><span data-ttu-id="5546c-118">![Início de sessão com a Microsoft](media/active-directory-serversidewebapp-aspnetwebappowin-use/aspnetsigninbuttonsample.png)</span><span class="sxs-lookup"><span data-stu-id="5546c-118">![Sign-in with Microsoft](media/active-directory-serversidewebapp-aspnetwebappowin-use/aspnetsigninbuttonsample.png)</span></span><br/> <span data-ttu-id="5546c-119">Para obter mais início de sessão botões, visite toohello [nesta página](https://docs.microsoft.com/azure/active-directory/develop/active-directory-branding-guidelines "diretrizes de imagem corporativa").</span><span class="sxs-lookup"><span data-stu-id="5546c-119">For more sign-in buttons, please go toohello [this page](https://docs.microsoft.com/azure/active-directory/develop/active-directory-branding-guidelines "Branding guidelines").</span></span>
 <!--end-collapse-->
 
-## <a name="add-a-controller-toodisplay-users-claims"></a>Adicionar afirmações de um utilizador de toodisplay de controlador
-Este controlador demonstra Olá utilizações de Olá `[Authorize]` tooprotect um controlador de atributos. Este atributo restringe o controlador de toohello de acesso, permitindo apenas que os utilizadores autenticados. Olá código abaixo utilizam Olá atributo toodisplay afirmações de utilizador que foram obtidas como parte da Olá início de sessão.
+## <a name="add-a-controller-toodisplay-users-claims"></a><span data-ttu-id="5546c-120">Adicionar afirmações de um utilizador de toodisplay de controlador</span><span class="sxs-lookup"><span data-stu-id="5546c-120">Add a controller toodisplay user's claims</span></span>
+<span data-ttu-id="5546c-121">Este controlador demonstra Olá utilizações de Olá `[Authorize]` tooprotect um controlador de atributos.</span><span class="sxs-lookup"><span data-stu-id="5546c-121">This controller demonstrates hello uses of hello `[Authorize]` attribute tooprotect a controller.</span></span> <span data-ttu-id="5546c-122">Este atributo restringe o controlador de toohello de acesso, permitindo apenas que os utilizadores autenticados.</span><span class="sxs-lookup"><span data-stu-id="5546c-122">This attribute restricts access toohello controller by only allowing authenticated users.</span></span> <span data-ttu-id="5546c-123">Olá código abaixo utilizam Olá atributo toodisplay afirmações de utilizador que foram obtidas como parte da Olá início de sessão.</span><span class="sxs-lookup"><span data-stu-id="5546c-123">hello code below makes use of hello attribute toodisplay user claims that were retrieved as part of hello sign-in.</span></span>
 
-1.  Clique com o botão direito do rato em Olá `Controllers` pasta:`Add` > `Controller`
-2.  Selecione `MVC {version} Controller – Empty`.
-3.  Clique em *adicionar*
-4.  Nome`ClaimsController`
-5.  Substitua o código de Olá da sua classe de controlador com o código de Olá abaixo - esta ação adiciona Olá `[Authorize]` toohello classe de atributo:
+1.  <span data-ttu-id="5546c-124">Clique com o botão direito do rato em Olá `Controllers` pasta:`Add` > `Controller`</span><span class="sxs-lookup"><span data-stu-id="5546c-124">Right click hello `Controllers` folder: `Add` > `Controller`</span></span>
+2.  <span data-ttu-id="5546c-125">Selecione `MVC {version} Controller – Empty`.</span><span class="sxs-lookup"><span data-stu-id="5546c-125">Select `MVC {version} Controller – Empty`.</span></span>
+3.  <span data-ttu-id="5546c-126">Clique em *adicionar*</span><span class="sxs-lookup"><span data-stu-id="5546c-126">Click *Add*</span></span>
+4.  <span data-ttu-id="5546c-127">Nome`ClaimsController`</span><span class="sxs-lookup"><span data-stu-id="5546c-127">Name it `ClaimsController`</span></span>
+5.  <span data-ttu-id="5546c-128">Substitua o código de Olá da sua classe de controlador com o código de Olá abaixo - esta ação adiciona Olá `[Authorize]` toohello classe de atributo:</span><span class="sxs-lookup"><span data-stu-id="5546c-128">Replace hello code of your controller class with hello code below - this adds hello `[Authorize]` attribute toohello class:</span></span>
 
 ```csharp
 [Authorize]
@@ -157,17 +157,17 @@ public class ClaimsController : Controller
 ```
 
 <!--start-collapse-->
-### <a name="more-information"></a>Mais Informações
-> Devido à utilização de Olá de Olá `[Authorize]` atributo, todos os métodos deste controlador só pode ser executado se Olá utilizador ser autenticado. Se o utilizador Olá não é autenticado e tenta tooaccess controlador de Olá, OWIN irá iniciar um desafio de autenticação e forçar Olá tooauthenticate de utilizador. coleção de Olá de afirmações de código Olá acima procura em Olá `ClaimsPrincipal.Current` instância para atributos de utilizador específico incluídas no token de utilizador Olá. Estes atributos incluem o nome completo do utilizador Olá e o nome de utilizador, bem como o requerente de identificador do utilizador global Olá. Também contém Olá *ID do inquilino*, que representa o ID de Olá para a organização do utilizador Olá. 
+### <a name="more-information"></a><span data-ttu-id="5546c-129">Mais Informações</span><span class="sxs-lookup"><span data-stu-id="5546c-129">More Information</span></span>
+> <span data-ttu-id="5546c-130">Devido à utilização de Olá de Olá `[Authorize]` atributo, todos os métodos deste controlador só pode ser executado se Olá utilizador ser autenticado.</span><span class="sxs-lookup"><span data-stu-id="5546c-130">Because of hello use of hello `[Authorize]` attribute, all methods of this controller can only be executed if hello user is authenticated.</span></span> <span data-ttu-id="5546c-131">Se o utilizador Olá não é autenticado e tenta tooaccess controlador de Olá, OWIN irá iniciar um desafio de autenticação e forçar Olá tooauthenticate de utilizador.</span><span class="sxs-lookup"><span data-stu-id="5546c-131">If hello user is not authenticated and tries tooaccess hello controller, OWIN will initiate an authentication challenge and force hello user tooauthenticate.</span></span> <span data-ttu-id="5546c-132">coleção de Olá de afirmações de código Olá acima procura em Olá `ClaimsPrincipal.Current` instância para atributos de utilizador específico incluídas no token de utilizador Olá.</span><span class="sxs-lookup"><span data-stu-id="5546c-132">hello code above looks at hello claims collection of hello `ClaimsPrincipal.Current` instance for specific user attributes included in hello user’s token.</span></span> <span data-ttu-id="5546c-133">Estes atributos incluem o nome completo do utilizador Olá e o nome de utilizador, bem como o requerente de identificador do utilizador global Olá.</span><span class="sxs-lookup"><span data-stu-id="5546c-133">These attributes include hello user’s full name and username, as well as hello global user identifier subject.</span></span> <span data-ttu-id="5546c-134">Também contém Olá *ID do inquilino*, que representa o ID de Olá para a organização do utilizador Olá.</span><span class="sxs-lookup"><span data-stu-id="5546c-134">It also contains hello *Tenant ID*, which represents hello ID for hello user’s organization.</span></span> 
 <!--end-collapse-->
 
-## <a name="create-a-view-toodisplay-hello-users-claims"></a>Criar uma vista de afirmações do utilizador Olá toodisplay
+## <a name="create-a-view-toodisplay-hello-users-claims"></a><span data-ttu-id="5546c-135">Criar uma vista de afirmações do utilizador Olá toodisplay</span><span class="sxs-lookup"><span data-stu-id="5546c-135">Create a view toodisplay hello user's claims</span></span>
 
-No Visual Studio, crie uma nova vista de afirmações do utilizador Olá toodisplay numa página web:
+<span data-ttu-id="5546c-136">No Visual Studio, crie uma nova vista de afirmações do utilizador Olá toodisplay numa página web:</span><span class="sxs-lookup"><span data-stu-id="5546c-136">In Visual Studio, create a new view toodisplay hello user's claims in a web page:</span></span>
 
-1.  Clique com o botão direito do rato em Olá `Views\Claims` pasta e:`Add View`
-2.  Dê-lhe o nome `Index`.
-3.  Adicione Olá seguintes HTML toohello ficheiro:
+1.  <span data-ttu-id="5546c-137">Clique com o botão direito do rato em Olá `Views\Claims` pasta e:`Add View`</span><span class="sxs-lookup"><span data-stu-id="5546c-137">Right click hello `Views\Claims` folder and: `Add View`</span></span>
+2.  <span data-ttu-id="5546c-138">Dê-lhe o nome `Index`.</span><span class="sxs-lookup"><span data-stu-id="5546c-138">Name it `Index`.</span></span>
+3.  <span data-ttu-id="5546c-139">Adicione Olá seguintes HTML toohello ficheiro:</span><span class="sxs-lookup"><span data-stu-id="5546c-139">Add hello following HTML toohello file:</span></span>
 
 ```html
 <html>

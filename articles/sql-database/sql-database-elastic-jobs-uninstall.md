@@ -21,25 +21,25 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="uninstall-elastic-database-jobs-components"></a>Desinstalar componentes de tarefas da base de dados elástica
-**As tarefas de base de dados elásticas** componentes podem ser desinstalados através do Portal de Olá ou PowerShell.
+# <a name="uninstall-elastic-database-jobs-components"></a><span data-ttu-id="d7805-103">Desinstalar componentes de tarefas da base de dados elástica</span><span class="sxs-lookup"><span data-stu-id="d7805-103">Uninstall Elastic Database jobs components</span></span>
+<span data-ttu-id="d7805-104">**As tarefas de base de dados elásticas** componentes podem ser desinstalados através do Portal de Olá ou PowerShell.</span><span class="sxs-lookup"><span data-stu-id="d7805-104">**Elastic Database jobs** components can be uninstalled using either hello Portal or PowerShell.</span></span>
 
-## <a name="uninstall-elastic-database-jobs-components-using-hello-azure-portal"></a>Desinstalar componentes de tarefas de bases de dados elásticas com Olá portal do Azure
-1. Abra Olá [portal do Azure](https://portal.azure.com/).
-2. Navegue toohello subscrição que contém **tarefas de bases de dados elásticas** componentes, nomeadamente Olá subscrição na base de dados elásticas foram instalados componentes de tarefas.
-3. Clique em **procurar** e clique em **grupos de recursos**.
-4. Grupo de recursos de Olá selecione com o nome "__ElasticDatabaseJob".
-5. Elimine grupo de recursos de Olá.
+## <a name="uninstall-elastic-database-jobs-components-using-hello-azure-portal"></a><span data-ttu-id="d7805-105">Desinstalar componentes de tarefas de bases de dados elásticas com Olá portal do Azure</span><span class="sxs-lookup"><span data-stu-id="d7805-105">Uninstall Elastic Database jobs components using hello Azure portal</span></span>
+1. <span data-ttu-id="d7805-106">Abra Olá [portal do Azure](https://portal.azure.com/).</span><span class="sxs-lookup"><span data-stu-id="d7805-106">Open hello [Azure portal](https://portal.azure.com/).</span></span>
+2. <span data-ttu-id="d7805-107">Navegue toohello subscrição que contém **tarefas de bases de dados elásticas** componentes, nomeadamente Olá subscrição na base de dados elásticas foram instalados componentes de tarefas.</span><span class="sxs-lookup"><span data-stu-id="d7805-107">Navigate toohello subscription that contains **Elastic Database jobs** components, namely hello subscription in which Elastic Database jobs components were installed.</span></span>
+3. <span data-ttu-id="d7805-108">Clique em **procurar** e clique em **grupos de recursos**.</span><span class="sxs-lookup"><span data-stu-id="d7805-108">Click **Browse** and click **Resource groups**.</span></span>
+4. <span data-ttu-id="d7805-109">Grupo de recursos de Olá selecione com o nome "__ElasticDatabaseJob".</span><span class="sxs-lookup"><span data-stu-id="d7805-109">Select hello resource group named "__ElasticDatabaseJob".</span></span>
+5. <span data-ttu-id="d7805-110">Elimine grupo de recursos de Olá.</span><span class="sxs-lookup"><span data-stu-id="d7805-110">Delete hello resource group.</span></span>
 
-## <a name="uninstall--elastic-database-jobs-components-using-powershell"></a>Desinstalar componentes de tarefas de bases de dados elásticas com o PowerShell
-1. Inicie uma janela de comandos do PowerShell do Microsoft Azure e navegue toohello ferramentas subdiretório sob a pasta de Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x Olá: tipo **cd ferramentas**.
+## <a name="uninstall--elastic-database-jobs-components-using-powershell"></a><span data-ttu-id="d7805-111">Desinstalar componentes de tarefas de bases de dados elásticas com o PowerShell</span><span class="sxs-lookup"><span data-stu-id="d7805-111">Uninstall  Elastic Database jobs components using PowerShell</span></span>
+1. <span data-ttu-id="d7805-112">Inicie uma janela de comandos do PowerShell do Microsoft Azure e navegue toohello ferramentas subdiretório sob a pasta de Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x Olá: tipo **cd ferramentas**.</span><span class="sxs-lookup"><span data-stu-id="d7805-112">Launch a Microsoft Azure PowerShell command window and navigate toohello tools sub-directory under hello Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x folder: Type **cd tools**.</span></span>
    
-     PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x* > Ferramentas de cd
-2. Execute script do PowerShell Olá.\UninstallElasticDatabaseJobs.ps1.
+     <span data-ttu-id="d7805-113">PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x* > Ferramentas de cd</span><span class="sxs-lookup"><span data-stu-id="d7805-113">PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*>cd tools</span></span>
+2. <span data-ttu-id="d7805-114">Execute script do PowerShell Olá.\UninstallElasticDatabaseJobs.ps1.</span><span class="sxs-lookup"><span data-stu-id="d7805-114">Execute hello .\UninstallElasticDatabaseJobs.ps1 PowerShell script.</span></span>
    
-     PS c:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools > ficheiro de desbloqueio.\UninstallElasticDatabaseJobs.ps1 PS c\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools >.\UninstallElasticDatabaseJobs.ps1
+     <span data-ttu-id="d7805-115">PS c:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools > ficheiro de desbloqueio.\UninstallElasticDatabaseJobs.ps1 PS c\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools >.\UninstallElasticDatabaseJobs.ps1</span><span class="sxs-lookup"><span data-stu-id="d7805-115">PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>Unblock-File .\UninstallElasticDatabaseJobs.ps1   PS C:\*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>.\UninstallElasticDatabaseJobs.ps1</span></span>
 
-Ou simplesmente, executar Olá script a seguir, partindo do princípio de predefinição valores onde utilizado numa instalação dos componentes de Olá:
+<span data-ttu-id="d7805-116">Ou simplesmente, executar Olá script a seguir, partindo do princípio de predefinição valores onde utilizado numa instalação dos componentes de Olá:</span><span class="sxs-lookup"><span data-stu-id="d7805-116">Or simply, execute hello following script, assuming default values where used on installation of hello components:</span></span>
 
         $ResourceGroupName = "__ElasticDatabaseJob"
         Switch-AzureMode AzureResourceManager
@@ -55,10 +55,10 @@ Ou simplesmente, executar Olá script a seguir, partindo do princípio de predef
         Remove-AzureResourceGroup -Name $ResourceGroupName -Force
         Write-Host "Completed removing hello Azure Resource Group: $ResourceGroupName.  Elastic database job compoennts are now uninstalled."
 
-## <a name="next-steps"></a>Passos seguintes
-tarefas de bases de dados elásticas toore instalação, consulte [instalar o serviço de tarefas de bases de dados elásticas Olá](sql-database-elastic-jobs-service-installation.md)
+## <a name="next-steps"></a><span data-ttu-id="d7805-117">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="d7805-117">Next steps</span></span>
+<span data-ttu-id="d7805-118">tarefas de bases de dados elásticas toore instalação, consulte [instalar o serviço de tarefas de bases de dados elásticas Olá](sql-database-elastic-jobs-service-installation.md)</span><span class="sxs-lookup"><span data-stu-id="d7805-118">toore-install Elastic Database jobs, see [Installing hello Elastic Database job service](sql-database-elastic-jobs-service-installation.md)</span></span>
 
-Para obter uma descrição geral das tarefas de bases de dados elásticas, consulte [descrição geral de tarefas de bases de dados elásticas](sql-database-elastic-jobs-overview.md).
+<span data-ttu-id="d7805-119">Para obter uma descrição geral das tarefas de bases de dados elásticas, consulte [descrição geral de tarefas de bases de dados elásticas](sql-database-elastic-jobs-overview.md).</span><span class="sxs-lookup"><span data-stu-id="d7805-119">For an overview of Elastic Database jobs, see [Elastic Database jobs overview](sql-database-elastic-jobs-overview.md).</span></span>
 
 <!--Image references-->
 

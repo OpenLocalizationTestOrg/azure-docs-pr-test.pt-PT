@@ -22,13 +22,13 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="get-hello-required-values-for-authenticating-an-application-tooaccess-sql-database-from-code"></a>Obter valores de Olá necessário para autenticar um tooaccess de aplicação de base de dados SQL a partir do código
-toocreate e gerir a base de dados SQL a partir do código tem de registar a aplicação no domínio de Azure Active Directory (AAD) Olá na subscrição olá onde os recursos do Azure foram criados.
+# <a name="get-hello-required-values-for-authenticating-an-application-tooaccess-sql-database-from-code"></a><span data-ttu-id="75ff4-103">Obter valores de Olá necessário para autenticar um tooaccess de aplicação de base de dados SQL a partir do código</span><span class="sxs-lookup"><span data-stu-id="75ff4-103">Get hello required values for authenticating an application tooaccess SQL Database from code</span></span>
+<span data-ttu-id="75ff4-104">toocreate e gerir a base de dados SQL a partir do código tem de registar a aplicação no domínio de Azure Active Directory (AAD) Olá na subscrição olá onde os recursos do Azure foram criados.</span><span class="sxs-lookup"><span data-stu-id="75ff4-104">toocreate and manage SQL Database from code you must register your app in hello Azure Active Directory (AAD) domain  in hello subscription where your Azure resources have been created.</span></span>
 
-## <a name="create-a-service-principal-tooaccess-resources-from-an-application"></a>Criar um tooaccess principal do serviço de recursos de uma aplicação
-Precisa de mais recente toohave Olá [Azure PowerShell](https://msdn.microsoft.com/library/mt619274.aspx) instalado e em execução. Para obter informações detalhadas, consulte [como tooinstall e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs).
+## <a name="create-a-service-principal-tooaccess-resources-from-an-application"></a><span data-ttu-id="75ff4-105">Criar um tooaccess principal do serviço de recursos de uma aplicação</span><span class="sxs-lookup"><span data-stu-id="75ff4-105">Create a service principal tooaccess resources from an application</span></span>
+<span data-ttu-id="75ff4-106">Precisa de mais recente toohave Olá [Azure PowerShell](https://msdn.microsoft.com/library/mt619274.aspx) instalado e em execução.</span><span class="sxs-lookup"><span data-stu-id="75ff4-106">You need toohave hello latest [Azure PowerShell](https://msdn.microsoft.com/library/mt619274.aspx) installed and running.</span></span> <span data-ttu-id="75ff4-107">Para obter informações detalhadas, consulte [como tooinstall e configurar o Azure PowerShell](/powershell/azureps-cmdlets-docs).</span><span class="sxs-lookup"><span data-stu-id="75ff4-107">For detailed information, see [How tooinstall and configure Azure PowerShell](/powershell/azureps-cmdlets-docs).</span></span>
 
-Olá seguinte script do PowerShell cria aplicações do Olá do Active Directory (AD) e o serviço de Olá principal que precisamos tooauthenticate nossa aplicação c#. script de Olá produz os valores que precisa para Olá precedente c# de exemplo. Para obter informações detalhadas, consulte [utilize o Azure PowerShell toocreate um principal de serviço tooaccess recursos](../azure-resource-manager/resource-group-authenticate-service-principal.md).
+<span data-ttu-id="75ff4-108">Olá seguinte script do PowerShell cria aplicações do Olá do Active Directory (AD) e o serviço de Olá principal que precisamos tooauthenticate nossa aplicação c#.</span><span class="sxs-lookup"><span data-stu-id="75ff4-108">hello following PowerShell script creates hello Active Directory (AD) application and hello service principal that we need tooauthenticate our C# app.</span></span> <span data-ttu-id="75ff4-109">script de Olá produz os valores que precisa para Olá precedente c# de exemplo.</span><span class="sxs-lookup"><span data-stu-id="75ff4-109">hello script outputs values we need for hello preceding C# sample.</span></span> <span data-ttu-id="75ff4-110">Para obter informações detalhadas, consulte [utilize o Azure PowerShell toocreate um principal de serviço tooaccess recursos](../azure-resource-manager/resource-group-authenticate-service-principal.md).</span><span class="sxs-lookup"><span data-stu-id="75ff4-110">For detailed information, see [Use Azure PowerShell toocreate a service principal tooaccess resources](../azure-resource-manager/resource-group-authenticate-service-principal.md).</span></span>
 
     # Sign in tooAzure.
     Add-AzureRmAccount
@@ -71,7 +71,7 @@ Olá seguinte script do PowerShell cria aplicações do Olá do Active Directory
 
 
 
-## <a name="see-also"></a>Consultar também
-* [Criar uma base de dados SQL com c#](sql-database-get-started-csharp.md)
-* [Ligar tooSQL da base de dados ao utilizar o Azure autenticação do Active Directory](sql-database-aad-authentication.md)
+## <a name="see-also"></a><span data-ttu-id="75ff4-111">Consultar também</span><span class="sxs-lookup"><span data-stu-id="75ff4-111">See also</span></span>
+* [<span data-ttu-id="75ff4-112">Criar uma base de dados SQL com c#</span><span class="sxs-lookup"><span data-stu-id="75ff4-112">Create a SQL database with C#</span></span>](sql-database-get-started-csharp.md)
+* [<span data-ttu-id="75ff4-113">Ligar tooSQL da base de dados ao utilizar o Azure autenticação do Active Directory</span><span class="sxs-lookup"><span data-stu-id="75ff4-113">Connecting tooSQL Database By Using Azure Active Directory Authentication</span></span>](sql-database-aad-authentication.md)
 

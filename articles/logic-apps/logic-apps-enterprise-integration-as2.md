@@ -20,162 +20,162 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="exchange-as2-messages-for-enterprise-integration-with-logic-apps"></a>Trocar mensagens AS2 para a integração empresarial com logic apps
+# <a name="exchange-as2-messages-for-enterprise-integration-with-logic-apps"></a><span data-ttu-id="9e3da-103">Trocar mensagens AS2 para a integração empresarial com logic apps</span><span class="sxs-lookup"><span data-stu-id="9e3da-103">Exchange AS2 messages for enterprise integration with logic apps</span></span>
 
-Podem trocar mensagens AS2 para Azure Logic Apps, tem de criar um contrato de AS2 e armazenar esse contrato na sua conta de integração. Seguem-se passos de Olá como contrato toocreate um AS2.
+<span data-ttu-id="9e3da-104">Podem trocar mensagens AS2 para Azure Logic Apps, tem de criar um contrato de AS2 e armazenar esse contrato na sua conta de integração.</span><span class="sxs-lookup"><span data-stu-id="9e3da-104">Before you can exchange AS2 messages for Azure Logic Apps, you must create an AS2 agreement and store that agreement in your integration account.</span></span> <span data-ttu-id="9e3da-105">Seguem-se passos de Olá como contrato toocreate um AS2.</span><span class="sxs-lookup"><span data-stu-id="9e3da-105">Here are hello steps for how toocreate an AS2 agreement.</span></span>
 
-## <a name="before-you-start"></a>Antes de começar
+## <a name="before-you-start"></a><span data-ttu-id="9e3da-106">Antes de começar</span><span class="sxs-lookup"><span data-stu-id="9e3da-106">Before you start</span></span>
 
-Segue-se itens Olá que precisa de:
+<span data-ttu-id="9e3da-107">Segue-se itens Olá que precisa de:</span><span class="sxs-lookup"><span data-stu-id="9e3da-107">Here's hello items you need:</span></span>
 
-* Um [conta integração](../logic-apps/logic-apps-enterprise-integration-accounts.md) que já foi definida e associados à subscrição do Azure
-* Pelo menos dois [parceiros](logic-apps-enterprise-integration-partners.md) que já estão definidos na sua conta de integração e configurado com qualificador Olá AS2 em **identidades de negócio**
+* <span data-ttu-id="9e3da-108">Um [conta integração](../logic-apps/logic-apps-enterprise-integration-accounts.md) que já foi definida e associados à subscrição do Azure</span><span class="sxs-lookup"><span data-stu-id="9e3da-108">An [integration account](../logic-apps/logic-apps-enterprise-integration-accounts.md) that's already defined and associated with your Azure subscription</span></span>
+* <span data-ttu-id="9e3da-109">Pelo menos dois [parceiros](logic-apps-enterprise-integration-partners.md) que já estão definidos na sua conta de integração e configurado com qualificador Olá AS2 em **identidades de negócio**</span><span class="sxs-lookup"><span data-stu-id="9e3da-109">At least two [partners](logic-apps-enterprise-integration-partners.md) that are already defined in your integration account and configured with hello AS2 qualifier under **Business Identities**</span></span>
 
 > [!NOTE]
-> Quando cria um contrato, conteúdo de Olá no ficheiro de contrato de Olá tem de corresponder ao tipo de contrato de Olá.    
+> <span data-ttu-id="9e3da-110">Quando cria um contrato, conteúdo de Olá no ficheiro de contrato de Olá tem de corresponder ao tipo de contrato de Olá.</span><span class="sxs-lookup"><span data-stu-id="9e3da-110">When you create an agreement, hello content in hello agreement file must match hello agreement type.</span></span>    
 
-Depois de [criar uma conta de integração](../logic-apps/logic-apps-enterprise-integration-accounts.md) e [adicionar parceiros](logic-apps-enterprise-integration-partners.md), pode criar um contrato de AS2, seguindo estes passos.
+<span data-ttu-id="9e3da-111">Depois de [criar uma conta de integração](../logic-apps/logic-apps-enterprise-integration-accounts.md) e [adicionar parceiros](logic-apps-enterprise-integration-partners.md), pode criar um contrato de AS2, seguindo estes passos.</span><span class="sxs-lookup"><span data-stu-id="9e3da-111">After you [create an integration account](../logic-apps/logic-apps-enterprise-integration-accounts.md) and [add partners](logic-apps-enterprise-integration-partners.md), you can create an AS2 agreement by following these steps.</span></span>
 
-## <a name="create-an-as2-agreement"></a>Crie um contrato de AS2
+## <a name="create-an-as2-agreement"></a><span data-ttu-id="9e3da-112">Crie um contrato de AS2</span><span class="sxs-lookup"><span data-stu-id="9e3da-112">Create an AS2 agreement</span></span>
 
-1.  Inicie sessão no toohello [portal do Azure](http://portal.azure.com "portal do Azure").  
+1.  <span data-ttu-id="9e3da-113">Inicie sessão no toohello [portal do Azure](http://portal.azure.com "portal do Azure").</span><span class="sxs-lookup"><span data-stu-id="9e3da-113">Sign in toohello [Azure portal](http://portal.azure.com "Azure portal").</span></span>  
 
-2.  No menu à esquerda de Olá, selecione **mais serviços**. Na caixa de pesquisa de Olá, introduza **integração** como o filtro. Na lista de resultados de Olá, selecione **contas de automatização**.
+2.  <span data-ttu-id="9e3da-114">No menu à esquerda de Olá, selecione **mais serviços**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-114">From hello left menu, select **More services**.</span></span> <span data-ttu-id="9e3da-115">Na caixa de pesquisa de Olá, introduza **integração** como o filtro.</span><span class="sxs-lookup"><span data-stu-id="9e3da-115">In hello search box, enter **integration** as your filter.</span></span> <span data-ttu-id="9e3da-116">Na lista de resultados de Olá, selecione **contas de automatização**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-116">In hello results list, select **Integration Accounts**.</span></span>
 
     > [!TIP]
-    > Se não vir **mais serviços**, poderá ter o menu de Olá tooexpand primeiro. Olá parte superior do menu de Olá fechado, selecione **Mostrar menu**.
+    > <span data-ttu-id="9e3da-117">Se não vir **mais serviços**, poderá ter o menu de Olá tooexpand primeiro.</span><span class="sxs-lookup"><span data-stu-id="9e3da-117">If you don't see **More services**, you might have tooexpand hello menu first.</span></span> <span data-ttu-id="9e3da-118">Olá parte superior do menu de Olá fechado, selecione **Mostrar menu**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-118">At hello top of hello collapsed menu, select **Show menu**.</span></span>
 
     ![Mais serviços, o filtro "integração", selecione "Contas de automatização"](./media/logic-apps-enterprise-integration-agreements/overview-1.png)
 
-3. No Olá **contas de automatização** painel que abre, conta de integração de Olá selecione onde pretende que o contrato de Olá toocreate.
-Se não vir quaisquer contas de automatização, [criar um primeiro](../logic-apps/logic-apps-enterprise-integration-accounts.md "tudo sobre contas de automatização").  
+3. <span data-ttu-id="9e3da-120">No Olá **contas de automatização** painel que abre, conta de integração de Olá selecione onde pretende que o contrato de Olá toocreate.</span><span class="sxs-lookup"><span data-stu-id="9e3da-120">In hello **Integration Accounts** blade that opens, select hello integration account where you want toocreate hello agreement.</span></span>
+<span data-ttu-id="9e3da-121">Se não vir quaisquer contas de automatização, [criar um primeiro](../logic-apps/logic-apps-enterprise-integration-accounts.md "tudo sobre contas de automatização").</span><span class="sxs-lookup"><span data-stu-id="9e3da-121">If you don't see any integration accounts, [create one first](../logic-apps/logic-apps-enterprise-integration-accounts.md "All about integration accounts").</span></span>  
 
     ![Selecione a conta de integração de olá onde toocreate Olá contrato](./media/logic-apps-enterprise-integration-overview/overview-3.png)
 
-4. Escolha Olá **contratos** mosaico. Se não tiver um mosaico de contratos, adicione primeiro mosaico Olá.
+4. <span data-ttu-id="9e3da-123">Escolha Olá **contratos** mosaico.</span><span class="sxs-lookup"><span data-stu-id="9e3da-123">Choose hello **Agreements** tile.</span></span> <span data-ttu-id="9e3da-124">Se não tiver um mosaico de contratos, adicione primeiro mosaico Olá.</span><span class="sxs-lookup"><span data-stu-id="9e3da-124">If you don't have an Agreements tile, add hello tile first.</span></span>
 
     ![Escolha o que mosaico "Contratos"](./media/logic-apps-enterprise-integration-agreements/agreement-1.png)
 
-5. No painel de contratos de Olá que se abre, escolha **adicionar**.
+5. <span data-ttu-id="9e3da-126">No painel de contratos de Olá que se abre, escolha **adicionar**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-126">In hello Agreements blade that opens, choose **Add**.</span></span>
 
     ![Escolha "Adicionar"](./media/logic-apps-enterprise-integration-agreements/agreement-2.png)
 
-6. Em **adicionar**, introduza um **nome** para o contrato. Para **tipo de contrato**, selecione **AS2**. Selecione Olá **anfitrião parceiro**, **identidade do anfitrião**, **convidado parceiro**, e **identidade de convidado** para o contrato.
+6. <span data-ttu-id="9e3da-128">Em **adicionar**, introduza um **nome** para o contrato.</span><span class="sxs-lookup"><span data-stu-id="9e3da-128">Under **Add**, enter a **Name** for your agreement.</span></span> <span data-ttu-id="9e3da-129">Para **tipo de contrato**, selecione **AS2**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-129">For **Agreement type**, select **AS2**.</span></span> <span data-ttu-id="9e3da-130">Selecione Olá **anfitrião parceiro**, **identidade do anfitrião**, **convidado parceiro**, e **identidade de convidado** para o contrato.</span><span class="sxs-lookup"><span data-stu-id="9e3da-130">Select hello **Host Partner**, **Host Identity**, **Guest Partner**, and **Guest Identity** for your agreement.</span></span>
 
     ![Forneça os detalhes do contrato](./media/logic-apps-enterprise-integration-agreements/agreement-3.png)  
 
-    | Propriedade | Descrição |
+    | <span data-ttu-id="9e3da-132">Propriedade</span><span class="sxs-lookup"><span data-stu-id="9e3da-132">Property</span></span> | <span data-ttu-id="9e3da-133">Descrição</span><span class="sxs-lookup"><span data-stu-id="9e3da-133">Description</span></span> |
     | --- | --- |
-    | Nome |Nome do contrato de Olá |
-    | Tipo de contrato | Deve ser AS2 |
-    | Parceiro de anfitrião |Um contrato tem de parceiro de um anfitrião e convidado. parceiro de anfitrião Olá representa a organização Olá que configura o contrato de Olá. |
-    | Identidade do anfitrião |Um identificador de parceiro de anfitrião Olá |
-    | Parceiro de convidado |Um contrato tem de parceiro de um anfitrião e convidado. parceiro de convidado Olá representa a organização Olá que está a decorrer empresas com o parceiro de anfitrião Olá. |
-    | Identidade de convidado |Um identificador de parceiro de convidado Olá |
-    | Receber definições |Estas propriedades aplicam-se as mensagens de tooall recebidas por um contrato. |
-    | Enviar definições |Estas propriedades aplicam-se as mensagens de tooall enviadas por um contrato. |
+    | <span data-ttu-id="9e3da-134">Nome</span><span class="sxs-lookup"><span data-stu-id="9e3da-134">Name</span></span> |<span data-ttu-id="9e3da-135">Nome do contrato de Olá</span><span class="sxs-lookup"><span data-stu-id="9e3da-135">Name of hello agreement</span></span> |
+    | <span data-ttu-id="9e3da-136">Tipo de contrato</span><span class="sxs-lookup"><span data-stu-id="9e3da-136">Agreement Type</span></span> | <span data-ttu-id="9e3da-137">Deve ser AS2</span><span class="sxs-lookup"><span data-stu-id="9e3da-137">Should be AS2</span></span> |
+    | <span data-ttu-id="9e3da-138">Parceiro de anfitrião</span><span class="sxs-lookup"><span data-stu-id="9e3da-138">Host Partner</span></span> |<span data-ttu-id="9e3da-139">Um contrato tem de parceiro de um anfitrião e convidado.</span><span class="sxs-lookup"><span data-stu-id="9e3da-139">An agreement needs both a host and guest partner.</span></span> <span data-ttu-id="9e3da-140">parceiro de anfitrião Olá representa a organização Olá que configura o contrato de Olá.</span><span class="sxs-lookup"><span data-stu-id="9e3da-140">hello host partner represents hello organization that configures hello agreement.</span></span> |
+    | <span data-ttu-id="9e3da-141">Identidade do anfitrião</span><span class="sxs-lookup"><span data-stu-id="9e3da-141">Host Identity</span></span> |<span data-ttu-id="9e3da-142">Um identificador de parceiro de anfitrião Olá</span><span class="sxs-lookup"><span data-stu-id="9e3da-142">An identifier for hello host partner</span></span> |
+    | <span data-ttu-id="9e3da-143">Parceiro de convidado</span><span class="sxs-lookup"><span data-stu-id="9e3da-143">Guest Partner</span></span> |<span data-ttu-id="9e3da-144">Um contrato tem de parceiro de um anfitrião e convidado.</span><span class="sxs-lookup"><span data-stu-id="9e3da-144">An agreement needs both a host and guest partner.</span></span> <span data-ttu-id="9e3da-145">parceiro de convidado Olá representa a organização Olá que está a decorrer empresas com o parceiro de anfitrião Olá.</span><span class="sxs-lookup"><span data-stu-id="9e3da-145">hello guest partner represents hello organization that's doing business with hello host partner.</span></span> |
+    | <span data-ttu-id="9e3da-146">Identidade de convidado</span><span class="sxs-lookup"><span data-stu-id="9e3da-146">Guest Identity</span></span> |<span data-ttu-id="9e3da-147">Um identificador de parceiro de convidado Olá</span><span class="sxs-lookup"><span data-stu-id="9e3da-147">An identifier for hello guest partner</span></span> |
+    | <span data-ttu-id="9e3da-148">Receber definições</span><span class="sxs-lookup"><span data-stu-id="9e3da-148">Receive Settings</span></span> |<span data-ttu-id="9e3da-149">Estas propriedades aplicam-se as mensagens de tooall recebidas por um contrato.</span><span class="sxs-lookup"><span data-stu-id="9e3da-149">These properties apply tooall messages received by an agreement.</span></span> |
+    | <span data-ttu-id="9e3da-150">Enviar definições</span><span class="sxs-lookup"><span data-stu-id="9e3da-150">Send Settings</span></span> |<span data-ttu-id="9e3da-151">Estas propriedades aplicam-se as mensagens de tooall enviadas por um contrato.</span><span class="sxs-lookup"><span data-stu-id="9e3da-151">These properties apply tooall messages sent by an agreement.</span></span> |
 
-## <a name="configure-how-your-agreement-handles-received-messages"></a>Configurar a forma como os identificadores de contrato receberam mensagens
+## <a name="configure-how-your-agreement-handles-received-messages"></a><span data-ttu-id="9e3da-152">Configurar a forma como os identificadores de contrato receberam mensagens</span><span class="sxs-lookup"><span data-stu-id="9e3da-152">Configure how your agreement handles received messages</span></span>
 
-Agora que definiu as propriedades de contrato de Olá, pode configurar como o presente contrato identifica e processa mensagens a receber foi recebidas pelo seu parceiro através deste contrato.
+<span data-ttu-id="9e3da-153">Agora que definiu as propriedades de contrato de Olá, pode configurar como o presente contrato identifica e processa mensagens a receber foi recebidas pelo seu parceiro através deste contrato.</span><span class="sxs-lookup"><span data-stu-id="9e3da-153">Now that you've set hello agreement properties, you can configure how this agreement identifies and handles incoming messages received from your partner through this agreement.</span></span>
 
-1.  Em **adicionar**, selecione **receber definições**.
-Configure estas propriedades com base no seu contrato com o parceiro de Olá trocas de mensagens consigo. Para descrições das propriedades, consulte a tabela de Olá nesta secção.
+1.  <span data-ttu-id="9e3da-154">Em **adicionar**, selecione **receber definições**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-154">Under **Add**, select **Receive Settings**.</span></span>
+<span data-ttu-id="9e3da-155">Configure estas propriedades com base no seu contrato com o parceiro de Olá trocas de mensagens consigo.</span><span class="sxs-lookup"><span data-stu-id="9e3da-155">Configure these properties based on your agreement with hello partner that exchanges messages with you.</span></span> <span data-ttu-id="9e3da-156">Para descrições das propriedades, consulte a tabela de Olá nesta secção.</span><span class="sxs-lookup"><span data-stu-id="9e3da-156">For property descriptions, see hello table in this section.</span></span>
 
     ![Configurar "Receber definições"](./media/logic-apps-enterprise-integration-agreements/agreement-4.png)
 
-2. Opcionalmente, pode substituir as propriedades de Olá de mensagens a receber selecionando **substituir as propriedades da mensagem**.
+2. <span data-ttu-id="9e3da-158">Opcionalmente, pode substituir as propriedades de Olá de mensagens a receber selecionando **substituir as propriedades da mensagem**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-158">Optionally, you can override hello properties of incoming messages by selecting **Override message properties**.</span></span>
 
-3. toorequire todos os toobe mensagens recebidas assinado, selecione **mensagem deve estar assinada**. De Olá **certificado** lista, selecione um existente [certificado público de parceiro de convidado](../logic-apps/logic-apps-enterprise-integration-certificates.md) para validar a assinatura de Olá nas mensagens hello. Ou criar o certificado de Olá, se não tiver uma.
+3. <span data-ttu-id="9e3da-159">toorequire todos os toobe mensagens recebidas assinado, selecione **mensagem deve estar assinada**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-159">toorequire all incoming messages toobe signed, select **Message should be signed**.</span></span> <span data-ttu-id="9e3da-160">De Olá **certificado** lista, selecione um existente [certificado público de parceiro de convidado](../logic-apps/logic-apps-enterprise-integration-certificates.md) para validar a assinatura de Olá nas mensagens hello.</span><span class="sxs-lookup"><span data-stu-id="9e3da-160">From hello **Certificate** list, select an existing [guest partner public certificate](../logic-apps/logic-apps-enterprise-integration-certificates.md) for validating hello signature on hello messages.</span></span> <span data-ttu-id="9e3da-161">Ou criar o certificado de Olá, se não tiver uma.</span><span class="sxs-lookup"><span data-stu-id="9e3da-161">Or create hello certificate, if you don't have one.</span></span>
 
-4.  Selecione de todas as mensagens toobe de entrada encriptados, toorequire **mensagem deve ser encriptada**. De Olá **certificado** lista, selecione um existente [certificado privado de parceiro de anfitrião](../logic-apps/logic-apps-enterprise-integration-certificates.md) para desencriptar mensagens a receber. Ou criar o certificado de Olá, se não tiver uma.
+4.  <span data-ttu-id="9e3da-162">Selecione de todas as mensagens toobe de entrada encriptados, toorequire **mensagem deve ser encriptada**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-162">toorequire all incoming messages toobe encrypted, select **Message should be encrypted**.</span></span> <span data-ttu-id="9e3da-163">De Olá **certificado** lista, selecione um existente [certificado privado de parceiro de anfitrião](../logic-apps/logic-apps-enterprise-integration-certificates.md) para desencriptar mensagens a receber.</span><span class="sxs-lookup"><span data-stu-id="9e3da-163">From hello **Certificate** list, select an existing [host partner private certificate](../logic-apps/logic-apps-enterprise-integration-certificates.md) for decrypting incoming messages.</span></span> <span data-ttu-id="9e3da-164">Ou criar o certificado de Olá, se não tiver uma.</span><span class="sxs-lookup"><span data-stu-id="9e3da-164">Or create hello certificate, if you don't have one.</span></span>
 
-5. Selecione toorequire mensagens toobe comprimido, **mensagem deve ser comprimida**.
+5. <span data-ttu-id="9e3da-165">Selecione toorequire mensagens toobe comprimido, **mensagem deve ser comprimida**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-165">toorequire messages toobe compressed, select **Message should be compressed**.</span></span>
 
-6. Selecione toosend uma notificação de disposição mensagem síncrona (MDN) para mensagens recebidas, **enviar MDN**.
+6. <span data-ttu-id="9e3da-166">Selecione toosend uma notificação de disposição mensagem síncrona (MDN) para mensagens recebidas, **enviar MDN**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-166">toosend a synchronous message disposition notification (MDN) for received messages, select **Send MDN**.</span></span>
 
-7. toosend inscreveu MDNs mensagens recebidas, selecionadas **Send iniciada MDN**.
+7. <span data-ttu-id="9e3da-167">toosend inscreveu MDNs mensagens recebidas, selecionadas **Send iniciada MDN**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-167">toosend signed MDNs for received messages, select **Send signed MDN**.</span></span>
 
-8. toosend MDNs assíncronas para mensagens recebidas, selecione **enviar MDN assíncrona**.
+8. <span data-ttu-id="9e3da-168">toosend MDNs assíncronas para mensagens recebidas, selecione **enviar MDN assíncrona**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-168">toosend asynchronous MDNs for received messages, select **Send asynchronous MDN**.</span></span>
 
-9. Depois de terminar, certifique-se toosave as suas definições escolhendo **OK**.
+9. <span data-ttu-id="9e3da-169">Depois de terminar, certifique-se toosave as suas definições escolhendo **OK**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-169">After you're done, make sure toosave your settings by choosing **OK**.</span></span>
 
-Agora, o contrato é toohandle pronto receber mensagens que estão em conformidade com tooyour nas definições selecionadas.
+<span data-ttu-id="9e3da-170">Agora, o contrato é toohandle pronto receber mensagens que estão em conformidade com tooyour nas definições selecionadas.</span><span class="sxs-lookup"><span data-stu-id="9e3da-170">Now your agreement is ready toohandle incoming messages that conform tooyour selected settings.</span></span>
 
-| Propriedade | Descrição |
+| <span data-ttu-id="9e3da-171">Propriedade</span><span class="sxs-lookup"><span data-stu-id="9e3da-171">Property</span></span> | <span data-ttu-id="9e3da-172">Descrição</span><span class="sxs-lookup"><span data-stu-id="9e3da-172">Description</span></span> |
 | --- | --- |
-| Substituir as propriedades da mensagem |Indica se as propriedades de mensagens recebidas podem ser substituídas. |
-| Mensagem deve estar assinada |Requer toobe mensagens assinado digitalmente. Configure o certificado público do parceiro de convidado de Olá para verificação da assinatura.  |
-| Mensagem deve ser encriptada |Requer toobe mensagens encriptada. Mensagens encriptadas não são rejeitadas. Para configurar Olá anfitrião parceiro privada para desencriptar mensagens hello.  |
-| Mensagem deve ser comprimida |Requer toobe mensagens comprimido. Mensagens de compressão não são rejeitadas. |
-| Texto MDN |Olá predefinido disposição notificação (MDN) toobe toohello enviado mensagem remetente da mensagem. |
-| Enviar MDN |Requer toobe MDNs enviada. |
-| Enviar MDN assinado |Requer toobe MDNs assinado. |
-| Algoritmo de Dinâmicas |Selecione Olá toouse de algoritmo de assinatura de mensagens. |
-| Enviar MDN assíncrona | Requer toobe de mensagens enviada de forma assíncrona. |
-| URL | Especifique o URL de olá onde toosend Olá MDNs. |
+| <span data-ttu-id="9e3da-173">Substituir as propriedades da mensagem</span><span class="sxs-lookup"><span data-stu-id="9e3da-173">Override message properties</span></span> |<span data-ttu-id="9e3da-174">Indica se as propriedades de mensagens recebidas podem ser substituídas.</span><span class="sxs-lookup"><span data-stu-id="9e3da-174">Indicates that properties in received messages can be overridden.</span></span> |
+| <span data-ttu-id="9e3da-175">Mensagem deve estar assinada</span><span class="sxs-lookup"><span data-stu-id="9e3da-175">Message should be signed</span></span> |<span data-ttu-id="9e3da-176">Requer toobe mensagens assinado digitalmente.</span><span class="sxs-lookup"><span data-stu-id="9e3da-176">Requires messages toobe digitally signed.</span></span> <span data-ttu-id="9e3da-177">Configure o certificado público do parceiro de convidado de Olá para verificação da assinatura.</span><span class="sxs-lookup"><span data-stu-id="9e3da-177">Configure hello guest partner public certificate for signature verification.</span></span>  |
+| <span data-ttu-id="9e3da-178">Mensagem deve ser encriptada</span><span class="sxs-lookup"><span data-stu-id="9e3da-178">Message should be encrypted</span></span> |<span data-ttu-id="9e3da-179">Requer toobe mensagens encriptada.</span><span class="sxs-lookup"><span data-stu-id="9e3da-179">Requires messages toobe encrypted.</span></span> <span data-ttu-id="9e3da-180">Mensagens encriptadas não são rejeitadas.</span><span class="sxs-lookup"><span data-stu-id="9e3da-180">Non-encrypted messages are rejected.</span></span> <span data-ttu-id="9e3da-181">Para configurar Olá anfitrião parceiro privada para desencriptar mensagens hello.</span><span class="sxs-lookup"><span data-stu-id="9e3da-181">Configure hello host partner private certificate for decrypting hello messages.</span></span>  |
+| <span data-ttu-id="9e3da-182">Mensagem deve ser comprimida</span><span class="sxs-lookup"><span data-stu-id="9e3da-182">Message should be compressed</span></span> |<span data-ttu-id="9e3da-183">Requer toobe mensagens comprimido.</span><span class="sxs-lookup"><span data-stu-id="9e3da-183">Requires messages toobe compressed.</span></span> <span data-ttu-id="9e3da-184">Mensagens de compressão não são rejeitadas.</span><span class="sxs-lookup"><span data-stu-id="9e3da-184">Non-compressed messages are rejected.</span></span> |
+| <span data-ttu-id="9e3da-185">Texto MDN</span><span class="sxs-lookup"><span data-stu-id="9e3da-185">MDN Text</span></span> |<span data-ttu-id="9e3da-186">Olá predefinido disposição notificação (MDN) toobe toohello enviado mensagem remetente da mensagem.</span><span class="sxs-lookup"><span data-stu-id="9e3da-186">hello default message disposition notification (MDN) toobe sent toohello message sender.</span></span> |
+| <span data-ttu-id="9e3da-187">Enviar MDN</span><span class="sxs-lookup"><span data-stu-id="9e3da-187">Send MDN</span></span> |<span data-ttu-id="9e3da-188">Requer toobe MDNs enviada.</span><span class="sxs-lookup"><span data-stu-id="9e3da-188">Requires MDNs toobe sent.</span></span> |
+| <span data-ttu-id="9e3da-189">Enviar MDN assinado</span><span class="sxs-lookup"><span data-stu-id="9e3da-189">Send signed MDN</span></span> |<span data-ttu-id="9e3da-190">Requer toobe MDNs assinado.</span><span class="sxs-lookup"><span data-stu-id="9e3da-190">Requires MDNs toobe signed.</span></span> |
+| <span data-ttu-id="9e3da-191">Algoritmo de Dinâmicas</span><span class="sxs-lookup"><span data-stu-id="9e3da-191">MIC Algorithm</span></span> |<span data-ttu-id="9e3da-192">Selecione Olá toouse de algoritmo de assinatura de mensagens.</span><span class="sxs-lookup"><span data-stu-id="9e3da-192">Select hello algorithm toouse for signing messages.</span></span> |
+| <span data-ttu-id="9e3da-193">Enviar MDN assíncrona</span><span class="sxs-lookup"><span data-stu-id="9e3da-193">Send asynchronous MDN</span></span> | <span data-ttu-id="9e3da-194">Requer toobe de mensagens enviada de forma assíncrona.</span><span class="sxs-lookup"><span data-stu-id="9e3da-194">Requires messages toobe sent asynchronously.</span></span> |
+| <span data-ttu-id="9e3da-195">URL</span><span class="sxs-lookup"><span data-stu-id="9e3da-195">URL</span></span> | <span data-ttu-id="9e3da-196">Especifique o URL de olá onde toosend Olá MDNs.</span><span class="sxs-lookup"><span data-stu-id="9e3da-196">Specify hello URL where toosend hello MDNs.</span></span> |
 
-## <a name="configure-how-your-agreement-sends-messages"></a>Configurar como o seu contrato envia mensagens
+## <a name="configure-how-your-agreement-sends-messages"></a><span data-ttu-id="9e3da-197">Configurar como o seu contrato envia mensagens</span><span class="sxs-lookup"><span data-stu-id="9e3da-197">Configure how your agreement sends messages</span></span>
 
-Pode configurar a forma como este contrato identifica e processa mensagens de saída que enviam tooyour parceiros através deste contrato.
+<span data-ttu-id="9e3da-198">Pode configurar a forma como este contrato identifica e processa mensagens de saída que enviam tooyour parceiros através deste contrato.</span><span class="sxs-lookup"><span data-stu-id="9e3da-198">You can configure how this agreement identifies and handles outgoing messages that you send tooyour partners through this agreement.</span></span>
 
-1.  Em **adicionar**, selecione **enviar definições**.
-Configure estas propriedades com base no seu contrato com o parceiro de Olá trocas de mensagens consigo. Para descrições das propriedades, consulte a tabela de Olá nesta secção.
+1.  <span data-ttu-id="9e3da-199">Em **adicionar**, selecione **enviar definições**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-199">Under **Add**, select **Send Settings**.</span></span>
+<span data-ttu-id="9e3da-200">Configure estas propriedades com base no seu contrato com o parceiro de Olá trocas de mensagens consigo.</span><span class="sxs-lookup"><span data-stu-id="9e3da-200">Configure these properties based on your agreement with hello partner that exchanges messages with you.</span></span> <span data-ttu-id="9e3da-201">Para descrições das propriedades, consulte a tabela de Olá nesta secção.</span><span class="sxs-lookup"><span data-stu-id="9e3da-201">For property descriptions, see hello table in this section.</span></span>
 
     ![Definir as propriedades de "Definições de envio" Olá](./media/logic-apps-enterprise-integration-agreements/agreement-51.png)
 
-2. toosend mensagens assinado tooyour parceiro, selecione **ativar a assinatura das mensagens**. Para assinar mensagens hello, no Olá **MIC algoritmo** lista, selecione de Olá *anfitrião parceiro privada no certificado MIC algoritmo*. E no Olá **certificado** lista, selecione um existente [certificado privado de parceiro de anfitrião](../logic-apps/logic-apps-enterprise-integration-certificates.md).
+2. <span data-ttu-id="9e3da-203">toosend mensagens assinado tooyour parceiro, selecione **ativar a assinatura das mensagens**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-203">toosend signed messages tooyour partner, select **Enable message signing**.</span></span> <span data-ttu-id="9e3da-204">Para assinar mensagens hello, no Olá **MIC algoritmo** lista, selecione de Olá *anfitrião parceiro privada no certificado MIC algoritmo*.</span><span class="sxs-lookup"><span data-stu-id="9e3da-204">For signing hello messages, in hello **MIC Algorithm** list, select hello *host partner private certificate MIC Algorithm*.</span></span> <span data-ttu-id="9e3da-205">E no Olá **certificado** lista, selecione um existente [certificado privado de parceiro de anfitrião](../logic-apps/logic-apps-enterprise-integration-certificates.md).</span><span class="sxs-lookup"><span data-stu-id="9e3da-205">And in hello **Certificate** list, select an existing [host partner private certificate](../logic-apps/logic-apps-enterprise-integration-certificates.md).</span></span>
 
-3. toosend mensagens encriptadas toohello parceiro, selecione **ativar a encriptação de mensagens**. Para encriptar mensagens hello, no Olá **algoritmo de encriptação** lista, selecione de Olá *algoritmos de certificado público de parceiro de convidado*.
-E no Olá **certificado** lista, selecione um existente [certificado público de parceiro de convidado](../logic-apps/logic-apps-enterprise-integration-certificates.md).
+3. <span data-ttu-id="9e3da-206">toosend mensagens encriptadas toohello parceiro, selecione **ativar a encriptação de mensagens**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-206">toosend encrypted messages toohello partner, select **Enable message encryption**.</span></span> <span data-ttu-id="9e3da-207">Para encriptar mensagens hello, no Olá **algoritmo de encriptação** lista, selecione de Olá *algoritmos de certificado público de parceiro de convidado*.</span><span class="sxs-lookup"><span data-stu-id="9e3da-207">For encrypting hello messages, in hello **Encryption Algorithm** list, select hello *guest partner public certificate algorithm*.</span></span>
+<span data-ttu-id="9e3da-208">E no Olá **certificado** lista, selecione um existente [certificado público de parceiro de convidado](../logic-apps/logic-apps-enterprise-integration-certificates.md).</span><span class="sxs-lookup"><span data-stu-id="9e3da-208">And in hello **Certificate** list, select an existing [guest partner public certificate](../logic-apps/logic-apps-enterprise-integration-certificates.md).</span></span>
 
-4. mensagem de saudação toocompress, selecione **ativar a compressão de mensagem**.
+4. <span data-ttu-id="9e3da-209">mensagem de saudação toocompress, selecione **ativar a compressão de mensagem**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-209">toocompress hello message, select **Enable message compression**.</span></span>
 
-5. cabeçalho de tipo de conteúdo de Olá HTTP toounfold numa única linha, selecione **cabeçalhos de Unfold HTTP**.
+5. <span data-ttu-id="9e3da-210">cabeçalho de tipo de conteúdo de Olá HTTP toounfold numa única linha, selecione **cabeçalhos de Unfold HTTP**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-210">toounfold hello HTTP content-type header into a single line, select **Unfold HTTP headers**.</span></span>
 
-6. tooreceive MDNs síncronas para Olá enviadas mensagens, selecionadas **pedido MDN**.
+6. <span data-ttu-id="9e3da-211">tooreceive MDNs síncronas para Olá enviadas mensagens, selecionadas **pedido MDN**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-211">tooreceive synchronous MDNs for hello sent messages, select **Request MDN**.</span></span>
 
-7. tooreceive assinado MDNs mensagens hello enviado, selecionadas de **pedido assinado MDN**.
+7. <span data-ttu-id="9e3da-212">tooreceive assinado MDNs mensagens hello enviado, selecionadas de **pedido assinado MDN**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-212">tooreceive signed MDNs for hello sent messages, select **Request signed MDN**.</span></span>
 
-8. tooreceive MDNs assíncronas para Olá enviadas mensagens, selecionadas **pedido assíncrono MDN**. Se selecionar esta opção, introduza o URL de Olá para onde toosend Olá MDNs.
+8. <span data-ttu-id="9e3da-213">tooreceive MDNs assíncronas para Olá enviadas mensagens, selecionadas **pedido assíncrono MDN**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-213">tooreceive asynchronous MDNs for hello sent messages, select **Request asynchronous MDN**.</span></span> <span data-ttu-id="9e3da-214">Se selecionar esta opção, introduza o URL de Olá para onde toosend Olá MDNs.</span><span class="sxs-lookup"><span data-stu-id="9e3da-214">If you select this option, enter hello URL for where toosend hello MDNs.</span></span>
 
-9. não toorequire rejeição de receção, selecione **ativar NRR**.  
+9. <span data-ttu-id="9e3da-215">não toorequire rejeição de receção, selecione **ativar NRR**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-215">toorequire non-repudiation of receipt, select **Enable NRR**.</span></span>  
 
-10. toospecify algoritmo formato toouse no Olá MIC ou iniciar sessão Olá enviados os cabeçalhos de mensagem de saudação AS2 ou MDN, selecione **formato SHA2 algoritmo**.  
+10. <span data-ttu-id="9e3da-216">toospecify algoritmo formato toouse no Olá MIC ou iniciar sessão Olá enviados os cabeçalhos de mensagem de saudação AS2 ou MDN, selecione **formato SHA2 algoritmo**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-216">toospecify algorithm format toouse in hello MIC or signing in hello outgoing headers of hello AS2 message or MDN, select **SHA2 Algorithm format**.</span></span>  
 
-11. Depois de terminar, certifique-se toosave as suas definições escolhendo **OK**.
+11. <span data-ttu-id="9e3da-217">Depois de terminar, certifique-se toosave as suas definições escolhendo **OK**.</span><span class="sxs-lookup"><span data-stu-id="9e3da-217">After you're done, make sure toosave your settings by choosing **OK**.</span></span>
 
-O contrato está agora pronto toohandle de envio de mensagens que estão em conformidade com as definições de tooyour selecionado.
+<span data-ttu-id="9e3da-218">O contrato está agora pronto toohandle de envio de mensagens que estão em conformidade com as definições de tooyour selecionado.</span><span class="sxs-lookup"><span data-stu-id="9e3da-218">Now your agreement is ready toohandle outgoing messages that conform tooyour selected settings.</span></span>
 
-| Propriedade | Descrição |
+| <span data-ttu-id="9e3da-219">Propriedade</span><span class="sxs-lookup"><span data-stu-id="9e3da-219">Property</span></span> | <span data-ttu-id="9e3da-220">Descrição</span><span class="sxs-lookup"><span data-stu-id="9e3da-220">Description</span></span> |
 | --- | --- |
-| Ativar a assinatura das mensagens |Requer que todas as mensagens que são enviadas pelo Olá contrato toobe assinado. |
-| Algoritmo de Dinâmicas |Olá toouse de algoritmo de assinatura de mensagens. Configura o certificado privado do Olá anfitrião parceiro algoritmo Dinâmicas para assinar mensagens hello. |
-| Certificado |Selecione Olá toouse de certificado para assinar mensagens. Configura Olá anfitrião parceiro privada certificado para assinar mensagens hello. |
-| Ativar a encriptação de mensagens |Necessita de encriptação de todas as mensagens que são enviadas do presente contrato. Configura o algoritmo certificado público de parceiro de convidado do Olá para encriptar mensagens hello. |
-| Algoritmo de encriptação |Olá toouse de algoritmo de encriptação para encriptação de mensagens. Configura o certificado público do parceiro de convidado de Olá para encriptar mensagens hello. |
-| Certificado |mensagens Hello do certificado toouse tooencrypt. Configura o certificado privado do parceiro de convidado de Olá para encriptar mensagens hello. |
-| Ativar a compressão de mensagem |Necessita de compressão de todas as mensagens que são enviadas do presente contrato. |
-| Unfold cabeçalhos de HTTP |Coloca o cabeçalho content-type HTTP de Olá numa única linha. |
-| Pedido MDN |Requer um MDN para todas as mensagens que são enviadas do presente contrato. |
-| Pedido assinado MDN |Requer que todos os MDNs que são enviados contrato toothis toobe assinado. |
-| MDN assíncrona do pedido |Requer o contrato de toothis de toobe enviado MDNs assíncrono. |
-| URL |Especifique o URL de olá onde toosend Olá MDNs. |
-| Ativar NRR |Requer a não rejeição de receção (NRR), um atributo de comunicação que fornece provas dados Olá foi recebida como resolvido. |
-| Formato de algoritmo de SHA2 |Selecione o algoritmo formato toouse num Olá MIC ou Olá cabeçalhos de mensagem de AS2 Olá ou MDN de envio de início de sessão |
+| <span data-ttu-id="9e3da-221">Ativar a assinatura das mensagens</span><span class="sxs-lookup"><span data-stu-id="9e3da-221">Enable message signing</span></span> |<span data-ttu-id="9e3da-222">Requer que todas as mensagens que são enviadas pelo Olá contrato toobe assinado.</span><span class="sxs-lookup"><span data-stu-id="9e3da-222">Requires all messages that are sent from hello agreement toobe signed.</span></span> |
+| <span data-ttu-id="9e3da-223">Algoritmo de Dinâmicas</span><span class="sxs-lookup"><span data-stu-id="9e3da-223">MIC Algorithm</span></span> |<span data-ttu-id="9e3da-224">Olá toouse de algoritmo de assinatura de mensagens.</span><span class="sxs-lookup"><span data-stu-id="9e3da-224">hello algorithm toouse for signing messages.</span></span> <span data-ttu-id="9e3da-225">Configura o certificado privado do Olá anfitrião parceiro algoritmo Dinâmicas para assinar mensagens hello.</span><span class="sxs-lookup"><span data-stu-id="9e3da-225">Configures hello host partner private certificate MIC Algorithm for signing hello messages.</span></span> |
+| <span data-ttu-id="9e3da-226">Certificado</span><span class="sxs-lookup"><span data-stu-id="9e3da-226">Certificate</span></span> |<span data-ttu-id="9e3da-227">Selecione Olá toouse de certificado para assinar mensagens.</span><span class="sxs-lookup"><span data-stu-id="9e3da-227">Select hello certificate toouse for signing messages.</span></span> <span data-ttu-id="9e3da-228">Configura Olá anfitrião parceiro privada certificado para assinar mensagens hello.</span><span class="sxs-lookup"><span data-stu-id="9e3da-228">Configures hello host partner private certificate for signing hello messages.</span></span> |
+| <span data-ttu-id="9e3da-229">Ativar a encriptação de mensagens</span><span class="sxs-lookup"><span data-stu-id="9e3da-229">Enable message encryption</span></span> |<span data-ttu-id="9e3da-230">Necessita de encriptação de todas as mensagens que são enviadas do presente contrato.</span><span class="sxs-lookup"><span data-stu-id="9e3da-230">Requires encryption of all messages that are sent from this agreement.</span></span> <span data-ttu-id="9e3da-231">Configura o algoritmo certificado público de parceiro de convidado do Olá para encriptar mensagens hello.</span><span class="sxs-lookup"><span data-stu-id="9e3da-231">Configures hello guest partner public certificate algorithm for encrypting hello messages.</span></span> |
+| <span data-ttu-id="9e3da-232">Algoritmo de encriptação</span><span class="sxs-lookup"><span data-stu-id="9e3da-232">Encryption Algorithm</span></span> |<span data-ttu-id="9e3da-233">Olá toouse de algoritmo de encriptação para encriptação de mensagens.</span><span class="sxs-lookup"><span data-stu-id="9e3da-233">hello encryption algorithm toouse for message encryption.</span></span> <span data-ttu-id="9e3da-234">Configura o certificado público do parceiro de convidado de Olá para encriptar mensagens hello.</span><span class="sxs-lookup"><span data-stu-id="9e3da-234">Configures hello guest partner public certificate for encrypting hello messages.</span></span> |
+| <span data-ttu-id="9e3da-235">Certificado</span><span class="sxs-lookup"><span data-stu-id="9e3da-235">Certificate</span></span> |<span data-ttu-id="9e3da-236">mensagens Hello do certificado toouse tooencrypt.</span><span class="sxs-lookup"><span data-stu-id="9e3da-236">hello certificate toouse tooencrypt messages.</span></span> <span data-ttu-id="9e3da-237">Configura o certificado privado do parceiro de convidado de Olá para encriptar mensagens hello.</span><span class="sxs-lookup"><span data-stu-id="9e3da-237">Configures hello guest partner private certificate for encrypting hello messages.</span></span> |
+| <span data-ttu-id="9e3da-238">Ativar a compressão de mensagem</span><span class="sxs-lookup"><span data-stu-id="9e3da-238">Enable message compression</span></span> |<span data-ttu-id="9e3da-239">Necessita de compressão de todas as mensagens que são enviadas do presente contrato.</span><span class="sxs-lookup"><span data-stu-id="9e3da-239">Requires compression of all messages that are sent from this agreement.</span></span> |
+| <span data-ttu-id="9e3da-240">Unfold cabeçalhos de HTTP</span><span class="sxs-lookup"><span data-stu-id="9e3da-240">Unfold HTTP headers</span></span> |<span data-ttu-id="9e3da-241">Coloca o cabeçalho content-type HTTP de Olá numa única linha.</span><span class="sxs-lookup"><span data-stu-id="9e3da-241">Places hello HTTP content-type header onto a single line.</span></span> |
+| <span data-ttu-id="9e3da-242">Pedido MDN</span><span class="sxs-lookup"><span data-stu-id="9e3da-242">Request MDN</span></span> |<span data-ttu-id="9e3da-243">Requer um MDN para todas as mensagens que são enviadas do presente contrato.</span><span class="sxs-lookup"><span data-stu-id="9e3da-243">Requires an MDN for all messages that are sent from this agreement.</span></span> |
+| <span data-ttu-id="9e3da-244">Pedido assinado MDN</span><span class="sxs-lookup"><span data-stu-id="9e3da-244">Request signed MDN</span></span> |<span data-ttu-id="9e3da-245">Requer que todos os MDNs que são enviados contrato toothis toobe assinado.</span><span class="sxs-lookup"><span data-stu-id="9e3da-245">Requires all MDNs that are sent toothis agreement toobe signed.</span></span> |
+| <span data-ttu-id="9e3da-246">MDN assíncrona do pedido</span><span class="sxs-lookup"><span data-stu-id="9e3da-246">Request asynchronous MDN</span></span> |<span data-ttu-id="9e3da-247">Requer o contrato de toothis de toobe enviado MDNs assíncrono.</span><span class="sxs-lookup"><span data-stu-id="9e3da-247">Requires asynchronous MDNs toobe sent toothis agreement.</span></span> |
+| <span data-ttu-id="9e3da-248">URL</span><span class="sxs-lookup"><span data-stu-id="9e3da-248">URL</span></span> |<span data-ttu-id="9e3da-249">Especifique o URL de olá onde toosend Olá MDNs.</span><span class="sxs-lookup"><span data-stu-id="9e3da-249">Specify hello URL where toosend hello MDNs.</span></span> |
+| <span data-ttu-id="9e3da-250">Ativar NRR</span><span class="sxs-lookup"><span data-stu-id="9e3da-250">Enable NRR</span></span> |<span data-ttu-id="9e3da-251">Requer a não rejeição de receção (NRR), um atributo de comunicação que fornece provas dados Olá foi recebida como resolvido.</span><span class="sxs-lookup"><span data-stu-id="9e3da-251">Requires non-repudiation of receipt (NRR), a communication attribute that provides evidence that hello data was received as addressed.</span></span> |
+| <span data-ttu-id="9e3da-252">Formato de algoritmo de SHA2</span><span class="sxs-lookup"><span data-stu-id="9e3da-252">SHA2 Algorithm format</span></span> |<span data-ttu-id="9e3da-253">Selecione o algoritmo formato toouse num Olá MIC ou Olá cabeçalhos de mensagem de AS2 Olá ou MDN de envio de início de sessão</span><span class="sxs-lookup"><span data-stu-id="9e3da-253">Select algorithm format toouse in hello MIC or signing in hello outgoing headers of hello AS2 message or MDN</span></span> |
 
-## <a name="find-your-created-agreement"></a>Encontrar o contrato criado
+## <a name="find-your-created-agreement"></a><span data-ttu-id="9e3da-254">Encontrar o contrato criado</span><span class="sxs-lookup"><span data-stu-id="9e3da-254">Find your created agreement</span></span>
 
-1.  Depois de concluir a definição de todas as propriedades de contrato, em Olá **adicionar** painel, escolha **OK** toofinish criar o seu contrato e o painel de conta de integração de retorno tooyour.
+1.  <span data-ttu-id="9e3da-255">Depois de concluir a definição de todas as propriedades de contrato, em Olá **adicionar** painel, escolha **OK** toofinish criar o seu contrato e o painel de conta de integração de retorno tooyour.</span><span class="sxs-lookup"><span data-stu-id="9e3da-255">After you finish setting all your agreement properties, on hello **Add** blade, choose **OK** toofinish creating your agreement and return tooyour integration account blade.</span></span>
 
-    O contrato recém-adicionado agora aparece na sua **contratos** lista.
+    <span data-ttu-id="9e3da-256">O contrato recém-adicionado agora aparece na sua **contratos** lista.</span><span class="sxs-lookup"><span data-stu-id="9e3da-256">Your newly added agreement now appears in your **Agreements** list.</span></span>
 
-2.  Também pode ver os contratos na descrição geral da sua integração conta. No painel da conta de integração, escolha **descrição geral**, em seguida, selecione Olá **contratos** mosaico. 
+2.  <span data-ttu-id="9e3da-257">Também pode ver os contratos na descrição geral da sua integração conta.</span><span class="sxs-lookup"><span data-stu-id="9e3da-257">You can also view your agreements in your integration account overview.</span></span> <span data-ttu-id="9e3da-258">No painel da conta de integração, escolha **descrição geral**, em seguida, selecione Olá **contratos** mosaico.</span><span class="sxs-lookup"><span data-stu-id="9e3da-258">On your integration account blade, choose **Overview**, then select hello **Agreements** tile.</span></span> 
 
     ![Escolha "Contratos" mosaico tooview todos os contratos](./media/logic-apps-enterprise-integration-agreements/agreement-6.png)
 
-## <a name="view-hello-swagger"></a>Swagger Olá de vista
-Consulte Olá [swagger detalhes](/connectors/as2/). 
+## <a name="view-hello-swagger"></a><span data-ttu-id="9e3da-260">Swagger Olá de vista</span><span class="sxs-lookup"><span data-stu-id="9e3da-260">View hello swagger</span></span>
+<span data-ttu-id="9e3da-261">Consulte Olá [swagger detalhes](/connectors/as2/).</span><span class="sxs-lookup"><span data-stu-id="9e3da-261">See hello [swagger details](/connectors/as2/).</span></span> 
 
-## <a name="next-steps"></a>Passos seguintes
-* [Saiba mais sobre Olá Enterprise Integration Pack](logic-apps-enterprise-integration-overview.md "Saiba mais sobre o pacote de integração do Enterprise")  
+## <a name="next-steps"></a><span data-ttu-id="9e3da-262">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="9e3da-262">Next steps</span></span>
+* [<span data-ttu-id="9e3da-263">Saiba mais sobre Olá Enterprise Integration Pack</span><span class="sxs-lookup"><span data-stu-id="9e3da-263">Learn more about hello Enterprise Integration Pack</span></span>](logic-apps-enterprise-integration-overview.md "Saiba mais sobre o pacote de integração do Enterprise")  

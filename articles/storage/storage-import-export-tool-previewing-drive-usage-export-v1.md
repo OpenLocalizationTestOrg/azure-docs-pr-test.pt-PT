@@ -20,33 +20,33 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="previewing-drive-usage-for-an-export-job"></a>Pré-visualização da utilização da unidade para uma tarefa de exportação
-Antes de criar uma tarefa de exportação, terá de toochoose um conjunto de blobs toobe exportado. Olá serviço de importação/exportação do Microsoft Azure permite-lhe toouse uma lista de caminhos de blob ou blob prefixos blobs de Olá toorepresent que selecionou.  
+# <a name="previewing-drive-usage-for-an-export-job"></a><span data-ttu-id="e0402-103">Pré-visualização da utilização da unidade para uma tarefa de exportação</span><span class="sxs-lookup"><span data-stu-id="e0402-103">Previewing drive usage for an export job</span></span>
+<span data-ttu-id="e0402-104">Antes de criar uma tarefa de exportação, terá de toochoose um conjunto de blobs toobe exportado.</span><span class="sxs-lookup"><span data-stu-id="e0402-104">Before you create an export job, you need toochoose a set of blobs toobe exported.</span></span> <span data-ttu-id="e0402-105">Olá serviço de importação/exportação do Microsoft Azure permite-lhe toouse uma lista de caminhos de blob ou blob prefixos blobs de Olá toorepresent que selecionou.</span><span class="sxs-lookup"><span data-stu-id="e0402-105">hello Microsoft Azure Import/Export service allows you toouse a list of blob paths or blob prefixes toorepresent hello blobs you've selected.</span></span>  
   
-Em seguida, terá de toodetermine unidades quantos terá toosend. Olá ferramenta de importação/exportação fornece Olá `PreviewExport` comando toopreview utilização da unidade de blobs de Olá que selecionou, com base no tamanho Olá de unidades de Olá vai toouse.
+<span data-ttu-id="e0402-106">Em seguida, terá de toodetermine unidades quantos terá toosend.</span><span class="sxs-lookup"><span data-stu-id="e0402-106">Next, you need toodetermine how many drives you need toosend.</span></span> <span data-ttu-id="e0402-107">Olá ferramenta de importação/exportação fornece Olá `PreviewExport` comando toopreview utilização da unidade de blobs de Olá que selecionou, com base no tamanho Olá de unidades de Olá vai toouse.</span><span class="sxs-lookup"><span data-stu-id="e0402-107">hello Import/Export Tool provides hello `PreviewExport` command toopreview drive usage for hello blobs you selected, based on hello size of hello drives you are going toouse.</span></span>
 
-## <a name="command-line-parameters"></a>Parâmetros da linha de comandos
+## <a name="command-line-parameters"></a><span data-ttu-id="e0402-108">Parâmetros da linha de comandos</span><span class="sxs-lookup"><span data-stu-id="e0402-108">Command-line parameters</span></span>
 
-Pode utilizar Olá seguir os parâmetros ao utilizar Olá `PreviewExport` comando de Olá ferramenta de importação/exportação.
+<span data-ttu-id="e0402-109">Pode utilizar Olá seguir os parâmetros ao utilizar Olá `PreviewExport` comando de Olá ferramenta de importação/exportação.</span><span class="sxs-lookup"><span data-stu-id="e0402-109">You can use hello following parameters when using hello `PreviewExport` command of hello Import/Export Tool.</span></span>
 
-|Parâmetro da linha de comandos|Descrição|  
+|<span data-ttu-id="e0402-110">Parâmetro da linha de comandos</span><span class="sxs-lookup"><span data-stu-id="e0402-110">Command-line parameter</span></span>|<span data-ttu-id="e0402-111">Descrição</span><span class="sxs-lookup"><span data-stu-id="e0402-111">Description</span></span>|  
 |--------------------------|-----------------|  
-|**/LOGDIR:**< LogDirectory\>|Opcional. diretório de registo de Olá. Ficheiros de registo verboso serão escritos toothis diretório. Não se for especificado nenhum diretório de registo, diretório atual Olá será utilizado como o diretório de registo de Olá.|  
-|**/SN:**< StorageAccountName\>|Necessário. nome de Olá Olá da conta de armazenamento para Olá exportar tarefa.|  
-|**/SK:**< StorageAccountKey\>|Necessário se e apenas se não for especificado um contentor SAS. chave da conta para conta de armazenamento Olá Olá Olá exportar tarefa.|  
-|**/csas:**< ContainerSas\>|Necessário se e apenas se não for especificada uma chave de conta do storage. o contentor de Olá SAS de listagem Olá blobs toobe exportados na tarefa de exportação de Olá.|  
-|**/ ExportBlobListFile:**< ExportBlobListFile\>|Necessário. Caminho toohello XML do ficheiro que contém lista de caminhos de blob ou prefixos de caminho de Olá blobs toobe exportados do blob. formato de ficheiro de Olá utilizado no Olá `BlobListBlobPath` elemento Olá [colocar tarefa](/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate) operação de Olá REST API do serviço de importação/exportação.|  
-|**/ DriveSize:**< DriveSize\>|Necessário. Olá tamanho das unidades toouse para uma tarefa de exportação, *por exemplo,*, 500 GB, 1,5 TB.|  
+|<span data-ttu-id="e0402-112">**/LOGDIR:**< LogDirectory\></span><span class="sxs-lookup"><span data-stu-id="e0402-112">**/logdir:**<LogDirectory\></span></span>|<span data-ttu-id="e0402-113">Opcional.</span><span class="sxs-lookup"><span data-stu-id="e0402-113">Optional.</span></span> <span data-ttu-id="e0402-114">diretório de registo de Olá.</span><span class="sxs-lookup"><span data-stu-id="e0402-114">hello log directory.</span></span> <span data-ttu-id="e0402-115">Ficheiros de registo verboso serão escritos toothis diretório.</span><span class="sxs-lookup"><span data-stu-id="e0402-115">Verbose log files will be written toothis directory.</span></span> <span data-ttu-id="e0402-116">Não se for especificado nenhum diretório de registo, diretório atual Olá será utilizado como o diretório de registo de Olá.</span><span class="sxs-lookup"><span data-stu-id="e0402-116">If no log directory is specified, hello current directory will be used as hello log directory.</span></span>|  
+|<span data-ttu-id="e0402-117">**/SN:**< StorageAccountName\></span><span class="sxs-lookup"><span data-stu-id="e0402-117">**/sn:**<StorageAccountName\></span></span>|<span data-ttu-id="e0402-118">Necessário.</span><span class="sxs-lookup"><span data-stu-id="e0402-118">Required.</span></span> <span data-ttu-id="e0402-119">nome de Olá Olá da conta de armazenamento para Olá exportar tarefa.</span><span class="sxs-lookup"><span data-stu-id="e0402-119">hello name of hello storage account for hello export job.</span></span>|  
+|<span data-ttu-id="e0402-120">**/SK:**< StorageAccountKey\></span><span class="sxs-lookup"><span data-stu-id="e0402-120">**/sk:**<StorageAccountKey\></span></span>|<span data-ttu-id="e0402-121">Necessário se e apenas se não for especificado um contentor SAS.</span><span class="sxs-lookup"><span data-stu-id="e0402-121">Required if and only if a container SAS is not specified.</span></span> <span data-ttu-id="e0402-122">chave da conta para conta de armazenamento Olá Olá Olá exportar tarefa.</span><span class="sxs-lookup"><span data-stu-id="e0402-122">hello account key for hello storage account for hello export job.</span></span>|  
+|<span data-ttu-id="e0402-123">**/csas:**< ContainerSas\></span><span class="sxs-lookup"><span data-stu-id="e0402-123">**/csas:**<ContainerSas\></span></span>|<span data-ttu-id="e0402-124">Necessário se e apenas se não for especificada uma chave de conta do storage.</span><span class="sxs-lookup"><span data-stu-id="e0402-124">Required if and only if a storage account key is not specified.</span></span> <span data-ttu-id="e0402-125">o contentor de Olá SAS de listagem Olá blobs toobe exportados na tarefa de exportação de Olá.</span><span class="sxs-lookup"><span data-stu-id="e0402-125">hello container SAS for listing hello blobs toobe exported in hello export job.</span></span>|  
+|<span data-ttu-id="e0402-126">**/ ExportBlobListFile:**< ExportBlobListFile\></span><span class="sxs-lookup"><span data-stu-id="e0402-126">**/ExportBlobListFile:**<ExportBlobListFile\></span></span>|<span data-ttu-id="e0402-127">Necessário.</span><span class="sxs-lookup"><span data-stu-id="e0402-127">Required.</span></span> <span data-ttu-id="e0402-128">Caminho toohello XML do ficheiro que contém lista de caminhos de blob ou prefixos de caminho de Olá blobs toobe exportados do blob.</span><span class="sxs-lookup"><span data-stu-id="e0402-128">Path toohello XML file containing list of blob paths or blob path prefixes for hello blobs toobe exported.</span></span> <span data-ttu-id="e0402-129">formato de ficheiro de Olá utilizado no Olá `BlobListBlobPath` elemento Olá [colocar tarefa](/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate) operação de Olá REST API do serviço de importação/exportação.</span><span class="sxs-lookup"><span data-stu-id="e0402-129">hello file format used in hello `BlobListBlobPath` element in hello [Put Job](/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate) operation of hello Import/Export service REST API.</span></span>|  
+|<span data-ttu-id="e0402-130">**/ DriveSize:**< DriveSize\></span><span class="sxs-lookup"><span data-stu-id="e0402-130">**/DriveSize:**<DriveSize\></span></span>|<span data-ttu-id="e0402-131">Necessário.</span><span class="sxs-lookup"><span data-stu-id="e0402-131">Required.</span></span> <span data-ttu-id="e0402-132">Olá tamanho das unidades toouse para uma tarefa de exportação, *por exemplo,*, 500 GB, 1,5 TB.</span><span class="sxs-lookup"><span data-stu-id="e0402-132">hello size of drives toouse for an export job, *e.g.*, 500GB, 1.5TB.</span></span>|  
 
-## <a name="command-line-example"></a>Exemplo de linha de comandos
+## <a name="command-line-example"></a><span data-ttu-id="e0402-133">Exemplo de linha de comandos</span><span class="sxs-lookup"><span data-stu-id="e0402-133">Command-line example</span></span>
 
-Olá exemplo seguinte demonstra Olá `PreviewExport` comando:  
+<span data-ttu-id="e0402-134">Olá exemplo seguinte demonstra Olá `PreviewExport` comando:</span><span class="sxs-lookup"><span data-stu-id="e0402-134">hello following example demonstrates hello `PreviewExport` command:</span></span>  
   
 ```  
 WAImportExport.exe PreviewExport /sn:bobmediaaccount /sk:VkGbrUqBWLYJ6zg1m29VOTrxpBgdNOlp+kp0C9MEdx3GELxmBw4hK94f7KysbbeKLDksg7VoN1W/a5UuM2zNgQ== /ExportBlobListFile:C:\WAImportExport\mybloblist.xml /DriveSize:500GB    
 ```  
   
-Olá ficheiro de exportação de lista de blob pode conter nomes de blob e blob prefixos, conforme mostrado aqui:  
+<span data-ttu-id="e0402-135">Olá ficheiro de exportação de lista de blob pode conter nomes de blob e blob prefixos, conforme mostrado aqui:</span><span class="sxs-lookup"><span data-stu-id="e0402-135">hello export blob list file may contain blob names and blob prefixes, as shown here:</span></span>  
   
 ```xml 
 <?xml version="1.0" encoding="utf-8"?>  
@@ -57,9 +57,9 @@ Olá ficheiro de exportação de lista de blob pode conter nomes de blob e blob 
 </BlobList>  
 ```
 
-Olá ferramenta de importação/exportação do Azure apresenta uma lista de todos os blobs toobe exportado e calcula como toopack-los para unidades de Olá especificado tamanho, tendo em conta quaisquer necessário overhead, em seguida, calcula o número de Olá de unidades necessário blobs de Olá toohold e utilização da unidade informações.  
+<span data-ttu-id="e0402-136">Olá ferramenta de importação/exportação do Azure apresenta uma lista de todos os blobs toobe exportado e calcula como toopack-los para unidades de Olá especificado tamanho, tendo em conta quaisquer necessário overhead, em seguida, calcula o número de Olá de unidades necessário blobs de Olá toohold e utilização da unidade informações.</span><span class="sxs-lookup"><span data-stu-id="e0402-136">hello Azure Import/Export Tool lists all blobs toobe exported and calculates how toopack them into drives of hello specified size, taking into account any necessary overhead, then estimates hello number of drives needed toohold hello blobs and drive usage information.</span></span>  
   
-Eis um exemplo de saída de Olá, com os registos informativas omitido:  
+<span data-ttu-id="e0402-137">Eis um exemplo de saída de Olá, com os registos informativas omitido:</span><span class="sxs-lookup"><span data-stu-id="e0402-137">Here is an example of hello output, with informational logs omitted:</span></span>  
   
 ```  
 Number of unique blob paths/prefixes:   3  
@@ -75,6 +75,6 @@ Number of drives needed:        3
         Drive #3:       blobs = 2, occupied space = 131.28 GB    
 ```  
   
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="e0402-138">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="e0402-138">Next steps</span></span>
 
-* [Referência da ferramenta de importação/exportação do Azure](storage-import-export-tool-how-to-v1.md)
+* [<span data-ttu-id="e0402-139">Referência da ferramenta de importação/exportação do Azure</span><span class="sxs-lookup"><span data-stu-id="e0402-139">Azure Import/Export Tool reference</span></span>](storage-import-export-tool-how-to-v1.md)

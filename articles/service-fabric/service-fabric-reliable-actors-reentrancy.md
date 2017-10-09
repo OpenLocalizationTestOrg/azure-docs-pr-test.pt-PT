@@ -20,13 +20,13 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="reliable-actors-reentrancy"></a>Reentrancy do Reliable Actors
-tempo de execução de Reliable Actors Olá, por predefinição, permite reentrancy baseado no contexto de chamada lógico. Isto permite reentrant toobe de atores se estão a ser Olá mesma cadeia de contexto de chamada. Por exemplo, Ator A envia um tooActor mensagem B, que envia uma mensagem tooActor C. Como parte do processamento de mensagens de Olá, se Ator C chamadas de Atores A, mensagem de saudação é reentrante, pelo que serão permitida. As mensagens que fazem parte de um contexto de chamada diferente serão bloqueadas no Ator A até terminar o processamento.
+# <a name="reliable-actors-reentrancy"></a><span data-ttu-id="f6e2c-103">Reentrancy do Reliable Actors</span><span class="sxs-lookup"><span data-stu-id="f6e2c-103">Reliable Actors reentrancy</span></span>
+<span data-ttu-id="f6e2c-104">tempo de execução de Reliable Actors Olá, por predefinição, permite reentrancy baseado no contexto de chamada lógico.</span><span class="sxs-lookup"><span data-stu-id="f6e2c-104">hello Reliable Actors runtime, by default, allows logical call context-based reentrancy.</span></span> <span data-ttu-id="f6e2c-105">Isto permite reentrant toobe de atores se estão a ser Olá mesma cadeia de contexto de chamada.</span><span class="sxs-lookup"><span data-stu-id="f6e2c-105">This allows for actors toobe reentrant if they are in hello same call context chain.</span></span> <span data-ttu-id="f6e2c-106">Por exemplo, Ator A envia um tooActor mensagem B, que envia uma mensagem tooActor C. Como parte do processamento de mensagens de Olá, se Ator C chamadas de Atores A, mensagem de saudação é reentrante, pelo que serão permitida.</span><span class="sxs-lookup"><span data-stu-id="f6e2c-106">For example, Actor A sends a message tooActor B, who sends a message tooActor C. As part of hello message processing, if Actor C calls Actor A, hello message is reentrant, so it will be allowed.</span></span> <span data-ttu-id="f6e2c-107">As mensagens que fazem parte de um contexto de chamada diferente serão bloqueadas no Ator A até terminar o processamento.</span><span class="sxs-lookup"><span data-stu-id="f6e2c-107">Any other messages that are part of a different call context will be blocked on Actor A until it finishes processing.</span></span>
 
-Existem duas opções disponíveis para reentrancy ator definido no Olá `ActorReentrancyMode` enum:
+<span data-ttu-id="f6e2c-108">Existem duas opções disponíveis para reentrancy ator definido no Olá `ActorReentrancyMode` enum:</span><span class="sxs-lookup"><span data-stu-id="f6e2c-108">There are two options available for actor reentrancy defined in hello `ActorReentrancyMode` enum:</span></span>
 
-* `LogicalCallContext`(comportamento predefinido)
-* `Disallowed`-Desativa reentrancy
+* <span data-ttu-id="f6e2c-109">`LogicalCallContext`(comportamento predefinido)</span><span class="sxs-lookup"><span data-stu-id="f6e2c-109">`LogicalCallContext` (default behavior)</span></span>
+* <span data-ttu-id="f6e2c-110">`Disallowed`-Desativa reentrancy</span><span class="sxs-lookup"><span data-stu-id="f6e2c-110">`Disallowed` - disables reentrancy</span></span>
 
 ```csharp
 public enum ActorReentrancyMode
@@ -42,9 +42,9 @@ public enum ActorReentrancyMode
     Disallowed(2)
 }
 ```
-Reentrancy podem ser configuradas num `ActorService`do definições durante o registo. definição de Olá aplica-se em instâncias de ator tooall criadas no serviço de atores Olá.
+<span data-ttu-id="f6e2c-111">Reentrancy podem ser configuradas num `ActorService`do definições durante o registo.</span><span class="sxs-lookup"><span data-stu-id="f6e2c-111">Reentrancy can be configured in an `ActorService`'s settings during registration.</span></span> <span data-ttu-id="f6e2c-112">definição de Olá aplica-se em instâncias de ator tooall criadas no serviço de atores Olá.</span><span class="sxs-lookup"><span data-stu-id="f6e2c-112">hello setting applies tooall actor instances created in hello actor service.</span></span>
 
-Olá exemplo seguinte mostra um serviço de atores que define o modo de reentrancy Olá demasiado`ActorReentrancyMode.Disallowed`. Neste caso, se um ator envia um actor de tooanother mensagem reentrantes, uma exceção do tipo `FabricException` será emitida.
+<span data-ttu-id="f6e2c-113">Olá exemplo seguinte mostra um serviço de atores que define o modo de reentrancy Olá demasiado`ActorReentrancyMode.Disallowed`.</span><span class="sxs-lookup"><span data-stu-id="f6e2c-113">hello following example shows an actor service that sets hello reentrancy mode too`ActorReentrancyMode.Disallowed`.</span></span> <span data-ttu-id="f6e2c-114">Neste caso, se um ator envia um actor de tooanother mensagem reentrantes, uma exceção do tipo `FabricException` será emitida.</span><span class="sxs-lookup"><span data-stu-id="f6e2c-114">In this case, if an actor sends a reentrant message tooanother actor, an exception of type `FabricException` will be thrown.</span></span>
 
 ```csharp
 static class Program
@@ -109,5 +109,5 @@ static class Program
 ```
 
 
-## <a name="next-steps"></a>Passos seguintes
-* Saiba mais sobre reentrancy no Olá [documentação de referência da API de Ator](https://msdn.microsoft.com/library/azure/dn971626.aspx)
+## <a name="next-steps"></a><span data-ttu-id="f6e2c-115">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="f6e2c-115">Next steps</span></span>
+* <span data-ttu-id="f6e2c-116">Saiba mais sobre reentrancy no Olá [documentação de referência da API de Ator](https://msdn.microsoft.com/library/azure/dn971626.aspx)</span><span class="sxs-lookup"><span data-stu-id="f6e2c-116">Learn more about reentrancy in hello [Actor API reference documentation](https://msdn.microsoft.com/library/azure/dn971626.aspx)</span></span>

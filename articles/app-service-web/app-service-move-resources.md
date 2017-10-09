@@ -20,15 +20,15 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="supported-move-configurations"></a>Configurações de movimentação suportados
-Pode mover recursos de aplicação Web do Azure através de Olá [Resource Manager mover recursos API](../azure-resource-manager/resource-group-move-resources.md).
+# <a name="supported-move-configurations"></a><span data-ttu-id="dc0aa-103">Configurações de movimentação suportados</span><span class="sxs-lookup"><span data-stu-id="dc0aa-103">Supported Move Configurations</span></span>
+<span data-ttu-id="dc0aa-104">Pode mover recursos de aplicação Web do Azure através de Olá [Resource Manager mover recursos API](../azure-resource-manager/resource-group-move-resources.md).</span><span class="sxs-lookup"><span data-stu-id="dc0aa-104">You can move Azure Web App resources using hello [Resource Manager Move Resources API](../azure-resource-manager/resource-group-move-resources.md).</span></span>
 
-As aplicações Web do Azure suporta atualmente Olá cenários de mover os seguintes:
+<span data-ttu-id="dc0aa-105">As aplicações Web do Azure suporta atualmente Olá cenários de mover os seguintes:</span><span class="sxs-lookup"><span data-stu-id="dc0aa-105">Azure Web Apps currently supports hello following move scenarios:</span></span>
 
-* Mover Olá conteúdos completo de um grupo de recursos (web apps, planos de serviço de aplicações e certificados) tooanother grupo de recursos. 
+* <span data-ttu-id="dc0aa-106">Mover Olá conteúdos completo de um grupo de recursos (web apps, planos de serviço de aplicações e certificados) tooanother grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="dc0aa-106">Move hello entire contents of a resource group (web apps, app service plans, and certificates) tooanother resource group.</span></span> 
    > [!Note]
-   > grupo de recursos de destino Olá não pode conter quaisquer recursos Microsoft. Web neste cenário.
+   > <span data-ttu-id="dc0aa-107">grupo de recursos de destino Olá não pode conter quaisquer recursos Microsoft. Web neste cenário.</span><span class="sxs-lookup"><span data-stu-id="dc0aa-107">hello destination resource group can not contain any Microsoft.Web resources in this scenario.</span></span>
 
-* Mova grupo de recursos diferente de tooa de aplicações web individuais, ao mesmo tempo ainda alojá-los no seu atual plano do app service (Olá aplicação serviço plano mantém-se no grupo de recursos antigo Olá).
+* <span data-ttu-id="dc0aa-108">Mova grupo de recursos diferente de tooa de aplicações web individuais, ao mesmo tempo ainda alojá-los no seu atual plano do app service (Olá aplicação serviço plano mantém-se no grupo de recursos antigo Olá).</span><span class="sxs-lookup"><span data-stu-id="dc0aa-108">Move individual web apps tooa different resource group, while still hosting them in their current app service plan (hello app service plan stays in hello old resource group).</span></span>
 
 

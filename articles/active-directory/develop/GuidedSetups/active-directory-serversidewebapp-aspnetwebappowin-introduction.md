@@ -21,27 +21,27 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="add-sign-in-with-microsoft-tooan-aspnet-web-app"></a>Adicionar início de sessão com o Microsoft tooan ASP.NET web app
+# <a name="add-sign-in-with-microsoft-tooan-aspnet-web-app"></a><span data-ttu-id="53dd5-103">Adicionar início de sessão com o Microsoft tooan ASP.NET web app</span><span class="sxs-lookup"><span data-stu-id="53dd5-103">Add sign-in with Microsoft tooan ASP.NET web app</span></span>
 
-Este guia demonstra como tooimplement início de sessão com a Microsoft através de uma solução de ASP.NET MVC com uma aplicação de baseada no browser tradicional web com OpenID Connect. 
+<span data-ttu-id="53dd5-104">Este guia demonstra como tooimplement início de sessão com a Microsoft através de uma solução de ASP.NET MVC com uma aplicação de baseada no browser tradicional web com OpenID Connect.</span><span class="sxs-lookup"><span data-stu-id="53dd5-104">This guide demonstrates how tooimplement sign-in with Microsoft using an ASP.NET MVC solution with a traditional web browser-based application using OpenID Connect.</span></span> 
 
-No final de Olá deste guia, a aplicação irá ser tooaccept capazes sessão ins do pessoal contas (incluindo outlook.com, live.com e outros), bem como funcionam contas escolares ou profissionais de qualquer da empresa ou organização que tem integrado com o Azure Active Directory. 
+<span data-ttu-id="53dd5-105">No final de Olá deste guia, a aplicação irá ser tooaccept capazes sessão ins do pessoal contas (incluindo outlook.com, live.com e outros), bem como funcionam contas escolares ou profissionais de qualquer da empresa ou organização que tem integrado com o Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="53dd5-105">At hello end of this guide, your application will be able tooaccept sign ins of personal accounts (including outlook.com, live.com, and others) as well as work and school accounts from any company or organization that has integrated with Azure Active Directory.</span></span> 
 
-> Este guia requer o Visual Studio 2015 Update 3 ou Visual Studio 2017.  Não o tiver?  [Transferir o Visual Studio 2017 gratuitamente](https://www.visualstudio.com/downloads/)
+> <span data-ttu-id="53dd5-106">Este guia requer o Visual Studio 2015 Update 3 ou Visual Studio 2017.</span><span class="sxs-lookup"><span data-stu-id="53dd5-106">This guide requires Visual Studio 2015 Update 3 or Visual Studio 2017.</span></span>  <span data-ttu-id="53dd5-107">Não o tiver?</span><span class="sxs-lookup"><span data-stu-id="53dd5-107">Don’t have it?</span></span>  [<span data-ttu-id="53dd5-108">Transferir o Visual Studio 2017 gratuitamente</span><span class="sxs-lookup"><span data-stu-id="53dd5-108">Download Visual Studio 2017 for free</span></span>](https://www.visualstudio.com/downloads/)
 
-## <a name="how-this-guide-works"></a>Como funciona este guia
+## <a name="how-this-guide-works"></a><span data-ttu-id="53dd5-109">Como funciona este guia</span><span class="sxs-lookup"><span data-stu-id="53dd5-109">How this guide works</span></span>
 
 ![Como funciona este guia](media/active-directory-serversidewebapp-aspnetwebappowin-intro/aspnetbrowsergeneral.png)
 
-Este guia baseia-se num cenário de olá onde um browser acede a um web site do ASP.NET, pedindo uma tooauthenticate de utilizador através de um botão de início de sessão. Neste cenário, a maioria Olá trabalho toorender Olá web página ocorre no lado do servidor de Olá.
+<span data-ttu-id="53dd5-111">Este guia baseia-se num cenário de olá onde um browser acede a um web site do ASP.NET, pedindo uma tooauthenticate de utilizador através de um botão de início de sessão.</span><span class="sxs-lookup"><span data-stu-id="53dd5-111">This guide is based on hello scenario where a browser accesses an ASP.NET web site, requesting a user tooauthenticate via a sign-in button.</span></span> <span data-ttu-id="53dd5-112">Neste cenário, a maioria Olá trabalho toorender Olá web página ocorre no lado do servidor de Olá.</span><span class="sxs-lookup"><span data-stu-id="53dd5-112">In this scenario, most of hello work toorender hello web page occurs on hello server side.</span></span>
 
-## <a name="libraries"></a>Bibliotecas
+## <a name="libraries"></a><span data-ttu-id="53dd5-113">Bibliotecas</span><span class="sxs-lookup"><span data-stu-id="53dd5-113">Libraries</span></span>
 
-Este guia utiliza Olá bibliotecas os seguintes:
+<span data-ttu-id="53dd5-114">Este guia utiliza Olá bibliotecas os seguintes:</span><span class="sxs-lookup"><span data-stu-id="53dd5-114">This guide uses hello following libraries:</span></span>
 
-|Biblioteca|Descrição|
+|<span data-ttu-id="53dd5-115">Biblioteca</span><span class="sxs-lookup"><span data-stu-id="53dd5-115">Library</span></span>|<span data-ttu-id="53dd5-116">Descrição</span><span class="sxs-lookup"><span data-stu-id="53dd5-116">Description</span></span>|
 |---|---|
-|[Microsoft.Owin.Security.OpenIdConnect](https://www.nuget.org/packages/Microsoft.Owin.Security.OpenIdConnect/)|Middleware que permite uma aplicação toouse OpenIdConnect para autenticação|
-|[Microsoft.Owin.Security.Cookies](https://www.nuget.org/packages/Microsoft.Owin.Security.Cookies)|Middleware que permite uma sessão de utilizador de toomaintain de aplicação a utilização de cookies|
-|[Microsoft.Owin.Host.SystemWeb](https://www.nuget.org/packages/Microsoft.Owin.Host.SystemWeb)|Permite que aplicações baseadas em OWIN toorun no IIS através do pipeline de pedido do ASP.NET Olá|
+|[<span data-ttu-id="53dd5-117">Microsoft.Owin.Security.OpenIdConnect</span><span class="sxs-lookup"><span data-stu-id="53dd5-117">Microsoft.Owin.Security.OpenIdConnect</span></span>](https://www.nuget.org/packages/Microsoft.Owin.Security.OpenIdConnect/)|<span data-ttu-id="53dd5-118">Middleware que permite uma aplicação toouse OpenIdConnect para autenticação</span><span class="sxs-lookup"><span data-stu-id="53dd5-118">Middleware that enables an application toouse OpenIdConnect for authentication</span></span>|
+|[<span data-ttu-id="53dd5-119">Microsoft.Owin.Security.Cookies</span><span class="sxs-lookup"><span data-stu-id="53dd5-119">Microsoft.Owin.Security.Cookies</span></span>](https://www.nuget.org/packages/Microsoft.Owin.Security.Cookies)|<span data-ttu-id="53dd5-120">Middleware que permite uma sessão de utilizador de toomaintain de aplicação a utilização de cookies</span><span class="sxs-lookup"><span data-stu-id="53dd5-120">Middleware that enables an application toomaintain user session using cookies</span></span>|
+|[<span data-ttu-id="53dd5-121">Microsoft.Owin.Host.SystemWeb</span><span class="sxs-lookup"><span data-stu-id="53dd5-121">Microsoft.Owin.Host.SystemWeb</span></span>](https://www.nuget.org/packages/Microsoft.Owin.Host.SystemWeb)|<span data-ttu-id="53dd5-122">Permite que aplicações baseadas em OWIN toorun no IIS através do pipeline de pedido do ASP.NET Olá</span><span class="sxs-lookup"><span data-stu-id="53dd5-122">Enables OWIN-based applications toorun on IIS using hello ASP.NET request pipeline</span></span>|
 

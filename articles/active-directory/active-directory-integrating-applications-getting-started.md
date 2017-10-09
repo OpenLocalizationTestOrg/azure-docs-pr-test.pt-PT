@@ -21,75 +21,75 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Guia de introdução de integrar o Azure Active Directory com aplicações de introdução
-## <a name="overview"></a>Descrição geral
-Este tópico é toogive que se destinam a um plano para integrar aplicações com o Azure Active Directory (AD). Cada uma das secções Olá abaixo contém um breve resumo de um tópico mais detalhado para que possa identificar as partes deste guia de introdução são tooyou relevante.  Siga as ligações de Olá para uma descrição mais aprofundada sobre cada assunto.
+# <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a><span data-ttu-id="4b242-103">Guia de introdução de integrar o Azure Active Directory com aplicações de introdução</span><span class="sxs-lookup"><span data-stu-id="4b242-103">Integrating Azure Active Directory with applications getting started guide</span></span>
+## <a name="overview"></a><span data-ttu-id="4b242-104">Descrição geral</span><span class="sxs-lookup"><span data-stu-id="4b242-104">Overview</span></span>
+<span data-ttu-id="4b242-105">Este tópico é toogive que se destinam a um plano para integrar aplicações com o Azure Active Directory (AD).</span><span class="sxs-lookup"><span data-stu-id="4b242-105">This topic is intended toogive you a roadmap for integrating applications with Azure Active Directory (AD).</span></span> <span data-ttu-id="4b242-106">Cada uma das secções Olá abaixo contém um breve resumo de um tópico mais detalhado para que possa identificar as partes deste guia de introdução são tooyou relevante.</span><span class="sxs-lookup"><span data-stu-id="4b242-106">Each of hello sections below contain a brief summary of a more detailed topic so you can identify which parts of this getting started guide are relevant tooyou.</span></span>  <span data-ttu-id="4b242-107">Siga as ligações de Olá para uma descrição mais aprofundada sobre cada assunto.</span><span class="sxs-lookup"><span data-stu-id="4b242-107">Follow hello links for a deeper dive on each subject.</span></span>
 
-## <a name="before-you-begin-take-inventory"></a>Antes de começar, fazer o inventário
-Antes de avançar toointegrating aplicações com o Azure AD, é importante tooknow onde é e em que pretende toogo.  Olá questões que se seguem são toohelp pretendido tem em consideração o projeto de integração de aplicações do Azure AD.
+## <a name="before-you-begin-take-inventory"></a><span data-ttu-id="4b242-108">Antes de começar, fazer o inventário</span><span class="sxs-lookup"><span data-stu-id="4b242-108">Before you begin, take inventory</span></span>
+<span data-ttu-id="4b242-109">Antes de avançar toointegrating aplicações com o Azure AD, é importante tooknow onde é e em que pretende toogo.</span><span class="sxs-lookup"><span data-stu-id="4b242-109">Before you jump in toointegrating applications with Azure AD, it is important tooknow where you are and where you want toogo.</span></span>  <span data-ttu-id="4b242-110">Olá questões que se seguem são toohelp pretendido tem em consideração o projeto de integração de aplicações do Azure AD.</span><span class="sxs-lookup"><span data-stu-id="4b242-110">hello following questions are intended toohelp you think about your Azure AD application integration project.</span></span>
 
-### <a name="application-inventory"></a>Inventário de aplicações
-* Onde estão todas as aplicações? Quem é o proprietário-las?
-* Que tipo de autenticação precisam as suas aplicações?
-* Quem tem acesso toowhich aplicações?
-* Pretende toodeploy uma nova aplicação?
-  * Irá criar internas e implementá-la numa instância de computação do Azure?
-  * Irá utilizar uma que esteja disponível no Olá Galeria de aplicações do Azure?
+### <a name="application-inventory"></a><span data-ttu-id="4b242-111">Inventário de aplicações</span><span class="sxs-lookup"><span data-stu-id="4b242-111">Application inventory</span></span>
+* <span data-ttu-id="4b242-112">Onde estão todas as aplicações?</span><span class="sxs-lookup"><span data-stu-id="4b242-112">Where are all of your applications?</span></span> <span data-ttu-id="4b242-113">Quem é o proprietário-las?</span><span class="sxs-lookup"><span data-stu-id="4b242-113">Who owns them?</span></span>
+* <span data-ttu-id="4b242-114">Que tipo de autenticação precisam as suas aplicações?</span><span class="sxs-lookup"><span data-stu-id="4b242-114">What kind of authentication do your applications require?</span></span>
+* <span data-ttu-id="4b242-115">Quem tem acesso toowhich aplicações?</span><span class="sxs-lookup"><span data-stu-id="4b242-115">Who needs access toowhich applications?</span></span>
+* <span data-ttu-id="4b242-116">Pretende toodeploy uma nova aplicação?</span><span class="sxs-lookup"><span data-stu-id="4b242-116">Do you want toodeploy a new application?</span></span>
+  * <span data-ttu-id="4b242-117">Irá criar internas e implementá-la numa instância de computação do Azure?</span><span class="sxs-lookup"><span data-stu-id="4b242-117">Will you build it in-house and deploy it on an Azure compute instance?</span></span>
+  * <span data-ttu-id="4b242-118">Irá utilizar uma que esteja disponível no Olá Galeria de aplicações do Azure?</span><span class="sxs-lookup"><span data-stu-id="4b242-118">Will you use one that is available in hello Azure Application Gallery?</span></span>
 
-### <a name="user-and-group-inventory"></a>Inventário de utilizador e grupo
-* Onde residir as contas de utilizador?
-  * Active Directory no local
-  * Azure AD
-  * Dentro de uma base de dados de aplicação separado que é proprietário
-  * Nas aplicações não aprovadas
-  * Todos os Olá acima
-* As atribuições de funções e permissões a utilizadores individuais atualmente dispõe? Precisa de tooreview o acesso ou tem a certeza de que as atribuições de acesso e a função de utilizador são adequadas agora?
-* São grupos já existentes no Active Directory no local?
-  * Como os seus grupos estão organizados?
-  * Quem são membros do grupo Olá?
-  * As atribuições de permissões/função alguns grupos Olá atualmente têm?
-* Vai precisar tooclean segurança de bases de dados de utilizador/grupo antes da integração?  (Esta é uma pergunta pretty importante. Libertação da memória no lixo out.)
+### <a name="user-and-group-inventory"></a><span data-ttu-id="4b242-119">Inventário de utilizador e grupo</span><span class="sxs-lookup"><span data-stu-id="4b242-119">User and group inventory</span></span>
+* <span data-ttu-id="4b242-120">Onde residir as contas de utilizador?</span><span class="sxs-lookup"><span data-stu-id="4b242-120">Where do your user accounts reside?</span></span>
+  * <span data-ttu-id="4b242-121">Active Directory no local</span><span class="sxs-lookup"><span data-stu-id="4b242-121">On-premises Active Directory</span></span>
+  * <span data-ttu-id="4b242-122">Azure AD</span><span class="sxs-lookup"><span data-stu-id="4b242-122">Azure AD</span></span>
+  * <span data-ttu-id="4b242-123">Dentro de uma base de dados de aplicação separado que é proprietário</span><span class="sxs-lookup"><span data-stu-id="4b242-123">Within a separate application database that you own</span></span>
+  * <span data-ttu-id="4b242-124">Nas aplicações não aprovadas</span><span class="sxs-lookup"><span data-stu-id="4b242-124">In unsanctioned applications</span></span>
+  * <span data-ttu-id="4b242-125">Todos os Olá acima</span><span class="sxs-lookup"><span data-stu-id="4b242-125">All of hello above</span></span>
+* <span data-ttu-id="4b242-126">As atribuições de funções e permissões a utilizadores individuais atualmente dispõe?</span><span class="sxs-lookup"><span data-stu-id="4b242-126">What permissions and role assignments do individual users currently have?</span></span> <span data-ttu-id="4b242-127">Precisa de tooreview o acesso ou tem a certeza de que as atribuições de acesso e a função de utilizador são adequadas agora?</span><span class="sxs-lookup"><span data-stu-id="4b242-127">Do you need tooreview their access or are you sure that your user access and role assignments are appropriate now?</span></span>
+* <span data-ttu-id="4b242-128">São grupos já existentes no Active Directory no local?</span><span class="sxs-lookup"><span data-stu-id="4b242-128">Are groups already established in your on-premises Active Directory?</span></span>
+  * <span data-ttu-id="4b242-129">Como os seus grupos estão organizados?</span><span class="sxs-lookup"><span data-stu-id="4b242-129">How are your groups organized?</span></span>
+  * <span data-ttu-id="4b242-130">Quem são membros do grupo Olá?</span><span class="sxs-lookup"><span data-stu-id="4b242-130">Who are hello group members?</span></span>
+  * <span data-ttu-id="4b242-131">As atribuições de permissões/função alguns grupos Olá atualmente têm?</span><span class="sxs-lookup"><span data-stu-id="4b242-131">What permissions/role assignments do hello groups currently have?</span></span>
+* <span data-ttu-id="4b242-132">Vai precisar tooclean segurança de bases de dados de utilizador/grupo antes da integração?</span><span class="sxs-lookup"><span data-stu-id="4b242-132">Will you need tooclean up user/group databases before integrating?</span></span>  <span data-ttu-id="4b242-133">(Esta é uma pergunta pretty importante.</span><span class="sxs-lookup"><span data-stu-id="4b242-133">(This is a pretty important question.</span></span> <span data-ttu-id="4b242-134">Libertação da memória no lixo out.)</span><span class="sxs-lookup"><span data-stu-id="4b242-134">Garbage in, garbage out.)</span></span>
 
-### <a name="access-management-inventory"></a>Inventário de gestão de acesso
-* Como atualmente gerir tooapplications de acesso do utilizador? A que precisa de toochange?  Ter é considerado outras formas toomanage acesso, tal como com [RBAC](role-based-access-control-configure.md) por exemplo?
-* Quem tem acesso toowhat?
+### <a name="access-management-inventory"></a><span data-ttu-id="4b242-135">Inventário de gestão de acesso</span><span class="sxs-lookup"><span data-stu-id="4b242-135">Access management inventory</span></span>
+* <span data-ttu-id="4b242-136">Como atualmente gerir tooapplications de acesso do utilizador?</span><span class="sxs-lookup"><span data-stu-id="4b242-136">How do you currently manage user access tooapplications?</span></span> <span data-ttu-id="4b242-137">A que precisa de toochange?</span><span class="sxs-lookup"><span data-stu-id="4b242-137">Does that need toochange?</span></span>  <span data-ttu-id="4b242-138">Ter é considerado outras formas toomanage acesso, tal como com [RBAC](role-based-access-control-configure.md) por exemplo?</span><span class="sxs-lookup"><span data-stu-id="4b242-138">Have you considered other ways toomanage access, such as with [RBAC](role-based-access-control-configure.md) for example?</span></span>
+* <span data-ttu-id="4b242-139">Quem tem acesso toowhat?</span><span class="sxs-lookup"><span data-stu-id="4b242-139">Who needs access toowhat?</span></span>
 
-Talvez não tiver tooall de respostas hello destas perguntas adiantado mas que okay.  Este guia possa ajudá-lo a responder a algumas dessas perguntas e tomar algumas decisões informadas.
+<span data-ttu-id="4b242-140">Talvez não tiver tooall de respostas hello destas perguntas adiantado mas que okay.</span><span class="sxs-lookup"><span data-stu-id="4b242-140">Maybe you don't have hello answers tooall of these questions up front but that's okay.</span></span>  <span data-ttu-id="4b242-141">Este guia possa ajudá-lo a responder a algumas dessas perguntas e tomar algumas decisões informadas.</span><span class="sxs-lookup"><span data-stu-id="4b242-141">This guide can help you answer some of those questions and make some informed decisions.</span></span>
 
-## <a name="prerequisites"></a>Pré-requisitos
-* Uma subscrição do Azure e um diretório do Azure Active Directory.  Se ainda não tiver uma subscrição do Azure, pode experimentar o Azure gratuitamente durante 30 dias. [Experimente!](https://azure.microsoft.com/trial/get-started-active-directory/)
+## <a name="prerequisites"></a><span data-ttu-id="4b242-142">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="4b242-142">Prerequisites</span></span>
+* <span data-ttu-id="4b242-143">Uma subscrição do Azure e um diretório do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="4b242-143">An Azure subscription and an Azure Active Directory directory.</span></span>  <span data-ttu-id="4b242-144">Se ainda não tiver uma subscrição do Azure, pode experimentar o Azure gratuitamente durante 30 dias.</span><span class="sxs-lookup"><span data-stu-id="4b242-144">If you don't already have an Azure subscription, you can try out Azure for free for 30 days.</span></span> [<span data-ttu-id="4b242-145">Experimente!</span><span class="sxs-lookup"><span data-stu-id="4b242-145">Try it out!</span></span>](https://azure.microsoft.com/trial/get-started-active-directory/)
 
-## <a name="application-integration-with-azure-ad"></a>Integração de aplicações com o Azure AD
-### <a name="finding-unsanctioned-cloud-applications-with-cloud-app-discovery"></a>Localizar não sancionadas aplicações em nuvem com o Cloud App Discovery
-Tal como mencionado acima, poderão existir aplicações que ainda não foram geridas pela sua organização até agora.  Como parte do processo de inventário de Olá, é possível toofind não sancionada aplicações de nuvem. Consulte [localizar aplicações na nuvem não sancionadas com o Cloud App Discovery](active-directory-cloudappdiscovery-whatis.md).
+## <a name="application-integration-with-azure-ad"></a><span data-ttu-id="4b242-146">Integração de aplicações com o Azure AD</span><span class="sxs-lookup"><span data-stu-id="4b242-146">Application integration with Azure AD</span></span>
+### <a name="finding-unsanctioned-cloud-applications-with-cloud-app-discovery"></a><span data-ttu-id="4b242-147">Localizar não sancionadas aplicações em nuvem com o Cloud App Discovery</span><span class="sxs-lookup"><span data-stu-id="4b242-147">Finding unsanctioned cloud applications with Cloud App Discovery</span></span>
+<span data-ttu-id="4b242-148">Tal como mencionado acima, poderão existir aplicações que ainda não foram geridas pela sua organização até agora.</span><span class="sxs-lookup"><span data-stu-id="4b242-148">As mentioned above, there may be applications that haven't been managed by your organization until now.</span></span>  <span data-ttu-id="4b242-149">Como parte do processo de inventário de Olá, é possível toofind não sancionada aplicações de nuvem.</span><span class="sxs-lookup"><span data-stu-id="4b242-149">As part of hello inventory process, it is possible toofind unsanctioned cloud applications.</span></span> <span data-ttu-id="4b242-150">Consulte [localizar aplicações na nuvem não sancionadas com o Cloud App Discovery](active-directory-cloudappdiscovery-whatis.md).</span><span class="sxs-lookup"><span data-stu-id="4b242-150">See [Finding unsanctioned cloud applications with Cloud App Discovery](active-directory-cloudappdiscovery-whatis.md).</span></span>
 
-### <a name="authentication-types"></a>Tipos de autenticação
-Cada uma das suas aplicações pode ter requisitos de autenticação diferente. Com o Azure AD, podem ser utilizados certificados de assinatura com as aplicações que utilizam SAML 2.0, WS-Federation, ou OpenID Connect protocolos, bem como palavra-passe de início de sessão único. Para obter mais informações sobre a aplicação veja os tipos de autenticação para utilização com o Azure AD [gestão de certificados para federado Single Sign-On no Azure Active Directory](active-directory-sso-certs.md) e [palavra-passe de início de sessão único com base no](active-directory-appssoaccess-whatis.md).
+### <a name="authentication-types"></a><span data-ttu-id="4b242-151">Tipos de autenticação</span><span class="sxs-lookup"><span data-stu-id="4b242-151">Authentication Types</span></span>
+<span data-ttu-id="4b242-152">Cada uma das suas aplicações pode ter requisitos de autenticação diferente.</span><span class="sxs-lookup"><span data-stu-id="4b242-152">Each of your applications may have different authentication requirements.</span></span> <span data-ttu-id="4b242-153">Com o Azure AD, podem ser utilizados certificados de assinatura com as aplicações que utilizam SAML 2.0, WS-Federation, ou OpenID Connect protocolos, bem como palavra-passe de início de sessão único.</span><span class="sxs-lookup"><span data-stu-id="4b242-153">With Azure AD, signing certificates can be used with applications that use SAML 2.0, WS-Federation, or OpenID Connect Protocols as well as Password Single Sign On.</span></span> <span data-ttu-id="4b242-154">Para obter mais informações sobre a aplicação veja os tipos de autenticação para utilização com o Azure AD [gestão de certificados para federado Single Sign-On no Azure Active Directory](active-directory-sso-certs.md) e [palavra-passe de início de sessão único com base no](active-directory-appssoaccess-whatis.md).</span><span class="sxs-lookup"><span data-stu-id="4b242-154">For more information about application authentication types for use with Azure AD see [Managing Certificates for Federated Single Sign-On in Azure Active Directory](active-directory-sso-certs.md) and [Password based single sign on](active-directory-appssoaccess-whatis.md).</span></span>
 
-### <a name="enabling-sso-with-azure-ad-app-proxy"></a>Ativar a SSO com o Proxy de aplicações do Azure AD
-Com o Proxy de aplicações do Microsoft Azure AD, pode fornecer tooapplications acesso localizado no interior da rede privada em segurança, em qualquer lugar e em qualquer dispositivo. Depois de instalar um conector do proxy da aplicação no seu ambiente, pode ser configurado de facilmente com o Azure AD.
+### <a name="enabling-sso-with-azure-ad-app-proxy"></a><span data-ttu-id="4b242-155">Ativar a SSO com o Proxy de aplicações do Azure AD</span><span class="sxs-lookup"><span data-stu-id="4b242-155">Enabling SSO with Azure AD App Proxy</span></span>
+<span data-ttu-id="4b242-156">Com o Proxy de aplicações do Microsoft Azure AD, pode fornecer tooapplications acesso localizado no interior da rede privada em segurança, em qualquer lugar e em qualquer dispositivo.</span><span class="sxs-lookup"><span data-stu-id="4b242-156">With Microsoft Azure AD Application Proxy, you can provide access tooapplications located inside your private network securely, from anywhere and on any device.</span></span> <span data-ttu-id="4b242-157">Depois de instalar um conector do proxy da aplicação no seu ambiente, pode ser configurado de facilmente com o Azure AD.</span><span class="sxs-lookup"><span data-stu-id="4b242-157">After you have installed an application proxy connector within your environment, it can be easily configured with Azure AD.</span></span>
 
-### <a name="integrating-applications-with-azure-ad"></a>Integrar aplicações com o Azure AD
-Olá seguintes artigos abordam formas diferentes de Olá aplicações integram com o Azure AD e fornecem algumas orientações.
+### <a name="integrating-applications-with-azure-ad"></a><span data-ttu-id="4b242-158">Integrar aplicações com o Azure AD</span><span class="sxs-lookup"><span data-stu-id="4b242-158">Integrating applications with Azure AD</span></span>
+<span data-ttu-id="4b242-159">Olá seguintes artigos abordam formas diferentes de Olá aplicações integram com o Azure AD e fornecem algumas orientações.</span><span class="sxs-lookup"><span data-stu-id="4b242-159">hello following articles discuss hello different ways applications integrate with Azure AD, and provide some guidance.</span></span>
 
-* [Determinar qual toouse do Active Directory](active-directory-administer.md)
-* [Utilizar as aplicações na Galeria de aplicações do Azure de Olá](active-directory-appssoaccess-whatis.md)
-* [Integrar a lista de tutoriais de aplicações SaaS](active-directory-saas-tutorial-list.md)
+* [<span data-ttu-id="4b242-160">Determinar qual toouse do Active Directory</span><span class="sxs-lookup"><span data-stu-id="4b242-160">Determining which Active Directory toouse</span></span>](active-directory-administer.md)
+* [<span data-ttu-id="4b242-161">Utilizar as aplicações na Galeria de aplicações do Azure de Olá</span><span class="sxs-lookup"><span data-stu-id="4b242-161">Using applications in hello Azure application gallery</span></span>](active-directory-appssoaccess-whatis.md)
+* [<span data-ttu-id="4b242-162">Integrar a lista de tutoriais de aplicações SaaS</span><span class="sxs-lookup"><span data-stu-id="4b242-162">Integrating SaaS applications tutorials list</span></span>](active-directory-saas-tutorial-list.md)
 
-## <a name="managing-access-tooapplications"></a>Gerir o acesso tooapplications
-Olá artigos que se seguem descrevem formas pode gerir o acesso tooapplications depois de ter sido integrados com o Azure AD através do Azure AD conectores e o Azure AD.
+## <a name="managing-access-tooapplications"></a><span data-ttu-id="4b242-163">Gerir o acesso tooapplications</span><span class="sxs-lookup"><span data-stu-id="4b242-163">Managing access tooapplications</span></span>
+<span data-ttu-id="4b242-164">Olá artigos que se seguem descrevem formas pode gerir o acesso tooapplications depois de ter sido integrados com o Azure AD através do Azure AD conectores e o Azure AD.</span><span class="sxs-lookup"><span data-stu-id="4b242-164">hello following articles describe ways you can manage access tooapplications once they have been integrated with Azure AD using Azure AD Connectors and Azure AD.</span></span>
 
-* [Gestão de acesso tooapps, utilizar o Azure AD](active-directory-managing-access-to-apps.md)
-* [Automatizar com conectores do Azure AD](active-directory-saas-app-provisioning.md)
-* [Atribuir utilizadores tooan aplicação](active-directory-applications-guiding-developers-assigning-users.md)
-* [Atribuição de grupos de aplicações de tooan](active-directory-applications-guiding-developers-assigning-groups.md)
-* [Partilha de contas](active-directory-sharing-accounts.md)
+* [<span data-ttu-id="4b242-165">Gestão de acesso tooapps, utilizar o Azure AD</span><span class="sxs-lookup"><span data-stu-id="4b242-165">Managing access tooapps using Azure AD</span></span>](active-directory-managing-access-to-apps.md)
+* [<span data-ttu-id="4b242-166">Automatizar com conectores do Azure AD</span><span class="sxs-lookup"><span data-stu-id="4b242-166">Automating with Azure AD Connectors</span></span>](active-directory-saas-app-provisioning.md)
+* [<span data-ttu-id="4b242-167">Atribuir utilizadores tooan aplicação</span><span class="sxs-lookup"><span data-stu-id="4b242-167">Assigning users tooan application</span></span>](active-directory-applications-guiding-developers-assigning-users.md)
+* [<span data-ttu-id="4b242-168">Atribuição de grupos de aplicações de tooan</span><span class="sxs-lookup"><span data-stu-id="4b242-168">Assigning groups tooan application</span></span>](active-directory-applications-guiding-developers-assigning-groups.md)
+* [<span data-ttu-id="4b242-169">Partilha de contas</span><span class="sxs-lookup"><span data-stu-id="4b242-169">Sharing accounts</span></span>](active-directory-sharing-accounts.md)
 
-## <a name="integrating-custom-applications"></a>Integrar aplicações personalizadas
-Se estiver a escrever uma nova aplicação e pretende que os programadores de tooassist no tirar partido da energia Olá do Azure AD, consulte [Guiding programadores](active-directory-applications-guiding-developers-for-lob-applications.md).
+## <a name="integrating-custom-applications"></a><span data-ttu-id="4b242-170">Integrar aplicações personalizadas</span><span class="sxs-lookup"><span data-stu-id="4b242-170">Integrating custom applications</span></span>
+<span data-ttu-id="4b242-171">Se estiver a escrever uma nova aplicação e pretende que os programadores de tooassist no tirar partido da energia Olá do Azure AD, consulte [Guiding programadores](active-directory-applications-guiding-developers-for-lob-applications.md).</span><span class="sxs-lookup"><span data-stu-id="4b242-171">If you are writing a new application and want tooassist developers in leveraging hello power Azure AD, see [Guiding developers](active-directory-applications-guiding-developers-for-lob-applications.md).</span></span>
 
-Se pretender tooadd toohello sua aplicação personalizada Galeria de aplicações do Azure, veja ["Traga a sua própria aplicação" com a configuração SAML do Self-Service do Azure AD](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx).
+<span data-ttu-id="4b242-172">Se pretender tooadd toohello sua aplicação personalizada Galeria de aplicações do Azure, veja ["Traga a sua própria aplicação" com a configuração SAML do Self-Service do Azure AD](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx).</span><span class="sxs-lookup"><span data-stu-id="4b242-172">If you want tooadd your custom application toohello Azure Application Gallery, see [“Bring your own app” with Azure AD Self-Service SAML configuration](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx).</span></span>
 
-## <a name="see-also"></a>Consultar também
-* [Índice de Artigos da Gestão da Aplicação no Azure Active Directory](active-directory-apps-index.md)
+## <a name="see-also"></a><span data-ttu-id="4b242-173">Consultar também</span><span class="sxs-lookup"><span data-stu-id="4b242-173">See also</span></span>
+* [<span data-ttu-id="4b242-174">Índice de Artigos da Gestão da Aplicação no Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="4b242-174">Article Index for Application Management in Azure Active Directory</span></span>](active-directory-apps-index.md)
 

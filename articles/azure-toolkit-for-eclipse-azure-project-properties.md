@@ -20,32 +20,32 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="azure-project-properties"></a>Propriedades do projeto do Azure
-Várias definições para o projeto do Azure podem ser definidas no Olá Toolkit do Azure para o Eclipse.
+# <a name="azure-project-properties"></a><span data-ttu-id="8371d-103">Propriedades do projeto do Azure</span><span class="sxs-lookup"><span data-stu-id="8371d-103">Azure Project Properties</span></span>
+<span data-ttu-id="8371d-104">Várias definições para o projeto do Azure podem ser definidas no Olá Toolkit do Azure para o Eclipse.</span><span class="sxs-lookup"><span data-stu-id="8371d-104">Various settings for your Azure project can be set within hello Azure Toolkit for Eclipse.</span></span>
 
-## <a name="configuring-azure-project-properties"></a>Configurar propriedades de projeto do Azure
-Configurar as propriedades do projeto do Azure é efetuada através de caixas de diálogo de propriedades de Olá para o projeto do Azure. Clique no projeto de Olá no painel do Explorador de projeto do Eclipse, clique em **propriedades**e, em seguida, selecione Olá **Azure** submenu.
+## <a name="configuring-azure-project-properties"></a><span data-ttu-id="8371d-105">Configurar propriedades de projeto do Azure</span><span class="sxs-lookup"><span data-stu-id="8371d-105">Configuring Azure Project Properties</span></span>
+<span data-ttu-id="8371d-106">Configurar as propriedades do projeto do Azure é efetuada através de caixas de diálogo de propriedades de Olá para o projeto do Azure.</span><span class="sxs-lookup"><span data-stu-id="8371d-106">Configuring your Azure Project Properties is accomplished through hello property dialogs for your Azure project.</span></span> <span data-ttu-id="8371d-107">Clique no projeto de Olá no painel do Explorador de projeto do Eclipse, clique em **propriedades**e, em seguida, selecione Olá **Azure** submenu.</span><span class="sxs-lookup"><span data-stu-id="8371d-107">Right-click hello project in Eclipse's Project Explorer pane, click **Properties**, and then select hello **Azure** sub-menu.</span></span>
 
 ![][ic719480]
 
-Na página de propriedades, pode alterar Olá seguintes itens: 
+<span data-ttu-id="8371d-108">Na página de propriedades, pode alterar Olá seguintes itens:</span><span class="sxs-lookup"><span data-stu-id="8371d-108">Within this property page, you can change hello following items:</span></span> 
 
-* **Nome do serviço:** nome Olá para o projeto do Azure.
-* **Compilação para:** se projeto Olá estiver definido para a criação de toohello computação tooAzure emulador ou implementação.
-* **Destino SO:** Olá toouse do sistema operativo quando o projeto é implementado tooAzure.
+* <span data-ttu-id="8371d-109">**Nome do serviço:** nome Olá para o projeto do Azure.</span><span class="sxs-lookup"><span data-stu-id="8371d-109">**Service name:** hello name for your Azure project.</span></span>
+* <span data-ttu-id="8371d-110">**Compilação para:** se projeto Olá estiver definido para a criação de toohello computação tooAzure emulador ou implementação.</span><span class="sxs-lookup"><span data-stu-id="8371d-110">**Build for:** Whether hello project is set for building toohello compute emulator or deployment tooAzure.</span></span>
+* <span data-ttu-id="8371d-111">**Destino SO:** Olá toouse do sistema operativo quando o projeto é implementado tooAzure.</span><span class="sxs-lookup"><span data-stu-id="8371d-111">**Target OS:** hello operating system toouse when your project is deployed tooAzure.</span></span>
 
-## <a name="see-also"></a>Veja Também
-[Toolkit do Azure do Eclipse][Azure Toolkit for Eclipse]
+## <a name="see-also"></a><span data-ttu-id="8371d-112">Veja Também</span><span class="sxs-lookup"><span data-stu-id="8371d-112">See Also</span></span>
+<span data-ttu-id="8371d-113">[Toolkit do Azure do Eclipse][Azure Toolkit for Eclipse]</span><span class="sxs-lookup"><span data-stu-id="8371d-113">[Azure Toolkit for Eclipse][Azure Toolkit for Eclipse]</span></span>
 
-[Instalar Olá Toolkit de Azure do Eclipse][Installing hello Azure Toolkit for Eclipse] 
+<span data-ttu-id="8371d-114">[Instalar Olá Toolkit de Azure do Eclipse][Installing hello Azure Toolkit for Eclipse]</span><span class="sxs-lookup"><span data-stu-id="8371d-114">[Installing hello Azure Toolkit for Eclipse][Installing hello Azure Toolkit for Eclipse]</span></span> 
 
-[Criar uma aplicação do Olá mundo do Azure no Eclipse][Creating a Hello World Application for Azure in Eclipse]
+<span data-ttu-id="8371d-115">[Criar uma aplicação do Olá mundo do Azure no Eclipse][Creating a Hello World Application for Azure in Eclipse]</span><span class="sxs-lookup"><span data-stu-id="8371d-115">[Creating a Hello World Application for Azure in Eclipse][Creating a Hello World Application for Azure in Eclipse]</span></span>
 
-[Propriedades da função do Azure][Azure Role Properties]
+<span data-ttu-id="8371d-116">[Propriedades da função do Azure][Azure Role Properties]</span><span class="sxs-lookup"><span data-stu-id="8371d-116">[Azure Role Properties][Azure Role Properties]</span></span>
 
-[Lista de contas do Storage do Azure][Azure Storage Account List]
+<span data-ttu-id="8371d-117">[Lista de contas do Storage do Azure][Azure Storage Account List]</span><span class="sxs-lookup"><span data-stu-id="8371d-117">[Azure Storage Account List][Azure Storage Account List]</span></span>
 
-Para obter mais informações sobre como utilizar o Azure com Java, consulte Olá [Centro de programadores Java do Azure][Azure Java Developer Center].
+<span data-ttu-id="8371d-118">Para obter mais informações sobre como utilizar o Azure com Java, consulte Olá [Centro de programadores Java do Azure][Azure Java Developer Center].</span><span class="sxs-lookup"><span data-stu-id="8371d-118">For more information about using Azure with Java, see hello [Azure Java Developer Center][Azure Java Developer Center].</span></span>
 
 <!-- URL List -->
 

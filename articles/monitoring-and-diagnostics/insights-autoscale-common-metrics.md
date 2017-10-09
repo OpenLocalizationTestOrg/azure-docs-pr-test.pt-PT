@@ -20,148 +20,148 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="azure-monitor-autoscaling-common-metrics"></a>Azure métricas comuns de dimensionamento automático Monitor
-Dimensionamento automático de Monitor do Azure permite-lhe tooscale Olá diversas instâncias em execução ou reduzir verticalmente, com base nos dados de telemetria (métricas). Este documento descreve as métricas comuns que poderá toouse. No portal do Azure para serviços em nuvem e de Farms de servidores Olá, pode escolher a métrica de Olá de Olá recursos tooscale pelo. No entanto, também pode escolher qualquer métrica entre um tooscale de recursos diferente pelo.
+# <a name="azure-monitor-autoscaling-common-metrics"></a><span data-ttu-id="3adfb-103">Azure métricas comuns de dimensionamento automático Monitor</span><span class="sxs-lookup"><span data-stu-id="3adfb-103">Azure Monitor autoscaling common metrics</span></span>
+<span data-ttu-id="3adfb-104">Dimensionamento automático de Monitor do Azure permite-lhe tooscale Olá diversas instâncias em execução ou reduzir verticalmente, com base nos dados de telemetria (métricas).</span><span class="sxs-lookup"><span data-stu-id="3adfb-104">Azure Monitor autoscaling allows you tooscale hello number of running instances up or down, based on telemetry data (metrics).</span></span> <span data-ttu-id="3adfb-105">Este documento descreve as métricas comuns que poderá toouse.</span><span class="sxs-lookup"><span data-stu-id="3adfb-105">This document describes common metrics that you might want toouse.</span></span> <span data-ttu-id="3adfb-106">No portal do Azure para serviços em nuvem e de Farms de servidores Olá, pode escolher a métrica de Olá de Olá recursos tooscale pelo.</span><span class="sxs-lookup"><span data-stu-id="3adfb-106">In hello Azure portal  for Cloud Services and Server Farms, you can choose hello metric of hello resource tooscale by.</span></span> <span data-ttu-id="3adfb-107">No entanto, também pode escolher qualquer métrica entre um tooscale de recursos diferente pelo.</span><span class="sxs-lookup"><span data-stu-id="3adfb-107">However, you can also choose any metric from a different resource tooscale by.</span></span>
 
-Dimensionamento automático de Monitor do Azure aplica-se apenas demasiado[conjuntos de dimensionamento de Máquina Virtual](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [serviços em nuvem](https://azure.microsoft.com/services/cloud-services/), e [Web Apps do App Service -](https://azure.microsoft.com/services/app-service/web/). Outros serviços do Azure utilizam diferentes métodos de dimensionamento.
+<span data-ttu-id="3adfb-108">Dimensionamento automático de Monitor do Azure aplica-se apenas demasiado[conjuntos de dimensionamento de Máquina Virtual](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [serviços em nuvem](https://azure.microsoft.com/services/cloud-services/), e [Web Apps do App Service -](https://azure.microsoft.com/services/app-service/web/).</span><span class="sxs-lookup"><span data-stu-id="3adfb-108">Azure Monitor autoscale applies only too[Virtual Machine Scale Sets](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [Cloud Services](https://azure.microsoft.com/services/cloud-services/), and [App Service - Web Apps](https://azure.microsoft.com/services/app-service/web/).</span></span> <span data-ttu-id="3adfb-109">Outros serviços do Azure utilizam diferentes métodos de dimensionamento.</span><span class="sxs-lookup"><span data-stu-id="3adfb-109">Other Azure services use different scaling methods.</span></span>
 
-## <a name="compute-metrics-for-resource-manager-based-vms"></a>Métricas de computação para as VMs baseadas no Resource Manager
-Por predefinição, as máquinas virtuais baseadas no Resource Manager e os conjuntos de dimensionamento de Máquina Virtual emitir básicas métricas de (ao nível do anfitrião). Além disso, quando configurar a recolha de dados de diagnóstico para uma VM do Azure e VMSS, Olá extensão de diagnóstico do Azure emite também os contadores de desempenho de SO convidado (geralmente conhecidos como "Métricas de SO convidado").  Todas estas métricas, utilizar nas regras de dimensionamento automático.
+## <a name="compute-metrics-for-resource-manager-based-vms"></a><span data-ttu-id="3adfb-110">Métricas de computação para as VMs baseadas no Resource Manager</span><span class="sxs-lookup"><span data-stu-id="3adfb-110">Compute metrics for Resource Manager-based VMs</span></span>
+<span data-ttu-id="3adfb-111">Por predefinição, as máquinas virtuais baseadas no Resource Manager e os conjuntos de dimensionamento de Máquina Virtual emitir básicas métricas de (ao nível do anfitrião).</span><span class="sxs-lookup"><span data-stu-id="3adfb-111">By default, Resource Manager-based Virtual Machines and Virtual Machine Scale Sets emit basic (host-level) metrics.</span></span> <span data-ttu-id="3adfb-112">Além disso, quando configurar a recolha de dados de diagnóstico para uma VM do Azure e VMSS, Olá extensão de diagnóstico do Azure emite também os contadores de desempenho de SO convidado (geralmente conhecidos como "Métricas de SO convidado").</span><span class="sxs-lookup"><span data-stu-id="3adfb-112">In addition, when you configure diagnostics data collection for an Azure VM and VMSS,  hello Azure diagnostic extension also emits guest-OS performance counters (commonly known as "guest-OS metrics").</span></span>  <span data-ttu-id="3adfb-113">Todas estas métricas, utilizar nas regras de dimensionamento automático.</span><span class="sxs-lookup"><span data-stu-id="3adfb-113">You use all these metrics in autoscale rules.</span></span>
 
-Pode utilizar Olá `Get MetricDefinitions` PoSH/API/CLI tooview Olá haver métricas disponíveis para o seu recurso VMSS.
+<span data-ttu-id="3adfb-114">Pode utilizar Olá `Get MetricDefinitions` PoSH/API/CLI tooview Olá haver métricas disponíveis para o seu recurso VMSS.</span><span class="sxs-lookup"><span data-stu-id="3adfb-114">You can use hello `Get MetricDefinitions` API/PoSH/CLI tooview hello metrics available for your VMSS resource.</span></span>
 
-Se estiver a utilizar conjuntos de dimensionamento VM e não vir uma métrica específica listada, em seguida, é provável *desativada* na sua extensão de diagnóstico.
+<span data-ttu-id="3adfb-115">Se estiver a utilizar conjuntos de dimensionamento VM e não vir uma métrica específica listada, em seguida, é provável *desativada* na sua extensão de diagnóstico.</span><span class="sxs-lookup"><span data-stu-id="3adfb-115">If you're using VM scale sets and you don't see a particular metric listed, then it is likely *disabled* in your diagnostics extension.</span></span>
 
-Se um determinado métrica não está a ser frequência de amostragem ou transferidos em Olá que quiser, pode atualizar a configuração de diagnósticos de Olá.
+<span data-ttu-id="3adfb-116">Se um determinado métrica não está a ser frequência de amostragem ou transferidos em Olá que quiser, pode atualizar a configuração de diagnósticos de Olá.</span><span class="sxs-lookup"><span data-stu-id="3adfb-116">If a particular metric is not being sampled or transferred at hello frequency you want, you can update hello diagnostics configuration.</span></span>
 
-Se ambos os casos anterior for VERDADEIRO, em seguida, revê [utilize o PowerShell tooenable diagnósticos do Azure numa máquina virtual com o Windows](../virtual-machines/windows/ps-extensions-diagnostics.md) sobre PowerShell tooconfigure e atualize o tooenable de extensão de diagnóstico de VM do Azure Olá métrica. Este artigo também inclui um ficheiro de configuração de diagnósticos de exemplo.
+<span data-ttu-id="3adfb-117">Se ambos os casos anterior for VERDADEIRO, em seguida, revê [utilize o PowerShell tooenable diagnósticos do Azure numa máquina virtual com o Windows](../virtual-machines/windows/ps-extensions-diagnostics.md) sobre PowerShell tooconfigure e atualize o tooenable de extensão de diagnóstico de VM do Azure Olá métrica.</span><span class="sxs-lookup"><span data-stu-id="3adfb-117">If either preceding case is true, then review [Use PowerShell tooenable Azure Diagnostics in a virtual machine running Windows](../virtual-machines/windows/ps-extensions-diagnostics.md) about PowerShell tooconfigure and update your Azure VM Diagnostics extension tooenable hello metric.</span></span> <span data-ttu-id="3adfb-118">Este artigo também inclui um ficheiro de configuração de diagnósticos de exemplo.</span><span class="sxs-lookup"><span data-stu-id="3adfb-118">That article also includes a sample diagnostics configuration file.</span></span>
 
-### <a name="host-metrics-for-resource-manager-based-windows-and-linux-vms"></a>Métricas de anfitrião para o Windows baseado no Resource Manager e VMs com Linux
-Olá, seguindo as métricas de nível do anfitrião é emitido por predefinição para a VM do Azure e VMSS em instâncias de Windows e Linux. Estas métricas descrevem a VM do Azure, mas são recolhidas a partir do anfitrião de VM do Azure Olá, em vez de através do agente instalado na VM do convidado de Olá. Pode utilizar estas métricas nas regras de dimensionamento automático.
+### <a name="host-metrics-for-resource-manager-based-windows-and-linux-vms"></a><span data-ttu-id="3adfb-119">Métricas de anfitrião para o Windows baseado no Resource Manager e VMs com Linux</span><span class="sxs-lookup"><span data-stu-id="3adfb-119">Host metrics for Resource Manager-based Windows and Linux VMs</span></span>
+<span data-ttu-id="3adfb-120">Olá, seguindo as métricas de nível do anfitrião é emitido por predefinição para a VM do Azure e VMSS em instâncias de Windows e Linux.</span><span class="sxs-lookup"><span data-stu-id="3adfb-120">hello following host-level metrics are emitted by default for Azure VM and VMSS in both Windows and Linux instances.</span></span> <span data-ttu-id="3adfb-121">Estas métricas descrevem a VM do Azure, mas são recolhidas a partir do anfitrião de VM do Azure Olá, em vez de através do agente instalado na VM do convidado de Olá.</span><span class="sxs-lookup"><span data-stu-id="3adfb-121">These metrics describe your Azure VM, but are collected from hello Azure VM host rather than via agent installed on hello guest VM.</span></span> <span data-ttu-id="3adfb-122">Pode utilizar estas métricas nas regras de dimensionamento automático.</span><span class="sxs-lookup"><span data-stu-id="3adfb-122">You may use these metrics in autoscaling rules.</span></span>
 
-- [Métricas de anfitrião para o Windows baseado no Resource Manager e VMs com Linux](monitoring-supported-metrics.md#microsoftcomputevirtualmachines)
-- [Métricas de anfitrião para o Windows baseado no Resource Manager e conjuntos de dimensionamento de VM do Linux](monitoring-supported-metrics.md#microsoftcomputevirtualmachinescalesets)
+- [<span data-ttu-id="3adfb-123">Métricas de anfitrião para o Windows baseado no Resource Manager e VMs com Linux</span><span class="sxs-lookup"><span data-stu-id="3adfb-123">Host metrics for Resource Manager-based Windows and Linux VMs</span></span>](monitoring-supported-metrics.md#microsoftcomputevirtualmachines)
+- [<span data-ttu-id="3adfb-124">Métricas de anfitrião para o Windows baseado no Resource Manager e conjuntos de dimensionamento de VM do Linux</span><span class="sxs-lookup"><span data-stu-id="3adfb-124">Host metrics for Resource Manager-based Windows and Linux VM Scale Sets</span></span>](monitoring-supported-metrics.md#microsoftcomputevirtualmachinescalesets)
 
-### <a name="guest-os-metrics-resource-manager-based-windows-vms"></a>Métricas de SO convidado VMs do Windows baseados no Resource Manager
-Quando cria uma VM no Azure, diagnostics está ativado, utilizando a extensão de diagnóstico de Olá. extensão de diagnóstico de Olá emite um conjunto de métricas retirados do dentro Olá VM. Isto significa que pode o dimensionamento automático retire métricas que não são emitidos por predefinição.
+### <a name="guest-os-metrics-resource-manager-based-windows-vms"></a><span data-ttu-id="3adfb-125">Métricas de SO convidado VMs do Windows baseados no Resource Manager</span><span class="sxs-lookup"><span data-stu-id="3adfb-125">Guest OS metrics Resource Manager-based Windows VMs</span></span>
+<span data-ttu-id="3adfb-126">Quando cria uma VM no Azure, diagnostics está ativado, utilizando a extensão de diagnóstico de Olá.</span><span class="sxs-lookup"><span data-stu-id="3adfb-126">When you create a VM in Azure, diagnostics is enabled by using hello Diagnostics extension.</span></span> <span data-ttu-id="3adfb-127">extensão de diagnóstico de Olá emite um conjunto de métricas retirados do dentro Olá VM.</span><span class="sxs-lookup"><span data-stu-id="3adfb-127">hello diagnostics extension emits a set of metrics taken from inside of hello VM.</span></span> <span data-ttu-id="3adfb-128">Isto significa que pode o dimensionamento automático retire métricas que não são emitidos por predefinição.</span><span class="sxs-lookup"><span data-stu-id="3adfb-128">This means you can autoscale off of metrics that are not emitted by default.</span></span>
 
-Pode gerar uma lista das métricas de Olá utilizando Olá os seguintes comandos do PowerShell.
-
-```
-Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,Unit
-```
-
-Pode criar um alerta para Olá métricas os seguintes:
-
-| Nome da métrica | Unidade |
-| --- | --- |
-| \Processor(_Total)\% Processor Time |Percentagem |
-| \Processor(_Total)\% de tempo privilegiado |Percentagem |
-| \Processor(_Total)\% de tempo do utilizador |Percentagem |
-| Frequência de \Processor \Processor informações ( total) |Contagem |
-| \System\Processes |Contagem |
-| Contagem de \Thread \Process ( total) |Contagem |
-| Contagem de \Handle \Process ( total) |Contagem |
-| \Memory\% dos Bytes consolidados em utilização |Percentagem |
-| \Memory\Available Bytes |Bytes |
-| Bytes de \Memory\Committed |Bytes |
-| Limite de \Memory\Commit |Bytes |
-| Bytes de \Memory\Pool bloco paginado |Bytes |
-| \Memory\Pool Bytes na memória não paginável |Bytes |
-| \PhysicalDisk(_Total)\% tempo do disco |Percentagem |
-| \PhysicalDisk(_Total)\% tempo de leitura de discos |Percentagem |
-| \PhysicalDisk(_Total)\% tempo escrita em disco |Percentagem |
-| \PhysicalDisk ( total) \Disk transferências/seg |CountPerSecond |
-| \PhysicalDisk ( total) \Disk leituras/seg |CountPerSecond |
-| \PhysicalDisk ( total) \Disk escritas/seg |CountPerSecond |
-| \PhysicalDisk ( total) \Disk bytes/seg |BytesPerSecond |
-| \Disk \PhysicalDisk ( total) Bytes lidos/seg |BytesPerSecond |
-| Escrita de \Disk \PhysicalDisk ( total) Bytes/seg |BytesPerSecond |
-| \Avg \PhysicalDisk ( total). Comprimento da fila de disco |Contagem |
-| \Avg \PhysicalDisk ( total). Comprimento de fila de leitura do disco |Contagem |
-| \Avg \PhysicalDisk ( total). Comprimento de fila de escrita de disco |Contagem |
-| \LogicalDisk(_Total)\% espaço livre |Percentagem |
-| \LogicalDisk ( total) \Free megabytes |Contagem |
-
-### <a name="guest-os-metrics-linux-vms"></a>Métricas de SO convidado VMs com Linux
-Quando cria uma VM no Azure, diagnostics está ativada por predefinição, utilizando a extensão de diagnóstico.
-
-Pode gerar uma lista das métricas de Olá utilizando Olá os seguintes comandos do PowerShell.
+<span data-ttu-id="3adfb-129">Pode gerar uma lista das métricas de Olá utilizando Olá os seguintes comandos do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="3adfb-129">You can generate a list of hello metrics by using hello following command in PowerShell.</span></span>
 
 ```
 Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,Unit
 ```
 
- Pode criar um alerta para Olá métricas os seguintes:
+<span data-ttu-id="3adfb-130">Pode criar um alerta para Olá métricas os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3adfb-130">You can create an alert for hello following metrics:</span></span>
 
-| Nome da métrica | Unidade |
+| <span data-ttu-id="3adfb-131">Nome da métrica</span><span class="sxs-lookup"><span data-stu-id="3adfb-131">Metric Name</span></span> | <span data-ttu-id="3adfb-132">Unidade</span><span class="sxs-lookup"><span data-stu-id="3adfb-132">Unit</span></span> |
 | --- | --- |
-| \Memory\AvailableMemory |Bytes |
-| \Memory\PercentAvailableMemory |Percentagem |
-| \Memory\UsedMemory |Bytes |
-| \Memory\PercentUsedMemory |Percentagem |
-| \Memory\PercentUsedByCache |Percentagem |
-| \Memory\PagesPerSec |CountPerSecond |
-| \Memory\PagesReadPerSec |CountPerSecond |
-| \Memory\PagesWrittenPerSec |CountPerSecond |
-| \Memory\AvailableSwap |Bytes |
-| \Memory\PercentAvailableSwap |Percentagem |
-| \Memory\UsedSwap |Bytes |
-| \Memory\PercentUsedSwap |Percentagem |
-| \Processor\PercentIdleTime |Percentagem |
-| \Processor\PercentUserTime |Percentagem |
-| \Processor\PercentNiceTime |Percentagem |
-| \Processor\PercentPrivilegedTime |Percentagem |
-| \Processor\PercentInterruptTime |Percentagem |
-| \Processor\PercentDPCTime |Percentagem |
-| \Processor\PercentProcessorTime |Percentagem |
-| \Processor\PercentIOWaitTime |Percentagem |
-| \PhysicalDisk\BytesPerSecond |BytesPerSecond |
-| \PhysicalDisk\ReadBytesPerSecond |BytesPerSecond |
-| \PhysicalDisk\WriteBytesPerSecond |BytesPerSecond |
-| \PhysicalDisk\TransfersPerSecond |CountPerSecond |
-| \PhysicalDisk\ReadsPerSecond |CountPerSecond |
-| \PhysicalDisk\WritesPerSecond |CountPerSecond |
-| \PhysicalDisk\AverageReadTime |Segundos |
-| \PhysicalDisk\AverageWriteTime |Segundos |
-| \PhysicalDisk\AverageTransferTime |Segundos |
-| \PhysicalDisk\AverageDiskQueueLength |Contagem |
-| \NetworkInterface\BytesTransmitted |Bytes |
-| \NetworkInterface\BytesReceived |Bytes |
-| \NetworkInterface\PacketsTransmitted |Contagem |
-| \NetworkInterface\PacketsReceived |Contagem |
-| \NetworkInterface\BytesTotal |Bytes |
-| \NetworkInterface\TotalRxErrors |Contagem |
-| \NetworkInterface\TotalTxErrors |Contagem |
-| \NetworkInterface\TotalCollisions |Contagem |
+| <span data-ttu-id="3adfb-133">\Processor(_Total)\% Processor Time</span><span class="sxs-lookup"><span data-stu-id="3adfb-133">\Processor(_Total)\% Processor Time</span></span> |<span data-ttu-id="3adfb-134">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-134">Percent</span></span> |
+| <span data-ttu-id="3adfb-135">\Processor(_Total)\% de tempo privilegiado</span><span class="sxs-lookup"><span data-stu-id="3adfb-135">\Processor(_Total)\% Privileged Time</span></span> |<span data-ttu-id="3adfb-136">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-136">Percent</span></span> |
+| <span data-ttu-id="3adfb-137">\Processor(_Total)\% de tempo do utilizador</span><span class="sxs-lookup"><span data-stu-id="3adfb-137">\Processor(_Total)\% User Time</span></span> |<span data-ttu-id="3adfb-138">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-138">Percent</span></span> |
+| <span data-ttu-id="3adfb-139">Frequência de \Processor \Processor informações ( total)</span><span class="sxs-lookup"><span data-stu-id="3adfb-139">\Processor Information(_Total)\Processor Frequency</span></span> |<span data-ttu-id="3adfb-140">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-140">Count</span></span> |
+| <span data-ttu-id="3adfb-141">\System\Processes</span><span class="sxs-lookup"><span data-stu-id="3adfb-141">\System\Processes</span></span> |<span data-ttu-id="3adfb-142">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-142">Count</span></span> |
+| <span data-ttu-id="3adfb-143">Contagem de \Thread \Process ( total)</span><span class="sxs-lookup"><span data-stu-id="3adfb-143">\Process(_Total)\Thread Count</span></span> |<span data-ttu-id="3adfb-144">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-144">Count</span></span> |
+| <span data-ttu-id="3adfb-145">Contagem de \Handle \Process ( total)</span><span class="sxs-lookup"><span data-stu-id="3adfb-145">\Process(_Total)\Handle Count</span></span> |<span data-ttu-id="3adfb-146">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-146">Count</span></span> |
+| <span data-ttu-id="3adfb-147">\Memory\% dos Bytes consolidados em utilização</span><span class="sxs-lookup"><span data-stu-id="3adfb-147">\Memory\% Committed Bytes In Use</span></span> |<span data-ttu-id="3adfb-148">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-148">Percent</span></span> |
+| <span data-ttu-id="3adfb-149">\Memory\Available Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-149">\Memory\Available Bytes</span></span> |<span data-ttu-id="3adfb-150">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-150">Bytes</span></span> |
+| <span data-ttu-id="3adfb-151">Bytes de \Memory\Committed</span><span class="sxs-lookup"><span data-stu-id="3adfb-151">\Memory\Committed Bytes</span></span> |<span data-ttu-id="3adfb-152">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-152">Bytes</span></span> |
+| <span data-ttu-id="3adfb-153">Limite de \Memory\Commit</span><span class="sxs-lookup"><span data-stu-id="3adfb-153">\Memory\Commit Limit</span></span> |<span data-ttu-id="3adfb-154">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-154">Bytes</span></span> |
+| <span data-ttu-id="3adfb-155">Bytes de \Memory\Pool bloco paginado</span><span class="sxs-lookup"><span data-stu-id="3adfb-155">\Memory\Pool Paged Bytes</span></span> |<span data-ttu-id="3adfb-156">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-156">Bytes</span></span> |
+| <span data-ttu-id="3adfb-157">\Memory\Pool Bytes na memória não paginável</span><span class="sxs-lookup"><span data-stu-id="3adfb-157">\Memory\Pool Nonpaged Bytes</span></span> |<span data-ttu-id="3adfb-158">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-158">Bytes</span></span> |
+| <span data-ttu-id="3adfb-159">\PhysicalDisk(_Total)\% tempo do disco</span><span class="sxs-lookup"><span data-stu-id="3adfb-159">\PhysicalDisk(_Total)\% Disk Time</span></span> |<span data-ttu-id="3adfb-160">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-160">Percent</span></span> |
+| <span data-ttu-id="3adfb-161">\PhysicalDisk(_Total)\% tempo de leitura de discos</span><span class="sxs-lookup"><span data-stu-id="3adfb-161">\PhysicalDisk(_Total)\% Disk Read Time</span></span> |<span data-ttu-id="3adfb-162">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-162">Percent</span></span> |
+| <span data-ttu-id="3adfb-163">\PhysicalDisk(_Total)\% tempo escrita em disco</span><span class="sxs-lookup"><span data-stu-id="3adfb-163">\PhysicalDisk(_Total)\% Disk Write Time</span></span> |<span data-ttu-id="3adfb-164">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-164">Percent</span></span> |
+| <span data-ttu-id="3adfb-165">\PhysicalDisk ( total) \Disk transferências/seg</span><span class="sxs-lookup"><span data-stu-id="3adfb-165">\PhysicalDisk(_Total)\Disk Transfers/sec</span></span> |<span data-ttu-id="3adfb-166">CountPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-166">CountPerSecond</span></span> |
+| <span data-ttu-id="3adfb-167">\PhysicalDisk ( total) \Disk leituras/seg</span><span class="sxs-lookup"><span data-stu-id="3adfb-167">\PhysicalDisk(_Total)\Disk Reads/sec</span></span> |<span data-ttu-id="3adfb-168">CountPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-168">CountPerSecond</span></span> |
+| <span data-ttu-id="3adfb-169">\PhysicalDisk ( total) \Disk escritas/seg</span><span class="sxs-lookup"><span data-stu-id="3adfb-169">\PhysicalDisk(_Total)\Disk Writes/sec</span></span> |<span data-ttu-id="3adfb-170">CountPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-170">CountPerSecond</span></span> |
+| <span data-ttu-id="3adfb-171">\PhysicalDisk ( total) \Disk bytes/seg</span><span class="sxs-lookup"><span data-stu-id="3adfb-171">\PhysicalDisk(_Total)\Disk Bytes/sec</span></span> |<span data-ttu-id="3adfb-172">BytesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-172">BytesPerSecond</span></span> |
+| <span data-ttu-id="3adfb-173">\Disk \PhysicalDisk ( total) Bytes lidos/seg</span><span class="sxs-lookup"><span data-stu-id="3adfb-173">\PhysicalDisk(_Total)\Disk Read Bytes/sec</span></span> |<span data-ttu-id="3adfb-174">BytesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-174">BytesPerSecond</span></span> |
+| <span data-ttu-id="3adfb-175">Escrita de \Disk \PhysicalDisk ( total) Bytes/seg</span><span class="sxs-lookup"><span data-stu-id="3adfb-175">\PhysicalDisk(_Total)\Disk Write Bytes/sec</span></span> |<span data-ttu-id="3adfb-176">BytesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-176">BytesPerSecond</span></span> |
+| <span data-ttu-id="3adfb-177">\Avg \PhysicalDisk ( total). Comprimento da fila de disco</span><span class="sxs-lookup"><span data-stu-id="3adfb-177">\PhysicalDisk(_Total)\Avg. Disk Queue Length</span></span> |<span data-ttu-id="3adfb-178">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-178">Count</span></span> |
+| <span data-ttu-id="3adfb-179">\Avg \PhysicalDisk ( total). Comprimento de fila de leitura do disco</span><span class="sxs-lookup"><span data-stu-id="3adfb-179">\PhysicalDisk(_Total)\Avg. Disk Read Queue Length</span></span> |<span data-ttu-id="3adfb-180">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-180">Count</span></span> |
+| <span data-ttu-id="3adfb-181">\Avg \PhysicalDisk ( total). Comprimento de fila de escrita de disco</span><span class="sxs-lookup"><span data-stu-id="3adfb-181">\PhysicalDisk(_Total)\Avg. Disk Write Queue Length</span></span> |<span data-ttu-id="3adfb-182">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-182">Count</span></span> |
+| <span data-ttu-id="3adfb-183">\LogicalDisk(_Total)\% espaço livre</span><span class="sxs-lookup"><span data-stu-id="3adfb-183">\LogicalDisk(_Total)\% Free Space</span></span> |<span data-ttu-id="3adfb-184">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-184">Percent</span></span> |
+| <span data-ttu-id="3adfb-185">\LogicalDisk ( total) \Free megabytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-185">\LogicalDisk(_Total)\Free Megabytes</span></span> |<span data-ttu-id="3adfb-186">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-186">Count</span></span> |
 
-## <a name="commonly-used-web-server-farm-metrics"></a>Métricas frequentemente utilizadas de Web (Farm de servidores)
-Também pode efetuar o dimensionamento automático com base nas métricas do servidor web comuns, tais como Olá comprimento da fila Http. Nome métrico está **HttpQueueLength**.  Olá métricas do farm (aplicações Web) de servidor disponíveis de listas de secção a seguir.
+### <a name="guest-os-metrics-linux-vms"></a><span data-ttu-id="3adfb-187">Métricas de SO convidado VMs com Linux</span><span class="sxs-lookup"><span data-stu-id="3adfb-187">Guest OS metrics Linux VMs</span></span>
+<span data-ttu-id="3adfb-188">Quando cria uma VM no Azure, diagnostics está ativada por predefinição, utilizando a extensão de diagnóstico.</span><span class="sxs-lookup"><span data-stu-id="3adfb-188">When you create a VM in Azure, diagnostics is enabled by default by using Diagnostics extension.</span></span>
 
-### <a name="web-apps-metrics"></a>Métricas de aplicações Web
-Pode gerar uma lista das métricas de Web Apps Olá utilizando Olá os seguintes comandos do PowerShell.
+<span data-ttu-id="3adfb-189">Pode gerar uma lista das métricas de Olá utilizando Olá os seguintes comandos do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="3adfb-189">You can generate a list of hello metrics by using hello following command in PowerShell.</span></span>
 
 ```
 Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,Unit
 ```
 
-Pode alerta sobre ou dimensionar por estas métricas.
+ <span data-ttu-id="3adfb-190">Pode criar um alerta para Olá métricas os seguintes:</span><span class="sxs-lookup"><span data-stu-id="3adfb-190">You can create an alert for hello following metrics:</span></span>
 
-| Nome da métrica | Unidade |
+| <span data-ttu-id="3adfb-191">Nome da métrica</span><span class="sxs-lookup"><span data-stu-id="3adfb-191">Metric Name</span></span> | <span data-ttu-id="3adfb-192">Unidade</span><span class="sxs-lookup"><span data-stu-id="3adfb-192">Unit</span></span> |
 | --- | --- |
-| CpuPercentage |Percentagem |
-| MemoryPercentage |Percentagem |
-| DiskQueueLength |Contagem |
-| HttpQueueLength |Contagem |
-| BytesReceived |Bytes |
-| BytesSent |Bytes |
+| <span data-ttu-id="3adfb-193">\Memory\AvailableMemory</span><span class="sxs-lookup"><span data-stu-id="3adfb-193">\Memory\AvailableMemory</span></span> |<span data-ttu-id="3adfb-194">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-194">Bytes</span></span> |
+| <span data-ttu-id="3adfb-195">\Memory\PercentAvailableMemory</span><span class="sxs-lookup"><span data-stu-id="3adfb-195">\Memory\PercentAvailableMemory</span></span> |<span data-ttu-id="3adfb-196">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-196">Percent</span></span> |
+| <span data-ttu-id="3adfb-197">\Memory\UsedMemory</span><span class="sxs-lookup"><span data-stu-id="3adfb-197">\Memory\UsedMemory</span></span> |<span data-ttu-id="3adfb-198">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-198">Bytes</span></span> |
+| <span data-ttu-id="3adfb-199">\Memory\PercentUsedMemory</span><span class="sxs-lookup"><span data-stu-id="3adfb-199">\Memory\PercentUsedMemory</span></span> |<span data-ttu-id="3adfb-200">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-200">Percent</span></span> |
+| <span data-ttu-id="3adfb-201">\Memory\PercentUsedByCache</span><span class="sxs-lookup"><span data-stu-id="3adfb-201">\Memory\PercentUsedByCache</span></span> |<span data-ttu-id="3adfb-202">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-202">Percent</span></span> |
+| <span data-ttu-id="3adfb-203">\Memory\PagesPerSec</span><span class="sxs-lookup"><span data-stu-id="3adfb-203">\Memory\PagesPerSec</span></span> |<span data-ttu-id="3adfb-204">CountPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-204">CountPerSecond</span></span> |
+| <span data-ttu-id="3adfb-205">\Memory\PagesReadPerSec</span><span class="sxs-lookup"><span data-stu-id="3adfb-205">\Memory\PagesReadPerSec</span></span> |<span data-ttu-id="3adfb-206">CountPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-206">CountPerSecond</span></span> |
+| <span data-ttu-id="3adfb-207">\Memory\PagesWrittenPerSec</span><span class="sxs-lookup"><span data-stu-id="3adfb-207">\Memory\PagesWrittenPerSec</span></span> |<span data-ttu-id="3adfb-208">CountPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-208">CountPerSecond</span></span> |
+| <span data-ttu-id="3adfb-209">\Memory\AvailableSwap</span><span class="sxs-lookup"><span data-stu-id="3adfb-209">\Memory\AvailableSwap</span></span> |<span data-ttu-id="3adfb-210">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-210">Bytes</span></span> |
+| <span data-ttu-id="3adfb-211">\Memory\PercentAvailableSwap</span><span class="sxs-lookup"><span data-stu-id="3adfb-211">\Memory\PercentAvailableSwap</span></span> |<span data-ttu-id="3adfb-212">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-212">Percent</span></span> |
+| <span data-ttu-id="3adfb-213">\Memory\UsedSwap</span><span class="sxs-lookup"><span data-stu-id="3adfb-213">\Memory\UsedSwap</span></span> |<span data-ttu-id="3adfb-214">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-214">Bytes</span></span> |
+| <span data-ttu-id="3adfb-215">\Memory\PercentUsedSwap</span><span class="sxs-lookup"><span data-stu-id="3adfb-215">\Memory\PercentUsedSwap</span></span> |<span data-ttu-id="3adfb-216">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-216">Percent</span></span> |
+| <span data-ttu-id="3adfb-217">\Processor\PercentIdleTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-217">\Processor\PercentIdleTime</span></span> |<span data-ttu-id="3adfb-218">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-218">Percent</span></span> |
+| <span data-ttu-id="3adfb-219">\Processor\PercentUserTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-219">\Processor\PercentUserTime</span></span> |<span data-ttu-id="3adfb-220">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-220">Percent</span></span> |
+| <span data-ttu-id="3adfb-221">\Processor\PercentNiceTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-221">\Processor\PercentNiceTime</span></span> |<span data-ttu-id="3adfb-222">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-222">Percent</span></span> |
+| <span data-ttu-id="3adfb-223">\Processor\PercentPrivilegedTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-223">\Processor\PercentPrivilegedTime</span></span> |<span data-ttu-id="3adfb-224">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-224">Percent</span></span> |
+| <span data-ttu-id="3adfb-225">\Processor\PercentInterruptTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-225">\Processor\PercentInterruptTime</span></span> |<span data-ttu-id="3adfb-226">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-226">Percent</span></span> |
+| <span data-ttu-id="3adfb-227">\Processor\PercentDPCTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-227">\Processor\PercentDPCTime</span></span> |<span data-ttu-id="3adfb-228">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-228">Percent</span></span> |
+| <span data-ttu-id="3adfb-229">\Processor\PercentProcessorTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-229">\Processor\PercentProcessorTime</span></span> |<span data-ttu-id="3adfb-230">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-230">Percent</span></span> |
+| <span data-ttu-id="3adfb-231">\Processor\PercentIOWaitTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-231">\Processor\PercentIOWaitTime</span></span> |<span data-ttu-id="3adfb-232">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-232">Percent</span></span> |
+| <span data-ttu-id="3adfb-233">\PhysicalDisk\BytesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-233">\PhysicalDisk\BytesPerSecond</span></span> |<span data-ttu-id="3adfb-234">BytesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-234">BytesPerSecond</span></span> |
+| <span data-ttu-id="3adfb-235">\PhysicalDisk\ReadBytesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-235">\PhysicalDisk\ReadBytesPerSecond</span></span> |<span data-ttu-id="3adfb-236">BytesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-236">BytesPerSecond</span></span> |
+| <span data-ttu-id="3adfb-237">\PhysicalDisk\WriteBytesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-237">\PhysicalDisk\WriteBytesPerSecond</span></span> |<span data-ttu-id="3adfb-238">BytesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-238">BytesPerSecond</span></span> |
+| <span data-ttu-id="3adfb-239">\PhysicalDisk\TransfersPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-239">\PhysicalDisk\TransfersPerSecond</span></span> |<span data-ttu-id="3adfb-240">CountPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-240">CountPerSecond</span></span> |
+| <span data-ttu-id="3adfb-241">\PhysicalDisk\ReadsPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-241">\PhysicalDisk\ReadsPerSecond</span></span> |<span data-ttu-id="3adfb-242">CountPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-242">CountPerSecond</span></span> |
+| <span data-ttu-id="3adfb-243">\PhysicalDisk\WritesPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-243">\PhysicalDisk\WritesPerSecond</span></span> |<span data-ttu-id="3adfb-244">CountPerSecond</span><span class="sxs-lookup"><span data-stu-id="3adfb-244">CountPerSecond</span></span> |
+| <span data-ttu-id="3adfb-245">\PhysicalDisk\AverageReadTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-245">\PhysicalDisk\AverageReadTime</span></span> |<span data-ttu-id="3adfb-246">Segundos</span><span class="sxs-lookup"><span data-stu-id="3adfb-246">Seconds</span></span> |
+| <span data-ttu-id="3adfb-247">\PhysicalDisk\AverageWriteTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-247">\PhysicalDisk\AverageWriteTime</span></span> |<span data-ttu-id="3adfb-248">Segundos</span><span class="sxs-lookup"><span data-stu-id="3adfb-248">Seconds</span></span> |
+| <span data-ttu-id="3adfb-249">\PhysicalDisk\AverageTransferTime</span><span class="sxs-lookup"><span data-stu-id="3adfb-249">\PhysicalDisk\AverageTransferTime</span></span> |<span data-ttu-id="3adfb-250">Segundos</span><span class="sxs-lookup"><span data-stu-id="3adfb-250">Seconds</span></span> |
+| <span data-ttu-id="3adfb-251">\PhysicalDisk\AverageDiskQueueLength</span><span class="sxs-lookup"><span data-stu-id="3adfb-251">\PhysicalDisk\AverageDiskQueueLength</span></span> |<span data-ttu-id="3adfb-252">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-252">Count</span></span> |
+| <span data-ttu-id="3adfb-253">\NetworkInterface\BytesTransmitted</span><span class="sxs-lookup"><span data-stu-id="3adfb-253">\NetworkInterface\BytesTransmitted</span></span> |<span data-ttu-id="3adfb-254">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-254">Bytes</span></span> |
+| <span data-ttu-id="3adfb-255">\NetworkInterface\BytesReceived</span><span class="sxs-lookup"><span data-stu-id="3adfb-255">\NetworkInterface\BytesReceived</span></span> |<span data-ttu-id="3adfb-256">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-256">Bytes</span></span> |
+| <span data-ttu-id="3adfb-257">\NetworkInterface\PacketsTransmitted</span><span class="sxs-lookup"><span data-stu-id="3adfb-257">\NetworkInterface\PacketsTransmitted</span></span> |<span data-ttu-id="3adfb-258">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-258">Count</span></span> |
+| <span data-ttu-id="3adfb-259">\NetworkInterface\PacketsReceived</span><span class="sxs-lookup"><span data-stu-id="3adfb-259">\NetworkInterface\PacketsReceived</span></span> |<span data-ttu-id="3adfb-260">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-260">Count</span></span> |
+| <span data-ttu-id="3adfb-261">\NetworkInterface\BytesTotal</span><span class="sxs-lookup"><span data-stu-id="3adfb-261">\NetworkInterface\BytesTotal</span></span> |<span data-ttu-id="3adfb-262">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-262">Bytes</span></span> |
+| <span data-ttu-id="3adfb-263">\NetworkInterface\TotalRxErrors</span><span class="sxs-lookup"><span data-stu-id="3adfb-263">\NetworkInterface\TotalRxErrors</span></span> |<span data-ttu-id="3adfb-264">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-264">Count</span></span> |
+| <span data-ttu-id="3adfb-265">\NetworkInterface\TotalTxErrors</span><span class="sxs-lookup"><span data-stu-id="3adfb-265">\NetworkInterface\TotalTxErrors</span></span> |<span data-ttu-id="3adfb-266">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-266">Count</span></span> |
+| <span data-ttu-id="3adfb-267">\NetworkInterface\TotalCollisions</span><span class="sxs-lookup"><span data-stu-id="3adfb-267">\NetworkInterface\TotalCollisions</span></span> |<span data-ttu-id="3adfb-268">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-268">Count</span></span> |
 
-## <a name="commonly-used-storage-metrics"></a>Métricas frequentemente utilizadas de armazenamento
-Pode dimensionar ao comprimento da fila de armazenamento, que é o número de Olá de mensagens em fila de armazenamento Olá. Comprimento da fila de armazenamento é uma métrica especial e limiar de Olá é Olá número de mensagens por instância. Por exemplo, se existirem duas instâncias, e se o limiar de Olá estiver definido too100, dimensionamento ocorre quando Olá o número total de mensagens em fila Olá é 200. Que pode ser 100 mensagens por instância, 120 e 80 ou qualquer combinação que adiciona segurança too200 ou mais.
+## <a name="commonly-used-web-server-farm-metrics"></a><span data-ttu-id="3adfb-269">Métricas frequentemente utilizadas de Web (Farm de servidores)</span><span class="sxs-lookup"><span data-stu-id="3adfb-269">Commonly used Web (Server Farm) metrics</span></span>
+<span data-ttu-id="3adfb-270">Também pode efetuar o dimensionamento automático com base nas métricas do servidor web comuns, tais como Olá comprimento da fila Http.</span><span class="sxs-lookup"><span data-stu-id="3adfb-270">You can also perform autoscale based on common web server metrics such as hello Http queue length.</span></span> <span data-ttu-id="3adfb-271">Nome métrico está **HttpQueueLength**.</span><span class="sxs-lookup"><span data-stu-id="3adfb-271">It's metric name is **HttpQueueLength**.</span></span>  <span data-ttu-id="3adfb-272">Olá métricas do farm (aplicações Web) de servidor disponíveis de listas de secção a seguir.</span><span class="sxs-lookup"><span data-stu-id="3adfb-272">hello following section lists available server farm (Web Apps) metrics.</span></span>
 
-Configurar esta definição no Olá portal do Azure no Olá **definições** painel. Para conjuntos de dimensionamento VM, pode atualizar a definição de dimensionamento automático Olá no toouse de modelo do Resource Manager Olá *metricName* como *ApproximateMessageCount* e transmita o ID de Olá da fila de armazenamento Olá como  *metricResourceUri*.
+### <a name="web-apps-metrics"></a><span data-ttu-id="3adfb-273">Métricas de aplicações Web</span><span class="sxs-lookup"><span data-stu-id="3adfb-273">Web Apps metrics</span></span>
+<span data-ttu-id="3adfb-274">Pode gerar uma lista das métricas de Web Apps Olá utilizando Olá os seguintes comandos do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="3adfb-274">You can generate a list of hello Web Apps metrics by using hello following command in PowerShell.</span></span>
 
-Por exemplo, com um Olá de conta de armazenamento clássico metricTrigger de definição de dimensionamento automático incluem:
+```
+Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,Unit
+```
+
+<span data-ttu-id="3adfb-275">Pode alerta sobre ou dimensionar por estas métricas.</span><span class="sxs-lookup"><span data-stu-id="3adfb-275">You can alert on or scale by these metrics.</span></span>
+
+| <span data-ttu-id="3adfb-276">Nome da métrica</span><span class="sxs-lookup"><span data-stu-id="3adfb-276">Metric Name</span></span> | <span data-ttu-id="3adfb-277">Unidade</span><span class="sxs-lookup"><span data-stu-id="3adfb-277">Unit</span></span> |
+| --- | --- |
+| <span data-ttu-id="3adfb-278">CpuPercentage</span><span class="sxs-lookup"><span data-stu-id="3adfb-278">CpuPercentage</span></span> |<span data-ttu-id="3adfb-279">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-279">Percent</span></span> |
+| <span data-ttu-id="3adfb-280">MemoryPercentage</span><span class="sxs-lookup"><span data-stu-id="3adfb-280">MemoryPercentage</span></span> |<span data-ttu-id="3adfb-281">Percentagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-281">Percent</span></span> |
+| <span data-ttu-id="3adfb-282">DiskQueueLength</span><span class="sxs-lookup"><span data-stu-id="3adfb-282">DiskQueueLength</span></span> |<span data-ttu-id="3adfb-283">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-283">Count</span></span> |
+| <span data-ttu-id="3adfb-284">HttpQueueLength</span><span class="sxs-lookup"><span data-stu-id="3adfb-284">HttpQueueLength</span></span> |<span data-ttu-id="3adfb-285">Contagem</span><span class="sxs-lookup"><span data-stu-id="3adfb-285">Count</span></span> |
+| <span data-ttu-id="3adfb-286">BytesReceived</span><span class="sxs-lookup"><span data-stu-id="3adfb-286">BytesReceived</span></span> |<span data-ttu-id="3adfb-287">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-287">Bytes</span></span> |
+| <span data-ttu-id="3adfb-288">BytesSent</span><span class="sxs-lookup"><span data-stu-id="3adfb-288">BytesSent</span></span> |<span data-ttu-id="3adfb-289">Bytes</span><span class="sxs-lookup"><span data-stu-id="3adfb-289">Bytes</span></span> |
+
+## <a name="commonly-used-storage-metrics"></a><span data-ttu-id="3adfb-290">Métricas frequentemente utilizadas de armazenamento</span><span class="sxs-lookup"><span data-stu-id="3adfb-290">Commonly used Storage metrics</span></span>
+<span data-ttu-id="3adfb-291">Pode dimensionar ao comprimento da fila de armazenamento, que é o número de Olá de mensagens em fila de armazenamento Olá.</span><span class="sxs-lookup"><span data-stu-id="3adfb-291">You can scale by Storage queue length, which is hello number of messages in hello storage queue.</span></span> <span data-ttu-id="3adfb-292">Comprimento da fila de armazenamento é uma métrica especial e limiar de Olá é Olá número de mensagens por instância.</span><span class="sxs-lookup"><span data-stu-id="3adfb-292">Storage queue length is a special metric and hello threshold is hello number of messages per instance.</span></span> <span data-ttu-id="3adfb-293">Por exemplo, se existirem duas instâncias, e se o limiar de Olá estiver definido too100, dimensionamento ocorre quando Olá o número total de mensagens em fila Olá é 200.</span><span class="sxs-lookup"><span data-stu-id="3adfb-293">For example, if there are two instances and if hello threshold is set too100, scaling occurs when hello total number of messages in hello queue is 200.</span></span> <span data-ttu-id="3adfb-294">Que pode ser 100 mensagens por instância, 120 e 80 ou qualquer combinação que adiciona segurança too200 ou mais.</span><span class="sxs-lookup"><span data-stu-id="3adfb-294">That can be 100 messages per instance, 120 and 80, or any other combination that adds up too200 or more.</span></span>
+
+<span data-ttu-id="3adfb-295">Configurar esta definição no Olá portal do Azure no Olá **definições** painel.</span><span class="sxs-lookup"><span data-stu-id="3adfb-295">Configure this setting in hello Azure portal in hello **Settings** blade.</span></span> <span data-ttu-id="3adfb-296">Para conjuntos de dimensionamento VM, pode atualizar a definição de dimensionamento automático Olá no toouse de modelo do Resource Manager Olá *metricName* como *ApproximateMessageCount* e transmita o ID de Olá da fila de armazenamento Olá como  *metricResourceUri*.</span><span class="sxs-lookup"><span data-stu-id="3adfb-296">For VM scale sets, you can update hello Autoscale setting in hello Resource Manager template toouse *metricName* as *ApproximateMessageCount* and pass hello ID of hello storage queue as *metricResourceUri*.</span></span>
+
+<span data-ttu-id="3adfb-297">Por exemplo, com um Olá de conta de armazenamento clássico metricTrigger de definição de dimensionamento automático incluem:</span><span class="sxs-lookup"><span data-stu-id="3adfb-297">For example, with a Classic Storage Account hello autoscale setting metricTrigger would include:</span></span>
 
 ```
 "metricName": "ApproximateMessageCount",
@@ -169,7 +169,7 @@ Por exemplo, com um Olá de conta de armazenamento clássico metricTrigger de de
  "metricResourceUri": "/subscriptions/SUBSCRIPTION_ID/resourceGroups/RES_GROUP_NAME/providers/Microsoft.ClassicStorage/storageAccounts/STORAGE_ACCOUNT_NAME/services/queue/queues/QUEUE_NAME"
  ```
 
-Para uma conta de armazenamento (não clássica), Olá metricTrigger incluem:
+<span data-ttu-id="3adfb-298">Para uma conta de armazenamento (não clássica), Olá metricTrigger incluem:</span><span class="sxs-lookup"><span data-stu-id="3adfb-298">For a (non-classic) storage account, hello metricTrigger would include:</span></span>
 
 ```
 "metricName": "ApproximateMessageCount",
@@ -177,10 +177,10 @@ Para uma conta de armazenamento (não clássica), Olá metricTrigger incluem:
 "metricResourceUri": "/subscriptions/SUBSCRIPTION_ID/resourceGroups/RES_GROUP_NAME/providers/Microsoft.Storage/storageAccounts/STORAGE_ACCOUNT_NAME/services/queue/queues/QUEUE_NAME"
 ```
 
-## <a name="commonly-used-service-bus-metrics"></a>Métricas frequentemente utilizadas do Service Bus
-Pode dimensionar ao comprimento da fila de barramento de serviço, que é o número de Olá de mensagens em fila do Service Bus Olá. Comprimento da fila de barramento de serviço é uma métrica especial e limiar de Olá é Olá número de mensagens por instância. Por exemplo, se existirem duas instâncias, e se o limiar de Olá estiver definido too100, dimensionamento ocorre quando Olá o número total de mensagens em fila Olá é 200. Que pode ser 100 mensagens por instância, 120 e 80 ou qualquer combinação que adiciona segurança too200 ou mais.
+## <a name="commonly-used-service-bus-metrics"></a><span data-ttu-id="3adfb-299">Métricas frequentemente utilizadas do Service Bus</span><span class="sxs-lookup"><span data-stu-id="3adfb-299">Commonly used Service Bus metrics</span></span>
+<span data-ttu-id="3adfb-300">Pode dimensionar ao comprimento da fila de barramento de serviço, que é o número de Olá de mensagens em fila do Service Bus Olá.</span><span class="sxs-lookup"><span data-stu-id="3adfb-300">You can scale by Service Bus queue length, which is hello number of messages in hello Service Bus queue.</span></span> <span data-ttu-id="3adfb-301">Comprimento da fila de barramento de serviço é uma métrica especial e limiar de Olá é Olá número de mensagens por instância.</span><span class="sxs-lookup"><span data-stu-id="3adfb-301">Service Bus queue length is a special metric and hello threshold is hello number of messages per instance.</span></span> <span data-ttu-id="3adfb-302">Por exemplo, se existirem duas instâncias, e se o limiar de Olá estiver definido too100, dimensionamento ocorre quando Olá o número total de mensagens em fila Olá é 200.</span><span class="sxs-lookup"><span data-stu-id="3adfb-302">For example, if there are two instances and if hello threshold is set too100, scaling occurs when hello total number of messages in hello queue is 200.</span></span> <span data-ttu-id="3adfb-303">Que pode ser 100 mensagens por instância, 120 e 80 ou qualquer combinação que adiciona segurança too200 ou mais.</span><span class="sxs-lookup"><span data-stu-id="3adfb-303">That can be 100 messages per instance, 120 and 80, or any other combination that adds up too200 or more.</span></span>
 
-Para conjuntos de dimensionamento VM, pode atualizar a definição de dimensionamento automático Olá no toouse de modelo do Resource Manager Olá *metricName* como *ApproximateMessageCount* e transmita o ID de Olá da fila de armazenamento Olá como  *metricResourceUri*.
+<span data-ttu-id="3adfb-304">Para conjuntos de dimensionamento VM, pode atualizar a definição de dimensionamento automático Olá no toouse de modelo do Resource Manager Olá *metricName* como *ApproximateMessageCount* e transmita o ID de Olá da fila de armazenamento Olá como  *metricResourceUri*.</span><span class="sxs-lookup"><span data-stu-id="3adfb-304">For VM scale sets, you can update hello Autoscale setting in hello Resource Manager template toouse *metricName* as *ApproximateMessageCount* and pass hello ID of hello storage queue as *metricResourceUri*.</span></span>
 
 ```
 "metricName": "MessageCount",
@@ -189,6 +189,6 @@ Para conjuntos de dimensionamento VM, pode atualizar a definição de dimensiona
 ```
 
 > [!NOTE]
-> Para o Service Bus, conceito de grupo de recursos de Olá não existe mas o Gestor de recursos do Azure cria um grupo de recursos predefinidos por região. grupo de recursos de Olá é normalmente no formato do Olá 'Default - ServiceBus-[Região]'. Por exemplo, 'Predefinição-ServiceBus-EastUS', 'Predefinição-ServiceBus-WestUS', 'Predefinição-ServiceBus-AustraliaEast' etc.
+> <span data-ttu-id="3adfb-305">Para o Service Bus, conceito de grupo de recursos de Olá não existe mas o Gestor de recursos do Azure cria um grupo de recursos predefinidos por região.</span><span class="sxs-lookup"><span data-stu-id="3adfb-305">For Service Bus, hello resource group concept does not exist but Azure Resource Manager creates a default resource group per region.</span></span> <span data-ttu-id="3adfb-306">grupo de recursos de Olá é normalmente no formato do Olá 'Default - ServiceBus-[Região]'.</span><span class="sxs-lookup"><span data-stu-id="3adfb-306">hello resource group is usually in hello 'Default-ServiceBus-[region]' format.</span></span> <span data-ttu-id="3adfb-307">Por exemplo, 'Predefinição-ServiceBus-EastUS', 'Predefinição-ServiceBus-WestUS', 'Predefinição-ServiceBus-AustraliaEast' etc.</span><span class="sxs-lookup"><span data-stu-id="3adfb-307">For example, 'Default-ServiceBus-EastUS', 'Default-ServiceBus-WestUS', 'Default-ServiceBus-AustraliaEast' etc.</span></span>
 >
 >

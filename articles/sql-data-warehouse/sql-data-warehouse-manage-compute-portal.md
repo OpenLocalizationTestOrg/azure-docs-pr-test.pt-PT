@@ -21,72 +21,72 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="manage-compute-power-in-azure-sql-data-warehouse-azure-portal"></a>Gerir a capacidade de computação no Azure SQL Data Warehouse (portal do Azure)
+# <a name="manage-compute-power-in-azure-sql-data-warehouse-azure-portal"></a><span data-ttu-id="19293-105">Gerir a capacidade de computação no Azure SQL Data Warehouse (portal do Azure)</span><span class="sxs-lookup"><span data-stu-id="19293-105">Manage compute power in Azure SQL Data Warehouse (Azure portal)</span></span>
 > [!div class="op_single_selector"]
-> * [Descrição geral](sql-data-warehouse-manage-compute-overview.md)
-> * [Portal](sql-data-warehouse-manage-compute-portal.md)
-> * [PowerShell](sql-data-warehouse-manage-compute-powershell.md)
-> * [REST](sql-data-warehouse-manage-compute-rest-api.md)
-> * [TSQL](sql-data-warehouse-manage-compute-tsql.md)
+> * [<span data-ttu-id="19293-106">Descrição geral</span><span class="sxs-lookup"><span data-stu-id="19293-106">Overview</span></span>](sql-data-warehouse-manage-compute-overview.md)
+> * [<span data-ttu-id="19293-107">Portal</span><span class="sxs-lookup"><span data-stu-id="19293-107">Portal</span></span>](sql-data-warehouse-manage-compute-portal.md)
+> * [<span data-ttu-id="19293-108">PowerShell</span><span class="sxs-lookup"><span data-stu-id="19293-108">PowerShell</span></span>](sql-data-warehouse-manage-compute-powershell.md)
+> * [<span data-ttu-id="19293-109">REST</span><span class="sxs-lookup"><span data-stu-id="19293-109">REST</span></span>](sql-data-warehouse-manage-compute-rest-api.md)
+> * [<span data-ttu-id="19293-110">TSQL</span><span class="sxs-lookup"><span data-stu-id="19293-110">TSQL</span></span>](sql-data-warehouse-manage-compute-tsql.md)
 >
 >
 
 
-## <a name="scale-compute-power"></a>Capacidade de computação de escala
+## <a name="scale-compute-power"></a><span data-ttu-id="19293-111">Capacidade de computação de escala</span><span class="sxs-lookup"><span data-stu-id="19293-111">Scale compute power</span></span>
 [!INCLUDE [SQL Data Warehouse scale DWUs description](../../includes/sql-data-warehouse-scale-dwus-description.md)]
 
-recursos de computação toochange:
+<span data-ttu-id="19293-112">recursos de computação toochange:</span><span class="sxs-lookup"><span data-stu-id="19293-112">toochange compute resources:</span></span>
 
-1. Abra Olá [portal do Azure][Azure portal], abra a sua base de dados e clique em **escala**.
+1. <span data-ttu-id="19293-113">Abra Olá [portal do Azure][Azure portal], abra a sua base de dados e clique em **escala**.</span><span class="sxs-lookup"><span data-stu-id="19293-113">Open hello [Azure portal][Azure portal], open your database, and click **Scale**.</span></span>
 
     ![Clique em escala][1]
-2. No painel de escala Olá, mova o controlo de deslize de Olá à esquerda ou definição de DWU toochange Olá botão direito do rato.
+2. <span data-ttu-id="19293-115">No painel de escala Olá, mova o controlo de deslize de Olá à esquerda ou definição de DWU toochange Olá botão direito do rato.</span><span class="sxs-lookup"><span data-stu-id="19293-115">In hello Scale blade, move hello slider left or right toochange hello DWU setting.</span></span>
 
     ![Mover o controlo de deslize][2]
-3. Clique em **Guardar**. É apresentada uma mensagem de confirmação. Clique em **Sim** tooconfirm ou **não** toocancel.
+3. <span data-ttu-id="19293-117">Clique em **Guardar**.</span><span class="sxs-lookup"><span data-stu-id="19293-117">Click **Save**.</span></span> <span data-ttu-id="19293-118">É apresentada uma mensagem de confirmação.</span><span class="sxs-lookup"><span data-stu-id="19293-118">A confirmation message appears.</span></span> <span data-ttu-id="19293-119">Clique em **Sim** tooconfirm ou **não** toocancel.</span><span class="sxs-lookup"><span data-stu-id="19293-119">Click **yes** tooconfirm or **no** toocancel.</span></span>
 
     ![Clicar em Guardar][3]
 
 <a name="pause-compute-bk"></a>
 
-## <a name="pause-compute"></a>Computação pausa
+## <a name="pause-compute"></a><span data-ttu-id="19293-121">Computação pausa</span><span class="sxs-lookup"><span data-stu-id="19293-121">Pause compute</span></span>
 [!INCLUDE [SQL Data Warehouse pause description](../../includes/sql-data-warehouse-pause-description.md)]
 
-toopause uma base de dados:
+<span data-ttu-id="19293-122">toopause uma base de dados:</span><span class="sxs-lookup"><span data-stu-id="19293-122">toopause a database:</span></span>
 
-1. Abra Olá [portal do Azure] [ Azure portal] e abrir a base de dados. Tenha em atenção que Olá estado é **Online**.
+1. <span data-ttu-id="19293-123">Abra Olá [portal do Azure] [ Azure portal] e abrir a base de dados.</span><span class="sxs-lookup"><span data-stu-id="19293-123">Open hello [Azure portal][Azure portal] and open your database.</span></span> <span data-ttu-id="19293-124">Tenha em atenção que Olá estado é **Online**.</span><span class="sxs-lookup"><span data-stu-id="19293-124">Notice that hello Status is **Online**.</span></span>
 
     ![Estado online][6]
-2. recursos de computação e memória toosuspend, clique em **pausa**, e, em seguida, é apresentada uma mensagem de confirmação. Clique em **Sim** tooconfirm ou **não** toocancel.
+2. <span data-ttu-id="19293-126">recursos de computação e memória toosuspend, clique em **pausa**, e, em seguida, é apresentada uma mensagem de confirmação.</span><span class="sxs-lookup"><span data-stu-id="19293-126">toosuspend compute and memory resources, click **Pause**, and then a confirmation message appears.</span></span> <span data-ttu-id="19293-127">Clique em **Sim** tooconfirm ou **não** toocancel.</span><span class="sxs-lookup"><span data-stu-id="19293-127">Click **yes** tooconfirm or **no** toocancel.</span></span>
 
     ![Confirme a colocar em pausa][7]
-3. Enquanto o armazém de dados do SQL Server está a iniciar a base de dados de Olá, o estado de Olá é **Pausing**.
-4. Quando o estado de Olá é **em pausa**, operação de colocação em pausa Olá é efetuada e já não estão a ser-lhe cobrados dwus.
+3. <span data-ttu-id="19293-129">Enquanto o armazém de dados do SQL Server está a iniciar a base de dados de Olá, o estado de Olá é **Pausing**.</span><span class="sxs-lookup"><span data-stu-id="19293-129">While SQL Data Warehouse is starting hello database, hello status is **Pausing**.</span></span>
+4. <span data-ttu-id="19293-130">Quando o estado de Olá é **em pausa**, operação de colocação em pausa Olá é efetuada e já não estão a ser-lhe cobrados dwus.</span><span class="sxs-lookup"><span data-stu-id="19293-130">When hello status is **Paused**, hello pause operation is done and you are no longer being charged for DWUs.</span></span>
 
     ![Estado de pausa][4]
 
 <a name="resume-compute-bk"></a>
 
-## <a name="resume-compute"></a>Retomar de computação
+## <a name="resume-compute"></a><span data-ttu-id="19293-132">Retomar de computação</span><span class="sxs-lookup"><span data-stu-id="19293-132">Resume compute</span></span>
 [!INCLUDE [SQL Data Warehouse resume description](../../includes/sql-data-warehouse-resume-description.md)]
 
-tooresume uma base de dados:
+<span data-ttu-id="19293-133">tooresume uma base de dados:</span><span class="sxs-lookup"><span data-stu-id="19293-133">tooresume a database:</span></span>
 
-1. Abra Olá [portal do Azure] [ Azure portal] e abrir a base de dados. Tenha em atenção que Olá estado é **em pausa**.
+1. <span data-ttu-id="19293-134">Abra Olá [portal do Azure] [ Azure portal] e abrir a base de dados.</span><span class="sxs-lookup"><span data-stu-id="19293-134">Open hello [Azure portal][Azure portal] and open your database.</span></span> <span data-ttu-id="19293-135">Tenha em atenção que Olá estado é **em pausa**.</span><span class="sxs-lookup"><span data-stu-id="19293-135">Notice that hello Status is **Paused**.</span></span>
 
     ![Base de dados de pausa][4]
-2. Clique em base de dados de Olá tooresume **iniciar**, e, em seguida, é apresentada uma mensagem de confirmação. Clique em **Sim** tooconfirm ou **não** toocancel.
+2. <span data-ttu-id="19293-137">Clique em base de dados de Olá tooresume **iniciar**, e, em seguida, é apresentada uma mensagem de confirmação.</span><span class="sxs-lookup"><span data-stu-id="19293-137">tooresume hello database click **Start**, and then a confirmation message appears.</span></span> <span data-ttu-id="19293-138">Clique em **Sim** tooconfirm ou **não** toocancel.</span><span class="sxs-lookup"><span data-stu-id="19293-138">Click **yes** tooconfirm or **no** toocancel.</span></span>
 
     ![Confirmar retomar][5]
-3. Enquanto o armazém de dados do SQL Server está a iniciar a base de dados de Olá, o estado de Olá é "A retomar".
-4. Quando o estado de Olá é **online**, base de dados de Olá está pronto.
+3. <span data-ttu-id="19293-140">Enquanto o armazém de dados do SQL Server está a iniciar a base de dados de Olá, o estado de Olá é "A retomar".</span><span class="sxs-lookup"><span data-stu-id="19293-140">While SQL Data Warehouse is starting hello database, hello status is "Resuming".</span></span>
+4. <span data-ttu-id="19293-141">Quando o estado de Olá é **online**, base de dados de Olá está pronto.</span><span class="sxs-lookup"><span data-stu-id="19293-141">When hello status is **online**, hello database is ready.</span></span>
 
     ![Estado online][6]
 
 <a name="next-steps-bk"></a>
 
-## <a name="next-steps"></a>Passos seguintes
-Para obter mais informações, consulte [descrição geral da gestão][Management overview].
+## <a name="next-steps"></a><span data-ttu-id="19293-143">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="19293-143">Next steps</span></span>
+<span data-ttu-id="19293-144">Para obter mais informações, consulte [descrição geral da gestão][Management overview].</span><span class="sxs-lookup"><span data-stu-id="19293-144">For more information, see [Management overview][Management overview].</span></span>
 
 <!--Image references-->
 [1]: ./media/sql-data-warehouse-manage-compute-portal/click-scale.png

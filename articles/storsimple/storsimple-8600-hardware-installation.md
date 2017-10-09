@@ -20,251 +20,251 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="unpack-rack-mount-and-cable-your-storsimple-8600-device"></a>Descompactar, montar em bastidor e instalar os cabos do dispositivo StorSimple 8600
-## <a name="overview"></a>Descrição geral
-Os cabos do 8600 Microsoft Azure StorSimple é um dispositivo duplo bastidor e é composta por um site primário e um bastidor EBOD. Este tutorial explica como toounpack, montar em bastidor e instalar os cabos Olá de hardware do dispositivo StorSimple 8600 antes de configurar o software do Olá StorSimple.
+# <a name="unpack-rack-mount-and-cable-your-storsimple-8600-device"></a><span data-ttu-id="a9432-103">Descompactar, montar em bastidor e instalar os cabos do dispositivo StorSimple 8600</span><span class="sxs-lookup"><span data-stu-id="a9432-103">Unpack, rack-mount, and cable your StorSimple 8600 device</span></span>
+## <a name="overview"></a><span data-ttu-id="a9432-104">Descrição geral</span><span class="sxs-lookup"><span data-stu-id="a9432-104">Overview</span></span>
+<span data-ttu-id="a9432-105">Os cabos do 8600 Microsoft Azure StorSimple é um dispositivo duplo bastidor e é composta por um site primário e um bastidor EBOD.</span><span class="sxs-lookup"><span data-stu-id="a9432-105">Your Microsoft Azure StorSimple 8600 is a dual enclosure device and consists of a primary and an EBOD enclosure.</span></span> <span data-ttu-id="a9432-106">Este tutorial explica como toounpack, montar em bastidor e instalar os cabos Olá de hardware do dispositivo StorSimple 8600 antes de configurar o software do Olá StorSimple.</span><span class="sxs-lookup"><span data-stu-id="a9432-106">This tutorial explains how toounpack, rack-mount, and cable hello StorSimple 8600 device hardware before you configure hello StorSimple software.</span></span>
 
-## <a name="unpack-your-storsimple-8600-device"></a>Descompacte o dispositivo StorSimple 8600
-Olá passos seguintes fornecem limpar, instruções detalhadas sobre como toounpack o dispositivo de armazenamento StorSimple 8600. Este dispositivo está incluído em duas caixas, para inclusão principal Olá e outra para Olá bastidor EBOD. Estas duas caixas, em seguida, são colocadas numa única caixa.
+## <a name="unpack-your-storsimple-8600-device"></a><span data-ttu-id="a9432-107">Descompacte o dispositivo StorSimple 8600</span><span class="sxs-lookup"><span data-stu-id="a9432-107">Unpack your StorSimple 8600 device</span></span>
+<span data-ttu-id="a9432-108">Olá passos seguintes fornecem limpar, instruções detalhadas sobre como toounpack o dispositivo de armazenamento StorSimple 8600.</span><span class="sxs-lookup"><span data-stu-id="a9432-108">hello following steps provide clear, detailed instructions on how toounpack your StorSimple 8600 storage device.</span></span> <span data-ttu-id="a9432-109">Este dispositivo está incluído em duas caixas, para inclusão principal Olá e outra para Olá bastidor EBOD.</span><span class="sxs-lookup"><span data-stu-id="a9432-109">This device is shipped in two boxes, one for hello primary enclosure and another for hello EBOD enclosure.</span></span> <span data-ttu-id="a9432-110">Estas duas caixas, em seguida, são colocadas numa única caixa.</span><span class="sxs-lookup"><span data-stu-id="a9432-110">These two boxes are then placed in a single box.</span></span>
 
-### <a name="prepare-toounpack-your-device"></a>Preparar o seu dispositivo toounpack
-Antes de Descompacte o seu dispositivo, reveja Olá informações a seguir.
+### <a name="prepare-toounpack-your-device"></a><span data-ttu-id="a9432-111">Preparar o seu dispositivo toounpack</span><span class="sxs-lookup"><span data-stu-id="a9432-111">Prepare toounpack your device</span></span>
+<span data-ttu-id="a9432-112">Antes de Descompacte o seu dispositivo, reveja Olá informações a seguir.</span><span class="sxs-lookup"><span data-stu-id="a9432-112">Before you unpack your device, review hello following information.</span></span>
 
-![Ícone de aviso](./media/storsimple-safety/IC740879.png)![ícone de ponderação pesada](./media/storsimple-8600-hardware-installation/HCS_HeavyWeight_Icon.png) **aviso!**
+<span data-ttu-id="a9432-113">![Ícone de aviso](./media/storsimple-safety/IC740879.png)![ícone de ponderação pesada](./media/storsimple-8600-hardware-installation/HCS_HeavyWeight_Icon.png) **aviso!**</span><span class="sxs-lookup"><span data-stu-id="a9432-113">![Warning Icon](./media/storsimple-safety/IC740879.png)![heavy weight icon](./media/storsimple-8600-hardware-installation/HCS_HeavyWeight_Icon.png) **WARNING!**</span></span>
 
-1. Certifique-se de que tem duas pessoas toomanage disponíveis Olá peso de dispositivo Olá se são processamento manualmente. Um bastidor totalmente configurado pode pesar segurança too32 kg (70 lbs.).
-2. Coloque caixa Olá na superfície simples, nível.
+1. <span data-ttu-id="a9432-114">Certifique-se de que tem duas pessoas toomanage disponíveis Olá peso de dispositivo Olá se são processamento manualmente.</span><span class="sxs-lookup"><span data-stu-id="a9432-114">Make sure that you have two people available toomanage hello weight of hello device if you are handling it manually.</span></span> <span data-ttu-id="a9432-115">Um bastidor totalmente configurado pode pesar segurança too32 kg (70 lbs.).</span><span class="sxs-lookup"><span data-stu-id="a9432-115">A fully configured enclosure can weigh up too32 kg (70 lbs.).</span></span>
+2. <span data-ttu-id="a9432-116">Coloque caixa Olá na superfície simples, nível.</span><span class="sxs-lookup"><span data-stu-id="a9432-116">Place hello box on a flat, level surface.</span></span>
 
-Em seguida, conclua Olá toounpack passos a seguir o dispositivo.
+<span data-ttu-id="a9432-117">Em seguida, conclua Olá toounpack passos a seguir o dispositivo.</span><span class="sxs-lookup"><span data-stu-id="a9432-117">Next, complete hello following steps toounpack your device.</span></span>
 
-#### <a name="toounpack-your-device"></a>toounpack o dispositivo
-1. Inspecione caixa Olá e foam de empacotamento de Olá crushes, cuts, máximo danos ou quaisquer outros danos óbvios. Se a caixa de Olá ou empacotamento gravemente está danificado, não abra a caixa de Olá. . [Contacte a Microsoft Support](storsimple-contact-microsoft-support.md) toohelp avaliar se o dispositivo de Olá está por ordem bom funcionamento.
-2. Abrir a caixa externa Olá e, em seguida, remova Olá dois as caixas correspondentes tooprimary e inclusões EBOD. Agora pode descompactar Olá primário e inclusões EBOD. Olá figura a seguir mostra a vista de Olá descompactado de uma das caixas de Olá.
+#### <a name="toounpack-your-device"></a><span data-ttu-id="a9432-118">toounpack o dispositivo</span><span class="sxs-lookup"><span data-stu-id="a9432-118">toounpack your device</span></span>
+1. <span data-ttu-id="a9432-119">Inspecione caixa Olá e foam de empacotamento de Olá crushes, cuts, máximo danos ou quaisquer outros danos óbvios.</span><span class="sxs-lookup"><span data-stu-id="a9432-119">Inspect hello box and hello packaging foam for crushes, cuts, water damage, or any other obvious damage.</span></span> <span data-ttu-id="a9432-120">Se a caixa de Olá ou empacotamento gravemente está danificado, não abra a caixa de Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-120">If hello box or packaging is severely damaged, do not open hello box.</span></span> <span data-ttu-id="a9432-121">. [Contacte a Microsoft Support](storsimple-contact-microsoft-support.md) toohelp avaliar se o dispositivo de Olá está por ordem bom funcionamento.</span><span class="sxs-lookup"><span data-stu-id="a9432-121">Please [contact Microsoft Support](storsimple-contact-microsoft-support.md) toohelp you assess whether hello device is in good working order.</span></span>
+2. <span data-ttu-id="a9432-122">Abrir a caixa externa Olá e, em seguida, remova Olá dois as caixas correspondentes tooprimary e inclusões EBOD.</span><span class="sxs-lookup"><span data-stu-id="a9432-122">Open hello outer box and then take out hello two boxes corresponding tooprimary and EBOD enclosures.</span></span> <span data-ttu-id="a9432-123">Agora pode descompactar Olá primário e inclusões EBOD.</span><span class="sxs-lookup"><span data-stu-id="a9432-123">You can now unpack hello primary and EBOD enclosures.</span></span> <span data-ttu-id="a9432-124">Olá figura a seguir mostra a vista de Olá descompactado de uma das caixas de Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-124">hello following figure shows hello unpacked view of one of hello enclosures.</span></span>
    
     ![Descompacte o seu dispositivo de armazenamento](./media/storsimple-8600-hardware-installation/HCSUnpackyour4Udevice.png)
    
-    **Vista descompactada do seu dispositivo de armazenamento**
+    <span data-ttu-id="a9432-126">**Vista descompactada do seu dispositivo de armazenamento**</span><span class="sxs-lookup"><span data-stu-id="a9432-126">**Unpacked view of your storage device**</span></span>
    
-   | Etiqueta | Descrição |
+   | <span data-ttu-id="a9432-127">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="a9432-127">Label</span></span> | <span data-ttu-id="a9432-128">Descrição</span><span class="sxs-lookup"><span data-stu-id="a9432-128">Description</span></span> |
    | --- | --- |
-   |   1 |Caixa de mais |
-   |   2 |Cabos SAS (no tabuleiro acessórios e cabos) |
-   |   3 |Foam inferior |
-   |   4 |Dispositivo |
-   |   5 |Foam superior |
-   |   6 |Caixa acessórios |
-3. Após unpacking caixas Olá dois, certifique-se de que tem:
+   |   <span data-ttu-id="a9432-129">1</span><span class="sxs-lookup"><span data-stu-id="a9432-129">1</span></span> |<span data-ttu-id="a9432-130">Caixa de mais</span><span class="sxs-lookup"><span data-stu-id="a9432-130">Packing box</span></span> |
+   |   <span data-ttu-id="a9432-131">2</span><span class="sxs-lookup"><span data-stu-id="a9432-131">2</span></span> |<span data-ttu-id="a9432-132">Cabos SAS (no tabuleiro acessórios e cabos)</span><span class="sxs-lookup"><span data-stu-id="a9432-132">SAS cables (in accessories and cables tray)</span></span> |
+   |   <span data-ttu-id="a9432-133">3</span><span class="sxs-lookup"><span data-stu-id="a9432-133">3</span></span> |<span data-ttu-id="a9432-134">Foam inferior</span><span class="sxs-lookup"><span data-stu-id="a9432-134">Bottom foam</span></span> |
+   |   <span data-ttu-id="a9432-135">4</span><span class="sxs-lookup"><span data-stu-id="a9432-135">4</span></span> |<span data-ttu-id="a9432-136">Dispositivo</span><span class="sxs-lookup"><span data-stu-id="a9432-136">Device</span></span> |
+   |   <span data-ttu-id="a9432-137">5</span><span class="sxs-lookup"><span data-stu-id="a9432-137">5</span></span> |<span data-ttu-id="a9432-138">Foam superior</span><span class="sxs-lookup"><span data-stu-id="a9432-138">Top foam</span></span> |
+   |   <span data-ttu-id="a9432-139">6</span><span class="sxs-lookup"><span data-stu-id="a9432-139">6</span></span> |<span data-ttu-id="a9432-140">Caixa acessórios</span><span class="sxs-lookup"><span data-stu-id="a9432-140">Accessory box</span></span> |
+3. <span data-ttu-id="a9432-141">Após unpacking caixas Olá dois, certifique-se de que tem:</span><span class="sxs-lookup"><span data-stu-id="a9432-141">After unpacking hello two boxes, make sure that you have:</span></span>
    
-   * 1 inclusão principal (inclusão principal Olá e inclusão EBOD são nas duas caixas separadas)
-   * Inclusão EBOD 1
-   * 4 cabos, 2 em cada caixa de energia
-   * 2 cabos SAS (tooconnect Olá inclusão principal tooEBOD a inclusão de bastidor)
-   * 1 cruzado cabo de Ethernet
-   * 2 cabos de consola de série
-   * 1 USB de série conversor para acesso de série
-   * 4 QSFP-para-SFP + adaptadores para utilização com as interfaces de rede de 10 GbE
-   * 2 em Bastidor kits de montagem (o 4 rails de lado com montar hardware, 2 para inclusão principal Olá e inclusão EBOD), 1 em cada caixa
-   * Obter a documentação de introdução
+   * <span data-ttu-id="a9432-142">1 inclusão principal (inclusão principal Olá e inclusão EBOD são nas duas caixas separadas)</span><span class="sxs-lookup"><span data-stu-id="a9432-142">1 primary enclosure (hello primary enclosure and EBOD enclosure are in two separate boxes)</span></span>
+   * <span data-ttu-id="a9432-143">Inclusão EBOD 1</span><span class="sxs-lookup"><span data-stu-id="a9432-143">1 EBOD enclosure</span></span>
+   * <span data-ttu-id="a9432-144">4 cabos, 2 em cada caixa de energia</span><span class="sxs-lookup"><span data-stu-id="a9432-144">4 power cords, 2 in each box</span></span>
+   * <span data-ttu-id="a9432-145">2 cabos SAS (tooconnect Olá inclusão principal tooEBOD a inclusão de bastidor)</span><span class="sxs-lookup"><span data-stu-id="a9432-145">2 SAS cables (tooconnect hello primary enclosure tooEBOD enclosure)</span></span>
+   * <span data-ttu-id="a9432-146">1 cruzado cabo de Ethernet</span><span class="sxs-lookup"><span data-stu-id="a9432-146">1 crossover Ethernet cable</span></span>
+   * <span data-ttu-id="a9432-147">2 cabos de consola de série</span><span class="sxs-lookup"><span data-stu-id="a9432-147">2 serial console cables</span></span>
+   * <span data-ttu-id="a9432-148">1 USB de série conversor para acesso de série</span><span class="sxs-lookup"><span data-stu-id="a9432-148">1 serial-USB converter for serial access</span></span>
+   * <span data-ttu-id="a9432-149">4 QSFP-para-SFP + adaptadores para utilização com as interfaces de rede de 10 GbE</span><span class="sxs-lookup"><span data-stu-id="a9432-149">4 QSFP-to-SFP+ adapters for use with 10 GbE network interfaces</span></span>
+   * <span data-ttu-id="a9432-150">2 em Bastidor kits de montagem (o 4 rails de lado com montar hardware, 2 para inclusão principal Olá e inclusão EBOD), 1 em cada caixa</span><span class="sxs-lookup"><span data-stu-id="a9432-150">2 rack mount kits (4 side rails with mounting hardware, 2 each for hello primary enclosure and EBOD enclosure), 1 in each box</span></span>
+   * <span data-ttu-id="a9432-151">Obter a documentação de introdução</span><span class="sxs-lookup"><span data-stu-id="a9432-151">Getting started documentation</span></span>
      
-     Se não recebeu qualquer um dos itens de Olá listados acima, [contacte a Microsoft Support](storsimple-contact-microsoft-support.md).  
+     <span data-ttu-id="a9432-152">Se não recebeu qualquer um dos itens de Olá listados acima, [contacte a Microsoft Support](storsimple-contact-microsoft-support.md).</span><span class="sxs-lookup"><span data-stu-id="a9432-152">If you did not receive any of hello items listed above, [contact Microsoft Support](storsimple-contact-microsoft-support.md).</span></span>  
 
-passo seguinte Olá é toorack montagem seu dispositivo.
+<span data-ttu-id="a9432-153">passo seguinte Olá é toorack montagem seu dispositivo.</span><span class="sxs-lookup"><span data-stu-id="a9432-153">hello next step is toorack-mount your device.</span></span>
 
-## <a name="rack-mount-your-storsimple-8600-device"></a>Montar em Bastidor o dispositivo StorSimple 8600
-Siga Olá seguinte passos tooinstall o dispositivo de armazenamento StorSimple 8600 num bastidor 19 polegadas padrão com front-end e rear publicações. Este dispositivo é fornecida com dois inclusões: um bastidor primário e um bastidor EBOD. Ambos têm toobe eletrodomésticos montados.
+## <a name="rack-mount-your-storsimple-8600-device"></a><span data-ttu-id="a9432-154">Montar em Bastidor o dispositivo StorSimple 8600</span><span class="sxs-lookup"><span data-stu-id="a9432-154">Rack-mount your StorSimple 8600 device</span></span>
+<span data-ttu-id="a9432-155">Siga Olá seguinte passos tooinstall o dispositivo de armazenamento StorSimple 8600 num bastidor 19 polegadas padrão com front-end e rear publicações.</span><span class="sxs-lookup"><span data-stu-id="a9432-155">Follow hello next steps tooinstall your StorSimple 8600 storage device in a standard 19-inch rack with front and rear posts.</span></span> <span data-ttu-id="a9432-156">Este dispositivo é fornecida com dois inclusões: um bastidor primário e um bastidor EBOD.</span><span class="sxs-lookup"><span data-stu-id="a9432-156">This device comes with two enclosures: a primary enclosure and an EBOD enclosure.</span></span> <span data-ttu-id="a9432-157">Ambos têm toobe eletrodomésticos montados.</span><span class="sxs-lookup"><span data-stu-id="a9432-157">Both of these need toobe rack-mounted.</span></span>
 
-instalação de Olá é composta por vários passos, cada um dos quais é abordada em Olá os seguintes procedimentos.
+<span data-ttu-id="a9432-158">instalação de Olá é composta por vários passos, cada um dos quais é abordada em Olá os seguintes procedimentos.</span><span class="sxs-lookup"><span data-stu-id="a9432-158">hello installation consists of multiple steps, each of which is discussed in hello following procedures.</span></span>
 
 > [!IMPORTANT]
-> Dispositivos StorSimple tem de ser eletrodomésticos montados para um funcionamento correto.
+> <span data-ttu-id="a9432-159">Dispositivos StorSimple tem de ser eletrodomésticos montados para um funcionamento correto.</span><span class="sxs-lookup"><span data-stu-id="a9432-159">StorSimple devices must be rack-mounted for proper operation.</span></span>
 > 
 > 
 
-### <a name="site-preparation"></a>Preparação do site
-inclusões de Olá tem de ser instalados num bastidor 19 polegadas padrão que tenha o front-end e rear publicações. Utilize Olá seguir o procedimento tooprepare para a instalação de bastidor.
+### <a name="site-preparation"></a><span data-ttu-id="a9432-160">Preparação do site</span><span class="sxs-lookup"><span data-stu-id="a9432-160">Site preparation</span></span>
+<span data-ttu-id="a9432-161">inclusões de Olá tem de ser instalados num bastidor 19 polegadas padrão que tenha o front-end e rear publicações.</span><span class="sxs-lookup"><span data-stu-id="a9432-161">hello enclosures must be installed in a standard 19-inch rack that has both front and rear posts.</span></span> <span data-ttu-id="a9432-162">Utilize Olá seguir o procedimento tooprepare para a instalação de bastidor.</span><span class="sxs-lookup"><span data-stu-id="a9432-162">Use hello following procedure tooprepare for rack installation.</span></span>
 
-#### <a name="tooprepare-hello-site-for-rack-installation"></a>site de Olá tooprepare para a instalação de bastidor
-1. Certifique-se de que Olá primário e inclusões EBOD são resting em segurança numa superfície de trabalho simples, estável e nível (ou semelhante).
-2. Certifique-se esse site olá onde pretende tooset cópias de segurança tem de AC padrão de ativação de uma origem independente ou um bastidor de unidade de distribuição de energia (PDU) com um de alimentação ininterrupta (UPS).
-3. Certifique-se que ranhura de (2U de X 2) um 4U disponível no bastidor Olá no qual pretende inclusões de Olá toomount.
+#### <a name="tooprepare-hello-site-for-rack-installation"></a><span data-ttu-id="a9432-163">site de Olá tooprepare para a instalação de bastidor</span><span class="sxs-lookup"><span data-stu-id="a9432-163">tooprepare hello site for rack installation</span></span>
+1. <span data-ttu-id="a9432-164">Certifique-se de que Olá primário e inclusões EBOD são resting em segurança numa superfície de trabalho simples, estável e nível (ou semelhante).</span><span class="sxs-lookup"><span data-stu-id="a9432-164">Make sure that hello primary and EBOD enclosures are resting safely on a flat, stable, and level work surface (or similar).</span></span>
+2. <span data-ttu-id="a9432-165">Certifique-se esse site olá onde pretende tooset cópias de segurança tem de AC padrão de ativação de uma origem independente ou um bastidor de unidade de distribuição de energia (PDU) com um de alimentação ininterrupta (UPS).</span><span class="sxs-lookup"><span data-stu-id="a9432-165">Verify that hello site where you intend tooset up has standard AC power from an independent source or a rack Power Distribution Unit (PDU) with an uninterruptible power supply (UPS).</span></span>
+3. <span data-ttu-id="a9432-166">Certifique-se que ranhura de (2U de X 2) um 4U disponível no bastidor Olá no qual pretende inclusões de Olá toomount.</span><span class="sxs-lookup"><span data-stu-id="a9432-166">Make sure that one 4U (2 X 2U) slot is available on hello rack in which you intend toomount hello enclosures.</span></span>
 
-![Ícone de aviso](./media/storsimple-safety/IC740879.png)![ícone de ponderação pesada](./media/storsimple-8600-hardware-installation/HCS_HeavyWeight_Icon.png) **aviso!**
+<span data-ttu-id="a9432-167">![Ícone de aviso](./media/storsimple-safety/IC740879.png)![ícone de ponderação pesada](./media/storsimple-8600-hardware-installation/HCS_HeavyWeight_Icon.png) **aviso!**</span><span class="sxs-lookup"><span data-stu-id="a9432-167">![Warning Icon](./media/storsimple-safety/IC740879.png)![heavy weight icon](./media/storsimple-8600-hardware-installation/HCS_HeavyWeight_Icon.png) **WARNING!**</span></span>
 
- Certifique-se de que tem duas peso da Olá pessoas toomanage disponível se estiver a processar a configuração de dispositivo Olá manualmente. Um bastidor totalmente configurado pode pesar segurança too32 kg (70 lbs.).
+ <span data-ttu-id="a9432-168">Certifique-se de que tem duas peso da Olá pessoas toomanage disponível se estiver a processar a configuração de dispositivo Olá manualmente.</span><span class="sxs-lookup"><span data-stu-id="a9432-168">Make sure that you have two people available toomanage hello weight if you are handling hello device setup manually.</span></span> <span data-ttu-id="a9432-169">Um bastidor totalmente configurado pode pesar segurança too32 kg (70 lbs.).</span><span class="sxs-lookup"><span data-stu-id="a9432-169">A fully configured enclosure can weigh up too32 kg (70 lbs.).</span></span>
 
-### <a name="rack-prerequisites"></a>Pré-requisitos de bastidor
-inclusões de Olá foram concebidos para instalação num bastidor 19 polegadas padrão cab com:
+### <a name="rack-prerequisites"></a><span data-ttu-id="a9432-170">Pré-requisitos de bastidor</span><span class="sxs-lookup"><span data-stu-id="a9432-170">Rack prerequisites</span></span>
+<span data-ttu-id="a9432-171">inclusões de Olá foram concebidos para instalação num bastidor 19 polegadas padrão cab com:</span><span class="sxs-lookup"><span data-stu-id="a9432-171">hello enclosures are designed for installation in a standard 19-inch rack cabinet with:</span></span>
 
-* Profundidade mínima de polegadas 27.84 de bastidor publique toopost
-* Ponderação máxima de 32 kg para dispositivo Olá
-* Pressão de back-máximo de 5 Pascal (0.5 mm máximo medidor)
+* <span data-ttu-id="a9432-172">Profundidade mínima de polegadas 27.84 de bastidor publique toopost</span><span class="sxs-lookup"><span data-stu-id="a9432-172">Minimum depth of 27.84 inches from rack post toopost</span></span>
+* <span data-ttu-id="a9432-173">Ponderação máxima de 32 kg para dispositivo Olá</span><span class="sxs-lookup"><span data-stu-id="a9432-173">Maximum weight of 32 kg for hello device</span></span>
+* <span data-ttu-id="a9432-174">Pressão de back-máximo de 5 Pascal (0.5 mm máximo medidor)</span><span class="sxs-lookup"><span data-stu-id="a9432-174">Maximum back pressure of 5 Pascal (0.5 mm water gauge)</span></span>
 
-### <a name="rack-mounting-rail-kit"></a>Kit de lado de montagem de bastidor
-Um conjunto de montar rails será fornecido para utilização com o ficheiro CAB de bastidor 19 polegadas Olá. rails Olá foram testadas ponderação do toohandle Olá bastidor máximo. Estes rails também irão permitir a instalação de múltiplas inclusões sem perda de espaço no bastidor Olá. Instale a inclusão EBOD Olá primeiro.
+### <a name="rack-mounting-rail-kit"></a><span data-ttu-id="a9432-175">Kit de lado de montagem de bastidor</span><span class="sxs-lookup"><span data-stu-id="a9432-175">Rack-mounting rail kit</span></span>
+<span data-ttu-id="a9432-176">Um conjunto de montar rails será fornecido para utilização com o ficheiro CAB de bastidor 19 polegadas Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-176">A set of mounting rails will be provided for use with hello 19-inch rack cabinet.</span></span> <span data-ttu-id="a9432-177">rails Olá foram testadas ponderação do toohandle Olá bastidor máximo.</span><span class="sxs-lookup"><span data-stu-id="a9432-177">hello rails have been tested toohandle hello maximum enclosure weight.</span></span> <span data-ttu-id="a9432-178">Estes rails também irão permitir a instalação de múltiplas inclusões sem perda de espaço no bastidor Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-178">These rails will also allow installation of multiple enclosures without loss of space within hello rack.</span></span> <span data-ttu-id="a9432-179">Instale a inclusão EBOD Olá primeiro.</span><span class="sxs-lookup"><span data-stu-id="a9432-179">Install hello EBOD enclosure first.</span></span>
 
-#### <a name="tooinstall-hello-ebod-enclosure-on-hello-rails"></a>Olá tooinstall bastidor EBOD no rails Olá
-1. Execute este passo apenas se rails internas não estão instalados no seu dispositivo. Normalmente, rails interna Olá são instalados na fábrica de Olá. Se rails não estiver instalados, instale os lados de toohello Olá slides lado esquerdo e do lado direito de chassis de inclusão de Olá. Se anexar utilizando seis screws métricas em cada lado. toohelp com orientação, lado Olá slides estão marcados **LH – frente** e **RH – frente**, e de fim Olá que é affixed para rear Olá de inclusão de Olá tem um fim tapered.
+#### <a name="tooinstall-hello-ebod-enclosure-on-hello-rails"></a><span data-ttu-id="a9432-180">Olá tooinstall bastidor EBOD no rails Olá</span><span class="sxs-lookup"><span data-stu-id="a9432-180">tooinstall hello EBOD enclosure on hello rails</span></span>
+1. <span data-ttu-id="a9432-181">Execute este passo apenas se rails internas não estão instalados no seu dispositivo.</span><span class="sxs-lookup"><span data-stu-id="a9432-181">Perform this step only if inner rails are not installed on your device.</span></span> <span data-ttu-id="a9432-182">Normalmente, rails interna Olá são instalados na fábrica de Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-182">Typically, hello inner rails are installed at hello factory.</span></span> <span data-ttu-id="a9432-183">Se rails não estiver instalados, instale os lados de toohello Olá slides lado esquerdo e do lado direito de chassis de inclusão de Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-183">If rails are not installed, then install hello left-rail and right-rail slides toohello sides of hello enclosure chassis.</span></span> <span data-ttu-id="a9432-184">Se anexar utilizando seis screws métricas em cada lado.</span><span class="sxs-lookup"><span data-stu-id="a9432-184">They attach using six metric screws on each side.</span></span> <span data-ttu-id="a9432-185">toohelp com orientação, lado Olá slides estão marcados **LH – frente** e **RH – frente**, e de fim Olá que é affixed para rear Olá de inclusão de Olá tem um fim tapered.</span><span class="sxs-lookup"><span data-stu-id="a9432-185">toohelp with orientation, hello rail slides are marked **LH – Front** and **RH – Front**, and hello end that is affixed towards hello rear of hello enclosure has a tapered end.</span></span>
    
     ![Anexar lado slides tooenclosure chassis](./media/storsimple-8600-hardware-installation/HCSAttachingRailSlidestoEnclosureChassis.png)
    
-    **Anexar lado slides toohello lados de inclusão de Olá**
+    <span data-ttu-id="a9432-187">**Anexar lado slides toohello lados de inclusão de Olá**</span><span class="sxs-lookup"><span data-stu-id="a9432-187">**Attaching rail slides toohello sides of hello enclosure**</span></span>
    
-   | Etiqueta | Descrição |
+   | <span data-ttu-id="a9432-188">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="a9432-188">Label</span></span> | <span data-ttu-id="a9432-189">Descrição</span><span class="sxs-lookup"><span data-stu-id="a9432-189">Description</span></span> |
    | --- | --- |
-   |  1 |M, 3, 4 screws head do botão |
-   |  2 |Slides de chassis |
-2. Anexe o lado esquerdo Olá e lado direito assemblagens toohello bastidor cab vertical membros. Retos Olá estão marcados **LH**, **RH**, e **este lado segurança** tooguide que sentido correcto.
-3. Localize os pins de lado de Olá em frente Olá e rear da assemblagem de lado de Olá. Expandir Olá lado toofit entre Olá bastidor publicações e inserir pins Olá holes de membro vertical Olá front e rear bastidor post. Lembre-se de que a assemblagem de lado de Olá ser nível.
-4. Proteja Olá bastidor toohello assemblagem de lado membros verticais utilizando dois screws métrica Olá fornecidos. Utilize um screw em frente Olá e um rear Olá.
-5. Repita estes passos para Olá outra assemblagem lado.
+   |  <span data-ttu-id="a9432-190">1</span><span class="sxs-lookup"><span data-stu-id="a9432-190">1</span></span> |<span data-ttu-id="a9432-191">M, 3, 4 screws head do botão</span><span class="sxs-lookup"><span data-stu-id="a9432-191">M 3x4 button-head screws</span></span> |
+   |  <span data-ttu-id="a9432-192">2</span><span class="sxs-lookup"><span data-stu-id="a9432-192">2</span></span> |<span data-ttu-id="a9432-193">Slides de chassis</span><span class="sxs-lookup"><span data-stu-id="a9432-193">Chassis slides</span></span> |
+2. <span data-ttu-id="a9432-194">Anexe o lado esquerdo Olá e lado direito assemblagens toohello bastidor cab vertical membros.</span><span class="sxs-lookup"><span data-stu-id="a9432-194">Attach hello left rail and right rail assemblies toohello rack cabinet vertical members.</span></span> <span data-ttu-id="a9432-195">Retos Olá estão marcados **LH**, **RH**, e **este lado segurança** tooguide que sentido correcto.</span><span class="sxs-lookup"><span data-stu-id="a9432-195">hello brackets are marked **LH**, **RH**, and **This side up** tooguide you through correct orientation.</span></span>
+3. <span data-ttu-id="a9432-196">Localize os pins de lado de Olá em frente Olá e rear da assemblagem de lado de Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-196">Locate hello rail pins at hello front and rear of hello rail assembly.</span></span> <span data-ttu-id="a9432-197">Expandir Olá lado toofit entre Olá bastidor publicações e inserir pins Olá holes de membro vertical Olá front e rear bastidor post.</span><span class="sxs-lookup"><span data-stu-id="a9432-197">Extend hello rail toofit between hello rack posts and insert hello pins into hello front and rear-rack post vertical member holes.</span></span> <span data-ttu-id="a9432-198">Lembre-se de que a assemblagem de lado de Olá ser nível.</span><span class="sxs-lookup"><span data-stu-id="a9432-198">Be sure that hello rail assembly is level.</span></span>
+4. <span data-ttu-id="a9432-199">Proteja Olá bastidor toohello assemblagem de lado membros verticais utilizando dois screws métrica Olá fornecidos.</span><span class="sxs-lookup"><span data-stu-id="a9432-199">Secure hello rail assembly toohello rack vertical members by using two of hello metric screws provided.</span></span> <span data-ttu-id="a9432-200">Utilize um screw em frente Olá e um rear Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-200">Use one screw on hello front and one on hello rear.</span></span>
+5. <span data-ttu-id="a9432-201">Repita estes passos para Olá outra assemblagem lado.</span><span class="sxs-lookup"><span data-stu-id="a9432-201">Repeat these steps for hello other rail assembly.</span></span>
    
      ![Anexar lado slides toorack Cab](./media/storsimple-8600-hardware-installation/HCSAttachingRailSlidestoRackCabinet.png)
    
-    **A anexar o bastidor de toohello de assemblagens lado**
+    <span data-ttu-id="a9432-203">**A anexar o bastidor de toohello de assemblagens lado**</span><span class="sxs-lookup"><span data-stu-id="a9432-203">**Attaching rail assemblies toohello rack**</span></span>
    
-   | Etiqueta | Descrição |
+   | <span data-ttu-id="a9432-204">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="a9432-204">Label</span></span> | <span data-ttu-id="a9432-205">Descrição</span><span class="sxs-lookup"><span data-stu-id="a9432-205">Description</span></span> |
    | --- | --- |
-   |   1 |Clamping screw |
-   |   2 |Bastidor quadrada hole de front-post screw |
-   |   3 |À esquerda pins de localização de lado de front- |
-   |   4 |Clamping screw |
-   |   5 |Pins de localização do lado esquerdo de rear |
+   |   <span data-ttu-id="a9432-206">1</span><span class="sxs-lookup"><span data-stu-id="a9432-206">1</span></span> |<span data-ttu-id="a9432-207">Clamping screw</span><span class="sxs-lookup"><span data-stu-id="a9432-207">Clamping screw</span></span> |
+   |   <span data-ttu-id="a9432-208">2</span><span class="sxs-lookup"><span data-stu-id="a9432-208">2</span></span> |<span data-ttu-id="a9432-209">Bastidor quadrada hole de front-post screw</span><span class="sxs-lookup"><span data-stu-id="a9432-209">Square-hole front rack post screw</span></span> |
+   |   <span data-ttu-id="a9432-210">3</span><span class="sxs-lookup"><span data-stu-id="a9432-210">3</span></span> |<span data-ttu-id="a9432-211">À esquerda pins de localização de lado de front-</span><span class="sxs-lookup"><span data-stu-id="a9432-211">Left front rail location pins</span></span> |
+   |   <span data-ttu-id="a9432-212">4</span><span class="sxs-lookup"><span data-stu-id="a9432-212">4</span></span> |<span data-ttu-id="a9432-213">Clamping screw</span><span class="sxs-lookup"><span data-stu-id="a9432-213">Clamping screw</span></span> |
+   |   <span data-ttu-id="a9432-214">5</span><span class="sxs-lookup"><span data-stu-id="a9432-214">5</span></span> |<span data-ttu-id="a9432-215">Pins de localização do lado esquerdo de rear</span><span class="sxs-lookup"><span data-stu-id="a9432-215">Left rear rail location pins</span></span> |
 
-### <a name="mounting-hello-ebod-enclosure-in-hello-rack"></a>Montar a inclusão EBOD Olá num bastidor Olá
-Utilizando rails de bastidor Olá que apenas foram instaladas, execute Olá os seguintes passos toomount Olá EBOD a inclusão de bastidor num bastidor Olá.
+### <a name="mounting-hello-ebod-enclosure-in-hello-rack"></a><span data-ttu-id="a9432-216">Montar a inclusão EBOD Olá num bastidor Olá</span><span class="sxs-lookup"><span data-stu-id="a9432-216">Mounting hello EBOD enclosure in hello rack</span></span>
+<span data-ttu-id="a9432-217">Utilizando rails de bastidor Olá que apenas foram instaladas, execute Olá os seguintes passos toomount Olá EBOD a inclusão de bastidor num bastidor Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-217">Using hello rack rails that were just installed, perform hello following steps toomount hello EBOD enclosure in hello rack.</span></span>
 
-#### <a name="toomount-hello-ebod-enclosure"></a>Olá toomount bastidor EBOD
-1. Com um assistente, bastidor Olá de comparação de precisão e alinhá-lo com rails de bastidor Olá.
-2. Cuidadosamente inserir bastidor Olá rails Olá e, em seguida, enviá-lo completamente no bastidor Olá Cab.
+#### <a name="toomount-hello-ebod-enclosure"></a><span data-ttu-id="a9432-218">Olá toomount bastidor EBOD</span><span class="sxs-lookup"><span data-stu-id="a9432-218">toomount hello EBOD enclosure</span></span>
+1. <span data-ttu-id="a9432-219">Com um assistente, bastidor Olá de comparação de precisão e alinhá-lo com rails de bastidor Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-219">With an assistant, lift hello enclosure and align it with hello rack rails.</span></span>
+2. <span data-ttu-id="a9432-220">Cuidadosamente inserir bastidor Olá rails Olá e, em seguida, enviá-lo completamente no bastidor Olá Cab.</span><span class="sxs-lookup"><span data-stu-id="a9432-220">Carefully insert hello enclosure into hello rails, and then push it completely into hello rack cabinet.</span></span>
    
     ![A inserir o dispositivo num bastidor Olá](./media/storsimple-8600-hardware-installation/HCSInsertingDeviceintheRack.png)
    
-    **Montar a inclusão de Olá num bastidor Olá**
-3. Remova Olá esquerda e caps flange direito front ao extrair caps Olá livres. caps de flange Olá simplesmente snap no Olá flanges.
-4. Proteja o bastidor Olá em Bastidor Olá instalando um screw Phillips head fornecido através de cada flange, esquerda e da direita.
-5. Instale o caps de flange Olá ao premi-los numa posição e ajuste-los no local.
+    <span data-ttu-id="a9432-222">**Montar a inclusão de Olá num bastidor Olá**</span><span class="sxs-lookup"><span data-stu-id="a9432-222">**Mounting hello enclosure in hello rack**</span></span>
+3. <span data-ttu-id="a9432-223">Remova Olá esquerda e caps flange direito front ao extrair caps Olá livres.</span><span class="sxs-lookup"><span data-stu-id="a9432-223">Remove hello left and right front flange caps by pulling hello caps free.</span></span> <span data-ttu-id="a9432-224">caps de flange Olá simplesmente snap no Olá flanges.</span><span class="sxs-lookup"><span data-stu-id="a9432-224">hello flange caps simply snap onto hello flanges.</span></span>
+4. <span data-ttu-id="a9432-225">Proteja o bastidor Olá em Bastidor Olá instalando um screw Phillips head fornecido através de cada flange, esquerda e da direita.</span><span class="sxs-lookup"><span data-stu-id="a9432-225">Secure hello enclosure into hello rack by installing one provided Phillips-head screw through each flange, left and right.</span></span>
+5. <span data-ttu-id="a9432-226">Instale o caps de flange Olá ao premi-los numa posição e ajuste-los no local.</span><span class="sxs-lookup"><span data-stu-id="a9432-226">Install hello flange caps by pressing them into position and snapping them into place.</span></span>
    
      ![Instalar a funcionalidade caps de flange](./media/storsimple-8600-hardware-installation/HCSInstallingFlangeCaps.png)
    
-    **Instalar a funcionalidade caps de flange Olá**
+    <span data-ttu-id="a9432-228">**Instalar a funcionalidade caps de flange Olá**</span><span class="sxs-lookup"><span data-stu-id="a9432-228">**Installing hello flange caps**</span></span>
    
-   | Etiqueta | Descrição |
+   | <span data-ttu-id="a9432-229">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="a9432-229">Label</span></span> | <span data-ttu-id="a9432-230">Descrição</span><span class="sxs-lookup"><span data-stu-id="a9432-230">Description</span></span> |
    | --- | --- |
-   |   1 |Screw fastening de inclusão |
+   |   <span data-ttu-id="a9432-231">1</span><span class="sxs-lookup"><span data-stu-id="a9432-231">1</span></span> |<span data-ttu-id="a9432-232">Screw fastening de inclusão</span><span class="sxs-lookup"><span data-stu-id="a9432-232">Enclosure fastening screw</span></span> |
 
-### <a name="mounting-hello-primary-enclosure-in-hello-rack"></a>Montar a inclusão principal do Olá num bastidor Olá
-Depois de concluída a montar a inclusão EBOD Olá, terá de inclusão principal do toomount Olá seguinte Olá mesmos passos.
+### <a name="mounting-hello-primary-enclosure-in-hello-rack"></a><span data-ttu-id="a9432-233">Montar a inclusão principal do Olá num bastidor Olá</span><span class="sxs-lookup"><span data-stu-id="a9432-233">Mounting hello primary enclosure in hello rack</span></span>
+<span data-ttu-id="a9432-234">Depois de concluída a montar a inclusão EBOD Olá, terá de inclusão principal do toomount Olá seguinte Olá mesmos passos.</span><span class="sxs-lookup"><span data-stu-id="a9432-234">After you have finished mounting hello EBOD enclosure, you will need toomount hello primary enclosure following hello same steps.</span></span>
 
 > [!NOTE]
-> * É possível toohave alguns ranhuras vazias no Olá em Bastidor entre inclusão principal Olá e inclusão EBOD Olá.
-> * Utilize Olá fornecido 2m SAS cabo tooconnect Olá inclusão principal toohello EBOD inclusão.
-> * Não existem sem restrições de posicionamento relativo de Olá de Olá head unidade toohello EBOD unidade. Por conseguinte, bastidor primário Olá pode ser colocado na ranhura superior Olá e inclusão EBOD Olá abaixo — ou vice-versa.
+> * <span data-ttu-id="a9432-235">É possível toohave alguns ranhuras vazias no Olá em Bastidor entre inclusão principal Olá e inclusão EBOD Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-235">It is possible toohave a few empty slots in hello rack between hello primary enclosure and hello EBOD enclosure.</span></span>
+> * <span data-ttu-id="a9432-236">Utilize Olá fornecido 2m SAS cabo tooconnect Olá inclusão principal toohello EBOD inclusão.</span><span class="sxs-lookup"><span data-stu-id="a9432-236">Use hello provided 2m SAS cable tooconnect hello primary enclosure toohello EBOD enclosure.</span></span>
+> * <span data-ttu-id="a9432-237">Não existem sem restrições de posicionamento relativo de Olá de Olá head unidade toohello EBOD unidade.</span><span class="sxs-lookup"><span data-stu-id="a9432-237">There are no constraints on hello relative placement of hello head unit toohello EBOD unit.</span></span> <span data-ttu-id="a9432-238">Por conseguinte, bastidor primário Olá pode ser colocado na ranhura superior Olá e inclusão EBOD Olá abaixo — ou vice-versa.</span><span class="sxs-lookup"><span data-stu-id="a9432-238">Therefore, hello primary enclosure can be placed in hello top slot and hello EBOD enclosure below — or vice versa.</span></span>
 > 
 > 
 
-passo seguinte Olá é toocable o dispositivo de alimentação, rede e acesso de série.
+<span data-ttu-id="a9432-239">passo seguinte Olá é toocable o dispositivo de alimentação, rede e acesso de série.</span><span class="sxs-lookup"><span data-stu-id="a9432-239">hello next step is toocable your device for power, network, and serial access.</span></span>
 
-## <a name="cable-your-storsimple-8600-device"></a>Instalar os cabos do dispositivo StorSimple 8600
-Olá procedimentos seguintes explicam como toocable dispositivo StorSimple 8600 de alimentação, rede e ligações de série.
+## <a name="cable-your-storsimple-8600-device"></a><span data-ttu-id="a9432-240">Instalar os cabos do dispositivo StorSimple 8600</span><span class="sxs-lookup"><span data-stu-id="a9432-240">Cable your StorSimple 8600 device</span></span>
+<span data-ttu-id="a9432-241">Olá procedimentos seguintes explicam como toocable dispositivo StorSimple 8600 de alimentação, rede e ligações de série.</span><span class="sxs-lookup"><span data-stu-id="a9432-241">hello following procedures explain how toocable your StorSimple 8600 device for power, network, and serial connections.</span></span>
 
-### <a name="prerequisites"></a>Pré-requisitos
-Antes de começar toocable do seu dispositivo, terá de:
+### <a name="prerequisites"></a><span data-ttu-id="a9432-242">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="a9432-242">Prerequisites</span></span>
+<span data-ttu-id="a9432-243">Antes de começar toocable do seu dispositivo, terá de:</span><span class="sxs-lookup"><span data-stu-id="a9432-243">Before you begin toocable your device, you will need:</span></span>
 
-* A inclusão principal e a inclusão EBOD Olá, completamente descompactado
-* 4 cabos de energia (2 cada para Olá primário e Olá bastidor EBOD) fornecido com o seu dispositivo
-* 2 cabos SAS fornecido com Olá do Olá dispositivo tooconnect inclusão principal do EBOD bastidor toohello
-* Acesso too2 energia unidades de distribuição (PDUs) (recomendado)
-* Cabos de rede
-* Fornecido cabos de série
-* Conversor de USB de série com o controlador adequado Olá instalado no seu PC (se necessário)
-* Fornecido 4 QSFP-para-SFP + adaptadores para utilização com as interfaces de rede de 10 GbE
-* [Hardware suportado para interfaces de rede Olá 10 GbE no dispositivo StorSimple](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
+* <span data-ttu-id="a9432-244">A inclusão principal e a inclusão EBOD Olá, completamente descompactado</span><span class="sxs-lookup"><span data-stu-id="a9432-244">Your primary enclosure and hello EBOD enclosure, completely unpacked</span></span>
+* <span data-ttu-id="a9432-245">4 cabos de energia (2 cada para Olá primário e Olá bastidor EBOD) fornecido com o seu dispositivo</span><span class="sxs-lookup"><span data-stu-id="a9432-245">4 power cables (2 each for hello primary and hello EBOD enclosure) that came with your device</span></span>
+* <span data-ttu-id="a9432-246">2 cabos SAS fornecido com Olá do Olá dispositivo tooconnect inclusão principal do EBOD bastidor toohello</span><span class="sxs-lookup"><span data-stu-id="a9432-246">2 SAS cables supplied with hello device tooconnect hello EBOD enclosure toohello primary enclosure</span></span>
+* <span data-ttu-id="a9432-247">Acesso too2 energia unidades de distribuição (PDUs) (recomendado)</span><span class="sxs-lookup"><span data-stu-id="a9432-247">Access too2 Power Distribution Units (PDUs) (recommended)</span></span>
+* <span data-ttu-id="a9432-248">Cabos de rede</span><span class="sxs-lookup"><span data-stu-id="a9432-248">Network cables</span></span>
+* <span data-ttu-id="a9432-249">Fornecido cabos de série</span><span class="sxs-lookup"><span data-stu-id="a9432-249">Provided serial cables</span></span>
+* <span data-ttu-id="a9432-250">Conversor de USB de série com o controlador adequado Olá instalado no seu PC (se necessário)</span><span class="sxs-lookup"><span data-stu-id="a9432-250">Serial-USB converter with hello appropriate driver installed on your PC (if needed)</span></span>
+* <span data-ttu-id="a9432-251">Fornecido 4 QSFP-para-SFP + adaptadores para utilização com as interfaces de rede de 10 GbE</span><span class="sxs-lookup"><span data-stu-id="a9432-251">Provided 4 QSFP-to-SFP+ adapters for use with 10 GbE network interfaces</span></span>
+* [<span data-ttu-id="a9432-252">Hardware suportado para interfaces de rede Olá 10 GbE no dispositivo StorSimple</span><span class="sxs-lookup"><span data-stu-id="a9432-252">Supported hardware for hello 10 GbE network interfaces on your StorSimple device</span></span>](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
 
-### <a name="sas-and-power-cabling"></a>SAS e de cabos de energia
-O dispositivo tem um bastidor primário e um bastidor EBOD. Isto requer Olá unidades toobe instalou os cabos em conjunto para conectividade Serial Attached SCSI (SAS) e de energia.
+### <a name="sas-and-power-cabling"></a><span data-ttu-id="a9432-253">SAS e de cabos de energia</span><span class="sxs-lookup"><span data-stu-id="a9432-253">SAS and Power cabling</span></span>
+<span data-ttu-id="a9432-254">O dispositivo tem um bastidor primário e um bastidor EBOD.</span><span class="sxs-lookup"><span data-stu-id="a9432-254">Your device has both a primary enclosure and an EBOD enclosure.</span></span> <span data-ttu-id="a9432-255">Isto requer Olá unidades toobe instalou os cabos em conjunto para conectividade Serial Attached SCSI (SAS) e de energia.</span><span class="sxs-lookup"><span data-stu-id="a9432-255">This requires hello units toobe cabled together for Serial Attached SCSI (SAS) connectivity and power.</span></span>
 
-Quando configurar este dispositivo para Olá pela primeira vez, execute os passos de Olá para SAS cablagem pela primeira vez e Olá, em seguida, concluir os passos para power cablagem.
+<span data-ttu-id="a9432-256">Quando configurar este dispositivo para Olá pela primeira vez, execute os passos de Olá para SAS cablagem pela primeira vez e Olá, em seguida, concluir os passos para power cablagem.</span><span class="sxs-lookup"><span data-stu-id="a9432-256">When setting up this device for hello first time, perform hello steps for SAS cabling first and then complete hello steps for power cabling.</span></span>
 
 [!INCLUDE [storsimple-cable-8600-for-SAS](../../includes/storsimple-sas-cable-8600.md)]
 
 [!INCLUDE [storsimple-cable-8600-for-power](../../includes/storsimple-cable-8600-for-power.md)]
 
-### <a name="network-cabling"></a>Cabos de rede
-O seu dispositivo é uma configuração de modo de espera ativo: em qualquer momento, um módulo de controlador está ativo e processar todas as operações de disco e da rede ao hello outro módulo controlador está no modo de espera. Se ocorrer uma falha de controlador, controlador de reserva dinâmica Olá ativa imediatamente e continua a todas as operações de disco e de rede de Olá.
+### <a name="network-cabling"></a><span data-ttu-id="a9432-257">Cabos de rede</span><span class="sxs-lookup"><span data-stu-id="a9432-257">Network cabling</span></span>
+<span data-ttu-id="a9432-258">O seu dispositivo é uma configuração de modo de espera ativo: em qualquer momento, um módulo de controlador está ativo e processar todas as operações de disco e da rede ao hello outro módulo controlador está no modo de espera.</span><span class="sxs-lookup"><span data-stu-id="a9432-258">Your device is in an active-standby configuration: at any given time, one controller module is active and processing all disk and network operations while hello other controller module is on standby.</span></span> <span data-ttu-id="a9432-259">Se ocorrer uma falha de controlador, controlador de reserva dinâmica Olá ativa imediatamente e continua a todas as operações de disco e de rede de Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-259">If a controller failure occurs, hello standby controller immediately activates and continues all hello disk and networking operations.</span></span>
 
-toosupport esta ativação pós-falha controlador redundante, terá de toocable o dispositivo de rede conforme mostrado no Olá os seguintes passos.
+<span data-ttu-id="a9432-260">toosupport esta ativação pós-falha controlador redundante, terá de toocable o dispositivo de rede conforme mostrado no Olá os seguintes passos.</span><span class="sxs-lookup"><span data-stu-id="a9432-260">toosupport this redundant controller failover, you need toocable your device network as shown in hello following steps.</span></span>
 
-#### <a name="toocable-for-network-connection"></a>toocable para ligação de rede
-1. O dispositivo tem seis interfaces de rede em cada controlador: quatro 1 Gbps e 10 de duas portas Gbps Ethernet. Consulte toohello seguindo as portas de dados do ilustração tooidentify Olá do Olá backplane do seu dispositivo.
+#### <a name="toocable-for-network-connection"></a><span data-ttu-id="a9432-261">toocable para ligação de rede</span><span class="sxs-lookup"><span data-stu-id="a9432-261">toocable for network connection</span></span>
+1. <span data-ttu-id="a9432-262">O dispositivo tem seis interfaces de rede em cada controlador: quatro 1 Gbps e 10 de duas portas Gbps Ethernet.</span><span class="sxs-lookup"><span data-stu-id="a9432-262">Your device has six network interfaces on each controller: four 1 Gbps and two 10 Gbps Ethernet ports.</span></span> <span data-ttu-id="a9432-263">Consulte toohello seguindo as portas de dados do ilustração tooidentify Olá do Olá backplane do seu dispositivo.</span><span class="sxs-lookup"><span data-stu-id="a9432-263">Refer toohello following illustration tooidentify hello data ports on hello backplane of your device.</span></span>
    
      ![Backplane do dispositivo 8600](./media/storsimple-8600-hardware-installation/HCSBackplaneof2UDevicewithPortsLabeled.jpg)
    
-    **Efetue uma cópia do seu dispositivo que mostra o Olá portas de dados**
+    <span data-ttu-id="a9432-265">**Efetue uma cópia do seu dispositivo que mostra o Olá portas de dados**</span><span class="sxs-lookup"><span data-stu-id="a9432-265">**Back of your device showing hello data ports**</span></span>
    
-   | Etiqueta | Descrição |
+   | <span data-ttu-id="a9432-266">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="a9432-266">Label</span></span> | <span data-ttu-id="a9432-267">Descrição</span><span class="sxs-lookup"><span data-stu-id="a9432-267">Description</span></span> |
    | --- | --- |
-   |   0,1,4,5 |Interfaces de rede de 1 GbE |
-   |   2,3 |Interfaces de rede de 10 GbE |
-   |   6 |Portas série |
-2. Consulte Olá seguinte diagrama de cabos de rede. (a configuração de rede mínimas Olá é apresentada por linhas azuis sólidas. Para elevada disponibilidade e desempenho, necessária configuração adicional é apresentada por linhas ponteada.)
+   |   <span data-ttu-id="a9432-268">0,1,4,5</span><span class="sxs-lookup"><span data-stu-id="a9432-268">0,1,4,5</span></span> |<span data-ttu-id="a9432-269">Interfaces de rede de 1 GbE</span><span class="sxs-lookup"><span data-stu-id="a9432-269">1 GbE network interfaces</span></span> |
+   |   <span data-ttu-id="a9432-270">2,3</span><span class="sxs-lookup"><span data-stu-id="a9432-270">2,3</span></span> |<span data-ttu-id="a9432-271">Interfaces de rede de 10 GbE</span><span class="sxs-lookup"><span data-stu-id="a9432-271">10 GbE network interfaces</span></span> |
+   |   <span data-ttu-id="a9432-272">6</span><span class="sxs-lookup"><span data-stu-id="a9432-272">6</span></span> |<span data-ttu-id="a9432-273">Portas série</span><span class="sxs-lookup"><span data-stu-id="a9432-273">Serial ports</span></span> |
+2. <span data-ttu-id="a9432-274">Consulte Olá seguinte diagrama de cabos de rede.</span><span class="sxs-lookup"><span data-stu-id="a9432-274">See hello following diagram for network cabling.</span></span> <span data-ttu-id="a9432-275">(a configuração de rede mínimas Olá é apresentada por linhas azuis sólidas.</span><span class="sxs-lookup"><span data-stu-id="a9432-275">(hello minimum network configuration is shown by solid blue lines.</span></span> <span data-ttu-id="a9432-276">Para elevada disponibilidade e desempenho, necessária configuração adicional é apresentada por linhas ponteada.)</span><span class="sxs-lookup"><span data-stu-id="a9432-276">For high availability and performance, additional configuration required is shown by dotted lines.)</span></span>
 
 ![Instalar os cabos do dispositivo de rede 4U](./media/storsimple-8600-hardware-installation/HCSCableYour4UDeviceforNetwork.png)
 
-**Cablagem para o seu dispositivo de rede**
+<span data-ttu-id="a9432-278">**Cablagem para o seu dispositivo de rede**</span><span class="sxs-lookup"><span data-stu-id="a9432-278">**Network cabling for your device**</span></span>
 
-| Etiqueta | Descrição |
+| <span data-ttu-id="a9432-279">Etiqueta</span><span class="sxs-lookup"><span data-stu-id="a9432-279">Label</span></span> | <span data-ttu-id="a9432-280">Descrição</span><span class="sxs-lookup"><span data-stu-id="a9432-280">Description</span></span> |
 | --- | --- |
-| A |LAN com acesso à Internet |
-| B |Controlador 0 |
-| C |PCM 0 |
-| D |Controlador 1 |
-| I |PCM 1 |
-| F |Controlador EBOD 0 |
-| G |Controlador EBOD 1 |
-| H, POSSO |Anfitriões (por exemplo, servidores de ficheiros) |
-| 0-5 |Interfaces de rede |
-| 6 |Inclusão principal |
-| 7 |Inclusão EBOD |
+| <span data-ttu-id="a9432-281">A</span><span class="sxs-lookup"><span data-stu-id="a9432-281">A</span></span> |<span data-ttu-id="a9432-282">LAN com acesso à Internet</span><span class="sxs-lookup"><span data-stu-id="a9432-282">LAN with Internet access</span></span> |
+| <span data-ttu-id="a9432-283">B</span><span class="sxs-lookup"><span data-stu-id="a9432-283">B</span></span> |<span data-ttu-id="a9432-284">Controlador 0</span><span class="sxs-lookup"><span data-stu-id="a9432-284">Controller 0</span></span> |
+| <span data-ttu-id="a9432-285">C</span><span class="sxs-lookup"><span data-stu-id="a9432-285">C</span></span> |<span data-ttu-id="a9432-286">PCM 0</span><span class="sxs-lookup"><span data-stu-id="a9432-286">PCM 0</span></span> |
+| <span data-ttu-id="a9432-287">D</span><span class="sxs-lookup"><span data-stu-id="a9432-287">D</span></span> |<span data-ttu-id="a9432-288">Controlador 1</span><span class="sxs-lookup"><span data-stu-id="a9432-288">Controller 1</span></span> |
+| <span data-ttu-id="a9432-289">I</span><span class="sxs-lookup"><span data-stu-id="a9432-289">E</span></span> |<span data-ttu-id="a9432-290">PCM 1</span><span class="sxs-lookup"><span data-stu-id="a9432-290">PCM 1</span></span> |
+| <span data-ttu-id="a9432-291">F</span><span class="sxs-lookup"><span data-stu-id="a9432-291">F</span></span> |<span data-ttu-id="a9432-292">Controlador EBOD 0</span><span class="sxs-lookup"><span data-stu-id="a9432-292">EBOD controller 0</span></span> |
+| <span data-ttu-id="a9432-293">G</span><span class="sxs-lookup"><span data-stu-id="a9432-293">G</span></span> |<span data-ttu-id="a9432-294">Controlador EBOD 1</span><span class="sxs-lookup"><span data-stu-id="a9432-294">EBOD controller 1</span></span> |
+| <span data-ttu-id="a9432-295">H, POSSO</span><span class="sxs-lookup"><span data-stu-id="a9432-295">H,I</span></span> |<span data-ttu-id="a9432-296">Anfitriões (por exemplo, servidores de ficheiros)</span><span class="sxs-lookup"><span data-stu-id="a9432-296">Hosts (for example, file servers)</span></span> |
+| <span data-ttu-id="a9432-297">0-5</span><span class="sxs-lookup"><span data-stu-id="a9432-297">0-5</span></span> |<span data-ttu-id="a9432-298">Interfaces de rede</span><span class="sxs-lookup"><span data-stu-id="a9432-298">Network interfaces</span></span> |
+| <span data-ttu-id="a9432-299">6</span><span class="sxs-lookup"><span data-stu-id="a9432-299">6</span></span> |<span data-ttu-id="a9432-300">Inclusão principal</span><span class="sxs-lookup"><span data-stu-id="a9432-300">Primary enclosure</span></span> |
+| <span data-ttu-id="a9432-301">7</span><span class="sxs-lookup"><span data-stu-id="a9432-301">7</span></span> |<span data-ttu-id="a9432-302">Inclusão EBOD</span><span class="sxs-lookup"><span data-stu-id="a9432-302">EBOD enclosure</span></span> |
 
-Quando cablagem dispositivo Olá, a configuração mínima de Olá necessita:
+<span data-ttu-id="a9432-303">Quando cablagem dispositivo Olá, a configuração mínima de Olá necessita:</span><span class="sxs-lookup"><span data-stu-id="a9432-303">When cabling hello device, hello minimum configuration requires:</span></span>
 
-* Pelo menos duas interfaces de rede ligados em cada controlador com um para acesso à nuvem e outro para iSCSI. Olá dados 0 a porta é automaticamente ativada e configurada através da consola de série de Olá do dispositivo Olá. Para além dos dados 0, outra porta de dados também tem de toobe configurada por meio de Olá portal clássico do Azure. Neste caso, ligar dados 0 porta toohello primário LAN (rede com acesso à Internet). Olá outros dados portas podem ser ligados segmento de LAN (VLAN) tooSAN/iSCSI da rede Olá, dependendo da função de Olá pretendido.
-* Interfaces idênticas em cada controlador ligado toohello mesmo rede tooensure disponibilidade se ocorrer uma ativação pós-falha de controlador. Por exemplo, se escolher tooconnect dados 0 e 3 de dados para um dos controladores de Olá, terá de Olá tooconnect correspondente dados 0 e dados 3 no Olá outro controlador.
+* <span data-ttu-id="a9432-304">Pelo menos duas interfaces de rede ligados em cada controlador com um para acesso à nuvem e outro para iSCSI.</span><span class="sxs-lookup"><span data-stu-id="a9432-304">At least two network interfaces connected on each controller with one for cloud access and one for iSCSI.</span></span> <span data-ttu-id="a9432-305">Olá dados 0 a porta é automaticamente ativada e configurada através da consola de série de Olá do dispositivo Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-305">hello DATA 0 port is automatically enabled and configured via hello serial console of hello device.</span></span> <span data-ttu-id="a9432-306">Para além dos dados 0, outra porta de dados também tem de toobe configurada por meio de Olá portal clássico do Azure.</span><span class="sxs-lookup"><span data-stu-id="a9432-306">Apart from DATA 0, another data port also needs toobe configured through hello Azure classic portal.</span></span> <span data-ttu-id="a9432-307">Neste caso, ligar dados 0 porta toohello primário LAN (rede com acesso à Internet).</span><span class="sxs-lookup"><span data-stu-id="a9432-307">In this case, connect DATA 0 port toohello primary LAN (network with Internet access).</span></span> <span data-ttu-id="a9432-308">Olá outros dados portas podem ser ligados segmento de LAN (VLAN) tooSAN/iSCSI da rede Olá, dependendo da função de Olá pretendido.</span><span class="sxs-lookup"><span data-stu-id="a9432-308">hello other data ports can be connected tooSAN/iSCSI LAN (VLAN) segment of hello network, depending on hello intended role.</span></span>
+* <span data-ttu-id="a9432-309">Interfaces idênticas em cada controlador ligado toohello mesmo rede tooensure disponibilidade se ocorrer uma ativação pós-falha de controlador.</span><span class="sxs-lookup"><span data-stu-id="a9432-309">Identical interfaces on each controller connected toohello same network tooensure availability if a controller failover occurs.</span></span> <span data-ttu-id="a9432-310">Por exemplo, se escolher tooconnect dados 0 e 3 de dados para um dos controladores de Olá, terá de Olá tooconnect correspondente dados 0 e dados 3 no Olá outro controlador.</span><span class="sxs-lookup"><span data-stu-id="a9432-310">For instance, if you choose tooconnect DATA 0 and DATA 3 for one of hello controllers, you need tooconnect hello corresponding DATA 0 and DATA 3 on hello other controller.</span></span>
 
-Tenha em consideração para elevada disponibilidade e desempenho:
+<span data-ttu-id="a9432-311">Tenha em consideração para elevada disponibilidade e desempenho:</span><span class="sxs-lookup"><span data-stu-id="a9432-311">Keep in mind for high availability and performance:</span></span>
 
-* Sempre que possível, configure um par de interface de rede para acesso à nuvem (de 1 GbE) e outro par de iSCSI (10 GbE recomendado) em cada controlador.
-* Sempre que possível, ligar interfaces de rede de cada tootwo diferentes comutadores tooensure disponibilidade do controlador de contra uma falha de comutador. a figura Olá ilustra Olá dois 10 GbE interfaces de rede, dados 2 e dados 3, de cada controlador ligado tootwo diferentes comutadores. Para obter mais informações, consulte toohello **interfaces de rede** em Olá [requisitos de elevada disponibilidade para o dispositivo StorSimple](storsimple-system-requirements.md#high-availability-requirements-for-storsimple).
+* <span data-ttu-id="a9432-312">Sempre que possível, configure um par de interface de rede para acesso à nuvem (de 1 GbE) e outro par de iSCSI (10 GbE recomendado) em cada controlador.</span><span class="sxs-lookup"><span data-stu-id="a9432-312">When possible, configure a pair of network interface for cloud access (1 GbE) and another pair for iSCSI (10 GbE recommended) on each controller.</span></span>
+* <span data-ttu-id="a9432-313">Sempre que possível, ligar interfaces de rede de cada tootwo diferentes comutadores tooensure disponibilidade do controlador de contra uma falha de comutador.</span><span class="sxs-lookup"><span data-stu-id="a9432-313">When possible, connect network interfaces from each controller tootwo different switches tooensure availability against a switch failure.</span></span> <span data-ttu-id="a9432-314">a figura Olá ilustra Olá dois 10 GbE interfaces de rede, dados 2 e dados 3, de cada controlador ligado tootwo diferentes comutadores.</span><span class="sxs-lookup"><span data-stu-id="a9432-314">hello figure illustrates hello two 10 GbE network interfaces, DATA 2 and DATA 3, from each controller connected tootwo different switches.</span></span> <span data-ttu-id="a9432-315">Para obter mais informações, consulte toohello **interfaces de rede** em Olá [requisitos de elevada disponibilidade para o dispositivo StorSimple](storsimple-system-requirements.md#high-availability-requirements-for-storsimple).</span><span class="sxs-lookup"><span data-stu-id="a9432-315">For more information, refer toohello **Network interfaces** under hello [High availability requirements for your StorSimple device](storsimple-system-requirements.md#high-availability-requirements-for-storsimple).</span></span>
 
 > [!NOTE]
-> Se utilizar SFP + transcetores com as interfaces de rede 10 GbE, utilize Olá fornecido QSFP-SFP + adaptadores. Para mais informações, visite demasiado[hardware suportado para interfaces de rede Olá 10 GbE no dispositivo StorSimple](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
+> <span data-ttu-id="a9432-316">Se utilizar SFP + transcetores com as interfaces de rede 10 GbE, utilize Olá fornecido QSFP-SFP + adaptadores.</span><span class="sxs-lookup"><span data-stu-id="a9432-316">If using SFP+ transceivers with your 10 GbE network interfaces, use hello provided QSFP-SFP+ adapters.</span></span> <span data-ttu-id="a9432-317">Para mais informações, visite demasiado[hardware suportado para interfaces de rede Olá 10 GbE no dispositivo StorSimple](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).</span><span class="sxs-lookup"><span data-stu-id="a9432-317">For more information, go too[Supported hardware for hello 10 GbE network interfaces on your StorSimple device](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).</span></span>
 > 
 > 
 
-### <a name="serial-port-cabling"></a>Cablagem de porta série
-Efetue Olá toocable passos a seguir a porta série.
+### <a name="serial-port-cabling"></a><span data-ttu-id="a9432-318">Cablagem de porta série</span><span class="sxs-lookup"><span data-stu-id="a9432-318">Serial port cabling</span></span>
+<span data-ttu-id="a9432-319">Efetue Olá toocable passos a seguir a porta série.</span><span class="sxs-lookup"><span data-stu-id="a9432-319">Perform hello following steps toocable your serial port.</span></span>
 
-#### <a name="toocable-for-serial-connection"></a>toocable para ligação de série
-1. O dispositivo tem uma porta série em cada controlador de que é identificado por um ícone de chave inglesa. toolocate a portas série de Olá, consulte toohello ilustração que mostra as portas de dados de Olá no Olá back of o seu dispositivo.
-2. Identifique o controlador de Olá Active Directory no seu backplane do dispositivo. Um LED azul intermitente indica que desse controlador Olá está ativo.
-3. Utilize o cabo de série de Olá fornecido (se necessário, conversor de Olá USB de série para o seu computador portátil) e ligar o seu computador ou a consola (com o dispositivo de toohello de emulação do terminal) de porta série toohello controlador ativo Olá.
-4. Instale controladores USB de série de Olá (vem incluídos no dispositivo Olá) no seu computador.
-5. Configure a ligação de série de Olá da seguinte forma:
+#### <a name="toocable-for-serial-connection"></a><span data-ttu-id="a9432-320">toocable para ligação de série</span><span class="sxs-lookup"><span data-stu-id="a9432-320">toocable for serial connection</span></span>
+1. <span data-ttu-id="a9432-321">O dispositivo tem uma porta série em cada controlador de que é identificado por um ícone de chave inglesa.</span><span class="sxs-lookup"><span data-stu-id="a9432-321">Your device has a serial port on each controller that is identified by a wrench icon.</span></span> <span data-ttu-id="a9432-322">toolocate a portas série de Olá, consulte toohello ilustração que mostra as portas de dados de Olá no Olá back of o seu dispositivo.</span><span class="sxs-lookup"><span data-stu-id="a9432-322">toolocate hello serial ports, refer toohello illustration that shows hello data ports on hello back of your device.</span></span>
+2. <span data-ttu-id="a9432-323">Identifique o controlador de Olá Active Directory no seu backplane do dispositivo.</span><span class="sxs-lookup"><span data-stu-id="a9432-323">Identify hello active controller on your device backplane.</span></span> <span data-ttu-id="a9432-324">Um LED azul intermitente indica que desse controlador Olá está ativo.</span><span class="sxs-lookup"><span data-stu-id="a9432-324">A blinking blue LED indicates that hello controller is active.</span></span>
+3. <span data-ttu-id="a9432-325">Utilize o cabo de série de Olá fornecido (se necessário, conversor de Olá USB de série para o seu computador portátil) e ligar o seu computador ou a consola (com o dispositivo de toohello de emulação do terminal) de porta série toohello controlador ativo Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-325">Use hello provided serial cable (if needed, hello USB-serial converter for your laptop), and connect your console or computer (with terminal emulation toohello device) toohello serial port of hello active controller.</span></span>
+4. <span data-ttu-id="a9432-326">Instale controladores USB de série de Olá (vem incluídos no dispositivo Olá) no seu computador.</span><span class="sxs-lookup"><span data-stu-id="a9432-326">Install hello serial-USB drivers (shipped with hello device) on your computer.</span></span>
+5. <span data-ttu-id="a9432-327">Configure a ligação de série de Olá da seguinte forma:</span><span class="sxs-lookup"><span data-stu-id="a9432-327">Set up hello serial connection as follows:</span></span>
    
-   * 115,200 transmissão.
-   * bits de 8 dados
-   * bits de 1 paragem
-   * Não existem paridade
-   * Controlo de fluxo definido demasiado**None**
-6. Certifique-se de que a ligação de Olá está a funcionar, premindo Enter na consola de Olá. Um menu da consola de série deve aparecer.
+   * <span data-ttu-id="a9432-328">115,200 transmissão.</span><span class="sxs-lookup"><span data-stu-id="a9432-328">115,200 baud</span></span>
+   * <span data-ttu-id="a9432-329">bits de 8 dados</span><span class="sxs-lookup"><span data-stu-id="a9432-329">8 data bits</span></span>
+   * <span data-ttu-id="a9432-330">bits de 1 paragem</span><span class="sxs-lookup"><span data-stu-id="a9432-330">1 stop bit</span></span>
+   * <span data-ttu-id="a9432-331">Não existem paridade</span><span class="sxs-lookup"><span data-stu-id="a9432-331">No parity</span></span>
+   * <span data-ttu-id="a9432-332">Controlo de fluxo definido demasiado**None**</span><span class="sxs-lookup"><span data-stu-id="a9432-332">Flow control set too**None**</span></span>
+6. <span data-ttu-id="a9432-333">Certifique-se de que a ligação de Olá está a funcionar, premindo Enter na consola de Olá.</span><span class="sxs-lookup"><span data-stu-id="a9432-333">Verify that hello connection is working by pressing Enter on hello console.</span></span> <span data-ttu-id="a9432-334">Um menu da consola de série deve aparecer.</span><span class="sxs-lookup"><span data-stu-id="a9432-334">A serial console menu should appear.</span></span>
 
 > [!NOTE]
-> **Gestão de KVM:** quando o dispositivo de Olá é instalado num centro de dados remoto ou uma sala de computador com acesso limitado, certifique-se que os controladores de tooboth de ligações série Olá sempre comutador da consola de série de tooa ligado ou equipamento semelhante. Isto permite o controlo remoto de fora de banda e as operações de suporte em caso de interrupção de rede ou falhas inesperadas.
+> <span data-ttu-id="a9432-335">**Gestão de KVM:** quando o dispositivo de Olá é instalado num centro de dados remoto ou uma sala de computador com acesso limitado, certifique-se que os controladores de tooboth de ligações série Olá sempre comutador da consola de série de tooa ligado ou equipamento semelhante.</span><span class="sxs-lookup"><span data-stu-id="a9432-335">**Lights-Out Management:** When hello device is installed in a remote datacenter or in a computer room with limited access, ensure that hello serial connections tooboth controllers are always connected tooa serial console switch or similar equipment.</span></span> <span data-ttu-id="a9432-336">Isto permite o controlo remoto de fora de banda e as operações de suporte em caso de interrupção de rede ou falhas inesperadas.</span><span class="sxs-lookup"><span data-stu-id="a9432-336">This allows out-of-band remote control and support operations in case of network disruption or unexpected failures.</span></span>
 > 
 > 
 
-Concluiu o dispositivo para poder de acesso à rede, de cablagem e connection.hello série próximo passo é o software de Olá tooconfigure no seu dispositivo.
+<span data-ttu-id="a9432-337">Concluiu o dispositivo para poder de acesso à rede, de cablagem e connection.hello série próximo passo é o software de Olá tooconfigure no seu dispositivo.</span><span class="sxs-lookup"><span data-stu-id="a9432-337">You have completed cabling your device for power, network access, and serial connection.hello next step is tooconfigure hello software on your device.</span></span>
 
-## <a name="next-steps"></a>Passos seguintes
-Agora, está pronto demasiado[implementar e configurar o dispositivo StorSimple no local](storsimple-deployment-walkthrough-u2.md).
+## <a name="next-steps"></a><span data-ttu-id="a9432-338">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="a9432-338">Next steps</span></span>
+<span data-ttu-id="a9432-339">Agora, está pronto demasiado[implementar e configurar o dispositivo StorSimple no local](storsimple-deployment-walkthrough-u2.md).</span><span class="sxs-lookup"><span data-stu-id="a9432-339">You are now ready too[deploy and configure your on-premises StorSimple device](storsimple-deployment-walkthrough-u2.md).</span></span>
 

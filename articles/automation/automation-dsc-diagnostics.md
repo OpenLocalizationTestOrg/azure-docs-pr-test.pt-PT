@@ -19,180 +19,180 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="forward-azure-automation-dsc-reporting-data-toooms-log-analytics"></a>Reencaminhar relatórios de dados tooOMS Log Analytics do Azure Automation DSC
+# <a name="forward-azure-automation-dsc-reporting-data-toooms-log-analytics"></a><span data-ttu-id="a5c81-103">Reencaminhar relatórios de dados tooOMS Log Analytics do Azure Automation DSC</span><span class="sxs-lookup"><span data-stu-id="a5c81-103">Forward Azure Automation DSC reporting data tooOMS Log Analytics</span></span>
 
-Automatização pode enviar DSC nó Estado dados tooyour análise de registos do Microsoft Operations Management Suite (OMS) área de trabalho.  
-Estado de conformidade é visível no portal do Azure de Olá, ou com o PowerShell, para nós e para recursos de DSC individuais em configurações de nó. Análise de registos pode:
+<span data-ttu-id="a5c81-104">Automatização pode enviar DSC nó Estado dados tooyour análise de registos do Microsoft Operations Management Suite (OMS) área de trabalho.</span><span class="sxs-lookup"><span data-stu-id="a5c81-104">Automation can send DSC node status data tooyour Microsoft Operations Management Suite (OMS) Log Analytics workspace.</span></span>  
+<span data-ttu-id="a5c81-105">Estado de conformidade é visível no portal do Azure de Olá, ou com o PowerShell, para nós e para recursos de DSC individuais em configurações de nó.</span><span class="sxs-lookup"><span data-stu-id="a5c81-105">Compliance status is visible in hello Azure portal, or with PowerShell, for nodes and for individual DSC resources in node configurations.</span></span> <span data-ttu-id="a5c81-106">Análise de registos pode:</span><span class="sxs-lookup"><span data-stu-id="a5c81-106">With Log Analytics you can:</span></span>
 
-* Obter as informações de compatibilidade para os nós geridos e recursos individuais
-* Acionar um e-mail ou o alerta com base no estado de conformidade
-* Escrever consultas avançadas entre os nós geridos
-* Correlacionar o estado de conformidade em contas de automatização
-* Visualizar o histórico de conformidade do nó ao longo do tempo
+* <span data-ttu-id="a5c81-107">Obter as informações de compatibilidade para os nós geridos e recursos individuais</span><span class="sxs-lookup"><span data-stu-id="a5c81-107">Get compliance information for managed nodes and individual resources</span></span>
+* <span data-ttu-id="a5c81-108">Acionar um e-mail ou o alerta com base no estado de conformidade</span><span class="sxs-lookup"><span data-stu-id="a5c81-108">Trigger an email or alert based on compliance status</span></span>
+* <span data-ttu-id="a5c81-109">Escrever consultas avançadas entre os nós geridos</span><span class="sxs-lookup"><span data-stu-id="a5c81-109">Write advanced queries across your managed nodes</span></span>
+* <span data-ttu-id="a5c81-110">Correlacionar o estado de conformidade em contas de automatização</span><span class="sxs-lookup"><span data-stu-id="a5c81-110">Correlate compliance status across Automation accounts</span></span>
+* <span data-ttu-id="a5c81-111">Visualizar o histórico de conformidade do nó ao longo do tempo</span><span class="sxs-lookup"><span data-stu-id="a5c81-111">Visualize your node compliance history over time</span></span>
 
-## <a name="prerequisites"></a>Pré-requisitos
+## <a name="prerequisites"></a><span data-ttu-id="a5c81-112">Pré-requisitos</span><span class="sxs-lookup"><span data-stu-id="a5c81-112">Prerequisites</span></span>
 
-enviar o DSC de automatização de toostart relatórios tooLog análise, tem de:
+<span data-ttu-id="a5c81-113">enviar o DSC de automatização de toostart relatórios tooLog análise, tem de:</span><span class="sxs-lookup"><span data-stu-id="a5c81-113">toostart sending your Automation DSC reports tooLog Analytics, you need:</span></span>
 
-* Olá Novembro de 2016 ou versão posterior do [Azure PowerShell](/powershell/azure/overview) (v2.3.0).
-* Uma conta de Automatização do Azure. Para obter mais informações, consulte [introdução da automatização do Azure](automation-offering-get-started.md)
-* Uma área de trabalho de análise de registos com um **automatização e controlo** oferta de serviço. Para obter mais informações, consulte [introdução à análise de registos](../log-analytics/log-analytics-get-started.md).
-* Pelo menos um nó de DSC de automatização do Azure. Para obter mais informações, consulte [máquinas de integração de gestão do Automation DSC do Azure](automation-dsc-onboarding.md) 
+* <span data-ttu-id="a5c81-114">Olá Novembro de 2016 ou versão posterior do [Azure PowerShell](/powershell/azure/overview) (v2.3.0).</span><span class="sxs-lookup"><span data-stu-id="a5c81-114">hello November 2016 or later release of [Azure PowerShell](/powershell/azure/overview) (v2.3.0).</span></span>
+* <span data-ttu-id="a5c81-115">Uma conta de Automatização do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5c81-115">An Azure Automation account.</span></span> <span data-ttu-id="a5c81-116">Para obter mais informações, consulte [introdução da automatização do Azure](automation-offering-get-started.md)</span><span class="sxs-lookup"><span data-stu-id="a5c81-116">For more information, see [Getting Started with Azure Automation](automation-offering-get-started.md)</span></span>
+* <span data-ttu-id="a5c81-117">Uma área de trabalho de análise de registos com um **automatização e controlo** oferta de serviço.</span><span class="sxs-lookup"><span data-stu-id="a5c81-117">A Log Analytics workspace with an **Automation & Control** service offering.</span></span> <span data-ttu-id="a5c81-118">Para obter mais informações, consulte [introdução à análise de registos](../log-analytics/log-analytics-get-started.md).</span><span class="sxs-lookup"><span data-stu-id="a5c81-118">For more information, see [Get started with Log Analytics](../log-analytics/log-analytics-get-started.md).</span></span>
+* <span data-ttu-id="a5c81-119">Pelo menos um nó de DSC de automatização do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5c81-119">At least one Azure Automation DSC node.</span></span> <span data-ttu-id="a5c81-120">Para obter mais informações, consulte [máquinas de integração de gestão do Automation DSC do Azure](automation-dsc-onboarding.md)</span><span class="sxs-lookup"><span data-stu-id="a5c81-120">For more information, see [Onboarding machines for management by Azure Automation DSC](automation-dsc-onboarding.md)</span></span> 
 
-## <a name="set-up-integration-with-log-analytics"></a>Configurar a integração com a análise de registos
+## <a name="set-up-integration-with-log-analytics"></a><span data-ttu-id="a5c81-121">Configurar a integração com a análise de registos</span><span class="sxs-lookup"><span data-stu-id="a5c81-121">Set up integration with Log Analytics</span></span>
 
-toobegin importar dados do Automation DSC do Azure para a análise de registos, Olá concluir os passos seguintes:
+<span data-ttu-id="a5c81-122">toobegin importar dados do Automation DSC do Azure para a análise de registos, Olá concluir os passos seguintes:</span><span class="sxs-lookup"><span data-stu-id="a5c81-122">toobegin importing data from Azure Automation DSC into Log Analytics, complete hello following steps:</span></span>
 
-1. Inicie sessão no tooyour conta do Azure no PowerShell. Consulte [iniciar sessão com o Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/authenticate-azureps?view=azurermps-4.0.0)
-1. Obter Olá _ResourceId_ da sua conta de automatização, executando o seguinte comando do PowerShell de Olá: (se tiver mais do que uma conta de automatização, escolha Olá _ResourceID_ para a conta de Olá pretende tooconfigure).
+1. <span data-ttu-id="a5c81-123">Inicie sessão no tooyour conta do Azure no PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a5c81-123">Log in tooyour Azure account in PowerShell.</span></span> <span data-ttu-id="a5c81-124">Consulte [iniciar sessão com o Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/authenticate-azureps?view=azurermps-4.0.0)</span><span class="sxs-lookup"><span data-stu-id="a5c81-124">See [Log in with Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/authenticate-azureps?view=azurermps-4.0.0)</span></span>
+1. <span data-ttu-id="a5c81-125">Obter Olá _ResourceId_ da sua conta de automatização, executando o seguinte comando do PowerShell de Olá: (se tiver mais do que uma conta de automatização, escolha Olá _ResourceID_ para a conta de Olá pretende tooconfigure).</span><span class="sxs-lookup"><span data-stu-id="a5c81-125">Get hello _ResourceId_ of your automation account by running hello following PowerShell command: (if you have more than one automation account, choose hello _ResourceID_ for hello account you want tooconfigure).</span></span>
 
   ```powershell
   # Find hello ResourceId for hello Automation Account
   Find-AzureRmResource -ResourceType "Microsoft.Automation/automationAccounts"
   ```
-1. Obter Olá _ResourceId_ da sua área de trabalho de análise de registos, executando o seguinte comando do PowerShell de Olá: (se tiver mais de uma área de trabalho, escolha Olá _ResourceID_ para área de trabalho Olá pretende tooconfigure).
+1. <span data-ttu-id="a5c81-126">Obter Olá _ResourceId_ da sua área de trabalho de análise de registos, executando o seguinte comando do PowerShell de Olá: (se tiver mais de uma área de trabalho, escolha Olá _ResourceID_ para área de trabalho Olá pretende tooconfigure).</span><span class="sxs-lookup"><span data-stu-id="a5c81-126">Get hello _ResourceId_ of your Log Analytics workspace by running hello following PowerShell command: (if you have more than one workspace, choose hello _ResourceID_ for hello workspace you want tooconfigure).</span></span>
 
   ```powershell
   # Find hello ResourceId for hello Log Analytics workspace
   Find-AzureRmResource -ResourceType "Microsoft.OperationalInsights/workspaces"
   ```
-1. Olá executar seguinte comando do PowerShell, substituindo `<AutomationResourceId>` e `<WorkspaceResourceId>` com Olá _ResourceId_ valores de cada um dos passos anteriores Olá:
+1. <span data-ttu-id="a5c81-127">Olá executar seguinte comando do PowerShell, substituindo `<AutomationResourceId>` e `<WorkspaceResourceId>` com Olá _ResourceId_ valores de cada um dos passos anteriores Olá:</span><span class="sxs-lookup"><span data-stu-id="a5c81-127">Run hello following PowerShell command, replacing `<AutomationResourceId>` and `<WorkspaceResourceId>` with hello _ResourceId_ values from each of hello previous steps:</span></span>
 
   ```powershell
   Set-AzureRmDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <WorkspaceResourceId> -Enabled $true -Categories "DscNodeStatus"
   ```
 
-Se quiser toostop importar dados do Automation DSC do Azure para a análise de registos, execute Olá seguinte comando do PowerShell.
+<span data-ttu-id="a5c81-128">Se quiser toostop importar dados do Automation DSC do Azure para a análise de registos, execute Olá seguinte comando do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a5c81-128">If you want toostop importing data from Azure Automation DSC into Log Analytics, run hello following PowerShell command.</span></span>
 
 ```powershell
 Set-AzureRmDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <WorkspaceResourceId> -Enabled $false -Categories "DscNodeStatus"
 ```
 
-## <a name="view-hello-dsc-logs"></a>Ver registos de Olá DSC
+## <a name="view-hello-dsc-logs"></a><span data-ttu-id="a5c81-129">Ver registos de Olá DSC</span><span class="sxs-lookup"><span data-stu-id="a5c81-129">View hello DSC logs</span></span>
 
-Depois de configurar a integração com a análise de registos para os seus dados de DSC de automatização, um **pesquisa registo** botão será apresentado no Olá **nós de DSC** painel da sua conta de automatização. Clique em Olá **pesquisa registo** botão registos de Olá tooview para dados do nó DSC.
+<span data-ttu-id="a5c81-130">Depois de configurar a integração com a análise de registos para os seus dados de DSC de automatização, um **pesquisa registo** botão será apresentado no Olá **nós de DSC** painel da sua conta de automatização.</span><span class="sxs-lookup"><span data-stu-id="a5c81-130">After you set up integration with Log Analytics for your Automation DSC data, a **Log search** button will appear on hello **DSC Nodes** blade of your automation account.</span></span> <span data-ttu-id="a5c81-131">Clique em Olá **pesquisa registo** botão registos de Olá tooview para dados do nó DSC.</span><span class="sxs-lookup"><span data-stu-id="a5c81-131">Click hello **Log Search** button tooview hello logs for DSC node data.</span></span>
 
 ![Botão de procura de registo](media/automation-dsc-diagnostics/log-search-button.png)
 
-Olá **pesquisa registo** abre painel e vir um **DscNodeStatusData** operação para cada nó de DSC e um **DscResourceStatusData** operação para cada [DSC recurso](https://msdn.microsoft.com/powershell/dsc/resources) chamado no nó do Olá nó Configuração toothat aplicados.
+<span data-ttu-id="a5c81-133">Olá **pesquisa registo** abre painel e vir um **DscNodeStatusData** operação para cada nó de DSC e um **DscResourceStatusData** operação para cada [DSC recurso](https://msdn.microsoft.com/powershell/dsc/resources) chamado no nó do Olá nó Configuração toothat aplicados.</span><span class="sxs-lookup"><span data-stu-id="a5c81-133">hello **Log Search** blade opens, and you see a **DscNodeStatusData** operation for each DSC node, and a **DscResourceStatusData** operation for each [DSC resource](https://msdn.microsoft.com/powershell/dsc/resources) called in hello Node configuration applied toothat node.</span></span>
 
-Olá **DscResourceStatusData** operação contém informações de erro para quaisquer recursos de DSC que falhou.
+<span data-ttu-id="a5c81-134">Olá **DscResourceStatusData** operação contém informações de erro para quaisquer recursos de DSC que falhou.</span><span class="sxs-lookup"><span data-stu-id="a5c81-134">hello **DscResourceStatusData** operation contains error information for any DSC resources that failed.</span></span>
 
-Clique em cada operação nos dados de Olá Olá lista toosee para essa operação.
+<span data-ttu-id="a5c81-135">Clique em cada operação nos dados de Olá Olá lista toosee para essa operação.</span><span class="sxs-lookup"><span data-stu-id="a5c81-135">Click each operation in hello list toosee hello data for that operation.</span></span>
 
-Também pode ver os registos de Olá pesquisando [na análise de registos. Consulte [localizar dados através de pesquisas de registo](../log-analytics/log-analytics-log-searches.md).
-Seguinte do tipo Olá consulta toofind o DSC registos:`Type=AzureDiagnostics ResourceProvider="MICROSOFT.AUTOMATION" Category = "DscNodeStatus"`
+<span data-ttu-id="a5c81-136">Também pode ver os registos de Olá pesquisando [na análise de registos.</span><span class="sxs-lookup"><span data-stu-id="a5c81-136">You can also view hello logs by [searching in Log Analytics.</span></span> <span data-ttu-id="a5c81-137">Consulte [localizar dados através de pesquisas de registo](../log-analytics/log-analytics-log-searches.md).</span><span class="sxs-lookup"><span data-stu-id="a5c81-137">See [Find data using log searches](../log-analytics/log-analytics-log-searches.md).</span></span>
+<span data-ttu-id="a5c81-138">Seguinte do tipo Olá consulta toofind o DSC registos:`Type=AzureDiagnostics ResourceProvider="MICROSOFT.AUTOMATION" Category = "DscNodeStatus"`</span><span class="sxs-lookup"><span data-stu-id="a5c81-138">Type hello following query toofind your DSC logs: `Type=AzureDiagnostics ResourceProvider="MICROSOFT.AUTOMATION" Category = "DscNodeStatus"`</span></span>
 
-Também pode limitar a consulta de Olá por nome de operação de Olá. Por exemplo: ' tipo = AzureDiagnostics ResourceProvider = "MICROSOFT. Categoria de AUTOMATIZAÇÃO"="DscNodeStatus"OperationName ="DscNodeStatusData"
+<span data-ttu-id="a5c81-139">Também pode limitar a consulta de Olá por nome de operação de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-139">You can also narrow hello query by hello operation name.</span></span> <span data-ttu-id="a5c81-140">Por exemplo: ' tipo = AzureDiagnostics ResourceProvider = "MICROSOFT. Categoria de AUTOMATIZAÇÃO"="DscNodeStatus"OperationName ="DscNodeStatusData"</span><span class="sxs-lookup"><span data-stu-id="a5c81-140">For example: \`Type=AzureDiagnostics ResourceProvider="MICROSOFT.AUTOMATION" Category = "DscNodeStatus" OperationName = "DscNodeStatusData"</span></span>
 
-### <a name="send-an-email-when-a-dsc-compliance-check-fails"></a>Enviar um e-mail quando ocorre uma falha de uma verificação de compatibilidade de DSC
+### <a name="send-an-email-when-a-dsc-compliance-check-fails"></a><span data-ttu-id="a5c81-141">Enviar um e-mail quando ocorre uma falha de uma verificação de compatibilidade de DSC</span><span class="sxs-lookup"><span data-stu-id="a5c81-141">Send an email when a DSC compliance check fails</span></span>
 
-Um dos nossos pedidos de cliente superior é Olá capacidade toosend uma mensagem de e-mail ou um texto quando algo não bate com uma configuração de DSC.   
+<span data-ttu-id="a5c81-142">Um dos nossos pedidos de cliente superior é Olá capacidade toosend uma mensagem de e-mail ou um texto quando algo não bate com uma configuração de DSC.</span><span class="sxs-lookup"><span data-stu-id="a5c81-142">One of our top customer requests is for hello ability toosend an email or a text when something goes wrong with a DSC configuration.</span></span>   
 
-regra de toocreate um alerta, que comece por criar uma pesquisa de registo de registos de relatório de DSC Olá deve invocar alerta Olá.  Clique em Olá **alerta** botão toocreate e configurar a regra de alerta de Olá.
+<span data-ttu-id="a5c81-143">regra de toocreate um alerta, que comece por criar uma pesquisa de registo de registos de relatório de DSC Olá deve invocar alerta Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-143">toocreate an alert rule, you start by creating a log search for hello DSC report records that should invoke hello alert.</span></span>  <span data-ttu-id="a5c81-144">Clique em Olá **alerta** botão toocreate e configurar a regra de alerta de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-144">Click hello **Alert** button toocreate and configure hello alert rule.</span></span>
 
-1. Na página de descrição geral da análise do registo de Olá, clique em **pesquisa registo**.
-1. Crie uma consulta de pesquisa de registo para o alerta, escrevendo Olá seguir pesquisa no campo de consulta Olá:`Type=AzureDiagnostics Category=DscNodeStatus NodeName_s=DSCTEST1 OperationName=DscNodeStatusData ResultType=Failed`
+1. <span data-ttu-id="a5c81-145">Na página de descrição geral da análise do registo de Olá, clique em **pesquisa registo**.</span><span class="sxs-lookup"><span data-stu-id="a5c81-145">From hello Log Analytics Overview page, click **Log Search**.</span></span>
+1. <span data-ttu-id="a5c81-146">Crie uma consulta de pesquisa de registo para o alerta, escrevendo Olá seguir pesquisa no campo de consulta Olá:`Type=AzureDiagnostics Category=DscNodeStatus NodeName_s=DSCTEST1 OperationName=DscNodeStatusData ResultType=Failed`</span><span class="sxs-lookup"><span data-stu-id="a5c81-146">Create a log search query for your alert by typing hello following search into hello query field:  `Type=AzureDiagnostics Category=DscNodeStatus NodeName_s=DSCTEST1 OperationName=DscNodeStatusData ResultType=Failed`</span></span>
 
-  Se configurou os registos de mais do que uma conta ou a subscrição tooyour área de trabalho automatização, pode agrupar os alertas por subscrição e conta de automatização.  
-  Nome da conta de automatização pode ser derivado de campo de recursos de Olá na pesquisa de Olá de DscNodeStatusData.  
-1. Olá tooopen **Adicionar regra de alerta** ecrã, clique em **alerta** em Olá parte superior da página Olá. Para obter mais informações sobre o alerta do Olá opções tooconfigure Olá, consulte [alertas na análise de registos](../log-analytics/log-analytics-alerts.md#alert-rules).
+  <span data-ttu-id="a5c81-147">Se configurou os registos de mais do que uma conta ou a subscrição tooyour área de trabalho automatização, pode agrupar os alertas por subscrição e conta de automatização.</span><span class="sxs-lookup"><span data-stu-id="a5c81-147">If you have set up logs from more than one Automation account or subscription tooyour workspace, you can group your alerts by subscription and Automation account.</span></span>  
+  <span data-ttu-id="a5c81-148">Nome da conta de automatização pode ser derivado de campo de recursos de Olá na pesquisa de Olá de DscNodeStatusData.</span><span class="sxs-lookup"><span data-stu-id="a5c81-148">Automation account name can be derived from hello Resource field in hello search of DscNodeStatusData.</span></span>  
+1. <span data-ttu-id="a5c81-149">Olá tooopen **Adicionar regra de alerta** ecrã, clique em **alerta** em Olá parte superior da página Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-149">tooopen hello **Add Alert Rule** screen, click **Alert** at hello top of hello page.</span></span> <span data-ttu-id="a5c81-150">Para obter mais informações sobre o alerta do Olá opções tooconfigure Olá, consulte [alertas na análise de registos](../log-analytics/log-analytics-alerts.md#alert-rules).</span><span class="sxs-lookup"><span data-stu-id="a5c81-150">For more information on hello options tooconfigure hello alert, see [Alerts in Log Analytics](../log-analytics/log-analytics-alerts.md#alert-rules).</span></span>
 
-### <a name="find-failed-dsc-resources-across-all-nodes"></a>Falha ao localizar recursos de DSC em todos os nós
+### <a name="find-failed-dsc-resources-across-all-nodes"></a><span data-ttu-id="a5c81-151">Falha ao localizar recursos de DSC em todos os nós</span><span class="sxs-lookup"><span data-stu-id="a5c81-151">Find failed DSC resources across all nodes</span></span>
 
-Uma vantagem de utilizar a análise de registos é que pode procurar verificações falhadas entre nós.
-toofind todas as instâncias de recursos de DSC que falhou.
+<span data-ttu-id="a5c81-152">Uma vantagem de utilizar a análise de registos é que pode procurar verificações falhadas entre nós.</span><span class="sxs-lookup"><span data-stu-id="a5c81-152">One advantage of using Log Analytics is that you can search for failed checks across nodes.</span></span>
+<span data-ttu-id="a5c81-153">toofind todas as instâncias de recursos de DSC que falhou.</span><span class="sxs-lookup"><span data-stu-id="a5c81-153">toofind all instances of DSC resources that failed.</span></span>
 
-1. Na página de descrição geral da análise do registo de Olá, clique em **pesquisa registo**.
-1. Crie uma consulta de pesquisa de registo para o alerta, escrevendo Olá seguir pesquisa no campo de consulta Olá:`Type=AzureDiagnostics Category=DscNodeStatus OperationName=DscResourceStatusData ResultType=Failed`
+1. <span data-ttu-id="a5c81-154">Na página de descrição geral da análise do registo de Olá, clique em **pesquisa registo**.</span><span class="sxs-lookup"><span data-stu-id="a5c81-154">From hello Log Analytics Overview page, click **Log Search**.</span></span>
+1. <span data-ttu-id="a5c81-155">Crie uma consulta de pesquisa de registo para o alerta, escrevendo Olá seguir pesquisa no campo de consulta Olá:`Type=AzureDiagnostics Category=DscNodeStatus OperationName=DscResourceStatusData ResultType=Failed`</span><span class="sxs-lookup"><span data-stu-id="a5c81-155">Create a log search query for your alert by typing hello following search into hello query field:  `Type=AzureDiagnostics Category=DscNodeStatus OperationName=DscResourceStatusData ResultType=Failed`</span></span>
 
-### <a name="view-historical-dsc-node-status"></a>Ver estado histórico de nó DSC
+### <a name="view-historical-dsc-node-status"></a><span data-ttu-id="a5c81-156">Ver estado histórico de nó DSC</span><span class="sxs-lookup"><span data-stu-id="a5c81-156">View historical DSC node status</span></span>
 
-Por fim, poderá ser útil toovisualize o histórico de estado do nó DSC ao longo do tempo.  
-Pode utilizar este toosearch de consulta para o estado de Olá do Estado do nó DSC ao longo do tempo.
+<span data-ttu-id="a5c81-157">Por fim, poderá ser útil toovisualize o histórico de estado do nó DSC ao longo do tempo.</span><span class="sxs-lookup"><span data-stu-id="a5c81-157">Finally, you may want toovisualize your DSC node status history over time.</span></span>  
+<span data-ttu-id="a5c81-158">Pode utilizar este toosearch de consulta para o estado de Olá do Estado do nó DSC ao longo do tempo.</span><span class="sxs-lookup"><span data-stu-id="a5c81-158">You can use this query toosearch for hello status of your DSC node status over time.</span></span>
 
 `Type=AzureDiagnostics ResourceProvider="MICROSOFT.AUTOMATION" Category=DscNodeStatus NOT(ResultType="started") | measure Count() by ResultType interval 1hour`  
 
-Esta ação apresenta um gráfico de estado do nó de Olá ao longo do tempo.
+<span data-ttu-id="a5c81-159">Esta ação apresenta um gráfico de estado do nó de Olá ao longo do tempo.</span><span class="sxs-lookup"><span data-stu-id="a5c81-159">This will display a chart of hello node status over time.</span></span>
 
-## <a name="log-analytics-records"></a>Registos do Log Analytics
+## <a name="log-analytics-records"></a><span data-ttu-id="a5c81-160">Registos do Log Analytics</span><span class="sxs-lookup"><span data-stu-id="a5c81-160">Log Analytics records</span></span>
 
-Diagnóstico da automatização do Azure cria duas categorias de registos de análise de registos.
+<span data-ttu-id="a5c81-161">Diagnóstico da automatização do Azure cria duas categorias de registos de análise de registos.</span><span class="sxs-lookup"><span data-stu-id="a5c81-161">Diagnostics from Azure Automation creates two categories of records in Log Analytics.</span></span>
 
-### <a name="dscnodestatusdata"></a>DscNodeStatusData
+### <a name="dscnodestatusdata"></a><span data-ttu-id="a5c81-162">DscNodeStatusData</span><span class="sxs-lookup"><span data-stu-id="a5c81-162">DscNodeStatusData</span></span>
 
-| Propriedade | Descrição |
+| <span data-ttu-id="a5c81-163">Propriedade</span><span class="sxs-lookup"><span data-stu-id="a5c81-163">Property</span></span> | <span data-ttu-id="a5c81-164">Descrição</span><span class="sxs-lookup"><span data-stu-id="a5c81-164">Description</span></span> |
 | --- | --- |
-| TimeGenerated |Data e hora quando executou a verificação de conformidade de Olá. |
-| OperationName |DscNodeStatusData |
-| ResultType |Indica se o nó de Olá está em conformidade. |
-| NodeName_s |nome de Olá do nó Olá de gerido. |
-| NodeComplianceStatus_s |Indica se o nó de Olá está em conformidade. |
-| DscReportStatus |Verifique se a compatibilidade Olá foi executada com êxito. |
-| ConfigurationMode | Como a configuração de Olá é nó toohello aplicados. Os valores possíveis são __"ApplyOnly"__,__"ApplyandMonitior"__, e __"ApplyandAutoCorrect"__. <ul><li>__ApplyOnly__: DSC aplica-se a configuração de Olá e faz nada adicional a menos que é feito o Push de uma nova configuração de nó de destino toohello ou quando uma nova configuração é retirada de um servidor. Após a aplicação inicial de uma nova configuração, DSC não verificar que se desviam de um estado anteriormente configurado. DSC tenta configuração de Olá tooapply até ter êxito antes de __ApplyOnly__ entra em vigor. </li><li> __ApplyAndMonitor__: Este é o valor predefinido de Olá. Olá MMC aplica-se as configurações de novo. Após a aplicação inicial de uma nova configuração, se o nó de destino Olá drifts do Estado de Olá assim o desejar, DSC relatórios discrepância Olá nos registos. DSC tenta configuração de Olá tooapply até ter êxito antes de __ApplyAndMonitor__ entra em vigor.</li><li>__ApplyAndAutoCorrect__: DSC aplica-se as configurações de novo. Após a aplicação inicial de uma nova configuração, se o nó de destino Olá drifts do estado pretendido de Olá, DSC discrepância Olá nos registos de relatórios e, em seguida, volta a configuração atual Olá.</li></ul> |
-| HostName_s | nome de Olá do nó Olá de gerido. |
-| IPAddress | endereço de IPv4 Olá de Olá geridos nó. |
-| Categoria | DscNodeStatus |
-| Recurso | nome de Olá do Olá conta de automatização do Azure. |
-| Tenant_g | GUID que identifica o inquilino Olá para Olá autor da chamada. |
-| NodeId_g |GUID que identifica o nó Olá de gerido. |
-| DscReportId_g |GUID que identifica o relatório de Olá. |
-| LastSeenTime_t |Data e hora quando o relatório Olá pela última vez foi visualizado. |
-| ReportStartTime_t |Data e hora quando o relatório de Olá foi iniciado. |
-| ReportEndTime_t |Data e hora quando o relatório de Olá foi concluído. |
-| NumberOfResources_d |número de Olá de recursos de DSC chamado no nó de toohello Olá configuração aplicada. |
-| SourceSystem | Como a análise de registos recolhidos dados de Olá. Sempre *Azure* para diagnóstico do Azure. |
-| ResourceId |Especifica a conta de automatização do Azure Olá. |
-| ResultDescription | Descrição de Olá para esta operação. |
-| SubscriptionId | Olá subscrição do Azure Id (GUID) para Olá conta de automatização. |
-| ResourceGroup | Nome do grupo de recursos de Olá para Olá conta de automatização. |
-| ResourceProvider | MICROSOFT. AUTOMATIZAÇÃO |
-| ResourceType | AUTOMATIONACCOUNTS |
-| CorrelationId |GUID que é Olá Id de correlação do relatório de compatibilidade de Olá. |
+| <span data-ttu-id="a5c81-165">TimeGenerated</span><span class="sxs-lookup"><span data-stu-id="a5c81-165">TimeGenerated</span></span> |<span data-ttu-id="a5c81-166">Data e hora quando executou a verificação de conformidade de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-166">Date and time when hello compliance check ran.</span></span> |
+| <span data-ttu-id="a5c81-167">OperationName</span><span class="sxs-lookup"><span data-stu-id="a5c81-167">OperationName</span></span> |<span data-ttu-id="a5c81-168">DscNodeStatusData</span><span class="sxs-lookup"><span data-stu-id="a5c81-168">DscNodeStatusData</span></span> |
+| <span data-ttu-id="a5c81-169">ResultType</span><span class="sxs-lookup"><span data-stu-id="a5c81-169">ResultType</span></span> |<span data-ttu-id="a5c81-170">Indica se o nó de Olá está em conformidade.</span><span class="sxs-lookup"><span data-stu-id="a5c81-170">Whether hello node is compliant.</span></span> |
+| <span data-ttu-id="a5c81-171">NodeName_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-171">NodeName_s</span></span> |<span data-ttu-id="a5c81-172">nome de Olá do nó Olá de gerido.</span><span class="sxs-lookup"><span data-stu-id="a5c81-172">hello name of hello managed node.</span></span> |
+| <span data-ttu-id="a5c81-173">NodeComplianceStatus_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-173">NodeComplianceStatus_s</span></span> |<span data-ttu-id="a5c81-174">Indica se o nó de Olá está em conformidade.</span><span class="sxs-lookup"><span data-stu-id="a5c81-174">Whether hello node is compliant.</span></span> |
+| <span data-ttu-id="a5c81-175">DscReportStatus</span><span class="sxs-lookup"><span data-stu-id="a5c81-175">DscReportStatus</span></span> |<span data-ttu-id="a5c81-176">Verifique se a compatibilidade Olá foi executada com êxito.</span><span class="sxs-lookup"><span data-stu-id="a5c81-176">Whether hello compliance check ran successfully.</span></span> |
+| <span data-ttu-id="a5c81-177">ConfigurationMode</span><span class="sxs-lookup"><span data-stu-id="a5c81-177">ConfigurationMode</span></span> | <span data-ttu-id="a5c81-178">Como a configuração de Olá é nó toohello aplicados.</span><span class="sxs-lookup"><span data-stu-id="a5c81-178">How hello configuration is applied toohello node.</span></span> <span data-ttu-id="a5c81-179">Os valores possíveis são __"ApplyOnly"__,__"ApplyandMonitior"__, e __"ApplyandAutoCorrect"__.</span><span class="sxs-lookup"><span data-stu-id="a5c81-179">Possible values are __"ApplyOnly"__,__"ApplyandMonitior"__, and __"ApplyandAutoCorrect"__.</span></span> <ul><li><span data-ttu-id="a5c81-180">__ApplyOnly__: DSC aplica-se a configuração de Olá e faz nada adicional a menos que é feito o Push de uma nova configuração de nó de destino toohello ou quando uma nova configuração é retirada de um servidor.</span><span class="sxs-lookup"><span data-stu-id="a5c81-180">__ApplyOnly__: DSC applies hello configuration and does nothing further unless a new configuration is pushed toohello target node or when a new configuration is pulled from a server.</span></span> <span data-ttu-id="a5c81-181">Após a aplicação inicial de uma nova configuração, DSC não verificar que se desviam de um estado anteriormente configurado.</span><span class="sxs-lookup"><span data-stu-id="a5c81-181">After initial application of a new configuration, DSC does not check for drift from a previously configured state.</span></span> <span data-ttu-id="a5c81-182">DSC tenta configuração de Olá tooapply até ter êxito antes de __ApplyOnly__ entra em vigor.</span><span class="sxs-lookup"><span data-stu-id="a5c81-182">DSC attempts tooapply hello configuration until it is successful before __ApplyOnly__ takes effect.</span></span> </li><li> <span data-ttu-id="a5c81-183">__ApplyAndMonitor__: Este é o valor predefinido de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-183">__ApplyAndMonitor__: This is hello default value.</span></span> <span data-ttu-id="a5c81-184">Olá MMC aplica-se as configurações de novo.</span><span class="sxs-lookup"><span data-stu-id="a5c81-184">hello LCM applies any new configurations.</span></span> <span data-ttu-id="a5c81-185">Após a aplicação inicial de uma nova configuração, se o nó de destino Olá drifts do Estado de Olá assim o desejar, DSC relatórios discrepância Olá nos registos.</span><span class="sxs-lookup"><span data-stu-id="a5c81-185">After initial application of a new configuration, if hello target node drifts from hello desired state, DSC reports hello discrepancy in logs.</span></span> <span data-ttu-id="a5c81-186">DSC tenta configuração de Olá tooapply até ter êxito antes de __ApplyAndMonitor__ entra em vigor.</span><span class="sxs-lookup"><span data-stu-id="a5c81-186">DSC attempts tooapply hello configuration until it is successful before __ApplyAndMonitor__ takes effect.</span></span></li><li><span data-ttu-id="a5c81-187">__ApplyAndAutoCorrect__: DSC aplica-se as configurações de novo.</span><span class="sxs-lookup"><span data-stu-id="a5c81-187">__ApplyAndAutoCorrect__: DSC applies any new configurations.</span></span> <span data-ttu-id="a5c81-188">Após a aplicação inicial de uma nova configuração, se o nó de destino Olá drifts do estado pretendido de Olá, DSC discrepância Olá nos registos de relatórios e, em seguida, volta a configuração atual Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-188">After initial application of a new configuration, if hello target node drifts from hello desired state, DSC reports hello discrepancy in logs, and then reapplies hello current configuration.</span></span></li></ul> |
+| <span data-ttu-id="a5c81-189">HostName_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-189">HostName_s</span></span> | <span data-ttu-id="a5c81-190">nome de Olá do nó Olá de gerido.</span><span class="sxs-lookup"><span data-stu-id="a5c81-190">hello name of hello managed node.</span></span> |
+| <span data-ttu-id="a5c81-191">IPAddress</span><span class="sxs-lookup"><span data-stu-id="a5c81-191">IPAddress</span></span> | <span data-ttu-id="a5c81-192">endereço de IPv4 Olá de Olá geridos nó.</span><span class="sxs-lookup"><span data-stu-id="a5c81-192">hello IPv4 address of hello managed node.</span></span> |
+| <span data-ttu-id="a5c81-193">Categoria</span><span class="sxs-lookup"><span data-stu-id="a5c81-193">Category</span></span> | <span data-ttu-id="a5c81-194">DscNodeStatus</span><span class="sxs-lookup"><span data-stu-id="a5c81-194">DscNodeStatus</span></span> |
+| <span data-ttu-id="a5c81-195">Recurso</span><span class="sxs-lookup"><span data-stu-id="a5c81-195">Resource</span></span> | <span data-ttu-id="a5c81-196">nome de Olá do Olá conta de automatização do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5c81-196">hello name of hello Azure Automation account.</span></span> |
+| <span data-ttu-id="a5c81-197">Tenant_g</span><span class="sxs-lookup"><span data-stu-id="a5c81-197">Tenant_g</span></span> | <span data-ttu-id="a5c81-198">GUID que identifica o inquilino Olá para Olá autor da chamada.</span><span class="sxs-lookup"><span data-stu-id="a5c81-198">GUID that identifies hello tenant for hello Caller.</span></span> |
+| <span data-ttu-id="a5c81-199">NodeId_g</span><span class="sxs-lookup"><span data-stu-id="a5c81-199">NodeId_g</span></span> |<span data-ttu-id="a5c81-200">GUID que identifica o nó Olá de gerido.</span><span class="sxs-lookup"><span data-stu-id="a5c81-200">GUID that identifies hello managed node.</span></span> |
+| <span data-ttu-id="a5c81-201">DscReportId_g</span><span class="sxs-lookup"><span data-stu-id="a5c81-201">DscReportId_g</span></span> |<span data-ttu-id="a5c81-202">GUID que identifica o relatório de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-202">GUID that identifies hello report.</span></span> |
+| <span data-ttu-id="a5c81-203">LastSeenTime_t</span><span class="sxs-lookup"><span data-stu-id="a5c81-203">LastSeenTime_t</span></span> |<span data-ttu-id="a5c81-204">Data e hora quando o relatório Olá pela última vez foi visualizado.</span><span class="sxs-lookup"><span data-stu-id="a5c81-204">Date and time when hello report was last viewed.</span></span> |
+| <span data-ttu-id="a5c81-205">ReportStartTime_t</span><span class="sxs-lookup"><span data-stu-id="a5c81-205">ReportStartTime_t</span></span> |<span data-ttu-id="a5c81-206">Data e hora quando o relatório de Olá foi iniciado.</span><span class="sxs-lookup"><span data-stu-id="a5c81-206">Date and time when hello report was started.</span></span> |
+| <span data-ttu-id="a5c81-207">ReportEndTime_t</span><span class="sxs-lookup"><span data-stu-id="a5c81-207">ReportEndTime_t</span></span> |<span data-ttu-id="a5c81-208">Data e hora quando o relatório de Olá foi concluído.</span><span class="sxs-lookup"><span data-stu-id="a5c81-208">Date and time when hello report completed.</span></span> |
+| <span data-ttu-id="a5c81-209">NumberOfResources_d</span><span class="sxs-lookup"><span data-stu-id="a5c81-209">NumberOfResources_d</span></span> |<span data-ttu-id="a5c81-210">número de Olá de recursos de DSC chamado no nó de toohello Olá configuração aplicada.</span><span class="sxs-lookup"><span data-stu-id="a5c81-210">hello number of DSC resources called in hello configuration applied toohello node.</span></span> |
+| <span data-ttu-id="a5c81-211">SourceSystem</span><span class="sxs-lookup"><span data-stu-id="a5c81-211">SourceSystem</span></span> | <span data-ttu-id="a5c81-212">Como a análise de registos recolhidos dados de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-212">How Log Analytics collected hello data.</span></span> <span data-ttu-id="a5c81-213">Sempre *Azure* para diagnóstico do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5c81-213">Always *Azure* for Azure diagnostics.</span></span> |
+| <span data-ttu-id="a5c81-214">ResourceId</span><span class="sxs-lookup"><span data-stu-id="a5c81-214">ResourceId</span></span> |<span data-ttu-id="a5c81-215">Especifica a conta de automatização do Azure Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-215">Specifies hello Azure Automation account.</span></span> |
+| <span data-ttu-id="a5c81-216">ResultDescription</span><span class="sxs-lookup"><span data-stu-id="a5c81-216">ResultDescription</span></span> | <span data-ttu-id="a5c81-217">Descrição de Olá para esta operação.</span><span class="sxs-lookup"><span data-stu-id="a5c81-217">hello description for this operation.</span></span> |
+| <span data-ttu-id="a5c81-218">SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="a5c81-218">SubscriptionId</span></span> | <span data-ttu-id="a5c81-219">Olá subscrição do Azure Id (GUID) para Olá conta de automatização.</span><span class="sxs-lookup"><span data-stu-id="a5c81-219">hello Azure subscription Id (GUID) for hello Automation account.</span></span> |
+| <span data-ttu-id="a5c81-220">ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="a5c81-220">ResourceGroup</span></span> | <span data-ttu-id="a5c81-221">Nome do grupo de recursos de Olá para Olá conta de automatização.</span><span class="sxs-lookup"><span data-stu-id="a5c81-221">Name of hello resource group for hello Automation account.</span></span> |
+| <span data-ttu-id="a5c81-222">ResourceProvider</span><span class="sxs-lookup"><span data-stu-id="a5c81-222">ResourceProvider</span></span> | <span data-ttu-id="a5c81-223">MICROSOFT. AUTOMATIZAÇÃO</span><span class="sxs-lookup"><span data-stu-id="a5c81-223">MICROSOFT.AUTOMATION</span></span> |
+| <span data-ttu-id="a5c81-224">ResourceType</span><span class="sxs-lookup"><span data-stu-id="a5c81-224">ResourceType</span></span> | <span data-ttu-id="a5c81-225">AUTOMATIONACCOUNTS</span><span class="sxs-lookup"><span data-stu-id="a5c81-225">AUTOMATIONACCOUNTS</span></span> |
+| <span data-ttu-id="a5c81-226">CorrelationId</span><span class="sxs-lookup"><span data-stu-id="a5c81-226">CorrelationId</span></span> |<span data-ttu-id="a5c81-227">GUID que é Olá Id de correlação do relatório de compatibilidade de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-227">GUID that is hello Correlation Id of hello compliance report.</span></span> |
 
-### <a name="dscresourcestatusdata"></a>DscResourceStatusData
+### <a name="dscresourcestatusdata"></a><span data-ttu-id="a5c81-228">DscResourceStatusData</span><span class="sxs-lookup"><span data-stu-id="a5c81-228">DscResourceStatusData</span></span>
 
-| Propriedade | Descrição |
+| <span data-ttu-id="a5c81-229">Propriedade</span><span class="sxs-lookup"><span data-stu-id="a5c81-229">Property</span></span> | <span data-ttu-id="a5c81-230">Descrição</span><span class="sxs-lookup"><span data-stu-id="a5c81-230">Description</span></span> |
 | --- | --- |
-| TimeGenerated |Data e hora quando executou a verificação de conformidade de Olá. |
-| OperationName |DscResourceStatusData|
-| ResultType |Indica se o recurso de Olá está em conformidade. |
-| NodeName_s |nome de Olá do nó Olá de gerido. |
-| Categoria | DscNodeStatus |
-| Recurso | nome de Olá do Olá conta de automatização do Azure. |
-| Tenant_g | GUID que identifica o inquilino Olá para Olá autor da chamada. |
-| NodeId_g |GUID que identifica o nó Olá de gerido. |
-| DscReportId_g |GUID que identifica o relatório de Olá. |
-| DscResourceId_s |nome da instância de recurso Olá DSC Olá. |
-| DscResourceName_s |nome de Olá do recurso de Olá DSC. |
-| DscResourceStatus_s |Indica se Olá recursos de DSC está em conformidade. |
-| DscModuleName_s |nome do módulo do PowerShell Olá que contém os recursos de DSC Olá Olá. |
-| DscModuleVersion_s |versão de Olá do módulo do PowerShell Olá que contém os recursos de DSC Olá. |
-| DscConfigurationName_s |nome de Olá da configuração de Olá aplicadas nó toohello. |
-| ErrorCode_s | código de erro de Olá se recursos Olá falhou. |
-| ErrorMessage_s |mensagem de erro de Olá se recursos Olá falhou. |
-| DscResourceDuration_d |tempo de Olá, em segundos, que tenha executado o recurso de Olá DSC. |
-| SourceSystem | Como a análise de registos recolhidos dados de Olá. Sempre *Azure* para diagnóstico do Azure. |
-| ResourceId |Especifica a conta de automatização do Azure Olá. |
-| ResultDescription | Descrição de Olá para esta operação. |
-| SubscriptionId | Olá subscrição do Azure Id (GUID) para Olá conta de automatização. |
-| ResourceGroup | Nome do grupo de recursos de Olá para Olá conta de automatização. |
-| ResourceProvider | MICROSOFT. AUTOMATIZAÇÃO |
-| ResourceType | AUTOMATIONACCOUNTS |
-| CorrelationId |GUID que é Olá Id de correlação do relatório de compatibilidade de Olá. |
+| <span data-ttu-id="a5c81-231">TimeGenerated</span><span class="sxs-lookup"><span data-stu-id="a5c81-231">TimeGenerated</span></span> |<span data-ttu-id="a5c81-232">Data e hora quando executou a verificação de conformidade de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-232">Date and time when hello compliance check ran.</span></span> |
+| <span data-ttu-id="a5c81-233">OperationName</span><span class="sxs-lookup"><span data-stu-id="a5c81-233">OperationName</span></span> |<span data-ttu-id="a5c81-234">DscResourceStatusData</span><span class="sxs-lookup"><span data-stu-id="a5c81-234">DscResourceStatusData</span></span>|
+| <span data-ttu-id="a5c81-235">ResultType</span><span class="sxs-lookup"><span data-stu-id="a5c81-235">ResultType</span></span> |<span data-ttu-id="a5c81-236">Indica se o recurso de Olá está em conformidade.</span><span class="sxs-lookup"><span data-stu-id="a5c81-236">Whether hello resource is compliant.</span></span> |
+| <span data-ttu-id="a5c81-237">NodeName_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-237">NodeName_s</span></span> |<span data-ttu-id="a5c81-238">nome de Olá do nó Olá de gerido.</span><span class="sxs-lookup"><span data-stu-id="a5c81-238">hello name of hello managed node.</span></span> |
+| <span data-ttu-id="a5c81-239">Categoria</span><span class="sxs-lookup"><span data-stu-id="a5c81-239">Category</span></span> | <span data-ttu-id="a5c81-240">DscNodeStatus</span><span class="sxs-lookup"><span data-stu-id="a5c81-240">DscNodeStatus</span></span> |
+| <span data-ttu-id="a5c81-241">Recurso</span><span class="sxs-lookup"><span data-stu-id="a5c81-241">Resource</span></span> | <span data-ttu-id="a5c81-242">nome de Olá do Olá conta de automatização do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5c81-242">hello name of hello Azure Automation account.</span></span> |
+| <span data-ttu-id="a5c81-243">Tenant_g</span><span class="sxs-lookup"><span data-stu-id="a5c81-243">Tenant_g</span></span> | <span data-ttu-id="a5c81-244">GUID que identifica o inquilino Olá para Olá autor da chamada.</span><span class="sxs-lookup"><span data-stu-id="a5c81-244">GUID that identifies hello tenant for hello Caller.</span></span> |
+| <span data-ttu-id="a5c81-245">NodeId_g</span><span class="sxs-lookup"><span data-stu-id="a5c81-245">NodeId_g</span></span> |<span data-ttu-id="a5c81-246">GUID que identifica o nó Olá de gerido.</span><span class="sxs-lookup"><span data-stu-id="a5c81-246">GUID that identifies hello managed node.</span></span> |
+| <span data-ttu-id="a5c81-247">DscReportId_g</span><span class="sxs-lookup"><span data-stu-id="a5c81-247">DscReportId_g</span></span> |<span data-ttu-id="a5c81-248">GUID que identifica o relatório de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-248">GUID that identifies hello report.</span></span> |
+| <span data-ttu-id="a5c81-249">DscResourceId_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-249">DscResourceId_s</span></span> |<span data-ttu-id="a5c81-250">nome da instância de recurso Olá DSC Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-250">hello name of hello DSC resource instance.</span></span> |
+| <span data-ttu-id="a5c81-251">DscResourceName_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-251">DscResourceName_s</span></span> |<span data-ttu-id="a5c81-252">nome de Olá do recurso de Olá DSC.</span><span class="sxs-lookup"><span data-stu-id="a5c81-252">hello name of hello DSC resource.</span></span> |
+| <span data-ttu-id="a5c81-253">DscResourceStatus_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-253">DscResourceStatus_s</span></span> |<span data-ttu-id="a5c81-254">Indica se Olá recursos de DSC está em conformidade.</span><span class="sxs-lookup"><span data-stu-id="a5c81-254">Whether hello DSC resource is in compliance.</span></span> |
+| <span data-ttu-id="a5c81-255">DscModuleName_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-255">DscModuleName_s</span></span> |<span data-ttu-id="a5c81-256">nome do módulo do PowerShell Olá que contém os recursos de DSC Olá Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-256">hello name of hello PowerShell module that contains hello DSC resource.</span></span> |
+| <span data-ttu-id="a5c81-257">DscModuleVersion_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-257">DscModuleVersion_s</span></span> |<span data-ttu-id="a5c81-258">versão de Olá do módulo do PowerShell Olá que contém os recursos de DSC Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-258">hello version of hello PowerShell module that contains hello DSC resource.</span></span> |
+| <span data-ttu-id="a5c81-259">DscConfigurationName_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-259">DscConfigurationName_s</span></span> |<span data-ttu-id="a5c81-260">nome de Olá da configuração de Olá aplicadas nó toohello.</span><span class="sxs-lookup"><span data-stu-id="a5c81-260">hello name of hello configuration applied toohello node.</span></span> |
+| <span data-ttu-id="a5c81-261">ErrorCode_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-261">ErrorCode_s</span></span> | <span data-ttu-id="a5c81-262">código de erro de Olá se recursos Olá falhou.</span><span class="sxs-lookup"><span data-stu-id="a5c81-262">hello error code if hello resource failed.</span></span> |
+| <span data-ttu-id="a5c81-263">ErrorMessage_s</span><span class="sxs-lookup"><span data-stu-id="a5c81-263">ErrorMessage_s</span></span> |<span data-ttu-id="a5c81-264">mensagem de erro de Olá se recursos Olá falhou.</span><span class="sxs-lookup"><span data-stu-id="a5c81-264">hello error message if hello resource failed.</span></span> |
+| <span data-ttu-id="a5c81-265">DscResourceDuration_d</span><span class="sxs-lookup"><span data-stu-id="a5c81-265">DscResourceDuration_d</span></span> |<span data-ttu-id="a5c81-266">tempo de Olá, em segundos, que tenha executado o recurso de Olá DSC.</span><span class="sxs-lookup"><span data-stu-id="a5c81-266">hello time, in seconds, that hello DSC resource ran.</span></span> |
+| <span data-ttu-id="a5c81-267">SourceSystem</span><span class="sxs-lookup"><span data-stu-id="a5c81-267">SourceSystem</span></span> | <span data-ttu-id="a5c81-268">Como a análise de registos recolhidos dados de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-268">How Log Analytics collected hello data.</span></span> <span data-ttu-id="a5c81-269">Sempre *Azure* para diagnóstico do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5c81-269">Always *Azure* for Azure diagnostics.</span></span> |
+| <span data-ttu-id="a5c81-270">ResourceId</span><span class="sxs-lookup"><span data-stu-id="a5c81-270">ResourceId</span></span> |<span data-ttu-id="a5c81-271">Especifica a conta de automatização do Azure Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-271">Specifies hello Azure Automation account.</span></span> |
+| <span data-ttu-id="a5c81-272">ResultDescription</span><span class="sxs-lookup"><span data-stu-id="a5c81-272">ResultDescription</span></span> | <span data-ttu-id="a5c81-273">Descrição de Olá para esta operação.</span><span class="sxs-lookup"><span data-stu-id="a5c81-273">hello description for this operation.</span></span> |
+| <span data-ttu-id="a5c81-274">SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="a5c81-274">SubscriptionId</span></span> | <span data-ttu-id="a5c81-275">Olá subscrição do Azure Id (GUID) para Olá conta de automatização.</span><span class="sxs-lookup"><span data-stu-id="a5c81-275">hello Azure subscription Id (GUID) for hello Automation account.</span></span> |
+| <span data-ttu-id="a5c81-276">ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="a5c81-276">ResourceGroup</span></span> | <span data-ttu-id="a5c81-277">Nome do grupo de recursos de Olá para Olá conta de automatização.</span><span class="sxs-lookup"><span data-stu-id="a5c81-277">Name of hello resource group for hello Automation account.</span></span> |
+| <span data-ttu-id="a5c81-278">ResourceProvider</span><span class="sxs-lookup"><span data-stu-id="a5c81-278">ResourceProvider</span></span> | <span data-ttu-id="a5c81-279">MICROSOFT. AUTOMATIZAÇÃO</span><span class="sxs-lookup"><span data-stu-id="a5c81-279">MICROSOFT.AUTOMATION</span></span> |
+| <span data-ttu-id="a5c81-280">ResourceType</span><span class="sxs-lookup"><span data-stu-id="a5c81-280">ResourceType</span></span> | <span data-ttu-id="a5c81-281">AUTOMATIONACCOUNTS</span><span class="sxs-lookup"><span data-stu-id="a5c81-281">AUTOMATIONACCOUNTS</span></span> |
+| <span data-ttu-id="a5c81-282">CorrelationId</span><span class="sxs-lookup"><span data-stu-id="a5c81-282">CorrelationId</span></span> |<span data-ttu-id="a5c81-283">GUID que é Olá Id de correlação do relatório de compatibilidade de Olá.</span><span class="sxs-lookup"><span data-stu-id="a5c81-283">GUID that is hello Correlation Id of hello compliance report.</span></span> |
 
-## <a name="summary"></a>Resumo
+## <a name="summary"></a><span data-ttu-id="a5c81-284">Resumo</span><span class="sxs-lookup"><span data-stu-id="a5c81-284">Summary</span></span>
 
-Enviando o seu tooLog de dados do Automation DSC análise, pode obter o melhor aprofundadas sobre o estado de Olá os nós de DSC de automatização por:
+<span data-ttu-id="a5c81-285">Enviando o seu tooLog de dados do Automation DSC análise, pode obter o melhor aprofundadas sobre o estado de Olá os nós de DSC de automatização por:</span><span class="sxs-lookup"><span data-stu-id="a5c81-285">By sending your Automation DSC data tooLog Analytics, you can get better insight into hello status of your Automation DSC nodes by:</span></span>
 
-* Configurar alertas toonotify, quando existe um problema
-* Utilizar vistas personalizadas e toovisualize de consultas de pesquisa os resultados de runbook, estado de tarefa de runbook e de outras relacionados com indicadores chaves ou métricas.  
+* <span data-ttu-id="a5c81-286">Configurar alertas toonotify, quando existe um problema</span><span class="sxs-lookup"><span data-stu-id="a5c81-286">Setting up alerts toonotify you when there is an issue</span></span>
+* <span data-ttu-id="a5c81-287">Utilizar vistas personalizadas e toovisualize de consultas de pesquisa os resultados de runbook, estado de tarefa de runbook e de outras relacionados com indicadores chaves ou métricas.</span><span class="sxs-lookup"><span data-stu-id="a5c81-287">Using custom views and search queries toovisualize your runbook results, runbook job status, and other related key indicators or metrics.</span></span>  
 
-Análise de registos fornece dados de DSC de automatização de tooyour do maiores visibilidade operacional e pode ajudar a incidentes de endereço mais rapidamente.  
+<span data-ttu-id="a5c81-288">Análise de registos fornece dados de DSC de automatização de tooyour do maiores visibilidade operacional e pode ajudar a incidentes de endereço mais rapidamente.</span><span class="sxs-lookup"><span data-stu-id="a5c81-288">Log Analytics provides greater operational visibility tooyour Automation DSC data and can help address incidents more quickly.</span></span>  
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a><span data-ttu-id="a5c81-289">Passos seguintes</span><span class="sxs-lookup"><span data-stu-id="a5c81-289">Next steps</span></span>
 
-* toolearn mais informações sobre como consultas de pesquisa diferentes tooconstruct e reveja Olá Automation DSC registos de análise do registo, consulte [pesquisas de registo na análise de registos](../log-analytics/log-analytics-log-searches.md)
-* toolearn mais sobre a utilização do Automation DSC do Azure, consulte [introdução ao Azure Automation DSC](automation-dsc-getting-started.md)
-* toolearn mais informações sobre a análise de registos do OMS e origens de recolha de dados, consulte [dados de armazenamento do Azure recolha na descrição geral da análise de registos](../log-analytics/log-analytics-azure-storage.md)
+* <span data-ttu-id="a5c81-290">toolearn mais informações sobre como consultas de pesquisa diferentes tooconstruct e reveja Olá Automation DSC registos de análise do registo, consulte [pesquisas de registo na análise de registos](../log-analytics/log-analytics-log-searches.md)</span><span class="sxs-lookup"><span data-stu-id="a5c81-290">toolearn more about how tooconstruct different search queries and review hello Automation DSC logs with Log Analytics, see [Log searches in Log Analytics](../log-analytics/log-analytics-log-searches.md)</span></span>
+* <span data-ttu-id="a5c81-291">toolearn mais sobre a utilização do Automation DSC do Azure, consulte [introdução ao Azure Automation DSC](automation-dsc-getting-started.md)</span><span class="sxs-lookup"><span data-stu-id="a5c81-291">toolearn more about using Azure Automation DSC, see [Getting started with Azure Automation DSC](automation-dsc-getting-started.md)</span></span>
+* <span data-ttu-id="a5c81-292">toolearn mais informações sobre a análise de registos do OMS e origens de recolha de dados, consulte [dados de armazenamento do Azure recolha na descrição geral da análise de registos](../log-analytics/log-analytics-azure-storage.md)</span><span class="sxs-lookup"><span data-stu-id="a5c81-292">toolearn more about OMS Log Analytics and data collection sources, see [Collecting Azure storage data in Log Analytics overview](../log-analytics/log-analytics-azure-storage.md)</span></span>
 

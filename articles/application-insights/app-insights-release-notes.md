@@ -19,17 +19,17 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="sdk-release-notes---application-insights"></a>Notas de Versão do SDK - Application Insights
-Seguem-se notas de versão detalhadas e instruções de atualização para os nossos SDKs:
+# <a name="sdk-release-notes---application-insights"></a><span data-ttu-id="617ce-103">Notas de Versão do SDK - Application Insights</span><span class="sxs-lookup"><span data-stu-id="617ce-103">SDK Release Notes - Application Insights</span></span>
+<span data-ttu-id="617ce-104">Seguem-se notas de versão detalhadas e instruções de atualização para os nossos SDKs:</span><span class="sxs-lookup"><span data-stu-id="617ce-104">Here are detailed release notes and update instructions for our SDKs:</span></span>
 
-* [Servidor Web do ASP.NET SDK](https://github.com/Microsoft/ApplicationInsights-server-dotnet/releases)
-* [SDK .NET Core](https://github.com/Microsoft/ApplicationInsights-dotnet/releases) 
-* [Adaptadores de registo do .NET](https://github.com/Microsoft/ApplicationInsights-dotnet-logging/releases)
-* [Núcleo do ASP.NET](https://github.com/Microsoft/ApplicationInsights-aspnet5/releases)
-* [Java](https://github.com/Microsoft/ApplicationInsights-Java)
-* [JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/commits/master)
-* [Ferramentas do Visual Studio](app-insights-release-notes-vsix.md)
-* [Outras plataformas](https://github.com/Microsoft/ApplicationInsights-Home)
+* [<span data-ttu-id="617ce-105">Servidor Web do ASP.NET SDK</span><span class="sxs-lookup"><span data-stu-id="617ce-105">ASP.NET Web Server SDK</span></span>](https://github.com/Microsoft/ApplicationInsights-server-dotnet/releases)
+* [<span data-ttu-id="617ce-106">SDK .NET Core</span><span class="sxs-lookup"><span data-stu-id="617ce-106">.NET Core SDK</span></span>](https://github.com/Microsoft/ApplicationInsights-dotnet/releases) 
+* [<span data-ttu-id="617ce-107">Adaptadores de registo do .NET</span><span class="sxs-lookup"><span data-stu-id="617ce-107">.NET Logging Adapters</span></span>](https://github.com/Microsoft/ApplicationInsights-dotnet-logging/releases)
+* [<span data-ttu-id="617ce-108">Núcleo do ASP.NET</span><span class="sxs-lookup"><span data-stu-id="617ce-108">ASP.NET Core</span></span>](https://github.com/Microsoft/ApplicationInsights-aspnet5/releases)
+* [<span data-ttu-id="617ce-109">Java</span><span class="sxs-lookup"><span data-stu-id="617ce-109">Java</span></span>](https://github.com/Microsoft/ApplicationInsights-Java)
+* [<span data-ttu-id="617ce-110">JavaScript</span><span class="sxs-lookup"><span data-stu-id="617ce-110">JavaScript</span></span>](https://github.com/Microsoft/ApplicationInsights-JS/commits/master)
+* [<span data-ttu-id="617ce-111">Ferramentas do Visual Studio</span><span class="sxs-lookup"><span data-stu-id="617ce-111">Visual Studio tools</span></span>](app-insights-release-notes-vsix.md)
+* [<span data-ttu-id="617ce-112">Outras plataformas</span><span class="sxs-lookup"><span data-stu-id="617ce-112">Other platforms</span></span>](https://github.com/Microsoft/ApplicationInsights-Home)
 
-Ler também nosso [blogues](https://azure.microsoft.com/blog/tag/application-insights/) e [atualizações de serviço](https://azure.microsoft.com/updates/?service=application-insights) que resumir os principais melhoramentos na Olá serviço Application Insights como um todo.
+<span data-ttu-id="617ce-113">Ler também nosso [blogues](https://azure.microsoft.com/blog/tag/application-insights/) e [atualizações de serviço](https://azure.microsoft.com/updates/?service=application-insights) que resumir os principais melhoramentos na Olá serviço Application Insights como um todo.</span><span class="sxs-lookup"><span data-stu-id="617ce-113">Read also our [blogs](https://azure.microsoft.com/blog/tag/application-insights/) and [Service Updates](https://azure.microsoft.com/updates/?service=application-insights) which summarize major improvements in hello Application Insights service as a whole.</span></span>
 

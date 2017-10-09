@@ -21,35 +21,35 @@ ms.translationtype: MT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 10/06/2017
 ---
-# <a name="call-hello-microsoft-graph-api-from-a-windows-desktop-app"></a>Chamar Olá Microsoft Graph API a partir de uma aplicação de ambiente de trabalho do Windows
+# <a name="call-hello-microsoft-graph-api-from-a-windows-desktop-app"></a><span data-ttu-id="1caab-103">Chamar Olá Microsoft Graph API a partir de uma aplicação de ambiente de trabalho do Windows</span><span class="sxs-lookup"><span data-stu-id="1caab-103">Call hello Microsoft Graph API from a Windows Desktop app</span></span>
 
-Este guia demonstra como uma aplicação .NET de ambiente de trabalho do Windows (XAML) nativo pode obter um token de acesso e chamar outras APIs que necessitam de tokens de acesso a partir do ponto final do Azure Active Directory v2 ou Microsoft Graph API.
+<span data-ttu-id="1caab-104">Este guia demonstra como uma aplicação .NET de ambiente de trabalho do Windows (XAML) nativo pode obter um token de acesso e chamar outras APIs que necessitam de tokens de acesso a partir do ponto final do Azure Active Directory v2 ou Microsoft Graph API.</span><span class="sxs-lookup"><span data-stu-id="1caab-104">This guide demonstrates how a native Windows Desktop .NET (XAML) application can get an access token and call Microsoft Graph API or other APIs that require access tokens from Azure Active Directory v2 endpoint.</span></span>
 
-No final de Olá deste guia, a aplicação irá ser capaz de toocall uma API protegida com contas pessoais (incluindo outlook.com, live.com e outros), bem como de trabalho e as contas de profissional de qualquer da empresa ou organização que tenha o Azure Active Directory.  
+<span data-ttu-id="1caab-105">No final de Olá deste guia, a aplicação irá ser capaz de toocall uma API protegida com contas pessoais (incluindo outlook.com, live.com e outros), bem como de trabalho e as contas de profissional de qualquer da empresa ou organização que tenha o Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="1caab-105">At hello end of this guide, your application will be able toocall a protected API using personal accounts (including outlook.com, live.com, and others) as well as work and school accounts from any company or organization that has Azure Active Directory.</span></span>  
 
-> Este guia requer o Visual Studio 2015 Update 3 ou Visual Studio 2017.  Não o tiver? [Transferir o Visual Studio 2017 gratuitamente](https://www.visualstudio.com/downloads/)
+> <span data-ttu-id="1caab-106">Este guia requer o Visual Studio 2015 Update 3 ou Visual Studio 2017.</span><span class="sxs-lookup"><span data-stu-id="1caab-106">This guide requires Visual Studio 2015 Update 3 or Visual Studio 2017.</span></span>  <span data-ttu-id="1caab-107">Não o tiver?</span><span class="sxs-lookup"><span data-stu-id="1caab-107">Don’t have it?</span></span> [<span data-ttu-id="1caab-108">Transferir o Visual Studio 2017 gratuitamente</span><span class="sxs-lookup"><span data-stu-id="1caab-108">Download Visual Studio 2017 for free</span></span>](https://www.visualstudio.com/downloads/)
 
-### <a name="how-this-guide-works"></a>Como funciona este guia
+### <a name="how-this-guide-works"></a><span data-ttu-id="1caab-109">Como funciona este guia</span><span class="sxs-lookup"><span data-stu-id="1caab-109">How this guide works</span></span>
 
 ![Como funciona este guia](media/active-directory-mobileanddesktopapp-windowsdesktop-intro/windesktophowitworks.png)
 
-permite que a aplicação de exemplo de Olá criada por este guia tooquery uma aplicação de ambiente de trabalho do Windows Microsoft Graph API ou uma API Web que aceita tokens de ponto final do Azure Active Directory v2. Neste cenário, um token é adicionado tooHTTP pedidos através do cabeçalho de autorização de Olá. Aquisição do token e a renovação é processado pelo Olá biblioteca de autenticação da Microsoft (MSAL).
+<span data-ttu-id="1caab-111">permite que a aplicação de exemplo de Olá criada por este guia tooquery uma aplicação de ambiente de trabalho do Windows Microsoft Graph API ou uma API Web que aceita tokens de ponto final do Azure Active Directory v2.</span><span class="sxs-lookup"><span data-stu-id="1caab-111">hello sample application created by this guide enables a Windows Desktop Application tooquery Microsoft Graph API or a Web API that accepts tokens from Azure Active Directory v2 endpoint.</span></span> <span data-ttu-id="1caab-112">Neste cenário, um token é adicionado tooHTTP pedidos através do cabeçalho de autorização de Olá.</span><span class="sxs-lookup"><span data-stu-id="1caab-112">For this scenario, a token is added tooHTTP requests via hello Authorization header.</span></span> <span data-ttu-id="1caab-113">Aquisição do token e a renovação é processado pelo Olá biblioteca de autenticação da Microsoft (MSAL).</span><span class="sxs-lookup"><span data-stu-id="1caab-113">Token acquisition and renewal is handled by hello Microsoft Authentication Library (MSAL).</span></span>
 
 
-### <a name="handling-token-acquisition-for-accessing-protected-web-apis"></a>Processamento de aquisição de token para aceder ao protegidos APIs da Web
+### <a name="handling-token-acquisition-for-accessing-protected-web-apis"></a><span data-ttu-id="1caab-114">Processamento de aquisição de token para aceder ao protegidos APIs da Web</span><span class="sxs-lookup"><span data-stu-id="1caab-114">Handling token acquisition for accessing protected Web APIs</span></span>
 
-Depois do utilizador Olá efetua a autenticação, a aplicação de exemplo de Olá recebe um token que pode ser utilizado tooquery Microsoft Graph API ou uma API Web protegida pelo Microsoft Azure Active Directory v2.
+<span data-ttu-id="1caab-115">Depois do utilizador Olá efetua a autenticação, a aplicação de exemplo de Olá recebe um token que pode ser utilizado tooquery Microsoft Graph API ou uma API Web protegida pelo Microsoft Azure Active Directory v2.</span><span class="sxs-lookup"><span data-stu-id="1caab-115">After hello user authenticates, hello sample application receives a token that can be used tooquery Microsoft Graph API or a Web API secured by Microsoft Azure Active Directory v2.</span></span>
 
-APIs, tais como o Microsoft Graph requerem um tooallow de token de acesso a aceder a recursos específicos – por exemplo, tooread um perfil de utilizador, aceder ao calendário do utilizador ou enviem um e-mail. A aplicação pode pedir um token de acesso utilizando MSAL tooaccess estes recursos especificar âmbitos de API. Este token de acesso é, em seguida, adicionado toohello cabeçalho de autorização de HTTP para cada chamada realizada em Olá recurso protegido. 
+<span data-ttu-id="1caab-116">APIs, tais como o Microsoft Graph requerem um tooallow de token de acesso a aceder a recursos específicos – por exemplo, tooread um perfil de utilizador, aceder ao calendário do utilizador ou enviem um e-mail.</span><span class="sxs-lookup"><span data-stu-id="1caab-116">APIs such as Microsoft Graph require an access token tooallow accessing specific resources – for example, tooread a user’s profile, access user’s calendar or send an email.</span></span> <span data-ttu-id="1caab-117">A aplicação pode pedir um token de acesso utilizando MSAL tooaccess estes recursos especificar âmbitos de API.</span><span class="sxs-lookup"><span data-stu-id="1caab-117">Your application can request an access token using MSAL tooaccess these resources by specifying API scopes.</span></span> <span data-ttu-id="1caab-118">Este token de acesso é, em seguida, adicionado toohello cabeçalho de autorização de HTTP para cada chamada realizada em Olá recurso protegido.</span><span class="sxs-lookup"><span data-stu-id="1caab-118">This access token is then added toohello HTTP Authorization header for every call made against hello protected resource.</span></span> 
 
-MSAL gere a colocação em cache e atualizar os tokens de acesso para si, pelo que não tem da aplicação.
+<span data-ttu-id="1caab-119">MSAL gere a colocação em cache e atualizar os tokens de acesso para si, pelo que não tem da aplicação.</span><span class="sxs-lookup"><span data-stu-id="1caab-119">MSAL manages caching and refreshing access tokens for you, so your application doesn't need to.</span></span>
 
 
-### <a name="nuget-packages"></a>Pacotes NuGet
+### <a name="nuget-packages"></a><span data-ttu-id="1caab-120">Pacotes NuGet</span><span class="sxs-lookup"><span data-stu-id="1caab-120">NuGet Packages</span></span>
 
-Este guia utiliza Olá pacotes NuGet os seguintes:
+<span data-ttu-id="1caab-121">Este guia utiliza Olá pacotes NuGet os seguintes:</span><span class="sxs-lookup"><span data-stu-id="1caab-121">This guide uses hello following NuGet packages:</span></span>
 
-|Biblioteca|Descrição|
+|<span data-ttu-id="1caab-122">Biblioteca</span><span class="sxs-lookup"><span data-stu-id="1caab-122">Library</span></span>|<span data-ttu-id="1caab-123">Descrição</span><span class="sxs-lookup"><span data-stu-id="1caab-123">Description</span></span>|
 |---|---|
-|[Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)|Biblioteca de autenticação da Microsoft (MSAL)|
+|[<span data-ttu-id="1caab-124">Microsoft.Identity.Client</span><span class="sxs-lookup"><span data-stu-id="1caab-124">Microsoft.Identity.Client</span></span>](https://www.nuget.org/packages/Microsoft.Identity.Client)|<span data-ttu-id="1caab-125">Biblioteca de autenticação da Microsoft (MSAL)</span><span class="sxs-lookup"><span data-stu-id="1caab-125">Microsoft Authentication Library (MSAL)</span></span>|
 
