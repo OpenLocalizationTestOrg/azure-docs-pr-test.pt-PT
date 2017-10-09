@@ -1,0 +1,5 @@
+## <a name="pricing"></a>Preços
+
+O Azure Batch é um serviço gratuito; não lhe é cobrada para Olá conta do Batch em si. São-lhe cobrados para Olá subjacente recursos de computação do Azure que as soluções do Batch consumam e para os recursos de Olá consumidos por outros serviços, quando executam as cargas de trabalho. Por exemplo, são-lhe cobrados Olá nós de computação (VMs) nos seus conjuntos e para os dados de Olá que armazenar no armazenamento do Azure como entrada ou saída para as suas tarefas. Da mesma forma, se utilizar Olá [pacotes de aplicações](../articles/batch/batch-application-packages.md) funcionalidade do Batch, são-lhe cobrados Olá do Azure para recursos de armazenamento utilizados para armazenar os pacotes de aplicações. Consulte [Preços do Batch](https://azure.microsoft.com/pricing/details/batch/) para obter mais informações.
+
+[Prioridade baixa VMs](../articles/batch/batch-low-pri-vms.md) pode reduzir significativamente o custo de Olá das cargas de trabalho do Batch. Para obter informações sobre preços de VMs de baixa prioridade, consulte [Batch Pricing](https://azure.microsoft.com/pricing/details/batch/) (Preços do Batch). 

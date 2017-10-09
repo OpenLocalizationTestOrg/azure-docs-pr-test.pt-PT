@@ -1,0 +1,18 @@
+1. No portal de Olá, no lado esquerdo Olá, clique em  **+**  e escreva "Gateway de rede Virtual" na pesquisa. Localizar **gateway de rede Virtual** na pesquisa de Olá devolver e clique Olá entrada. No Olá **gateway de rede Virtual** página, clique em **criar** na parte inferior de Olá de Olá de tooopen de página Olá **criar gateway de rede virtual** página.
+2. No Olá **criar gateway de rede virtual** página, preencha os valores de Olá para o gateway de rede virtual.
+
+  ![Campos da página de criação do gateway de rede virtual](./media/vpn-gateway-add-gw-p2s-rm-portal-include/p2sgw.png "o painel ")
+3. **Nome**: dê um nome ao gateway. Atribuição de nome de um gateway é não Olá, mesmo que atribuir nome a uma sub-rede de gateway. -'S nome Olá do objeto do gateway Olá que estiver a criar.
+4. **Tipo de gateway**: selecione **VPN**. Gateways de VPN utilizam o tipo de gateway de rede virtual Olá **VPN**.
+5. **Tipo de VPN**: selecionar tipo de VPN de Olá especificado para a sua configuração. A maioria das configurações requerem um tipo de VPN baseado em rotas.
+6. **SKU**: SKU de gateway Olá selecione na lista pendente de Olá. SKUs de Olá listados na lista pendente de Olá dependem Olá tipo de VPN que selecionar.
+7. **Localização**: ajustar Olá **localização** campo toopoint toohello localização onde está localizada a sua rede virtual. Se a localização de Olá não está a apontar região toohello onde reside a sua rede virtual, rede virtual Olá não aparece na lista pendente do Olá 'Escolha uma rede virtual'.
+8. Escolha Olá toowhich de rede virtual pretende tooadd um gateway. Clique em **rede Virtual** tooopen Olá **escolha uma rede virtual** página. Selecione Olá VNet. Se não vir a VNet, certifique-se de que Olá **localização** campo está a apontar toohello região na qual está localizada a sua rede virtual.
+9. **Endereço IP público**: criar um toowhich de objeto do endereço IP público um endereço IP público será atribuído dinamicamente. Clique em **endereço IP público** tooopen Olá **escolher endereço IP público** página. Clique em **+ criar novos** tooopen Olá **página de endereço IP pública criação**. Introduza um nome para o seu endereço IP público. Clique em **OK** toosave as suas alterações. endereço IP Olá dinamicamente é atribuído quando Olá gateway de VPN criado. O Gateway de VPN, atualmente, apenas suporta a alocação de endereços IP públicos *dinâmicos*. No entanto, não significa que o endereço IP Olá alterado depois de lhe ser atribuído tooyour gateway de VPN. tempo apenas Olá alterações do endereço de IP público de Olá quando é Olá gateway é eliminado e recriado. Não é alterado ao redimensionar, repor ou ao realizar qualquer outra manutenção/atualização interna do gateway de VPN.
+10. **Subscrição**: Certifique-se de que Olá correta está selecionada a subscrição.
+11. **Grupo de recursos**: esta definição é determinada pelo Olá rede Virtual que selecionou.
+12. Não ajustar Olá **localização** depois especificadas definições anteriores Olá.
+13. Verifique as definições de Olá. Se pretender que o seu tooappear de gateway no dashboard de Olá, pode selecionar **Pin toodashboard** em Olá parte inferior da página Olá.
+14. Clique em **criar** toobegin criar Olá gateway. definições de Olá são validadas e gateway Olá implementa. Criar um gateway pode demorar até too45 minutos.
+
+Depois de criado o gateway de Olá, pode ver o endereço IP Olá que tenha sido atribuído tooit visualizando a rede virtual Olá. gateway de Olá é apresentado como um dispositivo ligado. Pode clicar em Olá ligado dispositivo (gateway da rede virtual) tooview obter mais informações.

@@ -1,0 +1,11 @@
+Consulte Olá seguintes ligações para informações de configuração:
+
+- Para obter mais informações sobre os dispositivos VPN compatíveis, consulte [VPN Devices (Dispositivos VPN)](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md).
+- Antes de configurar o seu dispositivo VPN, verifique a existência de quaisquer [problemas de compatibilidade de dispositivos conhecidos](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md#known) para o dispositivo VPN de Olá que pretende que o toouse.
+- Para definições de configuração de toodevice ligações, consulte [dispositivos VPN validados](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md#devicetable). são fornecidas hiperligações de configuração de dispositivo de Olá numa base de melhor esforço. É sempre melhor toocheck com o fabricante do dispositivo para informações de configuração mais recentes Olá.
+- Para obter uma descrição geral da configuração de dispositivo VPN, veja [Overview of 3rd party VPN device configurations](../articles/vpn-gateway/vpn-gateway-3rdparty-device-config-overview.md) (Descrição geral das configurações de dispositivo VPN de terceiros).
+- Para obter informações sobre a edição de amostras de configuração do dispositivo, consulte [Editing samples (Editar amostras)](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md#editing).
+- Para requisitos criptográficos, consulte [Sobre os requisitos criptográficos e gateways de VPN do Azure](../articles/vpn-gateway/vpn-gateway-about-compliance-crypto.md).
+- Para mais informações sobre os parâmetros de IPsec/IKE, consulte [Sobre os dispositivos de VPN e os parâmetros de IPsec/IKE para ligações do Gateway da Rede Site-to-Site VPN](../articles/vpn-gateway/vpn-gateway-about-vpn-devices.md#ipsec).
+- Para os passos de configuração da política de IPsec/IKE, consulte [Configurar política de IPsec/IKE para ligações VPN S2S ou VNet para VNet](../articles/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell.md).
+- tooconnect vários baseadas em políticas dispositivos VPN, consulte [toomultiple de gateways de VPN do Azure de ligar no local dispositivos VPN baseado na política com o PowerShell](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).

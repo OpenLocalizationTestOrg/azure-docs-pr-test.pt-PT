@@ -1,0 +1,4 @@
+As máquinas virtuais (VMs) IaaS e instâncias de função de PaaS numa rede virtual recebem automaticamente um endereço IP privado de um intervalo que especificou, com base na sub-rede Olá que estão ligados a. Que endereço é mantido por Olá VMs e instâncias de função, até que estas forem desativadas. Desativar uma VM ou instância de função por pará-lo a partir do PowerShell, Olá CLI do Azure, ou Olá portal do Azure. Nesses casos, depois de Olá VM ou iniciar de instância de função novamente, irá receber um endereço IP disponível do Olá infraestrutura do Azure, o que pode não ser Olá mesmo-tinha anteriormente. Se desligar Olá VM ou instância de função do sistema de operativo convidado Olá, mantém endereço IP Olá tinha.  
+
+Em certos casos, quer um toohave de instância de função VM ou um endereço IP estático, por exemplo, se a VM está a suceder toorun DNS ou será um controlador de domínio. Pode fazê-lo ao definir um endereço IP privado estático.
+

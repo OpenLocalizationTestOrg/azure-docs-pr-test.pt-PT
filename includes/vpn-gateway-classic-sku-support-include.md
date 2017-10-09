@@ -1,0 +1,2 @@
+> [!NOTE]
+> Olá novo gateway de VPN SKUs (VpnGw1, VpnGw2 e VpnGw3) são suportados para o modelo de implementação de Gestor de recursos de Olá apenas. Redes virtuais clássicas devem continuar toouse Olá SKUs antigos. Para obter mais informações sobre SKUs de gateway antigo Olá, consulte [trabalhar com o gateway de rede virtual SKUs (antiga)](../articles/vpn-gateway/vpn-gateway-about-skus-legacy.md).

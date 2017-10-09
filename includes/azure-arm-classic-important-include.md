@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Antes de trabalhar com recursos do Azure, é importante toounderstand que o Azure tem atualmente dois modelos de implementação: Azure Resource Manager e clássico. Confirme que compreende os [modelos e ferramentas de implementação](../articles/azure-classic-rm.md) antes de trabalhar com qualquer recurso do Azure. Pode ver a documentação de Olá de diversas ferramentas clicando Olá nos separadores na parte superior de Olá deste artigo.

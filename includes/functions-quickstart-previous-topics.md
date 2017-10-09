@@ -1,0 +1,1 @@
+Este tópico utiliza como respetivos recursos Olá de ponto de partida criados no [criar a sua primeira função do portal do Azure de Olá](../articles/azure-functions/functions-create-first-azure-function.md). Se ainda não o fez, conclua estes toocreate de agora passos a aplicação de função.

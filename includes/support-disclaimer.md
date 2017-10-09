@@ -1,0 +1,2 @@
+Se o problema do Azure não esteja endereçado neste artigo, visite Olá fóruns do Azure no [MSDN e Olá Stack Overflow](https://azure.microsoft.com/support/forums/). Pode publicar o seu problema nestes fóruns ou publique demasiado[ @AzureSupport no Twitter](https://twitter.com/AzureSupport). Também pode submeter um pedido de suporte do Azure. toosubmit um pedido de suporte no Olá [suporte do Azure](https://azure.microsoft.com/support/options/) página, selecione **obter suporte**.
+

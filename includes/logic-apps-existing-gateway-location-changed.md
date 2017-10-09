@@ -1,0 +1,2 @@
+**Q**: por que razão a localização de Olá meu gateway existente alterar? <br/>
+**A**: Gateway criados antes de 3 de Maio de 2017 foram movidas toohello localizações original de inquilino de Olá do Azure AD para a empresa ou escola Olá conta que criar recursos desses gateways. No entanto, estas alterações não devem afetar atualmente em execução as logic apps, que devem continuar a trabalhar como habitualmente. Com a disponibilidade geral do gateway Olá na Maio, localizações de recursos de gateway podem ser diferente das localizações de aplicação lógica.

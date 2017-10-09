@@ -1,0 +1,2 @@
+Este artigo faz parte de uma vasta tooprovide de série com considerações de design e diretrizes como criar fora de uma infraestrutura de aplicação no Azure. Pode [ver tópicos adicionais Olá na série de Olá](#next-steps). Embora pode criar rapidamente a saída de um ambiente de desenvolvimento/teste no Azure, existem considerações adicionais quando implementar um ambiente seguro e prontos para produção, altamente disponível.
+

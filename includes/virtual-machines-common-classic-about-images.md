@@ -1,0 +1,12 @@
+
+
+As imagens são utilizadas no Azure tooprovide uma nova máquina virtual com um sistema operativo. Uma imagem poderá também ter um ou mais discos de dados. Imagens estão disponíveis várias origens:
+
+* O Azure disponibiliza imagens na Olá [Marketplace](https://azure.microsoft.com/gallery/virtual-machines/). Existem recentes versões do Windows Server e as distribuições do sistema de operativo Olá Linux. Algumas imagens também contêm aplicações, como o SQL Server. Benefício do MSDN e ter acesso tooadditional imagens de subscritores de pay as you go do MSDN.
+* Olá Comunidade de código aberto oferece imagens através de [VM depósito](http://vmdepot.msopentech.com/List/Index).
+* Também pode armazenar e utilizar as suas próprias imagens no Azure, ao capturar uma máquina virtual do Azure existente para utilização como uma imagem ou carregar uma imagem.
+
+## <a name="about-vm-images-and-os-images"></a>Sobre as imagens da VM e imagens de SO
+Dois tipos de imagens podem ser utilizados no Azure: *imagem de VM* e *imagem do SO*. Uma imagem de VM inclui um sistema operativo e todos os discos anexados a máquina virtual de tooa quando é criada a imagem de Olá. Uma imagem de VM é o tipo mais recente do Olá da imagem. Antes de imagens da VM foram introduzidas, uma imagem no Azure pode ter apenas um sistema operativo generalizado e não discos adicionais. Uma imagem VM que contém apenas um sistema operativo generalizado é basicamente Olá igual ao tipo original de Olá da imagem, a imagem do SO Olá.
+
+Pode criar as suas próprias imagens, com base na máquina virtual no Azure ou uma máquina virtual com noutro local que copiar e carregar. Se quiser toouse toocreate uma imagem com mais do que uma máquina virtual, terá de tooprepare-lo para utilização como uma imagem por generalizá-lo. toocreate uma imagem do Windows Server, Olá executar Sysprep comando no Olá servidor toogeneralize-lo antes de carregar o ficheiro. vhd Olá. Para obter detalhes sobre o Sysprep, consulte [como tooUse Sysprep: uma introdução](http://go.microsoft.com/fwlink/p/?LinkId=392030) e [suporte de Sysprep para funções de servidor](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles). Cópia de segurança Olá VM antes de executar o Sysprep. Criar uma imagem de Linux varia consoante a distribuição. Normalmente, é necessário toorun um conjunto de comandos que são específicas toohello distribuição e executar Olá agente Linux do Azure.

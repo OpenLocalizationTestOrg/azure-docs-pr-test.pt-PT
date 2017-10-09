@@ -1,0 +1,2 @@
+Quando utiliza um Gestor de tráfego do Microsoft Azure tooload equilibrar o tráfego tooyour Web site do Azure, nesse Web site possam ser acedido utilizando Olá  **\*. trafficmanager.net** nome de domínio atribuído pelo Azure. Também pode associar um nome de domínio personalizado, tal como www.contoso.com, com o seu Web site na ordem tooprovide um nome de domínio mais reconhecível para os seus utilizadores.
+
