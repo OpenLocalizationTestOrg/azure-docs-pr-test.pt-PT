@@ -1,10 +1,10 @@
 ---
-title: aaaIoT fluxos de dados em tempo real e do Azure Stream Analytics | Microsoft Docs
+title: Fluxos de dados em tempo real da IoT e Azure Stream Analytics | Microsoft Docs
 description: "Etiquetas do sensor da IoT e transmissão de dados com análises de transmissão e processamento de dados em tempo real"
 keywords: "solução iot, começar com iot"
 services: stream-analytics
 documentationcenter: 
-author: jeffstokes72
+author: samacha
 manager: jhubbard
 editor: cgronlun
 ms.assetid: 3e829055-75ed-469f-91f5-f0dc95046bdb
@@ -14,28 +14,28 @@ ms.topic: hero-article
 ms.tgt_pltfrm: na
 ms.workload: data-services
 ms.date: 03/28/2017
-ms.author: jeffstok
-ms.openlocfilehash: 422e6b719d0289880aa7f17fdc585e2b768c63d7
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.author: samacha
+ms.openlocfilehash: 3146604dd2dbc626d8179d5c91e3cf895b9f67da
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="get-started-with-azure-stream-analytics-tooprocess-data-from-iot-devices"></a>Introdução aos dados de tooprocess Azure Stream Analytics dos dispositivos de IoT
-Neste tutorial, ficará a saber como dados toogather de lógica de processamento de fluxo do toocreate de dispositivos Internet das coisas (IoT). Utilizamos uma toodemonstrate cenário do mundo real, Internet das coisas (IoT) utilize como toobuild solução rapidamente e de forma económica.
+# <a name="get-started-with-azure-stream-analytics-to-process-data-from-iot-devices"></a>Introdução ao Azure Stream Analytics para o processamento de dados a partir de dispositivos da IoT
+Neste tutorial, vai aprender a criar uma lógica de processamento da transmissão para recolher dados em dispositivos IoT (Internet das Coisas). Vamos analisar um caso real de utilização da Internet das Coisas (IoT) para mostrar como deve construir a solução rapidamente e de forma económica.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * [Subscrição do Azure](https://azure.microsoft.com/pricing/free-trial/)
 * A consulta de exemplos e os ficheiros de dados estão disponíveis para transferência em [GitHub](https://aka.ms/azure-stream-analytics-get-started-iot)
 
 ## <a name="scenario"></a>Cenário
-Contoso, que é uma empresa no espaço de automatização industriais Olá, tem totalmente automatizado respetivo processo de fabrico. fábrica, Olá este maquinaria tem sensores que são capazes de emitem transmissões de dados em tempo real. Neste cenário, um gestor do piso de produção pretende toohave em tempo real conhecimentos aprofundados sobre toolook de dados de sensor Olá de padrões e executar ações nos mesmos. Utilizaremos Olá idioma de consulta de análise de fluxo (SAQL) através de padrões interessantes de toofind dados de sensor Olá de transmissão em fluxo recebida Olá de dados.
+A Contoso, uma empresa de automatização industrial, automatizou por completo o processo de fabrico. Nesta fábrica, as máquinas têm sensores que emitem transmissões de dados em tempo real. Neste cenário, um gestor do piso de produção pretende ter conhecimentos aprofundados e em tempo real sobre os sensores de dados e tomar medidas relativamente aos mesmos. Vamos utilizar a Linguagem SAQL (Stream Analytics Query Language) para os dados do sensor para descobrir padrões interessantes na transmissão de entrada de dados.
 
 Aqui, os dados estão a ser gerados a partir de um dispositivo Sensor Tag da Texas Instruments.
 
 ![Sensor Tag da Texas Instruments](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-01.jpg)
 
-payload de Olá de dados de Olá está no formato JSON e assemelha Olá seguinte:
+O payload dos dados está no formato JSON e tem o seguinte aspeto:
 
     {
         "time": "2016-01-26T20:47:53.0000000",  
@@ -44,16 +44,16 @@ payload de Olá de dados de Olá está no formato JSON e assemelha Olá seguinte
         "hmdt": 34  
     }  
 
-Num cenário real, pode ter centenas destes sensores a gerar eventos como uma transmissão. Idealmente, um dispositivo de gateway iria executar código toopush estes eventos demasiado[Event Hubs do Azure](https://azure.microsoft.com/services/event-hubs/) ou [os Hubs IoT do Azure](https://azure.microsoft.com/services/iot-hub/). A tarefa de Stream Analytics seria estes eventos provenientes dos Hubs de eventos de inserção e executar consultas de análise em tempo real contra fluxos Olá. Em seguida, poderia enviar Olá resultados tooone de Olá [suportado saídas](stream-analytics-define-outputs.md).
+Num cenário real, pode ter centenas destes sensores a gerar eventos como uma transmissão. O ideal seria ter um dispositivo de gateway a executar código para enviar estes eventos para os [Hubs de Eventos do Azure](https://azure.microsoft.com/services/event-hubs/) ou [Hubs IoT do Azure](https://azure.microsoft.com/services/iot-hub/). A tarefa de Stream Analytics seria ingerir estes eventos a partir de Hubs de Eventos e executar consultas de análise em tempo real em relação aos fluxos. Em seguida, pode enviar os resultados para uma das [saídas suportadas](stream-analytics-define-outputs.md).
 
-Para facilitar a utilização, este guia de introdução fornece um ficheiro de dados de exemplo, que foi capturado a partir de dispositivos Sensor Tag reais. Pode executar consultas em dados de exemplo de Olá e ver os resultados. Nos tutoriais subsequentes, ficará a saber como tooconnect sua tooinputs e saídas da tarefa e implementá-las toohello serviço do Azure.
+Para facilitar a utilização, este guia de introdução fornece um ficheiro de dados de exemplo, que foi capturado a partir de dispositivos Sensor Tag reais. Pode executar consultas nos dados de exemplo e ver os resultados. Nos tutoriais subsequentes, ficará a saber como ligar a tarefa às entradas e saídas e como as implementar no serviço do Azure.
 
 ## <a name="create-a-stream-analytics-job"></a>Criar uma tarefa do Stream Analytics
-1. No Olá [portal do Azure](http://portal.azure.com), clique em Olá sinal de adição e, em seguida, escreva **STREAM ANALYTICS** no direito de toohello Olá texto janela. Em seguida, selecione **tarefa do Stream Analytics** na lista de resultados de Olá.
+1. No [Portal do Azure](http://portal.azure.com), clique no sinal de adição e, em seguida, escreva **STREAM ANALYTICS** na janela de texto à direita. Em seguida, selecione **tarefa do Stream Analytics** na lista de resultados.
    
     ![Criar uma nova tarefa do Stream Analytics](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-02.png)
-2. Introduza um nome exclusivo de tarefa e certifique-se de que subscrição Olá é Olá uma correta para a tarefa. Crie um novo grupo de recursos ou selecione um existente na sua subscrição.
-3. Em seguida, selecione uma localização para a sua tarefa. Para velocidade de processamento e redução de custos na transferência de dados selecionando Olá é recomendada a mesma localização do grupo de recursos de Olá e conta de armazenamento pretendido.
+2. Introduza um nome exclusivo de tarefa e verifique se a subscrição é a correta para a tarefa. Crie um novo grupo de recursos ou selecione um existente na sua subscrição.
+3. Em seguida, selecione uma localização para a sua tarefa. Para acelerar o processamento e a redução de custos na transferência de dados, recomenda-se a seleção da mesma localização do grupo de recursos e da conta de armazenamento pretendida.
    
     ![Detalhes para criar uma nova tarefa do Stream Analytics](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-03.png)
    
@@ -61,61 +61,61 @@ Para facilitar a utilização, este guia de introdução fornece um ficheiro de 
    > Deve criar esta conta de armazenamento apenas uma vez por região. Este armazenamento será partilhado com todas as tarefas do Stream Analytics que são criadas nessa região.
    > 
    > 
-4. Olá tooplace de caixa de verificação a tarefa no seu dashboard e, em seguida, clique em **criar**.
+4. Selecione a caixa para colocar a sua tarefa no seu dashboard e, em seguida, clique em **CRIAR**.
    
     ![criação da tarefa em curso](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-03a.png)
-5. Deverá ver uma 'implementação iniciada...' apresentados numa Olá superior direito da janela do browser. Logo que irá alterar janela tooa concluída conforme mostrado abaixo.
+5. Deverá ver uma "Implementação iniciada..." apresentada na parte superior direita da janela do browser. Em pouco tempo, será alterada para uma janela completa conforme mostrado abaixo.
    
     ![criação da tarefa em curso](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-03b.png)
 
 ### <a name="create-an-azure-stream-analytics-query"></a>Criar uma consulta do Azure Stream Analytics
-Depois da tarefa é criada tooopen do tempo e compilação uma consulta. Pode aceder facilmente a tarefa ao clicar em mosaico Olá para o mesmo.
+Depois de a tarefa ser criada, deve abri-la e criar uma consulta. Pode aceder facilmente à sua tarefa ao clicar no mosaico relacionado com a mesma.
 
 ![Mosaico da Tarefa](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-04.png)
 
-No Olá **tarefa topologia** painel clique Olá **consulta** caixa toogo toohello Editor de consultas. Olá **consulta** editor permite-lhe consulta tooenter T-SQL que efetua a transformação Olá através de dados de eventos recebidos Olá.
+No painel **Topologia da Tarefa**, clique na caixa **CONSULTA** para aceder ao Editor de Consultas. O separador **CONSULTA** permite-lhe introduzir uma consulta T-SQL que faz a transformação através dos dados de eventos recebidos.
 
 ![Caixa de consulta](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-05.png)
 
 ### <a name="query-archive-your-raw-data"></a>Consulta: Arquivar os dados não processados
-forma mais simples de Olá da consulta é uma consulta pass-through que arquiva todos os dados de entrada tooits, designados de saída. Transferir o ficheiro de dados de exemplo de Olá de [GitHub](https://aka.ms/azure-stream-analytics-get-started-iot) tooa localização no seu computador. 
+A forma mais simples de consulta é uma consulta pass-through que arquiva todos os dados de entrada no resultado designado. Transfira o ficheiro de dados de exemplo do [GitHub](https://aka.ms/azure-stream-analytics-get-started-iot) para uma localização no computador. 
 
-1. Cole a consulta de Olá do ficheiro de PassThrough.txt Olá. 
+1. Cole a consulta a partir do ficheiro PassThrough.txt. 
    
     ![Fluxo de entrada de teste](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-06.png)
-2. Entrada de tooyour seguinte do Olá três pontos de clique e selecione **carregar dados de exemplo do ficheiro** caixa.
+2. Clique nos três pontos junto à sua entrada e selecione a caixa **Carregar dados de exemplo do ficheiro**.
    
     ![Fluxo de entrada de teste](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-06a.png)
-3. Um painel abre-se no Olá direito como resultado, dados Olá selecione HelloWorldASA inputstream. JSON da sua localização transferida o ficheiro em clique em **OK** em Olá parte inferior do painel de Olá.
+3. Por conseguinte, um painel abre-se à direita. No mesmo, selecione o ficheiro de dados HelloWorldASA-InputStream.json a partir da sua localização transferida e clique em **OK** na parte inferior do painel.
    
     ![Fluxo de entrada de teste](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-06b.png)
-4. Em seguida, clique em Olá **testar** gear na parte superior Olá deixado área da janela de Olá e processam a consulta de teste no conjunto de dados de exemplo de Olá. Uma janela de resultados abrirá abaixo a consulta como Olá processamento estar concluído.
+4. Em seguida, clique no ícone de roda dentada **estar** na área superior esquerda da janela e processe a consulta de teste relativamente ao conjunto de dados de exemplo. Será aberta uma janela de resultados por baixo da sua consulta depois de o processamento estar concluído.
    
     ![Resultados do teste](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-07.png)
 
-### <a name="query-filter-hello-data-based-on-a-condition"></a>Consulta: Dados de Olá com base numa condição de filtro
-Vamos tentar resultados de Olá toofilter baseados numa condição. Gostaríamos tooshow resultados para apenas esses eventos provenientes do "sensorA". consulta de Olá está no ficheiro de Filtering.txt Olá.
+### <a name="query-filter-the-data-based-on-a-condition"></a>Consulta: Filtrar os dados com base numa condição
+Vamos tentar filtrar os resultados com base numa condição. Gostaríamos de mostrar apenas os resultados dos eventos provenientes do “sensorA”. A consulta está localizada no ficheiro Filtering.txt.
 
 ![Filtragem de um fluxo de dados](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-08.png)
 
-Tenha em atenção que Olá consulta maiúsculas e minúsculas compara um valor de cadeia. Clique em Olá **teste** gear novamente a consulta de Olá tooexecute. consulta de Olá deverá devolver 389 linhas de 1860 eventos.
+Tenha em atenção que a consulta sensível às maiúsculas e minúsculas compara um valor da cadeia. Clique no ícone de roda dentada **Testar** novamente para executar a consulta. A consulta deverá devolver 389 linhas de 1860 eventos.
 
 ![Segundos resultados de saída do teste de consulta](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-09.png)
 
-### <a name="query-alert-tootrigger-a-business-workflow"></a>Consulta: Alerta tootrigger um fluxo de trabalho de negócio
-Vamos tornar a nossa consulta mais detalhada. Para cada tipo de sensor, pretende toomonitor temperatura média por segundo 30 janela e ver os resultados apenas se a temperatura média Olá estiver acima 100 graus. Iremos escrever seguinte Olá consulta e, em seguida, clique em **teste** resultados de Olá toosee. consulta de Olá está no ficheiro de ThresholdAlerting.txt Olá.
+### <a name="query-alert-to-trigger-a-business-workflow"></a>Consulta: Alerta para acionar um fluxo de trabalho comercial
+Vamos tornar a nossa consulta mais detalhada. Para cada tipo de sensor, queremos monitorizar a temperatura média por cada janela de 30 segundos e apresentar os resultados apenas se a temperatura média for superior a 100 graus. Vamos escrever a seguinte consulta e, em seguida, clique em **Testar** para ver os resultados. A consulta está localizada no ficheiro ThresholdAlerting.txt.
 
 ![Consulta do filtro de 30 segundos](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-10.png)
 
-Deverá ver os resultados que contêm apenas 245 linhas e nomes de sensores em que a temperatura média de Olá é maior que 100. Esta consulta grupos fluxo Olá de eventos por **dspl**, que é superior a nome do sensor Olá, um **janela em cascata** de 30 segundos. Consultas temporais tem estado como pretendemos tooprogress de tempo. Ao utilizar Olá **TIMESTAMP BY** cláusula, especificámos Olá **OUTPUTTIME** vezes tooassociate de coluna com todos os cálculos temporais. Para obter informações detalhadas, leia os artigos do Olá MSDN sobre [tempo gestão](https://msdn.microsoft.com/library/azure/mt582045.aspx) e [funções modos de janela](https://msdn.microsoft.com/library/azure/dn835019.aspx).
+Agora, deve ver resultados que contêm apenas 245 linhas e nomes de sensores em que a temperatura média é superior a 100. Esta consulta agrupa a transmissão de eventos por **dspl**, que é o nome do sensor, e coloca-a numa **Janela em Cascata** de 30 segundos. As consultas temporais têm de indicar como queremos que o tempo progrida. Com a cláusula **TIMESTAMP BY**, especificamos a coluna **OUTPUTTIME** para associar as horas a todos os cálculos temporais. Para obter informações detalhadas, leia os artigos MSDN sobre as funções [Time Management (Gestão do Tempo)](https://msdn.microsoft.com/library/azure/mt582045.aspx) e [Windowing (Múltiplas Janelas)](https://msdn.microsoft.com/library/azure/dn835019.aspx).
 
 ### <a name="query-detect-absence-of-events"></a>Consulta: Detetar a ausência de eventos
-Como pode vamos escrever uma consulta toofind uma falta de eventos de entrada? Vamos determinar Olá última vez que um sensor enviou dados e, em seguida, não enviar eventos para Olá minuto seguinte. consulta de Olá está no ficheiro de AbsenseOfEvent.txt Olá.
+Como podemos escrever uma consulta para encontrar uma falta de eventos de entrada? Vamos descobrir quando foi a última vez que um sensor enviou dados e não enviou eventos durante os cinco minuto seguintes. A consulta está localizada no ficheiro AbsenseOfEvent.txt.
 
 ![Detetar a ausência de eventos](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-11.png)
 
-Aqui, utilizamos uma **externa à esquerda** associar toohello dados mesmos fluxo (associação automática). Para uma associação **NTERNA**, só é apresentado um resultado quando é encontrada uma correspondência.  Para um **externa à esquerda** associação, se um evento de Olá à esquerda do lado da associação de Olá correspondência, é apresentada uma linha que tem um valor nulo para Olá todas as colunas do lado direito de Olá é devolvida. Esta técnica é muito útil toofind uma ausência de eventos. Para obter mais informações sobre [JOIN (ASSOCIAÇÃO)](https://msdn.microsoft.com/library/azure/dn835026.aspx), veja a nossa documentação MSDN.
+Aqui, vamos utilizar uma associação **EXTERNA** para a mesma transmissão de dados (associação automática). Para uma associação **NTERNA**, só é apresentado um resultado quando é encontrada uma correspondência.  Numa associação **EXTERNA**, se um evento externo à associação não tiver qualquer correspondência, será apresentada a linha NULO para todas as colunas à direita. Esta técnica é muito útil para localizar a ausência de eventos. Para obter mais informações sobre [JOIN (ASSOCIAÇÃO)](https://msdn.microsoft.com/library/azure/dn835026.aspx), veja a nossa documentação MSDN.
 
 ## <a name="conclusion"></a>Conclusão
-Olá objetivo deste tutorial é toodemonstrate como toowrite diferentes consultas de idioma de consulta do Stream Analytics e ver resultados no browser Olá. No entanto, isto é apenas o início. O Stream Analytics tem muitas outras funcionalidades. Stream Analytics suporta uma variedade de entradas e saídas e pode, mesmo que utilize funciona no Azure Machine Learning toomake, uma ferramenta robusta para analisar fluxos de dados. Pode iniciar tooexplore mais sobre o Stream Analytics, utilizando a nossa [mapa de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/stream-analytics/). Para obter mais informações sobre como consultas de toowrite, leia o artigo de Olá sobre [padrões de consulta comuns](stream-analytics-stream-analytics-query-patterns.md).
+O objetivo deste tutorial é demonstrar como escrever diferentes consultas de linguagem SAQL (Stream Analytics Query Language) e ver os resultados no browser. No entanto, isto é apenas o início. O Stream Analytics tem muitas outras funcionalidades. O Stream Analytics suporta uma variedade de entradas e saídas e pode mesmo tirar partido de funções no Azure Machine Learning para o transformar numa ferramenta robusta para analisar fluxos de dados. Pode começar a explorar mais sobre o Stream Analytics através do nosso [mapa de aprendizagem](https://azure.microsoft.com/documentation/learning-paths/stream-analytics/). Para obter mais informações sobre como escrever consultas, leia o artigo sobre [padrões de consulta comuns](stream-analytics-stream-analytics-query-patterns.md).
 

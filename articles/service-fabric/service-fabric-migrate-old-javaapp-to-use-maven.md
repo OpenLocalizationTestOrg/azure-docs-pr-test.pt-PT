@@ -1,6 +1,6 @@
 ---
-title: "aaaMigrate do SDK de Java tooMaven - atualizar antigo aplicações de Java do Azure Service Fabric toouse Maven | Microsoft Docs"
-description: "Atualize Olá mais antigas aplicações Java que utilizado toouse Olá SDK de Java do Service Fabric, dependências do Service Fabric Java toofetch do Maven. Depois de concluir esta configuração, as aplicações mais antigas do Java seria capaz de toobuild."
+title: "Migrar do Java SDK para Maven - Atualizar Aplicações Java do Azure Service Fabric antigas para utilizar o Maven | Microsoft Docs"
+description: "Atualize as aplicações Java mais antigas que utilizam o Java SDK do Service Fabric, de modo a que obtenham as dependências Java do Service Fabric a partir do Maven. Depois de concluir esta configuração, as aplicações Java mais antigas poderão criar."
 services: service-fabric
 documentationcenter: java
 author: sayantancs
@@ -14,36 +14,36 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/23/2017
 ms.author: saysa
-ms.openlocfilehash: 11b979facd7b3865141a6d3a035a6021dd06ca0c
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 2123c5f26d77045bd22af56a844fdbf222930e7b
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="update-your-previous-java-service-fabric-application-toofetch-java-libraries-from-maven"></a>Atualizar as suas anteriores Java Service Fabric aplicação toofetch Java bibliotecas do Maven
-Foi recentemente movido binários de Java de recursos de infraestrutura de serviço do SDK de Java do Service Fabric de Olá tooMaven que aloja. Agora, pode utilizar **mavencentral** dependências de Java de recursos de infraestrutura de serviço do toofetch Olá mais recentes. Isto ajuda início rápido a atualizar as suas aplicações de Java existentes, que criou anteriormente toobe utilizado com o SDK de Java de recursos de infraestrutura de serviço, utilizando o Yeoman modelo ou do Eclipse, toobe compatível com Olá compilação Maven com base.
+# <a name="update-your-previous-java-service-fabric-application-to-fetch-java-libraries-from-maven"></a>Atualizar a sua aplicação Java do Service Fabric anterior para obter as bibliotecas do Java a partir do Maven
+Recentemente, movemos os binários Java do Service Fabric do Java SDK do Service Fabric para o alojamento Maven. Agora, pode utilizar **mavencentral** para obter as mais recentes dependências de Java do Service Fabric. Este início rápido ajuda-o a atualizar as suas aplicações Java existentes, que criou anteriormente para serem utilizadas com o Java SDK do Service Fabric, através de um modelo do Yeoman ou do Eclipse, para compatibilidade com a compilação baseada no Maven.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-1. Primeiro tem de toouninstall Olá existente SDK de Java.
+1. Primeiro, tem de desinstalar o Java SDK existente.
 
   ```bash
   sudo dpkg -r servicefabricsdkjava
   ```
-2. Seguinte mais recente de Service Fabric CLI do instalação Olá Olá passos mencionados [aqui](service-fabric-cli.md).
+2. Siga os passos mencionados [aqui](service-fabric-cli.md) para instalar a última CLI do Service Fabric.
 
-3. toobuild e trabalho em aplicações de Java de recursos de infraestrutura do serviço de Olá, terá de tooensure que tiver JDK 1.8 e Gradle instalado. Se ainda não está instalado, pode executar Olá seguintes tooinstall JDK 1.8 (openjdk-8-jdk) e Gradle -
+3. Para criar e trabalhar nas aplicações Java do Service Fabric, tem de garantir que tem instalado o JDK 1.8 e o Gradle. Se ainda não estiverem instalados, execute o seguinte para instalar o JDK 1.8 (openjdk-8-jdk) e Gradle
 
  ```bash
  sudo apt-get install openjdk-8-jdk-headless
  sudo apt-get install gradle
  ```
-4. Scripts de instalação/desinstalação a Olá da atualização da sua toouse aplicação Olá CLI de recursos de infraestrutura de serviço novo seguindo os passos de Olá mencionados [aqui](service-fabric-application-lifecycle-sfctl.md). Pode consultar tooour introdução [exemplos](https://github.com/Azure-Samples/service-fabric-java-getting-started) para referência.
+4. Atualize os scripts de instalação/desinstalação da sua aplicação, para que utilizem a nova CLI do Service Fabric, seguindo os passos mencionados [aqui](service-fabric-application-lifecycle-sfctl.md). Pode ver os nossos [exemplos](https://github.com/Azure-Samples/service-fabric-java-getting-started) de introdução como referência.
 
 >[!TIP]
-> Após a desinstalação Olá SDK de Java do Service Fabric, Yeoman não funcionará. Siga os pré-requisitos de Olá mencionados [aqui](service-fabric-create-your-first-linux-application-with-java.md) toohave Java de Service Fabric Yeoman gerador de modelo de cópia de segurança e em funcionamento.
+> O Yeoman não funcionará depois de desinstalar o Java SDK do Service Fabric. Siga os pré-requisitos mencionados [aqui](service-fabric-create-your-first-linux-application-with-java.md) para pôr em funcionamento o gerador de modelos Java Yeoman do Service Fabric.
 
 ## <a name="service-fabric-java-libraries-on-maven"></a>Bibliotecas Java do Service Fabric no Maven
-As bibliotecas Java do Service Fabric foram alojadas no Maven. Pode adicionar Olá dependências no Olá ``pom.xml`` ou ``build.gradle`` das suas bibliotecas de Service Fabric Java toouse projetos de **mavenCentral**.
+As bibliotecas Java do Service Fabric foram alojadas no Maven. Pode adicionar as dependências no ``pom.xml`` ou ``build.gradle`` dos seus projetos para utilizar bibliotecas Java do Service Fabric a partir de **mavenCentral**.
 
 ### <a name="actors"></a>Atores
 
@@ -90,7 +90,7 @@ Suporte de Serviço sem Estado do Service Fabric para a sua aplicação.
 ### <a name="others"></a>Outros
 #### <a name="transport"></a>Transporte
 
-Suporte da camada de transporte para a aplicação Java do Service Fabric. Não é necessário adicionar tooexplicitly esta dependência tooyour Ator fiável ou aplicações de serviço, a menos que o programa na camada de transporte de Olá.
+Suporte da camada de transporte para a aplicação Java do Service Fabric. Não é necessário adicionar esta dependência explicitamente às suas aplicações Reliable Actor ou Serviço, a não ser que o programe na camada de transporte.
 
   ```XML
   <dependency>
@@ -111,7 +111,7 @@ Suporte da camada de transporte para a aplicação Java do Service Fabric. Não 
 
 #### <a name="fabric-support"></a>Suporte para o Fabric
 
-Suporte de nível de sistema para que a sua toonative Service Fabric runtime do Service Fabric. Não é necessário tooexplicitly adicionar esta dependência tooyour Ator fiável ou aplicações de serviço. Este obtém recuperado automaticamente do Maven, ao incluir Olá outras dependências acima.
+Suporte ao nível do sistema para o Service Fabric, que comunica com o runtime do Service Fabric nativo. Não é necessário adicionar esta dependência explicitamente às suas aplicações Reliable Actor ou Serviço. Isto é obtido automaticamente do Maven, quando incluir as outras dependências acima.
 
   ```XML
   <dependency>
@@ -133,7 +133,7 @@ Suporte de nível de sistema para que a sua toonative Service Fabric runtime do 
 
 ## <a name="migrating-service-fabric-stateless-service"></a>Migrar Serviço sem Estado do Service Fabric
 
-toobuild capaz de toobe o Service Fabric sem monitorização de estado Java serviço existente com as dependências do Service Fabric recuperadas do Maven, terá de tooupdate Olá ``build.gradle`` ficheiro dentro Olá serviço. Tenha utilizado da seguinte forma - toobe como
+Para poder criar o seu serviço Java sem estado do Service Fabric já existente mediante a utilização das dependências do Service Fabric obtidas a partir do Maven, tem de atualizar o ficheiro ``build.gradle`` dentro do Serviço. Anteriormente, tinha o aspeto seguinte -
 ```
 dependencies {
     compile fileTree(dir: '/opt/microsoft/sdk/servicefabric/java/packages/lib', include: ['*.jar'])
@@ -166,7 +166,7 @@ task copyDeps <<{
     }
 }
 ```
-Agora, as dependências de Olá toofetch do Maven, Olá **atualizado** ``build.gradle`` teria partes correspondente Olá forma -
+Agora, para obter as dependências do Maven, as partes correspondentes do ``build.gradle`` **atualizado** teriam o aspeto -
 ```
 repositories {
         mavenCentral()
@@ -219,20 +219,20 @@ task copyDeps <<{
     }
 }
 ```
-Em geral, tooget uma ideia geral sobre como Olá criar script teria aspeto para um serviço de Java sem monitorização de estado do Service Fabric, pode consultar tooany exemplo dos nossos exemplos de introdução. Eis Olá [gradle](https://github.com/Azure-Samples/service-fabric-java-getting-started/blob/master/Services/EchoServer/EchoServer1.0/EchoServerService/build.gradle) para amostra de EchoServer Olá.
+De um modo geral, para ter uma ideia genérica do aspeto do script de compilação para um serviço Java sem Estado do Service Fabric, pode ver qualquer um dos exemplos da introdução. Eis o [build.gradle](https://github.com/Azure-Samples/service-fabric-java-getting-started/blob/master/Services/EchoServer/EchoServer1.0/EchoServerService/build.gradle) do exemplo EchoServer.
 
 ## <a name="migrating-service-fabric-actor-service"></a>Migrar o Serviço Actor do Service Fabric
 
-toobe toobuild capacidade, a aplicação de Java de Ator de recursos de infraestrutura de serviço existente utilizando dependências de Service Fabric recuperadas do Maven, terá de tooupdate Olá ``build.gradle`` ficheiro no interior do pacote da interface de Olá e no pacote de serviço Olá. Se tiver um pacote de TestClient, terá de tooupdate que bem. Sim, para o seu ator ``Myactor``, seguinte Olá seria locais olá onde terá tooupdate -
+Para poder criar a sua aplicação Java Actor do Service Fabric já existente mediante a utilização das dependências do Service Fabric obtidas a partir do Maven, tem de atualizar o ficheiro ``build.gradle`` dentro do pacote da interface e do pacote do Serviço. Se tiver um pacote TestClient, também tem de o atualizar. Assim, para o ator ``Myactor``, terá de atualizar os locais seguintes -
 ```
 ./Myactor/build.gradle
 ./MyactorInterface/build.gradle
 ./MyactorTestClient/build.gradle
 ```
 
-#### <a name="updating-build-script-for-hello-interface-project"></a>Atualizar o script de compilação do projeto de interface de Olá
+#### <a name="updating-build-script-for-the-interface-project"></a>Atualizar o script de compilação para o projeto de interface
 
-Tenha utilizado da seguinte forma - toobe como
+Anteriormente, tinha o aspeto seguinte -
 ```
 dependencies {
     compile fileTree(dir: '/opt/microsoft/sdk/servicefabric/java/packages/lib', include: ['*.jar'])
@@ -240,7 +240,7 @@ dependencies {
 .
 .
 ```
-Agora, as dependências de Olá toofetch do Maven, Olá **atualizado** ``build.gradle`` teria partes correspondente Olá forma -
+Agora, para obter as dependências do Maven, as partes correspondentes do ``build.gradle`` **atualizado** teriam o aspeto -
 ```
 repositories {
     mavenCentral()
@@ -271,9 +271,9 @@ compileJava.dependsOn(explodeDeps)
 .
 ```
 
-#### <a name="updating-build-script-for-hello-actor-project"></a>Atualizar o script de compilação do projeto de ator Olá
+#### <a name="updating-build-script-for-the-actor-project"></a>Atualizar o script de compilação para o projeto de ator
 
-Tenha utilizado da seguinte forma - toobe como
+Anteriormente, tinha o aspeto seguinte -
 ```
 dependencies {
     compile fileTree(dir: '/opt/microsoft/sdk/servicefabric/java/packages/lib', include: ['*.jar'])
@@ -312,7 +312,7 @@ task copyDeps<< {
     }
 }
 ```
-Agora, as dependências de Olá toofetch do Maven, Olá **atualizado** ``build.gradle`` teria partes correspondente Olá forma -
+Agora, para obter as dependências do Maven, as partes correspondentes do ``build.gradle`` **atualizado** teriam o aspeto -
 ```
 repositories {
     mavenCentral()
@@ -370,9 +370,9 @@ task copyDeps<< {
 }
 ```
 
-#### <a name="updating-build-script-for-hello-test-client-project"></a>Atualizar o script de compilação do projeto de cliente de teste de Olá
+#### <a name="updating-build-script-for-the-test-client-project"></a>Atualizar o script de compilação para o projeto de cliente de teste
 
-Alterações aqui são semelhantes alterações de toohello abordadas na secção anterior, ou seja, o projeto de ator Olá. Olá anteriormente Gradle toobe de script utilizada como forma-
+As alterações nesta secção são semelhantes às da secção anterior, ou seja, do projeto de ator. Anteriormente, o script do Gradle tinha o aspeto seguinte:
 ```
 dependencies {
     compile fileTree(dir: '/opt/microsoft/sdk/servicefabric/java/packages/lib', include: ['*.jar'])
@@ -412,7 +412,7 @@ task copyDeps<< {
         }
 }
 ```
-Agora, as dependências de Olá toofetch do Maven, Olá **atualizado** ``build.gradle`` teria partes correspondente Olá forma -
+Agora, para obter as dependências do Maven, as partes correspondentes do ``build.gradle`` **atualizado** teriam o aspeto -
 ```
 repositories {
     mavenCentral()
@@ -476,4 +476,4 @@ task copyDeps<< {
 
 * [Criar e implementar a sua primeira aplicação Java do Service Fabric no Linux com o Yeoman](service-fabric-create-your-first-linux-application-with-java.md)
 * [Criar e implementar a sua primeira aplicação Java do Service Fabric no Linux com o Plug-in do Service Fabric para Eclipse](service-fabric-get-started-eclipse.md)
-* [Interagir com clusters do Service Fabric através da Olá CLI de recursos de infraestrutura de serviço](service-fabric-cli.md)
+* [Interagir com os clusters do Service Fabric através da CLI do Service Fabric](service-fabric-cli.md)

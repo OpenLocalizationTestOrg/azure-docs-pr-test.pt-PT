@@ -1,6 +1,6 @@
 ---
-title: "aaaAzure descrição geral da CDN | Microsoft Docs"
-description: "Saiba que Olá é de rede de entrega de conteúdos (CDN) do Azure e como toouse-toodeliver conteúdo de largura de banda alta ao colocar em cache blobs e conteúdo estático."
+title: "Descrição geral do Azure CDN | Microsoft Docs"
+description: "Saiba o que é a Rede de Entrega de Conteúdos (CDN) do Azure e como utilizá-la para fornecer conteúdo de largura de banda alta ao colocar em cache blobs e conteúdo estático."
 services: cdn
 documentationcenter: 
 author: smcevoy
@@ -14,38 +14,38 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 02/08/2017
 ms.author: v-semcev
-ms.openlocfilehash: e0230a6e107969b845985f2f4d357bf93cd40d42
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 909c4dc3feaeaedf56ecacc78f4b7e0e15d98875
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="overview-of-hello-azure-content-delivery-network-cdn"></a>Descrição geral do Olá Azure rede de entrega de conteúdos (CDN)
+# <a name="overview-of-the-azure-content-delivery-network-cdn"></a>Descrição geral da Rede de Entrega de Conteúdos (CDN) do Azure
 > [!NOTE]
-> Este documento descreve o que Olá Azure rede de entrega de conteúdos (CDN), como funciona e funcionalidades de Olá de cada produto da CDN do Azure.  Se pretende tooskip estas informações e ir tooa direitas tutorial sobre como toocreate um ponto final de CDN, consulte [utilizar a CDN do Azure](cdn-create-new-endpoint.md).  Se quiser toosee uma lista de localizações de nó CDN atuais, consulte [localizações de POP da CDN do Azure](cdn-pop-locations.md).
+> Este documento descreve o que é a Rede de Entrega de Conteúdos (CDN) do Azure, como funciona e as funcionalidades de cada produto da CDN do Azure.  Se pretende ignorar estas informações e ir diretamente para um tutorial sobre como criar um ponto final da CDN, consulte [Utilizar a CDN do Azure](cdn-create-new-endpoint.md).  Se pretende ver uma lista das localizações de nós da CDN atual, consulte [Localizações de POP da CDN do Azure](cdn-pop-locations.md).
 > 
 > 
 
-Olá rede de entrega de conteúdos (CDN) do Azure coloca em cache conteúdo web estático em localizações estrategicamente colocadas tooprovide o débito máximo para entrega de conteúdos toousers.  Olá CDN oferece aos programadores uma solução global para a entrega de conteúdo de largura de banda alta ao colocar em cache conteúdo Olá em nós físicos em Olá mundo. 
+A Rede de Entrega de Conteúdos (CDN) do Azure coloca em cache conteúdo Web estático em localizações estrategicamente colocadas de modo a fornecer o débito máximo para disponibilização de conteúdo aos utilizadores.  A CDN oferece aos programadores uma solução global para o fornecimento de conteúdo de largura de banda alta ao colocar em cache o conteúdo em nós físicos por todo o mundo. 
 
-Olá benefícios da utilização de recursos de web site do Olá CDN toocache incluem:
+As vantagens de utilizar a CDN para colocar em cache recursos de sites incluem:
 
-* Melhor desempenho e experiência do utilizador para os utilizadores finais, especialmente quando utilizar as aplicações em que várias ida e volta é necessários conteúdo tooload.
-* Grande dimensionamento toobetter identificador elevadas instantâneas, como no início de Olá de um produto iniciar eventos.
-* Ao distribuir pedidos de utilizador e que serve o conteúdo a partir de servidores edge, menos tráfego é enviado toohello origem.
+* Melhor desempenho e experiência do utilizador para os utilizadores finais, especialmente quando se utilizam aplicações nas quais são necessárias vários percursos de ida e volta para carregar conteúdo.
+* Grande dimensionamento para processar melhor cargas elevadas instantâneas, como no início de um evento de iniciação de um produto.
+* Ao distribuir os pedidos de utilizador e publicar conteúdo a partir de servidores Edge, é enviado menos o tráfego para a origem.
 
 ## <a name="how-it-works"></a>Como funciona
 ![Descrição geral da CDN](./media/cdn-overview/cdn-overview.png)
 
-1. Um utilizador (Alice) solicita um ficheiro (também denominado recurso) ao utilizar um URL com um nome de domínio especial, tal como `<endpointname>.azureedge.net`.  O DNS encaminha localização do ponto de presença (POP) Olá pedido toohello melhor desempenho.  Normalmente, este é Olá POP que está mais próximo geograficamente toohello utilizador.
-2. Se a servidores edge Olá Olá POP não tem ficheiros Olá na respetiva cache, o servidor edge de Olá pedidos ficheiro Olá da origem de Olá.  origem de Olá pode ser uma aplicação Web do Azure, o serviço em nuvem do Azure, a conta de armazenamento do Azure ou qualquer servidor web acessível publicamente.
-3. origem de Olá devolve Olá ficheiro toohello servidor edge, incluindo os cabeçalhos HTTP opcionais que descrevem Time-to-Live do ficheiro de Olá (TTL).
-4. servidor do Olá edge coloca em cache de ficheiros de Olá e devolve requerente original do Olá ficheiro toohello (Alice).  ficheiro de Olá permanece em cache no servidor edge de Olá até Olá TTL expire.  Se a origem de Olá não especificou um valor de TTL, predefinição Olá TTL é de sete dias.
-5. Os utilizadores adicionais podem, em seguida, Olá pedido mesmo utilizar esse mesmo URL de ficheiro e também podem ser direcionado toothat mesmo POP.
-6. Se ainda não tiver expirado Olá TTL para o ficheiro de Olá, o servidor edge de Olá devolve o ficheiro de Olá da cache de Olá.  Isto traduz-se numa experiência de utilizador mais rápida e mais dinâmica.
+1. Um utilizador (Alice) solicita um ficheiro (também denominado recurso) ao utilizar um URL com um nome de domínio especial, tal como `<endpointname>.azureedge.net`.  O DNS encaminha o pedido para a localização do Ponto de Presença (POP) com o melhor desempenho.  Normalmente, este é o POP que está mais próximo geograficamente do utilizador.
+2. Se os servidores Edge no POP não têm o ficheiro na respetiva cache, o servidor Edge solicita o ficheiro da origem.  A origem pode ser uma aplicação Web do Azure, um Serviço em Nuvem do Azure, uma conta de Armazenamento do Azure ou qualquer servidor Web acessível publicamente.
+3. A origem devolve o ficheiro ao servidor Edge, incluindo os cabeçalhos HTTP opcionais que descrevem o valor de TTL (time-to-live) do ficheiro.
+4. O servidor Edge coloca em cache o ficheiro e devolve o ficheiro para o requerente original (Alice).  O ficheiro permanece em cache no servidor Edge até que o valor de TTL expire.  Se a origem não tiver especificado um valor de TTL, o TTL predefinido é de sete dias.
+5. Os utilizadores adicionais podem solicitar o mesmo ficheiro utilizando esse URL e também podem ser direcionados para esse mesmo POP.
+6. Se o valor de TTL para o ficheiro ainda não tiver expirado, o servidor Edge devolve o ficheiro da cache.  Isto traduz-se numa experiência de utilizador mais rápida e mais dinâmica.
 
 ## <a name="azure-cdn-features"></a>Funcionalidades da CDN do Azure
-Existem três produtos da CDN do Azure: **CDN do Azure Standard da Akamai**, **CDN do Azure Standard da Verizon** e **CDN do Azure Premium da Verizon**.  Olá tabela seguinte lista as funcionalidades de Olá disponíveis com cada produto.
+Existem três produtos da CDN do Azure: **CDN do Azure Standard da Akamai**, **CDN do Azure Standard da Verizon** e **CDN do Azure Premium da Verizon**.  A tabela seguinte lista as funcionalidades disponíveis com cada produto.
 
 |  | Standard da Akamai | Standard da Verizon | Premium da Verizon |
 | --- | --- | --- | --- |
@@ -74,7 +74,7 @@ Existem três produtos da CDN do Azure: **CDN do Azure Standard da Akamai**, **C
 | [Estatísticas em tempo real](cdn-real-time-stats.md) | | |**&#x2713;** |
 | [Alertas em tempo real](cdn-real-time-alerts.md) | | |**&#x2713;** |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __Facilidade de Utilização__ |
-| Integração fácil com os serviços Azure, tais como o [Armazenamento](cdn-create-a-storage-account-with-cdn.md), [Serviços Cloud](cdn-cloud-service-with-cdn.md), [Aplicações Web](../app-service-web/app-service-web-tutorial-content-delivery-network.md) e [Serviços de Multimédia](../media-services/media-services-portal-manage-streaming-endpoints.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
+| Integração fácil com os serviços Azure, tais como o [Armazenamento](cdn-create-a-storage-account-with-cdn.md), [Serviços Cloud](cdn-cloud-service-with-cdn.md), [Aplicações Web](../app-service/app-service-web-tutorial-content-delivery-network.md) e [Serviços de Multimédia](../media-services/media-services-portal-manage-streaming-endpoints.md) |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | Gestão através da [API REST](https://msdn.microsoft.com/library/mt634456.aspx), do [.NET](cdn-app-dev-net.md), do [Node.js](cdn-app-dev-node.md) ou do [PowerShell](cdn-manage-powershell.md). |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Motor de entrega de conteúdo personalizável com base em regras](cdn-rules-engine.md) | | |**&#x2713;** |
 | Definições de cache/cabeçalho (utilizando o [motor de regras](cdn-rules-engine.md)) | | |**&#x2713;** |
@@ -85,18 +85,18 @@ Existem três produtos da CDN do Azure: **CDN do Azure Standard da Akamai**, **C
 
 
 > [!TIP]
-> Existe uma funcionalidade que gostaria de toosee na CDN do Azure?  [Envie-nos comentários](https://feedback.azure.com/forums/169397-cdn)! 
+> Existe uma funcionalidade que gostaria de ver na CDN do Azure?  [Envie-nos comentários](https://feedback.azure.com/forums/169397-cdn)! 
 > 
 > 
 
 ## <a name="next-steps"></a>Passos seguintes
-tooget utilizar a CDN, consulte [utilizar a CDN do Azure](cdn-create-new-endpoint.md).
+Para começar a utilizar a CDN, consulte [Utilizar a CDN do Azure](cdn-create-new-endpoint.md).
 
-Se for um cliente existente da CDN, já pode gerir os pontos finais da CDN através de Olá [portal do Microsoft Azure](https://portal.azure.com) ou com [PowerShell](cdn-manage-powershell.md).
+Se for um cliente existente da CDN, já pode gerir os pontos finais da CDN através do [Portal do Microsoft Azure](https://portal.azure.com) ou com o [PowerShell](cdn-manage-powershell.md).
 
-toosee Olá CDN em ação, consulte Olá [vídeo da nossa sessão de compilação 2016](https://azure.microsoft.com/documentation/videos/build-2016-leveraging-the-new-azure-cdn-apis-to-build-wicked-fast-applications/).
+Para ver o CDN em ação, consulte o [vídeo da nossa sessão de Compilação 2016](https://azure.microsoft.com/documentation/videos/build-2016-leveraging-the-new-azure-cdn-apis-to-build-wicked-fast-applications/).
 
-Saiba como tooautomate CDN do Azure com [.NET](cdn-app-dev-net.md) ou [Node.js](cdn-app-dev-node.md).
+Saiba como automatizar o CDN do Azure com [.NET](cdn-app-dev-net.md) ou [node. js](cdn-app-dev-node.md).
 
 Para obter informações sobre preços, consulte [Preços da CDN](https://azure.microsoft.com/pricing/details/cdn/).
 

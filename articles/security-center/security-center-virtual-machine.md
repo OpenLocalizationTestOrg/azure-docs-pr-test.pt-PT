@@ -1,6 +1,6 @@
 ---
-title: "aaaAzure Centro de segurança e Virtual Machines do Azure | Microsoft Docs"
-description: "Este documento ajuda-o a toounderstand como o Centro de segurança do Azure pode salvaguardar a máquinas virtuais do Azure."
+title: "Centro de Segurança do Azure e Máquinas Virtuais do Azure | Microsoft Docs"
+description: "Este documento ajuda-o a compreender como o Centro de Segurança do Azure pode proteger as suas Máquinas Virtuais do Azure."
 services: security-center
 documentationcenter: na
 author: YuriDio
@@ -14,92 +14,92 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/24/2017
 ms.author: yurid
-ms.openlocfilehash: d5e80e9341263a57f3100cb032a066f037e913a8
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 48314788dbe4618f271f0235f106dbe15ef004b8
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-security-center-and-azure-virtual-machines"></a>Centro de Segurança do Azure e Máquinas Virtuais do Azure
-[Centro de segurança do Azure](https://azure.microsoft.com/services/security-center/) ajuda-o a evitar, detetar e responder toothreats. Fornece gestão de políticas e monitorização de segurança integrada nas suas subscrições do Azure, ajuda a detetar ameaças que caso contrário podem passar despercebidas e funciona com um ecossistema abrangente de soluções de segurança.
+O [Centro de Segurança do Azure](https://azure.microsoft.com/services/security-center/) ajuda-o a evitar, detetar e responder a ameaças. Fornece gestão de políticas e monitorização de segurança integrada nas suas subscrições do Azure, ajuda a detetar ameaças que caso contrário podem passar despercebidas e funciona com um ecossistema abrangente de soluções de segurança.
 
 Este artigo mostra como o Centro de Segurança o pode ajudar a proteger as suas Máquinas Virtuais do Azure (VM).
 
 ## <a name="why-use-security-center"></a>Porquê utilizar o Centro de Segurança?
-O Centro de Segurança ajuda-o a salvaguardar os dados da máquina virtual no Azure, oferecendo visibilidade sobre as definições de segurança da sua máquina virtual. Quando o Centro de segurança salvaguarda as suas VMs, Olá seguintes funcionalidades estarão disponível:
+O Centro de Segurança ajuda-o a salvaguardar os dados da máquina virtual no Azure, oferecendo visibilidade sobre as definições de segurança da sua máquina virtual. Quando o Centro de Segurança salvaguarda as suas VMs, as seguintes funcionalidades estarão disponíveis:
 
-* As definições de segurança do sistema operativo (SO) com Olá recomendada as regras de configuração
+* Definições de segurança do Sistema Operativo (OS) com as regras de configuração recomendadas
 * Segurança do sistema e atualizações críticas em falta
 * Recomendações do Endpoint protection
 * Validação de encriptação do disco
 * Avaliação e remediação de vulnerabilidades
 * Deteção de ameaças
 
-Além disso toohelping proteger as suas VMs do Azure, o Centro de segurança também fornece monitorização de segurança e gestão de serviços em nuvem, serviços de aplicações, redes virtuais e muito mais. 
+Além de ajudar a proteger as VMs do Azure, o Centro de Segurança também oferece monitorização de segurança e gestão de Serviços Cloud, Serviços Aplicacionais, Redes Virtuais e muito mais. 
 
 > [!NOTE]
-> Consulte [tooAzure de introdução do Centro de segurança](security-center-intro.md) toolearn mais acerca do Centro de segurança do Azure.
+> Consulte [Introduction to Azure Security Center (Introdução ao Centro de Segurança do Azure)](security-center-intro.md) para saber mais sobre o Centro de Segurança do Azure.
 > 
 > 
 
 ## <a name="prerequisites"></a>Pré-requisitos
-tooget começar a utilizar o Centro de segurança do Azure, irá precisar de tooknow e considere Olá seguinte:
+Para começar a utilizar o Centro de Segurança do Azure, terá de conhecer e considerar o seguinte:
 
-* Tem de ter um tooMicrosoft de subscrição do Azure. Consulte [Security Center Pricing (Preços do Centro de Segurança)](https://azure.microsoft.com/pricing/details/security-center/), para obter mais informações sobre as camadas gratuitas e standard do Centro de Segurança.
-* Planear a adoção do Centro de segurança, consulte [guia de operações e planeamento do Centro de segurança do Azure](security-center-planning-and-operations-guide.md) toolearn mais sobre as considerações de operações e planeamento.
+* Precisa de uma subscrição do Microsoft Azure. Consulte [Security Center Pricing (Preços do Centro de Segurança)](https://azure.microsoft.com/pricing/details/security-center/), para obter mais informações sobre as camadas gratuitas e standard do Centro de Segurança.
+* Planeie a adoção do Centro de Segurança, consulte [Azure Security Center planning and operations guide (Guia de planeamento e funcionamento do Centro de Segurança do Azure)](security-center-planning-and-operations-guide.md), para saber mais sobre as considerações de planeamento e funcionamento.
 * Para informações sobre a suportabilidade do sistema operativo, consulte [Azure Security Center frequently asked questions (FAQ) (Perguntas mais frequentes do Centro de Segurança do Azure (FAQ))](security-center-faq.md). 
 
 ## <a name="set-security-policy"></a>Definir política de segurança
-Toobe necessidades recolha de dados ativada para que o Centro de segurança do Azure pode recolher informações de Olá tem tooprovide recomendações e alertas que são gerados com base na política de segurança de Olá que configura. A figura Olá abaixo, pode ver que **recolha de dados** foi ativado **no**.
+A recolha de dados tem de ser ativada para que o Centro de Segurança do Azure possa recolher as informações que necessita para fornecer recomendações e alertas que são gerados com base na política de segurança configurada por si. Na imagem abaixo, pode ver que a **Recolha de dados** foi **Ativada**.
 
-Uma política de segurança define o conjunto de Olá de controlos que são recomendados para recursos dentro Olá especificado subscrição ou grupo de recursos. Antes de ativar a política de segurança, tem de ter ativada a recolha de dados, o Centro de segurança recolhe dados das suas máquinas virtuais na ordem tooassess respetivo estado de segurança, fornecer recomendações de segurança e alertá-lo toothreats. No Centro de segurança, é possível definir políticas para as suas subscrições do Azure ou os grupos de recursos de acordo com as necessidades de segurança tooyour da empresa e do tipo de Olá de aplicações ou sensibilidade dos dados de Olá em cada subscrição. 
+Uma política de segurança define o conjunto de controlos que são recomendados para recursos dentro da subscrição especificada ou do grupo de recursos. Antes de ativar a política de segurança, tem de ter a recolha de dados ativada, o Centro de Segurança recolhe dados de máquinas virtuais para avaliar o respetivo estado de segurança, fornecer recomendações de segurança e alertá-lo sobre ameaças. No Centro de Segurança, é possível definir políticas para as suas subscrições ou grupos de recursos do Azure, de acordo com as necessidades de segurança da empresa e do tipo de aplicações ou sensibilidade dos dados em cada subscrição. 
 
 ![Política de segurança](./media/security-center-virtual-machine/security-center-virtual-machine-fig1.png)
 
 > [!NOTE]
-> mais informações sobre cada toolearn **política de prevenção** disponível, consulte [definir políticas de segurança](security-center-policies.md) artigo.
+> Para saber mais sobre cada **Política de prevenção** disponível, consulte o artigo [Set security policies (Definir políticas de segurança)](security-center-policies.md).
 > 
 > 
 
 ## <a name="manage-security-recommendations"></a>Gerir recomendações de segurança
-Centro de segurança analisa o estado de segurança de Olá dos seus recursos Azure. Quando o Centro de Segurança identifica potenciais vulnerabilidades de segurança, cria recomendações. recomendações de Olá ajudá-lo através do processo de Olá de configurar os controlos de Olá necessário.
+O Centro de Segurança analisa o estado de segurança dos seus recursos do Azure. Quando o Centro de Segurança identifica potenciais vulnerabilidades de segurança, cria recomendações. As recomendações orientam-no no processo de configuração de controlos necessários.
 
-Depois de definir uma política de segurança, o Centro de segurança analisa o estado de segurança de Olá dos seus recursos tooidentify potenciais vulnerabilidades. recomendações de Olá são apresentadas num formato de tabela em que cada linha representa uma recomendação específica. tabela de Olá abaixo fornece alguns exemplos das recomendações para as VMs do Azure e o que cada um irá fazer se aplicá-lo. Quando seleciona uma recomendação, receberá informações que mostra como tooimplement Olá recomendação no Centro de segurança.
+Após definir uma política de segurança, o Centro de Segurança analisa o estado de segurança dos seus recursos para identificar potenciais vulnerabilidades. As recomendações são apresentadas num formato de tabela em que cada linha representa uma recomendação específica. A tabela abaixo fornece alguns exemplos de recomendações para VMs do Azure e o que cada um irá fazer se as aplicar. Ao selecionar uma recomendação, ser-lhe-ão fornecidas informações que lhe mostram como implementar a recomendação no Centro de Segurança.
 
 | Recomendação | Descrição |
 | --- | --- |
-| [Ativar a recolha de dados para subscrições](security-center-enable-data-collection.md) |Recomenda-se que ative a recolha de dados na política de segurança de Olá para cada uma das suas subscrições e todas as máquinas virtuais (VMs) nas suas subscrições. |
-| [Remediar vulnerabilidades do SO](security-center-remediate-os-vulnerabilities.md) |Recomenda que alinhar as configurações de SO com Olá recomendada as regras de configuração, por exemplo, não permitem toobe de palavras-passe guardada. |
-| [Aplicar atualizações do sistema](security-center-apply-system-updates.md) |Recomenda-se de que implemente tooVMs atualizações críticas e de segurança de sistema em falta. |
-| [Reiniciar após atualizações do sistema](security-center-apply-system-updates.md#reboot-after-system-updates) |Recomenda-se de que reiniciar um processo de Olá toocomplete VM de aplicar atualizações do sistema. |
-| [Instalar o Endpoint Protection](security-center-install-endpoint-protection.md) |Recomenda-se de que aprovisionar tooVMs de programas antimalware (apenas para VMs do Windows). |
+| [Ativar a recolha de dados para subscrições](security-center-enable-data-collection.md) |Recomenda-se que ative a recolha de dados na política de segurança para cada uma das suas subscrições e todas as máquinas virtuais (VMs) nas suas subscrições. |
+| [Remediar vulnerabilidades do SO](security-center-remediate-os-vulnerabilities.md) |Recomenda-se que alinhe as configurações do SO com as regras de configuração recomendadas, por exemplo, não permitir que as palavras-passe sejam guardadas. |
+| [Aplicar atualizações do sistema](security-center-apply-system-updates.md) |Recomenda-se que implemente o sistema de segurança em falta e atualizações críticas nas VMs. |
+| [Reiniciar após atualizações do sistema](security-center-apply-system-updates.md#reboot-after-system-updates) |Recomenda-se que reinicie uma VM para concluir o processo de aplicar atualizações do sistema. |
+| [Instalar o Endpoint Protection](security-center-install-endpoint-protection.md) |Recomenda-se que aprovisione programas de antimalware em VMs (apenas VMs do Windows). |
 | [Resolver alertas de estado de funcionamento do Endpoint Protection](security-center-resolve-endpoint-protection-health-alerts.md) |Recomenda-se que resolva falhas de proteção do ponto final. |
-| [Ativar o Agente de VM](security-center-enable-vm-agent.md) |Permite toosee que necessite de VMs Olá agente da VM. Olá agente da VM tem de ser instalado em VMs no patch de tooprovision ordem análise, a linha de base de análise e programas antimalware. Olá agente VM está instalado por predefinição para as VMs que são implementadas a partir de Olá Azure Marketplace. artigo de Olá [extensões – parte 2 e o agente da VM](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/) fornece informações sobre como tooinstall Olá agente da VM. |
-| [Aplicar encriptação de discos](security-center-apply-disk-encryption.md) |Recomenda-se que encripte os discos da VM com o Azure Disk Encryption (VMs Windows e Linux). Encriptação é recomendada para Olá SO e volumes de dados na VM. |
+| [Ativar o Agente de VM](security-center-enable-vm-agent.md) |Permite-lhe ver as VMs que necessitam do Agente de VM. O Agente de VM tem de estar instalado em VMs para aprovisionar a análise de patch, a análise de linha de base e os programas de antimalware. O Agente de VM é instalado por predefinição em VMs que são implementadas a partir do Azure Marketplace. O artigo [VM Agent and Extensions – Part 2 (Agente de VM e Extensões – Parte 2)](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/) fornece informações sobre como instalar o Agente de VM. |
+| [Aplicar encriptação de discos](security-center-apply-disk-encryption.md) |Recomenda-se que encripte os discos da VM com o Azure Disk Encryption (VMs Windows e Linux). A encriptação é recomendada para o SO e os volumes de dados na sua VM. |
 | [Avaliação de vulnerabilidades não instalada](security-center-vulnerability-assessment-recommendations.md) |Recomenda-se de que instala uma solução de avaliação de vulnerabilidades na sua VM. |
-| [Remediar vulnerabilidades](security-center-vulnerability-assessment-recommendations.md#review-the-recommendation) |Permite-lhe a vulnerabilidades de sistema e de aplicações do toosee detetadas pela solução de avaliação de vulnerabilidade de Olá instalada na VM. |
+| [Remediar vulnerabilidades](security-center-vulnerability-assessment-recommendations.md#review-the-recommendation) |Permite-lhe ver as vulnerabilidades de sistema e de aplicações detetadas pela solução de avaliação de vulnerabilidade instalada na sua VM. |
 
 > [!NOTE]
-> toolearn mais informações sobre as recomendações, consulte [gerir recomendações de segurança](security-center-recommendations.md) artigo.
+> Para saber mais sobre as recomendações, consulte o artigo [Managing security recommendations (Gerir recomendações de segurança)](security-center-recommendations.md).
 > 
 > 
 
 ## <a name="monitor-security-health"></a>Monitorizar o estado de funcionamento da segurança
-Depois de ativar [políticas de segurança](security-center-policies.md) para recursos de uma subscrição, o Centro de segurança irá analisar a segurança de Olá dos seus recursos tooidentify potenciais vulnerabilidades.  Pode ver o estado de segurança de Olá dos seus recursos, juntamente com quaisquer problemas na Olá **estado de funcionamento de segurança de recursos** painel. Ao clicar em **máquinas virtuais** no Olá **segurança de recursos** mosaico estado de funcionamento, Olá **máquinas virtuais** painel será aberto com recomendações para as suas VMs. 
+Depois de ativar [políticas de segurança](security-center-policies.md) para os recursos de uma subscrição, o Centro de Segurança irá analisar a segurança dos seus recursos para identificar potenciais vulnerabilidades.  Pode ver o estado de segurança dos seus recursos, juntamente com quaisquer problemas no painel **Estado de funcionamento de segurança de recursos**. Quando clica em **Máquinas virtuais** no mosaico de estado de funcionamento **Segurança de recursos**, o painel **Máquinas virtuais** será aberto com recomendações para as VMs. 
 
 ![Estado de funcionamento da segurança](./media/security-center-virtual-machine/security-center-virtual-machine-fig2.png)
 
-## <a name="manage-and-respond-toosecurity-alerts"></a>Gerir e responder a alertas de toosecurity
-Centro de segurança automaticamente recolhe, analisa e integra-se os dados de registo de recursos do Azure, rede Olá e soluções de parceiros ligadas (por exemplo, o ponto final e firewall soluções de proteção), toodetect de ameaças reais e reduzir os falsos positivos. Ao tirar partido de uma agregação diversificada de [as capacidades de deteção](security-center-detection-capabilities.md), o Centro de segurança é capaz de toogenerate definida segurança alertas toohelp investigar o problema de Olá rapidamente e fornecer recomendações como tooremediate ataques possíveis.
+## <a name="manage-and-respond-to-security-alerts"></a>Gerir e responder a alertas de segurança
+O Centro de Segurança recolhe, analisa e integra automaticamente dados de registo a partir dos seus recursos do Azure, da rede e soluções de parceiros ligadas, (como soluções de proteção de ponto final e firewall), para detetar ameaças reais e reduzir os falsos positivos. Ao tirar partido de uma agregação diversa de [capacidades de deteção](security-center-detection-capabilities.md), o Centro de Segurança pode gerar alertas de segurança prioritários para o ajudar a investigar rapidamente o problema e fornecer recomendações para saber como corrigir possíveis ataques.
 
 ![Alertas de segurança](./media/security-center-virtual-machine/security-center-virtual-machine-fig3.png)
 
-Selecione um toolearn de alerta de segurança mais informações sobre eventos de Olá que acionou o alerta Olá e o que, se aplicável, os passos precisam de tootake tooremediate um ataque. Os alertas de segurança estão agrupados por [tipo](security-center-alerts-type.md) e data.
+Selecione um alerta de segurança para obter mais informações sobre o(s) evento(s) que acionaram o alerta e quais os passos (se existirem) necessários para remediar um ataque. Os alertas de segurança estão agrupados por [tipo](security-center-alerts-type.md) e data.
 
 ## <a name="see-also"></a>Consultar também
-toolearn mais acerca do Centro de segurança, consulte o artigo seguinte Olá:
+Para saber mais acerca do Centro de Segurança, consulte o seguinte:
 
-* [Definir políticas de segurança no Centro de segurança do Azure](security-center-policies.md) – Saiba como as políticas de segurança de tooconfigure às suas subscrições do Azure e os grupos de recursos.
-* [Gestão e de que responde toosecurity alertas no Centro de segurança do Azure](security-center-managing-and-responding-alerts.md) – Saiba como alertas de toosecurity toomanage e respondeu.
-* [FAQ do Centro de segurança do Azure](security-center-faq.md) – encontre as perguntas mais frequentes sobre a utilização do serviço de Olá.
+* [Definir políticas de segurança no Centro de Segurança do Azure](security-center-policies.md) – Saiba como configurar políticas de segurança para as suas subscrições e grupos de recursos do Azure.
+* [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md) – Saiba como gerir e responder a alertas de segurança.
+* [Azure Security Center FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço.
 

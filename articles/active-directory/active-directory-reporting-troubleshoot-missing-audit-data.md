@@ -1,6 +1,6 @@
 ---
-title: "Resolução de problemas: Faltam dados no registo de atividade do Azure Active Directory Olá | Microsoft Docs"
-description: "Apresenta uma lista de Olá vários relatórios disponíveis para o Azure Active Directory"
+title: "Resolução de problemas: dados em falta no registo de atividades do Azure Active Directory. | Microsoft Docs"
+description: "Lista os vários relatórios disponíveis do Azure Active Directory"
 services: active-directory
 documentationcenter: 
 author: MarkusVi
@@ -15,31 +15,31 @@ ms.workload: identity
 ms.date: 07/15/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 7bbec94ab42eb5b54a7e65e124060d057b4a1a34
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 47617f8f727027de113a0f503308c8accc58859e
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="i-cant-find-some-actions-that-i-performed-in-hello-azure-active-directory-activity-log"></a>Não é possível localizar o algumas ações que efetuar a no registo de atividade do Azure Active Directory Olá
+# <a name="i-cant-find-some-actions-that-i-performed-in-the-azure-active-directory-activity-log"></a>Não consigo encontrar algumas ações que efetuei no registo de atividades do Azure Active Directory
 
 
 ## <a name="symptoms"></a>Sintomas
 
-Posso efetuar algumas ações na Olá portal do Azure e esperados os registos de auditoria de Olá toosee para essas ações Olá `Activity logs > Audit Logs` painel, mas como posso não é possível encontrá-los.
+Efetuei algumas ações no portal do Azure e esperava ver os registos de auditoria dessas ações no painel `Activity logs > Audit Logs`, mas não consegui encontrá-los.
 
  ![Relatórios](./media/active-directory-reporting-troubleshoot-missing-audit-data/01.png)
  
 
 ## <a name="cause"></a>Causa
 
-Ações não aparecem imediatamente no registo de auditoria de atividade Olá. -Pode tomar entre 15 minutos de registos de auditoria do tooan hora toosee Olá no portal de Olá da hora de Olá Olá operação é executada.
+As ações não aparecem de imediato no registo Auditoria da Atividade. Pode demorar entre 15 minutos a uma hora para ver os registos de auditoria no portal desde que a operação foi efetuada.
 
 ## <a name="resolution"></a>Resolução
 
-Aguarde a hora de tooan de 15 minutos e ver se as ações de Olá aparecem no registo de Olá. Se continuar a não serem visualizadas, emita um pedido de suporte e vamos analisar o problema.
+Aguarde entre 15 minutos a uma hora e veja se as ações aparecem no registo. Se continuar a não serem visualizadas, emita um pedido de suporte e vamos analisar o problema.
 
 
 ## <a name="next-steps"></a>Passos seguintes
-Consulte Olá [Azure Active Directory reporting FAQ](active-directory-reporting-faq.md).
+Veja as [FAQ de relatórios do Azure Active Directory](active-directory-reporting-faq.md).
 

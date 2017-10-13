@@ -16,8 +16,8 @@
 ### [Java](event-hubs-java-get-started-receive-eph.md)
 ### [Apache Storm](event-hubs-storm-getstarted-receive.md)
 ## Capturar eventos
-### [Utilizar Olá tooenable portal do Azure capturar os Hubs de eventos](event-hubs-capture-enable-through-portal.md)
-### [Utilize um tooenable de modelo do Resource Manager capturar os Hubs de eventos](event-hubs-resource-manager-namespace-event-hub-enable-capture.md)
+### [Utilizar o portal do Azure para ativar a Captura dos Hubs de Eventos](event-hubs-capture-enable-through-portal.md)
+### [Utilizar um modelo do Resource Manager para ativar a Captura dos Hubs de Eventos](event-hubs-resource-manager-namespace-event-hub-enable-capture.md)
 ## [Guia de programação](event-hubs-programming-guide.md)
 
 # Procedimento
@@ -37,7 +37,7 @@
 ### Captura
 #### [Captura dos Hubs de Eventos](event-hubs-capture-overview.md)
 #### [Capturar dados dos Hubs de Eventos através de Python](event-hubs-capture-python.md)
-### [Utilizar o PowerShell tooprovision entidades](event-hubs-manage-with-ps.md) 
+### [Utilizar o PowerShell para aprovisionar entidades](event-hubs-manage-with-ps.md) 
 ### [Transmitir dados do Diagnóstico do Azure em fluxo com os Hubs de Eventos](event-hubs-streaming-azure-diags-data.md)
 ### [Criar e implementar um hub de eventos com um modelo do Resource Manager](event-hubs-resource-manager-namespace-event-hub.md)
 

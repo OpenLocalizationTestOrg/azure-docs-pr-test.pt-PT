@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure Mobile Engagement documentação - tutoriais, referência da API | Microsoft Docs"
-description: "Saiba como tooget aprofundadas utilização de aplicações móveis e a segmentação de utilizador em tempo real e como tooenable com reconhecimento do contexto push notificações e mensagens na aplicação."
+title: "Documentação do Azure Mobile Engagement - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como obter informações sobre a utilização de aplicações móveis e segmentação de utilizador em tempo real e como ativar as notificações push com reconhecimento de contexto e mensagens na aplicação."
 services: mobile-engagement
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: c9d9dd859914d620b6e3c287bbde1906142f4736
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 5f682ba16b52b9a084505b8212c4b6f043bb94c9
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="mobile-engagement-documentation"></a>Documentação do Mobile Engagement
 
-Saiba como tooincrease Olá utilização, retenção e monetization de aplicações móveis com o Mobile Engagement. Tutoriais, SDKs e outra documentação mostram como tooget aprofundadas utilização da aplicação e a segmentação de utilizador em tempo real e como tooenable com reconhecimento do contexto push notificações e mensagens na aplicação.
+Saiba como aumentar a utilização, a retenção e a monetização de aplicações móveis com o Mobile Engagement. Os tutoriais, SDKs e outra documentação mostram-lhe como obter informações sobre a utilização de aplicações e segmentação de utilizador em tempo real e como ativar as notificações push com reconhecimento de contexto e mensagens na aplicação.
 
 <ul class="panelContent cardsFTitle">
     <li>

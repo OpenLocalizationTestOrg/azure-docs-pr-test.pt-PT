@@ -1,9 +1,9 @@
 ---
-title: aaaCreate conta de utilizador do Azure AD | Microsoft Docs
-description: "Este artigo descreve como de credencial toocreate uma conta de utilizador do Azure AD para runbooks na automatização do Azure tooauthenticate no Azure e Azure clássico."
+title: Criar Conta de Utilizador do Azure AD | Microsoft Docs
+description: "Este artigo descreve como criar uma credencial da conta de Utilizador do Azure AD para runbooks na Automatização do Azure para efetuar a autenticação no Azure e no Azure clássico."
 services: automation
 documentationcenter: 
-author: MGoedtel
+author: eslesar
 manager: jwhit
 editor: tysonn
 keywords: "utilizador do azure active directory, gestão do serviço do azure, conta de utilizador do azure ad"
@@ -15,79 +15,79 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/13/2017
 ms.author: magoedte
-ms.openlocfilehash: 7c6ed4182dbab074d0bc5da7057f74ad321d8884
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 8f24e6e57c2eec5950c8c12d9f4383ce11cf5c11
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="authenticate-runbooks-with-azure-classic-deployment-and-resource-manager"></a>Autenticar Runbooks com a implementação clássica do Azure e o Resource Manager
-Este artigo descreve os passos de Olá que tem de efetuar tooconfigure uma conta de utilizador do Azure AD para runbooks de automatização do Azure em execução contra o modelo de implementação clássica do Azure ou recursos do Azure Resource Manager.  Embora isto continue toobe uma identidade de autenticação suportadas para o Gestor de recursos do Azure com runbooks, Olá recomendado método está a utilizar uma conta Run As do Azure.       
+Este artigo descreve os passos que tem de efetuar para configurar uma conta de Utilizador do Azure AD para runbooks de Automatização do Azure em execução no modelo de implementação clássica do Azure ou nos recursos do Azure Resource Manager (ARM).  Embora esta continue a ser uma identidade de autenticação suportada para os runbooks com base no Azure Resource Manager, o método recomendado consiste em utilizar uma conta Run As do Azure.       
 
 ## <a name="create-a-new-azure-active-directory-user"></a>Criar um novo utilizador do Azure Active Directory
-1. Inicie sessão no portal clássico do Azure toohello como um administrador de serviço para Olá pretende toomanage de subscrição do Azure.
-2. Selecione **do Active Directory**e, em seguida, selecione o nome de Olá do diretório da organização.
-3. Selecione Olá **utilizadores** separador e, em seguida, na área de comando Olá, selecione **adicionar utilizador**.
-4. No Olá **diga-nos informações sobre este utilizador** página **tipo de utilizador**, selecione **novo utilizador na sua organização**.
+1. Inicie sessão no portal Clássico do Azure como um administrador de serviços para a subscrição do Azure que pretende gerir.
+2. Selecione **Active Directory** e, em seguida, selecione o nome do diretório da sua organização.
+3. Selecione o separador **Utilizadores** e, na área de comandos, selecione **Adicionar Utilizador**.
+4. Na página **Forneça mais informações sobre este utilizador**, em **Tipo de utilizador**, selecione **Novo utilizador na sua organização**.
 5. Introduza um nome de utilizador.  
-6. Selecione o nome de diretório de Olá que está associado a sua subscrição do Azure na página do Active Directory Olá.
-7. No Olá **perfil de utilizador** , indique um primeiro e último nome, um nome amigável de utilizador e utilizador da Olá **funções** lista.  Não **Ative a Multi-Factor Authentication**.
-8. Tenha em atenção o nome completo de Olá utilizador e palavra-passe temporária.
+6. Selecione o nome de diretório que está associado à sua subscrição do Azure na página do Active Directory.
+7. Na página **perfil de utilizador**, introduza o nome próprio e o apelido, um nome amigável de utilizador e um Utilizador na lista **Funções**.  Não **Ative a Multi-Factor Authentication**.
+8. Tenha em atenção o nome completo e a palavra-passe temporária do utilizador.
 9. Selecione **Definições > Administradores > Adicionar**.
-10. Escreva o nome de utilizador completo Olá do utilizador Olá que criou.
-11. Selecione a subscrição de Olá que pretende que sejam Olá toomanage de utilizador.
-12. Termine sessão no Azure e, em seguida, inicie sessão novamente com a conta de Olá que acabou de criar. Será palavra-passe do utilizador Olá toochange pedido.
+10. Escreva o nome de utilizador completo do utilizador que criou.
+11. Selecione a subscrição que pretende que o utilizador efetue a gestão.
+12. Termine sessão no Azure e, em seguida, inicie sessão novamente com a conta que acabou de criar. Será solicitado a alterar a palavra-passe do utilizador.
 
 ## <a name="create-an-automation-account-in-azure-classic-portal"></a>Crie uma conta de Automatização no portal Clássico do Azure
-Nesta secção, efetuar Olá os seguintes passos toocreate uma conta de automatização do Azure no portal do Azure para utilização de Olá com os runbooks gerir recursos de implementação clássico do Azure.  
+Nesta secção, executa os seguintes passos para criar uma conta de Automatização do Azure no portal do Azure para utilizar com os recursos de gestão dos runbooks na implementação clássica do Azure.  
 
 > [!NOTE]
-> As contas de automatização criadas com o portal clássico do Azure Olá podem ser geridas por Olá clássico do Azure e portal do Azure e um conjunto de cmdlets. Após criar a conta de Olá, não faz diferença como criar e gerir recursos na conta de Olá. Se estiver a planear toocontinue toouse Olá portal clássico do Azure, em seguida, deve utilizá-lo em vez de Olá toocreate portal do Azure, as contas de automatização.
+> As contas de automatização criadas com o portal Clássico do Azure podem ser geridas tanto pelo Azure Clássico como pelo portal do Azure e qualquer conjunto de cmdlets. Depois de a conta estar criada, não faz diferença como criar e gerir recursos na conta. Se estiver a planear continuar a utilizar o portal Clássico do Azure, deve utilizá-lo em vez do portal do Azure para criar as contas de Automatização.
 > 
 > 
 
-1. Inicie sessão no portal clássico do Azure toohello como um administrador de serviço para Olá pretende toomanage de subscrição do Azure.
+1. Inicie sessão no portal Clássico do Azure como um administrador de serviços para a subscrição do Azure que pretende gerir.
 2. Selecione **Automatização**.
-3. No Olá **automatização** página, selecione **criar uma conta de automatização**.
-4. No Olá **criar uma conta de automatização** caixa, escreva um nome para a sua nova conta de automatização e selecione um **região** de Olá na lista pendente.  
-5. Clique em **OK** tooaccept as suas definições e crie Olá conta.
-6. Depois de criado, será listado no Olá **automatização** página.
-7. Clique na conta de Olá e aparecerá a toohello página do Dashboard.  
-8. Na página do Dashboard de automatização de Olá, selecione **ativos**.
-9. No Olá **ativos** página, selecione **adicionar definições** localizado em Olá parte inferior da página Olá.
-10. No Olá **adicionar definições** página, selecione **adicionar credencial**.
-11. No Olá **definir credencial** página, selecione **credencial do Windows PowerShell** de Olá **tipo de credencial** pendente listar e forneça um nome para a credencial Olá.
-12. No seguinte Olá **definir credencial** página tipo Olá nome de utilizador da conta de utilizador de Olá AD criada anteriormente no Olá **nome de utilizador** campo e Olá palavra-passe Olá **palavra-passe**e **Confirmar palavra-passe** campos. Clique em **OK** toosave as suas alterações.
+3. Na página **Automatização**, selecione **Criar uma Conta de Automatização**.
+4. Na caixa **Criar uma Conta de Automatização**, escreva um nome para a sua nova conta de Automatização e selecione uma **Região** na lista pendente.  
+5. Clique em **OK** para aceitar as suas definições e criar a conta.
+6. Depois de ser criada, será apresentada na página **Automatização**.
+7. Clique na conta e aparecerá a página do Dashboard.  
+8. Na página do Dashboard de Automatização, selecione **Recursos**.
+9. Na página **Recursos**, selecione a opção **Adicionar Definições** localizada na parte inferior da página.
+10. Na página **Adicionar Definições**, selecione **Adicionar Credencial**.
+11. Na página **Definir Credencial**, selecione **Credencial do Windows PowerShell** na lista pendente **Tipo de Credencial** e dê um nome à credencial.
+12. Na página seguinte **Definir Credencial**, escreva o nome de utilizador da conta de utilizador do AD criada anteriormente no campo **Nome de Utilizador** e a palavra-passe nos campos **Palavra-passe** e **Confirmar palavra-passe**. Clique em **OK** para guardar as alterações.
 
-## <a name="create-an-automation-account-in-hello-azure-portal"></a>Criar uma conta de automatização no portal do Azure de Olá
-Nesta secção, execute Olá os seguintes passos toocreate uma conta de automatização do Azure no portal do Azure para utilização de Olá com os runbooks gerir recursos no modo Azure Resource Manager.  
+## <a name="create-an-automation-account-in-the-azure-portal"></a>Criar uma conta de Automatização no portal do Azure
+Nesta secção, executa os seguintes passos para criar uma conta de Automatização do Azure no portal do Azure para utilizar com os recursos de gestão dos runbooks no modo do Azure Resource Manager.  
 
-1. Inicie sessão no toohello portal do Azure como um administrador de serviço para Olá pretende toomanage de subscrição do Azure.
+1. Inicie sessão no portal do Azure como um administrador de serviços para a subscrição do Azure que pretende gerir.
 2. Selecione **Contas de Automatização**.
-3. No painel de contas de automatização de Olá, clique em **adicionar**.<br><br>![Adicionar Conta de Automatização](media/automation-create-aduser-account/add-automation-acct-properties.png)
-4. No Olá **adicionar conta de automatização** painel, no Olá **nome** caixa escreva um nome para a sua nova conta de automatização.
-5. Se tiver mais do que uma subscrição, especifique Olá um para a nova conta de Olá, bem como um novo ou existente **grupo de recursos** e num datacenter do Azure **localização**.
-6. Selecione o valor de Olá **Sim** para Olá **criar Azure conta Run As** opção e clique em Olá **criar** botão.  
+3. No painel Contas de Automatização, clique em **Adicionar**.<br><br>![Adicionar Conta de Automatização](media/automation-create-aduser-account/add-automation-acct-properties.png)
+4. No painel **Adicionar Conta de Automatização**, no tipo de caixa **Nome**, escreva um nome para a sua nova conta de Automatização.
+5. Se tiver mais do que uma subscrição, especifique a subscrição para a nova conta, bem como um **Grupo de recursos** novo ou existente e uma **localização** do datacenter do Azure.
+6. Selecione o valor **Sim** para a opção **Criar conta Run As do Azure** e clique no botão **Criar**.  
    
     > [!NOTE]
-    > Se escolher o toonot criar Olá a conta Run As, selecionando a opção de Olá **não**, será apresentada uma mensagem de aviso no Olá **adicionar conta de automatização** painel.  Enquanto a conta de Olá é criada e atribuída toohello **contribuinte** função na subscrição Olá, não terá uma identidade de autenticação correspondente dentro do seu serviço de diretório de subscrições e, consequentemente, sem acesso recursos na sua subscrição.  Isto irá impedir que todos os runbooks que referenciam esta conta de ser capaz de tooauthenticate e executar tarefas relativamente aos recursos do Azure Resource Manager.
+    > Se optar por não criar a conta Run As, selecionando a opção **Não**, será apresentada uma mensagem de aviso no painel **Adicionar Conta de Automatização**.  Enquanto a conta é criada e atribuída à função **Contribuidor** na subscrição, não terá uma identidade de autenticação correspondente dentro do seu serviço de diretório de subscrições e, por isso, sem recursos de acesso na sua subscrição.  Isto irá impedir que todos os runbooks que referenciam esta conta a partir da capacidade autenticar e executar tarefas relativamente aos recursos do Azure Resource Manager.
     > 
     >
 
     <br>![Adicionar Aviso de Conta de Automatização](media/automation-create-aduser-account/add-automation-acct-properties-error.png)<br>  
-7. Enquanto o Azure cria a conta de automatização Olá, pode controlar o progresso de Olá em **notificações** menu Olá.
+7. Enquanto o Azure cria a conta de automatização, pode acompanhar o progresso em **Notificações** a partir do menu.
 
-Quando a criação da credencial de Olá Olá estiver concluída, terá de toocreate Olá de tooassociate um recurso de credencial conta de automatização com Olá conta de utilizador do AD criada anteriormente.  Lembre-se que apenas criamos conta de automatização Olá e não está associada a uma identidade de autenticação.  Executar passos de Olá descritos em Olá [recursos no artigo de automatização do Azure da credencial](automation-credentials.md#creating-a-new-credential-asset) e introduza o valor de Olá para **username** no formato de Olá **domínio \ utilizador**.
+Quando a criação da credencial estiver concluída, tem de criar um Recurso de Credencial para associar a Conta de Automatização com a conta de Utilizador do AD criada anteriormente.  Lembre-se de que apenas criamos a conta de Automatização e não está associada a uma identidade de autenticação.  Execute os passos descritos no [artigo Recursos da credencial na Automatização do Azure](automation-credentials.md#creating-a-new-credential-asset) e introduza o valor para o **nome de utilizador** no formato **domínio\utilizador**.
 
-## <a name="use-hello-credential-in-a-runbook"></a>Utilizar credencial de Olá num runbook
-Pode obter credenciais Olá num runbook utilizando Olá [Get-AutomationPSCredential](http://msdn.microsoft.com/library/dn940015.aspx) atividade e, em seguida, utilizá-la com [Add-AzureAccount](http://msdn.microsoft.com/library/azure/dn722528.aspx) tooconnect tooyour subscrição do Azure. Se Olá credencial for um administrador de várias subscrições do Azure, em seguida, deve utilizar também [Select-AzureSubscription](http://msdn.microsoft.com/library/dn495203.aspx) toospecify Olá correto. É mostrado no exemplo de Olá abaixo do Windows PowerShell que, normalmente, será apresentada na parte superior de Olá da maioria dos runbooks de automatização do Azure.
+## <a name="use-the-credential-in-a-runbook"></a>Utilizar a credencial num runbook
+Pode obter a credencial num runbook com a atividade [Get-AutomationPSCredential](http://msdn.microsoft.com/library/dn940015.aspx) e, em seguida, utilizá-la com [Add-AzureAccount](http://msdn.microsoft.com/library/azure/dn722528.aspx) para ligar à sua subscrição do Azure. Se a credencial for um administrador de várias subscrições do Azure, também deve utilizar [Select-AzureSubscription](http://msdn.microsoft.com/library/dn495203.aspx) para especificar a correta. Isto é apresentado na amostra do Windows PowerShell que normalmente irá aparecer no topo da maior parte dos runbooks da Automatização do Azure.
 
     $cred = Get-AutomationPSCredential –Name "myuseraccount.onmicrosoft.com"
     Add-AzureAccount –Credential $cred
     Select-AzureSubscription –SubscriptionName "My Subscription"
 
-Deve repetir estas linhas após qualquer [ponto de verificação](http://technet.microsoft.com/library/dn469257.aspx#bk_Checkpoints) no runbook. Se Olá runbook está suspenso e, em seguida, retoma noutra função de trabalho, em seguida, esta terá de autenticação de Olá tooperform novamente.
+Deve repetir estas linhas após qualquer [ponto de verificação](http://technet.microsoft.com/library/dn469257.aspx#bk_Checkpoints) no runbook. Se o runbook está suspenso e, em seguida, retoma noutra função de trabalho, será necessário efetuar a autenticação novamente.
 
 ## <a name="next-steps"></a>Passos Seguintes
-* Olá, reveja Olá vários tipos de runbook e os passos para criar os seus próprios runbooks do seguinte artigo [tipos de runbook da automatização do Azure](automation-runbook-types.md)
+* Reveja os diferentes tipos e passos de runbook para criar os seus próprios runbooks a partir do seguinte artigo [Tipos de runbook de Automatização do Azure](automation-runbook-types.md)
 

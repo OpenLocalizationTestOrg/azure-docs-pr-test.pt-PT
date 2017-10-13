@@ -1,6 +1,6 @@
 
-### <a name="update-manifest-file-tooenable-notifications"></a>Atualizar o ficheiro de manifesto tooenable notificações
-Copiar recursos de mensagens na aplicação Olá abaixo no Manifest.xml entre Olá `<application>` e `</application>` etiquetas.
+### <a name="update-manifest-file-to-enable-notifications"></a>Atualizar ficheiro de manifesto para ativar notificações
+Copie os recursos de mensagens na aplicação abaixo para o Manifest.xml entre as etiquetas `<application>` e `</application>`.
 
         <activity android:name="com.microsoft.azure.engagement.reach.activity.EngagementTextAnnouncementActivity" android:theme="@android:style/Theme.Light" android:exported="false">
               <intent-filter>
@@ -45,32 +45,32 @@ Copiar recursos de mensagens na aplicação Olá abaixo no Manifest.xml entre Ol
         </receiver>
 
 ### <a name="specify-an-icon-for-notifications"></a>Especificar um ícone para as notificações
-Olá colar seguinte fragmento XML no Manifest.xml entre Olá `<application>` e `</application>` etiquetas.
+Cole o seguinte fragmento XML no Manifest.xml entre as etiquetas `<application>` e `</application>`.
 
         <meta-data android:name="engagement:reach:notification:icon" android:value="engagement_close"/>
 
-Isto define o ícone de Olá que é apresentado no sistema e nas notificações na aplicação. É opcional para as notificações na aplicação, mas é obrigatório para as notificações do sistema. O Android rejeitará as notificações do sistema com ícones inválidos.
+Este procedimento permite definir o ícone que é apresentado nas notificações do sistema e nas notificações na aplicação. É opcional para as notificações na aplicação, mas é obrigatório para as notificações do sistema. O Android rejeitará as notificações do sistema com ícones inválidos.
 
-Certifique-se de que está a utilizar um ícone que existe dos Olá **drawable** pastas (como ``engagement_close.png``). A pasta **mipmap** não é suportada.
+Confirme que está a utilizar um ícone que existe numa das pastas **drawable** (como ``engagement_close.png``). A pasta **mipmap** não é suportada.
 
 > [!NOTE]
-> Não deve utilizar Olá **iniciador** ícone. Tem uma resolução diferente e está normalmente nas pastas mipmap Olá, que não é suportada.
+> Não deve utilizar o ícone do **iniciador**. Tem uma resolução diferente e está normalmente nas pastas mipmap, que não são suportadas.
 > 
 > 
 
 Para aplicações reais, pode utilizar um ícone que seja adequado para as notificações de acordo com as [Diretrizes de conceção do Android](http://developer.android.com/design/patterns/notifications.html).
 
 > [!TIP]
-> toobe toouse se correto resoluções de ícones, pode examinar [estes exemplos](https://www.google.com/design/icons).
-> Desloque para baixo toohello **notificação** secção, clique num ícone e, em seguida, clique em `PNGS` conjunto de desenho toodownload Olá ícone. Pode ver que pastas drawable e com que toouse de resolução para cada versão do ícone de Olá.
+> Para garantir que utiliza as resoluções de ícones corretas, pode ver [estes exemplos](https://www.google.com/design/icons).
+> Desloque o ecrã para baixo até à secção **Notificação**, clique num ícone e, em seguida, em `PNGS` para transferir o conjunto de desenho de ícones. Pode ver que pastas drawable e com que resolução deve utilizar para cada versão do ícone.
 > 
 > 
 
-### <a name="enable-your-app-tooreceive-gcm-push-notifications"></a>Ativar as notificações de push do GCM tooreceive da aplicação
-1. Cole o seguinte Olá no Manifest.xml entre Olá `<application>` e `</application>` etiquetas depois de substituir Olá **ID do remetente** obtidos a partir da consola de projeto Firebase. Olá \n é intencional, por isso, certifique-se de que termina Olá número do projeto com-lo.
+### <a name="enable-your-app-to-receive-gcm-push-notifications"></a>Permitir que a aplicação receba notificações push do GCM
+1. Cole o seguinte no Manifest.xml entre as etiquetas `<application>` e `</application>`, depois de substituir a **ID do Remetente** obtida na consola do projeto Firebase. O \n é intencional. Por isso, confirme que termina o número do projeto com ele.
    
         <meta-data android:name="engagement:gcm:sender" android:value="************\n" />
-2. Cole o código de Olá abaixo no Manifest.xml entre Olá `<application>` e `</application>` etiquetas. Substitua o nome do pacote Olá <Your package name>.
+2. Cole o código abaixo no Manifest.xml entre as etiquetas `<application>` e `</application>`. Substitua o nome do pacote <Your package name>.
    
         <receiver android:name="com.microsoft.azure.engagement.gcm.EngagementGCMEnabler"
         android:exported="false">
@@ -86,7 +86,7 @@ Para aplicações reais, pode utilizar um ícone que seja adequado para as notif
                 <category android:name="<Your package name>" />
             </intent-filter>
         </receiver>
-3. Adicionar o último conjunto de Olá de permissões que estão realçadas antes Olá `<application>` etiquetas. Substitua `<Your package name>` pelo nome do pacote real Olá da sua aplicação.
+3. Adicione o último conjunto de permissões que estão realçadas antes da etiqueta `<application>`. Substitua `<Your package name>` pelo nome real do pacote da aplicação.
    
         <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
         <uses-permission android:name="<Your package name>.permission.C2D_MESSAGE" />

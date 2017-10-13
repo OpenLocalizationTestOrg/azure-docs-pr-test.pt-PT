@@ -1,6 +1,6 @@
 ---
-title: portal de aaaUser para o servidor MFA do Azure | Microsoft Docs
-description: "Este é Olá multi-factor authentication página que descreve como tooget iniciado com o Azure MFA e o portal de utilizador Olá."
+title: Portal de utilizador do Servidor MFA do Azure | Microsoft Docs
+description: "Esta é a página do Multi-Factor Authentication que descreve como iniciar o MFA do Azure e o Portal de Utilizador."
 services: multi-factor-authentication
 documentationcenter: 
 author: MicrosoftGuyJFlo
@@ -15,170 +15,170 @@ ms.date: 08/23/2017
 ms.author: joflore
 ms.reviewer: alexwe
 ms.custom: it-pro
-ms.openlocfilehash: 0e36644c3d780249fb98d5da654e9d267c63561a
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: a4eb403d3d21b7dbe63c2645b488a7bddb6d39fd
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="user-portal-for-hello-azure-multi-factor-authentication-server"></a>Portal de utilizador para hello do servidor multi-factor Authentication Azure
+# <a name="user-portal-for-the-azure-multi-factor-authentication-server"></a>Portal de utilizador do Servidor Multi-Factor Authentication do Azure
 
-portal de utilizador de Olá é um web site do IIS que permite que os utilizadores tooenroll no Azure multi-factor Authentication (MFA) e manter as contas. Um utilizador pode alterar o número de telefone, alterar o PIN ou escolha toobypass verificação em dois passos durante o seu próximo início de sessão.
+O portal de utilizador é um site do IIS que permite aos utilizadores inscreverem-se no Multi-Factor Authentication do Azure (MFA) e fazerem a manutenção das contas deles. O utilizador pode alterar o número de telefone, alterar o PIN ou optar por ignorar a verificação de dois passos durante o próximo início de sessão.
 
-Os utilizadores iniciar sessão no portal de utilizador toohello com o respetivo nome de utilizador normal e a palavra-passe, em seguida, concluir uma chamada de verificação de dois passos ou responder toocomplete de perguntas de segurança a autenticação. Se for permitida a inscrição do utilizador, os utilizadores configurar o número de telefone e Olá PIN pela primeira vez que iniciarem sessão no portal de utilizador toohello.
+Os utilizadores iniciam sessão no portal de utilizador com o nome de utilizador e a palavra-passe habituais e, depois, concluem uma chamada de verificação de dois passos ou respondem a perguntas de segurança para terminar a autenticação. Se a inscrição de utilizadores for permitida, os utilizadores configuraram o número de telefone e o PIN na primeira vez que iniciam sessão no portal de utilizador.
 
-Portal de utilizador administradores pode ser configurada e concedido os novos utilizadores tooadd de permissão e atualizar utilizadores existentes.
+Os Administradores do portal de Utilizador podem ser configurados e ser-lhes concedida permissão para adicionar novos utilizadores e atualizar utilizadores existentes.
 
-Dependendo do seu ambiente, poderá ser útil portal de utilizador de Olá toodeploy no Olá mesmo servidor como servidor do Azure multi-factor Authentication ou noutro servidor de acesso à internet.
+Dependendo do seu ambiente, poderá implementar o portal de utilizador no mesmo servidor que o Servidor Multi-Factor Authentication ou noutro servidor com acesso à Internet.
 
 ![Portal de utilizador do MFA](./media/multi-factor-authentication-get-started-portal/portal.png)
 
 > [!NOTE]
-> portal de utilizador Olá só está disponível com o servidor multi-factor Authentication. Se utilizar o multi-factor Authentication na nuvem de Olá, consulte o toohello utilizadores [configurar a conta para a verificação de dois passos](./end-user/multi-factor-authentication-end-user-first-time.md) ou [gerir as definições de verificação em dois passos](./end-user/multi-factor-authentication-end-user-manage-settings.md).
+> O portal de utilizador apenas está disponível com o Servidor Multi-Factor Authentication. Se utilizar o Multi-Factor Authentication na cloud, refira o artigo [Set-up your account for two-step verification](./end-user/multi-factor-authentication-end-user-first-time.md) (Configurar a conta para verificação de dois passos) ou [Manage your settings for two-step verification](./end-user/multi-factor-authentication-end-user-manage-settings.md) (Gerir as definições de verificação em dois passos) aos seus utilizadores.
 
-## <a name="install-hello-web-service-sdk"></a>Instalar o SDK do serviço de web Olá
+## <a name="install-the-web-service-sdk"></a>Instalar o SDK do serviço Web
 
-O cenário, se hello Web Service SDK do Azure multi-factor Authentication é **não** já instalado Olá servidor multi-factor Authentication (MFA) do Azure, Olá concluir os passos que se seguem.
+Em ambos os cenários, se o SDK do Serviço Web do Multi-Factor Authentication do Azure ainda **não** estiver instalado no Servidor Multi-Factor Authentication (MFA) do Azure, conclua os passos que se seguem.
 
-1. Abra a consola do servidor multi-factor Authentication Olá.
-2. Aceda toohello **Web Service SDK** e selecione **instalar o Web Service SDK**.
-3. Instalação completa Olá com predefinições do Olá não ser que necessite toochange-las por algum motivo.
-4. Vincule a um site de toohello certificado SSL no IIS.
+1. Abra a consola do Servidor Multi-Factor Authentication.
+2. Aceda ao **SDK do Serviço Web** e selecione **Instalar SDK do Serviço Web**.
+3. Conclua a instalação com as predefinições, a menos que tenha de as alterar por algum motivo.
+4. Vincule um Certificado SSL ao site no IIS.
 
-Se tiver dúvidas sobre como configurar um certificado SSL num servidor IIS, consulte o artigo de Olá [como tooSet segurança SSL no IIS](https://docs.microsoft.com/en-us/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
+Se tiver dúvidas sobre como configurar um certificado SSL num servidor IIS, veja o artigo [How to Set Up SSL on IIS](https://docs.microsoft.com/en-us/iis/manage/configuring-security/how-to-set-up-ssl-on-iis) (Como realizar uma Cópia de Segurança do SSL no IIS).
 
-Olá SDK do serviço Web tem de estar protegido por um certificado SSL. Pode utilizar um certificado autoassinado para este fim. Importar o certificado de Olá para arquivo de "Raiz autoridades de certificação" de Olá Olá Local da conta do computador no servidor de web do Portal de utilizador Olá, para que confia esse certificado quando inicia a ligação de SSL Olá.
+O SDK do Serviço Web tem de estar protegido por um certificado SSL. Pode utilizar um certificado autoassinado para este fim. Importe o certificado para o arquivo “Autoridades de Certificação de Raiz Fidedigna” da conta de Computador Local no servidor Web do Portal de Utilizador, para que este confie no certificado quando inicia a ligação SSL.
 
 ![SDK do Serviço Web de configuração do Servidor MFA](./media/multi-factor-authentication-get-started-portal/sdk.png)
 
-## <a name="deploy-hello-user-portal-on-hello-same-server-as-hello-azure-multi-factor-authentication-server"></a>Implementar o portal de utilizador de Olá no Olá mesmo servidor que hello do servidor multi-factor Authentication Azure
+## <a name="deploy-the-user-portal-on-the-same-server-as-the-azure-multi-factor-authentication-server"></a>Implementar o portal de utilizador no mesmo servidor do Servidor Multi-Factor Authentication do Azure
 
-Olá pré-requisitos seguintes são necessários tooinstall portal de utilizador de Olá no Olá **mesmo servidor** como hello do servidor multi-factor Authentication Azure:
+Os pré-requisitos seguintes são precisos para instalar o portal de utilizador no **mesmo servidor** do Servidor Multi-Factor Authentication do Azure:
 
 * IIS, incluindo compatibilidade base meta para ASP.NET e IIS 6 (para IIS 7 ou posterior)
-* Uma conta com direitos de administrador para o computador de Olá e domínio, se aplicável. conta de Olá tem de grupos de segurança permissões toocreate do Active Directory.
-* Portal de utilizador de Olá segura com um certificado SSL.
-* Proteja Olá Web Service SDK do Azure multi-factor Authentication com um certificado SSL.
+* Uma conta com direitos de administrador para o computador e Domínio, se aplicável. A conta necessita permissões para criar grupos de segurança do Active Directory.
+* Proteja o portal de utilizador com um certificado SSL.
+* Proteja o SDK do Serviço Web do Multi-Factor Authentication do Azure com um certificado SSL.
 
-toodeploy Olá siga portal, utilizador estes passos:
+Para implementar o portal de utilizador, siga estes passos:
 
-1. Abra a consola do servidor do Azure multi-factor Authentication Olá, clique em Olá **Portal de utilizador** menu à esquerda de ícone na Olá, em seguida, clique em **instalar o Portal de utilizador**.
-2. Instalação completa Olá com predefinições do Olá não ser que necessite toochange-las por algum motivo.
-3. Vincular um site de toohello certificado SSL no IIS
+1. Abra a consola do Servidor Multi-Factor Authentication do Azure, clique no ícone do **Portal de Utilizador**, no menu à esquerda e clique em **Instalar o Portal de Utilizador**.
+2. Conclua a instalação com as predefinições, a menos que tenha de as alterar por algum motivo.
+3. Vincule um Certificado SSL ao site no IIS
 
    > [!NOTE]
    > Este certificado SSL é, normalmente, um certificado SSL assinado publicamente.
 
-4. Abra um browser a partir de qualquer computador e navegar URL toohello em que o portal de utilizador Olá foi instalado (exemplo: https://mfa.contoso.com/MultiFactorAuth). Certifique-se de que não são apresentados erros ou avisos de certificado.
+4. Abra um browser em qualquer computador e navegue para o URL em que o portal de utilizador foi instalado (Exemplo, https://mfa.contoso.com/MultiFactorAuth). Certifique-se de que não são apresentados erros ou avisos de certificado.
 
 ![Instalação do Portal de Utilizador do Servidor MFA](./media/multi-factor-authentication-get-started-portal/install.png)
 
-Se tiver dúvidas sobre como configurar um certificado SSL num servidor IIS, consulte o artigo de Olá [como tooSet segurança SSL no IIS](https://docs.microsoft.com/en-us/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
+Se tiver dúvidas sobre como configurar um certificado SSL num servidor IIS, veja o artigo [How to Set Up SSL on IIS](https://docs.microsoft.com/en-us/iis/manage/configuring-security/how-to-set-up-ssl-on-iis) (Como realizar uma Cópia de Segurança do SSL no IIS).
 
-## <a name="deploy-hello-user-portal-on-a-separate-server"></a>Implementar o portal de utilizador de Olá num servidor separado
+## <a name="deploy-the-user-portal-on-a-separate-server"></a>Implementar no portal do utilizador num servidor separado
 
-Servidor Olá, onde servidor do Azure multi-factor Authentication está em execução não esteja através da Internet, deve instalar o portal de utilizador Olá num **servidor separado, para a internet**.
+Se o servidor onde está a executar o Servidor Multi-Factor Authentication do Azure não tem acesso à Internet, deve instalar o portal do utilizador num **servidor separado com acesso à Internet**.
 
-Se a organização utiliza Olá aplicação Microsoft Authenticator como um dos métodos de verificação Olá e pretende portal de utilizador de Olá toodeploy no seu próprio servidor, conclua Olá os seguintes requisitos:
+Se a sua organização utiliza a aplicação Microsoft Authenticator como um dos métodos de verificação e pretender implementar o portal de utilizador no próprio servidor, execute os seguintes requisitos:
 
-* Utilizar v 6.0 ou superior do hello do servidor do Azure multi-factor Authentication.
-* Instalar o portal de utilizador de Olá num servidor web para a internet com o Microsoft internet Information Services (IIS) 6. x ou superior.
-* Ao utilizar o IIS 6. x, certifique-se de que ASP.NET v 2.0.50727 está instalado, registado e definido demasiado**permitidos**.
+* Utilize a v6.0 ou superior do Servidor Multi-Factor Authentication do Azure.
+* Instale o portal de utilizador num servidor Web com acesso à Internet com Serviços de Informação Internet (IIS) da Microsoft 6.x ou superior.
+* Ao utilizar o IIS 6.x, certifique-se de que ASP.NET v2.0.50727 está instalado, registado e definido como **Permitido**.
 * Ao utilizar o IIS 7.x ou superior, IIS, incluindo compatibilidade base meta para Autenticação Básica, ASP.NET e IIS 6.
-* Portal de utilizador de Olá segura com um certificado SSL.
-* Proteja Olá Web Service SDK do Azure multi-factor Authentication com um certificado SSL.
-* Certifique-se de que o portal de utilizador que Olá pode ligar toohello Web Service SDK do Azure multi-factor Authentication através de SSL.
-* Certifique-se de que portal de utilizador Olá pode autenticar toohello Web Service SDK do Azure multi-factor Authentication com credenciais de Olá de uma conta de serviço no grupo de segurança "Admins de PhoneFactor" Olá. Esta conta de serviço e o grupo devem existir no Active Directory se hello do servidor multi-factor Authentication Azure está em execução num servidor associado a um domínio. Esta conta de serviço e o grupo localmente existem no hello do servidor multi-factor Authentication Azure se não for tooa associado ao domínio.
+* Proteja o portal de utilizador com um certificado SSL.
+* Proteja o SDK do Serviço Web do Multi-Factor Authentication do Azure com um certificado SSL.
+* Certifique-se de que o portal de utilizador consegue ligar-se ao SDK do Serviço Web do Multi-Factor Authentication do Azure através de SSL.
+* Certifique-se de que o portal de utilizador consegue comunicar com o SDK do Serviço Web do Multi-Factor Authentication do Azure com as credenciais de uma conta de serviço no grupo de segurança “PhoneFactor Admins”. Esta conta de serviço e o grupo devem existir no Active Directory se o Servidor Multi-Factor Authentication do Azure estiver em execução num servidor associado a um domínio. Esta conta de serviço e o grupo existem localmente no Servidor Multi-Factor Authentication do Azure se não estiver associado a um domínio.
 
-Instalar portal de utilizador de Olá num servidor diferente hello do servidor multi-factor Authentication Azure requer Olá os seguintes passos:
+Instalar o portal de utilizador num servidor diferente do Servidor Multi-Factor Authentication do Azure requer os seguintes passos:
 
-1. **No servidor MFA de Olá**, procure o caminho de instalação toohello (exemplo: c:\Programas\Microsoft files\servidor multi-Factor Authentication Server) e copiar o ficheiro de Olá **MultiFactorAuthenticationUserPortalSetup64** tooa localização servidor de acesso à internet toohello acessível onde irá instalar.
-2. **No servidor de web de acesso à internet Olá**, execute o ficheiro de instalação de Olá MultiFactorAuthenticationUserPortalSetup64 como administrador, alterar Olá Site, se assim o desejar e alterar o nome abreviado do Olá Virtual diretório tooa se desejar.
-3. Vincule a um site de toohello certificado SSL no IIS.
+1. **No servidor MFA**, navegue para o caminho de instalação (Exemplo: C:\Ficheiros de Programas\Servidor Multi-Factor Authentication), e copie o ficheiro **MultiFactorAuthenticationUserPortalSetup64** para uma localização acessível ao servidor com acesso à Internet onde será instalado.
+2. **No servidor Web com acesso à Internet**, execute o ficheiro de instalação MultiFactorAuthenticationUserPortalSetup64 como administrador, altere o Site e o diretório Virtual para um nome abreviado, se o pretender.
+3. Vincule um Certificado SSL ao site no IIS.
 
    > [!NOTE]
    > Este certificado SSL é, normalmente, um certificado SSL assinado publicamente.
 
-4. Procurar demasiado**C:\inetpub\wwwroot\MultiFactorAuth**
-5. Editar o ficheiro Web. config de Olá no bloco de notas
+4. Navegue até **C:\inetpub\wwwroot\MultiFactorAuth**
+5. Edite o ficheiro Web.Config no Bloco de notas
 
-    * Localizar a chave de Olá **"USE_WEB_SERVICE_SDK"** e alterar **valor = "false"** demasiado**valor = "true"**
-    * Localizar a chave de Olá **"WEB_SERVICE_SDK_AUTHENTICATION_USERNAME"** e alterar **valor = ""** demasiado**valor = "Domínio \ utilizador"** onde domínio ome de utilizador é uma conta de serviço que faz parte Grupo de "PhoneFactor Admins".
-    * Localizar a chave de Olá **"WEB_SERVICE_SDK_AUTHENTICATION_PASSWORD"** e alterar **valor = ""** demasiado**valor = "Password"** onde a palavra-passe é Olá palavra-passe para Olá serviço Conta introduzida na linha anterior Olá.
-    * Localize o valor de Olá **https://www.contoso.com/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx** e alterar toohello de URL esta marcador de posição URL de SDK do serviço Web que está instalada no passo 2.
-    * Guarde o ficheiro Web. config de Olá e feche o bloco de notas.
+    * Encontre a chave **"USE_WEB_SERVICE_SDK"** e altere **value="false"** para **value="true"**
+    * Encontre a chave **"WEB_SERVICE_SDK_AUTHENTICATION_USERNAME"** e altere **value=""** para **value="DOMAIN\User"**, onde DOMAIN\User é uma Conta de Serviço que pertence ao Grupo "PhoneFactor Admins".
+    * Encontre a chave **"WEB_SERVICE_SDK_AUTHENTICATION_PASSWORD"** e altere **value=""** para **value="Password"**, onde a Palavra-passe é a palavra-passe da Conta de Serviço introduzida na linha anterior.
+    * Encontre o valor **https://www.contoso.com/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx** e altere este URL de marcador de posição para o URL do SDK do serviço Web instalado no passo 2.
+    * Guarde o ficheiro Web.Config e feche o Bloco de notas.
 
-6. Abra um browser a partir de qualquer computador e navegar URL toohello em que o portal de utilizador Olá foi instalado (exemplo: https://mfa.contoso.com/MultiFactorAuth). Certifique-se de que não são apresentados erros ou avisos de certificado.
+6. Abra um browser em qualquer computador e navegue para o URL em que o portal de utilizador foi instalado (Exemplo, https://mfa.contoso.com/MultiFactorAuth). Certifique-se de que não são apresentados erros ou avisos de certificado.
 
-Se tiver dúvidas sobre como configurar um certificado SSL num servidor IIS, consulte o artigo de Olá [como tooSet segurança SSL no IIS](https://docs.microsoft.com/en-us/iis/manage/configuring-security/how-to-set-up-ssl-on-iis).
+Se tiver dúvidas sobre como configurar um certificado SSL num servidor IIS, veja o artigo [How to Set Up SSL on IIS](https://docs.microsoft.com/en-us/iis/manage/configuring-security/how-to-set-up-ssl-on-iis) (Como realizar uma Cópia de Segurança do SSL no IIS).
 
-## <a name="configure-user-portal-settings-in-hello-azure-multi-factor-authentication-server"></a>Configurar definições de portal de utilizador no hello do servidor multi-factor Authentication Azure
+## <a name="configure-user-portal-settings-in-the-azure-multi-factor-authentication-server"></a>Configurar as definições do portal de utilizador no Servidor Multi-Factor Authentication do Azure
 
-Agora está instalado o portal de utilizador que Olá, terá de tooconfigure hello do servidor multi-factor Authentication Azure toowork com o portal de Olá.
+Agora que o portal de utilizador está instalado, tem de configurar o Servidor Multi-Factor Authentication do Azure para trabalhar com o mesmo.
 
-1. Na consola do servidor do Azure multi-factor Authentication Olá, clique em Olá **Portal de utilizador** ícone. No separador de definições de Olá, introduza o portal de utilizador do Olá URL toohello no Olá **URL do Portal de utilizador** caixa de texto. Se tiver sido ativada a funcionalidade de e-mail, este URL está incluído nos e-mails de Olá que são enviados toousers quando forem importados para hello do servidor do Azure multi-factor Authentication.
-2. Escolher Olá definições que pretende que o toouse no Olá Portal de utilizador. Por exemplo, se os utilizadores têm permissão toochoose os respetivos métodos de autenticação, certifique-se de que **permitir que os utilizadores tooselect método** estiver selecionada, juntamente com os métodos de Olá que podem escolher.
-3. Definir que devem ser administradores em Olá **administradores** separador. Pode criar permissões administrativas granulares utilizando Olá caixas de verificação e as dropdowns nas caixas de adicionar/editar Olá.
+1. Na consola do Servidor Multi-Factor Authentication do Azure, clique no ícone **Portal de Utilizador**. No separador Definições, introduza o URL do portal de utilizador na caixa de texto **URL do Portal de Utilizador**. Se a funcionalidade de e-mail tiver sido ativada, este URL vai ser incluído nos e-mails que são enviados aos utilizadores quando forem importados para o Servidor Multi-Factor Authentication do Azure.
+2. Escolha as definições que pretende utilizar no Portal de Utilizador. Por exemplo, se os utilizadores tiverem permissão para escolher os métodos de autenticação deles, certifique-se de que **Permitir que os utilizadores selecionem o método** está marcado, juntamente com os métodos que podem escolher.
+3. Defina quem deverão ser os Administradores no separador **Administradores**. Pode criar permissões administrativas granulares com as caixas de verificação e as listas pendentes nas caixas Adicionar/Editar.
 
 Configuração opcional:
-- **Perguntas de segurança** -definir aprovados perguntas de segurança para o seu idioma de ambiente e Olá aparecem no.
+- **Perguntas de Segurança** - defina perguntas de segurança aprovadas para o seu ambiente e o idioma em que aparecem.
 - **Sessões Passadas** - configure a integração do portal de utilizador com um site baseado em formulários através do MFA.
-- **IPs fidedignos** -permitir que os utilizadores tooskip MFA quando a autenticação de uma lista de confiança IPs ou intervalos.
+- **IPs Fidedignos** - permita que os utilizadores ignorem o MFA ao autenticarem uma lista de IPs fidedignos ou intervalos.
 
 ![Configuração do Portal de Utilizador do Servidor MFA](./media/multi-factor-authentication-get-started-portal/config.png)
 
-O servidor multi-factor Authentication do Azure fornece várias opções Olá no portal de utilizador. Olá tabela seguinte fornece uma lista destas opções e obter uma explicação sobre o que são utilizadas.
+O Servidor Multi-Factor Authentication do Azure fornece várias opções para o portal de utilizador. A tabela seguinte disponibiliza uma lista destas opções e uma explicação das respetivas utilizações.
 
 | Definições do Portal de Utilizador | Descrição |
 |:--- |:--- |
-| URL do Portal de Utilizador | Introduza o URL de Olá de onde Olá portal está alojado. |
-| Autenticação primária | Especifique o tipo de Olá de autenticação toouse quando iniciar sessão no portal de toohello. Autenticação do Windows, Radius ou LDAP. |
-| Permitir que os utilizadores toolog no | Permitir que os utilizadores tooenter um nome de utilizador e palavra-passe Olá-na página sessão Olá no portal de utilizador. Se esta opção não estiver selecionada, as caixas de Olá estão desativadas. |
-| Permitir a inscrição de utilizador | Permitir tooenroll um utilizador no multi-factor Authentication ao redirecioná-lo tooa ecrã de configuração que lhe solicita informações adicionais, tais como o número de telefone. O pedido do telefone alternativo permite que os utilizadores toospecify um número de telefone secundário. Pedido de terceiros OATH token permite que os utilizadores toospecify um token OATH de terceiros. |
-| Permitir que os utilizadores tooinitiate omissão de uso individual | Permitir que os utilizadores tooinitiate uma omissão de uso individual. Se um utilizador configura esta opção, irá demorar Olá efeito próxima vez Olá utilizador inicia sessão. Pedido de Desativação segundos fornece Olá utilizador uma caixa para que podem alterar a predefinição de Olá de 300 segundos. Caso contrário, a omissão de uso individual Olá só é adequada para 300 segundos. |
-| Permitir que os utilizadores tooselect método | Permitir que os utilizadores toospecify método de contacto principal. Este método pode ser chamada telefónica, mensagem de texto, aplicação móvel ou token OATH. |
-| Permitir que os utilizadores tooselect idioma | Permitir que os utilizadores idioma de Olá toochange que é utilizado para chamada telefónica de Olá, mensagem de texto, aplicação móvel ou OATH token. |
-| Permitir que a aplicação móvel de tooactivate de utilizadores | Permitir que utilizadores toogenerate um código toocomplete Olá aplicação móvel ativação processo de ativação que é utilizado com o servidor de Olá.  Também pode definir o número de Olá de dispositivos, estes podem ativar aplicação Olá, entre 1 e 10. |
-| Utilizar perguntas de segurança para contingência | Permitir perguntas de segurança no caso de falha da verificação em dois passos. Pode especificar o número de Olá de perguntas de segurança que têm de ser respondidas com êxito. |
-| Permitir que o token OATH de terceiros de tooassociate de utilizadores | Permitir que os utilizadores toospecify um token OATH de terceiros. |
-| Utilizar token OATH para contingência | Permitir a utilização de Olá de um token OATH no caso de verificação de dois passos não for bem sucedida. Também pode especificar o tempo limite da sessão Olá em minutos. |
-| Ativar registo | Ative o registo no portal de utilizador Olá. Olá ficheiros de registo estão localizados em: c:\Programas\Microsoft files\servidor multi-Factor authentication\registos.. |
+| URL do Portal de Utilizador | Introduzir o URL no qual o portal está alojado. |
+| Autenticação primária | Especifique o tipo de autenticação a utilizar quando iniciar sessão no portal. Autenticação do Windows, Radius ou LDAP. |
+| Permitir que os utilizadores iniciem sessão | Permitir aos utilizadores introduzir um nome de utilizador e palavra-passe na página de início de sessão do portal de utilizador. Se esta opção não estiver selecionada, as caixas estarão esbatidas. |
+| Permitir a inscrição de utilizador | Permitir ao utilizador inscrever-se na Multi-Factor Authentication, ao redirecioná-lo para um ecrã de configuração que lhe pede informações adicionais, como o número de telefone. O pedido do telefone alternativo permite aos utilizadores especificarem um número de telefone secundário. Pedir o token OATH de terceiros permite aos utilizadores especificar um token OATH de terceiros. |
+| Permitir que os utilizadores iniciem a Omissão de Uso Individual | Permitir que os utilizadores iniciem uma omissão de uso individual. Se um utilizador definir esta opção, a mesma terá efeito da próxima vez que o utilizador iniciar sessão. O pedido de segundos de omissão fornece uma caixa ao utilizador, para que este possa alterar a predefinição de 300 segundos. Caso contrário, a omissão de uso individual só é adequada para 300 segundos. |
+| Permitir que os utilizadores selecionem o método | Permitir aos utilizadores especificar o método de contacto principal. Este método pode ser chamada telefónica, mensagem de texto, aplicação móvel ou token OATH. |
+| Permitir que os utilizadores selecionem o idioma | Permitir ao utilizador alterar o idioma que é utilizado para a chamada telefónica, mensagem de texto, aplicação móvel ou token OATH. |
+| Permitir que os utilizadores ativem a aplicação móvel | Permitir aos utilizadores gerar um código de ativação para concluir o processo de ativação da aplicação móvel que é utilizada com o servidor.  Também pode definir o número de dispositivos em que os utilizadores podem ativar a aplicação, entre um e dez. |
+| Utilizar perguntas de segurança para contingência | Permitir perguntas de segurança no caso de falha da verificação em dois passos. Pode especificar o número de perguntas de segurança que têm de ser respondidas com êxito. |
+| Permitir aos utilizadores associar token OATH de terceiros | Permitir aos utilizadores especificar um token OATH de terceiros. |
+| Utilizar token OATH para contingência | Permitir a utilização de um token OATH caso a verificação de dois passos falhe. Também pode especificar o tempo limite de sessão em minutos. |
+| Ativar registo | Ativar o registo no portal de utilizador. Os ficheiros de registo estão localizados em: C:\Programas\Microsoft Files\Servidor Multi-Factor Authentication\Registos. |
 
-Estas definições ficam utilizador toohello visível no portal de Olá quando estão ativadas e iniciar a sessão no portal de utilizador toohello.
+Estas definições ficam visíveis para o utilizador no portal assim que forem ativadas e iniciarem sessão no portal de utilizador.
 
 ![Definições do portal de utilizador](./media/multi-factor-authentication-get-started-portal/portalsettings.png)
 
 ### <a name="self-service-user-enrollment"></a>Inscrição de utilizador self-service
 
-Se pretender toosign a utilizadores em e inscrever, tem de selecionar Olá **permitir que os utilizadores toolog no** e **permitir inscrição de utilizador** opções no separador de definições de Olá. Lembre-se de que as definições de Olá que selecionar afetam Olá início de sessão experiência de utilizador.
+Se pretende que os utilizadores iniciem sessão e se inscrevam, tem de selecionar as opções **Permitir que os utilizadores iniciem sessão** e **Permitir a inscrição de utilizador**, no separador Definições. Lembre-se de que as definições que selecionar afetam a experiência de início de sessão do utilizador.
 
-Por exemplo, quando um utilizador inicia sessão no portal de utilizador toohello para Olá pela primeira vez, é direcionado toohello página de configuração de utilizador do Azure multi-factor Authentication. Dependendo de como tiver configurado o multi-factor Authentication do Azure, o utilizador Olá poderá ser capaz de tooselect o método de autenticação.
+Por exemplo, quando um utilizador inicia sessão no portal de utilizador pela primeira vez, é direcionado para a página de Configuração de Utilizador do Multi-Factor Authentication do Azure. Dependendo de como tiver configurado o Multi-Factor Authentication do Azure, o utilizador poderá conseguir selecionar o método de autenticação.
 
-Se estes selecionem método de verificação de chamada de voz Olá ou tem sido previamente configurada toouse este método, página Olá pede-lhe Olá utilizador tooenter o número de telefone principal e a extensão, se aplicável. Também pode ser permitido tooenter um número de telefone alternativo.
+Se o utilizador selecionar o método de autenticação Chamada de Voz ou tiver sido pré-configurado para utilizar este método, a página pede-lhe para introduzir o respetivo número de telefone principal e uma extensão, se aplicável. Também poderá ser permitida a introdução de um número de telefone de cópia de segurança.
 
 ![Registar números de telefone primários e de cópia de segurança](./media/multi-factor-authentication-get-started-portal/backupphone.png)
 
-Se o utilizador de Olá toouse necessário um PIN quando fizer a autenticação, página Olá solicita toocreate um PIN. Após introduzir as respetivas number(s) de telefone e o PIN (se aplicável), o utilizador Olá clica Olá **telefonar-Me agora tooAuthenticate** botão. Número de telefone principal de chamada telefónica verificação toohello um utilizador efetua a multi-factor Authentication do Azure. utilizador Olá tem de responder a chamada telefónica de Olá e introduzir o PIN (se aplicável) e prima # toomove no toohello próximo passo do processo de autoinscrição Olá.
+Se for pedido ao utilizador para utilizar um PIN quando fizer a autenticação, a página pede-lhe que crie um PIN. Após introduzir o número ou números de telefone e o PIN (se aplicável), o utilizador clica no botão **Telefonar-me Agora para Autenticação**. O Multi-Factor Authentication do Azure realiza uma chamada telefónica de autenticação para o número de telefone principal do utilizador. O utilizador tem de atender a chamada e introduzir o PIN (se aplicável), e premir # para avançar para o próximo passo do processo de autoinscrição.
 
-Se o utilizador Olá seleciona o método de verificação de mensagem de texto Olá ou tiver sido previamente configurada toouse este método, a página Olá solicita Olá do utilizador para o respetivo número de telemóvel. Se o utilizador de Olá toouse necessário um PIN quando fizer a autenticação, página Olá também solicita tooenter um PIN.  Após introduzir o número de telefone e PIN (se aplicável), o utilizador Olá clica Olá **texto-Me agora tooAuthenticate** botão. Multi-factor Authentication do Azure efetua telemóvel do utilizador um SMS verificação toohello. Olá utilizador recebe uma mensagem de texto de saudação com um one-time-código de acesso (OTP), em seguida, mensagem de toohello responde com esse OTP e o PIN (se aplicável).
+Se o utilizador selecionar o método de autenticação por Mensagem SMS ou tiver sido pré-configurado para utilizar este método, a página pede-lhe o respetivo número de telemóvel. Se for pedido ao utilizador para utilizar um PIN quando fizer a autenticação, a página também lhe pede para introduzir um PIN.  Após introduzir o número de telefone e o PIN (se aplicável), o utilizador clica no botão **Enviar-me SMS Agora para Autenticação**. O Multi-Factor Authentication do Azure realiza uma verificação por SMS para o telemóvel do utilizador. O utilizador recebe a mensagem de texto com um código de acesso de uso individual (OTP) e, em seguida, responde à mensagem com esse OTP e o respetivo PIN (se aplicável).
 
 ![SMS do portal de utilizador](./media/multi-factor-authentication-get-started-portal/text.png)
 
-Se o utilizador Olá seleciona o método de verificação de aplicação móvel Olá, a página Olá pede-lhe Olá utilizador tooinstall Olá Microsoft Authenticator aplicação nos respetivos dispositivos e gerar um código de ativação. Depois de instalar a aplicação Olá, o utilizador Olá clica no botão gerar código de ativação de Olá.
+Se o utilizador selecionar o método de verificação de Aplicação Móvel, a página pede-lhe que instale a aplicação Microsoft Authenticator no dispositivo e que gere um código de ativação. Depois de instalar a aplicação, o utilizador clica no botão Gerar Código de Ativação.
 
 > [!NOTE]
-> aplicação do Microsoft Authenticator de toouse Olá, o utilizador Olá tem de ativar as notificações push para o respetivo dispositivo.
+> Para utilizar a aplicação Microsoft Authenticator, o utilizador tem de ativar as notificações push no dispositivo.
 
-página Olá, em seguida, apresenta um código de ativação e um URL, juntamente com uma imagem de código de barras. Se o utilizador de Olá toouse necessário um PIN quando fizer a autenticação, página Olá adicionalmente solicita tooenter um PIN. utilizador Olá entra Olá código de ativação e o URL na aplicação do Microsoft Authenticator Olá ou utiliza a imagem de código de barras de Olá scanner tooscan Olá código de barras e clica no botão Ativar de Olá.
+A página apresenta então um código de ativação e um URL, juntamente com uma imagem de código de barras. Se for pedido ao utilizador para utilizar um PIN quando fizer a autenticação, a página também lhe pede para introduzir um PIN. O utilizador introduz o código de ativação e o URL na aplicação Microsoft Authentication ou utiliza o leitor de código de barras para ler a imagem de código de barras e clica no botão Ativar.
 
-Após a conclusão da ativação Olá, utilizador de Olá clica Olá **autenticar-Me agora** botão. Multi-factor Authentication do Azure efetua a aplicação móvel de um utilizador de toohello de verificação. utilizador Olá tem de introduzir o PIN (se aplicável) e clique no botão Olá autenticar no respetivo toomove de aplicação móvel no toohello próximo passo do processo de autoinscrição Olá.
+Após a ativação estar concluída, o utilizador clica no botão **Autenticar-me Agora**. O Multi-Factor Authentication do Azure realiza uma verificação para a aplicação móvel do utilizador. O utilizador tem de introduzir o PIN (se aplicável), e premir o botão Autenticar na aplicação móvel para avançar para o próximo passo do processo de autoinscrição.
 
-Se tem configurado os administradores de Olá hello do servidor multi-factor Authentication Azure toocollect segurança perguntas e respostas, utilizador de Olá é então direcionado toohello página de perguntas de segurança. utilizador Olá tem de selecionar quatro perguntas de segurança e fornecer respostas a perguntas tootheir selecionado.
+Se os administradores tiverem configurado o Servidor Multi-Factor Authentication do Azure para recolher perguntas e respostas de segurança, o utilizador é então direcionado para a página Perguntas de Segurança. O utilizador tem de selecionar quatro perguntas de segurança e fornecer respostas às perguntas selecionadas.
 
 ![Perguntas de segurança do portal de utilizador](./media/multi-factor-authentication-get-started-portal/secq.png)
 
-Olá autoinscrição do utilizador está agora concluída e o utilizador de Olá é iniciada no portal de utilizador toohello. Utilizadores podem iniciar sessão no portal de utilizador toohello em qualquer altura nas toochange futuras Olá os respetivos números de telefone, PINs, métodos de autenticação e perguntas de segurança se é permitido alterar os respetivos métodos pelos administradores deles.
+A autoinscrição do utilizador está agora concluída e o utilizador tem sessão iniciada no portal de utilizador. Os utilizadores podem voltar a iniciar sessão no portal de utilizador em qualquer altura no futuro para alterar os números de telefone, PINs, métodos de autenticação e perguntas de segurança, se for permitido alterar os seus métodos pelos administradores deles.
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- [Implementar Olá Azure multi-factor Authentication Server Mobile serviço Web da aplicação](multi-factor-authentication-get-started-server-webservice.md)
+- [Implemente o Serviço Web de Aplicações Móveis do Servidor Multi-Factor Authentication do Azure](multi-factor-authentication-get-started-server-webservice.md)

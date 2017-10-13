@@ -1,6 +1,6 @@
 ---
 title: 'B2C do Azure AD: Proteger uma API Web utilizando Node.js | Microsoft Docs'
-description: Como a API web de toobuild um Node.js que aceita tokens a partir de um inquilino do B2C
+description: Como criar uma API Web de Node.js que aceita tokens de um inquilino do B2C
 services: active-directory-b2c
 documentationcenter: 
 author: dstrockis
@@ -14,96 +14,96 @@ ms.devlang: javascript
 ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: xerners
-ms.openlocfilehash: 47f5bae025a9ba2f486e36acef36aa37cfb43543
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 2315f5d0ebb142561c65224cd9d06299466a7ee4
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-ad-b2c-secure-a-web-api-by-using-nodejs"></a>B2C do Azure AD: Proteger uma API Web utilizando Node.js
 <!-- TODO [AZURE.INCLUDE [active-directory-b2c-devquickstarts-web-switcher](../../includes/active-directory-b2c-devquickstarts-web-switcher.md)]-->
 
-Com o Azure Active Directory (Azure AD) B2C, pode proteger uma API web utilizando tokens de acesso de OAuth 2.0. Estes tokens permitem que as aplicações de cliente que utilizam a API do Azure AD B2C tooauthenticate toohello. Este artigo mostra como toocreate uma API de "lista de tarefas" que permite aos utilizadores tooadd e a lista de tarefas. Olá web API está protegida com o Azure AD B2C e só permite que os utilizadores autenticados toomanage respetiva lista de tarefas.
+Com o Azure Active Directory (Azure AD) B2C, pode proteger uma API web utilizando tokens de acesso de OAuth 2.0. Estes tokens permitem que as aplicações de cliente que utilizam o Azure AD B2C se autentiquem na API. Este artigo mostra-lhe como criar uma API de "lista de tarefas" que permite aos utilizadores adicionar e listar tarefas. A API Web é protegida ao utilizar o Azure AD B2C e só permite que os utilizadores autenticados façam a gestão da respetiva lista de tarefas.
 
 > [!NOTE]
-> Este exemplo foi escrito utilizando o tooby toobe ligado nosso [aplicação de exemplo de iOS B2C](active-directory-b2c-devquickstarts-ios.md). Olá passagem atual pela primeira vez e, em seguida, acompanhe com esse exemplo.
+> Este exemplo foi escrito para fazer uma ligação utilizando a nossa [aplicação de exemplo B2C para iOS](active-directory-b2c-devquickstarts-ios.md). Primeiro, explore esta passagem e, em seguida, acompanhe com esse exemplo.
 >
 >
 
-**Passport** é o middleware de autenticação do Node.js. Flexível e modular, o Passport pode ser instalado discretamente em qualquer aplicação Web baseada no Express ou Restify. Um conjunto abrangente de estratégias suporta a autenticação utilizando um nome de utilizador e palavra-passe, o Facebook, o Twitter e muito mais. Desenvolvemos uma estratégia para o Azure Active Directory (Azure AD). Instalará este módulo e, em seguida, adicionar Olá do Azure AD `passport-azure-ad` Plug-in.
+**Passport** é o middleware de autenticação do Node.js. Flexível e modular, o Passport pode ser instalado discretamente em qualquer aplicação Web baseada no Express ou Restify. Um conjunto abrangente de estratégias suporta a autenticação utilizando um nome de utilizador e palavra-passe, o Facebook, o Twitter e muito mais. Desenvolvemos uma estratégia para o Azure Active Directory (Azure AD). Instale este módulo e, em seguida, adicione o plug-in `passport-azure-ad` do Azure AD.
 
-toodo neste exemplo, tem de:
+Para efetuar este exemplo, tem de:
 
 1. Registar uma aplicação com o Azure AD.
-2. Configurar a sua aplicação toouse Passport `azure-ad-passport` Plug-in.
-3. Configure uma cliente aplicação toocall Olá "lista de tarefas" API web.
+2. Configure a aplicação para utilizar o plug-in `passport-azure-ad` do Passport.
+3. Configure uma aplicação de cliente para chamar a API Web da “lista de ações a fazer”.
 
 ## <a name="get-an-azure-ad-b2c-directory"></a>Obter um diretório do Azure AD B2C
 Para poder utilizar o Azure AD B2C, tem de criar um diretório ou inquilino.  Um diretório é um contentor para todos os utilizadores, aplicações, grupos, etc.  Se ainda não tiver um, [crie um diretório do B2C](active-directory-b2c-get-started.md) antes de continuar.
 
 ## <a name="create-an-application"></a>Criar uma aplicação
-Em seguida, terá de toocreate uma aplicação no diretório do B2C que dá ao Azure AD algumas informações que necessita de toosecurely comunicar com a sua aplicação. Neste caso, a aplicação de cliente Olá e web API são representadas por um único **ID da aplicação**, uma vez que compõem uma aplicação lógica. toocreate uma aplicação, siga [estas instruções](active-directory-b2c-app-registration.md). É necessário:
+Em seguida, precisa de criar uma aplicação no seu diretório do B2C que dá ao Azure AD algumas informações necessárias para comunicar de forma segura com a aplicação. Neste caso, a aplicação cliente e a API Web são representadas por um único **ID de Aplicação** porque compõem uma aplicação lógica. Para criar uma aplicação, siga [estas instruções](active-directory-b2c-app-registration.md). É necessário:
 
-* Incluir um **web app/web api** na aplicação Olá
-* Introduzir `http://localhost/TodoListService` como um **URL de resposta**. É Olá predefinido URL para este exemplo de código.
-* Criar um **Segredo de aplicação** para a aplicação e copiá-lo. Estes dados são necessários mais tarde. Tenha em atenção que este valor tem de toobe [XML de escape](https://www.w3.org/TR/2006/REC-xml11-20060816/#dt-escape) antes de o utilizar.
-* Olá cópia **ID da aplicação** que é atribuído tooyour aplicação. Estes dados são necessários mais tarde.
+* Incluir uma **aplicação Web/API Web** na aplicação
+* Introduzir `http://localhost/TodoListService` como um **URL de resposta**. É o URL predefinido para este exemplo de código.
+* Criar um **Segredo de aplicação** para a aplicação e copiá-lo. Estes dados são necessários mais tarde. Tenha em atenção que este valor de ser [XML de escape](https://www.w3.org/TR/2006/REC-xml11-20060816/#dt-escape) antes de o utilizar.
+* Copiar a **ID da Aplicação** atribuída à aplicação. Estes dados são necessários mais tarde.
 
 [!INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
 ## <a name="create-your-policies"></a>Criar as políticas
-No Azure AD B2C, cada experiência de utilizador é definida por uma [política](active-directory-b2c-reference-policies.md). Esta aplicação contém duas experiências de identidade: registo e início de sessão. Tem toocreate uma política de cada tipo, conforme descrito no [artigo de referência de política](active-directory-b2c-reference-policies.md#create-a-sign-up-policy).  Quando criar as três políticas, não se esqueça de:
+No Azure AD B2C, cada experiência de utilizador é definida por uma [política](active-directory-b2c-reference-policies.md). Esta aplicação contém duas experiências de identidade: registo e início de sessão. Tem de criar uma política de cada tipo, conforme descrito no [artigo de referência de política](active-directory-b2c-reference-policies.md#create-a-sign-up-policy).  Quando criar as três políticas, não se esqueça de:
 
-* Escolha Olá **nome a apresentar** e outros atributos de inscrição na política de inscrição.
-* Escolha Olá **nome a apresentar** e **ID de objeto** afirmações de aplicação em cada política.  Também pode escolher outras afirmações.
-* Copie Olá **nome** de cada política depois de a criar. Deve ter o prefixo de Olá `b2c_1_`.  Vai necessitar destes nomes de política mais tarde.
+* Escolher o **Nome a apresentar** e os atributos de inscrição na política de inscrição.
+* Escolher as afirmações de aplicação **Nome a apresentar** e **ID de objeto** em cada política.  Também pode escolher outras afirmações.
+* Copie o **Nome** de cada política depois de criá-la. Deve ter o prefixo `b2c_1_`.  Vai necessitar destes nomes de política mais tarde.
 
 [!INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
 
-Depois de criar as três políticas, está pronto toobuild a aplicação.
+Depois de criar as três políticas, está pronto para criar a aplicação.
 
-toolearn sobre como funcionam as políticas no Azure AD B2C, comece com Olá [.NET introdução à aplicação web tutorial](active-directory-b2c-devquickstarts-web-dotnet.md).
+Para saber mais sobre como funcionam as políticas no Azure AD B2C, comece com o [Tutorial de introdução da aplicação Web do .NET](active-directory-b2c-devquickstarts-web-dotnet.md).
 
-## <a name="download-hello-code"></a>Transferir o código de Olá
-Olá código para este tutorial [é mantido no GitHub](https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS). exemplo de Olá toobuild como vá, pode [transferir um projeto de estrutura como um ficheiro. zip](https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS/archive/skeleton.zip). Também pode clonar a estrutura de Olá:
+## <a name="download-the-code"></a>Transferir o código
+O código deste tutorial [é mantido no GitHub](https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS). Para criar o exemplo à medida que avança, pode [transferir o projeto de estrutura como um ficheiro .zip](https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS/archive/skeleton.zip). Também pode clonar a estrutura:
 
 ```
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS.git
 ```
 
-aplicação Olá concluída está também [disponível como um ficheiro. zip](https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS/archive/complete.zip) ou Olá `complete` ramo do Olá mesmo repositório.
+A aplicação concluída está também [disponível como um ficheiro .zip](https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS/archive/complete.zip) ou no ramo `complete` do mesmo repositório.
 
 ## <a name="download-nodejs-for-your-platform"></a>Transferir Node.js para a plataforma
-toosuccessfully utilizar este exemplo, precisa de uma instalação do Node.js.
+Para utilizar este exemplo com êxito, tem de ter uma instalação do Node.js em execução.
 
 Instalar Node.js de [nodejs.org](http://nodejs.org).
 
 ## <a name="install-mongodb-for-your-platform"></a>Instalar MongoDB para a plataforma
-toosuccessfully utilizar este exemplo, precisa de uma instalação do MongoDB. Utilizamos o MongoDB toomake a API REST persistente em instâncias de servidor.
+Para utilizar este exemplo com êxito, tem de ter uma instalação do MongoDB. Utilizamos o MongoDB para tornar a API REST persistente em várias instâncias de servidor.
 
 Instalar MongoDB de [mongodb.org](http://www.mongodb.org).
 
 > [!NOTE]
-> Esta passagem parte do princípio de que usa Olá servidor e a instalação pontos finais predefinidos para o MongoDB, que a hora de Olá desta redação é `mongodb://localhost`.
+> Esta passagem parte do princípio de que irá utilizar os pontos finais do servidor e a instalação predefinida para o MongoDB, que de momento é `mongodb://localhost`.
 >
 >
 
-## <a name="install-hello-restify-modules-in-your-web-api"></a>Instalar os módulos do Restify Olá na API web
-Utilizamos o Restify toobuild a API REST. O Restify é uma estrutura de aplicação Node.js mínima e flexível derivada do Express. Tem um conjunto robusto de funcionalidades para a criação de APIs REST por cima do Connect.
+## <a name="install-the-restify-modules-in-your-web-api"></a>Instalar os módulos Restify na API Web
+Utilizamos o Restify para criar a API REST. O Restify é uma estrutura de aplicação Node.js mínima e flexível derivada do Express. Tem um conjunto robusto de funcionalidades para a criação de APIs REST por cima do Connect.
 
 ### <a name="install-restify"></a>Instalação do Restify
-Olá linha de comandos, altere o diretório demasiado`azuread`. Se hello `azuread` diretório não existe, criá-la.
+Na linha de comandos, altere o diretório para `azuread`. Se o diretório `azuread` não existe, crie-o.
 
 `cd azuread` ou `mkdir azuread;`
 
-Introduza Olá os seguintes comandos:
+Introduza o seguinte comando:
 
 `npm install restify`
 
 Este comando instala o Restify.
 
 #### <a name="did-you-get-an-error"></a>Obteve um erro?
-Em alguns sistemas operativos, quando utiliza `npm`, poderá receber o erro de Olá `Error: EPERM, chmod '/usr/local/bin/..'` e um pedido para que execute conta Olá como administrador. Se o problema ocorrer, utilize Olá `sudo` comando toorun `npm` a um nível de privilégio mais elevado.
+Em alguns sistemas operativos, quando utiliza `npm`, poderá receber o erro `Error: EPERM, chmod '/usr/local/bin/..'` e um pedido para que execute a conta como administrador. Se este problema ocorrer, utilize o comando `sudo` para executar `npm` a um nível de privilégio mais elevado.
 
 #### <a name="did-you-get-a-dtrace-error"></a>Obteve um erro de DTrace?
 Quando instalar o Restify, pode aparecer o seguinte texto:
@@ -127,7 +127,7 @@ npm WARN optional dep failed, continuing dtrace-provider@0.2.8
 
 O Restify fornece um mecanismo poderoso para rastreio de chamadas REST utilizando o DTrace. No entanto, muitos sistemas operativos não tem o DTrace disponível. Pode ignorar com segurança estes erros.
 
-saída de Olá do comando de Olá deve aparecer semelhante toothis texto:
+O resultado do comando deve ter um aspeto semelhante ao que se segue:
 
     restify@2.6.1 node_modules/restify
     ├── assert-plus@0.1.4
@@ -151,33 +151,33 @@ saída de Olá do comando de Olá deve aparecer semelhante toothis texto:
     └── bunyan@0.22.0 (mv@0.0.5)
 
 ## <a name="install-passport-in-your-web-api"></a>Instalar o Passport na API Web
-Olá linha de comandos, altere o diretório demasiado`azuread`, se ainda não estiver lá.
+Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí.
 
-Instale o Passport utilizando Olá os seguintes comandos:
+Introduza o comando seguinte para instalar o Passport:
 
 `npm install passport`
 
-saída de Olá do comando de Olá deve ser semelhante toothis texto:
+O resultado do comando deve ser semelhante ao texto que se segue:
 
     passport@0.1.17 node_modules\passport
     ├── pause@0.0.1
     └── pkginfo@0.2.3
 
-## <a name="add-passport-azuread-tooyour-web-api"></a>Adicionar passport-azuread tooyour web API
-Em seguida, adicione a estratégia de OAuth Olá utilizando `passport-azuread`, um conjunto de estratégias que ligam o Azure AD com o Passport. Utilize esta estratégia para os tokens de portador no exemplo de REST API de Olá.
+## <a name="add-passport-azuread-to-your-web-api"></a>Adicionar passport-azuread à API Web 
+Em seguida, adicione a estratégia de OAuth utilizando `passport-azuread`, um conjunto de estratégias que ligam o Azure AD com o Passport. Utilize esta estratégia para os tokens de portador no exemplo API REST.
 
 > [!NOTE]
-> Embora o OAuth2 forneça uma estrutura onde pode ser emitido qualquer tipo de token conhecido, apenas alguns tipos de tokens passaram a ser amplamente utilizados. tokens de Olá para proteger os pontos finais são tokens de portador. Estes tipos de tokens são Olá amplamente emitido no OAuth2. Várias implementações partem do princípio de que os tokens de portador são o único tipo de Olá de token emitido.
+> Embora o OAuth2 forneça uma estrutura onde pode ser emitido qualquer tipo de token conhecido, apenas alguns tipos de tokens passaram a ser amplamente utilizados. Os tokens para proteger os pontos finais são tokens de portador. Estes tipos de tokens são os mais emitidos no OAuth2. Várias implementações partem do princípio de que os tokens de portador são o único tipo de token emitido.
 >
 >
 
-Olá linha de comandos, altere o diretório demasiado`azuread`, se ainda não estiver lá.
+Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí.
 
-Instalar Olá Passport `passport-azure-ad` módulo Olá os seguintes comandos a utilizar:
+Introduza o comando seguinte para instalar o módulo `passport-azure-ad` do Passport:
 
 `npm install passport-azure-ad`
 
-saída de Olá do comando de Olá deve ser semelhante toothis texto:
+O resultado do comando deve ser semelhante ao texto que se segue:
 
 ``
 passport-azure-ad@1.0.0 node_modules/passport-azure-ad
@@ -194,19 +194,19 @@ passport-azure-ad@1.0.0 node_modules/passport-azure-ad
 └── xml2js@0.4.9 (sax@0.6.1, xmlbuilder@2.6.4)
 ``
 
-## <a name="add-mongodb-modules-tooyour-web-api"></a>Adicionar API web do MongoDB módulos tooyour
+## <a name="add-mongodb-modules-to-your-web-api"></a>Adicione módulos do MongoDB à API Web
 Este exemplo utiliza o MongoDB como arquivo de dados. Para tal, instale o Mongoose, um plug-in de gestão de modelos e esquemas muito utilizado.
 
 * `npm install mongoose`
 
 ## <a name="install-additional-modules"></a>Instalar módulos adicionais
-Em seguida, instale Olá restantes módulos necessários.
+Em seguida, instale os restantes módulos necessários.
 
-Olá linha de comandos, altere o diretório demasiado`azuread`, se ainda não estiver lá:
+Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí:
 
 `cd azuread`
 
-Instalar módulos Olá no seu `node_modules` diretório:
+Instale os módulos no diretório `node_modules`:
 
 * `npm install assert-plus`
 * `npm install ejs`
@@ -215,13 +215,13 @@ Instalar módulos Olá no seu `node_modules` diretório:
 * `npm install bunyan`
 
 ## <a name="create-a-serverjs-file-with-your-dependencies"></a>Crie um ficheiro de server.js com as suas dependências
-Olá `server.js` ficheiro fornece maioria Olá da funcionalidade de Olá para o servidor de Web API.
+O ficheiro `server.js` proporciona a maior parte das funcionalidades do seu servidor de API Web.
 
-Olá linha de comandos, altere o diretório demasiado`azuread`, se ainda não estiver lá:
+Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí:
 
 `cd azuread`
 
-Crie um ficheiro `server.js` num editor. Adicione Olá seguintes informações:
+Crie um ficheiro `server.js` num editor. Adicione as seguintes informações:
 
 ```Javascript
 'use strict';
@@ -240,27 +240,27 @@ var passport = require('passport');
 var OIDCBearerStrategy = require('passport-azure-ad').BearerStrategy;
 ```
 
-Guarde o ficheiro de Olá. Devolver tooit mais tarde.
+Guarde o ficheiro. Regressará a este mais tarde.
 
-## <a name="create-a-configjs-file-toostore-your-azure-ad-settings"></a>Criar um toostore do ficheiro de config.js as definições do Azure AD
-Este ficheiro de código transmite os parâmetros de configuração de Olá do seu Portal do Azure AD toohello `Passport.js` ficheiro. Criou estes valores de configuração quando adicionou o portal de toohello Olá web API na Olá primeira parte passagem Olá. Vamos explicar que tooput valores Olá destes parâmetros depois de copiar o código de Olá.
+## <a name="create-a-configjs-file-to-store-your-azure-ad-settings"></a>Criar um ficheiro de config.js para armazenar as suas definições do Azure AD
+Este ficheiro de código transmite os parâmetros de configuração a partir do Portal do Azure AD para o ficheiro `Passport.js`. Criou estes valores de configuração quando adicionou a API Web ao portal na primeira parte da passagem. Vamos explicar o que deve introduzir nos valores destes parâmetros depois de copiar o código.
 
-Olá linha de comandos, altere o diretório demasiado`azuread`, se ainda não estiver lá:
+Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí:
 
 `cd azuread`
 
-Crie um ficheiro `config.js` num editor. Adicione Olá seguintes informações:
+Crie um ficheiro `config.js` num editor. Adicione as seguintes informações:
 
 ```Javascript
-// Don't commit this file tooyour public repos. This config is for first-run
+// Don't commit this file to your public repos. This config is for first-run
 exports.creds = {
-clientID: <your client ID for this Web API you created in hello portal>
+clientID: <your client ID for this Web API you created in the portal>
 mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
-audience: '<your audience URI>', // hello Client ID of hello application that is calling your API, usually a web API or native client
-identityMetadata: 'https://login.microsoftonline.com/<tenant name>/.well-known/openid-configuration', // Make sure you add hello B2C tenant name in hello <tenant name> area
+audience: '<your audience URI>', // the Client ID of the application that is calling your API, usually a web API or native client
+identityMetadata: 'https://login.microsoftonline.com/<tenant name>/.well-known/openid-configuration', // Make sure you add the B2C tenant name in the <tenant name> area
 tenantName:'<tenant name>',
-policyName:'b2c_1_<sign in policy name>' // This is hello policy you'll want toovalidate against in B2C. Usually this is your Sign-in policy (as users sign in toothis API)
-passReqToCallback: false // This is a node.js construct that lets you pass hello req all hello way back tooany upstream caller. We turn this off as there is no upstream caller.
+policyName:'b2c_1_<sign in policy name>' // This is the policy you'll want to validate against in B2C. Usually this is your Sign-in policy (as users sign in to this API)
+passReqToCallback: false // This is a node.js construct that lets you pass the req all the way back to any upstream caller. We turn this off as there is no upstream caller.
 };
 
 ```
@@ -268,40 +268,40 @@ passReqToCallback: false // This is a node.js construct that lets you pass hello
 [!INCLUDE [active-directory-b2c-devquickstarts-tenant-name](../../includes/active-directory-b2c-devquickstarts-tenant-name.md)]
 
 ### <a name="required-values"></a>Valores necessários
-`clientID`: Olá ID de cliente da aplicação Web API.
+`clientID`: o ID de cliente da aplicação API Web.
 
-`IdentityMetadata`: Aqui é onde `passport-azure-ad` procura dos seus dados de configuração para o fornecedor de identidade Olá. Procura também para Olá chaves toovalidate Olá JSON web de tokens.
+`IdentityMetadata`: este é o local onde o `passport-azure-ad` vai procurar os seus dados de configuração para o fornecedor de identidade. Também vai procurar aqui as chaves para validar os tokens Web JSON.
 
-`audience`: Olá identificador de recurso uniforme (URI) do portal de Olá que identifica a sua aplicação de chamada.
+`audience`: o URI (Uniform Resource Identifier) do portal que identifica a sua aplicação de chamada.
 
 `tenantName`: o nome do seu inquilino (por exemplo, **contoso.onmicrosoft.com**).
 
-`policyName`: Olá política que pretende que os tokens de Olá toovalidate futuras do servidor de tooyour. Esta política deve ser Olá a mesma política que utiliza numa aplicação de cliente Olá para início de sessão.
+`policyName`: a política que pretende que valide os tokens recebidos pelo seu servidor. Esta política deve ser igual à utilizada na aplicação cliente para iniciar sessão.
 
 > [!NOTE]
-> Por agora, utilize Olá mesmo políticas em toda a configuração de cliente e servidor. Se já tiver concluído uma passagem e criado estas políticas, não precisa de toodo, por isso, novamente. Uma vez concluída a passagem de Olá, não deverá ser preciso tooset configurar novas políticas para passagens de cliente no site de Olá.
+> Por agora, utilize as mesmas políticas para configurar o cliente e o servidor. Se já tiver concluído uma passagem e criado estas políticas, não terá de fazê-lo novamente. Uma vez concluída a passagem, não deverá ser necessário configurar novas políticas para passagens de cliente no site.
 >
 >
 
-## <a name="add-configuration-tooyour-serverjs-file"></a>Adicione o ficheiro de server.js tooyour de configuração
-valores de Olá tooread de Olá `config.js` de ficheiros que criou, adicione Olá `.config` ficheiro como um recurso necessário na sua aplicação e, em seguida, defina Olá variáveis globais toothose no Olá `config.js` documento.
+## <a name="add-configuration-to-your-serverjs-file"></a>Adicionar configuração ao seu ficheiro server.js
+Para ler os valores do ficheiro `config.js` que criou, adicione o ficheiro `.config` como recurso pretendido na sua aplicação e, em seguida, defina as variáveis globais para as existentes no documento `config.js`.
 
-Olá linha de comandos, altere o diretório demasiado`azuread`, se ainda não estiver lá:
+Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí:
 
 `cd azuread`
 
-Abra Olá `server.js` ficheiro num editor. Adicione Olá seguintes informações:
+Crie o ficheiro `server.js` num editor. Adicione as seguintes informações:
 
 ```Javascript
 var config = require('./config');
 ```
-Adicionar uma nova secção demasiado`server.js` que inclua Olá seguinte código:
+Adicione uma nova secção a `server.js` que inclua o seguinte código:
 
 ```Javascript
-// We pass these options in toohello ODICBearerStrategy.
+// We pass these options in to the ODICBearerStrategy.
 
 var options = {
-    // hello URL of hello metadata document for your app. We put hello keys for token validation from hello URL found in hello jwks_uri tag of hello in hello metadata.
+    // The URL of the metadata document for your app. We put the keys for token validation from the URL found in the jwks_uri tag of the in the metadata.
     identityMetadata: config.creds.identityMetadata,
     clientID: config.creds.clientID,
     tenantName: config.creds.tenantName,
@@ -313,10 +313,10 @@ var options = {
 };
 ```
 
-Em seguida, vamos adicionar alguns marcadores de posição para os utilizadores Olá recebido do nosso aplicações chamadas.
+Em seguida, vamos adicionar alguns marcadores de posição para os utilizadores que recebemos a partir das nossas aplicações de chamada.
 
 ```Javascript
-// array toohold logged in users and hello current logged in user (owner)
+// array to hold logged in users and the current logged in user (owner)
 var users = [];
 var owner = null;
 ```
@@ -330,32 +330,32 @@ var log = bunyan.createLogger({
 });
 ```
 
-## <a name="add-hello-mongodb-model-and-schema-information-by-using-mongoose"></a>Adicionar informações de esquema e modelo do MongoDB de Olá utilizando o Mongoose
-Olá preparação pays como colocar estes três ficheiros num serviço REST API.
+## <a name="add-the-mongodb-model-and-schema-information-by-using-mongoose"></a>Adicionar as informações de esquema e modelo MongoDB utilizando o Mongoose
+A preparação prévia funciona se juntar estes três ficheiros num serviço API REST.
 
-Para esta passagem, utilize MongoDB toostore as suas tarefas, conforme debatido anteriormente.
+Para esta passagem, utilize o MongoDB para armazenar as suas tarefas, como mencionado anteriormente.
 
-No Olá `config.js` ficheiro, chamado a base de dados **tasklist**. Esse nome foi também o que colocou no final Olá Olá `mongoose_auth_local` URL de ligação. Não precisa de toocreate esta base de dados previamente no MongoDB. Cria a base de dados de Olá para si na execução de primeiro Olá da aplicação de servidor.
+No ficheiro `config.js`, atribuiu o nome **tasklist** à base de dados. Esse nome foi também o que colocou no final da URL da ligação `mongoose_auth_local`. Não precisa de criar esta base de dados previamente no MongoDB. Cria a base de dados para si na primeira execução da sua aplicação de servidor.
 
-Depois de indicar servidor Olá que toouse de base de dados de MongoDB, terá de toowrite algumas modelo do código adicional toocreate Olá e o esquema para as tarefas de servidor.
+Depois de indicar ao servidor qual a base de dados de MongoDB a utilizar, precisa de escrever alguns códigos adicionais para criar o modelo e o esquema das suas tarefas de servidor.
 
-### <a name="expand-hello-model"></a>Expanda o modelo de Olá
+### <a name="expand-the-model"></a>Expandir o modelo
 Este modelo de esquema é simples. Pode expandi-lo conforme necessário.
 
-`owner`: Quem é atribuído toohello tarefas. Este objeto é uma **cadeia**.  
+`owner`: quem é atribuído à tarefa. Este objeto é uma **cadeia**.  
 
-`Text`: tarefa Olá propriamente dita. Este objeto é uma **cadeia**.
+`Text`: a tarefa propriamente dita. Este objeto é uma **cadeia**.
 
-`date`: data de Olá essa tarefa Olá deve ser concluída. Este objeto é uma **datetime**.
+`date`: a data em que a tarefa deve ser concluída. Este objeto é uma **datetime**.
 
-`completed`: Se a tarefa de Olá está concluída. Este objeto é um **Booleano**.
+`completed`: se a tarefa está concluída. Este objeto é um **Booleano**.
 
-### <a name="create-hello-schema-in-hello-code"></a>Criar o esquema de Olá no código Olá
-Olá linha de comandos, altere o diretório demasiado`azuread`, se ainda não estiver lá:
+### <a name="create-the-schema-in-the-code"></a>Criar o esquema no código
+Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí:
 
 `cd azuread`
 
-Abra Olá `server.js` ficheiro num editor. Adicione Olá seguindo as informações abaixo entrada de configuração de Olá:
+Crie o ficheiro `server.js` num editor. Adicione a informação seguinte abaixo da entrada de configuração:
 
 ```Javascript
 // MongoDB setup
@@ -363,12 +363,12 @@ Abra Olá `server.js` ficheiro num editor. Adicione Olá seguindo as informaçõ
 var serverPort = process.env.PORT || 3000; // Note we are hosting our API on port 3000
 var serverURI = (process.env.PORT) ? config.creds.mongoose_auth_mongohq : config.creds.mongoose_auth_local;
 
-// Connect tooMongoDB
+// Connect to MongoDB
 global.db = mongoose.connect(serverURI);
 var Schema = mongoose.Schema;
 log.info('MongoDB Schema loaded');
 
-// Here we create a schema toostore our tasks and users. Pretty simple schema for now.
+// Here we create a schema to store our tasks and users. Pretty simple schema for now.
 var TaskSchema = new Schema({
     owner: String,
     Text: String,
@@ -376,17 +376,17 @@ var TaskSchema = new Schema({
     date: Date
 });
 
-// Use hello schema tooregister a model
+// Use the schema to register a model
 mongoose.model('Task', TaskSchema);
 var Task = mongoose.model('Task');
 ```
-Cria o esquema de Olá pela primeira vez e, em seguida, criar um objeto de modelo que utilize toostore os dados em todo o Olá code quando definir o **rotas**.
+Crie primeiro o esquema e, em seguida, crie um objeto de modelo que utilizará para armazenar os dados em todo o código, quando definir as suas **rotas**.
 
 ## <a name="add-routes-for-your-rest-api-task-server"></a>Adicionar rotas ao seu servidor de tarefas da API REST
-Agora que tem um toowork de modelo de base de dados com, adicione rotas de Olá que utilizar para o servidor de REST API.
+Agora que tem um modelo de base de dados com o qual trabalhar, adicione as rotas que vai utilizar com o servidor da API REST.
 
 ### <a name="about-routes-in-restify"></a>Sobre rotas no Restify
-As rotas funcionam no Restify Olá mesma maneira que funcionam quando utilizarem a pilha de Express de Olá. Definir rotas utilizando Olá URI que espera toocall de aplicações de cliente Olá.
+As rotas funcionam no Restify da mesma maneira que funcionam quando utilizam a pilha Express. Definem-se rotas utilizando o URI que se espera que as aplicações de cliente chamem.
 
 Um padrão normal para uma rota do Restify é:
 
@@ -395,22 +395,22 @@ function createObject(req, res, next) {
 // do work on Object
 _object.name = req.params.object; // passed value is in req.params under object
 ///...
-return next(); // keep hello server going
+return next(); // keep the server going
 }
 ....
 server.post('/service/:add/:object', createObject); // calls createObject on routes that match this.
 ```
 
-O Restify e o Express podem fornecer funcionalidades muito mais aprofundada, tais como, definir tipos de aplicações e efetuar encaminhamentos complexos para diferentes pontos finais. Para efeitos de Olá deste tutorial, iremos manter estas rotas simples.
+O Restify e o Express podem fornecer funcionalidades muito mais aprofundada, tais como, definir tipos de aplicações e efetuar encaminhamentos complexos para diferentes pontos finais. Para este tutorial, mantemos estas rotas simples.
 
-#### <a name="add-default-routes-tooyour-server"></a>Adicionar servidor de tooyour de rotas predefinidas
-Agora a adicionar rotas CRUD básicas Olá de **criar** e **lista** para a nossa API REST. Podem encontrar outras rotas de Olá `complete` ramo do exemplo Olá.
+#### <a name="add-default-routes-to-your-server"></a>Adicionar rotas predefinidas ao seu servidor
+Em seguida, adicione as rotas CRUD básicas de **criar** e **listar** para a nossa API REST. Outras rotas estão disponíveis no ramo `complete` do exemplo.
 
-Olá linha de comandos, altere o diretório demasiado`azuread`, se ainda não estiver lá:
+Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí:
 
 `cd azuread`
 
-Abra Olá `server.js` ficheiro num editor. Abaixo entradas da base de dados de Olá efetuadas acima adicionar Olá seguintes informações:
+Crie o ficheiro `server.js` num editor. Adicione as informações seguintes abaixo das entradas da base de dados que criou acima:
 
 ```Javascript
 /**
@@ -422,13 +422,13 @@ Abra Olá `server.js` ficheiro num editor. Abaixo entradas da base de dados de O
 
 function createTask(req, res, next) {
 
-    // Resitify currently has a bug which doesn't allow you tooset default headers
-    // This headers comply with CORS and allow us toomongodbServer our response tooany origin
+    // Resitify currently has a bug which doesn't allow you to set default headers
+    // This headers comply with CORS and allow us to mongodbServer our response to any origin
 
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
-    // Create a new task model, fill it up and save it tooMongodb
+    // Create a new task model, fill it up and save it to Mongodb
     var _task = new Task();
 
     if (!req.params.Text) {
@@ -445,7 +445,7 @@ function createTask(req, res, next) {
 
     _task.save(function(err) {
         if (err) {
-            req.log.warn(err, 'createTask: unable toosave');
+            req.log.warn(err, 'createTask: unable to save');
             next(err);
         } else {
             res.send(201, _task);
@@ -459,11 +459,11 @@ function createTask(req, res, next) {
 ```
 
 ```Javascript
-/// Simple returns hello list of TODOs that were loaded.
+/// Simple returns the list of TODOs that were loaded.
 
 function listTasks(req, res, next) {
-    // Resitify currently has a bug which doesn't allow you tooset default headers
-    // This headers comply with CORS and allow us toomongodbServer our response tooany origin
+    // Resitify currently has a bug which doesn't allow you to set default headers
+    // This headers comply with CORS and allow us to mongodbServer our response to any origin
 
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -482,7 +482,7 @@ function listTasks(req, res, next) {
         }
 
         if (!data.length) {
-            log.warn(err, "There is no tasks in hello database. Add one!");
+            log.warn(err, "There is no tasks in the database. Add one!");
         }
 
         if (!owner) {
@@ -499,13 +499,13 @@ function listTasks(req, res, next) {
 ```
 
 
-#### <a name="add-error-handling-for-hello-routes"></a>Adicionar tratamento de erro para rotas de Olá
-Adicione alguns processamento de erros para que possa comunicar quaisquer problemas que encontre toohello back-cliente de forma a que possa compreender.
+#### <a name="add-error-handling-for-the-routes"></a>Adicionar tratamento de erro para as rotas
+Adicione tratamento de erros para que possa comunicar quaisquer problemas que encontre de forma a que o cliente possa compreender.
 
-Adicione Olá seguinte código:
+Adicione o seguinte código:
 
 ```Javascript
-///--- Errors for communicating something interesting back toohello client
+///--- Errors for communicating something interesting back to the client
 function MissingTaskError() {
 restify.RestError.call(this, {
 statusCode: 409,
@@ -542,9 +542,9 @@ util.inherits(TaskNotFoundError, restify.RestError);
 
 
 ## <a name="create-your-server"></a>Criar o seu servidor
-Agora definiu a base de dados e colocou as rotas. Olá coisa toodo é a instância do servidor de Olá tooadd que gere as chamadas.
+Agora definiu a base de dados e colocou as rotas. A última coisa que tem de fazer consiste em adicionar a instância de servidor que gere as suas chamadas.
 
-O restify e o Express fornecem personalização avançada para um servidor de REST API, mas vamos utilizar a configuração mais básica do Olá aqui.
+O Restify e o Express fornecem personalização avançada para um servidor de API REST, mas nós utilizamos a configuração mais básica.
 
 ```Javascript
 
@@ -570,21 +570,21 @@ server.pre(restify.pre.userAgentConnection());
 // Set a per request bunyan logger (with requestid filled in)
 server.use(restify.requestLogger());
 
-// Allow 5 requests/second by IP, and burst too10
+// Allow 5 requests/second by IP, and burst to 10
 server.use(restify.throttle({
     burst: 10,
     rate: 5,
     ip: true,
 }));
 
-// Use hello common stuff you probably want
+// Use the common stuff you probably want
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.dateParser());
 server.use(restify.queryParser());
 server.use(restify.gzipResponse());
 server.use(restify.bodyParser({
     mapParams: true
-})); // Allows for JSON mapping tooREST
+})); // Allows for JSON mapping to REST
 server.use(restify.authorizationParser()); // Looks for authorization headers
 
 // Let's start using Passport.js
@@ -594,7 +594,7 @@ server.use(passport.session()); // Provides session support
 
 
 ```
-## <a name="add-hello-routes-toohello-server-without-authentication"></a>Adicionar Olá rotas toohello servidor (sem autenticação)
+## <a name="add-the-routes-to-the-server-without-authentication"></a>Adicionar as rotas ao servidor (sem autenticação)
 ```Javascript
 server.get('/api/tasks', passport.authenticate('oauth-bearer', {
     session: false
@@ -655,9 +655,9 @@ server.listen(serverPort, function() {
     var consoleMessage = '\n Microsoft Azure Active Directory Tutorial';
     consoleMessage += '\n +++++++++++++++++++++++++++++++++++++++++++++++++++++';
     consoleMessage += '\n %s server is listening at %s';
-    consoleMessage += '\n Open your browser too%s/api/tasks\n';
+    consoleMessage += '\n Open your browser to %s/api/tasks\n';
     consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n';
-    consoleMessage += '\n !!! why not try a $curl -isS %s | json tooget some ideas? \n';
+    consoleMessage += '\n !!! why not try a $curl -isS %s | json to get some ideas? \n';
     consoleMessage += '+++++++++++++++++++++++++++++++++++++++++++++++++++++ \n\n';
 
     //log.info(consoleMessage, server.name, server.url, server.url, server.url);
@@ -666,20 +666,20 @@ server.listen(serverPort, function() {
 
 ```
 
-## <a name="add-authentication-tooyour-rest-api-server"></a>Adicionar o servidor de REST API de tooyour de autenticação
+## <a name="add-authentication-to-your-rest-api-server"></a>Adicionar autenticação ao seu servidor de API REST
 Agora que um servidor de API REST está em execução, pode torná-lo útil em relação ao Azure AD.
 
-Olá linha de comandos, altere o diretório demasiado`azuread`, se ainda não estiver lá:
+Na linha de comandos, altere o diretório para `azuread`, caso ainda não esteja aí:
 
 `cd azuread`
 
-### <a name="use-hello-oidcbearerstrategy-that-is-included-with-passport-azure-ad"></a>Utilizar Olá OIDCBearerStrategy que está incluído no passport-azure-ad
+### <a name="use-the-oidcbearerstrategy-that-is-included-with-passport-azure-ad"></a>Utilize o OIDCBearerStrategy que está incluído no passport-azure-ad
 > [!TIP]
-> Quando escreve APIs, deve ligar sempre Olá dados toosomething exclusivo a partir do token de Olá que Olá utilizador não pode falsificar. Quando o servidor de Olá armazena itens ToDo, aparece, por isso, com base no Olá **oid** de utilizador de Olá no token de Olá (chamado através de token.oid), que passa no campo de proprietário"Olá". Este valor garante que apenas esse utilizador pode aceder aos próprios itens ToDo. Não há nenhuma exposição na Olá API de "proprietário", pelo que um utilizador externo pode pedir dos outros itens ToDo, mesmo que estejam autenticados.
+> Quando escreve APIs, deve ligar sempre os dados a algo especial do token que o utilizador não pode falsificar. Quando o servidor armazena itens ToDo, fá-lo com base no **oid** do utilizador no token (chamado de token.oid) que é incluído no campo “proprietário”. Este valor garante que apenas esse utilizador pode aceder aos próprios itens ToDo. Não existe nenhuma exposição na API de “proprietário”, de modo que um utilizador externo pode pedir itens ToDo de outras pessoas, mesmo que estejam autenticados.
 >
 >
 
-Em seguida, utilize a estratégia de portador Olá que vem com `passport-azure-ad`.
+Em seguida, utilize a estratégia de portador que vem com `passport-azure-ad`.
 
 ```Javascript
 var findById = function(id, fn) {
@@ -696,8 +696,8 @@ var findById = function(id, fn) {
 
 var oidcStrategy = new OIDCBearerStrategy(options,
     function(token, done) {
-        log.info('verifying hello user');
-        log.info(token, 'was hello token retreived');
+        log.info('verifying the user');
+        log.info(token, 'was the token retreived');
         findById(token.sub, function(err, user) {
             if (err) {
                 return done(err);
@@ -718,21 +718,21 @@ var oidcStrategy = new OIDCBearerStrategy(options,
 passport.use(oidcStrategy);
 ```
 
-O Passport utiliza Olá mesmo padrão para todas as respetivas estratégias. Passe-o como uma `function()` que tem `token` e `done` como parâmetros. estratégia de Olá volta a tooyou depois-tem de fazer todo o trabalho. Deve armazenar o utilizador Olá e guardar o token de Olá, de modo que não seja necessário tooask-lo novamente.
+O Passport utiliza o mesmo padrão para todas as respetivas estratégias. Passe-o como uma `function()` que tem `token` e `done` como parâmetros. A estratégia é-lhe devolvida depois de fazer todo o trabalho. Em seguida, deve armazenar o utilizador e guardar o token para que não seja necessário voltar a pedi-lo.
 
 > [!IMPORTANT]
-> código de Olá acima aceita qualquer utilizador que tooauthenticate tooyour servidor. Este processo é conhecido como registo automático. Em servidores de produção, não permita que qualquer API de Olá de acesso de utilizadores sem primeiro passá-los através de um processo de registo. Este processo é normalmente padrão de Olá normal que vemos nas aplicações de consumidor que lhe permitem tooregister utilizando o Facebook, mas, em seguida, pedir-lhe que toofill informações adicionais. Se este programa não era um programa da linha de comandos, poderíamos extrair o e-mail de Olá do objeto de token de Olá que é devolvido e, em seguida, mais frequentes utilizadores toofill informações adicionais. Porque se trata de uma amostra, iremos adicioná-los tooan dentro da memória da base de dados.
+> O código acima aceita qualquer utilizador que se autentique com o seu servidor. Este processo é conhecido como registo automático. Em servidores de produção, não permita que quaisquer utilizadores acedam à API sem passarem primeiro por um processo de registo. Este processo é normalmente o padrão normal que vê nas aplicações de consumidor que lhe permitem fazer o registo através do Facebook, mas que em seguida lhe pedem para preencher informações adicionais. Se este programa não fosse um programa de linha de comandos, poderíamos extrair o e-mail do objeto do token que é devolvido e, em seguida, pedir aos utilizadores para preencher informações adicionais. Uma vez que este é um exemplo, vamos adicioná-los a uma base de dados na memória.
 >
 >
 
-## <a name="run-your-server-application-tooverify-that-it-rejects-you"></a>Execute o tooverify de aplicação de servidor que as TI a rejeita
-Pode utilizar `curl` toosee se tem agora proteção do OAuth2 nos seus pontos finais. Olá cabeçalhos devolvidos devem ser suficiente tootell que estão no caminho certo Olá.
+## <a name="run-your-server-application-to-verify-that-it-rejects-you"></a>Execute a aplicação de servidor para verificar se esta o rejeita
+Pode utilizar `curl` para ver se tem agora proteção do OAuth2 em relação aos pontos finais. Os cabeçalhos devolvidos devem ser suficientes para lhe indicar que está no caminho certo.
 
 Certifique-se de que a instância do MongoDB está em execução:
 
     $sudo mongodb
 
-Alterar o diretório de toohello e o servidor de execução Olá:
+Mude para o diretório e execute o servidor:
 
     $ cd azuread
     $ node server.js
@@ -751,12 +751,12 @@ Date: Tue, 14 Jul 2015 05:45:03 GMT
 Transfer-Encoding: chunked
 ```
 
-Um erro 401 é resposta Olá que quiser. Indica que camada do Passport Olá está a tentar tooredirect toohello autorizar o ponto final.
+A resposta pretendida é um erro 401. Indica que a camada do Passport está a tentar redirecionar para o ponto final de autorização.
 
 ## <a name="you-now-have-a-rest-api-service-that-uses-oauth2"></a>Agora tem um serviço de API REST que utiliza o OAuth2
-Tem implementada uma API REST utilizando o Restify e o OAuth! Tem agora código suficiente para que possam continuar toodevelop o serviço e criar neste exemplo. Fez tudo o que podia com este servidor sem utilizar um cliente compatível com o OAuth2. Para esse passo seguinte, utilize uma passagem adicional, como o nosso [ligar tooa web API utilizando o iOS com o B2C](active-directory-b2c-devquickstarts-ios.md) explicação passo a passo.
+Tem implementada uma API REST utilizando o Restify e o OAuth! Tem agora código suficiente para que possa continuar a desenvolver o seu serviço e compilação neste exemplo. Fez tudo o que podia com este servidor sem utilizar um cliente compatível com o OAuth2. Para esse passo seguinte, utilize uma passagem walk-through adicional como a nossa passagem [Ligar a uma API web utilizando iOS com B2C](active-directory-b2c-devquickstarts-ios.md).
 
 ## <a name="next-steps"></a>Passos seguintes
-Agora pode mover tópicos toomore avançada, tais como:
+Agora pode aceder a tópicos mais avançados, como:
 
-[Ligar tooa web API utilizando o iOS com o B2C](active-directory-b2c-devquickstarts-ios.md)
+[Ligar a uma API Web utilizando o iOS com o B2C](active-directory-b2c-devquickstarts-ios.md)

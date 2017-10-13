@@ -1,8 +1,8 @@
-1. No Olá **definições** página na sua rede virtual, navegue demasiado**servidores DNS** e clique em tooopen Olá **servidores DNS** painel.
+1. Na página**Definições** da rede virtual, navegue até **Servidores DNS** e clique para abrir o painel **Servidores DNS**.
 
     ![Adicionar servidor DNS](./media/vpn-gateway-add-dns-rm-portal/add_dns_server.png "Adicionar servidor DNS")
 
   - **Servidores DNS:** Selecione **Personalizado**.
-  - **Adicionar o servidor DNS:** introduza Olá o endereço IP do servidor DNS Olá que pretende que toouse para resolução de nomes.
+  - **Adicionar servidor DNS:** Introduza o endereço IP do servidor DNS que pretende utilizar para a resolução de nomes.
 
-2. Quando terminar de adicionar servidores DNS, clique em **guardar** , Olá parte superior do painel de Olá.
+2. Quando tiver terminado de adicionar os servidores DNS, clique em **Guardar** na parte superior do painel.

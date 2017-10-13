@@ -1,6 +1,6 @@
 ---
-title: "aaaPublish aplicações com o Proxy de aplicações do Azure AD | Microsoft Docs"
-description: "Publica na nuvem de toohello de aplicações no local com o Proxy de aplicações do Azure AD no portal clássico Olá."
+title: "Publicar aplicações com o Proxy da Aplicação do Azure AD | Microsoft Docs"
+description: "Publique aplicações no local na cloud com o Proxy de Aplicações do Azure AD no portal clássico."
 services: active-directory
 documentationcenter: 
 author: kgremban
@@ -15,11 +15,11 @@ ms.date: 07/14/2017
 ms.author: kgremban
 ms.reviewer: harshja
 ms.custom: it-pro; oldportal
-ms.openlocfilehash: 7926998314c65521ae48aebcceb33cb0c67e0b87
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 96490c0d060fe5486a7235a5aa76380c8d9b5d4f
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="publish-applications-using-azure-ad-application-proxy"></a>Publicar aplicações com o Proxy da Aplicação do Azure AD
 
@@ -27,72 +27,72 @@ ms.lasthandoff: 10/06/2017
 > * [Portal do Azure](application-proxy-publish-azure-portal.md)
 > * [Portal Clássico do Azure](active-directory-application-proxy-publish.md)
 
-Proxy de aplicações do Azure AD ajuda-o suporte a funcionários remotos através da publicação toobe de aplicações no local através do Olá internet. Nesta altura, já deverá ter [ativado o Proxy da aplicação no portal clássico do Azure de Olá](active-directory-application-proxy-enable.md). Este artigo explica-lhe Olá passos toopublish aplicações que estão em execução na sua rede local e fornecem acesso remoto seguro fora da rede. Depois de concluir este artigo, estará pronto tooconfigure aplicação de Olá com informação personalizada ou requisitos de segurança.
+A Proxy de Aplicação do Azure AD ajuda-o a fornecer suporte a funcionários remotos através da publicação de aplicações no local para que sejam acedidas através da Internet. Nesta altura, já deve ter [ativado a Proxy de Aplicação no portal clássico do Azure](active-directory-application-proxy-enable.md). Este artigo explica os passos para publicar aplicações que estão a ser executadas na sua rede local e fornecem acesso remoto seguro fora da rede. Depois de concluir este artigo, estará pronto para configurar a aplicação com informação personalizada ou requisitos de segurança.
 
 > [!NOTE]
-> Proxy de aplicações é uma funcionalidade que só está disponível se tiver efetuado a atualização toohello Premium edição ou Basic do Azure Active Directory. Para obter mais informações, consulte [Edições do Azure Active Directory](active-directory-editions.md). Se quiser toouse Proxy de aplicações, pode [publicar aplicações no portal do Azure de Olá](application-proxy-publish-azure-portal.md).
+> O Proxy da Aplicação é uma funcionalidade que só estar disponível se tiver efetuado a atualização para a edição Premium ou Basic do Azure Active Directory. Para obter mais informações, consulte [Edições do Azure Active Directory](active-directory-editions.md). Se pretender utilizar a pré-visualização pública do Proxy de Aplicações, pode [Publicar aplicações no portal do Azure](application-proxy-publish-azure-portal.md).
 
-## <a name="publish-an-app-using-hello-wizard"></a>Publicar uma aplicação utilizando o Assistente de Olá
-1. Inicie sessão como administrador no Olá [portal clássico do Azure](https://manage.windowsazure.com/).
-2. Aceda tooActive diretório e selecione o diretório de olá onde ativou o Proxy de aplicações.
+## <a name="publish-an-app-using-the-wizard"></a>Publicar uma aplicação com o assistente
+1. Inicie sessão como administrador no [Portal Clássico do Azure](https://manage.windowsazure.com/).
+2. Aceda ao Active Directory e selecione o diretório onde ativou o Proxy da Aplicação.
    
     ![Active Directory – ícone](./media/active-directory-application-proxy-publish/ad_icon.png)
-3. Clique em Olá **aplicações** separador e, em seguida, clique em Olá **adicionar** botão na Olá parte inferior do ecrã de Olá
+3. Clique no separador **Aplicações** e, em seguida, clique no botão **Adicionar** na parte inferior do ecrã
    
     ![Adicionar aplicação](./media/active-directory-application-proxy-publish/aad_appproxy_selectdirectory.png)
 4. Selecione **Publicar uma aplicação acessível fora da rede**.
    
     ![Publicar uma aplicação acessível fora da rede](./media/active-directory-application-proxy-publish/aad_appproxy_addapp.png)
-5. Fornece Olá seguintes informações sobre a sua aplicação:
+5. Forneça as seguintes informações sobre a aplicação:
    
-   * **Nome**: nome amigável de utilizador do Olá para a sua aplicação. Tem de ser exclusivo no diretório.
-   * **URL interno**: endereço Olá Olá conector do Proxy da aplicação utiliza tooaccess Olá aplicação dentro da sua rede privada. Pode fornecer um caminho específico no Olá toopublish de servidor de back-end, enquanto o resto hello do servidor de Olá é publicado. Desta forma, poderá publicar sites diferentes no Olá mesmo servidor e atribuir a cada um seus próprio nome e regras de acesso.
+   * **Nome**: o nome amigável de utilizador para a aplicação. Tem de ser exclusivo no diretório.
+   * **URL interno**: o endereço que o Conector do Proxy da Aplicação utiliza para aceder à aplicação do interior da rede privada. Pode fornecer um caminho específico no servidor de back-end para publicação, enquanto o resto do servidor não é publicado. Desta forma, pode publicar sites diferentes no mesmo servidor e atribuir a cada um nome e regras de acesso próprios.
      
      > [!TIP]
-     > Se publicar um caminho, certifique-se de que inclui todas as imagens necessárias Olá, scripts e folhas de estilo para a sua aplicação. Por exemplo, se a aplicação estiver em https://yourapp/app e utiliza as imagens localizadas em https://yourapp/media, deve publicar https://yourapp/ como caminho Olá.
+     > Se publicar um caminho, certifique-se de que inclui todas as imagens, scripts e folhas de estilo necessários para a sua aplicação. Por exemplo, se a aplicação estiver em https://yourapp/app e utiliza as imagens localizadas em https://yourapp/media, deve publicar https://yourapp/ como caminho.
      > 
      > 
-   * **Método de pré-autenticação**: como Proxy da aplicação verifica os utilizadores antes de conceder acesso tooyour aplicação. Escolha uma das opções de Olá Olá menu de lista pendente.
+   * **Método de Pré-autenticação**: como a Proxy da Aplicação verifica os utilizadores antes de conceder acesso à aplicação. Escolha uma das opções no menu pendente.
      
-     * Azure Active Directory: O Proxy da aplicação redireciona os utilizadores toosign sessão no Azure AD, que autentica as respetivas permissões para o diretório de Olá e a aplicação.
-     * Passth-Rough: Os utilizadores não têm aplicações de Olá tooauthenticate tooaccess.
+     * Azure Active Directory: a Proxy da Aplicação redireciona os utilizadores para iniciarem sessão no Azure AD, que autentica as respetivas permissões para o diretório e aplicação.
+     * Passth-rough: os utilizadores não têm de autenticar-se para aceder à aplicação.
      
      ![Propriedades da aplicação](./media/active-directory-application-proxy-publish/aad_appproxy_appproperties.png)  
-6. Assistente de Olá toofinish, clique em marca de verificação Olá em Olá parte inferior do ecrã de Olá. aplicação de Olá está agora definida no Azure AD.
+6. Para concluir o assistente, clique na marca de verificação na parte inferior do ecrã. A aplicação está agora definida no Azure AD.
 
-## <a name="assign-users-and-groups-toohello-application"></a>Atribuir utilizadores e grupos toohello aplicação
-Ordenar para os seus utilizadores tooaccess a aplicação publicada, terá de tooassign-los individualmente ou em grupos. (Lembre-se tooassign si aceder, demasiado.) Cada utilizador que atribuir precisa de uma licença para o Azure Básico ou superior. Pode atribuir licenças individualmente ou toogroups. Para obter mais informações, consulte [atribuir utilizadores tooan aplicação](active-directory-applications-guiding-developers-assigning-users.md). 
+## <a name="assign-users-and-groups-to-the-application"></a>Atribuir utilizadores e grupos à aplicação
+Para que os utilizadores possam aceder à aplicação que publicou, terá de os atribuir individualmente ou em grupos. (Lembre-se de atribuir também acesso a si.) Cada utilizador que atribuir precisa de uma licença para o Azure Básico ou superior. Pode atribuir licenças individualmente ou a grupos. Para obter mais informações, veja [Assigning users to an application](active-directory-applications-guiding-developers-assigning-users.md) (Atribuir utilizadores a uma aplicação). 
 
-Para aplicações que requerem pré-autenticação, atribuir um utilizador concede a aplicação de Olá toouse de permissão. Para aplicações que não necessitam de pré-autenticação, atribuir um utilizador significa que o utilizador Olá pode aceder à aplicação de Olá através do painel de acesso de Olá.
+Para aplicações que precisam de pré-autenticação, atribuir um utilizador garante permissão para utilizar a aplicação. Para aplicações que não precisam de pré-autenticação, atribuir um utilizador significa que o utilizador pode aceder à aplicação através do painel de acesso.
 
-1. Após o Assistente Adicionar aplicação Olá adira agora, pode ver Olá página para a sua aplicação de início rápido. toomanage quem tem acesso toohello aplicação, selecione **utilizadores e grupos**.
+1. Depois de concluir o assistente Adicionar Aplicação, será apresentada a página Início Rápido da aplicação. Para gerir quem tem acesso à aplicação, selecione **Utilizadores e grupos**.
    
     ![Início rápido do Proxy da Aplicação para atribuir utilizadores – captura de ecrã](./media/active-directory-application-proxy-publish/aad_appproxy_usersgroups.png)
-2. Procure grupos específicos no diretório ou veja todos os utilizadores. resultados de pesquisa do toodisplay Olá, clique em marca de verificação Olá.
+2. Procure grupos específicos no diretório ou veja todos os utilizadores. Para visualizar os resultados de pesquisa, clique na marca de verificação.
    
       ![Procurar grupos ou utilizadores - captura de ecrã](./media/active-directory-application-proxy-publish/aad_appproxy_search.png)
-3. Selecione cada utilizador ou grupo que pretende tooassign toothis aplicação e clique em **atribuir**. É-lhe pedido tooconfirm esta ação.
+3. Selecione cada utilizador ou grupo que pretende atribuir a esta aplicação e clique em **Atribuir**. Ser-lhe-á pedido para confirmar esta ação.
 
 > [!NOTE]
-> Para aplicações de Autenticação Integrada do Windows, apenas pode atribuir utilizadores e grupos que são sincronizados a partir do Active Directory no local. As aplicações publicadas com o Proxy da Aplicação do Azure Active Directory não podem ser atribuídas a utilizadores que iniciam sessão com uma conta Microsoft ou a convidados. Certifique-se de que os utilizadores iniciam sessão com as credenciais que fazem parte do Olá mesmo domínio que aplicação Olá que está a publicar.
+> Para aplicações de Autenticação Integrada do Windows, apenas pode atribuir utilizadores e grupos que são sincronizados a partir do Active Directory no local. As aplicações publicadas com o Proxy da Aplicação do Azure Active Directory não podem ser atribuídas a utilizadores que iniciam sessão com uma conta Microsoft ou a convidados. Certifique-se de que os utilizadores iniciam sessão com as credenciais que fazem parte do mesmo domínio que a aplicação que está a publicar.
 > 
 > 
 
 ## <a name="test-your-published-application"></a>Testar a aplicação publicada
-Assim que tiver publicado a aplicação, pode testá-la navegando toohello URL que publicou. Verifique se consegue aceder à aplicação, se compõe corretamente e se tudo funciona conforme esperado. Se tiver dificuldade ou receber uma mensagem de erro, tente Olá [guia de resolução de problemas](active-directory-application-proxy-troubleshoot.md).
+Assim que tiver publicado a aplicação, pode testá-la navegando para o URL que publicou. Verifique se consegue aceder à aplicação, se compõe corretamente e se tudo funciona conforme esperado. Se tiver dificuldade ou aparecer uma mensagem de erro, experimente o [guia de resolução de problemas](active-directory-application-proxy-troubleshoot.md).
 
 ## <a name="configure-your-application"></a>Configurar a aplicação
-Pode modificar as aplicações publicadas ou configurar opções avançadas na página de configuração de Olá. Nesta página, pode personalizar a sua aplicação ao alterar o nome de Olá ou ao carregar um logótipo. Também pode gerir as regras de acesso como Olá método de pré-autenticação ou a autenticação multifator.
+Pode modificar as aplicações publicadas ou configurar opções avançadas na página Configurar. Nesta página, pode personalizar a aplicação ao alterar o nome ou ao carregar um logótipo. Pode ainda gerir as regras de acesso, como o método de pré-autenticação ou a autenticação multifator.
 
 ![Configuração avançada](./media/active-directory-application-proxy-publish/aad_appproxy_configure.png)
 
-Depois de publicar aplicações com o Proxy de aplicações de diretório Active Directory do Azure, estas aparecem na lista de aplicações de Olá no Azure AD e pode gerir.
+Depois de publicar as aplicações com o Proxy da Aplicação do Azure Active Directory, estas aparecem na lista de Aplicações do Azure AD, onde as pode gerir.
 
-Se desativar os serviços do Proxy da aplicação depois de ter publicado aplicações, aplicações de Olá deixam de estar acessíveis fora da rede privada. Os utilizadores ainda podem aceder Olá aplicações no local como habitualmente.
+Se desativar os serviços do Proxy da Aplicação depois de ter publicado aplicações, as aplicações não serão acessíveis fora da rede privada. Os utilizadores ainda podem aceder a aplicações no local como habitualmente.
 
-tooview uma aplicação e faça Certifique-se que é acessível, faça duplo clique Olá nome da aplicação Olá. Se estiver desativado Olá serviço Proxy de aplicações e aplicação Olá não está disponível, aparece uma mensagem de aviso, Olá parte superior do ecrã de Olá.
+Para ver uma aplicação e certificar-se de que é acessível, faça duplo clique no nome da aplicação. Se o serviço do Proxy da Aplicação estiver desativado e a aplicação não estiver disponível, será exibida uma mensagem de aviso na parte superior do ecrã.
 
-toodelete uma aplicação, selecione uma aplicação na lista de Olá e, em seguida, clique em **eliminar**.
+Para eliminar uma aplicação, selecione-a na lista e clique em **Eliminar**.
 
 ## <a name="next-steps"></a>Passos seguintes
 * [Publicar aplicações com o seu próprio nome de domínio](active-directory-application-proxy-custom-domains.md)
@@ -100,5 +100,5 @@ toodelete uma aplicação, selecione uma aplicação na lista de Olá e, em segu
 * [Ativar o acesso condicional](active-directory-application-proxy-conditional-access.md)
 * [Trabalhar com aplicações com suporte para afirmações](active-directory-application-proxy-claims-aware-apps.md)
 
-Para obter notícias mais recentes Olá e atualizações, consulte Olá [blogue do Proxy da aplicação](http://blogs.technet.com/b/applicationproxyblog/)
+Para obter as notícias e atualizações mais recentes, consulte o [blogue do Proxy da Aplicação](http://blogs.technet.com/b/applicationproxyblog/)
 

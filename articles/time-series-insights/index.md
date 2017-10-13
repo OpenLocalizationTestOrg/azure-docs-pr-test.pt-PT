@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure documentação de informações de série de tempo - tutoriais, referência da API | Microsoft Docs"
-description: "Saiba como a análise de IoT toorun no Olá cloud com o processamento de eventos totalmente gerido. Analise dados em tempo real de aplicações, sensores, dispositivos e mais."
+title: "Documentação do Azure Time Series Insights - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como executar análises de IoT na cloud com o processamento de eventos completamente gerido. Analise dados em tempo real de aplicações, sensores, dispositivos e mais."
 services: time-series-insights
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 04/13/2017
 ms.author: carolz
-ms.openlocfilehash: 2301d20aa2fb685279e2efc657ffcd41571af0c0
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: ca41dab4f1488c0d172513e61b1960f236c7ebf0
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-time-series-insights-documentation"></a>Documentação do Azure Time Series Insights 
  
-Saiba como tooset segurança ambiente Insights de séries de tempo, explorar e analisar dados de séries de tempo das suas soluções de IoT ou ligado coisas. Documentação partilhas pré-requisitos Olá, como, API referencia e outro toohelp documentação tooget foi iniciado em minutos. 
+Saiba como configurar o ambiente do Time Series Insights, explorar e analisar dados de série de tempo das suas soluções de IoT ou aplicações ligadas. A documentação partilha os pré-requisitos, procedimentos, referências de API e outras documentações que o ajudam a começar a trabalhar em poucos minutos. 
  
 <ul class="panelContent cardsFTitle"> 
     <li> 

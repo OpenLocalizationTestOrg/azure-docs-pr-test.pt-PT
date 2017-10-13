@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure documentação de barramento de serviço - tutoriais, referência da API | Microsoft Docs"
-description: "Saiba como tooset cópias de segurança de mensagens que se liga aplicações e serviços no local e ambientes de nuvem.  Tutoriais, vídeos, referências de API e muito mais."
+title: "Documentação do Azure Service Bus - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como configurar mensagens que estabelecem ligação a aplicações e serviços entre ambientes no local e na cloud.  Tutoriais, vídeos, referências de API e muito mais."
 services: service-bus
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 03/14/2017
 ms.author: carolz
-ms.openlocfilehash: 68df38c39d6f5da112b44025aaf393df542ce01a
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 9651d93f4d29121e561108845ed48558e46e42f5
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 #<a name="service-bus-documentation"></a>Documentação do Service Bus
 
-Saiba como toouse tooconnect de Service Bus e de reencaminhamento no local e ambientes de nuvem. Tutoriais, vídeos, referências de API e outro Mostrar documentação como tooset cópias de segurança de mensagens entre aplicações e serviços de nuvem.
+Saiba como utilizar o Service Bus e o Reencaminhamento para estabelecer a ligação entre ambientes no local e na cloud. Tutoriais, vídeos, referências de API e outra documentação mostram como configurar o serviço de mensagens em cloud entre aplicações e serviços.
 
 <ul class="panelContent cardsFTitle">
     <li>

@@ -1,23 +1,23 @@
 
-1. Navegue toohello [Google Cloud Console](https://console.developers.google.com/project), inicie sessão com as credenciais da conta Google. 
-2. Clique em **Criar Projeto**, escreva um nome de projeto e, em seguida, clique em **Criar**. Se solicitado, realizar Olá verificação por SMS e clique em **criar** novamente.
+1. Navegue até à [Consola do Google Cloud](https://console.developers.google.com/project) e inicie sessão com as credenciais da conta Google. 
+2. Clique em **Criar Projeto**, escreva um nome de projeto e, em seguida, clique em **Criar**. Se solicitado, execute a Verificação por SMS e clique novamente em **Criar**.
    
     ![Criar novo projeto](./media/mobile-services-enable-google-cloud-messaging/mobile-services-google-new-project.png)   
    
      Escreva o novo **Nome do projeto** e clique em **Criar projeto**.
-3. Clique em Olá **utilitários e mais** botão e, em seguida, clique em **informações do projeto**. Tome nota do Olá **número do projeto**. Terá de tooset este valor como Olá `SenderId` variável na aplicação de cliente Olá.
+3. Clique no botão **Utilitários e Mais** e, em seguida, em **Informações do Projeto**. Anote o **Número de Projeto**. Terá de definir este valor como a variável `SenderId` na aplicação cliente.
    
     ![Utilitários e muito mais](./media/mobile-services-enable-google-cloud-messaging/notification-hubs-utilities-and-more.png)
-4. Olá projeto em dashboard, **APIs móveis**, clique em **Google Cloud Messaging**, na página seguinte Olá, clique em **ativar API** e aceite os termos de Olá de serviço. 
+4. No dashboard do projeto, em **APIs Móveis**, clique em **Google Cloud Messaging**, na página seguinte, clique em **Ativar API** e aceite os termos de serviço. 
    
     ![Ativar o GCM](./media/mobile-services-enable-google-cloud-messaging/enable-GCM.png)
    
     ![Ativar o GCM](./media/mobile-services-enable-google-cloud-messaging/enable-gcm-2.png) 
-5. No dashboard do projeto de Olá, clique em **credenciais** > **criar credencial** > **chave de API**. 
+5. No dashboard do projeto, clique em **Credenciais** > **Criar Credencial** > **Chave de API**. 
    
     ![](./media/mobile-services-enable-google-cloud-messaging/mobile-services-google-create-server-key.png)
 6. Em **Criar uma nova chave**, clique em **Chave de servidor**, escreva um nome para a chave e clique em **Criar**.
-7. Tome nota do Olá **chave de API** valor.
+7. Anote o valor da **CHAVE DE API**.
    
-    Irá utilizar este tooenable de valor de chave de API tooauthenticate do Azure com o GCM e enviar notificações push em nome da aplicação.
+    Vai utilizar este valor para permitir ao Azure a autenticação com o GCM e o envio de notificações push em nome da aplicação.
 

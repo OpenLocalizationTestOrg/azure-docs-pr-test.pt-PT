@@ -1,5 +1,5 @@
 ---
-title: aaaCreate SQL Data Warehouse com o PowerShell | Microsoft Docs
+title: Criar SQL Data Warehouse com o PowerShell | Microsoft Docs
 description: Criar SQL Data Warehouse com o PowerShell
 services: sql-data-warehouse
 documentationcenter: NA
@@ -15,11 +15,11 @@ ms.workload: data-services
 ms.custom: create
 ms.date: 10/31/2016
 ms.author: elbutter;barbkess
-ms.openlocfilehash: d8af29ec285a11285785ab5474e4dfc8c36bc3ab
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: a763f1c600c1a3f37cb565a8eb7db3c3f27dcf75
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="create-sql-data-warehouse-using-powershell"></a>Criar SQL Data Warehouse com o PowerShell
 > [!div class="op_single_selector"]
@@ -29,15 +29,15 @@ ms.lasthandoff: 10/06/2017
 >
 >
 
-Este artigo mostra como toocreate um SQL Server do armazém de dados com o PowerShell.
+Este artigo mostra-lhe como criar um SQL Data Warehouse com o PowerShell.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-tooget iniciada, é necessário:
+Para começar, precisa do seguinte:
 
-* **Conta do Azure**: visite [avaliação gratuita do Azure] [ Azure Free Trial] ou [créditos do MSDN Azure] [ MSDN Azure Credits] toocreate uma conta.
-* **O servidor SQL do Azure**: consulte [criar uma base de dados SQL do Azure no Portal do Azure de Olá] [ Create an Azure SQL database in hello Azure Portal] ou [criar uma base de dados SQL do Azure com o PowerShell] [ Create an Azure SQL database with PowerShell] para obter mais detalhes.
-* **Grupo de recursos**: Utilize Olá mesmo recurso do grupo do Azure SQL Server ou consulte [como um grupo de recursos de toocreate](../azure-resource-manager/resource-group-portal.md).
-* **PowerShell, versão 1.0.3 ou superior**: pode verificar a sua versão, executando **Get-Module -ListAvailable -Name Azure**.  versão mais recente Olá pode ser instalado na [instalador de plataforma Web Microsoft][Microsoft Web Platform Installer].  Para obter mais informações sobre como instalar a versão mais recente Olá, consulte [como tooinstall e configurar o Azure PowerShell][How tooinstall and configure Azure PowerShell].
+* **Conta Azure**: aceda a [Versão de Avaliação Gratuita do Azure][Azure Free Trial] ou [Créditos do MSDN Azure][MSDN Azure Credits] para criar uma conta.
+* **Azure SQL Server**: veja [Create an Azure SQL database in the Azure Portal (Criar uma base de dados SQL do Azure com o Portal do Azure)][Create an Azure SQL database in the Azure Portal] ou [Create an Azure SQL database with PowerShell (Criar uma base de dados SQL do Azure com o PowerShell)][Create an Azure SQL database with PowerShell] para obter mais detalhes.
+* **Grupo de recursos**: utilize o mesmo grupo de recursos do Azure SQL Server ou veja [como criar um grupo de recursos](../azure-resource-manager/resource-group-portal.md).
+* **PowerShell, versão 1.0.3 ou superior**: pode verificar a sua versão, executando **Get-Module -ListAvailable -Name Azure**.  A versão mais recente pode ser instalada a partir do [Instalador de Plataforma Web da Microsoft][Microsoft Web Platform Installer].  Para mais informações sobre como instalar a versão mais recente, consulte [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)][How to install and configure Azure PowerShell].
 
 > [!NOTE]
 > A criação de um SQL Data Warehouse poderá resultar num novo serviço sujeito a faturação.  Consulte [SQL Data Warehouse pricing (Preços do SQL Data Warehouse)][SQL Data Warehouse pricing], para mais detalhes sobre preços.
@@ -46,17 +46,17 @@ tooget iniciada, é necessário:
 
 ## <a name="create-a-sql-data-warehouse"></a>Criar um SQL Data Warehouse
 1. Abra o Windows PowerShell.
-2. Execute este tooAzure toologin de cmdlet do Resource Manager.
+2. Execute este cmdlet para iniciar sessão no Azure Resource Manager.
 
     ```Powershell
     Login-AzureRmAccount
     ```
-3. Selecione a subscrição de Olá toouse que pretende para a sua sessão atual.
+3. Selecione a subscrição que pretende utilizar para a sua sessão atual.
 
     ```Powershell
     Get-AzureRmSubscription    -SubscriptionName "MySubscription" | Select-AzureRmSubscription
     ```
-4. Crie a base de dados. Este exemplo cria uma base de dados com o nome "mynewsqldw", com o objetivo de nível de serviço "DW400", servidor de toohello com o nome "sqldwserver1", que está no grupo de recursos de Olá com o nome "mywesteuroperesgp1".
+4. Crie a base de dados. Este exemplo cria uma base de dados com o nome "mynewsqldw", com o nível de objetivo de serviço "DW400", para o servidor com o nome "sqldwserver1" que está no grupo de recursos chamado "mywesteuroperesgp1".
 
    ```Powershell
    New-AzureRmSqlDatabase -RequestedServiceObjectiveName "DW400" -DatabaseName "mynewsqldw" -ServerName "sqldwserver1" -ResourceGroupName "mywesteuroperesgp1" -Edition "DataWarehouse" -CollationName "SQL_Latin1_General_CP1_CI_AS" -MaxSizeBytes 10995116277760
@@ -64,23 +64,23 @@ tooget iniciada, é necessário:
 
 Os parâmetros necessários são:
 
-* **RequestedServiceObjectiveName**: quantidade de Olá de [DWU] [ DWU] que está a pedir.  Os valores suportados são DW100, DW200, DW300, DW400, DW500, DW600, DW1000, DW1200, DW1500, DW2000, DW3000 e DW6000.
-* **DatabaseName**: nome Olá Olá SQL Data Warehouse que está a criar.
-* **ServerName**: nome de hello do servidor de Olá que está a utilizar para a criação (tem de ser V12).
-* **ResourceGroupName**: o grupo de recursos que está a utilizar.  os grupos de recursos disponíveis toofind na sua subscrição, utilize Get-AzureResource.
-* **Edição**: tem de ser "DataWarehouse" toocreate um SQL Data Warehouse.
+* **RequestedServiceObjectiveName**: a quantidade de [DWU][DWU] que está a solicitar.  Os valores suportados são DW100, DW200, DW300, DW400, DW500, DW600, DW1000, DW1200, DW1500, DW2000, DW3000 e DW6000.
+* **DatabaseName**: o nome do SQL Data Warehouse que está a criar.
+* **ServerName**: o nome do servidor que está a utilizar para a criação (tem de ser V12).
+* **ResourceGroupName**: o grupo de recursos que está a utilizar.  Para localizar grupos de recursos disponíveis na sua subscrição, utilize Get-AzureResource.
+* **Edição**: tem de ser "DataWarehouse", para criar um SQL Data Warehouse.
 
 Os parâmetros opcionais são:
 
-* **CollationName**: Olá agrupamento com o predefinido se não for especificado é SQL_Latin1_General_CP1_CI_AS.  Não é possível alterar o agrupamento numa base de dados.
-* **MaxSizeBytes**: Olá predefinido o tamanho máximo de uma base de dados é de 10 GB.
+* **CollationName**: o agrupamento predefinido quando não é especificado é SQL_Latin1_General_CP1_CI_AS.  Não é possível alterar o agrupamento numa base de dados.
+* **MaxSizeBytes**: o tamanho máximo predefinido das bases de dados é 10 GB.
 
-Para obter mais detalhes sobre as opções de parâmetro de Olá, consulte [New-AzureRmSqlDatabase] [ New-AzureRmSqlDatabase] e [criar base de dados (Azure SQL Data Warehouse)][Create Database (Azure SQL Data Warehouse)].
+Para obter mais detalhes sobre as opções de parâmetros, veja [New-AzureRmSqlDatabase][New-AzureRmSqlDatabase] e [Criar Base de Dados (Azure SQL Data Warehouse)][Create Database (Azure SQL Data Warehouse)].
 
 ## <a name="next-steps"></a>Passos seguintes
-Após terminar o SQL Data Warehouse aprovisionamento poderá pretender tootry [carregar dados de exemplo] [ loading sample data] ou verificar como demasiado[desenvolver] [ develop] , [carregar][load], ou [migrar][migrate].
+Após terminar o aprovisionamento do SQL Data Warehouse, poderá querer experimentar [carregar dados de exemplo][loading sample data] ou [verificar como programar][develop], [carregar][load], ou [migrar][migrate].
 
-Se estiver interessado em obter mais informações sobre como toomanage SQL Data Warehouse através de programação, consulte nosso artigo sobre como toouse [cmdlets do PowerShell e REST APIs][PowerShell cmdlets and REST APIs].
+Se estiver interessado em obter mais informações sobre como gerir o SQL Data Warehouse através de programação, consulte o nosso artigo sobre como utilizar [PowerShell cmdlets and REST APIs (Cmdlets do PowerShell e APIs REST)][PowerShell cmdlets and REST APIs].
 
 <!--Image references-->
 
@@ -93,11 +93,11 @@ Se estiver interessado em obter mais informações sobre como toomanage SQL Data
 [PowerShell cmdlets and REST APIs]: ./sql-data-warehouse-reference-powershell-cmdlets.md
 [firewall rules]: ../sql-database-configure-firewall-settings.md
 
-[How tooinstall and configure Azure PowerShell]: /powershell/azureps-cmdlets-docs
-[how toocreate a SQL Data Warehouse from hello Azure Portal]: ./sql-data-warehouse-get-started-provision.md
-[Create an Azure SQL database in hello Azure Portal]: ../sql-database/sql-database-get-started.md
+[How to install and configure Azure PowerShell]: /powershell/azureps-cmdlets-docs
+[how to create a SQL Data Warehouse from the Azure Portal]: ./sql-data-warehouse-get-started-provision.md
+[Create an Azure SQL database in the Azure Portal]: ../sql-database/sql-database-get-started.md
 [Create an Azure SQL database with PowerShell]: ../sql-database/sql-database-get-started-powershell.md
-[how toocreate a resource group]: ../azure-resource-manager/resource-group-template-deploy-portal.md#create-resource-group
+[how to create a resource group]: ../azure-resource-manager/resource-group-template-deploy-portal.md#create-resource-group
 
 <!--MSDN references-->
 [MSDN]: https://msdn.microsoft.com/library/azure/dn546722.aspx

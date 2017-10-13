@@ -1,6 +1,6 @@
 ---
-title: "notificações de push aaaSending com Hubs de notificação do Azure no Windows Phone | Microsoft Docs"
-description: "Neste tutorial, saiba como notificações de toopush de Notification Hubs do Azure toouse tooa do Windows Phone 8 ou Windows Phone 8.1 Silverlight aplicação."
+title: "Enviar notificações push com os Hubs de Notificação do Azure no Windows Phone | Microsoft Docs"
+description: "Neste tutorial, irá aprender a utilizar os Notification Hubs do Azure para enviar notificações push para uma aplicação Windows Phone 8 ou Windows Phone 8.1 Silverlight."
 services: notification-hubs
 documentationcenter: windows
 keywords: "notificação push, notificação push, push window phone"
@@ -15,33 +15,33 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 10/03/2016
 ms.author: yuaxu
-ms.openlocfilehash: 1a0ad238fe7788ae2e4f47f02d113391af03dd1d
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: f0bfe81f849813d146d644b32490af657b1071b5
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="sending-push-notifications-with-azure-notification-hubs-on-windows-phone"></a>Enviar notificações push com os Notification Hubs do Azure no Windows Phone
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
 ## <a name="overview"></a>Descrição geral
 > [!NOTE]
-> toocomplete neste tutorial, tem de ter uma conta do Azure Active Directory. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-windows-phone-get-started%2F).
+> Para concluir este tutorial, tem de ter uma conta ativa do Azure. Se não tiver uma conta, pode criar uma conta de avaliação gratuita em apenas alguns minutos. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-windows-phone-get-started%2F).
 > 
 > 
 
-Este tutorial mostra como toouse Notification Hubs do Azure toosend push notificações tooa Windows Phone 8 ou Windows Phone 8.1 Silverlight a aplicação. Se tiver como objetivo o Windows Phone 8.1 (não Silverlight), consulte toohello [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) versão.
-Neste tutorial, crie uma aplicação Windows Phone 8 em branco que recebe notificações push utilizando Olá serviço de notificação Push da Microsoft (MPNS). Quando tiver terminado, será capaz de toouse sua toobroadcast de hub de notificação push dispositivos Olá tooall de notificações executar a sua aplicação.
+Este tutorial mostra-lhe como utilizar os Notification Hubs do Azure para enviar notificações push para uma aplicação Windows Phone 8 ou Windows Phone 8.1 Silverlight. Se estiver a segmentar o Windows Phone 8.1 (não Silverlight), consulte a versão [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
+Neste tutorial, vai criar uma aplicação Windows Phone 8 em branco que recebe notificações push utilizando o Serviço de Notificações Push da Microsoft (MPNS). Quando tiver terminado, poderá utilizar o Notification Hub para difundir notificações push para todos os dispositivos a executar a sua aplicação.
 
 > [!NOTE]
-> Olá Windows Phone SDK dos Notification Hubs não suporta a utilização Olá Push notificação serviço Windows (WNS) com aplicações do Windows Phone 8.1 Silverlight. toouse WNS (em vez do MPNS) com aplicações do Windows Phone 8.1 Silverlight, siga Olá [Notification Hubs – Windows Phone Silverlight tutorial], que utiliza a REST APIs.
+> O SDK dos Notification Hubs do Windows Phone não suporta a utilização do Serviço de Notificações Push do Windows (WNS) com aplicações do Windows Phone 8.1 Silverlight. Para utilizar o WNS (em vez do MPNS) com aplicações do Windows Phone 8.1 Silverlight, siga o [Tutorial Notification Hubs – Windows Phone Silverlight ], que utiliza a APIs REST.
 > 
 > 
 
-tutorial de Olá demonstra Olá cenário de difusão simples utilizando Notification Hubs.
+Este tutorial demonstra o cenário de difusão simples na utilização de Notification Hubs.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Este tutorial requer o seguinte Olá:
+Para este tutorial, necessita do seguinte:
 
 * [Visual Studio 2012 Express para Windows Phone] ou uma versão posterior.
 
@@ -51,20 +51,20 @@ A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais 
 [!INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
 
 <ol start="6">
-<li><p>Clique em Olá <b>serviços de notificação</b> secção (dentro <i>definições</i>), clique em <b>Windows Phone (MPNS)</b> e, em seguida, clique em Olá <b>ativar push não autenticado </b> caixa de verificação.</p>
+<li><p>Clique na secção <b>Serviços de Notificação</b> (em <i>Definições</i>), clique em <b>Windows Phone (MPNS)</b> e, em seguida, clique na caixa de verificação <b>Ativar push não autenticado</b>.</p>
 </li>
 </ol>
 
 &emsp;&emsp;![Portal do Azure – Ativar notificações push não autenticadas](./media/notification-hubs-windows-phone-get-started/azure-portal-unauth.png)
 
-O hub está agora criado e configurado toosend não autenticado de notificação para o Windows Phone.
+O seu hub já está criado e configurado para enviar notificações não autenticadas para Windows Phone.
 
 > [!NOTE]
-> Este tutorial utiliza MPNS no modo não autenticado. O modo MPNS não autenticado vem com restrições sobre as notificações que pode enviar tooeach canal. Os Notification Hubs suportam [modo MPNS autenticado](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx) , permitindo-lhe tooupload o certificado.
+> Este tutorial utiliza MPNS no modo não autenticado. O modo MPNS não autenticado vem com restrições quanto às notificações que pode enviar para cada canal. Os Notification Hubs suportam o [Modo MPNS autenticado ](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx) ao permitirem-lhe carregar o seu certificado.
 > 
 > 
 
-## <a name="connecting-your-app-toohello-notification-hub"></a>Ligar o seu hub de notificação de toohello de aplicação
+## <a name="connecting-your-app-to-the-notification-hub"></a>Ligar a aplicação ao Notification Hub
 1. No Visual Studio, crie uma nova aplicação do Windows Phone 8.
    
        ![Visual Studio - New Project - Windows Phone App][13]
@@ -72,19 +72,19 @@ O hub está agora criado e configurado toosend não autenticado de notificação
     No Visual Studio 2013 Update 2 ou posterior crie, em vez disso, uma aplicação Silverlight do Windows Phone.
    
     ![Visual Studio – Novo Projeto – Aplicação em Branco – Windows Phone Silverlight][11]
-2. No Visual Studio, faça duplo clique solução Olá e, em seguida, clique em **gerir pacotes NuGet**.
+2. No Visual Studio, clique com o botão direito do rato na solução e, em seguida, clique em **Gerir Pacotes NuGet**.
    
-    Esta ação apresenta Olá **gerir pacotes NuGet** caixa de diálogo.
-3. Procurar `WindowsAzure.Messaging.Managed` e clique em **instalar**e, em seguida, aceite os termos de Olá de utilização.
+    É apresentada a caixa de diálogo **Gerir Pacotes NuGet**.
+3. Procure `WindowsAzure.Messaging.Managed`, clique em **Instalar** e aceite os termos de utilização.
    
     ![Visual Studio – Gestor de Pacotes NuGet][20]
    
-    Isto transfere, instala e adiciona uma biblioteca de mensagens do Azure de toohello de referência para o Windows utilizando o Olá <a href="http://nuget.org/packages/WindowsAzure.Messaging.Managed/">pacote NuGet Windowsazure</a>.
-4. Abra o ficheiro de Olá App.xaml.cs e adicione o seguinte Olá `using` instruções:
+    Esse procedimento transfere, instala e adiciona uma referência à biblioteca de Mensagens do Azure para Windows utilizando o <a href="http://nuget.org/packages/WindowsAzure.Messaging.Managed/">Pacote NuGet WindowsAzure.Messaging.Managed </a>.
+4. Abra o ficheiro App,xaml.cs e adicione as seguintes instruções `using`:
    
         using Microsoft.Phone.Notification;
         using Microsoft.WindowsAzure.Messaging;
-5. Adicionar Olá seguinte código na parte superior de Olá de **Application_Launching** método em App.xaml.cs:
+5. Adicione o seguinte código no topo do método **Application_Launching** em App.xaml.cs:
    
         var channel = HttpNotificationChannel.Find("MyPushChannel");
         if (channel == null)
@@ -106,56 +106,56 @@ O hub está agora criado e configurado toosend não autenticado de notificação
         });
    
    > [!NOTE]
-   > Olá valor **MyPushChannel** é um índice que é utilizado toolookup um canal existente na Olá [HttpNotificationChannel](https://msdn.microsoft.com/library/windows/apps/microsoft.phone.notification.httpnotificationchannel.aspx) coleção. Se não existir, crie uma nova entrada com esse nome.
+   > O valor **MyPushChannel** é um índice que é utilizado para pesquisar um canal existente na coleção [HttpNotificationChannel](https://msdn.microsoft.com/library/windows/apps/microsoft.phone.notification.httpnotificationchannel.aspx). Se não existir, crie uma nova entrada com esse nome.
    > 
    > 
    
-    Certifique-se tooinsert Olá nome da cadeia de ligação do hub e Olá chamado **DefaultListenSharedAccessSignature** que obteve na secção anterior Olá.
-    Este código obtém Olá URI do canal para aplicação Olá do MPNS e, em seguida, regista esse URI de canal no notification hub. Esta ação garante também que Olá URI do canal que é registado no notification hub que é iniciada a cada aplicação Olá do tempo.
+    Não se esqueça de inserir o nome do seu hub e a cadeia de ligação denominada **DefaultListenSharedAccessSignature** que obteve na secção anterior.
+    Este código obtém o URI do canal para a aplicação a partir do MPNS e, em seguida, regista esse URI de canal no Notification Hub. Esta ação garante também que o URI do canal é registado no Notification Hub sempre que a aplicação for iniciada.
    
    > [!NOTE]
-   > Este tutorial envia um dispositivo de toohello de notificação de alerta. Enviar uma notificação de mosaico, em vez disso, tem de chamar Olá **BindToShellTile** método no canal Olá. toosupport notificações de alerta e o mosaico, chame **BindToShellTile** e **BindToShellToast**.
+   > Este tutorial envia um alerta de notificação para o dispositivo. Se, em vez disso, enviar uma notificação de mosaico, tem de chamar o método o **BindToShellTile** no canal. Para suportar notificações de alerta e também de mosaico, chame **BindToShellTile** e **BindToShellToast**.
    > 
    > 
-6. No Explorador de soluções, expanda **propriedades**, abra Olá `WMAppManifest.xml` de ficheiros, clique em Olá **capacidades** separador e certifique-se de que Olá **ID_CAP_PUSH_NOTIFICATION** está selecionada.
+6. No Explorador de Soluções, expanda **Propriedades**, abra o `WMAppManifest.xml` ficheiro, clique no separador **Capacidades** e verifique se a capacidade **ID_CAP_PUSH_NOTIFICATION** está selecionada.
    
        ![Visual Studio - Windows Phone App Capabilities][14]
    
-       This ensures that your app can receive push notifications. Without it, any attempt toosend a push notification toohello app will fail.
-7. Olá prima `F5` toorun chave Olá aplicação.
+       This ensures that your app can receive push notifications. Without it, any attempt to send a push notification to the app will fail.
+7. Prima a tecla `F5` para executar a aplicação.
    
-    É apresentada uma mensagem de registo na aplicação Olá.
-8. Aplicação Olá fechar.  
+    É apresentada na aplicação uma mensagem de registo.
+8. Feche a aplicação.  
    
    > [!NOTE]
-   > tooreceive uma alerta de notificação push, aplicação Olá deve não estar em execução em primeiro plano do Olá.
+   > Para receber um alerta de notificação push, a aplicação não pode estar a ser executada em primeiro plano.
    > 
    > 
 
 ## <a name="send-push-notifications-from-your-backend"></a>Enviar notificações push a partir do back-end
-Pode enviar notificações push com os Notification Hubs de qualquer back-end através de public Olá <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST interface</a>. Neste tutorial, enviará notificações push utilizando uma aplicação .NET de consola. 
+Pode enviar notificações push com os Notification Hubs a partir de qualquer back-end através da nossa <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">Interface REST</a> pública. Neste tutorial, enviará notificações push utilizando uma aplicação .NET de consola. 
 
-Para obter um exemplo de como toosend notificações push de um back-end de ASP.NET WebAPI que esteja integrado com Notification Hubs, consulte [Azure Notification Hubs notificam os utilizadores com back-end .NET](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md).  
+Para obter um exemplo de como enviar notificações push de um back-end de ASP.NET WebAPI que esteja integrado com os Hubs de Notificação, veja [Os Hubs de Notificação do Azure Notificam os Utilizadores com back-end .NET](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md).  
 
-Para obter um exemplo de como notificações de push toosend utilizando Olá [REST APIs](https://msdn.microsoft.com/library/azure/dn223264.aspx), veja [como toouse Notification Hubs de Java](notification-hubs-java-push-notification-tutorial.md) e [como toouse Notification Hubs de PHP](notification-hubs-php-push-notification-tutorial.md) .
+Para obter um exemplo sobre como enviar notificações push com as [APIs REST](https://msdn.microsoft.com/library/azure/dn223264.aspx), consulte [Como utilizar os Hubs de Notificação de Java](notification-hubs-java-push-notification-tutorial.md) e [Como utilizar os Hubs de Notificação de PHP](notification-hubs-php-push-notification-tutorial.md).
 
-1. Solução Olá de contexto, selecione **adicionar** e **novo projeto...** e, em **Visual c#**, clique em **Windows** e **aplicação de consola**e clique em **OK**.
+1. Clique com o botão direito do rato na solução, selecione **Adicionar** e **Novo Projeto…**, e, em seguida, em **Visual C#**, clique em **Windows** e **Aplicação de Consola** e, em seguida, clique em **OK**.
    
        ![Visual Studio - New Project - Console Application][6]
    
-    Esta ação adiciona uma nova Visual c# consola toohello solução de aplicação. Também pode fazer isto numa solução separada.
+    Esta ação adiciona uma nova aplicação da consola Visual C# à solução. Também pode fazer isto numa solução separada.
 2. Clique em **Ferramentas**, clique em **Gestor de Pacotes de Biblioteca** e, em seguida, em **Consola do Gestor de Pacotes**.
    
-    Esta ação apresenta Olá consola do Gestor de pacotes.
-3. No Olá **consola do Gestor de pacotes** janela, conjunto Olá **projeto predefinido** tooyour novo projeto de aplicação de consola e, em seguida, na janela de consola Olá, executar Olá os seguintes comandos:
+    Esta ação exibe a Consola do Gestor de Pacotes.
+3. Na janela **Consola do Gestor de Pacotes**, defina o **Projeto Predefinido** como o seu novo projeto da aplicação de consola e, em seguida, execute o seguinte comando na janela da consola:
    
        Install-Package Microsoft.Azure.NotificationHubs
    
-   Esta ação adiciona uma referência toohello SDK dos Notification Hubs do Azure utilizando Olá <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">pacote NuGet do Microsoft Hubs</a>.
-4. Abra Olá `Program.cs` de ficheiros e adicione o seguinte Olá `using` instrução:
+   Esta ação adiciona uma referência ao SDK dos Notification Hubs do Azure utilizando o <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Pacote NuGet Microsoft.Azure.Notification Hubs</a>.
+4. Abra o ficheiro `Program.cs` e adicione a seguinte instrução `using`:
    
         using Microsoft.Azure.NotificationHubs;
-5. No Olá `Program` classe, adicione Olá método os seguintes:
+5. Na classe `Program`, adicione o método seguinte:
    
         private static async void SendNotificationAsync()
         {
@@ -170,30 +170,30 @@ Para obter um exemplo de como notificações de push toosend utilizando Olá [RE
             await hub.SendMpnsNativeNotificationAsync(toast);
         }
    
-    Certifique-se de que tooreplace Olá `<hub name>` marcador de posição com nome Olá Olá notification hub que aparece no portal de Olá. Além disso, substitua o marcador de posição de cadeia de ligação de Olá pela cadeia de ligação de Olá chamada **DefaultFullSharedAccessSignature** que obteve na secção de Olá "Configurar o notification hub".
+    Não se esqueça de substituir o marcador de posição `<hub name>` pelo nome do Notification Hub que aparece no portal. Substitua, também, o marcador de posição da cadeia de ligação pela cadeia de ligação denominada **DefaultFullSharedAccessSignature**, que obteve na secção “Configurar o Notification Hub”.
    
    > [!NOTE]
-   > Certifique-se de que utiliza a cadeia de ligação de Olá com **completa** e não com acesso **escutar** acesso. cadeia de ligação de acesso escuta Olá não tem as notificações de push de toosend permissões.
+   > Certifique-se de que utiliza a cadeia de ligação com acesso **Completo** e não com acesso de **Escuta**. A cadeia de ligação de acesso escuta não concede permissões para enviar notificações push.
    > 
    > 
-6. Adicionar Olá seguinte linha no seu `Main` método:
+6. Adicione as seguintes linhas ao seu método `Main`:
    
          SendNotificationAsync();
          Console.ReadLine();
-7. Com o seu Windows Phone emulador em execução e o projeto de aplicação de consola do aplicação Olá fechada, defina como Olá predefinido projeto de arranque e, em seguida, prima Olá `F5` toorun chave Olá aplicação.
+7. Com o emulador do Windows Phone em execução e a aplicação fechada, defina o projeto de aplicação de consola como o projeto de arranque predefinido e, em seguida, prima a tecla `F5` para executar a aplicação.
    
-    Receberá um alerta de notificação push. Tocar Olá faixa do alerta carrega a aplicação Olá.
+    Receberá um alerta de notificação push. Tocar na faixa do alerta carrega a aplicação.
 
-Pode encontrar todos os payloads possíveis de Olá no Olá [catálogo de alertas] e [catálogo de mosaicos] tópicos no MSDN.
+Pode encontrar todos os payloads possíveis nos tópicos [catálogo de alertas] e [catálogo de mosaicos] no MSDN.
 
 ## <a name="next-steps"></a>Passos seguintes
-Neste exemplo simples, difundiu tooall de notificações push os seus dispositivos Windows Phone 8. 
+Neste exemplo simples, difundiu notificações push para todos os seus dispositivos Windows Phone 8. 
 
-Na ordem tootarget utilizadores específicos, consulte toohello [utilizar Notification Hubs toopush notificações toousers] tutorial. 
+Para visar utilizadores específicos, consulte o tutorial [Utilizar Notification Hubs para notificações push a utilizadores]. 
 
-Se pretender que toosegment os seus utilizadores por grupos de interesse, pode ler [toosend utilizar Notification Hubs notícias de última hora]. 
+Se pretender segmentar os utilizadores por grupos de interesses, pode ler [Utilizar Notification Hubs para enviar notícias de última hora]. 
 
-Saiba mais sobre como os Hubs de notificação de toouse em [documentação de orientação dos Notification Hubs].
+Saiba mais sobre como utilizar os Notification Hubs em [Documentação de Orientação dos Notification Hubs].
 
 <!-- Images. -->
 [6]: ./media/notification-hubs-windows-phone-get-started/notification-hub-create-console-app.png
@@ -216,11 +216,11 @@ Saiba mais sobre como os Hubs de notificação de toouse em [documentação de o
 
 <!-- URLs. -->
 [Visual Studio 2012 Express para Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
-[documentação de orientação dos Notification Hubs]: http://msdn.microsoft.com/library/jj927170.aspx
+[Documentação de Orientação dos Notification Hubs]: http://msdn.microsoft.com/library/jj927170.aspx
 [MPNS authenticated mode]: http://msdn.microsoft.com/library/windowsphone/develop/ff941099(v=vs.105).aspx
-[utilizar Notification Hubs toopush notificações toousers]: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
-[toosend utilizar Notification Hubs notícias de última hora]: notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md
+[Utilizar Notification Hubs para notificações push a utilizadores]: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
+[Utilizar Notification Hubs para enviar notícias de última hora]: notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md
 [catálogo de alertas]: http://msdn.microsoft.com/library/windowsphone/develop/jj662938(v=vs.105).aspx
 [catálogo de mosaicos]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
-[Notification Hubs – Windows Phone Silverlight tutorial]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
+[Tutorial Notification Hubs – Windows Phone Silverlight ]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
 

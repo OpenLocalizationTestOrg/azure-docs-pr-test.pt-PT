@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure documentação do Gestor de recursos - tutoriais, referência da API | Microsoft Docs"
-description: "Saiba como toouse toodeploy do Gestor de recursos e gerir recursos de solução como um grupo e toocreate modelos para a implementação de recursos repetíveis e consistentes."
+title: "Documentação do Azure Resource Manager - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar o Resource Manager para implementar e gerir recursos de solução como um grupo e criar modelos para a implementação de recursos repetíveis e consistentes."
 services: azure-resource-manager
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: dc920b14e84bbad1a178fc91a61a1d2642d644b1
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: ab6725298c9e9c496d2e20b4e68ff72af1432bb2
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 #<a name="azure-resource-manager-documentation"></a>Documentação do Azure Resource Manager
 
-Saiba como toouse toodeploy do Gestor de recursos, monitorizar e gerir recursos de solução como um grupo. Tutoriais, referências de API e outra documentação mostram-lhe como tooset dos recursos de grupos e criar modelos de implementação consistente e repetida.
+Saiba como utilizar o Resource Manager para implementar, monitorizar e gerir recursos de solução como um grupo. Tutoriais, referências de API e outra documentação mostram-lhe como configurar os grupos de recursos e criar modelos para a implementação repetível e consistente.
 
 <ul class="panelContent cardsFTitle">
     <li>

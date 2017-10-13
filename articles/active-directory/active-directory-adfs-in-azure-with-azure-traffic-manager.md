@@ -1,7 +1,7 @@
 ---
-title: "implementação do aaaHigh disponibilidade entre geográfica AD FS no Azure com o Gestor de tráfego do Azure | Microsoft Docs"
-description: "Este documento ficará a saber como toodeploy do AD FS no Azure para disponibilidade elevada."
-keywords: "AD fs com o Gestor de tráfego do Azure, o AD FS com o Traffic Manager do Azure, geográfica, múltiplos centros de dados, geográficos dos centros de dados, várias geográfica dos centros de dados, implementar o AD FS no azure, implementar adfs do azure, adfs do azure, azure ad fs, implementar o AD FS, implementar o AD FS no azure, do ad fs implementar o AD FS no azure, implementar o AD FS no azure, azure AD FS, introdução tooAD FS, do Azure, o AD FS no Azure, iaas, AD FS, move tooazure de adfs"
+title: "Implementação de AD FS de geografia cruzada de elevada disponibilidade no Azure com o Gestor de Tráfego do Azure | Microsoft Docs"
+description: 'Neste documento, vai aprender a implementar o AD FS no Azure para disponibilidade elevada '
+keywords: "AD FS com o Gestor de Tráfego do Azure, adfs com Gestor de Tráfego do Azure, geográfico, centro de dados múltiplos, centros de dados geográficos, centros de dados geográficos múltiplos, implementar o AD FS no azure, implementar adfs do azure, azure adfs, ad fs azure , implementar adfs, implementar ad fs, adfs no azure, implementar adfs no azure, implementar AD FS no azure, adfs azure, introdução ao AD FS, Azure, AD FS no Azure, iaas, ADFS, mover adfs para o azure"
 services: active-directory
 documentationcenter: 
 author: anandyadavmsft
@@ -15,46 +15,46 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 09/01/2016
 ms.author: anandy;billmath
-ms.openlocfilehash: c5838d749cdc5c8aabbe62b255d568525da747ab
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 077710049894d2690299ce0fcb0ead9911aa4bb6
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="high-availability-cross-geographic-ad-fs-deployment-in-azure-with-azure-traffic-manager"></a>Implementação de AD FS geográficos cruzados de elevada disponibilidade no Azure com o Gestor de Tráfego do Azure
-[Implementação do AD FS no Azure](active-directory-aadconnect-azure-adfs.md) fornece orientação passo a passo como toohow pode implementar uma infraestrutura do AD FS simple para a sua organização no Azure. Este artigo fornece os passos seguintes Olá toocreate um entre geográfica implementação do AD FS no Azure com [Traffic Manager do Azure](../traffic-manager/traffic-manager-overview.md). Traffic Manager do Azure ajuda a criar um geograficamente propagação elevada disponibilidade e a infraestrutura do AD FS de elevado desempenho para a sua organização, tornando a utilização de intervalo de métodos de encaminhamento disponível toosuit diferentes necessita da infraestrutura de Olá.
+[Implementação do AD FS no Azure](active-directory-aadconnect-azure-adfs.md) fornece orientação passo a passo sobre como pode implementar uma infraestrutura de AD FS simples para a sua organização no Azure. Este artigo fornece os passos seguintes para criar uma implementação geográfica cruzada do AD FS no Azure com o [Gestor de Tráfego do Azure](../traffic-manager/traffic-manager-overview.md). O Gestor de Tráfego do Azure ajuda-o a criar uma infraestrutura do AD FS de elevado desempenho e elevada disponibilidade propagada a nível geográfico para a sua organização ao utilizar o intervalo de métodos de encaminhamento disponíveis para satisfazer as necessidades diferentes da infraestrutura.
 
 Permite uma infraestrutura do AD FS geográfica cruzada de elevada disponibilidade:
 
-* **Eliminação de um ponto único de falha:** com capacidades de ativação pós-falha do Gestor de tráfego do Azure, pode conseguir uma infraestrutura do AD FS altamente disponível, mesmo quando um dos centros de dados de Olá na parte globo Olá fica inativo
-* **Desempenho melhorado:** pode utilizar Olá de sugestões de implementação no tooprovide artigo uma infraestrutura de AD FS de elevado desempenho que pode ajudar os utilizadores a autenticar mais rapidamente. 
+* **Eliminação do ponto único de falha:** com as capacidades de ativação pós-falha do Gestor de Tráfego do Azure, pode conseguir uma infraestrutura do AD FS de elevada disponibilidade, mesmo quando um dos centros de dados numa parte do mundo fica inoperacional
+* **Desempenho melhorado:** pode utilizar a implementação sugerida neste artigo para fornecer uma infraestrutura do AD FS de elevado desempenho que pode ajudar os utilizadores autenticar com maior rapidez. 
 
 ## <a name="design-principles"></a>Princípios de conceção
 ![Estrutura global](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/blockdiagram.png)
 
-princípios de design básico Olá será mesmos conforme indicado em princípios de Design artigo Olá implementação do AD FS no Azure. Diagrama de Olá acima mostra uma extensão de região geográfica do Olá implementação básica tooanother simple. Seguem-se algumas tooconsider pontos quando expandir a sua região geográfica do toonew de implementação
+Os princípios de estrutura básicos serão iguais aos listados nos princípios de estrutura no artigo da implementação do AD FS no Azure. O diagrama acima mostra uma extensão simples da implementação básica para outra região geográfica. Seguem-se alguns pontos a considerar quando expandir a sua implementação a uma nova região geográfica
 
-* **Rede virtual:** deve criar uma nova rede virtual numa região geográfica Olá pretende que a infraestrutura do toodeploy adicional AD FS. Diagrama de Olá acima para ver Geo1 VNET e Geo2 VNET como Olá duas redes virtuais em cada região geográfica.
-* **Controladores de domínio e servidores do AD FS na nova VNET geográfica:** recomenda-se os controladores de domínio toodeploy na região geográfica novo de Olá para que os servidores de Olá do AD FS na região novo Olá tenham toocontact um controlador de domínio na outra extremidade rede Away toocomplete uma autenticação e o desempenho de Olá assim melhorar.
-* **Contas de armazenamento:** contas de armazenamento associados uma região. Uma vez que for implementar máquinas numa região geográfica novo, terá toocreate novas contas do storage toobe utilizado na região de Olá.  
-* **Grupos de segurança de rede:** como contas de armazenamento, os Grupos de Segurança de Rede criados numa região não podem ser utilizados noutra região geográfica. Por conseguinte, terá toocreate nova rede segurança grupos semelhantes toothose na região geográfica primeiro de Olá de sub-rede INT e rede de Perímetro na região geográfica novo de Olá.
-* **As etiquetas de DNS para endereços IP públicos:** Traffic Manager do Azure podem referir-se tooendpoints apenas através de etiquetas DNS. Por conseguinte, é necessário toocreate etiquetas DNS para os endereços IP públicos dos Olá externo balanceadores de carga.
-* **Traffic Manager do Azure:** Gestor de tráfego do Microsoft Azure permite-lhe toocontrol distribuição Olá utilizador tráfego tooyour pontos finais do serviço em execução em datacenters diferentes em torno Olá mundo. Traffic Manager do Azure funciona em Olá nível DNS. Utiliza DNS respostas toodirect pelo utilizador final tráfego distribuída tooglobally pontos finais. Os clientes ligam, em seguida, pontos finais de toothose diretamente. Com diferentes opções de encaminhamento de desempenho, Weighted e prioridade, pode facilmente optar opção de encaminhamento Olá mais adequada para as necessidades da sua organização. 
-* **V net tooV net conectividade entre duas regiões:** não precisa de toohave conectividade entre redes virtuais Olá próprio. Uma vez que cada rede virtual tem acesso toodomain controladores e tem o servidor do AD FS e WAP própria, pode funcionam sem qualquer conectividade entre redes virtuais do Olá em regiões diferentes. 
+* **Rede virtual:** deve criar uma nova rede virtual na região geográfica onde pretende implementar a infraestrutura do AD FS adicional. No diagrama acima pode ver Geo1 VNET e Geo2 VNET como as duas redes virtuais de cada região geográfica.
+* **Controladores de domínio e servidores do AD FS no novo VNET geográfico:** é recomendável para implementar controladores de domínio na nova região geográfica para que os servidores do AD FS na nova região não tenham de contactar um controlador de domínio noutra rede distante para concluir uma autenticação e, deste modo, melhorar o desempenho.
+* **Contas de armazenamento:** contas de armazenamento associados uma região. Uma vez que vai implementar máquinas numa nova região demográfica, terá de criar novas contas de armazenamento para utilização na região.  
+* **Grupos de segurança de rede:** como contas de armazenamento, os Grupos de Segurança de Rede criados numa região não podem ser utilizados noutra região geográfica. Por conseguinte, terá de criar novos grupos de segurança de rede semelhantes aos da primeira região geográfica para a sub-rede DMZ e INT na nova região geográfica.
+* **Etiquetas de DNS para os endereços IP públicos:** o Gestor de Tráfego do Azure pode referir-se para os pontos finais APENAS através de etiquetas DNS. Por conseguinte, é necessário criar etiquetas de DNS para os endereços IP públicos dos Load Balancers externos.
+* **Gestor de Tráfego do Azure:** o Gestor de Tráfego do Microsoft Azure permite-lhe controlar a distribuição de tráfego de utilizador para os pontos finais do serviço executados em centros de dados diferentes a nível mundial. O Gestor de Tráfego do Azure funciona ao nível do DNS. Utiliza as respostas de DNS para direcionar o tráfego de utilizador final para pontos finais distribuídos globalmente. Em seguida, os clientes podem ligar diretamente a esses pontos finais. Com diferentes opções de encaminhamento de Desempenho, Ponderada e Prioridade, pode facilmente escolher a opção de encaminhamento mais adequada para as necessidades da sua organização. 
+* **Conetividade V-net para V-net entre duas regiões:** não é necessário conetividade entre as redes virtuais. Uma vez que cada rede virtual tem acesso a controladores de domínio e tem o servidor AD FS e WAP instalados, podem funcionar sem qualquer conetividade entre as redes virtuais em diferentes regiões. 
 
-## <a name="steps-toointegrate-azure-traffic-manager"></a>Passos toointegrate Traffic Manager do Azure
-### <a name="deploy-ad-fs-in-hello-new-geographical-region"></a>Implementar o AD FS na região geográfica novo de Olá
-Siga os passos de Olá e as diretrizes no [implementação do AD FS no Azure](active-directory-aadconnect-azure-adfs.md) toodeploy Olá topologia mesma região geográfica novo de Olá.
+## <a name="steps-to-integrate-azure-traffic-manager"></a>Passos para integrar o Gestor de Tráfego do Azure
+### <a name="deploy-ad-fs-in-the-new-geographical-region"></a>Implementar o AD FS na nova região geográfica
+Siga os passos e as diretrizes indicados no [Implementação do AD FS no Azure](active-directory-aadconnect-azure-adfs.md) para implementar a mesma topologia na nova região geográfica.
 
-### <a name="dns-labels-for-public-ip-addresses-of-hello-internet-facing-public-load-balancers"></a>Etiquetas de DNS para os endereços IP públicos de Olá com acesso à Internet (público) balanceadores de carga
-Tal como mencionado acima, Olá Traffic Manager do Azure só pode referenciar tooDNS etiquetas como pontos finais e, por conseguinte, é importante toocreate etiquetas DNS para os endereços IP públicos dos Olá externo balanceadores de carga. Abaixo captura de ecrã mostra como pode configurar a etiqueta de DNS para endereço IP público Olá. 
+### <a name="dns-labels-for-public-ip-addresses-of-the-internet-facing-public-load-balancers"></a>Etiquetas de DNS para os endereços IP públicos de Load Balancers com acesso à Internet (públicos)
+Como mencionado acima, o Gestor de Tráfego do Azure só pode referir etiquetas de DNS como pontos finais e, por conseguinte, é importante criar etiquetas de DNS para os endereços IP públicos dos Load Balancers Externos. A captura de ecrã abaixo mostra como pode configurar a sua etiqueta de DNS para o endereço IP público. 
 
 ![Etiqueta de DNS](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/eastfabstsdnslabel.png)
 
 ### <a name="deploying-azure-traffic-manager"></a>Implementar o Gestor de Tráfego do Azure
-Siga os passos de Olá abaixo toocreate um perfil do Gestor de tráfego. Para obter mais informações, também pode consultar demasiado[gerir um perfil do Traffic Manager do Azure](../traffic-manager/traffic-manager-manage-profiles.md).
+Siga os passos abaixo para criar um perfil do Gestor de Tráfego. Para obter mais informações, pode também ver [Gerir um perfil do Gestor de Tráfego do Azure](../traffic-manager/traffic-manager-manage-profiles.md).
 
-1. **Criar um perfil do Gestor de Tráfego:** atribua um nome exclusivo ao seu perfil do Gestor de Tráfego. Este nome de perfil de Olá faz parte do nome DNS Olá e age como um prefixo de etiqueta Olá do nome de domínio do Traffic Manager. nome de Olá / prefixo é adicionado too.trafficmanager.net toocreate uma etiqueta de DNS para o Gestor de tráfego. Olá captura de ecrã abaixo mostra o Gestor de tráfego de Olá prefixo DNS que está a ser definido como mysts e a etiqueta DNS resultante será mysts.trafficmanager.net. 
+1. **Criar um perfil do Gestor de Tráfego:** atribua um nome exclusivo ao seu perfil do Gestor de Tráfego. Este nome do perfil faz parte do nome DNS e funciona como um prefixo para a etiqueta de nome de domínio do Gestor de Tráfego. O nome/prefixo é adicionado à. trafficmanager.net para criar uma etiqueta de DNS para o Gestor de Tráfego. A captura de ecrã abaixo mostra o prefixo de DNS do Gestor de Tráfego que está a ser definido como mysts e a etiqueta de DNS resultante será mysts.trafficmanager.net. 
    
     ![Criar um perfil do Gestor de Tráfego](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/trafficmanager01.png)
 2. **Método de encaminhamento de tráfego:** existem três opções de encaminhamento disponíveis no Gestor de Tráfego:
@@ -63,50 +63,50 @@ Siga os passos de Olá abaixo toocreate um perfil do Gestor de tráfego. Para ob
    * Desempenho
    * Ponderada
      
-     **Desempenho** Olá recomenda infraestrutura do opção tooachieve extremamente reativo AD FS. No entanto, pode escolher o método de encaminhamento mais adequado para as suas necessidades de implementação. funcionalidade do Olá AD FS não é afetada pela opção de encaminhamento Olá selecionada. Veja o artigo [Métodos de encaminhamento de tráfego do Gestor de Tráfego](../traffic-manager/traffic-manager-routing-methods.md) para obter mais informações. Olá captura de ecrã de exemplo acima, pode ver Olá **desempenho** método selecionado.
-3. **Configurar pontos finais:** na página do Gestor de tráfego de Olá, clique em pontos finais e selecione Adicionar. Esta ação irá abrir uma adicionar ponto final página semelhante toohello captura de ecrã abaixo
+     **Desempenho** é a opção recomendada para obter uma infraestrutura do AD FS com elevada capacidade de resposta. No entanto, pode escolher o método de encaminhamento mais adequado para as suas necessidades de implementação. A funcionalidade do AD FS não é afetada pela opção de encaminhamento selecionada. Veja o artigo [Métodos de encaminhamento de tráfego do Gestor de Tráfego](../traffic-manager/traffic-manager-routing-methods.md) para obter mais informações. Na captura de ecrã de exemplo acima pode ver o método **Desempenho** selecionado.
+3. **Configurar pontos finais:** na página do Gestor de Tráfego, clique nos pontos finais e selecione Adicionar. Esta ação irá abrir uma página de ponto final Adicionar semelhante à captura de ecrã abaixo
    
    ![Configurar pontos finais](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/eastfsendpoint.png)
    
-   Entradas de diferentes Olá, siga orientação Olá abaixo:
+   Para as diferentes entradas, siga a orientação abaixo:
    
-   **Tipo:** selecione o ponto final do Azure como podemos apontar tooan endereço IP público do Azure.
+   **Tipo:** selecione o ponto final do Azure, porque vamos apontar para um endereço IP público do Azure.
    
-   **Nome:** criar um nome que pretende que o tooassociate com o ponto final de Olá. Isto não é o nome DNS Olá e não tem efeito em registos de DNS.
+   **Nome:** crie um nome que pretende associar ao ponto final. Isto não é o nome DNS e tem não qualquer efeito nos registos DNS.
    
-   **Tipo de recurso de destino:** endereço IP público Selecione como propriedade de toothis Olá value. 
+   **Tipo de recurso de destino:** selecione o endereço IP público como valor para esta propriedade. 
    
-   **Recurso de destino:** Isto irá dar-lhe uma opção toochoose das etiquetas DNS diferentes Olá que tem disponíveis na sua subscrição. Escolha Olá que etiqueta de DNS correspondente toohello ponto final que está a configurar.
+   **Recurso de destino:** isto irá fornecer-lhe uma opção para escolher a partir de etiquetas de DNS diferentes que tem ao seu dispor na sua subscrição. Escolha a etiqueta DNS correspondente para o ponto final que está a configurar.
    
-   Adicione o ponto final para cada região geográfica que pretende Olá Traffic Manager do Azure tooroute o tráfego.
-   Para obter mais informações e os passos detalhados sobre como tooadd / configurar pontos finais no Gestor de tráfego, consulte demasiado[adicionar, desativar, ativar ou eliminar pontos finais](../traffic-manager/traffic-manager-endpoints.md)
-4. **Configurar a sonda:** na página do Gestor de tráfego de Olá, clique em configuração. Na página de configuração de Olá, é necessário toochange Olá monitor definições tooprobe na porta 80 do HTTP e o caminho relativo /adfs/probe
+   Adicione um ponto final a cada região geográfica onde pretende que o Gestor de Tráfego do Azure encaminhe tráfego.
+   Para obter mais informações e passos detalhados sobre como adicionar/configurar pontos finais no Gestor de Tráfego, veja o artigo [Adicionar, desativar, ativar ou eliminar pontos finais](../traffic-manager/traffic-manager-endpoints.md)
+4. **Configurar pesquisa:** na página do Gestor de Tráfego, clique em Configuração. Na página de configuração, tem de alterar as definições do monitor para pesquisar na porta HTTP 80 e o caminho relativo /adfs/probe
    
     ![Configurar a sonda](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/mystsconfig.png) 
    
    > [!NOTE]
-   > **Certifique-se de que estado Olá de pontos finais de Olá ONLINE após a conclusão da configuração de Olá**. Se todos os pontos finais no estado 'degradado', o Gestor de tráfego do Azure executará um melhor tráfego de Olá de tooroute tentativa partindo do princípio de que o diagnóstico Olá está incorreto e todos os pontos finais estão acessíveis.
+   > **Certifique-se de que o estado dos pontos finais está ONLINE, assim que a configuração for concluída**. Se todos os pontos finais estiverem num estado «degradado», o Gestor de Tráfego do Azure fará uma tentativa de utilizações para encaminhar o tráfego, partindo do princípio de que o diagnóstico está incorreto e todos os pontos finais estão acessíveis.
    > 
    > 
-5. **A modificar registos DNS para o Gestor de tráfego do Azure:** o serviço de Federação deve ser um nome de DNS do Gestor de tráfego do Azure de toohello CNAME. Crie um CNAME no Olá registos DNS públicos para que, na verdade, quem está a tentar o serviço de Federação tooreach Olá atinge Olá Traffic Manager do Azure.
+5. **Modificar registos DNS para o Gestor de Tráfego do Azure:** o seu serviço de federação deve ser um CNAME para o nome DNS do Gestor de Tráfego do Azure. Crie um CNAME nos registos DNS públicos para que quem esteja a tentar contactar o serviço de federação consiga de fato ter acesso ao Gestor de Tráfego do Azure.
    
-    Por exemplo, serviço de Federação do toopoint Olá fs.fabidentity.com toohello Gestor de tráfego, terá de tooupdate sua toobe registos de recursos DNS Olá seguintes:
+    Por exemplo, para apontar o serviço de federação fs.fabidentity.com para o Gestor de Tráfego, terá de atualizar o seu registo de recursos DNS para ser o seguinte:
    
     <code>fs.fabidentity.com IN CNAME mysts.trafficmanager.net</code>
 
-## <a name="test-hello-routing-and-ad-fs-sign-in"></a>Testar Olá encaminhamento e inicie sessão do AD FS
+## <a name="test-the-routing-and-ad-fs-sign-in"></a>Testar o encaminhamento e início de sessão do AD FS
 ### <a name="routing-test"></a>Teste de encaminhamento
-Um teste muito básico para o encaminhamento de Olá seria tootry ping Olá Federação serviço nome DNS de uma máquina em cada região geográfica. Consoante o método de encaminhamento Olá escolhido, ponto final de Olá, na verdade, ping sobre será refletido na apresentação de ping de Olá. Por exemplo, se tiver selecionado o desempenho de Olá encaminhamento, em seguida, o ponto final de Olá mais próximo toohello região do cliente de Olá irá ser atingido. Segue-se instantâneo Olá dois pings a partir de dois computadores de cliente de região diferente, um EastAsia região e o outro nos EUA oeste. 
+Um teste muito básico para o encaminhamento é tentar fazer ping do nome DNS do serviço de federação a partir de uma máquina em cada região geográfica. Dependendo do método de encaminhamento escolhido, o ponto final que fizer ping será refletido no visor de ping. Por exemplo, se tiver selecionado o encaminhamento de desempenho, o ponto final mais próximo de uma região do cliente será acessível. Segue-se o instantâneo de dois pings provenientes de duas máquinas de cliente de regiões diferentes, um no Sudeste Asiático e outra em E.U.A. Oeste. 
 
 ![Teste de encaminhamento](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/pingtest.png)
 
 ### <a name="ad-fs-sign-in-test"></a>Teste de início de sessão do AD FS
-Olá tootest da forma mais fácil do AD FS é utilizar a página IdpInitiatedSignon.aspx de Olá. Na ordem toobe toodo capaz de que, é necessário tooenable Olá IdpInitiatedSignOn nas propriedades de Olá do AD FS. Siga os passos de Olá abaixo tooverify a configuração do AD FS
+A maneira mais fácil de testar o AD FS é através da página IdpInitiatedSignon.aspx. Para poder fazer isso, é obrigatório ativar o IdpInitiatedSignOn nas propriedades do AD FS. Siga os passos abaixo para verificar a sua configuração do AD FS
 
-1. Executar Olá cmdlet abaixo no servidor do Olá AD FS, com o PowerShell, tooset-tooenabled. 
+1. Execute o cmdlet abaixo no servidor AD FS com o PowerShell, para o definir como ativado. 
    Set-AdfsProperties -EnableIdPInitiatedSignonPage $true
 2. Em qualquer máquina externa, aceda a https://<yourfederationservicedns>/adfs/ls/IdpInitiatedSignon.aspx
-3. Deverá ver a página Olá do AD FS, conforme mostrado abaixo:
+3. Deverá ver a página do AD FS, conforme mostrado abaixo:
    
     ![Teste de ADFS - desafio de autenticação](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/adfstest1.png)
    

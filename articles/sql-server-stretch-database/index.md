@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure documentação de base de dados do SQL Server Stretch - tutoriais | Microsoft Docs"
-description: "Saiba como toouse dados amovíveis do SQL Server Stretch Database toomigrate em segurança tooAzure sem alterar consultas ou aplicações. Tutoriais e outra documentação."
+title: "Documentação do Azure SQL Server Stretch Database - Tutoriais | Microsoft Docs"
+description: "Saiba como utilizar a SQL Server Stretch Database para migrar dados de acesso esporádico em segurança para o Azure sem alterar consultas ou aplicações. Tutoriais e outra documentação."
 services: sql-server-stretch-database
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: 2b009d80224a62d940ec8b11de22ad8c0865d869
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: cbdd210f2fe46228daa8c138815826df2b3b0fd7
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 #<a name="sql-server-stretch-database-documentation"></a>Documentação do SQL Server Stretch Database
 
-Saiba como toouse do SQL Server Stretch de base de dados de dados amovíveis toomigrate transparente e segura toohello Azure na nuvem. Tutoriais e outras ajuda documentação que configurou disponibilidade rentável para bases de dados com raramente utilizado dados sem necessidade de alterações tooexisting consultas ou aplicações.
+Saiba como utilizar a SQL Server Stretch Database par migrar dados de acesso esporádico de forma transparente e segura para a cloud do Azure. Os tutoriais e a outra documentação ajudam-no a configurar uma disponibilidade económica para as bases de dados com dados que são utilizados muito poucas vezes sem necessitar de alterações a consultas ou aplicações existentes.
 
 
 <ul class="panelContent cardsFTitle">
@@ -89,7 +89,7 @@ Saiba como toouse do SQL Server Stretch de base de dados de dados amovíveis too
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Começar a utilizar o Assistente de base de dados do SQL Server Stretch Olá</h3>
+                        <h3>Introdução ao assistente do SQL Server Stretch Database</h3>
                     </div>
                 </div>
             </div>

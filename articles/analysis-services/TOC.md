@@ -2,20 +2,21 @@
 ## [O que é o Azure Analysis Services?](analysis-services-overview.md)
 ## [Origens de dados suportadas](analysis-services-datasource.md)
 ## [Autenticação e permissões de utilizador](analysis-services-manage-users.md)
-## [Ligar a origens de dados de tooon local](analysis-services-gateway.md)
+## [Ligar a origens de dados no local](analysis-services-gateway.md)
 ## [Nível de compatibilidade](analysis-services-compat-level.md)
 ## [Elevada disponibilidade](analysis-services-bcdr.md)
 
 # Introdução
 ## [Criar um servidor no portal do Azure](analysis-services-create-server.md)
-## [Criar um servidor com o PowerShell](analysis-services-create-powershell.md)
+## [Criar um servidor com o Azure PowerShell](analysis-services-create-powershell.md)
 ## [Implementar um modelo do Visual Studio](analysis-services-deploy.md)
 ## [Criar um modelo no portal do Azure (pré-visualização)](analysis-services-create-model-portal.md)
 
-# Como demasiado
+# Procedimentos 
 ## [Gerir um servidor](analysis-services-manage.md)
 ## [Gerir utilizadores da base de dados](analysis-services-database-users.md)
 ## [Gerir administradores de servidor](analysis-services-server-admins.md)
+## [Monitorizar as métricas do servidor](analysis-services-monitor.md)
 ## [Instalar e configurar um gateway de dados no local](analysis-services-gateway-install.md)
 ## [Obter bibliotecas de cliente](analysis-services-data-providers.md)
 ## [Backup e restauro](analysis-services-backup.md)
@@ -42,14 +43,14 @@
 ### [Lição suplementar - Hierarquias desalinhadas](tutorials/aas-supplemental-lesson-ragged-hierarchies.md)  
 
 # Referência
-## [PowerShell](analysis-services-powershell.md)
+## [Azure PowerShell](analysis-services-powershell.md)
 ## [REST](/rest/api/analysisservices)
 ## [DAX](https://msdn.microsoft.com/library/gg413422.aspx)
 ## [Power Query M](https://msdn.microsoft.com/library/mt211003.aspx)
 ## [Linguagem de Script de Modelo em Tabela (TMSL)](https://docs.microsoft.com/sql/analysis-services/tabular-model-scripting-language-tmsl-reference)
 
 # Recursos
-## [Exemplos de código do Analysis Services no GitHub](https://github.com/Microsoft/Analysis-Services)
+## [Amostras](analysis-services-samples.md)
 ## [Blogue da equipa do Analysis Services](https://blogs.msdn.microsoft.com/analysisservices/)
 ## [Fórum do Azure Analysis Services](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureAnalysisServices)
 ## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=intelligence-analytics)

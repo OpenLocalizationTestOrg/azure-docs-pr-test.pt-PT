@@ -1,44 +1,44 @@
-### <a name="grant-mobile-engagement-access-tooyour-gcm-api-key"></a>Conceda o Mobile Engagement acesso tooyour chave de API do GCM
-tooallow Mobile Engagement toosend as notificações push em seu nome, terá de toogrant aceder a tooyour chave de API. Isto é feito ao configurar e introduzir a chave no portal de Mobile Engagement Olá.
+### <a name="grant-mobile-engagement-access-to-your-gcm-api-key"></a>Conceder ao Mobile Engagement acesso à Chave de API do GCM
+Para permitir que o Mobile Engagement envie notificações push em seu nome, tem de lhe conceder acesso à sua Chave de API. Para tal, deve configurar e introduzir a sua chave no portal do Mobile Engagement.
 
-1. Do seu Portal clássico do Azure, certifique-se de que está na aplicação de Olá que estamos a utilizar para este projeto e, em seguida, clique em Olá **iniciar** botão na parte inferior de Olá:
+1. No Portal Clássico do Azure, verifique se está na aplicação que estamos a utilizar para este projeto e clique no botão **Iniciar** na parte inferior:
    
     ![](./media/mobile-engagement-android-send-push/engage-button.png)
-2. Em seguida, clique em Olá **definições** -> **Push nativo** secção tooenter a chave do GCM:
+2. Em seguida, clique na secção **Definições** -> **Push Nativo** para introduzir a Chave do GCM:
    
     ![](./media/mobile-engagement-android-send-push/engagement-portal.png)
-3. Clique em Olá **editar** ícone à frente do **chave de API** no Olá **definições de GCM** secção conforme mostrado abaixo:
+3. Clique no ícone **Editar** à frente da **Chave de API** na secção **Definições do GCM**, como mostrado abaixo:
    
     ![](./media/mobile-engagement-android-send-push/native-push-settings.png)
-4. No pop-up de Olá, cole Olá chave do servidor GCM que obteve anteriormente e, em seguida, clique em **Ok**.
+4. No pop-up, cole a Chave de Servidor do GCM que obteve anteriormente e clique em **OK**.
    
     ![](./media/mobile-engagement-android-send-push/api-key.png)
 
-## <a id="send"></a>Enviar uma aplicação de tooyour de notificação
-Iremos agora criar uma campanha de notificações push simples que envia uma aplicação de tooour de notificação push.
+## <a id="send"></a>Enviar uma notificação à aplicação
+Vamos agora criar uma campanha de notificações push simples para enviar uma notificação push à nossa aplicação.
 
-1. Navegue toohello **ALCANÇAR** separador no portal do Mobile Engagement.
-2. Clique em **novo anúncio** toocreate sua campanha de notificações push.
+1. Navegue até ao separador **ALCANCE** no portal do Mobile Engagement.
+2. Clique em **Novo anúncio** para criar a campanha de notificações push.
    
     ![](./media/mobile-engagement-android-send-push/new-announcement.png)
-3. Configure o primeiro campo de Olá da campanha com Olá os seguintes passos:
+3. Configure o primeiro campo da campanha com os seguintes passos:
    
     ![](./media/mobile-engagement-android-send-push/campaign-first-params.png)
    
     a. Dê um nome à campanha.
    
-    b. Selecione Olá **tipo de entrega** como *notificação do sistema -> simples*: Este é o tipo de notificação push Android simples do Olá que inclui um título e uma pequena linha de texto.
+    b. Selecione o **Tipo de entrega** como *Notificação do sistema -> Simples*: este é o tipo de notificação push Android simples que inclui um título e uma pequena linha de texto.
    
-    c. Selecione **hora de entrega** como *sempre* tooallow Olá aplicação tooreceive uma notificação se a aplicação Olá é iniciada ou não.
+    c. Selecione **Tempo de entrega** como *Em qualquer altura* para permitir que a aplicação receba uma notificação quer esteja ou não em execução.
    
-    d. No Olá de tipo de texto de notificação de Olá **título** que será em negrito no push Olá.
+    d. No tipo de texto da notificação, escreva o **Título** que aparecerá em negrito no push.
    
     e. Em seguida, escreva a **Mensagem**
-4. Desloque-se para baixo e, na Olá **conteúdo** secção, selecione **apenas notificação**.
+4. Desloque o ecrã para baixo e, na secção **Conteúdo**, selecione **Apenas notificação**.
    
     ![](./media/mobile-engagement-android-send-push/campaign-content.png)
-5. Terminar possíveis de campanha mais básica Olá definição. Agora, desloque para baixo novamente e clique em Olá **criar** botão toosave sua campanha.
-6. Último passo: clique em **ativar** tooactivate as notificações de push de toosend campanha.
+5. Acabou de configurar a campanha mais básica possível. Agora, desloque-se para baixo novamente e clique no botão **Criar** para guardar a sua campanha.
+6. Último passo: clique em **Ativar** para ativar a campanha para enviar notificações push.
    
     ![](./media/mobile-engagement-android-send-push/campaign-activate.png)
 

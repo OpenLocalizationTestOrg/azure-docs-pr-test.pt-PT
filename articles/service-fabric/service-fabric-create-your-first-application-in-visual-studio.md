@@ -1,5 +1,5 @@
 ---
-title: "aaaCreate um serviço fiável de Service Fabric do Azure com c#"
+title: Criar um Reliable Services do Azure Service Fabric com C#
 description: "Crie, implemente e depure uma aplicação Reliable Service compilada no Azure Service Fabric com o Visual Studio."
 services: service-fabric
 documentationcenter: .net
@@ -12,122 +12,122 @@ ms.devlang: dotNet
 ms.topic: hero-article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/28/2017
+ms.date: 10/04/2017
 ms.author: ryanwi
-ms.openlocfilehash: 740c866da6e639219b529fe92ed63cbeaa702a35
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: a4bada3c099e348e2aa188fe08a67ef170ad50ed
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="create-your-first-c-service-fabric-stateful-reliable-services-application"></a>Criar a sua primeira aplicação Reliable Services sem monitorização de estado do Service Fabric em C#
 
-Saiba como toodeploy sua primeira aplicação de Service Fabric para .NET no Windows em apenas alguns minutos. Quando tiver terminado, terá um cluster local em execução com uma aplicação do Reliable Services.
+Saiba como implementar a sua primeira aplicação do Service Fabric para .NET no Windows em poucos minutos. Quando tiver terminado, terá um cluster local em execução com uma aplicação do Reliable Services.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de começar, certifique-se de que [configurou o seu ambiente de desenvolvimento](service-fabric-get-started.md). Isto inclui a instalação Olá SDK de Service Fabric e Visual Studio 2017 ou 2015.
+Antes de começar, certifique-se de que [configurou o seu ambiente de desenvolvimento](service-fabric-get-started.md). Esta configuração inclui instalar o Service Fabric SDK e o Visual Studio 2017 ou 2015.
 
-## <a name="create-hello-application"></a>Criar aplicação Olá
+## <a name="create-the-application"></a>Criar a aplicação
 
 Inicie o Visual Studio como **administrador**.
 
 Criar um projeto com `CTRL`+`SHIFT`+`N`
 
-No Olá **novo projeto** caixa de diálogo, escolha **nuvem > aplicação de Service Fabric**.
+Na caixa de diálogo **Novo Projeto**, escolha **Cloud > Aplicação do Service Fabric**.
 
-Nome da aplicação Olá **MinhaAplicação** e prima **OK**.
+Dê o nome **MyApplication** à aplicação e prima **OK**.
 
    
 ![Caixa de diálogo de novo projeto no Visual Studio][1]
 
-Pode criar qualquer tipo de aplicação de Service Fabric da caixa de diálogo seguinte Olá. Neste Início Rápido, escolha **Serviço Com Estado** .
+Pode criar qualquer tipo de aplicação do Service Fabric na caixa de diálogo seguinte. Neste Início Rápido, escolha **Serviço Com Estado** .
 
-Nome do serviço de Olá **MyStatefulService** e prima **OK**.
+Dê o nome **MyStatefulService** ao serviço e prima **OK**.
 
 ![Caixa de diálogo novo serviço no Visual Studio][2]
 
 
-Visual Studio cria o projeto de aplicação Olá e projeto de serviço com estado Olá e apresenta-os no Explorador de soluções.
+O Visual Studio cria o projeto de aplicação e o projeto de serviço com estado e apresenta-os no Explorador de Soluções.
 
 ![Explorador de Soluções a seguir a criação da aplicação com o serviço com estado][3]
 
-projeto de aplicação Olá (**MinhaAplicação**) não contém qualquer código diretamente. Em vez disso, referencia um conjunto de projetos de serviço. Além disso, contém outros três tipos de conteúdo:
+O projeto de aplicação (**MyApplication**) não contém nenhum código diretamente. Em vez disso, referencia um conjunto de projetos de serviço. Além disso, contém outros três tipos de conteúdo:
 
 * **Perfis de publicação**  
-Perfis para a implementação de ambientes de toodifferent.
+Perfis para implementar em diferentes ambientes.
 
 * **Scripts**  
 Script do PowerShell para implementar/atualizar a sua aplicação.
 
 * **Definição da aplicação**  
-Inclui o ficheiro de ApplicationManifest.xml Olá em *ApplicationPackageRoot* que descreve a composição da sua aplicação. Os ficheiros de parâmetro de aplicação associada são em *ApplicationParameters*, que pode ser utilizado toospecify parâmetros específico do ambiente. Perfil de publicação Visual seleciona de Studio associado a um ficheiro de parâmetros de aplicação que é especificado no Olá durante ambiente específico de tooa de implementação.
+Inclui o ficheiro ApplicationManifest.xml em *ApplicationPackageRoot*, que descreve a composição da sua aplicação. Os ficheiros de parâmetros da aplicação associados estão localizados em *ApplicationParameters*, que podem ser utilizados para especificar parâmetros específicos para o ambiente. O Visual Studio seleciona um ficheiro de parâmetros de aplicação que é especificado no perfil de publicação associado durante a implementação num ambiente específico.
     
-Para obter uma descrição geral do conteúdo de Olá do projeto de serviço Olá, consulte [introdução a Reliable Services](service-fabric-reliable-services-quick-start.md).
+Para obter uma descrição geral do conteúdo do projeto de serviço, consulte o artigo [Introdução a Reliable Services](service-fabric-reliable-services-quick-start.md).
 
-## <a name="deploy-and-debug-hello-application"></a>Implementar e depurar a aplicação Olá
+## <a name="deploy-and-debug-the-application"></a>Implemente a aplicação e depure-a
 
 Agora que tem uma aplicação, execute-a.
 
-No Visual Studio, prima `F5` aplicação de Olá toodeploy de depuração.
+No Visual Studio, prima `F5` para implementar a aplicação, com o fim de depurá-la.
 
 >[!NOTE]
->Olá pela primeira vez, executar e implementar a aplicação de Olá localmente, Visual Studio cria um cluster local para a depuração. Esta operação pode demorar algum tempo. o estado de criação do cluster Olá é apresentado na janela de saída do Visual Studio Olá.
+>Da primeira vez que executar e implementar a aplicação localmente, o Visual Studio cria um cluster local para depuração. Esta operação pode demorar algum tempo. O estado da criação do cluster aparece na janela de saída do Visual Studio.
 
-Quando Olá cluster estiver pronto, receberá uma notificação de Olá local cluster sistema tabuleiro a aplicação do manager incluída com Olá SDK.
+Quando o cluster estiver pronto, recebe uma notificação da aplicação do gestor de tabuleiro de sistema do cluster local que está incluído no SDK.
    
 ![Notificação do tabuleiro de sistema do cluster local][4]
 
-Uma vez iniciado o aplicação Olá, Visual Studio automaticamente aparece Olá **Visualizador de eventos de diagnóstico**, onde pode ver os resultados de rastreio do seu serviços.
+Uma vez iniciada a aplicação, o Visual Studio apresentará automaticamente o **Visualizador de Eventos de Diagnóstico**, onde pode ver os resultados de rastreio dos seus serviços.
    
 ![Visualizador de eventos de diagnóstico][5]
 
-Olá modelo de serviço com estado utilizámos simplesmente mostra um valor de contador incrementando no Olá `RunAsync` método **MyStatefulService.cs**.
+O modelo de serviço com estado que utilizámos mostra simplesmente um valor de contador que se incrementa no método `RunAsync` de **MyStatefulService.cs**.
 
-Expanda um dos Olá eventos toosee mais detalhes, incluindo o nó de olá onde código Olá está em execução. Neste caso, é \_Nó\_, embora possa ser diferente no seu computador.
+Expanda um dos eventos para ver mais detalhes, incluindo o nó em que se executa o código. Neste caso, é \_Nó\_, embora possa ser diferente no seu computador.
    
 ![Detalhe do visualizador de eventos de diagnóstico][6]
 
-cluster local Olá contém cinco nós alojados num único computador. Num ambiente de produção, cada nó é alojada num computador físico ou virtual diferente. perda de Olá toosimulate de uma máquina ao exercising Olá Visual Studio debugger em Olá mesmo tempo, desativemos um de nós de Olá no cluster local Olá.
+O cluster local contém cinco nós que estão alojados num único computador. Num ambiente de produção, cada nó é alojada num computador físico ou virtual diferente. Para simular a perda de uma máquina enquanto executamos o depurador do Visual Studio ao mesmo tempo, vamos desativar um dos nós no cluster local.
 
-No Olá **Explorador de soluções** janela, abra **MyStatefulService.cs**. 
+Na janela **Explorador de Soluções**, abra **MyStatefulService.cs**. 
 
-Determinar Olá `RunAsync` método e o conjunto de um ponto de interrupção na linha de primeiro Olá do método Olá.
+Localize o método `RunAsync` e defina um ponto de interrupção na primeira linha do método.
 
 ![Método RunAsync com ponto de interrupção do serviço com estado ][7]
 
-Iniciar Olá **Service Fabric Explorer** ferramenta clicando no Olá **Gestor de clusters locais** aplicação de tabuleiro de sistema e escolha **gerir Cluster Local**.
+Inicie a ferramenta **Service Fabric Explorer**, ao clicar com o botão direito do rato na aplicação de tabuleiro do sistema do **Gestor de Clusters Locais** e escolha **Gerir Cluster Local**.
 
-![Iniciar o Explorador de recursos de infraestrutura de serviço de Olá Gestor de clusters locais][systray-launch-sfx]
+![Iniciar o Service Fabric Explorer a partir do Gestor de Clusters Locais][systray-launch-sfx]
 
-O [**Service Fabric Explorer**](service-fabric-visualizing-your-cluster.md) oferece uma representação visual de um cluster. Inclui o conjunto de Olá de aplicações implementadas tooit e conjunto de Olá nós físicos que o constituem.
+O [**Service Fabric Explorer**](service-fabric-visualizing-your-cluster.md) oferece uma representação visual de um cluster. Inclui o conjunto de aplicações implementadas no mesmo e o conjunto de nós físicos que o constituem.
 
-No painel esquerdo Olá, expanda **Cluster > nós** e localizar Olá nó onde o código está em execução.
+No painel da esquerda, expanda **Cluster > Nós** e localizar o nó que está a executar o seu código.
 
-Clique em **ações > desativar (reiniciar)** toosimulate um reinício do computador.
+Clique em **Ações > Desativar (Reiniciar)** para simular um reinício do computador.
 
 ![Parar um nó no Service Fabric Explorer][sfx-stop-node]
 
-Momentaneamente, deverá ver o ponto de interrupção atingido no Visual Studio, como o cálculo de Olá que estava a fazer num nó totalmente integrada a ativação pós-falha tooanother.
+Momentaneamente, deverá ver o ponto de interrupção atingido no Visual Studio, dado que a computação que estava a fazer diretamente num nó falha no outro.
 
 
-Em seguida, devolver toohello Visualizador de eventos de diagnóstico e observe mensagens hello. contador Olá tem continuou incrementando, apesar de eventos de Olá, na verdade, provenientes de um nó diferente.
+Em seguida, regresse ao Visualizador de Eventos de Diagnóstico e observe as mensagens. O contador não deixa de aumentar, apesar de os eventos, na verdade, estarem a vir por um nó diferente.
 
 ![Visualizador de eventos de diagnóstico após falha][diagnostic-events-viewer-detail-post-failover]
 
-## <a name="cleaning-up-hello-local-cluster-optional"></a>A limpar cluster local Olá (opcional)
+## <a name="cleaning-up-the-local-cluster-optional"></a>Limpar o cluster local (opcional)
 
-Lembre-se de que este cluster local é real. Parar o depurador Olá remove a instância da aplicação e tipo de aplicação Olá anula o registo. No entanto, o cluster de Olá continua toorun em segundo plano de Olá. Quando tiver um cluster local do toostop pronto Olá, existem algumas opções.
+Lembre-se de que este cluster local é real. Parar o depurador remove a instância da aplicação e anula o registo do tipo de aplicação. Contudo, o cluster continua a ser executado em segundo plano. Quando estiver pronto para parar o cluster local, tem duas opções à sua disposição.
 
 ### <a name="keep-application-and-trace-data"></a>Manter os dados da aplicação e de rastreio
 
-Encerrar o cluster de Olá clicando no Olá **Gestor de clusters locais** aplicação de tabuleiro de sistema e, em seguida, escolha **parar Cluster Local**.
+Encerre o cluster, ao clicar com o botão direito do rato na aplicação de tabuleiro do sistema **Gestor de Clusters Locais** e escolha **Parar Cluster Local**.
 
-### <a name="delete-hello-cluster-and-all-data"></a>Eliminar cluster Olá e todos os dados
+### <a name="delete-the-cluster-and-all-data"></a>Eliminar o cluster e todos os dados
 
-Remover cluster Olá clicando no Olá **Gestor de clusters locais** aplicação de tabuleiro de sistema e, em seguida, escolha **remover Cluster Local**. 
+Remova o cluster, ao clicar com o botão direito do rato na aplicação de tabuleiro do sistema **Gestor de Clusters Locais** e escolha **Remover Cluster Local**. 
 
-Se escolher esta opção, o Visual Studio irá Reimplementar Olá de cluster Olá próxima vez que a execução Olá aplicação. Selecione esta opção se não tenciona cluster local do toouse Olá durante algum tempo ou se precisar de tooreclaim recursos.
+Se escolher esta opção, o Visual Studio irá reimplementar o cluster da próxima vez que a aplicação for executada. Escolha esta opção se não pretender utilizar o cluster local durante algum tempo ou se precisar de recuperar recursos.
 
 ## <a name="next-steps"></a>Passos seguintes
 Leia mais sobre o [Reliable Services](service-fabric-reliable-services-introduction.md).

@@ -1,5 +1,5 @@
 ---
-title: "aaaConnect tooAzure do armazém de dados do SQL Server - VSTS | Microsoft Docs"
+title: Ligar ao Azure SQL Data Warehouse - VSTS| Microsoft Docs
 description: Consultar o SQL Data Warehouse com o Visual Studio.
 services: sql-data-warehouse
 documentationcenter: NA
@@ -15,13 +15,13 @@ ms.workload: data-services
 ms.custom: connect
 ms.date: 10/31/2016
 ms.author: anvang;barbkess
-ms.openlocfilehash: 55eef4dff3e0647be5a735295bc89b43eb456079
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 1e44c6c3c47034a892753c69c5ef22a5eac18c0d
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="connect-toosql-data-warehouse-with-visual-studio-and-ssdt"></a>Ligar tooSQL do armazém de dados com o Visual Studio e SSDT
+# <a name="connect-to-sql-data-warehouse-with-visual-studio-and-ssdt"></a>Ligar ao SQL Data Warehouse com o Visual Studio e o SSDT
 > [!div class="op_single_selector"]
 > * [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md)
 > * [Azure Machine Learning](sql-data-warehouse-get-started-analyze-with-azure-machine-learning.md)
@@ -31,65 +31,65 @@ ms.lasthandoff: 10/06/2017
 > 
 > 
 
-Utilize o Visual Studio tooquery Azure SQL Data Warehouse em apenas alguns minutos. Este método utiliza a extensão do SQL Server Data Tools (SSDT) Olá no Visual Studio. 
+Utilize o Visual Studio para consultar o Azure SQL Data Warehouse em apenas alguns minutos. Este método utiliza a extensão SQL Server Data Tools (SSDT) no Visual Studio. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
-toouse neste tutorial, precisa de:
+Para utilizar este tutorial, precisa do seguinte:
 
-* Um SQL Data Warehouse existente. toocreate um, consulte [criar um SQL Data Warehouse][Create a SQL Data Warehouse].
+* Um SQL Data Warehouse existente. Para criar um, veja [Create a SQL Data Warehouse][Create a SQL Data Warehouse] (Criar um armazém do SQL Data Warehouse).
 * SSDT para Visual Studio. Se tiver o Visual Studio, provavelmente já os tem. Para obter instruções e opções de instalação, veja [Installing Visual Studio and SSDT][Installing Visual Studio and SSDT] (Instalar o Visual Studio e o SSDT).
-* Olá nome de servidor SQL completamente qualificado. toofind esta, consulte [ligar tooSQL do armazém de dados][Connect tooSQL Data Warehouse].
+* O nome de servidor SQL completamente qualificado. Para o descobrir, veja [Ligar ao SQL Data Warehouse][Connect to SQL Data Warehouse].
 
-## <a name="1-connect-tooyour-sql-data-warehouse"></a>1. Ligar tooyour SQL Data Warehouse
+## <a name="1-connect-to-your-sql-data-warehouse"></a>1. Ligar ao seu SQL Data Warehouse
 1. Abra o Visual Studio 2013 ou 2015.
-2. Abra o SQL Server Object Explorer. toodo este, selecione **vista** > **SQL Server Object Explorer**.
+2. Abra o SQL Server Object Explorer. Para tal, selecione **Vista** > **SQL Server Object Explorer**.
    
     ![SQL Server Object Explorer][1]
-3. Clique em Olá **adicionar SQL Server** ícone.
+3. Clique no ícone **Adicionar SQL Server**.
    
     ![Adicionar SQL Server][2]
-4. Preencha os campos de Olá na janela de tooServer Olá ligar.
+4. Preencha os campos na janela Ligar ao Servidor.
    
-    ![Ligar tooServer][3]
+    ![Ligar ao Servidor][3]
    
-   * **Nome do servidor**. Introduza Olá **nome do servidor** que identificou anteriormente.
+   * **Nome do servidor**. Introduza o **nome do servidor** que identificou anteriormente.
    * **Autenticação**. Selecione **Autenticação do SQL Server** ou **Autenticação Integrada do Active Directory**.
    * **Nome de Utilizador** e **Palavra-passe**. Introduza o nome de utilizador e a palavra-passe, se a Autenticação do SQL Server tiver sido selecionada acima.
    * Clique em **Ligar**.
-5. tooexplore, expanda o servidor de SQL do Azure. Pode ver as bases de dados de Olá associadas ao servidor de Olá. Expanda AdventureWorksDW tabelas de Olá toosee na sua base de dados de exemplo.
+5. Para explorar, expanda o servidor SQL do Azure. Pode ver as bases de dados associadas ao servidor. Expanda AdventureWorksDW para ver as tabelas na sua base de dados de exemplo.
    
     ![Explorar AdventureWorksDW][4]
 
 ## <a name="2-run-a-sample-query"></a>2. Executar uma consulta de exemplo
-Agora que uma ligação foi estabelecida tooyour base de dados, vamos escrever uma consulta.
+Agora que foi estabelecida uma ligação à base de dados, vamos escrever uma consulta.
 
 1. Clique com o botão direito do rato na base de dados no SQL Server Object Explorer.
 2. Selecione **Nova Consulta**. É aberta uma nova janela de consulta.
    
     ![Nova consulta][5]
-3. Copie esta consulta TSQL para a janela de consulta Olá:
+3. Copie esta consulta TSQL para a janela de consulta:
    
     ```sql
     SELECT COUNT(*) FROM dbo.FactInternetSales;
     ```
-4. Execute consulta Olá. toodo, clique seta de Olá verde ou utilize Olá seguir atalho: `CTRL` + `SHIFT` + `E`.
+4. Execute a consulta. Para tal, clique na seta verde ou utilize o atalho seguinte: `CTRL`+`SHIFT`+`E`.
    
     ![Executar consulta][6]
-5. Observe os resultados da consulta Olá. Neste exemplo, a tabela do Olá FactInternetSales tem 60398 linhas.
+5. Veja os resultados da consulta. Neste exemplo, a tabela FactInternetSales tem 60398 linhas.
    
     ![Resultados da consulta][7]
 
 ## <a name="next-steps"></a>Passos seguintes
-Agora que pode ligar e consultar, experimente [visualizar Olá dados com o PowerBI][visualizing hello data with PowerBI].
+Agora que pode ligar e fazer consultas, experimente [visualizar os dados com o PowerBI][visualizing the data with PowerBI].
 
-tooconfigure o ambiente para a autenticação do Azure Active Directory, consulte [autenticar tooSQL do armazém de dados][Authenticate tooSQL Data Warehouse].
+Para configurar o seu ambiente para a autenticação do Azure Active Directory, veja [Authenticate to SQL Data Warehouse][Authenticate to SQL Data Warehouse] (Autenticação no SQL Data Warehouse).
 
 <!--Arcticles-->
-[Connect tooSQL Data Warehouse]: sql-data-warehouse-connect-overview.md
+[Connect to SQL Data Warehouse]: sql-data-warehouse-connect-overview.md
 [Create a SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
 [Installing Visual Studio and SSDT]: sql-data-warehouse-install-visual-studio.md
-[Authenticate tooSQL Data Warehouse]: sql-data-warehouse-authentication.md
-[visualizing hello data with PowerBI]: sql-data-warehouse-get-started-visualize-with-power-bi.md  
+[Authenticate to SQL Data Warehouse]: sql-data-warehouse-authentication.md
+[visualizing the data with PowerBI]: sql-data-warehouse-get-started-visualize-with-power-bi.md  
 
 <!--Other-->
 [Azure portal]: https://portal.azure.com

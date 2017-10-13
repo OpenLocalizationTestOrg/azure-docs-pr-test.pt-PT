@@ -1,9 +1,9 @@
-1. No portal de Olá, navegue até toohello de rede virtual para o qual pretende toocreate um gateway de rede virtual.
-2. No Olá **definições** secção da sua página de VNet e clique em **sub-redes** página do tooexpand Olá sub-redes.
-3. No Olá **sub-redes** página, clique em **+ sub-rede do Gateway** em Olá de tooopen superior Olá **adicionar sub-rede** página.
+1. No portal, navegue para a rede virtual para a qual pretende criar um gateway de rede virtual.
+2. Na secção **Definições** da página da VNet, clique em **Sub-redes** para expandir a página Sub-redes.
+3. Na página **Sub-redes**, clique em **+Sub-rede do gateway** na parte superior para abrir a página **Adicionar sub-rede**.
 
-  ![Adicionar sub-rede do gateway Olá](./media/vpn-gateway-add-gwsubnet-s2s-rm-portal-include/add-gw-subnet.png "adicionar sub-rede do gateway Olá")
-4. Olá **nome** para a sub-rede é automaticamente preenchida com Olá valor "GatewaySubnet". Olá GatewaySubnet valor necessário para a sub-rede de Olá toorecognize do Azure como a sub-rede do gateway Olá. Ajustar Olá preenchida automaticamente **intervalo de endereços** valores toomatch os requisitos de configuração.
+  ![Add the gateway subnet](./media/vpn-gateway-add-gwsubnet-s2s-rm-portal-include/add-gw-subnet.png "Add the gateway subnet")
+4. O **Nome** da sub-rede é preenchido automaticamente com o valor "GatewaySubnet". O valor de GatewaySubnet é obrigatório para que o Azure reconheça a sub-rede como a sub-rede do gateway. Ajuste os valores de **Intervalo de endereços** de preenchimento automático de modo a corresponder aos seus requisitos de configuração.
 
-  ![Adicionar sub-rede do gateway Olá](./media/vpn-gateway-add-gwsubnet-s2s-rm-portal-include/gwsubnetip.png "adicionar sub-rede do gateway Olá")
-5. toocreate Olá sub-rede, clique em **OK** em Olá parte inferior da página Olá.
+  ![Adicionar a subrede do gateway](./media/vpn-gateway-add-gwsubnet-s2s-rm-portal-include/gwsubnetip.png "Adicionar a subrede do gateway")
+5. Para criara sub-rede, clique em **OK** na parte inferior da página.

@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure Logic Apps documentação - tutoriais, referência da API | Microsoft Docs"
-description: "Saiba como toodevelop as logic apps que automatizar e simplificam fluxos de trabalho do negócio entre no local e Olá na nuvem. Tutoriais, modelos e referências de API."
+title: "Documentação do Azure Logic Apps - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como desenvolver aplicações lógicas que automatizam e simplificam fluxos de trabalho de negócio entre o local e a cloud. Tutoriais, modelos e referências de API."
 services: logic-apps
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: 5cc3a730b1b6abcb3ec0132f6e8ebf2e54775836
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: ff3f9ba6c225294e7570c5204701dd2f6b927318
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="logic-apps-documentation"></a>Documentação do Logic Apps
 
-Saiba como toodevelop Logic Apps que simplificar e integrar fluxos de trabalho dimensionáveis no Olá na nuvem. Tutoriais, modelos e API referencia ajuda estruturar e implementar os fluxos de trabalho empresarial automático entre no local e Olá na nuvem.
+Saiba como desenvolver Aplicações Lógicas que simplificam e integram fluxos de trabalho dimensionáveis na cloud. Os tutoriais, os modelos e as referências de API ajudam a conceber e a implementar fluxos de trabalho de negócios automatizados entre o local e a cloud.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -106,7 +106,7 @@ Saiba como toodevelop Logic Apps que simplificar e integrar fluxos de trabalho d
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Introdução à criação de um toouse API personalizada com as Logic Apps</h3>
+                        <h3>Introdução à criação de uma API personalizada para utilizar com o Logic Apps</h3>
                     </div>
                 </div>
             </div>

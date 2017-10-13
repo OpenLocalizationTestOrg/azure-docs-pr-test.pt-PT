@@ -7,15 +7,15 @@
 > 
 
 ## <a name="introduction"></a>Introdução
-O IoT Hub do Azure é um serviço completamente gerido que permite comunicações fiáveis e bidirecionais entre milhões de dispositivos Internet das Coisas (IoT) e uma solução de back-end. Um dos maiores desafios de Olá projetos IoT é como tooreliably e ligar dispositivos toohello solução de back-end de forma segura. tooaddress este desafio, o IoT Hub:
+O IoT Hub do Azure é um serviço completamente gerido que permite comunicações fiáveis e bidirecionais entre milhões de dispositivos Internet das Coisas (IoT) e uma solução de back-end. Um dos maiores desafios de projetos IoT consiste na ligação segura e fiável de dispositivos à solução de back-end. Para abordar este desafio, o IoT Hub:
 
 * Oferece um serviço de mensagens de hiper escala fiável dispositivo para nuvem e nuvem para dispositivo.
 * Tal permite realizar comunicações seguras utilizando credenciais de segurança por dispositivo e controlo de acesso.
-* Inclui bibliotecas de dispositivo para idiomas mais populares Olá e plataformas.
+* Inclui bibliotecas de dispositivo para os idiomas e plataformas mais populares.
 
 Este tutorial mostrar-lhe como:
 
-* Utilize Olá toocreate do portal do Azure, um IoT hub.
+* Utilizar o Portal do Azure para criar um IoT Hub.
 * Criar uma identidade de dispositivo no seu IoT Hub.
-* Crie uma aplicação de dispositivo simulado que envia telemetria tooyour solução de back-end.
+* Criar uma aplicação de dispositivo simulado que envia telemetria à solução back-end.
 

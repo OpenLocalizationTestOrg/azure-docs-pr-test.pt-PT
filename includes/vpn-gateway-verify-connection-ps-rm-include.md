@@ -1,11 +1,11 @@
-Pode verificar se a ligação teve êxito com o cmdlet Olá 'Get-AzureRmVirtualNetworkGatewayConnection', com ou sem '-Debug'. 
+Pode verificar se a ligação teve êxito com o cmdlet "Get-AzureRmVirtualNetworkGatewayConnection", com ou sem "-Debug". 
 
-1. Olá utilize seguinte o exemplo de cmdlet, a configuração Olá valores toomatch os seus próprios. Se lhe for pedido, selecione "A" em ordem toorun 'Tudo'. Exemplo de Olá, '-Name' refere-se toohello nome da ligação de Olá que pretende que o tootest.
+1. Utilize o seguinte exemplo de cmdlet, configurando os valores para corresponder aos seus. Se lhe for pedido, selecione "A" para executar "Todos". No exemplo, '--name' refere-se ao nome da ligação que pretende testar.
 
   ```powershell
   Get-AzureRmVirtualNetworkGatewayConnection -Name MyGWConnection -ResourceGroupName MyRG
   ```
-2. Após concluir Olá cmdlet, veja os valores de Olá. Exemplo de Olá abaixo, o estado da ligação Olá mostra como 'Ligado' e pode ver bytes de entrada e saída.
+2. Quando o cmdlet terminar, veja os valores. No exemplo abaixo, o estado da ligação é apresentado como "Ligado" e pode ver bytes de entrada e de saída.
    
   ```
   "connectionStatus": "Connected",

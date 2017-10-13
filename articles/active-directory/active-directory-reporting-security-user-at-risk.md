@@ -1,6 +1,6 @@
 ---
-title: "aaaUsers sinalizados para o relatório de segurança de risco no portal do Azure Active Directory Olá | Microsoft Docs"
-description: "Saiba mais sobre os utilizadores Olá sinalizados para o relatório de segurança de risco no portal do Azure Active Directory Olá"
+title: "Utilizadores sinalizados no relatório de segurança de risco no portal do Azure Active Directory | Microsoft Docs"
+description: "Saiba mais sobre os utilizadores sinalizados no relatório de segurança de risco no portal do Azure Active Directory"
 services: active-directory
 author: MarkusVi
 manager: femila
@@ -13,59 +13,59 @@ ms.workload: identity
 ms.date: 08/24/2017
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 5077cd61d6119745a85ed712623904633a151331
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 04f15384a7cd0fa03300acdf159d371569ecf9fc
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="users-flagged-for-risk-security-report-in-hello-azure-active-directory-portal"></a>Utilizadores sinalizados para o relatório de segurança de risco no portal do Azure Active Directory Olá
+# <a name="users-flagged-for-risk-security-report-in-the-azure-active-directory-portal"></a>Utilizadores sinalizados no relatório de segurança de risco no portal do Azure Active Directory
 
-Com os relatórios de segurança de Olá no Olá Azure Active Directory (Azure AD), pode obter informações acerca da probabilidade Olá de contas de utilizador comprometidas no seu ambiente. 
+Com os relatórios de segurança no Azure Active Directory (Azure AD), pode obter informações sobre a probabilidade de contas de utilizador comprometidas no seu ambiente. 
 
-Azure Active Directory Deteta suspeitas ações que estão relacionados tooyour contas de utilizador. Para cada ação detetada, é criado um registo denominado *evento de risco*. Para obter mais informações, consulte [Eventos de risco do Azure Active Directory](active-directory-identity-protection-risk-events.md). 
+O Azure Active Directory deteta as ações suspeitas relacionadas com as suas contas de utilizador. Para cada ação detetada, é criado um registo denominado *evento de risco*. Para obter mais informações, consulte [Eventos de risco do Azure Active Directory](active-directory-identity-protection-risk-events.md). 
 
-Olá detetou eventos de risco são toocalculate utilizado:
+Os eventos de risco detetados são utilizados para calcular:
 
-- **Inícios de sessão arriscados** -um risco início de sessão é um indicador para uma tentativa de início de sessão que poderão ter sido executada por alguém que não é proprietário legítimos Olá uma conta de utilizador. Para obter mais informações, veja [Inícios de sessão arriscados](active-directory-identityprotection.md#risky-sign-ins). 
+- **Inícios de sessão de risco** – Um início de sessão de risco é um indicador de uma tentativa de início de sessão que pode ter sido efetuada por alguém que não é o proprietário legítimo de uma conta de utilizador. Para obter mais informações, veja [Inícios de sessão arriscados](active-directory-identityprotection.md#risky-sign-ins). 
 
 - **Utilizadores sinalizados para risco** – Um utilizador de risco é um indicador de uma conta de utilizador que pode ter sido comprometida. Para obter mais informações, veja [Utilizadores sinalizados para risco](active-directory-identityprotection.md#users-flagged-for-risk).  
 
-Olá portal do Azure, pode encontrar os relatórios de segurança de Olá no Olá **do Azure Active Directory** painel no Olá **segurança** secção.  
+No portal do Azure, pode encontrar os relatórios de segurança no painel do **Azure Active Directory**, na secção **Segurança**.  
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/10.png)
 
 
 
-## <a name="what-azure-ad-license-do-you-need-tooaccess-a-security-report"></a>As licenças do Azure AD tem tooaccess um relatório de segurança?  
+## <a name="what-azure-ad-license-do-you-need-to-access-a-security-report"></a>De que licença do Azure AD precisa para aceder a um relatório de segurança?  
 
 Todas as edições do Azure Active Directory disponibilizam os relatórios de utilizadores sinalizados para risco.  
-No entanto, o nível de Olá de granularidade do relatório varia entre edições Olá: 
+No entanto, o nível de granularidade dos relatórios varia entre as edições: 
 
-- No Olá **edições gratuito do Azure Active Directory e Basic**, já a obter uma lista de utilizadores sinalizados para risco. 
+- Nas **edições Gratuita e Básica do Azure Active Directory**, já tem disponível uma lista dos utilizadores sinalizados para risco. 
 
-- Olá **do Azure Active Directory Premium 1** edição expande este modelo, permitindo também tooexamine algumas das Olá subjacente eventos de risco que foram detetados para cada relatório. 
+- A edição **Azure Active Directory Premium 1** expande este modelo, permitindo-lhe também examinar alguns dos eventos de risco subjacentes que foram detetados em cada relatório. 
 
-- Olá **do Azure Active Directory Premium 2** edição fornece-lhe Olá informações mais detalhadas sobre todos os eventos de risco subjacente e permite-lhe tooconfigure as políticas de segurança que respondam automaticamente tooconfigured risco níveis.
+- A edição **do Azure Active Directory Premium 2** proporciona-lhe as informações mais detalhadas sobre todos os eventos de risco subjacentes e permite-lhe configurar políticas de segurança que respondam automaticamente aos níveis de risco configurados.
 
 
 
 ## <a name="azure-active-directory-free-and-basic-edition"></a>Edição gratuita e básica do Azure Active Directory
 
-os utilizadores Olá sinalizados para o relatório de risco nas edições de livres e básicos do Azure Active Directory de Olá fornece uma lista de contas de utilizador que poderá ter sido comprometida. 
+Os utilizadores sinalizados no relatório de risco nas edições gratuita e básica do Azure Active Directory fornecem uma lista de contas de utilizador que podem ter sido comprometidas. 
 
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/03.png)
 
-Seleção de um utilizador abre o painel de dados de utilizador relacionadas Olá.
-Para os utilizadores que estão em risco, pode rever o histórico de início de sessão do utilizador Olá e repor a palavra-passe de Olá, se necessário.
+Selecionar um utilizador abre o painel de dados do utilizador relacionado.
+Para os utilizadores que estão em risco, pode rever o histórico de início de sessão do utilizador e repor a palavra-passe, se necessário.
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/46.png)
 
 
 Esta caixa de diálogo disponibiliza uma opção para:
 
-- Transferir Olá relatório
+- Transferir o relatório
 
 - Procurar utilizadores
 
@@ -74,34 +74,34 @@ Esta caixa de diálogo disponibiliza uma opção para:
 
 ## <a name="azure-active-directory-premium-editions"></a>Edições premium do Azure Active Directory
 
-os utilizadores Olá sinalizados para o relatório de risco nas edições de premium do Azure Active Directory Olá fornece-lhe:
+Os utilizadores sinalizados no relatório de risco nas edições premium do Azure Active Directory fornecem-lhe:
 
 - Uma [lista de contas de utilizador](active-directory-identityprotection.md#users-flagged-for-risk) que poderão ter sido comprometidas 
 
-- Agregar informações sobre Olá [tipos de eventos de risco](active-directory-identity-protection-risk-events.md) que foram detetadas
+- Informações adicionais sobre os [tipos de eventos de risco](active-directory-identity-protection-risk-events.md) que foram detetados
 
-- Um relatório de Olá toodownload opção
+- Uma opção para transferir o relatório
 
-- Uma opção tooconfigure um [política de remediação de risco do utilizador](active-directory-identityprotection.md#user-risk-security-policy)  
+- Uma opção para configurar uma [política de remediação de risco do utilizador](active-directory-identityprotection.md#user-risk-security-policy)  
 
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/71.png)
 
 Ao selecionar um utilizador, obtém uma vista de relatório detalhado para este utilizador que lhe permite:
 
-- Abrir Olá que ver todos os inícios de sessão
+- Abrir a vista Todos os inícios de sessão
 
-- Repor palavra-passe do utilizador Olá
+- Repor a palavra-passe do utilizador
 
 - Dispensar todos os eventos
 
-- Investigue os eventos de risco comunicado para utilizador Olá. 
+- Investigar os eventos de risco comunicados para o utilizador. 
 
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/324.png)
 
 
-tooinvestigate um evento de risco, selecione um Olá do Olá lista tooopen **detalhes** painel para este evento de risco. No Olá **detalhes** painel, tiver Olá opção tooeither [fechar manualmente um evento de risco](active-directory-identityprotection.md#closing-risk-events-manually) ou reativar um evento de risco fechado manualmente. 
+Para investigar um evento de risco, selecione um na lista para abrir o painel **Detalhes** para este evento de risco. No painel **Detalhes**, tem a opção de [fechar manualmente um evento de risco](active-directory-identityprotection.md#closing-risk-events-manually) ou reativar um evento de risco fechado manualmente. 
 
 
 ![Inícios de Sessão de Risco](./media/active-directory-reporting-security-user-at-risk/325.png)

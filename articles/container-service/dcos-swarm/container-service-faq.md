@@ -1,6 +1,6 @@
 ---
-title: "aaaAzure serviço de contentor - FAQ | Microsoft Docs"
-description: "Respostas perguntas mais frequentes sobre o serviço de contentor do Azure, um serviço que simplifica a criação de Olá, configuração e gestão de um cluster de máquinas virtuais toorun Docker contentor aplicações."
+title: Azure Container Service - FAQ | Microsoft Docs
+description: "Respostas às perguntas mais frequentes sobre o Azure Container Service, um serviço que simplifica a criação, configuração e gestão de um cluster de máquinas virtuais para executar aplicações de contentor do Docker ."
 services: container-service
 documentationcenter: 
 author: dlepow
@@ -17,10 +17,10 @@ ms.workload: na
 ms.date: 03/28/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: eee3b2db2d837aa601f33135c7424735eb842bff
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 95bd6478540683afa45da2159579171dbf76e665
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 [!INCLUDE [container-service-faq.md](../../../includes/container-service-faq.md)]

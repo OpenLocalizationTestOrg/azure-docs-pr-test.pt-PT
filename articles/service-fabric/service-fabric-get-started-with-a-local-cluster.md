@@ -1,6 +1,6 @@
 ---
-title: "aaaDeploy e atualizar micro-serviços do Azure localmente | Microsoft Docs"
-description: "Saiba como implementar um tooit de aplicação existentes tooset configurar um cluster do Service Fabric local e, em seguida, atualizar essa aplicação."
+title: "Implementar e atualizar os microsserviços do Azure localmente | Microsoft Docs"
+description: "Saiba como configurar um cluster Service Fabric local, implementar nele uma aplicação existente e atualizar essa aplicação."
 services: service-fabric
 documentationcenter: .net
 author: rwike77
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 07/13/2017
 ms.author: ryanwi;mikhegn
-ms.openlocfilehash: e5f5adc9edb71433b2a7635e9d661ff92a4b18ec
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 359677972c7e1fa3f7435052021ddfae5b1ed85e
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-started-with-deploying-and-upgrading-applications-on-your-local-cluster"></a>Introdução à implementação e atualização de aplicações no seu cluster local
-Olá SDK de Service Fabric do Azure inclui um ambiente de desenvolvimento local completo que pode utilizar tooquickly introdução à implementação e gestão de aplicações num local cluster. Neste artigo, criar um cluster local, implementar um tooit aplicação existente e, em seguida, atualizar essa aplicação tooa nova versão, tudo a partir do Windows PowerShell.
+O SDK de Service Fabric de Azure inclui um ambiente de desenvolvimento local completo que pode utilizar para rapidamente começar a implementar e gerir aplicações num cluster local. Neste artigo, cria um cluster local, implementa nele uma aplicação existente e atualiza essa aplicação para uma nova versão, tudo a partir do Windows PowerShell.
 
 > [!NOTE]
 > Este artigo assume que já [configurou o seu ambiente de desenvolvimento](service-fabric-get-started.md).
@@ -29,11 +29,11 @@ Olá SDK de Service Fabric do Azure inclui um ambiente de desenvolvimento local 
 > 
 
 ## <a name="create-a-local-cluster"></a>Criar um cluster local
-Um cluster de Service Fabric representa um conjunto de recursos de hardware em que pode implementar aplicações. Normalmente, um cluster é constituído por qualquer ponto de cinco toomany milhares de máquinas. No entanto, Olá SDK de Service Fabric inclui uma configuração de cluster que pode ser executadas num único computador.
+Um cluster de Service Fabric representa um conjunto de recursos de hardware em que pode implementar aplicações. Normalmente, um cluster é constituído por qualquer número a partir de cinco até muitos milhares de máquinas. No entanto, o SDK de Service Fabric inclui uma configuração de cluster que pode ser executada num único computador.
 
-É importante toounderstand Olá cluster do Service Fabric local não é um emulador ou simulador. Este é executado Olá mesmo código de plataforma que se encontra nos clusters de várias máquinas. Step-by-Olá única diferença é que os processos de plataforma de Olá que normalmente estão dispersos por cinco máquinas num computador que executa.
+É importante compreender que o cluster local de Service Fabric não é um emulador ou simulador. Executa o mesmo código de plataforma que se encontra nos clusters de várias máquinas. A única diferença é que executa numa única máquina os processos de plataforma que normalmente estão dispersos por cinco máquinas.
 
-Olá SDK fornece duas formas tooset configurar um cluster local: um Windows PowerShell script e Olá Gestor de clusters locais aplicação de tabuleiro sistema. Neste tutorial, utilizamos o script do PowerShell Olá.
+O SDK fornece duas formas de configurar um cluster local: um script do Windows PowerShell e a aplicação de tabuleiro de sistema do Gestor de Clusters Locais. Neste tutorial, utilizamos o script do PowerShell.
 
 > [!NOTE]
 > Se já criou um cluster local quando implementou uma aplicação do Visual Studio, pode ignorar esta secção.
@@ -41,7 +41,7 @@ Olá SDK fornece duas formas tooset configurar um cluster local: um Windows Powe
 > 
 
 1. Inicie uma nova janela do PowerShell como administrador.
-2. Execute script de configuração de cluster Olá a partir da pasta SDK Olá:
+2. Execute o script de configuração de cluster a partir da pasta SDK:
    
     ```powershell
     & "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1"
@@ -51,109 +51,109 @@ Olá SDK fornece duas formas tooset configurar um cluster local: um Windows Powe
    
     ![Saída do programa de configuração do cluster][cluster-setup-success]
    
-    Agora, está pronto tootry implementar um cluster de tooyour de aplicação.
+    Agora está pronto para tentar implementar uma aplicação no cluster.
 
 ## <a name="deploy-an-application"></a>Implementar uma aplicação
-Olá SDK de Service Fabric inclui um conjunto avançado de estruturas e ferramentas para programadores para criar aplicações. Se estiver interessado no learning como toocreate aplicações no Visual Studio, consulte [criar a primeira aplicação de Service Fabric no Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md).
+O SDK de Service Fabric inclui um vasto conjunto de estruturas e ferramentas para programadores para a criação de aplicações. Se estiver interessado em aprender a criar aplicações no Visual Studio, consulte o artigo [Criar a primeira aplicação de Service Fabric no Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md).
 
-Neste tutorial, a utilização de uma aplicação de exemplo existente (denominada WordCount) para poder concentrar nos aspetos de gestão de Olá da plataforma de Olá: implementação, monitorização e a atualização.
+Neste tutorial, utilizamos uma aplicação de exemplo existente (denominada WordCount) para que se possa concentrar nos aspetos de gestão da plataforma: a implementação, a monitorização e a atualização.
 
 1. Inicie uma nova janela do PowerShell como administrador.
-2. Importe o módulo do PowerShell de SDK do Service Fabric de Olá.
+2. Importe o módulo de PowerShell do SDK de Service Fabric.
    
     ```powershell
     Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\ServiceFabricSDK\ServiceFabricSDK.psm1"
     ```
-3. Crie uma aplicação Olá toostore de diretório que transferir e implementar, tais como C:\ServiceFabric.
+3. Crie um diretório para armazenar a aplicação que vai transferir e implementar, por exemplo C:\ServiceFabric.
    
     ```powershell
     mkdir c:\ServiceFabric\
     cd c:\ServiceFabric\
     ```
-4. [Transferir a aplicação de WordCount Olá](http://aka.ms/servicefabric-wordcountapp) toohello localização criada.  Nota: o browser Microsoft Edge de Olá guarda o ficheiro de Olá com um *. zip* extensão.  Alterar a extensão de ficheiro Olá demasiado*. sfpkg*.
-5. Ligue o toohello local cluster:
+4. [Transfira a aplicação WordCount](http://aka.ms/servicefabric-wordcountapp) para a localização criada.  Nota: o browser Microsoft Edge guarda o ficheiro com a extensão *.zip*.  Altere a extensão do ficheiro para *.sfpkg*.
+5. Ligar ao cluster local:
    
     ```powershell
     Connect-ServiceFabricCluster localhost:19000
     ```
-6. Crie uma nova aplicação utilizando o comando de implementação do SDK Olá com um nome e um pacote de aplicação toohello do caminho.
+6. Crie uma nova aplicação utilizando o comando de implementação do SDK com um nome e um caminho para o pacote de aplicação.
    
     ```powershell  
    Publish-NewServiceFabricApplication -ApplicationPackagePath c:\ServiceFabric\WordCountV1.sfpkg -ApplicationName "fabric:/WordCount"
     ```
    
-    Se tudo correr bem, deverá ver Olá seguinte saída:
+    Se tudo correr bem, deverá ver o seguinte resultado:
    
-    ![Implementar um cluster local de toohello de aplicação][deploy-app-to-local-cluster]
-7. aplicação de Olá toosee em ação, inicie Olá navegador e navegue demasiado[http://localhost:8081/wordcount/index.html](http://localhost:8081/wordcount/index.html). Deverá ver:
+    ![Implementar uma aplicação no cluster local][deploy-app-to-local-cluster]
+7. Para ver a aplicação em ação, inicie o navegador e navegue para [http://localhost:8081/wordcount/index.html](http://localhost:8081/wordcount/index.html). Deverá ver:
    
     ![Interface do utilizador da aplicação implementada][deployed-app-ui]
    
-    Olá aplicação WordCount é simple. Inclui o lado do cliente JavaScript código toogenerate aleatórios cinco carateres "palavras", que são, em seguida, retransmitidas toohello aplicação através da API Web do ASP.NET. Um serviço com estado controla o número de Olá de palavras contadas. Criam-se partições com base no primeiro caráter de Olá do word Olá. Pode encontrar o código de origem Olá para a aplicação de WordCount Olá no Olá [clássico exemplos de introdução](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/WordCount).
+    A aplicação de WordCount é simples. Inclui código JavaScript do lado do cliente para gerar "palavras" aleatórias de cinco carateres que posteriormente são reencaminhadas para a aplicação através da API Web ASP.NET. Um serviço com estado mantém um registo do número de palavras contadas. Criam-se partições com base no primeiro caráter da palavra. Pode localizar o código de origem para a aplicação de WordCount nos [exemplos de introdução clássicos](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/WordCount).
    
-    aplicação Olá que foi implementada contém quatro partições. Para que as palavras que começam de À G são armazenadas na partição primeiro Olá, palavras de h a N são armazenadas na segunda partição de Olá e assim sucessivamente.
+    A aplicação que foi implementada contém quatro partições. Deste modo, as palavras que começam de A a G são armazenadas na primeira partição, as palavras de H a N são armazenadas na segunda partição e assim sucessivamente.
 
 ## <a name="view-application-details-and-status"></a>Ver detalhes e estado da aplicação
-Agora que Implementámos a aplicação Olá, vamos ver alguns dos detalhes da aplicação Olá no PowerShell.
+Agora que implementámos a aplicação, vamos ver alguns dos detalhes da aplicação no PowerShell.
 
-1. Consulta todas as aplicações implementadas no cluster de Olá:
+1. Consulte todas as aplicações implementadas no cluster:
    
     ```powershell
     Get-ServiceFabricApplication
     ```
    
-    Partindo do princípio que só implementou a aplicação de WordCount Olá, verá algo semelhante a:
+    Se só implementou a aplicação do WordCount, verá algo parecido com:
    
     ![Consultar todas as aplicações implementadas no PowerShell][ps-getsfapp]
-2. Aceda toohello próximo nível consultando o conjunto de Olá de serviços que estão incluídos na aplicação de WordCount Olá.
+2. Vá para o próximo nível consultando o conjunto de serviços que estão incluídos na aplicação de WordCount.
    
     ```powershell
     Get-ServiceFabricService -ApplicationName 'fabric:/WordCount'
     ```
    
-    ![Lista de serviços para aplicação Olá no PowerShell][ps-getsfsvc]
+    ![Lista de serviços para a aplicação no PowerShell][ps-getsfsvc]
    
-    aplicação Olá é constituída por dois serviços, o front-end Olá web e o serviço de monitorização de estado Olá que gere palavras Olá.
-3. Por fim, observe lista Olá de partições para WordCountService:
+    A aplicação é constituída por dois serviços, o front-end Web e o serviço com estado que gere as palavras.
+3. Por último, repare na lista de partições para WordCountService:
    
     ```powershell
     Get-ServiceFabricPartition 'fabric:/WordCount/WordCountService'
     ```
    
-    ![Ver Olá partições de serviço no PowerShell][ps-getsfpartitions]
+    ![Ver as partições de serviço no PowerShell][ps-getsfpartitions]
    
-    Olá, conjunto de comandos que utilizou como todos os comandos do PowerShell de Service Fabric, estão disponíveis para qualquer cluster a que poderá ligar, local ou remoto.
+    O conjunto de comandos que utilizou, como todos os comandos do PowerShell de Service Fabric, está disponível para qualquer cluster a que se possa ligar, seja local ou remoto.
    
-    Para um toointeract de forma mais visual com o cluster de Olá, pode utilizar a ferramenta de Service Fabric Explorer baseado na web Olá navegando demasiado[http://localhost:19080/Explorer](http://localhost:19080/Explorer) no browser Olá.
+    Para uma interação mais visual com o cluster, pode utilizar a ferramenta de Service Fabric Explorer baseado na Web, acedendo a [http://localhost:19080/Explorer](http://localhost:19080/Explorer) no navegador.
    
     ![Ver detalhes da aplicação no Service Fabric Explorer][sfx-service-overview]
    
    > [!NOTE]
-   > toolearn mais acerca do Service Fabric Explorer, consulte [visualizar o cluster com o Service Fabric Explorer](service-fabric-visualizing-your-cluster.md).
+   > Para saber mais acerca do Service Fabric Explorer, consulte o artigo [Visualizar o cluster com o Service Fabric Explorer](service-fabric-visualizing-your-cluster.md).
    > 
    > 
 
 ## <a name="upgrade-an-application"></a>Atualizar uma aplicação
-O Service Fabric fornece atualizações sem tempo de indisponibilidade através da monitorização de estado de funcionamento de Olá da aplicação Olá, que implementa no cluster Olá. Efetue uma atualização de Olá aplicação WordCount.
+O Service Fabric fornece atualizações sem tempo de indisponibilidade através da monitorização do estado da aplicação à medida que se implementa no cluster. Efetue uma atualização da aplicação WordCount.
 
-nova versão de Olá da aplicação Olá agora conta apenas as palavras que começam por uma vogal. Como Olá atualização se faz, vemos duas alterações de comportamento da aplicação Olá. Em primeiro lugar, taxa de Olá que aumenta a contagem de Olá mais lenta, uma vez que estão a ser contadas menos palavras. Segundo, uma vez que a primeira partição de Olá tem duas vogais (A e E) e todas as outras partições contêm apenas uma, a contagem deverá finalmente deve começar toooutpace Olá outras pessoas.
+A nova versão da aplicação conta agora apenas as palavras que começam por uma vogal. À medida que a atualização é efetuada, vemos duas alterações de comportamento da aplicação. Em primeiro lugar, a taxa de aumento na contagem torna-se mais lenta, uma vez que estão a ser contadas menos palavras. Em segundo lugar, uma vez que a primeira partição tem duas vogais (A e E) e restantes partições contêm apenas uma, a contagem deverá finalmente deve começar a ultrapassar as outras.
 
-1. [Transferir o pacote de versão 2 do WordCount Olá](http://aka.ms/servicefabric-wordcountappv2) toohello mesma localização onde transferiu o pacote de versão 1 olá.
-2. Devolver a janela do PowerShell tooyour e utilize o comando de atualização do SDK de Olá tooregister Olá nova versão no cluster de Olá. Em seguida, comece a atualizar a infraestrutura de Olá: / aplicação WordCount.
+1. [Transfira o pacote de WordCount versão 2](http://aka.ms/servicefabric-wordcountappv2) para a mesma localização onde transferiu o pacote versão 1.
+2. Regresse à janela do PowerShell e utilize o comando de atualização do SDK para registar a nova versão do cluster. Em seguida, comece a atualizar a aplicação Fabric:/ WordCount.
    
     ```powershell
     Publish-UpgradedServiceFabricApplication -ApplicationPackagePath C:\ServiceFabric\WordCountV2.sfpkg -ApplicationName "fabric:/WordCount" -UpgradeParameters @{"FailureAction"="Rollback"; "UpgradeReplicaSetCheckTimeout"=1; "Monitored"=$true; "Force"=$true}
     ```
    
-    Deverá ver a seguinte Olá saída no PowerShell, como Olá atualização começa.
+    Deverá ver o resultado seguinte no PowerShell, à medida que a atualização começa.
    
     ![Progresso da atualização do PowerShell][ps-appupgradeprogress]
-3. Enquanto Olá atualização está a decorrer, pode encontrá-lo mais fácil toomonitor o estado do Service Fabric Explorer. Inicie uma janela do browser e navegue demasiado[http://localhost:19080/Explorer](http://localhost:19080/Explorer). Expanda **aplicações** na árvore de Olá Olá esquerda, em seguida, escolha **WordCount**e, finalmente, **fabric: / WordCount**. No separador de essentials Olá, ver estado Olá da atualização de Olá como medida que avança nos domínios de atualização do cluster Olá.
+3. Enquanto a atualização está a decorrer, será mais fácil monitorizar o estado a partir do Service Fabric Explorer. Inicie uma janela do navegador e navegue para [http://localhost:19080/Explorer](http://localhost:19080/Explorer). Expanda **Aplicações** na árvore à esquerda, escolha **WordCount** e, por fim, **fabric:/WordCount**. No separador Essentials, vê o estado da atualização à medida que avança nos domínios de atualização do cluster.
    
     ![Parar um nó no Service Fabric Explorer][sfx-upgradeprogress]
    
-    Como as prossegue atualização Olá através de cada domínio, verificações de estado de funcionamento são executada tooensure que aplicação Olá está a comportar corretamente.
-4. Se voltar a executar Olá anteriormente consultar do conjunto de Olá de serviços nos recursos de infraestrutura Olá: / WordCount aplicação, tenha em atenção que a versão do wordcountservice foi alterada de Olá mas Olá versão do WordCountWebService não:
+    À medida que se faz a atualização em cada domínio, são executadas verificações do estado de funcionamento para se certificar de que a aplicação está a comportar-se corretamente.
+4. Se voltar a executar a consulta anterior para o conjunto de serviços que estão incluídos na aplicação fabric:/WordCount, notará que a versão do WordCountService foi alterada, mas a versão do WordCountWebService não o foi:
    
     ```powershell
     Get-ServiceFabricService -ApplicationName 'fabric:/WordCount'
@@ -161,52 +161,52 @@ nova versão de Olá da aplicação Olá agora conta apenas as palavras que come
    
     ![Consultar os serviços de aplicações após atualização][ps-getsfsvc-postupgrade]
    
-    Este exemplo realça como o Service Fabric gere as atualizações de aplicações. Toca apenas Olá conjunto de serviços (ou pacotes de código/configuração dentro desses serviços) que tenham sido alterados, tornando o processo de Olá de atualização mais rápido e mais fiável.
-5. Por último, regresse toohello browser tooobserve Olá comportamento nova versão da aplicação Olá. Conforme esperado, Olá contagem avança-ser mais lentamente e Olá primeira partição termina com um pouco mais de volume Olá.
+    Este exemplo realça como o Service Fabric gere as atualizações de aplicações. Toca apenas o conjunto de serviços (ou pacotes de código/configuração dentro desses serviços) que tenham sido alterados, o que torna o processo de atualização mais rápido e fiável.
+5. Por último, regresse ao navegador para observar o comportamento da nova versão de aplicação. Conforme esperado, a contagem avança mais lentamente e a primeira partição termina com um pouco mais de volume.
    
-    ![Nova versão da vista Olá da aplicação Olá no browser Olá][deployed-app-ui-v2]
+    ![Ver a nova versão da aplicação no navegador][deployed-app-ui-v2]
 
 ## <a name="cleaning-up"></a>Limpeza
-Antes de concluir, é importante tooremember Olá local cluster é real. As aplicações continuam toorun em segundo plano de Olá até que remova-os.  Dependendo da natureza Olá das suas aplicações, uma aplicação em execução pode consumir recursos significativos no seu computador. Tem várias aplicações de toomanage opções e cluster Olá:
+Antes de concluir, é importante lembrar-se de que o cluster local é real. As aplicações continuam a ser executadas em segundo plano até serem removidas.  Dependendo da natureza das suas aplicações, uma aplicação em execução pode consumir recursos significativos no seu computador. Tem várias opções para gerir as aplicações e o cluster:
 
-1. tooremove uma aplicação individual e todos os-lo da dados, execute Olá os seguintes comandos:
+1. Para remover uma aplicação individual e todos os seus dados, execute o comando seguinte:
    
     ```powershell
     Unpublish-ServiceFabricApplication -ApplicationName "fabric:/WordCount"
     ```
    
-    Ou, elimine a aplicação Olá da Olá Service Fabric Explorer **AÇÕES** menu ou o menu de contexto de Olá na vista de lista do lado esquerdo da aplicação Olá.
+    Em alternativa, elimine a aplicação a partir do menu **AÇÕES** do Service Fabric Explorer ou do menu de contexto, na vista da lista de aplicações, à esquerda.
    
     ![Eliminar uma aplicação no Service Fabric Explorer][sfe-delete-application]
-2. Depois de eliminar aplicação Olá do cluster de Olá, anular o registo das versões 1.0.0 e 2.0.0 do Olá tipo de aplicação de WordCount. Eliminação remove pacotes de aplicações de Olá, incluindo o código de Olá e a configuração, do cluster Olá arquivo de imagens.
+2. Após eliminar a aplicação do cluster, anule o registo das versões 1.0.0 e 2.0.0 do tipo de aplicação WordCount. A eliminação remove pacotes de aplicação, incluindo o código e a configuração, do armazém de imagem do cluster.
    
     ```powershell
     Remove-ServiceFabricApplicationType -ApplicationTypeName WordCount -ApplicationTypeVersion 2.0.0
     Remove-ServiceFabricApplicationType -ApplicationTypeName WordCount -ApplicationTypeVersion 1.0.0
     ```
    
-    Ou, no Service Fabric Explorer, escolha **tipo de não aprovisionamento** para aplicação Olá.
-3. tooshut baixo cluster Olá, mas manter dados da aplicação Olá e rastreios, clique em **parar Cluster Local** na aplicação de tabuleiro de sistema Olá.
-4. cluster de Olá toodelete totalmente, clique em **remover Cluster Local** na aplicação de tabuleiro de sistema Olá. Esta opção resultará na outra Olá de implementação lenta próxima vez que premir F5 no Visual Studio. Remova cluster local Olá apenas se não tenciona toouse-la para algum tempo ou se necessitar de tooreclaim recursos.
+    Ou, no Service Fabric Explorer, selecione **Tipo de Não Aprovisionamento** para a aplicação.
+3. Para encerrar o cluster, mas manter os dados de aplicação e o rastreio, clique em **Parar Cluster Local** na aplicação de tabuleiro do sistema.
+4. Para eliminar o cluster totalmente, clique em **Remover Cluster Local** na aplicação de tabuleiro do sistema. Esta opção resultará noutra implementação lenta da próxima vez que premir F5 no Visual Studio. Remova o cluster local apenas se não pretender utilizá-lo durante algum tempo ou se precisar de recuperar recursos.
 
 ## <a name="one-node-and-five-node-cluster-mode"></a>Modo do cluster de cinco nós e um nó
-Ao desenvolver aplicações, irá frequentemente fazer iterações rápidas de escrita de código, depuração e alteração de código. toohelp otimizar este processo, o cluster local Olá pode executar em dois modos: um nó ou cinco nós. Ambos os modos de cluster têm as suas vantagens. Modo de cluster de cinco nós permite-lhe toowork com um cluster real. Pode testar cenários de ativação pós-falha, trabalhar com mais instâncias e réplicas dos seus serviços. O modo de um nó de cluster é toodo otimizada de implementação rápida e o registo dos serviços, toohelp rapidamente validar o código utilizando o tempo de execução do Olá Service Fabric.
+Ao desenvolver aplicações, irá frequentemente fazer iterações rápidas de escrita de código, depuração e alteração de código. Para ajudar a otimizar este processo, pode executar o cluster local em dois modos: um nó ou cinco nós. Ambos os modos de cluster têm as suas vantagens. O modo de cluster de cinco nós permite-lhe trabalhar com um cluster real. Pode testar cenários de ativação pós-falha, trabalhar com mais instâncias e réplicas dos seus serviços. O modo de cluster de um nó foi otimizado para implementações e registos rápidos dos serviços, com vista a ajudá-lo a validar rapidamente o código através do runtime do Service Fabric.
 
-Os modos do cluster de um nó e de cinco nós não são um emulador ou simulador. cluster de desenvolvimento local Olá executa Olá mesmo código de plataforma que se encontra nos clusters de várias máquinas.
+Os modos do cluster de um nó e de cinco nós não são um emulador ou simulador. O cluster de desenvolvimento local executa o mesmo código de plataforma que se encontra nos clusters de várias máquinas.
 
 > [!WARNING]
-> Quando alterar o modo de cluster de Olá, o cluster atual Olá é removido do sistema e é criado um novo cluster. dados de Olá armazenados Olá cluster são eliminados quando alterar o modo de cluster.
+> Ao alterar o modo de cluster, o cluster atual é removido do sistema e é criado um novo. Os dados armazenados no cluster são eliminados ao alterar o modo de cluster.
 > 
 > 
 
-toochange Olá modo tooone cluster de nó, selecione **comutador Cluster modo** no Olá Gestor de clusters locais do serviço de recursos de infraestrutura.
+Para alterar para o modo de cluster de um nó, selecione **Trocar Modo do Cluster** no Gestor de Clusters Locais do Service Fabric.
 
 ![Alternar o modo do cluster][switch-cluster-mode]
 
-Em alternativa, alterar o modo de cluster Olá através do PowerShell:
+Em alternativa, altere o modo de cluster através do PowerShell:
 
 1. Inicie uma nova janela do PowerShell como administrador.
-2. Execute script de configuração de cluster Olá a partir da pasta SDK Olá:
+2. Execute o script de configuração de cluster a partir da pasta SDK:
    
     ```powershell
     & "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1" -CreateOneNodeCluster
@@ -218,8 +218,8 @@ Em alternativa, alterar o modo de cluster Olá através do PowerShell:
 
 ## <a name="next-steps"></a>Passos seguintes
 * Agora que implementou e atualizou algumas aplicações pré-criadas, pode [tentar criar a sua no Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md).
-* Todas as ações de Olá executadas no cluster local Olá este artigo podem ser efetuadas num [cluster do Azure](service-fabric-cluster-creation-via-portal.md) bem.
-* atualização de Olá que efetuámos neste artigo foi básica. Consulte Olá [documentação de atualização](service-fabric-application-upgrade.md) toolearn mais informações sobre a capacidade de Olá e a flexibilidade das atualizações do Service Fabric.
+* Todas as ações executadas no cluster local neste artigo também podem ser realizadas num [cluster do Azure](service-fabric-cluster-creation-via-portal.md).
+* A atualização que efetuámos neste artigo foi básica. Consulte a [documentação de atualização](service-fabric-application-upgrade.md) para saber mais sobre a capacidade e a flexibilidade das atualizações do Service Fabric.
 
 <!-- Images -->
 

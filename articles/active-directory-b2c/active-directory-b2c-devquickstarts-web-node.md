@@ -1,6 +1,6 @@
 ---
-title: "aplicação web de Node.js de início de sessão tooa do aaaAdd para o Azure B2C | Microsoft Docs"
-description: "Como toobuild uma aplicação web Node.js que inicia sessão dos utilizadores através da utilização de um inquilino do B2C."
+title: "Adicionar início de sessão a uma aplicação Web Node.js para o Azure B2C | Microsoft Docs"
+description: "Como criar uma aplicação Web Node.js que inicia sessão dos utilizadores através da utilização de um inquilino do B2C."
 services: active-directory-b2c
 documentationcenter: 
 author: dstrockis
@@ -14,30 +14,30 @@ ms.devlang: javascript
 ms.topic: hero-article
 ms.date: 03/10/2017
 ms.author: xerners
-ms.openlocfilehash: b4c334b1f7a0669df2d0864140603dc55bbb5408
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: c85b8f8434d1e837ac96ac63b9b37f990677ed6e
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="azure-ad-b2c-add-sign-in-tooa-nodejs-web-app"></a>O Azure AD B2C: Adicionar início de sessão tooa aplicação de web de Node.js
+# <a name="azure-ad-b2c-add-sign-in-to-a-nodejs-web-app"></a>Azure AD B2C: Adicionar início de sessão a uma aplicação Web Node.js
 
 **Passport** é o middleware de autenticação do Node.js. Extremamente flexível e modular, o Passport pode ser instalado discretamente em qualquer aplicação Web baseada em Express ou Restify. Um conjunto abrangente de estratégias suporta a autenticação utilizando um nome de utilizador e palavra-passe, o Facebook, o Twitter e muito mais.
 
-Desenvolvemos uma estratégia para o Azure Active Directory (Azure AD). Instalará este módulo e, em seguida, adicionar Olá do Azure AD `passport-azure-ad` Plug-in.
+Desenvolvemos uma estratégia para o Azure Active Directory (Azure AD). Instala este módulo e, em seguida, adiciona o plug-in `passport-azure-ad` do Azure AD.
 
-toodo, tem de:
+Para efetuar este procedimento, tem de:
 
 1. Registar uma aplicação utilizando o Azure AD.
-2. Configurar a sua Olá de toouse aplicação `passport-azure-ad` Plug-in.
-3. Utilize Passport tooissue início de sessão e fim de sessão pedidos tooAzure AD.
+2. Configurar a sua aplicação para utilizar o plug-in `passport-azure-ad`.
+3. Utilizar o Passport para emitir pedidos de início de sessão e fim de sessão para o Azure AD.
 4. Imprimir os dados de utilizador.
 
-Olá código para este tutorial [é mantido no GitHub](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-NodeJS). toofollow ao longo, pode [transferir a estrutura da aplicação de Olá como um ficheiro. zip](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-NodeJS/archive/skeleton.zip). Também pode clonar a estrutura de Olá:
+O código deste tutorial [é mantido no GitHub](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-NodeJS). Para acompanhar, pode [transferir a estrutura da aplicação como um ficheiro .zip](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-NodeJS/archive/skeleton.zip). Também pode clonar a estrutura:
 
 ```git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-NodeJS.git```
 
-aplicação Olá concluída é fornecida no final deste tutorial Olá.
+A aplicação concluída é fornecida no final deste tutorial.
 
 ## <a name="get-an-azure-ad-b2c-directory"></a>Obter um diretório do Azure AD B2C
 
@@ -45,32 +45,32 @@ Para poder utilizar o Azure AD B2C, tem de criar um diretório ou inquilino.  Um
 
 ## <a name="create-an-application"></a>Criar uma aplicação
 
-Em seguida, terá de toocreate uma aplicação no diretório do B2C. Isto dá-informações do Azure AD que necessita de toocommunicate em segurança com a sua aplicação. Olá ambas as aplicações cliente e a web API será representada por um único **ID da aplicação**, uma vez que compõem uma aplicação lógica. toocreate uma aplicação, siga [estas instruções](active-directory-b2c-app-registration.md). É necessário:
+Em seguida, precisa de criar uma aplicação no diretório do B2C. Isto proporciona informações do Azure AD de que necessita para comunicar de forma segura com a sua aplicação. A aplicação de cliente e a API Web serão representadas por um único **ID da aplicação**, uma vez que compõem uma aplicação lógica. Para criar uma aplicação, siga [estas instruções](active-directory-b2c-app-registration.md). É necessário:
 
-- Incluir um **aplicação web**/**web API** na aplicação Olá.
-- Introduzir `http://localhost:3000/auth/openid/return` como um **URL de resposta**. É Olá predefinido URL para este exemplo de código.
-- Criar um **Segredo de aplicação** para a aplicação e copiá-lo. Precisará dele mais tarde. Tenha em atenção que este valor tem de toobe [XML de escape](https://www.w3.org/TR/2006/REC-xml11-20060816/#dt-escape) antes de o utilizar.
-- Olá cópia **ID da aplicação** que é atribuído tooyour aplicação. Também irá precisar deste mais tarde.
+- Inclui uma **aplicação Web**/**API Web** na aplicação.
+- Introduzir `http://localhost:3000/auth/openid/return` como um **URL de resposta**. É o URL predefinido para este exemplo de código.
+- Criar um **Segredo de aplicação** para a aplicação e copiá-lo. Precisará dele mais tarde. Tenha em atenção que este valor de ser [XML de escape](https://www.w3.org/TR/2006/REC-xml11-20060816/#dt-escape) antes de o utilizar.
+- Copiar a **ID da Aplicação** atribuída à aplicação. Também irá precisar deste mais tarde.
 
 [!INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
 ## <a name="create-your-policies"></a>Criar as políticas
 
-No Azure AD B2C, cada experiência de utilizador é definida por uma [política](active-directory-b2c-reference-policies.md). Esta aplicação contém três experiências de identidade: inscrição, início de sessão e início de sessão utilizando o Facebook. Terá de toocreate esta política de cada tipo, conforme descrito no [artigo de referência de política](active-directory-b2c-reference-policies.md#create-a-sign-up-policy). Quando criar as três políticas, não se esqueça de:
+No Azure AD B2C, cada experiência de utilizador é definida por uma [política](active-directory-b2c-reference-policies.md). Esta aplicação contém três experiências de identidade: inscrição, início de sessão e início de sessão utilizando o Facebook. Tem de criar esta política de cada tipo, conforme descrito no [artigo de referência de política](active-directory-b2c-reference-policies.md#create-a-sign-up-policy). Quando criar as três políticas, não se esqueça de:
 
-- Escolha Olá **nome a apresentar** e outros atributos de inscrição na política de inscrição.
-- Escolha Olá **nome a apresentar** e **ID de objeto** afirmações de aplicação em cada política. Também pode escolher outras afirmações.
-- Olá cópia **nome** de cada política depois de a criar. Deve ter o prefixo de Olá `b2c_1_`.  Precisará destes nomes de políticas mais tarde.
+- Escolher o **Nome a apresentar** e os atributos de inscrição na política de inscrição.
+- Escolher as afirmações de aplicação **Nome a apresentar** e **ID de objeto** em cada política. Também pode escolher outras afirmações.
+- Copiar o **Nome** de cada política depois de a criar. Deve ter o prefixo `b2c_1_`.  Precisará destes nomes de políticas mais tarde.
 
 [!INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
 
-Depois de criar as três políticas, está pronto toobuild a aplicação.
+Depois de criar as três políticas, está pronto para criar a sua aplicação.
 
-Tenha em atenção que este artigo não abrange como as políticas de Olá toouse que acabou de criar. toolearn sobre como funcionam as políticas no Azure AD B2C, comece com Olá [.NET introdução à aplicação web tutorial](active-directory-b2c-devquickstarts-web-dotnet.md).
+Tenha em atenção que este artigo não abrange como utilizar as políticas que acabou de criar. Para saber mais sobre como funcionam as políticas no Azure AD B2C, comece com o [Tutorial de introdução da aplicação Web do .NET](active-directory-b2c-devquickstarts-web-dotnet.md).
 
-## <a name="add-prerequisites-tooyour-directory"></a>Adicionar pré-requisitos tooyour diretório
+## <a name="add-prerequisites-to-your-directory"></a>Adicionar pré-requisitos ao diretório
 
-Olá linha de comandos, altere a pasta de raiz tooyour diretórios, se não estiver já existe. Execute Olá os seguintes comandos:
+Na linha de comandos, altere os diretórios para a pasta raiz, caso ainda não exista. Execute os seguintes comandos:
 
 - `npm install express`
 - `npm install ejs`
@@ -85,23 +85,23 @@ Olá linha de comandos, altere a pasta de raiz tooyour diretórios, se não esti
 - `npm install express-session`
 - `npm install cookie-parser`
 
-Além disso, utilizámos `passport-azure-ad` para a nossa pré-visualização na estrutura de Olá de Olá início rápido.
+Além disso, utilizámos `passport-azure-ad` para a nossa pré-visualização na estrutura do Início Rápido.
 
 - `npm install passport-azure-ad`
 
-Esta ação instalará bibliotecas Olá que `passport-azure-ad` depende.
+Esta ação irá instalar as bibliotecas de que `passport-azure-ad` depende.
 
-## <a name="set-up-your-app-toouse-hello-passport-nodejs-strategy"></a>Configurar a sua Olá toouse de aplicação estratégia Passport-node.js
-Configure Olá do Olá rápida middleware toouse protocolo de autenticação OpenID Connect. O Passport será utilizado tooissue pedidos de início de sessão e fim de sessão, gerir sessões de utilizador e obter informações sobre utilizadores, entre outras ações.
+## <a name="set-up-your-app-to-use-the-passport-nodejs-strategy"></a>Configurar a sua aplicação para utilizar a estratégia Passport-Node.js
+Configure o middleware Express para utilizar o protocolo de autenticação OpenID Connect. O Passport será utilizado para emitir pedidos de início de sessão e fim de sessão, gerir sessões de utilizador e obter informações sobre utilizadores, entre outras ações.
 
-Abra Olá `config.js` ficheiro na raiz de Olá do projeto de Olá e introduza os valores de configuração da sua aplicação no Olá `exports.creds` secção.
-- `clientID`: Olá **ID da aplicação** atribuído tooyour aplicação no portal de registo Olá.
-- `returnURL`: Olá **URI de redirecionamento** que introduziu no portal de Olá.
-- `tenantName`: nome do inquilino Olá da sua aplicação, por exemplo, **contoso.onmicrosoft.com**.
+Abra o ficheiro `config.js` na raiz do projeto e introduza os valores de configuração da aplicação na secção `exports.creds`.
+- `clientID`: O **ID da aplicação** atribuído à sua aplicação no portal de registo.
+- `returnURL`: O **URI de redirecionamento** que introduziu no portal.
+- `tenantName`: O nome do inquilino da sua aplicação, por exemplo, **contoso.onmicrosoft.com**.
 
 [!INCLUDE [active-directory-b2c-devquickstarts-tenant-name](../../includes/active-directory-b2c-devquickstarts-tenant-name.md)]
 
-Abra Olá `app.js` ficheiro na raiz de Olá do projeto de Olá. Adicionar Olá seguir chamada tooinvoke Olá `OIDCStrategy` estratégia que vem com `passport-azure-ad`.
+Abra o ficheiro `app.js` na raiz do projeto. Adicione a chamada seguinte para invocar a estratégia `OIDCStrategy` que vem com `passport-azure-ad`.
 
 
 ```JavaScript
@@ -113,10 +113,10 @@ var log = bunyan.createLogger({
 });
 ```
 
-Utilize a estratégia de Olá acabou de referenciar pedidos de início de sessão toohandle.
+Utilize a estratégia de acabou de referenciar para processar pedidos de início de sessão.
 
 ```JavaScript
-// Use hello OIDCStrategy in Passport (Section 2).
+// Use the OIDCStrategy in Passport (Section 2).
 //
 //   Strategies in Passport require a "validate" function that accepts
 //   credentials (in this case, an OpenID identifier), and invokes a callback
@@ -151,21 +151,21 @@ passport.use(new OIDCStrategy({
   }
 ));
 ```
-O Passport utiliza um padrão semelhante para todos as respetivas estratégias (incluindo o Twitter e o Facebook). Todos os escritores aderem toothis padrão. Quando observa a estratégia de Olá, pode ver que transmite um `function()` que tem um token e um `done` como parâmetros de Olá. estratégia de Olá volta a tooyou depois-tem de fazer todo o trabalho. Armazene o utilizador Olá e guarde o token de Olá, de modo que não seja necessário tooask-lo novamente.
+O Passport utiliza um padrão semelhante para todos as respetivas estratégias (incluindo o Twitter e o Facebook). Todos os escritores de estratégias cumprem este padrão. Quando observa a estratégia, pode ver que transmite um `function()` que tem um token e um `done` como os parâmetros. A estratégia é-lhe devolvida depois de fazer todo o trabalho. Armazene o utilizador e guarde o token de modo a que não é necessário voltar a pedi-lo.
 
 > [!IMPORTANT]
-Olá código anterior entra em todos os utilizadores a quem Olá servidor autentica. Este é registo automático. Quando utiliza servidores de produção, que não pretende toolet sessão dos utilizadores, a menos que tenham passado por um processo de registo que configurou. Muitas vezes, pode ver este padrão nas aplicações de consumidor. Estas permitem-lhe tooregister utilizando o Facebook, mas, em seguida, solicitam-lhe toofill informações adicionais. Se a nossa aplicação não era uma amostra, iremos foi extrair um endereço de e-mail do objeto token Olá que é devolvido e, em seguida, peça ao Olá utilizador toofill informações adicionais. Porque se trata de um servidor de teste, adicionamos simplesmente utilizadores toohello dentro da memória da base de dados.
+O código anterior entra em todos os utilizadores a quem o servidor autentica. Este é registo automático. Quando utilizar servidores de produção, não quer permitir a entrada de utilizadores, a menos que tenham passado por um processo de registo que tiver configurado. Muitas vezes, pode ver este padrão nas aplicações de consumidor. Estas permitem-lhe registar utilizando o Facebook, mas, em seguida, solicitam-lhe o preenchimento de informações adicionais. Se a nossa aplicação não era uma amostra, poderíamos extrair um endereço de e-mail a partir do objeto token devolvido e, em seguida, pedir ao utilizador para preencher as informações adicionais. Porque se trata de um servidor de teste, simplesmente adicionamos utilizadores à base de dados em memória.
 
-Adicionar métodos de Olá que lhe permitem controlar tookeep de utilizadores que tenham iniciado sessão, conforme requerido pelo Passport. Isto inclui informações de utilizador de serialização e não serialização:
+Adicione os métodos que lhe permitem controlar utilizadores que tenham iniciado sessão, conforme requerido pelo Passport. Isto inclui informações de utilizador de serialização e não serialização:
 
 ```JavaScript
 
 // Passport session setup. (Section 2)
 
-//   toosupport persistent sign-in sessions, Passport needs toobe able to
+//   To support persistent sign-in sessions, Passport needs to be able to
 //   serialize users into and deserialize users out of sessions. Typically,
-//   this is as simple as storing hello user ID when Passport serializes a user
-//   and finding hello user by ID when Passport deserializes that user.
+//   this is as simple as storing the user ID when Passport serializes a user
+//   and finding the user by ID when Passport deserializes that user.
 passport.serializeUser(function(user, done) {
   done(null, user.email);
 });
@@ -176,7 +176,7 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-// Array toohold users who have signed in
+// Array to hold users who have signed in
 var users = [];
 
 var findByEmail = function(email, fn) {
@@ -192,7 +192,7 @@ var findByEmail = function(email, fn) {
 
 ```
 
-Adicione o motor do Olá código tooload Olá Express. No seguinte Olá, pode ver que utilizamos a predefinição de Olá `/views` e `/routes` padrão que o Express fornece.
+Adicione o código para carregar o motor Express. A seguir, pode ver que utilizamos a predefinição `/views` e o padrão `/routes` que o Express fornece.
 
 ```JavaScript
 
@@ -209,7 +209,7 @@ app.configure(function() {
   app.use(cookieParser());
   app.use(expressSession({ secret: 'keyboard cat', resave: true, saveUninitialized: false }));
   app.use(bodyParser.urlencoded({ extended : true }));
-  // Initialize Passport!  Also use passport.session() middleware toosupport
+  // Initialize Passport!  Also use passport.session() middleware to support
   // persistent sign-in sessions (recommended).
   app.use(passport.initialize());
   app.use(passport.session());
@@ -219,31 +219,31 @@ app.configure(function() {
 
 ```
 
-Adicionar Olá `POST` Olá de rotas que entregam os pedidos de início de sessão real toohello `passport-azure-ad` motor:
+Adicione as rotas `POST` que entregam os pedidos reais de início de sessão ao motor `passport-azure-ad`:
 
 ```JavaScript
 
 // Our Auth routes (Section 3)
 
 // GET /auth/openid
-//   Use passport.authenticate() as route middleware tooauthenticate the
-//   request. hello first step in OpenID authentication involves redirecting
-//   hello user tooan OpenID provider. After hello user is authenticated,
-//   hello OpenID provider redirects hello user back toothis application at
+//   Use passport.authenticate() as route middleware to authenticate the
+//   request. The first step in OpenID authentication involves redirecting
+//   the user to an OpenID provider. After the user is authenticated,
+//   the OpenID provider redirects the user back to this application at
 //   /auth/openid/return
 
 app.get('/auth/openid',
   passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
   function(req, res) {
-    log.info('Authentication was called in hello Sample');
+    log.info('Authentication was called in the Sample');
     res.redirect('/');
   });
 
 // GET /auth/openid/return
-//   Use passport.authenticate() as route middleware tooauthenticate the
-//   request. If authentication fails, hello user will be redirected back toothe
-//   sign-in page. Otherwise, hello primary route function will be called.
-//   In this example, it redirects hello user toohello home page.
+//   Use passport.authenticate() as route middleware to authenticate the
+//   request. If authentication fails, the user will be redirected back to the
+//   sign-in page. Otherwise, the primary route function will be called.
+//   In this example, it redirects the user to the home page.
 app.get('/auth/openid/return',
   passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
   function(req, res) {
@@ -252,10 +252,10 @@ app.get('/auth/openid/return',
   });
 
 // POST /auth/openid/return
-//   Use passport.authenticate() as route middleware tooauthenticate the
-//   request. If authentication fails, hello user will be redirected back toothe
-//   sign-in page. Otherwise, hello primary route function will be called.
-//   In this example, it will redirect hello user toohello home page.
+//   Use passport.authenticate() as route middleware to authenticate the
+//   request. If authentication fails, the user will be redirected back to the
+//   sign-in page. Otherwise, the primary route function will be called.
+//   In this example, it will redirect the user to the home page.
 
 app.post('/auth/openid/return',
   passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
@@ -265,11 +265,11 @@ app.post('/auth/openid/return',
   });
 ```
 
-## <a name="use-passport-tooissue-sign-in-and-sign-out-requests-tooazure-ad"></a>Utilizar Passport tooissue início de sessão e fim de sessão pedidos tooAzure AD
+## <a name="use-passport-to-issue-sign-in-and-sign-out-requests-to-azure-ad"></a>Utilizar o Passport para emitir pedidos de início de sessão e fim de sessão para o Azure AD
 
-A aplicação está agora toocommunicate configurado corretamente com o ponto final de v 2.0 Olá através do protocolo de autenticação OpenID Connect Olá. `passport-azure-ad`tem Tratado dos detalhes de Olá de mensagens de autenticação de composição, tokens de validação do Azure AD e manutenção de sessão do utilizador. Tudo o que resta é toogive os seus utilizadores uma forma toosign no e início de sessão fora e toogather informações adicionais sobre os utilizadores que têm sessão iniciada.
+A aplicação agora está corretamente configurada para comunicar com o ponto final v2.0, utilizando o protocolo de autenticação OpenID Connect. `passport-azure-ad` tem tratado dos detalhes das mensagens de autenticação de composição, tokens de validação do Azure AD e manutenção de sessão do utilizador. Tudo o falta fazer é conceder aos seus utilizadores uma forma para iniciar sessão e terminar sessão, e recolher informações adicionais sobre os utilizadores que têm sessão iniciada.
 
-Primeiro, adicione Olá predefinição, início de sessão, conta e fim de sessão métodos tooyour `app.js` ficheiro:
+Primeiro, adicione os métodos predefinição, início de sessão, conta e fim de sessão ao ficheiro `app.js`:
 
 ```JavaScript
 
@@ -286,7 +286,7 @@ app.get('/account', ensureAuthenticated, function(req, res){
 app.get('/login',
   passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
   function(req, res) {
-    log.info('Login was called in hello Sample');
+    log.info('Login was called in the Sample');
     res.redirect('/');
 });
 
@@ -297,22 +297,22 @@ app.get('/logout', function(req, res){
 
 ```
 
-tooreview estes métodos em detalhe:
-- Olá `/` rota redireciona toohello `index.ejs` vista transferindo o utilizador Olá no pedido de Olá (se existir).
-- Olá `/account` rota verifica primeiro se está autenticado (Olá implementação para esta situação é abaixo). -Lo, em seguida, transmite utilizador Olá no pedido de Olá, de modo a que pode obter informações adicionais sobre o utilizador Olá.
-- Olá `/login` rota chamadas Olá `azuread-openidconnect` autenticador de `passport-azure-ad`. Se não for bem-sucedida, rota Olá redireciona volta a utilizador Olá demasiado`/login`.
-- `logout.ejs` chama simplesmente `/logout` (e a respetiva rota). Isto limpa cookies e, em seguida, devolve Olá utilizador volta demasiado`index.ejs`.
+Para rever estes métodos em detalhe:
+- A rota `/` redireciona para a vista `index.ejs` transferindo o utilizador no pedido (se existir).
+- A rota `/account` verifica primeiro se está autenticado (a implementação vem a seguir). Em seguida, transfere o utilizador no pedido de modo a que possa obter informações adicionais sobre o utilizador.
+- A rota `/login` chama o autenticador `azuread-openidconnect` de `passport-azure-ad`. Se este não for bem sucedido, a rota redireciona o utilizador de volta a `/login`.
+- `logout.ejs` chama simplesmente `/logout` (e a respetiva rota). Isto limpa cookies e, em seguida, devolve o utilizador a `index.ejs`.
 
 
-Para Olá última parte `app.js`, adicionar Olá `EnsureAuthenticated` método que é utilizado no Olá `/account` rota.
+Para a última parte do `app.js`, adicione o `EnsureAuthenticated` método que é utilizado na rota `/account`.
 
 ```JavaScript
 
-// Simple route middleware tooensure that hello user is authenticated. (Section 4)
+// Simple route middleware to ensure that the user is authenticated. (Section 4)
 
-//   Use this route middleware on any resource that needs toobe protected. If
-//   hello request is authenticated (typically via a persistent sign-in session),
-//   then hello request will proceed. Otherwise, hello user will be redirected toothe
+//   Use this route middleware on any resource that needs to be protected. If
+//   the request is authenticated (typically via a persistent sign-in session),
+//   then the request will proceed. Otherwise, the user will be redirected to the
 //   sign-in page.
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
@@ -321,7 +321,7 @@ function ensureAuthenticated(req, res, next) {
 
 ```
 
-Por fim, crie o próprio servidor de Olá no `app.js`.
+Por fim, crie o próprio servidor no `app.js`.
 
 ```JavaScript
 
@@ -330,11 +330,11 @@ app.listen(3000);
 ```
 
 
-## <a name="create-hello-views-and-routes-in-express-toocall-your-policies"></a>Criar Olá vistas e rotas no Express toocall as políticas
+## <a name="create-the-views-and-routes-in-express-to-call-your-policies"></a>Criar as vistas e rotas no Express para chamar as políticas
 
-O `app.js` está agora concluído. Basta rotas de Olá tooadd e vistas que lhe permitem toocall Olá início de sessão e inscrição as políticas. Estas também processar Olá `/logout` e `/login` rotas que criou.
+O `app.js` está agora concluído. Precisa apenas de adicionar as rotas e vistas que lhe permitem chamar as políticas de início de sessão e inscrição. Estas também processar as rotas `/logout` e `/login` que criou.
 
-Criar Olá `/routes/index.js` rota no diretório de raiz de Olá.
+Crie a rota `/routes/index.js` no diretório de raiz.
 
 ```JavaScript
 
@@ -347,7 +347,7 @@ exports.index = function(req, res){
 };
 ```
 
-Criar Olá `/routes/user.js` rota no diretório de raiz de Olá.
+Crie a rota `/routes/user.js` no diretório de raiz.
 
 ```JavaScript
 
@@ -360,9 +360,9 @@ exports.list = function(req, res){
 };
 ```
 
-Estas rotas simples transferem vistas de tooyour de pedidos. Incluem utilizador Olá, se estiver presente.
+Estas rotas simples transferem pedidos para as vistas. Incluem o utilizador, se algum estiver presente.
 
-Criar Olá `/views/index.ejs` vista no diretório de raiz de Olá. Esta é uma página simples que chama as políticas para o início de sessão e fim de sessão. Também pode utilizá-la toograb informações da conta. Tenha em atenção que pode utilizar Olá condicional `if (!user)` como utilizador Olá é transferido no pedido de Olá tooprovide evidence esse utilizador Olá tem sessão iniciado.
+Crie a vista `/views/index.ejs` no diretório de raiz. Esta é uma página simples que chama as políticas para o início de sessão e fim de sessão. Também pode utilizá-la para captar informações da conta. Tenha em atenção que pode utilizar o `if (!user)` condicional quando o utilizador é transferido no pedido para fornecer provas de que o utilizador tem sessão iniciada.
 
 ```JavaScript
 <% if (!user) { %>
@@ -377,7 +377,7 @@ Criar Olá `/views/index.ejs` vista no diretório de raiz de Olá. Esta é uma p
 <% } %>
 ```
 
-Criar Olá `/views/account.ejs` ver no diretório de raiz de Olá, para que possa visualizar informações adicionais que `passport-azure-ad` colocar no pedido do utilizador Olá.
+Crie a vista `/views/account.ejs` no diretório de raiz, para que possa visualizar informações adicionais que `passport-azure-ad` colocam no pedido de utilizador.
 
 ```Javascript
 <% if (!user) { %>
@@ -398,28 +398,28 @@ Criar Olá `/views/account.ejs` ver no diretório de raiz de Olá, para que poss
 
 Agora pode criar e executar a aplicação.
 
-Executar `node app.js` e navegue demasiado`http://localhost:3000`
+Executar `node app.js` e navegar para `http://localhost:3000`
 
 
-Inscrever-se ou iniciar sessão na aplicação toohello através de e-mail ou o Facebook. Termine sessão e inicie sessão novamente como um utilizador diferente.
+Inscreva-se ou inicie sessão na aplicação utilizando o correio eletrónico ou o Facebook. Termine sessão e inicie sessão novamente como um utilizador diferente.
 
 ##<a name="next-steps"></a>Passos seguintes
 
-Para referência, Olá concluída exemplo (sem os valores de configuração) [é fornecido como um ficheiro. zip](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-NodeJS/archive/complete.zip). Também pode clonar a partir do GitHub:
+Para sua referência, o exemplo concluído (sem os valores de configuração) [é fornecido como um ficheiro .zip](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-NodeJS/archive/complete.zip). Também pode clonar a partir do GitHub:
 
 ```git clone --branch complete https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-nodejs.git```
 
-Agora pode passar toomore avançadas tópicos. Pode experimentar:
+Agora pode aceder a tópicos mais avançados. Pode experimentar:
 
-[Proteger uma API web utilizando o modelo de Olá B2C no Node.js](active-directory-b2c-devquickstarts-api-node.md)
+[Proteger uma API Web utilizando o modelo de B2C no Node.js](active-directory-b2c-devquickstarts-api-node.md)
 
 <!--
 
 For additional resources, check out:
-You can now move on toomore advanced B2C topics. You might try:
+You can now move on to more advanced B2C topics. You might try:
 
 [Call a Node.js web API from a Node.js web app]()
 
-[Customizing hello your B2C App's UX >>]()
+[Customizing the your B2C App's UX >>]()
 
 -->

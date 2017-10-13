@@ -1,17 +1,17 @@
 
-1. Clique em Olá **serviços aplicacionais** botão, selecione o seu back-end do Mobile Apps, selecione **início rápido**e, em seguida, selecione a plataforma de cliente (em iOS, Android, Xamarin, Cordova).
+1. Clique no botão **Serviços Aplicacionais**, selecione o back-end das Aplicações Móveis, selecione **Início Rápido**e, em seguida, selecione a plataforma de cliente (iOS, Android, Xamarin, Cordova).
 
     ![Portal do Azure com Início Rápido de Aplicações Móveis realçado][quickstart]
 
-2. Se não estiver configurada uma ligação de base de dados, crie um, Olá seguinte:
+2. Se não estiver configurada uma ligação de base de dados, crie uma efetuando o seguinte procedimento:
 
-    ![Portal do Azure com as aplicações de Mobile Connect toodatabase][connect]
+    ![Portal do Azure com Aplicações Móveis Ligar a base de dados][connect]
 
     a. Crie uma base de dados SQL e o servidor novos.
 
     ![Portal do Azure com Aplicações Móveis criar base de dados e servidor novos][server]
 
-    b. Aguarde até que a ligação de dados de Olá é criada com êxito.
+    b. Aguarde pela conclusão bem-sucedida da ligação de dados.
 
     ![Notificação do portal do Azure de criação com êxito de ligação de dados][notification]
 
@@ -21,11 +21,11 @@
 
 3. Em **2. Criar uma API de tabela**, selecione Node.js em **Linguagem do back-end**. 
  
-4. Aceite a confirmação de Olá e, em seguida, selecione **criar tabela TodoItem**.  
+4. Aceite a confirmação e, em seguida, selecione **Criar tabela TodoItem**.  
     Esta ação cria uma nova tabela de itens pendentes na base de dados. 
 
     >[!IMPORTANT]
-    > Mudar um tooNode.js de back-end existente substitui todos os conteúdos. toocreate um back-end de .NET em vez disso, consulte [funcione com o servidor de back-end de .NET de Olá SDK para Mobile Apps][instructions].
+    > Mudar de um back-end existente para Node.js substitui todos os conteúdos. Para criar um back-end de .NET em, veja [Trabalhar com o servidor SDK de back-end .NET para Aplicações Móveis][instructions].
 
 <!-- Images. -->
 [quickstart]: ./media/app-service-mobile-configure-new-backend/quickstart.png

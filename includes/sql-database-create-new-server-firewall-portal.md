@@ -4,31 +4,31 @@ includes/sql-database-create-new-server-firewall-portal.md
 
 Latest Freshness check:  2016-11-28 , rickbyh.
 
-As of circa 2016-04-11, hello following topics might include this include:
+As of circa 2016-04-11, the following topics might include this include:
 articles/sql-database/sql-database-get-started.md
 articles/sql-database/sql-database-configure-firewall-settings
 articles/sql-data-warehouse-get-started-provision.md
 
 -->
-### <a name="create-a-server-level-firewall-rule-in-hello-azure-portal"></a>Criar uma regra de firewall ao nível do servidor no Olá portal do Azure
+### <a name="create-a-server-level-firewall-rule-in-the-azure-portal"></a>Criar uma regra de firewall ao nível do servidor no portal do Azure
 
-1. No painel de servidor SQL Olá, em definições, clique em **Firewall** o painel do SQL Server de Olá do tooopen Olá Firewall.
+1. No painel do servidor SQL, em Definições, clique em **Firewall** para abrir o painel Firewall do servidor SQL.
 
     <!-- ![sql server firewall](../articles/sql-database/media/sql-database-get-started/sql-server-firewall.png) -->
 
-2. Reveja o endereço IP de cliente de Olá apresentado e validar que este é o endereço IP no Olá Internet utilizando um browser da sua preferência (peça "o que é o meu endereço IP). Ocasionalmente, os endereços IP não correspondem devido a vários motivos.
+2. Reveja o endereço IP de cliente apresentado e confirme que o mesmo é o seu endereço IP na Internet através do browser da sua preferência (perguntar "qual é o meu endereço IP"). Ocasionalmente, os endereços IP não correspondem devido a vários motivos.
 
     <!-- ![your IP address](../articles/sql-database/media/sql-database-get-started/your-ip-address.png) -->
 
-3. Partindo do princípio que correspondem aos endereços IP Olá, clique em **Adicionar IP do cliente** na barra de ferramentas Olá.
+3. Partindo do princípio de que os endereços IP correspondem, clique em **Adicionar IP de cliente** na barra de ferramentas.
 
     ![adicionar IP de cliente](../articles/sql-data-warehouse/media/sql-data-warehouse-get-started-provision/add-client-ip.png)
 
     > [!NOTE]
-    > Pode abrir um intervalo de endereços completo ou uma firewall de base de dados SQL Olá no Olá tooa único endereço IP do servidor. Abrir Olá firewall permite aos administradores do SQL Server e base de dados do utilizadores toologin tooany no Olá toowhich de servidor têm credenciais válidas.
+    > Pode abrir a firewall da Base de Dados SQL no servidor para um único endereço IP ou um conjunto de endereços. Abrir a firewall permite aos utilizadores e administradores SQL iniciar sessão em qualquer base de dados no servidor para o qual tenham credenciais válidas.
     >
 
-4. Clique em **guardar** no Olá toosave da barra de ferramentas esta regra de firewall ao nível do servidor e, em seguida, clique em **OK**.
+4. Clique em **Guardar** na barra de ferramentas para guardar esta regra de firewall ao nível do servidor e, em seguida, clique em **OK**.
 
     ![adicionar IP de cliente](../articles/sql-database/media/sql-database-get-started-portal/server-firewall-rule.png)
 

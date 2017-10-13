@@ -1,6 +1,6 @@
 ---
-title: "aaaUsing Explorador de armazenamento (pré-visualização) com o File storage do Azure | Microsoft Docs"
-description: "Saiba como saber como toouse Explorador de armazenamento (pré-visualização) toowork com o ficheiro de partilhas e os ficheiros."
+title: "Utilizar o Explorador de Armazenamento (Pré-visualização) com o Armazenamento de ficheiros do Azure | Microsoft Docs"
+description: "Saiba como utilizar o Explorador de Armazenamento (Pré-visualização) para trabalhar com ficheiros e partilhas de ficheiros."
 services: storage
 documentationcenter: na
 author: cawaMS
@@ -14,129 +14,129 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 03/09/2017
 ms.author: cawa
-ms.openlocfilehash: 98eb3cde711ae3dbfdb6ffaec23ae24f822370e9
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 964691758254531cb92a5b1cbe055ef61d25dba8
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="using-storage-explorer-preview-with-azure-file-storage"></a>Utilizar o Explorador de Armazenamento (Pré-visualização) com o Armazenamento de ficheiros do Azure
 
-Ficheiros do Azure storage é um serviço que oferece ficheiro partilhas na utilização de nuvem Olá Olá protocolo Server Message Block (SMB) padrão. O SMB 2.1 e o SMB 3.0 são suportados. Com o File storage do Azure, é possível migrar aplicações antigas que se baseiam em tooAzure de partilhas de ficheiros rapidamente e sem reescritas dispendiosas. Pode utilizar os dados de ficheiros armazenamento tooexpose publicamente toohello mundo ou toostore dados da aplicação em privado. Neste artigo, irá aprender como toouse Explorador de armazenamento (pré-visualização) toowork com o ficheiro de partilhas e os ficheiros.
+O Armazenamento de ficheiros do Azure é um serviço que oferece partilhas de ficheiros na cloud com o Protocolo SMB (Server Message Block) padrão. O SMB 2.1 e o SMB 3.0 são suportados. Com o Armazenamento de ficheiros do Azure, pode migrar aplicações antigas que se baseiam em partilhas de ficheiros para o Azure rapidamente e sem reescritas dispendiosas. Pode utilizar o Armazenamento de ficheiros para expor publicamente os dados ao mundo ou para armazenar dados da aplicação em privado. Neste artigo, vai aprender a utilizar o Explorador de Armazenamento (Pré-visualização) para trabalhar com ficheiros e partilhas de ficheiros.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-toocomplete Olá passos descritos neste artigo, irá precisar seguinte Olá:
+Para executar os passos descritos neste artigo, é necessário o seguinte:
 
 - [Transfira e instale o Explorador de Armazenamento (pré-visualização)](http://www.storageexplorer.com/)
 
-- [Ligar a conta de armazenamento do Azure tooa ou serviço](https://docs.microsoft.com//azure/vs-azure-tools-storage-manage-with-storage-explorer#connect-to-a-storage-account-or-service)
+- [Ligar a um serviço ou a uma conta de armazenamento do Azure](https://docs.microsoft.com//azure/vs-azure-tools-storage-manage-with-storage-explorer#connect-to-a-storage-account-or-service)
 
 ## <a name="create-a-file-share"></a>Criar Partilhas de Ficheiros
 
 Todos os ficheiros têm de residir numa partilha de ficheiros, que é simplesmente um agrupamento lógico de ficheiros. Uma conta pode conter um número ilimitado de partilhas de ficheiros e cada partilha pode armazenar um número ilimitado de ficheiros.
 
-Olá, os passos seguintes mostram como toocreate um partilha de ficheiros no Explorador de armazenamento (pré-visualização).
+Os passos seguintes mostram como criar uma partilha de ficheiros no Explorador de Armazenamento (Pré-visualização).
 
 1. Abrir o Explorador de Armazenamento (Pré-visualização).
 
-2. No painel esquerdo Olá, expanda a conta de armazenamento de Olá no qual pretende toocreate Olá partilha de ficheiros
+2. No painel da esquerda, expanda a conta de armazenamento na qual pretende criar a Partilha de Ficheiros.
 
-3. Clique com botão direito **partilhas de ficheiros**e, no menu de contexto de Olá - selecione **criar partilha de ficheiros**.
+3. Clique com o botão direito do rato em **File Shares (Partilhas de Ficheiros)** e, no menu de contexto, selecione **Create File Share (Criar Partilha de Ficheiros)**.
 
     ![Criar a Partilha de Ficheiros](media/vs-azure-tools-storage-explorer-files/image1.png)
 
-4. Será apresentada uma caixa de texto abaixo Olá **partilhas de ficheiros** pasta. Introduza o nome de Olá para a partilha de ficheiros. Consulte Olá [partilhar regras de nomenclatura](https://docs.microsoft.com//azure/storage/storage-dotnet-how-to-use-blobs#create-a-container) secção para obter uma lista de restrições em partilhas de ficheiros de atribuição de nomes e regras.
+4. É apresentada uma caixa de texto abaixo da pasta **File Shares (Partilhas de Ficheiros)**. Introduza o nome da partilha de ficheiros. Veja a secção [Regras de nomenclatura de partilhas](https://docs.microsoft.com//azure/storage/storage-dotnet-how-to-use-blobs#create-a-container) para obter uma lista das regras e restrições à nomenclatura das partilhas de ficheiros.
 
-    ![Atribuição de nome de partilha de Olá](media/vs-azure-tools-storage-explorer-files/image2.png)
+    ![Dar um nome à partilha](media/vs-azure-tools-storage-explorer-files/image2.png)
 
-5. Prima **Enter** quando toocreate efectuada Olá partilha de ficheiros, ou **Esc** toocancel. Assim que a partilha de ficheiros de Olá foi criada com êxito, será apresentado em Olá **partilhas de ficheiros** pasta para Olá selecionado a conta de armazenamento.
+5. Quando tiver concluído, prima **Enter** para criar a partilha de ficheiros ou **Esc** para cancelar. Depois de a partilha ser criada com êxito, será apresentada na pasta **File Shares** da conta de armazenamento selecionada.
 
-    ![nova partilha de Olá](media/vs-azure-tools-storage-explorer-files/image3.png)
+    ![A nova partilha](media/vs-azure-tools-storage-explorer-files/image3.png)
 
 ## <a name="view-a-file-shares-contents"></a>Ver os conteúdos de uma partilha de ficheiros
 
 As partilhas de ficheiros contêm ficheiros e pastas (que também podem conter ficheiros).
 
-Olá passos seguintes mostram como partilha de conteúdo de Olá tooview de um ficheiro no Explorador de armazenamento (pré-visualização): +
+Os passos seguintes mostram como ver os conteúdos de uma partilha de ficheiros no Explorador de Armazenamento (Pré-visualização):
 
 1. Abrir o Explorador de Armazenamento (Pré-visualização).
 
-2. No painel esquerdo Olá, expanda a conta de armazenamento de Olá com partilha de ficheiros de Olá desejar tooview.
+2. No painel da esquerda, expanda a conta de armazenamento que contém a partilha de ficheiros que quer ver.
 
-3. Expanda a conta de armazenamento a Olá **partilhas de ficheiros**.
+3. Expanda as **Partilhas de Ficheiros** da conta de armazenamento.
 
-4. Partilha de ficheiros do contexto Olá que queira tooview e, no menu de contexto de Olá - selecione **abra**. Também pode fazer duplo clique partilha de ficheiros de Olá desejar tooview.
+4. Clique com o botão direito do rato na partilha que quer ver e, no menu de contexto, selecione **Open (Abrir)**. Também pode fazer duplo clique na partilha de ficheiros desejada.
 
     ![Abrir a partilha](media/vs-azure-tools-storage-explorer-files/image4.png)
 
-5. painel principal Olá apresentará o conteúdo da partilha de ficheiros Olá.
+5. O painel principal apresenta os conteúdos da partilha de ficheiros.
     
-    ![Olá conteúdos da partilha](media/vs-azure-tools-storage-explorer-files/image5.png)
+    ![Os conteúdos da partilha](media/vs-azure-tools-storage-explorer-files/image5.png)
 
 ## <a name="delete-a-file-share"></a>Eliminar partilhas de ficheiros
 
-É fácil criar e eliminar partilhas de ficheiros, conforme necessário. (toosee como ficheiros individuais toodelete, consulte a secção de toohello, [gerir ficheiros numa partilha de ficheiros](https://docs.microsoft.com//azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container).)
+É fácil criar e eliminar partilhas de ficheiros, conforme necessário. (Para saber como eliminar ficheiros individuais, veja a secção [Gerir ficheiros numa partilha de ficheiros](https://docs.microsoft.com//azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container).)
 
-Olá, os passos seguintes ilustram como toodelete um partilha de ficheiros no Explorador de armazenamento (pré-visualização):
+Os passos seguintes mostram como eliminar uma partilha de ficheiros no Explorador de Armazenamento (Pré-visualização):
 
 1. Abrir o Explorador de Armazenamento (Pré-visualização).
 
-2. No painel esquerdo Olá, expanda a conta de armazenamento de Olá com partilha de ficheiros de Olá desejar tooview.
+2. No painel da esquerda, expanda a conta de armazenamento que contém a partilha de ficheiros que quer ver.
 
-3. Expanda a conta de armazenamento a Olá **partilhas de ficheiros**.
+3. Expanda as **Partilhas de Ficheiros** da conta de armazenamento.
 
-4. Partilha de ficheiros do contexto Olá que queira toodelete e, no menu de contexto de Olá - selecione **eliminar**. Também pode premir **eliminar** partilha do toodelete Olá ficheiro atualmente selecionado.
+4. Clique com o botão direito do rato na partilha que quer eliminar e, no menu de contexto, selecione **Delete (Eliminar)**. Também pode premir **Delete** para eliminar a partilha de ficheiros selecionada atualmente.
 
     ![Eliminar](media/vs-azure-tools-storage-explorer-files/image6.png)
 
-5. Selecione **Sim** toohello diálogo de confirmação.
+5. Selecione **Yes (Sim)**, na caixa de diálogo de confirmação.
     
     ![Caixa de diálogo de confirmação](media/vs-azure-tools-storage-explorer-files/image7.png)
 
 ## <a name="copy-a-file-share"></a>Copiar partilhas de ficheiros
 
-Explorador de armazenamento (pré-visualização) permite-lhe toocopy uma área de transferência de toohello de partilha de ficheiros e, em seguida, cole que a partilha de ficheiros para outra conta de armazenamento. (toosee como ficheiros individuais toocopy, consulte a secção de toohello, [gerir ficheiros numa partilha de ficheiros](https://docs.microsoft.com//azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container).)
+O Storage Explorer (Preview) permite-lhe copiar partilhas de ficheiros para a área de transferências e, em seguida, copiá-las para outra conta de armazenamento. (Para saber como copiar ficheiros individuais, veja a secção [Gerir ficheiros numa partilha de ficheiros](https://docs.microsoft.com//azure/vs-azure-tools-storage-explorer-blobs#managing-blobs-in-a-blob-container).)
 
-Olá, os passos seguintes mostram como toocopy um ficheiro de partilha de um tooanother de conta de armazenamento.
+Os passos seguintes mostram como copiar uma partilha de ficheiros de uma conta de armazenamento para outra.
 
 1. Abrir o Explorador de Armazenamento (Pré-visualização).
 
-2. No painel esquerdo Olá, expanda a conta de armazenamento de Olá com partilha de ficheiros de Olá desejar toocopy.
+2. No painel da esquerda, expanda a conta de armazenamento que contém a partilha de ficheiros que quer copiar.
 
-3. Expanda a conta de armazenamento a Olá **partilhas de ficheiros**.
+3. Expanda as **Partilhas de Ficheiros** da conta de armazenamento.
 
-4. Partilha de ficheiros do contexto Olá que queira toocopy e, no menu de contexto de Olá - selecione **partilha de ficheiros de cópia**.
+4. Clique com o botão direito do rato na partilha que quer copiar e, no menu de contexto, selecione **Copy File Share (Copiar Partilha de Ficheiro)**.
 
     ![Copiar Partilha de Ficheiros](media/vs-azure-tools-storage-explorer-files/image8.png)
 
-5. Faça duplo clique de conta de armazenamento de destino"Olá pretendido" para o qual pretende partilha de ficheiros toopaste Olá e - a partir do menu de contexto de Olá - selecione **partilha de ficheiros de colar**.
+5. Clique com o botão direito do rato na conta de armazenamento de “destino” pretendida na qual quer colar a partilha de ficheiros e, no menu de contexto, selecione **Paste File Share (Colar Partilha de Ficheiros)**.
 
     ![Criar Partilha de Ficheiros](media/vs-azure-tools-storage-explorer-files/image9.png)
 
-## <a name="get-hello-sas-for-a-file-share"></a>Obter Olá SAS para uma partilha de ficheiros
+## <a name="get-the-sas-for-a-file-share"></a>Obter a SAS de uma partilha de ficheiros
 
-A [assinatura de acesso partilhado (SAS)](https://docs.microsoft.com//azure/storage/storage-dotnet-shared-access-signature-part-1) fornece acesso delegado tooresources na sua conta de armazenamento. Isto significa que pode conceder que um cliente limitada tooobjects de permissões na sua conta de armazenamento para um determinado período de tempo e com um conjunto especificado de permissões, sem ter tooshare as chaves de acesso da conta.
+As [assinaturas de acesso partilhado (SAS)](https://docs.microsoft.com//azure/storage/storage-dotnet-shared-access-signature-part-1) disponibilizam acesso delegado a recursos na sua conta de armazenamento. Isto significa que pode conceder a um cliente permissões limitadas a objetos na sua conta de armazenamento durante um determinado período de tempo e com um conjunto de permissões especificadas, sem ter de partilhar as chaves de acesso da conta.
 
-Olá passos seguintes mostram como toocreate partilhar uma SAS para um ficheiro: +
+Os passos seguintes mostram como criar uma SAS para uma partilha de ficheiros:
 
 1. Abrir o Explorador de Armazenamento (Pré-visualização).
 
-2. No painel esquerdo Olá, expanda a conta de armazenamento de Olá com partilha de ficheiros de Olá para o qual pretende tooget uma SAS.
+2. No painel da esquerda, expanda a conta de armazenamento que contém a partilha de ficheiros para a qual quer obter uma SAS
 
-3. Expanda a conta de armazenamento a Olá **partilhas de ficheiros**.
+3. Expanda as **Partilhas de Ficheiros** da conta de armazenamento.
 
-4. Partilha de ficheiros pretendido de Olá com o botão direito e, no menu de contexto de Olá - selecione **obter assinatura de acesso partilhado**.
+4. Clique com o botão direito do rato na partilha de ficheiros pretendida e, no menu de contexto, selecione **Get Shared Access Signature (Obter Assinatura de Acesso Partilhado)**.
 
     ![Obter Assinatura de Acesso Partilhado](media/vs-azure-tools-storage-explorer-files/image10.png)
 
-5. No Olá **assinatura de acesso partilhado** caixa de diálogo, especificar a política de Olá, datas de início e de expiração, fuso horário e níveis de que pretende para recursos de Olá de acesso.
+5. Na caixa de diálogo **Shared Access Signature (Assinatura de Acesso Partilhado)**, especifique a política, as datas de início e de expiração, o fuso horário e os níveis de acesso que atribuir ao recurso.
 
     ![Caixa de diálogo SAS](media/vs-azure-tools-storage-explorer-files/image11.png)
 
-6. Quando tiver terminado de especificar opções de SAS Olá, selecione **criar**.
+6. Quando tiver terminado de especificar as opções de SAS, selecione **Create (Criar)**.
 
-7. Um segundo **assinatura de acesso partilhado** caixa de diálogo, em seguida, irá apresentar que apresenta uma lista de Olá partilha de ficheiros, juntamente com o URL de Olá e QueryStrings pode utilizar tooaccess Olá recursos de armazenamento. Selecione **cópia** seguinte URL de toohello desejar área de transferência do toocopy toohello.
+7. É, então, apresentada uma segunda caixa de diálogo **Assinatura de Acesso Partilhado**, que mostra a partilha de ficheiros juntamente com o URL e QueryStrings que pode utilizar para aceder ao recurso do armazenamento. Selecione **Copy (Copiar)**, junto ao URL que quer copiar para a área de transferências.
     
     ![Segunda caixa de diálogo SAS](media/vs-azure-tools-storage-explorer-files/image12.png)
 
@@ -144,31 +144,31 @@ Olá passos seguintes mostram como toocreate partilhar uma SAS para um ficheiro:
 
 ## <a name="manage-access-policies-for-a-file-share"></a>Gerir as Políticas de Acesso de uma partilha de ficheiros
 
-Olá passos seguintes mostram como toomanage (adicionar e remover) políticas para uma partilha de ficheiros de acesso: +. Políticas de acesso de Olá é utilizada para criar URLs de SAS através do qual as pessoas podem utilizar tooaccess Olá recurso do ficheiro de armazenamento durante um período de tempo definido.
+Os passos seguintes mostram como gerir (adicionar e remover) políticas de acesso de uma partilha de ficheiros: As Políticas de Acesso são utilizadas para criar URLs de SAS que as pessoas podem utilizar para aceder ao recurso do Armazenamento de ficheiros durante um período de tempo definido.
 
 1. Abrir o Explorador de Armazenamento (Pré-visualização).
 
-2. No painel esquerdo Olá, expanda a conta de armazenamento de Olá com partilha de ficheiros de Olá cujas políticas de acesso pretende toomanage.
+2. No painel da esquerda, expanda a conta de armazenamento que contém a partilha de ficheiros cujas políticas de acesso quer gerir.
 
-3. Expanda a conta de armazenamento a Olá **partilhas de ficheiros**.
+3. Expanda as **Partilhas de Ficheiros** da conta de armazenamento.
 
-4. Selecione a partilha de ficheiros pretendido de Olá e, no menu de contexto de Olá - selecione **gerir políticas de acesso**.
+4. Selecione a partilha de ficheiros pretendida e, no menu de contexto, selecione **Manage Access Policies (Gerir Políticas de Acesso)**.
 
     ![Menu de Contexto Gerir políticas de acesso](media/vs-azure-tools-storage-explorer-files/image13.png)
 
-5. Olá **políticas de acesso** apresentará uma caixa de diálogo lista quaisquer políticas de acesso já criadas para a partilha de ficheiros selecionado Olá.
+5. A caixa de diálogo **Access Policies (Políticas de Acesso)** mostrará todas as políticas de acesso que já tenham sido criadas para a partilha de ficheiros selecionada.
     
     ![Políticas de Acesso](media/vs-azure-tools-storage-explorer-files/image14.png)
 
-6. Siga estes passos, dependendo da tarefa de gestão de política de acesso de Olá:
+6. Siga estes passos consoante a tarefa de gestão de política de acesso:
     
-    - **Adicionar uma política de acesso nova** - selecione **Add (Adicionar)**. Depois de o gerado, Olá **políticas de acesso** diálogo apresentará Olá recém-adicionada política (com as predefinições) de acesso.
+    - **Adicionar uma política de acesso nova** - selecione **Add (Adicionar)**. Depois de gerada, a caixa de diálogo **Access Policies** mostrará a política de acesso acabada de adicionar (com predefinições).
 
     - **Editar uma política de acesso** - faça eventuais alterações que pretenda e selecione **Save (Guardar)**.
 
-    - **Remover uma política de acesso** - selecione **remover** próxima política de acesso de toohello desejar tooremove.
+    - **Remover uma política de acesso** - selecione **Remove (Remover)** junto à política de acesso que pretende remover.
 
-7. Crie um novo URL de SAS através de Olá política de acesso que criou anteriormente:
+7. Utilize a Política de Acesso que criou anteriormente para criar um URL de SAS novo:
     
     ![Obter SAS](media/vs-azure-tools-storage-explorer-files/image15.png)
     
@@ -176,88 +176,88 @@ Olá passos seguintes mostram como toomanage (adicionar e remover) políticas pa
 
 ## <a name="managing-files-in-a-file-share"></a>Gerir ficheiros numa partilha de ficheiros
 
-Assim que tiver criado uma partilha de ficheiros, pode carregar uma partilha de ficheiros do ficheiro toothat, transferir um computador local do ficheiro tooyour, abra um ficheiro no seu computador local e muito mais.
+Depois de criar uma partilha de ficheiros, pode carregar um ficheiro para a mesma, transferir um ficheiro para o seu computador local, abrir um ficheiro no computador local e muito mais.
 
-Olá passos seguintes mostram como partilharem toomanage Olá ficheiros (e pastas) dentro de um ficheiro.
+Os passos seguintes mostram como gerir ficheiros (e pastas) numa partilha de ficheiros.
 
 1.  Abrir o Explorador de Armazenamento (Pré-visualização).
 
-2.  No painel esquerdo Olá, expanda a conta de armazenamento de Olá com partilha de ficheiros de Olá desejar toomanage.
+2.  No painel da esquerda, expanda a conta de armazenamento que contém a partilha de ficheiros que quer gerir.
 
-3.  Expanda a conta de armazenamento a Olá **partilhas de ficheiros**.
+3.  Expanda as **Partilhas de Ficheiros** da conta de armazenamento.
 
-4.  Faça duplo clique em partilha de ficheiros de Olá desejar tooview.
+4.  Faça duplo clique na partilha de ficheiros que quer ver.
 
-5.  painel principal Olá apresentará o conteúdo da partilha de ficheiros Olá.
+5.  O painel principal apresenta os conteúdos da partilha de ficheiros.
 
-    ![Olá conteúdos da partilha](media/vs-azure-tools-storage-explorer-files/image17.png)
+    ![Os conteúdos da partilha](media/vs-azure-tools-storage-explorer-files/image17.png)
 
-6.  painel principal Olá apresentará o conteúdo da partilha de ficheiros Olá.
+6.  O painel principal apresenta os conteúdos da partilha de ficheiros.
 
-7.  Siga estes que passos, dependendo das tarefas de Olá desejar tooperform:
+7.  Siga estes passos, consoante a tarefa que pretende realizar:
 
-    - **Carregar a partilha de ficheiros de tooa de ficheiros**
+    - **Carregar ficheiros para uma partilha de ficheiros**
 
-        a.  Na barra de ferramentas do painel Olá principal, selecione **carregar**e, em seguida, **carregar ficheiros** no menu de Olá pendente.
+        a.  Na barra de ferramentas do painel principal, selecione **Upload (Carregar)** e, em seguida, **Upload Files (Carregar Ficheiros)**, no menu pendente.
 
         ![Carregar ficheiros](media/vs-azure-tools-storage-explorer-files/image18.png)
         
-        b. No Olá **carregar ficheiros** caixa de diálogo, reticências Olá selecione (**...** ) botão no lado direito de Olá de Olá **ficheiros** tooselect Olá ficheiros pretende tooupload de caixa de texto.
+        b. Na caixa de diálogo **Upload files (Carregar ficheiros)**, selecione o botão de reticências (**...**), no lado direito da caixa de texto **Files (Ficheiros)**, para selecionar o ficheiro ou ficheiros que quer carregar.
 
         ![Adição ficheiros](media/vs-azure-tools-storage-explorer-files/image19.png)
 
         c. Selecione **Upload**.
 
-    - **Carregar uma partilha de ficheiros de tooa pasta**
+    - **Carregar uma pasta para uma partilha de ficheiros**
         
-        a. Na barra de ferramentas do painel Olá principal, selecione **carregar**e, em seguida, **carregar pasta** no menu de Olá pendente.
+        a. Na barra de ferramentas do painel principal, selecione **Upload** e, em seguida, **Upload Folder (Carregar Pasta)**, no menu pendente.
 
         ![Menu Carregar pasta](media/vs-azure-tools-storage-explorer-files/image20.png)
 
-        b. No Olá **carregamento pasta** caixa de diálogo, reticências Olá selecione (**...** ) botão no lado direito de Olá de Olá **pasta** pasta de Olá de tooselect de caixa de texto cujo conteúdo pretende tooupload.
+        b. Na caixa de diálogo **Upload folder (Carregar pasta)**, selecione o botão de reticências (**...**), no lado direito da caixa de texto **Folder (Pasta)**, para selecionar a pasta cujos conteúdos quer carregar.
 
-        c. Opcionalmente, especifique uma pasta de destino no qual Olá conteúdo da pasta selecionado será carregado. Se a pasta de destino Olá não existir, será criado.
+        c. Opcionalmente, especifique uma pasta de destino no qual os conteúdos da pasta selecionada serão carregados. Se a pasta de destino não existir, será criada.
 
         d. Selecione **Upload**.
 
-    - **Transferir um computador local do ficheiro tooyour**
+    - **Transferir um ficheiro para o seu computador local**
         
-        a. Selecione o ficheiro de Olá desejar toodownload.
+        a. Selecione o ficheiro que pretende transferir.
         
-        b. Na barra de ferramentas do painel Olá principal, selecione **transferir**.
+        b. Na barra de ferramentas do painel principal, selecione **Download (Transferir)**.
         
-        c. No Olá **Especifique qual toosave Olá transferidos ficheiros** caixa de diálogo, especifique onde pretende que o ficheiro de Olá transferido de localização de Olá e Olá nome desejar toogive-lo.
+        c. Na caixa de diálogo **Specify where to save the downloaded file (Especificar onde guardar o ficheiro transferido)**, especifique a localização para onde quer transferir o ficheiro e o nome que lhe que dar.
 
         d. Selecione **Guardar**.
 
     - **Abrir um ficheiro no seu computador local**
         
-        a.  Selecione o ficheiro de Olá desejar tooopen.
+        a.  Selecione o ficheiro que pretende abrir.
         
-        b.  Na barra de ferramentas do painel Olá principal, selecione **abra**.
+        b.  Na barra de ferramentas do painel principal, selecione **Open (Abrir)**.
         
-        c.  ficheiro de Olá será transferido e aberta utilizando a aplicação Olá associada ao tipo de ficheiro do ficheiro de Olá subjacente.
+        c.  O ficheiro é transferido e aberto com a aplicação associada ao respetivo tipo de ficheiro subjacente.
 
-    - **Copiar uma área de transferência do ficheiro toohello**
+    - **Copiar um ficheiro para a área de transferência**
 
-        a. Selecione o ficheiro de Olá desejar toocopy.
+        a. Selecione o ficheiro que pretende copiar.
 
-        b. Na barra de ferramentas do painel Olá principal, selecione **cópia**.
+        b. Na barra de ferramentas do painel principal, selecione **Copy (Copiar)**.
 
-        c. No painel esquerdo Olá, navegue tooanother partilha de ficheiros e faça duplo clique tooview-lo no painel principal Olá.
+        c. No painel da esquerda, navegue para outra partilha de ficheiros e faça duplo clique na mesma para vê-la no painel principal.
 
-        d. Na barra de ferramentas do painel Olá principal, selecione **colar** toocreate uma cópia do ficheiro de Olá.
+        d. Na barra de ferramentas do painel principal, selecione **Paste (Colar)**, para criar uma cópia do ficheiro.
 
     - **Eliminar um ficheiro**
 
-        a. Selecione o ficheiro de Olá desejar toodelete.
+        a. Selecione o ficheiro que pretende eliminar.
 
-        b. Na barra de ferramentas do painel Olá principal, selecione **eliminar**.
+        b. Na barra de ferramentas do painel principal, selecione **Delete (Eliminar)**.
 
-        c. Selecione **Sim** toohello diálogo de confirmação.
+        c. Selecione **Yes (Sim)**, na caixa de diálogo de confirmação.
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- Olá vista [mais recente notas de versão do Explorador de armazenamento (pré-visualização) e vídeos](http://www.storageexplorer.com/).
+- Vejas os [mais recentes vídeos e notas de versão do Storage Explorer (Preview)](http://www.storageexplorer.com/).
 
-- Saiba como demasiado[criar aplicações utilizar blobs do Azure, tabelas, filas e os ficheiros](https://azure.microsoft.com/documentation/services/storage/).
+- Saiba como [utilizar blobs, tabelas, filas e ficheiros do Azure para criar aplicações](https://azure.microsoft.com/documentation/services/storage/).

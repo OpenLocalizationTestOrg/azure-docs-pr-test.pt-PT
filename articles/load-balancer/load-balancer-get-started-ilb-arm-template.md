@@ -1,9 +1,9 @@
 ---
-title: aaaCreate um balanceador de carga interno - modelo Azure | Microsoft Docs
-description: Saiba como o utilizando um modelo no Gestor de recursos de Balanceador de carga de toocreate um interno
+title: "Criar um balanceador de carga interno – Modelo do Azure | Microsoft Docs"
+description: Saiba como criar um balanceador de carga interno com um modelo no Resource Manager
 services: load-balancer
 documentationcenter: na
-author: kumudd
+author: KumudD
 manager: timlt
 tags: azure-resource-manager
 ms.assetid: 64150862-6ced-42de-85dc-89d323257d7c
@@ -12,13 +12,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/23/2017
+ms.date: 09/25/2017
 ms.author: kumud
-ms.openlocfilehash: 3ffa8178b863367cd79e2bc2b7ce4e45b23267e5
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: f3f89bd85e6e91e84b603abc9824a51b54ccee47
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="create-an-internal-load-balancer-using-a-template"></a>Criar um balanceador de carga interno com um modelo
 
@@ -28,25 +28,27 @@ ms.lasthandoff: 10/06/2017
 > * [CLI do Azure](../load-balancer/load-balancer-get-started-ilb-arm-cli.md)
 > * [Modelo](../load-balancer/load-balancer-get-started-ilb-arm-template.md)
 
+[!INCLUDE [load-balancer-basic-sku-include.md](../../includes/load-balancer-basic-sku-include.md)]
+
 [!INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
 > [!NOTE]
-> O Azure tem dois modelos de implementação diferentes para criar e trabalhar com os recursos: [Resource Manager e clássico](../azure-resource-manager/resource-manager-deployment-model.md).  Este artigo abrange utilizando o modelo de implementação Resource Manager de Olá, que a Microsoft recomenda-se para a maioria das implementações de novo em vez de Olá [modelo de implementação clássica](load-balancer-get-started-ilb-classic-ps.md).
+> O Azure tem dois modelos de implementação diferentes para criar e trabalhar com os recursos: [Resource Manager e clássico](../azure-resource-manager/resource-manager-deployment-model.md).  Este artigo explica como utilizar o modelo de implementação Resource Manager, o que é recomendado pela Microsoft para a maioria das novas implementações em vez do [modelo de implementação clássica](load-balancer-get-started-ilb-classic-ps.md).
 
 [!INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
-## <a name="deploy-hello-template-by-using-click-toodeploy"></a>Implementar a modelo Olá utilizando clique toodeploy
+## <a name="deploy-the-template-by-using-click-to-deploy"></a>Implementar o modelo com a função clique para implementar
 
-Olá modelo de exemplo disponível no repositório público Olá utiliza um ficheiro de parâmetros que contém as cenário de Olá valores utilizados de predefinição do Olá toogenerate descrito acima. toodeploy utilizando este modelo Clique toodeploy, siga [esta ligação](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-internal-load-balancer), clique em **implementar tooAzure**, substitua os valores de parâmetros de predefinição Olá se necessário e siga as instruções de Olá no portal de Olá.
+O modelo de exemplo disponível no repositório público utiliza um ficheiro de parâmetros com os valores predefinidos utilizados para gerar o cenário descrito acima. Para implementar este modelo com a função clique para implementar, siga [esta ligação](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-internal-load-balancer), clique em **Implementar no Azure**, substitua os valores de parâmetro predefinidos, se necessário, e siga as instruções apresentadas no portal.
 
-## <a name="deploy-hello-template-by-using-powershell"></a>Implementar a modelo de Olá utilizando o PowerShell
+## <a name="deploy-the-template-by-using-powershell"></a>Implementar o modelo com o PowerShell
 
-modelo de Olá toodeploy transferidas utilizando o PowerShell, siga os passos de Olá abaixo.
+Para implementar o modelo que transferiu com o PowerShell, siga os passos abaixo.
 
-1. Se nunca tiver utilizado o Azure PowerShell, consulte o artigo [como tooInstall e configurar o Azure PowerShell](/powershell/azure/overview) e siga as instruções de Olá todos os toohello de forma Olá terminar toosign no Azure e selecionar a sua subscrição.
-2. Transferir Olá parâmetros tooyour local o disco do ficheiro.
-3. Edite o ficheiro de Olá e guardá-lo.
-4. Executar Olá **New-AzureRmResourceGroupDeployment** toocreate cmdlet um grupo de recursos utilizando Olá modelo.
+1. Se nunca tiver utilizado o Azure PowerShell, veja [How to Install and Configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azure/overview) e siga as instruções até ao fim para iniciar sessão no Azure e selecionar a sua subscrição.
+2. Transfira o ficheiro de parâmetros para o disco local.
+3. Edite o ficheiro e guarde-o.
+4. Execute o cmdlet **New-AzureRmResourceGroupDeployment** para criar um grupo de recursos com o modelo.
 
     ```azurecli
     New-AzureRmResourceGroupDeployment -Name TestRG -Location westus `
@@ -54,23 +56,23 @@ modelo de Olá toodeploy transferidas utilizando o PowerShell, siga os passos de
         -TemplateParameterFile 'C:\temp\azuredeploy.parameters.json'
     ```
 
-## <a name="deploy-hello-template-by-using-hello-azure-cli"></a>Implementar a modelo de Olá utilizando Olá CLI do Azure
+## <a name="deploy-the-template-by-using-the-azure-cli"></a>Implementar o modelo com a CLI do Azure
 
-modelo de Olá toodeploy utilizando Olá CLI do Azure, siga os passos de Olá abaixo.
+Para implementar o modelo com a CLI do Azure, siga os passos abaixo.
 
-1. Se nunca tiver utilizado a CLI do Azure, consulte o artigo [instalar e configurar a CLI do Azure de Olá](../cli-install-nodejs.md) e siga as instruções de Olá toohello ponto onde poderá selecionar a sua conta do Azure e a subscrição de cópia de segurança.
-2. Executar Olá **modo de configuração do azure** comando tooswitch tooResource modo Manager, como mostrado abaixo.
+1. Se nunca tiver utilizado a CLI do Azure, veja [Install and Configure the Azure CLI (Instalar e Configurar a CLI do Azure)](../cli-install-nodejs.md) e siga as instruções até ao ponto onde poderá selecionar a sua conta e subscrição do Azure.
+2. Execute o comando **azure config mode** para mudar para o modo Resource Manager, como mostrado abaixo.
 
     ```azurecli
     azure config mode arm
     ```
 
-    O resultado para o comando de Olá acima Olá esperado é:
+    O resultado esperado para o comando acima é o seguinte:
 
         info:    New mode is arm
 
-3. Abra o ficheiro de parâmetros de Olá, selecione o seu conteúdo e guardá-lo tooa ficheiros no seu computador. Neste exemplo, foi guardado o ficheiro de parâmetros de Olá demasiado*Parameters. JSON*.
-4. Executar Olá **criar a implementação do grupo do azure** toodeploy Olá novo Balanceador de carga interno utilizando o modelo de Olá e parâmetro de comando ficheiros que transferiu e alterou acima. lista de Olá apresentada depois do resultado de Olá explica os parâmetros de Olá utilizados.
+3. Abra o ficheiro de parâmetros, selecione o conteúdo e guarde-o num ficheiro no seu computador. Para este exemplo, guardámos o ficheiro de parâmetros em *parameters.json*.
+4. Execute o comando **azure group deployment create** para implementar o novo balanceador de carga interno com o modelo e os ficheiros de parâmetros que transferiu e alterou acima. A lista apresentada depois do resultado explica os parâmetros utilizados.
 
     ```azurecli
     azure group create --name TestRG --location westus --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-internal-load-balancer/azuredeploy.json --parameters-file parameters.json

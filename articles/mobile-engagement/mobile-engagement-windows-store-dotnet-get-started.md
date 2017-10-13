@@ -1,6 +1,6 @@
 ---
-title: "aaaGet ao Windows Universal aplicações do Azure Mobile Engagement"
-description: "Saiba como toouse Azure Mobile Engagement com notificações push e de análise para aplicações universais do Windows."
+title: "Introdução ao Azure Mobile Engagement para Aplicações Universais do Windows"
+description: "Saiba como utilizar o Azure Mobile Engagement com notificações push e de análise para Aplicações Universais do Windows."
 services: mobile-engagement
 documentationcenter: windows
 author: piyushjo
@@ -14,20 +14,20 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/12/2016
 ms.author: piyushjo;ricksal
-ms.openlocfilehash: 8224a6d3789cfe4784bbc9472005f9eddb94a8b8
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 40db7e4dd151ec391c754dc6d4145aeeb8058eca
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-started-with-azure-mobile-engagement-for-windows-universal-apps"></a>Introdução ao Azure Mobile Engagement para Aplicações Universais do Windows
 [!INCLUDE [Hero tutorial switcher](../../includes/mobile-engagement-hero-tutorial-switcher.md)]
 
-Este tópico mostra como toouse Azure Mobile Engagement toounderstand a utilização da aplicação e enviar push a utilizadores de toosegmented de notificações de uma aplicação Universal do Windows.
-Este tutorial demonstra Olá cenário de difusão simples utilizando o Mobile Engagement. Irá criar uma Aplicação Universal do Windows em branco que recolhe dados de utilização de aplicação básicas e recebe notificações push através do Serviço de Notificações do Windows (WNS).
+Este tópico mostra como utilizar o Azure Mobile Engagement para compreender a utilização da aplicação e o envio de notificações push para utilizadores segmentados de uma aplicação Universal do Windows.
+Este tutorial demonstra o cenário de difusão simples utilizando o Mobile Engagement. Irá criar uma Aplicação Universal do Windows em branco que recolhe dados de utilização de aplicação básicas e recebe notificações push através do Serviço de Notificações do Windows (WNS).
 
 > [!NOTE]
-> serviço de Azure Mobile Engagement Olá será descontinuado Março de 2018 e está, atualmente, apenas os clientes de tooexisting disponíveis. Para obter mais informações, veja [Mobile Engagement](https://azure.microsoft.com/en-us/services/mobile-engagement/).
+> O serviço Azure Mobile Engagement será extinto em março de 2018 e, atualmente, apenas está disponível para os clientes existentes. Para obter mais informações, veja [Mobile Engagement](https://azure.microsoft.com/en-us/services/mobile-engagement/).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 [!INCLUDE [Prereqs](../../includes/mobile-engagement-windows-store-prereqs.md)]
@@ -35,107 +35,107 @@ Este tutorial demonstra Olá cenário de difusão simples utilizando o Mobile En
 ## <a name="set-up-mobile-engagement-for-your-windows-universal-app"></a>Configurar o Mobile Engagement para a aplicação Universal do Windows
 [!INCLUDE [Create Mobile Engagement App in Portal](../../includes/mobile-engagement-create-app-in-portal-new.md)]
 
-## <a id="connecting-app"></a>Ligar o back-end da aplicação toohello Mobile Engagement
-Este tutorial apresenta uma "integração básica," que é definida de Olá mínima necessária toocollect dados e enviar uma notificação push. a documentação da integração completa Olá pode ser encontrada na Olá [integração do SDK do Mobile Engagement Windows Universal](mobile-engagement-windows-store-sdk-overview.md).
+## <a id="connecting-app"></a>Ligar a aplicação ao back-end do Mobile Engagement
+Este tutorial apresenta uma "integração básica", o conjunto mínimo necessário para recolher dados e enviar uma notificação push. É possível encontrar toda a documentação da integração na página [Integração do SDK Windows Universal do Mobile Engagement](mobile-engagement-windows-store-sdk-overview.md).
 
-Criar uma aplicação básica com a integração do Visual Studio toodemonstrate Olá.
+Irá criar uma aplicação básica com o Visual Studio para demonstrar a integração.
 
 ### <a name="create-a-windows-universal-app-project"></a>Criar um projeto da Aplicação Universal do Windows
-Olá seguintes passos assumem Olá utilização do Visual Studio 2015 apesar dos passos de Olá serem semelhantes em versões anteriores do Visual Studio.
+Os seguintes passos assumem a utilização do Visual Studio 2015, apesar de os passos serem semelhantes em versões anteriores do Visual Studio.
 
-1. Inicie o Visual Studio e em Olá **home page** ecrã, selecione **novo projeto**.
-2. No pop-up de Olá, selecione **Windows** -> **Universal** -> **aplicação em branco (Universal Windows)**. Preencha aplicação Olá **nome** e **nome da solução**e, em seguida, clique em **OK**.
+1. Inicie o Visual Studio e, no ecrã **Base**, selecione **Novo Projeto**.
+2. No pop-up, selecione **Windows**  -> **Universal** -> **Aplicação em Branco (Universal do Windows)**. Introduza o **Nome** da aplicação, o nome da **Solução** e, em seguida, clique em **OK**.
 
     ![][1]
 
-Acabou de criar um projeto de aplicação Universal do Windows no qual, em seguida, integrar Olá Azure Mobile Engagement SDK.
+Criou um projeto de Aplicação Universal do Windows no qual irá integrar depois o SDK do Azure Mobile Engagement.
 
-### <a name="connect-your-app-toomobile-engagement-backend"></a>Ligar o back-end da aplicação tooMobile Engagement
-1. Instalar Olá [microsoftazure. Mobileengagement] pacote Nuget do seu projeto. Se tiver como objetivo as plataformas Windows e Windows Phone, terá de toodo isto para ambos os projetos. Para o Windows 8. x e Windows Phone 8.1, Olá mesmos Nuget pacote locais Olá corretos binários específicos da plataforma em cada projeto.
-2. Abra **Package. appxmanifest** e certifique-se de que Olá seguir capacidade está adicionada aí:
+### <a name="connect-your-app-to-mobile-engagement-backend"></a>Ligar a aplicação ao back-end do Mobile Engagement
+1. Instale o pacote Nuget [MicrosoftAzure.MobileEngagement] no seu projeto. Se tiver como objetivo as plataformas Windows e Windows Phone, terá de efetuar este procedimento para ambos os projetos. Para o Windows 8.x e o Windows Phone 8.1, o mesmo pacote Nuget coloca os binários específicos da plataforma corretos em cada projeto.
+2. Abra **Package.appxmanifest** e certifique-se de que a capacidade seguinte está adicionada aí:
 
         Internet (Client)
 
     ![][2]
-3. Agora copie a cadeia de ligação de Olá que copiou anteriormente para a sua aplicação de Mobile Engagement e cole-o no Olá `Resources\EngagementConfiguration.xml` ficheiros, entre Olá `<connectionString>` e `</connectionString>` etiquetas:
+3. Agora copie a cadeia de ligação que copiou anteriormente para a sua Aplicação de Mobile Engagement e cole-a no ficheiro `Resources\EngagementConfiguration.xml`, entre as etiquetas `<connectionString>` e `</connectionString>`:
 
     ![][3]
 
     > [!TIP]
-    > Se a sua Aplicação visar as plataformas Windows e Windows Phone, deve criar ainda duas Aplicações Mobile Engagement – uma para cada plataforma suportada. Ter duas aplicações assegura que pode criar a segmentação correta do público-alvo de Olá e pode enviar notificações adequadamente segmentadas para cada plataforma.
+    > Se a sua Aplicação visar as plataformas Windows e Windows Phone, deve criar ainda duas Aplicações Mobile Engagement – uma para cada plataforma suportada. Dispor de duas aplicações permite garantir que consegue criar a segmentação correta do público-alvo e que consegue enviar notificações adequadamente direcionadas para cada plataforma.
 
     > [!IMPORTANT]
-    > NuGet automaticamente não copiar recursos do SDK Olá na sua aplicação UWP do Windows 10. Tiver toodo-lo manualmente os seguintes passos de Olá que apareçam (readme.txt) quando o pacote Nuget de Olá está instalado.  
+    > O NuGet não copia automaticamente os recursos do SDK para a aplicação UWP do Windows 10. Deve fazê-lo manualmente. Para tal, siga os passos que aparecem (readme.txt) quando o pacote de Nuget é instalado.  
 
-1. No Olá `App.xaml.cs` ficheiro:
+1. No ficheiro `App.xaml.cs`:
 
-    a. Adicionar Olá `using` instrução:
+    a. Adicionar a instrução `using`:
 
             using Microsoft.Azure.Engagement;
 
-    b. Adicione um método que inicializa Olá o Engagement:
+    b. Adicione um método que inicializa o Mobile Engagement:
 
            private void InitEngagement(IActivatedEventArgs e)
            {
              EngagementAgent.Instance.Init(e);
 
-             //... rest of hello code
+             //... rest of the code
            }
 
-    c. Inicializar Olá SDK no Olá **OnLaunched** método:
+    c. Inicializar o SDK no método **OnLaunched**:
 
             protected override void OnLaunched(LaunchActivatedEventArgs e)
             {
               InitEngagement(e);
 
-              //... rest of hello code
+              //... rest of the code
             }
 
-    c. Insira o seguinte Olá na Olá **OnActivated** método e adicione o método de Olá se não estiver já presente:
+    c. Insira o seguinte no método **OnActivated** e adicione o método se não estiver já presente:
 
             protected override void OnActivated(IActivatedEventArgs e)
             {
               InitEngagement(e);
 
-              //... rest of hello code
+              //... rest of the code
             }
 
 ## <a id="monitor"></a>Ativar a monitorização em tempo real
-toostart envio de dados e garantir que os utilizadores de Olá estão ativos, terá de enviar, pelo menos, um ecrã (atividade) o toohello Mobile Engagement backend.
+Para iniciar o envio de dados e garantir que os utilizadores estão ativos, terá de enviar, pelo menos, um ecrã (Atividade) para o back-end do Mobile Engagement.
 
-1. No Olá **MainPage.xaml.cs**, adicione Olá seguinte `using` instrução:
+1. No **MainPage.xaml.cs**, adicione a seguinte instrução `using`:
 
     utilizar o Microsoft.Azure.Engagement.Overlay;
-2. Alterar a classe base do Olá de **MainPage** de **página** demasiado**EngagementPageOverlay**:
+2. Altere a classe base da **MainPage** de **Page** para **EngagementPageOverlay**:
 
         class MainPage : EngagementPageOverlay
-3. No Olá `MainPage.xaml` ficheiro:
+3. No ficheiro `MainPage.xaml`:
 
-    a. Adicione declarações de espaços de nomes de tooyour:
+    a. Adicione às suas instruções de espaços de nomes:
 
         xmlns:engagement="using:Microsoft.Azure.Engagement.Overlay"
 
-    b. Substitua Olá **página** no nome de etiqueta XML Olá com **engagement: EngagementPageOverlay**
+    b. Substitua a **Page** no nome de etiqueta XML por **engagement:EngagementPageOverlay**
 
 > [!IMPORTANT]
-> Se a sua página substitui Olá `OnNavigatedTo` método, ser toocall se `base.OnNavigatedTo(e)`. Caso contrário, não foi reportada atividade Olá `EngagementPage` chamadas `StartActivity` dentro respetivo `OnNavigatedTo` método). Isto é especialmente importante num projeto Windows Phone onde Olá predefinido modelo tem um `OnNavigatedTo` método.
+> Se a sua página substitui o método `OnNavigatedTo`, certifique-se de que chama `base.OnNavigatedTo(e)`. Caso contrário, a atividade não é comunicada (o `EngagementPage` chama `StartActivity` dentro do respetivo método `OnNavigatedTo`). Isto é especialmente importante num projeto Windows Phone onde o modelo predefinido tem um método `OnNavigatedTo`.
 >
-> Para **aplicações universais do Windows 10**, utilizar o método de Olá recomendado na Olá "recomendado método: Sobrecarga as classes de página" secção [avançadas de relatórios com Olá SDK Windows Universal do aplicações Engagement](mobile-engagement-windows-store-advanced-reporting.md) , em vez de Olá um mencionados acima.
+> Em **aplicações Windows 10 Universal**, utilize o método recomendado na secção “Recommended method: overload your Page classes” (“Método recomendado: sobrecarregar as classes de Página”) de [Advanced Reporting with the Windows Universal Apps Engagement SDK (Relatórios Avançados com o SDK Engagement das Aplicações Universais do Windows)](mobile-engagement-windows-store-advanced-reporting.md) em vez do método mencionado acima.
 
 ## <a id="monitor"></a>Ligar a aplicação com a monitorização em tempo real
 [!INCLUDE [Connect app with real-time monitoring](../../includes/mobile-engagement-connect-app-with-monitor.md)]
 
 ## <a id="integrate-push"></a>Ativar as notificações push e mensagens na aplicação
-O Mobile Engagement permite-lhe toointeract e alcançar os seus utilizadores com notificações push e mensagens no contexto de Olá das campanhas na aplicação. Este módulo é designado alcance no portal de Mobile Engagement Olá.
-Olá secções seguintes configuram a aplicação tooreceive-los.
+O Mobile Engagement permite interagir e alcançar os seus utilizadores com notificações push e mensagens na aplicação no contexto das campanhas. Este módulo é designado ALCANCE no portal do Mobile Engagement.
+As secções seguintes configuram a aplicação para as receber.
 
-### <a name="enable-your-app-tooreceive-wns-push-notifications"></a>Ativar a sua aplicação tooreceive notificações Push do WNS
-1. No Olá `Package.appxmanifest` ficheiro no Olá **aplicação** separador em **notificações**, defina **com capacidade de alerta:** demasiado**Sim**
+### <a name="enable-your-app-to-receive-wns-push-notifications"></a>Permitir que a aplicação receba Notificações Push do WNS
+1. No ficheiro `Package.appxmanifest`, no separador **Aplicação**, em **Notificações**, defina **Com capacidade de alerta:** para **Sim**
 
     ![][5]
 
-### <a name="initialize-hello-reach-sdk"></a>Inicializar Olá ALCANÇAR SDK
-No `App.xaml.cs`, chamar **EngagementReach.Instance.Init(e);** no Olá **InitEngagement** função imediatamente após a inicialização do agente Olá:
+### <a name="initialize-the-reach-sdk"></a>Inicializar o SDK do ALCANCE
+Em `App.xaml.cs`, chame **EngagementReach.Instance.Init(e);** na função **InitEngagement** logo após a inicialização do agente:
 
         private void InitEngagement(IActivatedEventArgs e)
         {
@@ -143,43 +143,43 @@ No `App.xaml.cs`, chamar **EngagementReach.Instance.Init(e);** no Olá **InitEng
            EngagementReach.Instance.Init(e);
         }
 
-Está pronto toosend um alerta. A seguir, vamos confirmar que realizou corretamente esta integração básica.
+Está pronto para enviar um alerta. A seguir, vamos confirmar que realizou corretamente esta integração básica.
 
-### <a name="grant-access-toomobile-engagement-toosend-notifications"></a>Conceda acesso tooMobile Engagement toosend notificações
+### <a name="grant-access-to-mobile-engagement-to-send-notifications"></a>Conceder acesso ao Mobile Engagement para enviar notificações
 1. Abra o [Dev Center da Loja Windows] no seu browser, inicie sessão e crie uma conta, se necessário.
-2. Clique em **Dashboard** Olá superior direita canto e, em seguida, clique em **criar uma nova aplicação** no menu de Olá painel esquerdo.
+2. Clique em **Dashboard** no canto superior direita e, em seguida, clique em **Criar uma nova aplicação** no menu do painel esquerdo.
 
     ![][9]
 3. Crie a sua aplicação ao reservar o respetivo nome.
 
     ![][10]
-4. Quando tiver sido criada a aplicação Olá, navegue até demasiado**serviços -> notificações Push** no menu esquerdo Olá.
+4. Quando a aplicação tiver sido criada, navegue para **Serviços -> Notificações push** no menu à esquerda.
 
     ![][11]
-5. No Olá de secção notificações Push, clique em Olá **site dos Serviços Live** ligação.
+5. Na secção Notificações push, clique na ligação **site dos Serviços Live**.
 
     ![][12]
-6. Navegue toohello secção de credenciais de Push. Certifique-se de que está em Olá **as definições de aplicação** secção e, em seguida, copie o **SID do pacote** e **segredo do cliente**
+6. Será direcionado para a secção Credenciais de push. Certifique-se de que está a utilizar a secção **Definições da Aplicação** e, em seguida, copie o **SID do Pacote** e o **Segredo do cliente**
 
     ![][13]
-7. Navegue toohello **definições** do portal do Mobile Engagement e clique em Olá **Push nativo** secção Olá esquerda. Em seguida, clique em Olá **editar** botão tooenter sua **identificador de segurança do pacote (SID)** e os seus **chave secreta** conforme mostrado:
+7. Navegue para as **Definições** do seu portal Mobile Engagement e clique na secção **Push Nativo** à esquerda. Em seguida, clique no botão **Editar** para introduzir o **Identificador de segurança do pacote (SID)** e a sua **Chave Secreta**, conforme apresentado:
 
     ![][6]
-8. Por fim, certifique-se de que associou a sua aplicação do Visual Studio a esta aplicação criada numa loja de aplicações de Olá. Clique em **Associar a Aplicação à Loja** no Visual Studio.
+8. Finalmente, certifique-se de que associou a sua aplicação do Visual Studio a esta aplicação criada na Loja de aplicações. Clique em **Associar a Aplicação à Loja** no Visual Studio.
 
     ![][7]
 
-## <a id="send"></a>Enviar uma aplicação de tooyour de notificação
+## <a id="send"></a>Enviar uma notificação à aplicação
 [!INCLUDE [Create Windows Push campaign](../../includes/mobile-engagement-windows-push-campaign.md)]
 
-Se estiver a executar a aplicação de Olá, verá uma notificação na aplicação. caso contrário, se a aplicação Olá estiver fechada, verá uma notificação de alerta.
-Se vir uma notificação na aplicação, mas não uma notificação de alerta e Olá aplicação estiver a executar no modo de depuração no Visual Studio, em seguida, tente **eventos de ciclo de vida -> suspender** no Olá barra de ferramentas tooensure essa aplicação Olá é suspenso. Se clicou no botão de Home Olá durante a depuração da aplicação Olá no Visual Studio, em seguida, não fica sempre suspensa e consulte notificação Olá como na aplicação, não aparecer como uma notificação de alerta.  
+Se a aplicação estiver a ser executada, verá uma notificação na aplicação. Caso contrário, se a aplicação for fechada, verá uma notificação de alerta.
+Se vir uma notificação na aplicação, mas não uma notificação de alerta, e estiver a executar a aplicação em modo de depuração no Visual Studio, experimente **Eventos de ciclo de vida -> Suspender** na barra de ferramentas para se certificar de que a aplicação está suspensa. Se clicou no botão Base durante a depuração da aplicação no Visual Studio, esta não ficará sempre suspensa e, apesar de ver a notificação como na aplicação, não aparecerá como notificação de alerta.  
 
 ![][8]
 
 <!-- URLs. -->
 [Mobile Engagement Windows Universal SDK documentation]: ../mobile-engagement-windows-store-integrate-engagement/
-[microsoftazure. Mobileengagement]: http://go.microsoft.com/?linkid=9864592
+[MicrosoftAzure.MobileEngagement]: http://go.microsoft.com/?linkid=9864592
 [Dev Center da Loja Windows]: https://dev.windows.com
 [Windows Universal Apps - Overlay integration]: ../mobile-engagement-windows-store-integrate-engagement-reach/#overlay-integration
 

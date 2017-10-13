@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure documentação de Balanceador de carga - tutoriais, referência da API | Microsoft Docs"
-description: "Saiba como toouse Balanceador de carga para o desempenho de rede de aplicações. Gerir o tráfego de máquinas virtuais e recursos na cloud e em redes virtuais entre locais."
+title: "Documentação do Balanceador de Carga do Azure - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar o Balanceador de Carga para desempenho de rede de aplicações. Gerir o tráfego de máquinas virtuais e recursos na cloud e em redes virtuais entre locais."
 services: load-balancer
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: 877aef347f9d6f97da1562944676c2e95ddba470
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 169ca89ccd80e5a70f3e9ab07b3c34358c154be7
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 #<a name="load-balancer-documentation"></a>Documentação do Load Balancer
 
-Saiba como tooconfigure Balanceador de carga toodeliver elevadas disponibilidade e rede tooyour as aplicações de desempenho. Documentação mostra-lhe como tooload equilibrar o tráfego tooand de máquinas virtuais e de recursos de nuvem e em redes virtuais em vários locais.
+Saiba como configurar o Balanceador de Carga do Azure para fornecer disponibilidade e desempenho da rede para aplicações. A documentação mostra-lhe como carregar tráfego de equilibrio para e de recursos na cloud e de máquinas virtuais e em redes virtuais entre locais.
 
 <ul class="panelContent cardsFTitle">
     <li>

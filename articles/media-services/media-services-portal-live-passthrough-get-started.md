@@ -1,6 +1,6 @@
 ---
-title: "fluxo de aaaLive com codificadores no local utilizando Olá portal do Azure | Microsoft Docs"
-description: "Este tutorial explica Olá passos da criação de um canal que está configurado para uma entrega pass-through."
+title: Transmitir em fluxo com codificadores no local com o portal do Azure | Microsoft Docs
+description: Este tutorial explica os passos para criar um Canal configurado para uma entrega pass-through.
 services: media-services
 documentationcenter: 
 author: juliako
@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/09/2017
 ms.author: juliako
-ms.openlocfilehash: 1fb341e022f66f33903e13e07d3e84c0216cad77
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 6939e3b31c3c1b514df4c559c2d9408fce122a4e
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="how-tooperform-live-streaming-with-on-premises-encoders-using-hello-azure-portal"></a>Como tooperform em direto de transmissão em fluxo no local codificadores utilizando Olá portal do Azure
+# <a name="how-to-perform-live-streaming-with-on-premises-encoders-using-the-azure-portal"></a>Como realizar uma transmissão em fluxo em direto com codificadores no local através do Portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal](media-services-portal-live-passthrough-get-started.md)
 > * [.NET](media-services-dotnet-live-encode-with-onpremises-encoders.md)
@@ -28,121 +28,121 @@ ms.lasthandoff: 10/06/2017
 > 
 > 
 
-Este tutorial explica passos para Olá Olá toocreate portal do Azure a utilizar um **canal** que está configurado para uma entrega pass-through. 
+Este tutorial explica os passos para criar um **Canal** configurado para uma entrega pass-through através do Portal do Azure. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
-Olá, são tutorial de Olá toocomplete necessário:
+O seguinte é necessário para concluir o tutorial:
 
 * Uma conta do Azure. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). 
-* Uma conta dos Media Services. toocreate uma conta de Media Services, consulte [como tooCreate uma conta de Media Services](media-services-portal-create-account.md).
+* Uma conta dos Media Services. Para criar uma conta dos Media Services, consulte [Como Criar uma Conta de Media Services](media-services-portal-create-account.md).
 * Uma câmara Web. Por exemplo, [codificador Telestream Wirecast](http://www.telestream.net/wirecast/overview.htm).
 
-É altamente recomendável Olá tooreview seguintes artigos:
+É altamente recomendado rever os seguintes artigos:
 
 * [Azure Media Services RTMP Support and Live Encoders (Suporte RTMP dos Serviços de Multimédia do Azure e Codificadores em Direto)](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
 * [Overview of Live Streaming using Azure Media Services (Descrição Geral da Transmissão em Fluxo em Direto com os Serviços de Multimédia do Azure)](media-services-manage-channels-overview.md)
 * [Transmissão em fluxo em direto com codificadores no local que criam transmissões com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md)
 
 ## <a id="scenario"></a>Cenário comum de transmissão em fluxo em direto
-Olá passos seguintes descrevem as tarefas envolvidas na criação de aplicações de transmissão em fluxo em direto comuns que utilizam canais que estão configurados para entrega pass-through. Este tutorial mostra como toocreate e gerir um canal pass-through e eventos em direto.
+Os passos seguintes descrevem as tarefas envolvidas na criação de aplicações de transmissão em fluxo em direto comuns que utilizam canais que estão configurados para entrega pass-through. Este tutorial mostra como criar e gerir um canal pass-through e eventos em direto.
 
 >[!NOTE]
->Certifique-se Olá a partir das quais pretende toostream conteúdo de ponto final de transmissão em fluxo no Olá **executar** estado. 
+>Certifique-se de que o ponto final de transmissão em fluxo a partir do qual quer transmitir conteúdo está no estado **Em execução**. 
     
-1. Ligue um computador de tooa câmara de vídeo. Iniciar e configurar um codificador em direto no local que produza um RTMP com velocidade de transmissão múltipla ou uma transmissão em fluxo MP4 fragmentada. Para obter mais informações, consulte [Suporte RTMP dos Media Services do Azure e Codificadores em Direto](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Ligue uma câmara de vídeo a um computador. Iniciar e configurar um codificador em direto no local que produza um RTMP com velocidade de transmissão múltipla ou uma transmissão em fluxo MP4 fragmentada. Para obter mais informações, consulte [Suporte RTMP dos Media Services do Azure e Codificadores em Direto](http://go.microsoft.com/fwlink/?LinkId=532824).
    
     Este passo também pode ser realizado depois de criar o Canal.
 2. Criar e iniciar um Canal pass-through.
-3. URL de inserção de obter Olá canal. 
+3. Obtenha o URL de inserção do Canal. 
    
-    URL de inserção de Olá é utilizado pelo Olá codificador em direto toosend Olá fluxo toohello canal.
-4. Obter o URL de pré-visualização do canal de Olá. 
+    O URL de inserção é utilizado pelo codificador em direto para enviar a transmissão para o Canal.
+4. Obtenha o URL de pré-visualização do Canal. 
    
-    Utilize este tooverify de URL que o canal está a receber corretamente em fluxo em direto Olá.
+    Utilize este URL para verificar se o canal está a receber corretamente a transmissão em fluxo em direto.
 5. Crie um evento/programa em direto. 
    
-    Quando utilizar hello portal do Azure, criar um evento em direto também cria um recurso. 
+    Quando utilizar o Portal do Azure, ao criar um evento em direto também cria um elemento. 
 
-6. Inicie Olá. o evento/programa quando estiver pronto toostart de transmissão em fluxo e o arquivamento.
-7. Opcionalmente, o codificador em direto Olá pode ser assinalado toostart um anúncio. anúncio de Olá é inserido no fluxo de saída Olá.
-8. Pare Olá. o evento/programa sempre que pretender toostop de transmissão em fluxo e arquivar o evento de Olá.
-9. Eliminar Olá. o evento/programa (e, opcionalmente, elimine o elemento de Olá).     
+6. Inicie o evento/programa quando estiver pronto para começar a transmissão em fluxo e o arquivamento.
+7. Opcionalmente, o codificador em direto pode ser indicado para iniciar um anúncio. O anúncio é inserido na transmissão de saída.
+8. Pare o evento/programa sempre que pretender interromper a transmissão em fluxo e arquivar o evento.
+9. Elimine o evento/programa (e, opcionalmente, elimine o elemento).     
 
 > [!IMPORTANT]
-> Reveja [transmissão em fluxo em direto com codificadores no local que criar fluxos de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md) toolearn sobre conceitos e considerações relacionadas com a transmissão em fluxo toolive com codificadores no local e canais pass-through.
+> Reveja a [Transmissão em fluxo em direto com codificadores no local que criam transmissões em fluxo com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md) para saber mais sobre os conceitos e as considerações relacionadas com a transmissão em fluxo em direto com codificadores no local e canais pass-through.
 > 
 > 
 
-## <a name="tooview-notifications-and-errors"></a>tooview notificações e erros
-Se pretender tooview notificações e erros produzidos por Olá portal do Azure, clique no ícone de notificação de Olá.
+## <a name="to-view-notifications-and-errors"></a>Para ver as notificações e erros
+Se pretende ver as notificações e os erros produzidos pelo Portal do Azure, clique no ícone de Notificação.
 
 ![Notificações](./media/media-services-portal-passthrough-get-started/media-services-notifications.png)
 
 ## <a name="create-and-start-pass-through-channels-and-events"></a>Criar e iniciar eventos e canais pass-through
-Um canal está associado a eventos/programas que permitem a publicação de Olá toocontrol e armazenamento de segmentos numa transmissão em fluxo em direto. Os canais gerem eventos. 
+Um canal está associado a eventos/programas que permitem controlar a publicação e armazenamento de segmentos numa transmissão em fluxo em direto. Os canais gerem eventos. 
 
-Pode especificar Olá número de horas que pretende tooretain Olá registada conteúdo para o programa de Olá por definição Olá **janela de arquivo** comprimento. Este valor pode ser definido a partir de um mínimo de máximo de tooa de 5 minutos de 25 horas. Duração da janela de arquivo dita também Olá período de tempo máximo os clientes podem recuar a partir da posição atual em direto Olá. Eventos podem ser executados durante período de tempo especificado Olá, mas o conteúdo que se situe atrás da duração da janela Olá é continuamente descartado. Este valor desta propriedade também determina o cliente de Olá quanto possam crescer manifestos.
+Pode especificar o número de horas que pretenda manter o conteúdo gravado para o programa através da configuração da duração da **Janela de Arquivo**. Este valor pode ser definido a partir de um mínimo de 5 minutos até um máximo de 25 horas. A duração da janela de arquivo dita também o tempo máximo que os clientes podem recuar a partir da posição atual em direto. Os eventos podem ser executados durante o período de tempo especificado, contudo, o conteúdo que não respeitar essa duração da janela é continuamente descartado. O valor desta propriedade também determina durante quanto tempo os manifestos dos clientes podem aumentar.
 
-Cada evento está associado a um elemento. evento de Olá toopublish, tem de criar um localizador OnDemand para o recurso de Olá associado. Ter este localizador permite toobuild um URL de transmissão em fluxo que pode fornecer tooyour clientes.
+Cada evento está associado a um elemento. Para publicar o evento, deve criar um localizador OnDemand para o elemento associado. Ter este localizador permite compilar um URL de transmissão em fluxo que pode fornecer aos seus clientes.
 
-Um canal suporta até toothree eventos a executar em simultâneo para que possa criar vários arquivos do Olá mesmo fluxo de entrada. Isto permite-lhe toopublish e arquivar diferentes partes de um evento conforme necessário. Por exemplo, o requisito comercial será tooarchive 6 horas de um programa mas toobroadcast apenas últimos 10 minutos. tooaccomplish isto, terá de programas em execução em simultâneo de dois toocreate. Um programa está definido tooarchive 6 horas do evento de Olá mas Olá programa não está publicado. Olá outro programa está definido tooarchive durante 10 minutos e este programa está publicado.
+Um canal suporta até três eventos em execução em simultâneo para que possa criar vários arquivos da mesma transmissão em fluxo recebida. Isto permite publicar e arquivar diferentes partes de um evento, conforme necessário. Por exemplo, os seus requisitos de negócios devem arquivar 6 horas de um programa, mas difundir apenas os últimos 10 minutos. Para tal, tem de criar dois programas em execução em simultâneo. Um programa está definido para arquivar 6 horas do evento, mas o programa não está publicado. O outro programa está definido para arquivar durante 10 minutos e este está publicado.
 
 Não deve reutilizar os eventos em direto existentes. Em vez disso, crie e inicie um novo evento para cada evento.
 
-Inicie o evento de Olá quando estiver pronto toostart de transmissão em fluxo e o arquivamento. Pare o programa de Olá sempre que pretender toostop de transmissão em fluxo e arquivar o evento de Olá. 
+Inicie o evento quando estiver pronto para começar a transmissão em fluxo e o arquivamento. Pare o programa sempre que pretender interromper a transmissão e arquivar o evento. 
 
-conteúdo toodelete arquivado, pare e eliminar o evento de Olá e, em seguida, elimine o elemento associado Olá. Não é possível eliminar um recurso que é utilizado por um evento; evento de Olá deve ser eliminado primeiro. 
+Para eliminar conteúdo arquivado, pare e elimine o evento e, em seguida, elimine o elemento associado. Não é possível eliminar um elemento se este é utilizado por um evento; o evento deve ser eliminado primeiro. 
 
-Mesmo depois de parar e eliminar o evento de Olá, Olá utilizadores seria capaz de toostream seu conteúdo arquivado como um vídeo a pedido, desde que não a eliminar o recurso de Olá.
+Mesmo depois de parar e eliminar o evento, os utilizadores conseguirão transmitir o seu conteúdo arquivado como um vídeo a pedido, desde que não elimine o elemento.
 
-Se pretender Olá tooretain arquivado conteúdo, mas não o tiver disponível para transmissão em fluxo, elimine Olá localizador de transmissão em fluxo.
+Se pretende manter o conteúdo arquivado, mas não o quer manter disponível para transmissão em fluxo, elimine o localizador de transmissão em fluxo.
 
-### <a name="toouse-hello-portal-toocreate-a-channel"></a>toouse Olá portal toocreate um canal
-Esta secção mostra como toouse Olá **criação rápida** opção toocreate um canal pass-through.
+### <a name="to-use-the-portal-to-create-a-channel"></a>Utilizar o portal para criar um canal
+Esta secção mostra como utilizar a opção **Criação Rápida** para criar um canal pass-through.
 
 Para obter mais detalhes sobre canais pass-through, veja [Transmissão em fluxo em direto com codificadores no local que criam transmissões em fluxo com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md).
 
-1. No Olá [portal do Azure](https://portal.azure.com/), selecione a sua conta de Media Services do Azure.
-2. No Olá **definições** janela, clique em **transmissão em direto**. 
+1. No [portal do Azure](https://portal.azure.com/) selecione a sua conta de Serviços de Multimédia do Azure.
+2. Na janela **Definições**, clique em **Transmissão em Fluxo em Direto**. 
    
     ![Introdução](./media/media-services-portal-passthrough-get-started/media-services-getting-started.png)
    
-    Olá **a transmissão em fluxo em direto** surge a janela.
-3. Clique em **criação rápida** toocreate um canal pass-through com Olá RTMP protocolo de inserção.
+    A janela **Transmissão em Fluxo em Direto** é apresentada.
+3. Clique em **Criação Rápida** para criar um canal pass-through com o protocolo de inserção RTMP.
    
-    Olá **criar um novo canal** surge a janela.
-4. Dê um nome de canal novo Olá e clique em **criar**. 
+    A janela **CRIAR UM NOVO CANAL** é apresentada.
+4. Dê um nome ao novo canal e clique em **Criar**. 
    
-    Esta ação cria um canal pass-through com Olá protocolo de inserção RTMP.
+    Tal cria um canal pass-through com o protocolo de inserção RTMP.
 
 ## <a name="create-events"></a>Criar eventos
-1. Selecione um toowhich de canal que pretende tooadd um evento.
+1. Selecione um canal para o qual pretende adicionar um evento.
 2. Prima o botão **Evento em Direto**.
 
 ![Evento](./media/media-services-portal-passthrough-get-started/media-services-create-events.png)
 
 ## <a name="get-ingest-urls"></a>Obter URLs de inserção
-Depois de Olá canal seja criado, pode obter os URLs que irá fornecer o codificador em direto toohello de inserção. codificador Olá utiliza estes URLs tooinput uma transmissão em fluxo em direto.
+Assim que o canal seja criado, pode obter os URLs de inserção que fornecerá ao codificador em direto. O codificador utiliza estes URLs para exibir uma transmissão um fluxo direto.
 
 ![Criado](./media/media-services-portal-passthrough-get-started/media-services-channel-created.png)
 
-## <a name="watch-hello-event"></a>Evento de Olá veja
-evento de Olá toowatch, clique em **veja** no Olá Olá Azure portal ou a cópia do URL de transmissão em fluxo e utilizar um leitor da sua preferência. 
+## <a name="watch-the-event"></a>Ver o evento
+Para ver o evento, clique em **Ver** no Portal do Azure ou copie o URL de transmissão em fluxo e utilize um leitor da sua preferência. 
 
 ![Criado](./media/media-services-portal-passthrough-get-started/media-services-default-event.png)
 
-Evento em direto automaticamente obter conteúdo de convertida tooon a pedido quando parado.
+O evento em direto é convertido automaticamente para conteúdo a pedido quando parado.
 
 ## <a name="clean-up"></a>Limpeza
 Para obter mais detalhes sobre canais pass-through, veja [Transmissão em fluxo em direto com codificadores no local que criam transmissões em fluxo com velocidade de transmissão múltipla](media-services-live-streaming-with-onprem-encoders.md).
 
-* Um canal pode ser parado apenas quando todos os eventos/programas no canal Olá foram parados.  Depois de Olá canal esteja parado, não é cobrado qualquer custo. Quando tiver toostart-la novamente, pode ter hello mesmo URL de inserção por isso não terá de tooreconfigure o codificador.
-* Um canal pode ser eliminado apenas quando todos os eventos em direto no canal Olá tem sido eliminados.
+* Um canal pode ser parado apenas quando todos os eventos/programas no canal foram parados.  Assim que o Canal esteja parado, não é cobrado qualquer custo. Quando quiser reiniciar a transmissão, esta terá o mesmo URL de inserção, desta forma, não terá de reconfigurar o codificador.
+* Um canal pode ser eliminado apenas quando todos os eventos em direto canal tiverem sido eliminados.
 
 ## <a name="view-archived-content"></a>Ver conteúdo arquivado
-Mesmo depois de parar e eliminar o evento de Olá, Olá utilizadores seria capaz de toostream seu conteúdo arquivado como um vídeo a pedido, desde que não a eliminar o recurso de Olá. Não é possível eliminar um recurso que é utilizado por um evento; evento de Olá deve ser eliminado primeiro. 
+Mesmo depois de parar e eliminar o evento, os utilizadores conseguirão transmitir o seu conteúdo arquivado como um vídeo a pedido, desde que não elimine o elemento. Não é possível eliminar um elemento se este é utilizado por um evento; o evento deve ser eliminado primeiro. 
 
-Selecione os recursos de toomanage **definição** e clique em **ativos**.
+Para gerir os seus elementos, selecione **Definição** e clique em **Elementos**.
 
 ![Elementos](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
 

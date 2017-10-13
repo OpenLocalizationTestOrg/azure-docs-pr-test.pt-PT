@@ -1,5 +1,5 @@
 ---
-title: "aaaAzure início rápido - criar Portal de VM do Windows | Microsoft Docs"
+title: "Guia de Introdução do Azure - Criar Portal da VM do Windows | Microsoft Docs"
 description: "Guia de Introdução do Azure - Criar Portal da VM do Windows"
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -16,93 +16,93 @@ ms.workload: infrastructure
 ms.date: 07/15/2017
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 5646ad51244db6d214c0121d1f7cc45c59f9a78b
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 98ed23b8031c56ba642427e817e48a4e7a5830fc
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="create-a-windows-virtual-machine-with-hello-azure-portal"></a>Criar uma máquina virtual do Windows com Olá portal do Azure
+# <a name="create-a-windows-virtual-machine-with-the-azure-portal"></a>Criar uma máquina virtual do Windows com o portal do Azure
 
-Máquinas virtuais do Azure podem ser criadas através de Olá portal do Azure. Este método fornece uma interface de utilizador baseada no browser para criar e configurar máquinas virtuais e todos os recursos relacionados. Este passos de início rápido através da criação de uma máquina virtual e instalar um servidor Web num Olá VM.
+As máquinas virtuais podem ser criadas através do portal do Azure. Este método fornece uma interface de utilizador baseada no browser para criar e configurar máquinas virtuais e todos os recursos relacionados. Este Guia de Introdução explica como criar uma máquina virtual e como instalar um servidor Web na VM.
 
 Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
-## <a name="log-in-tooazure"></a>Inicie sessão no tooAzure
+## <a name="log-in-to-azure"></a>Iniciar sessão no Azure
 
-Inicie sessão no toohello do portal do Azure em http://portal.azure.com.
+Inicie sessão no portal do Azure em http://portal.azure.com.
 
 ## <a name="create-virtual-machine"></a>Criar a máquina virtual
 
-1. Clique em Olá **novo** botão encontrado no canto esquerda superior Olá de Olá portal do Azure.
+1. Clique no botão **Novo** localizado no canto superior esquerdo do portal do Azure.
 
 2. Selecione **Computação** e, em seguida, selecione **Windows Server 2016 Datacenter**. 
 
-3. Introduza as informações da máquina virtual Olá. nome de utilizador Olá e a palavra-passe introduzida aqui é toolog utilizado na máquina virtual de toohello. Quando terminar, clique em **OK**.
+3. Introduza as informações da máquina virtual. O nome de utilizador e palavra-passe introduzidos aqui são utilizados para iniciar sessão na máquina virtual. Quando terminar, clique em **OK**.
 
-    ![Introduza as informações básicas sobre a VM no painel de portal Olá](./media/quick-create-portal/create-windows-vm-portal-basic-blade.png)  
+    ![Introduza as informações básicas sobre a VM no painel do portal](./media/quick-create-portal/create-windows-vm-portal-basic-blade.png)  
 
-4. Selecione um tamanho de Olá VM. toosee mais tamanhos, selecione **ver todos os** ou alterar Olá **suportada de tipo de disco** filtro. 
+4. Selecione um tamanho para a VM. Para ver mais tamanhos, selecione **Visualizar todos** ou altere o filtro **Tipo de disco suportado**. 
 
     ![Captura de ecrã que mostra os tamanhos de VM](./media/quick-create-portal/create-windows-vm-portal-sizes.png)  
 
-5. No painel de definições de Olá, mantenha as predefinições de Olá e clique em **OK**.
+5. Em **Definições**, mantenha as predefinições e clique em **OK**. 
 
-6. Na página de resumo de Olá, clique em **Ok** implementação da máquina virtual toostart Olá.
+6. Na página de resumo, clique em **Ok** para iniciar a implementação da máquina virtual.
 
-7. Olá VM será afixado toohello dashboard do portal do Azure. Depois de concluída a implementação de Olá, o painel de resumo de VM de Olá é aberto automaticamente.
+7. A VM será afixada ao dashboard do portal do Azure. Depois de concluída a implementação, o resumo da VM abre-se automaticamente.
 
 
-## <a name="connect-toovirtual-machine"></a>Ligue toovirtual máquina
+## <a name="connect-to-virtual-machine"></a>Conectar à máquina virtual
 
-Crie uma máquina de virtual de toohello de ligação de ambiente de trabalho remoto.
+Crie uma ligação de ambiente de trabalho remoto para a máquina virtual.
 
-1. Clique em Olá **Connect** botão de propriedades da máquina virtual Olá. É criado e transferido um ficheiro do Protocolo do Ambiente de Trabalho Remoto (ficheiro .rdp).
+1. Clique no botão **Ligar** nas propriedades da máquina virtual. É criado e transferido um ficheiro do Protocolo do Ambiente de Trabalho Remoto (ficheiro .rdp).
 
     ![Portal 9](./media/quick-create-portal/quick-create-portal/portal-quick-start-9.png) 
 
-2. tooconnect tooyour VM, abra Olá transferido o ficheiro RDP. Se lhe for solicitado, clique em **Ligar**. No Mac, terá de um cliente RDP como esta [cliente de ambiente de trabalho remoto](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12) de Olá Mac App Store.
+2. Para ligar à sua VM, abra o ficheiro RDP transferido. Se lhe for solicitado, clique em **Ligar**. Num Mac, precisa de um cliente RDP como este [Cliente de Ambiente de Trabalho Remoto](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12) a partir da Mac App Store.
 
-3. Introduza o nome de utilizador de Olá e a palavra-passe que especificou ao criar a máquina virtual de Olá, em seguida, clique em **Ok**.
+3. Introduza o nome de utilizador e palavra-passe que especificou ao criar a máquina virtual e, em seguida, clique em **Ok**.
 
-4. Poderá receber um aviso de certificado durante o processo de início de sessão Olá. Clique em **Sim** ou **continuar** tooproceed com ligação Olá.
+4. Poderá receber um aviso de certificado durante o processo de início de sessão. Clique em **Sim** ou **Continuar** para continuar com a ligação.
 
 
 ## <a name="install-iis-using-powershell"></a>Instalar o IIS com o PowerShell
 
-Na máquina virtual de Olá, inicie uma sessão do PowerShell e execute Olá os seguintes comandos tooinstall IIS.
+Na máquina virtual, inicie uma sessão do PowerShell e execute o seguinte comando para instalar o IIS.
 
 ```powershell
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```
 
-Quando terminar, saia da sessão do RDP Olá e devolver propriedades VM Olá Olá portal do Azure.
+Quando terminar, saia da sessão RDP e volte às propriedades da VM no portal do Azure.
 
 ## <a name="open-port-80-for-web-traffic"></a>Abrir a porta 80 para o tráfego da Web 
 
-Um Grupo de segurança de rede (NSG) protege os tráfegos de entrada e de saída. Quando é criada uma VM de Olá portal do Azure, é criada uma regra de entrada na porta 3389 para ligações RDP. Porque esta VM aloja um servidor Web, uma regra NSG tem toobe criado para a porta 80.
+Um Grupo de segurança de rede (NSG) protege os tráfegos de entrada e de saída. Quando cria uma VM a partir do portal do Azure, é criada uma regra de entrada na porta 3389 para ligações RDP. Como esta VM aloja um servidor Web, tem de ser criada uma regra NSG para a porta 80.
 
-1. Na máquina virtual de Olá, clique no nome de Olá de Olá **grupo de recursos**.
-2. Selecione Olá **grupo de segurança de rede**. Olá NSG pode ser identificado utilizando Olá **tipo** coluna. 
-3. No menu da esquerda Olá, em definições, clique em **regras de segurança de entrada**.
+1. Na máquina virtual, clique no nome do **Grupo de recursos**.
+2. Selecione o **grupo de segurança de rede**. O NSG pode ser identificado através da coluna **Tipo**. 
+3. No menu do lado esquerdo, em definições, clique em **Regras de segurança de entrada**.
 4. Clique em **Adicionar**.
-5. Em **Nome**, escreva **http**. Certifique-se **intervalo de porta** está definido too80 e **ação** estiver definido demasiado**permitir**. 
+5. Em **Nome**, escreva **http**. Certifique-se de que o **Intervalo da porta** está definido como 80 e a **Ação** está definida como **Permitir**. 
 6. Clique em **OK**.
 
 
-## <a name="view-hello-iis-welcome-page"></a>Olá vista página de boas-vindas do IIS
+## <a name="view-the-iis-welcome-page"></a>Ver a página de boas-vindas do IIS
 
-Com o IIS instalado e a porta 80 abra tooyour VM, agora pode ser acedido Olá webserver de Olá internet. Abra um browser e introduza o endereço IP público de Olá do Olá VM. endereço IP público Olá pode ser encontrado no painel VM Olá no Olá portal do Azure.
+Com o IIS instalado e a porta 80 aberta para a VM, torna-se possível aceder ao servidor Web a partir da Internet. Abra um browser e introduza o endereço IP público da VM. Pode encontrar o endereço IP público em *Máquinas Virtuais*, no portal do Azure.
 
 ![Site predefinido do IIS](./media/quick-create-powershell/default-iis-website.png) 
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Quando já não é necessário, elimine o grupo de recursos de Olá, a máquina virtual e todos os recursos relacionados. toodo por isso, selecione o grupo de recursos de Olá a partir do painel da máquina virtual de Olá e clique em **eliminar**.
+Quando já não for necessário, elimine o grupo de recursos, a máquina virtual e todos os recursos relacionados. Para tal, selecione o grupo de recursos para a VM e clique em **Eliminar**.
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Neste guia de introdução, implementou uma máquina virtual simples, uma regra de grupo de segurança de rede e instalou um servidor Web. toolearn mais informações sobre máquinas virtuais do Azure, continuar toohello tutorial para VMs do Windows.
+Neste guia de introdução, implementou uma máquina virtual simples, uma regra de grupo de segurança de rede e instalou um servidor Web. Para saber mais sobre as máquinas virtuais do Azure, continue com o tutorial para VMs do Windows.
 
 > [!div class="nextstepaction"]
 > [Tutoriais de máquinas virtuais do Windows do Azure](./tutorial-manage-vm.md)

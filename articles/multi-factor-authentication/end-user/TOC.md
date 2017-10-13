@@ -9,10 +9,7 @@
 ## [Gerir definições](multi-factor-authentication-end-user-manage-settings.md)
 ## [Resolução de problemas](multi-factor-authentication-end-user-troubleshoot.md)
 ## [Configurar palavras-passe de aplicações](multi-factor-authentication-end-user-app-passwords.md)
-## Utilizar a aplicação Olá Microsoft Authenticator
-### [Introdução à aplicação Olá](microsoft-authenticator-app-how-to.md)
+## Utilizar a aplicação de autenticação da Microsoft
+### [Introdução à aplicação](microsoft-authenticator-app-how-to.md)
 ### [Iniciar sessão com o telemóvel](microsoft-authenticator-app-phone-signin-faq.md)
 ### [FAQs](microsoft-authenticator-app-faq.md)
-# Recursos
-## [Mapa do Azure](https://azure.microsoft.com/roadmap/?category=security-identity)
-## [Calculadora de preços](https://azure.microsoft.com/pricing/calculator/)

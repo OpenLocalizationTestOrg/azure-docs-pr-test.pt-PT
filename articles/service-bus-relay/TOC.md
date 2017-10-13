@@ -9,10 +9,13 @@
 ### [.NET](relay-hybrid-connections-dotnet-get-started.md)
 ### [Nó](relay-hybrid-connections-node-get-started.md)
 ## [Reencaminhamento do WCF](relay-wcf-dotnet-get-started.md)
+## [Tutorial do Reencaminhamento do WCF](service-bus-relay-tutorial.md)
+## [Tutorial REST do Reencaminhamento WCF](service-bus-relay-rest-tutorial.md)
 
 # Procedimento
 ## Planear e conceber
 ### [Autenticação e segurança](relay-authentication-and-authorization.md)
+#### [Migrar do ACS para SAS](relay-migrate-acs-sas.md)
 ### [Protocolo das Ligações Híbridas](relay-hybrid-connections-protocol.md)
 ## Programar
 ### [APIs disponíveis](relay-api-overview.md)

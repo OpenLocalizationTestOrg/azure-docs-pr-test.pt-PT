@@ -1,5 +1,5 @@
 ---
-title: "aaaWhat é o reencaminhamento do Azure e utilizá-lo por que motivo de descrição geral | Microsoft Docs"
+title: "Descrição geral sobre o que é o Reencaminhamento do Azure e porquê utilizá-lo | Microsoft Docs"
 description: "Descrição Geral do Reencaminhamento do Azure"
 services: service-bus-relay
 documentationcenter: .net
@@ -14,28 +14,28 @@ ms.devlang: multiple
 ms.topic: get-started-article
 ms.date: 08/23/2017
 ms.author: sethm
-ms.openlocfilehash: 4cfd77048210a435c446b908b7896737cad0edbf
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 77ee85db0bcc701514a1a98da9405a79d658d49d
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="what-is-azure-relay"></a>O que é o Reencaminhamento do Azure?
 
-Olá híbrida aplicações, permitindo toosecurely expõem os serviços que residem numa empresarial rede toohello nuvem pública, sem ter tooopen uma ligação de firewall ou exigem intrusivo facilita o serviço de reencaminhamento de Azure alterações tooa infraestrutura da rede empresarial. O Reencaminhamento suporta uma variedade de diferentes protocolos de transporte e de padrões de serviços Web.
+O serviço de Reencaminhamento do Azure facilita as aplicações híbridas, permitindo-lhe expor na cloud pública, de forma segura, os serviços que se encontram numa rede empresarial, sem ter de abrir uma ligação de firewall ou sem ter de fazer alterações intrusivas na infraestrutura da rede empresarial. O Reencaminhamento suporta uma variedade de diferentes protocolos de transporte e de padrões de serviços Web.
 
-serviço de reencaminhamento de Olá suporta tradicional unidirecional, pedido/resposta e o tráfego de ponto a ponto. Também suporta a distribuição de eventos em cenários de publicação do âmbito de internet tooenable e comunicação de socket bidirecional para eficiência ponto a ponto maior. 
+O serviço de Reencaminhamento suporta o tradicional tráfego unidirecional, pedido/resposta e ponto a ponto. Também suporta a distribuição de eventos no âmbito de Internet para permitir cenários de publicação-subscrição e comunicação de socket bidirecional para aumentar a eficiência ponto a ponto. 
 
-Padrão de transferência de dados de Olá retransmitida, um serviço no local liga-se o serviço de reencaminhamento toohello através de uma porta de saída e cria um socket bidirecional para o endereço de encontro específico tooa comunicação associada. cliente de Olá, em seguida, pode comunicar com o serviço no local de Olá enviando tráfego toohello serviço de reencaminhamento Olá endereço de encontro. serviço de reencaminhamento de Olá, em seguida, "reencaminha" serviço local de toohello de dados através de um cliente de tooeach dedicado de socket bidirecional. Olá cliente não precisa de um serviço do ligação direta toohello no local, não é necessário tooknow onde reside o serviço de Olá e serviço do Olá no local não precisa de nenhuma porta de entrada aberta na firewall de Olá.
+No padrão de transferências de dados reencaminhadas, um serviço no local liga-se ao serviço de reencaminhamento através de uma porta de saída e cria um socket bidirecional para comunicação associada a um endereço de encontro específico. Depois, o cliente pode comunicar com o serviço no local ao enviar tráfego para o serviço de reencaminhamento destinado ao endereço de encontro. O serviço de reencaminhamento "reencaminha", então, os dados para o serviço no local através de um socket bidirecional dedicado a cada cliente. O cliente não precisa de uma ligação direta para o serviço local, nem precisa de saber onde reside o serviço e o serviço local não precisa de nenhuma porta de entrada aberta na firewall.
 
-elementos de capacidade de chave de Olá fornecidos pelo reencaminhamento são comunicação bidirecional, colocada em limites de rede com o TCP como limitação, deteção de ponto final, o estado de conectividade e overlaid segurança ponto a ponto. capacidades de reencaminhamento de Olá diferem das tecnologias de integração de nível de rede, tais como VPN, esse reencaminhamento pode ser confinada tooa ponto final de aplicação única num único computador, enquanto a tecnologia VPN é muito mais intrusivo como baseia-se numa alteração de ambiente de rede Olá .
+Os elementos de capacidades-chave disponibilizados pelo Reencaminhamento são comunicações bidirecionais não registadas em limites de redes com limitação do tipo TCP, deteção de pontos finais, estado da conectividade e segurança de pontos finais sobrepostos. As capacidades do reencaminhamento são diferentes das tecnologias de integração ao nível da rede, como as VPNs, no sentido de que o reencaminhamento pode visar um único ponto final de aplicação num computador individual, ao passo que a tecnologia de VPN é bastante mais intrusiva, pois baseia-se na alteração do ambiente de rede.
 
 O Reencaminhamento do Azure tem duas funcionalidades:
 
-1. [As ligações híbridas](#hybrid-connections) - utiliza os sockets de abra web padrão Olá ativar cenários de várias plataformas.
-2. [Reencaminhamentos de WCF](#wcf-relays) -chamadas de procedimento remoto tooenable utiliza o Windows Communication Foundation (WCF). Reencaminhamento de WCF é reencaminhamento legado Olá oferta que já utilizam muitos clientes com os respetivos modelos de programação de WCF.
+1. [Ligações Híbridas](#hybrid-connections) - utiliza web sockets de padrão aberto para permitir cenários de multiplataformas.
+2. [Reencaminhamentos do WCF](#wcf-relays) - utiliza o Windows Communication Foundation (WCF) para ativar chamadas de procedimento remoto. O Reencaminhamento do WCF é a oferta de Reencaminhamento legada e que muitos utilizadores já utilizam nos respetivos modelos de programação do WCF.
 
-As ligações híbridas e WCF reencaminhamentos ativar tooassets ligação segura que existem numa rede empresarial. Utilização de um através de outro Olá está dependente nas suas necessidades particulares, conforme descrito em Olá a tabela seguinte:
+Tanto as Ligações Híbridas, como os Reencaminhamentos do WCF, permitem ligações seguras a recursos que existem dentro de uma rede empresarial. A utilização de uma funcionalidade em detrimento da outra depende das suas necessidades específicas, conforme descrito na tabela seguinte:
 
 |  | Reencaminhamento do WCF | Ligações Híbridas |
 | --- |:---:|:---:|
@@ -48,20 +48,20 @@ As ligações híbridas e WCF reencaminhamentos ativar tooassets ligação segur
 
 ## <a name="hybrid-connections"></a>Ligações Híbridas
 
-Olá [Azure reencaminhamento híbrido ligações](relay-hybrid-connections-protocol.md) capacidade é uma evolução segura e abra-protocolo de Olá existente funcionalidades de reencaminhamento que podem ser implementadas em qualquer plataforma e em qualquer idioma que tem uma capacidade de WebSocket básica, que inclui explicitamente Olá API de WebSocket em browsers comuns. As Ligações Híbridas baseiam-se em HTTP e WebSockets.
+A capacidade de [Ligações Híbridas do Reencaminhamento do Azure](relay-hybrid-connections-protocol.md) é uma evolução segura e de protocolo aberto das funcionalidades atuais do Reencaminhamento, que pode ser implementada em qualquer plataforma e em qualquer idioma que tenha capacidade básica para WebSocket, que inclua explicitamente a API WebSocket em browsers comuns. As Ligações Híbridas baseiam-se em HTTP e WebSockets.
 
 ### <a name="service-history"></a>Histórico do Serviço
 
-As ligações híbridas supplants anterior Olá, da mesma forma com o nome de funcionalidade de "BizTalk Services" que foi criada no Olá reencaminhamento de WCF de barramento de serviço do Azure. nova capacidade de ligações híbridas Olá complementa a funcionalidade de reencaminhamento de WCF existente Olá e estas capacidades de dois serviço existem lado lado a lado no serviço de reencaminhamento do Azure Olá. Partilham um gateway comum, mas, de resto, são implementações diferentes.
+As Ligações Híbridas superam a funcionalidade anterior, igualmente chamada “Serviços BizTalk”, que foi criada com base no Reencaminhamento do WCF do Azure Service Bus. A nova capacidade de Ligações Híbridas complementa a funcionalidade de Reencaminhamento do WCF existente e estas duas capacidades do serviço coexistem lado a lado no serviço de Reencaminhamento do Azure. Partilham um gateway comum, mas, de resto, são implementações diferentes.
 
 ## <a name="wcf-relays"></a>Reencaminhamentos do WCF
 
-Olá reencaminhamento WCF funciona para Olá completa .NET Framework (NETFX) e do WCF. Iniciar a ligação de Olá entre o serviço no local e o serviço de reencaminhamento de Olá utilizando um conjunto de enlaces de "reencaminhamento" WCF. Em segundo plano do Olá, Olá enlaces de reencaminhamento mapeiam toonew transporte enlace elementos concebidos toocreate WCF os componentes de canal que se integram ao Service Bus na nuvem de Olá.
+O Reencaminhamento do WCF funciona para o .NET Framework (NETFX) completo e para o WCF. A ligação entre o serviço no local e o serviço de reencaminhamento é iniciada através de um conjunto de enlaces de "reencaminhamento" do WCF. Em segundo plano, os enlaces de reencaminhamento mapeiam para novos elementos de enlace de transporte concebidos para criar os componentes de canal WCF que se integram ao Service Bus na nuvem.
 
 ## <a name="architecture-processing-of-incoming-relay-requests"></a>Arquitetura: processamento de pedidos de reencaminhamento recebidos
-Quando um cliente envia um pedido toohello [Azure reencaminhamento](/azure/service-bus-relay/) serviço, o Balanceador de carga do Azure de Olá encaminha o mesmo tooany de nós de gateway Olá. Se o pedido de Olá é um pedido de serviço de escuta, o nó de gateway Olá cria um novo reencaminhamento. Se o pedido de Olá é um reencaminhamento específico do pedido tooa de ligação, o nó de gateway de Olá reencaminha Olá ligação pedido toohello nó de gateway que detém o reencaminhamento de Olá. nó de gateway Olá que detém o reencaminhamento de Olá envia um encontro pedido toohello escuta cliente, solicitando toocreate do serviço de escuta de Olá um nó de gateway do canal temporário toohello que recebeu o pedido de ligação de Olá.
+Quando um cliente envia um pedido para o serviço de [reencaminhamento do Azure](/azure/service-bus-relay/), o Azure Load Balancer encaminha o mesmo para qualquer um dos nós de gateway. Caso o pedido seja um pedido de escuta, o nó de gateway cria um novo reencaminhamento. Se o pedido for um pedido de ligação para um reencaminhamento específico, o nó de gateway reencaminha o pedido de ligação para o nó de gateway que detém o reencaminhamento.  O nó de gateway que detém o reencaminhamento envia um pedido de encontro para o cliente de escuta, pedindo para o serviço de escuta criar um canal temporário para o nó de gateway que recebeu o pedido de ligação.
 
-Quando é estabelecida a ligação de reencaminhamento de Olá, os clientes de Olá podem trocar mensagens através do nó de gateway Olá, que é utilizado para o encontro Olá.
+Quando a ligação de reencaminhamento é estabelecida, os clientes podem trocar mensagens através do nó de gateway utilizado para o encontro.
 
 ![Processamento de Pedidos de Reencaminhamento de WCF Recebidos](./media/relay-what-is-it/ic690645.png)
 

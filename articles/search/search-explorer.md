@@ -1,6 +1,6 @@
 ---
-title: "AAA \"consultar um índice (portal - pesquisa do Azure) | Microsoft Docs\""
-description: "Emita uma consulta de pesquisa no Explorador de pesquisa do Portal do Azure Olá."
+title: "Consultar um índice (portal - Azure Search) | Microsoft Docs"
+description: Emita uma consulta de pesquisa no Explorador de Pesquisa do Portal do Azure.
 services: search
 manager: jhubbard
 documentationcenter: 
@@ -13,13 +13,13 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.date: 07/10/2017
 ms.author: ashmaka
-ms.openlocfilehash: 56bab3ef8a66eeb053fbbeb6d322acb6824fb34b
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: dd68d8ed073bf7b8666ddef35a2f1f84df690b4b
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="query-an-azure-search-index-using-search-explorer-in-hello-azure-portal"></a>Consultar um índice da Azure Search utilizando o Explorador de pesquisa na Olá Portal do Azure
+# <a name="query-an-azure-search-index-using-search-explorer-in-the-azure-portal"></a>Consultar um índice do Azure Search com o Explorador de Procura no Portal do Azure
 > [!div class="op_single_selector"]
 > * [Descrição geral](search-query-overview.md)
 > * [Portal](search-explorer.md)
@@ -28,41 +28,41 @@ ms.lasthandoff: 10/06/2017
 > 
 > 
 
-Este artigo mostra como tooquery da Azure Search índice utilizando **Explorador de pesquisa** no Olá portal do Azure. Pode utilizar o Explorador de pesquisa toosubmit simple ou completo Lucene consulta cadeias tooany índice existente no seu serviço.
+Este artigo mostra-lhe como consultar um índice do Azure Search com o **Explorador de Procura** no portal do Azure. Pode utilizar o Explorador de Procura para submeter cadeias de consulta simples ou de Lucene completas a um índice existente no seu serviço.
 
-## <a name="open-hello-service-dashboard"></a>Dashboard de serviço Olá aberta
-1. Clique em **todos os recursos** na barra de índice de Olá na Olá à esquerda do lado do Olá [portal do Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices).
+## <a name="open-the-service-dashboard"></a>Abrir o dashboard de serviço
+1. Clique em **Todos os recursos** na barra de atalhos no lado esquerdo do [portal do Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices).
 2. Selecione o seu serviço do Azure Search.
 
 ## <a name="select-an-index"></a>Selecionar um índice
 
-Índice de Olá selecione gostaria toosearch de Olá **índices** mosaico.
+Selecione o índice que pretende pesquisar a partir do mosaico **Índices**.
 
    ![](./media/search-explorer/pick-index.png)
 
 ## <a name="open-search-explorer"></a>Abrir o Explorador de Procura
 
-Clique em Olá barra de pesquisa do Explorador de pesquisa mosaico tooslide Olá aberta e painel de resultados.
+Clique no mosaico Explorador de Procura para abrir gradualmente a barra de pesquisa e o painel de resultados.
 
    ![](./media/search-explorer/search-explorer-tile.png)
 
 ## <a name="start-searching"></a>Inicie a pesquisa
 
-Quando utilizar Olá Explorador de pesquisa, pode especificar [parâmetros de consulta](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) consulta de Olá tooformulate.
+Ao utilizar o Explorador de Procura, pode especificar [parâmetros de consulta](https://docs.microsoft.com/rest/api/searchservice/Search-Documents) para formular a consulta.
 
 1. Em **Cadeia de consulta**, escreva uma consulta e, em seguida, prima **Pesquisar**. 
 
-   cadeia de consulta Olá é analisada automaticamente para o pedido adequado Olá URL toosubmit um pedido HTTP relativamente Olá API REST da Azure Search.   
+   A cadeia de consulta é analisada automaticamente para o URL de pedido adequado, para submeter um pedido HTTP na API REST da Azure Search.   
    
-   Pode utilizar qualquer simple ou completo Lucene consulta sintaxe toocreate Olá pedido válido. Olá `*` caráter é equivalente tooan pesquisa de vazio ou não que devolve todos os documentos não ordem específica.
+   Pode utilizar qualquer sintaxe de consulta simples ou de Lucene completa para criar o pedido. O caráter `*` é equivalente a uma pesquisa em branco ou não especificada, que devolve todos os documentos por nenhuma ordem específica.
 
-2. No **resultados**, os resultados da consulta são apresentados no JSON não processado, toohello idênticos payload devolvido no corpo de resposta HTTP ao emitir pedidos através de programação.
+2. Em **Resultados**, os resultados da consulta são apresentados no JSON não processado, idênticos ao payload devolvido num Corpo de Resposta HTTP ao emitir pedidos através de programação.
 
    ![](./media/search-explorer/search-bar.png)
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Olá, os seguintes recursos fornece informações de sintaxe de consulta adicionais e exemplos.
+Os seguintes recursos fornecem informações de sintaxe de consulta adicionais e exemplos.
 
  + [Sintaxe de consulta simples](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) 
  + [Sintaxe de consulta Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search) 

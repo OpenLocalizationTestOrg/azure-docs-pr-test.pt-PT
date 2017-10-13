@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure CDN documentação - tutoriais, referência da API | Microsoft Docs"
-description: "Saiba como o dispositivo tooany de centros de toouse conteúdo toodeliver de rede de entrega de conteúdos (CDN) a partir dos dados globais. Tutoriais, referências de API e outra documentação."
+title: "Documentação da CDN do Azure - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar a Rede de Entrega de Conteúdos (CDN) para fornecer conteúdo a partir de centros de dados globais para qualquer dispositivo. Tutoriais, referências de API e outra documentação."
 services: cdn
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: 9d1a26398369233d75f3647a5a68f3e7f8698eb9
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: de858f5d3b9af7a36f2a8deab9105a4a61752cdb
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="cdn-documentation"></a>Documentação do CDN
 
-Saiba como toouse rede de entrega de conteúdos (CDN) toodeliver largura de banda alta conteúdo alojado no Azure ou noutro local. Tutoriais, referências de API e outra documentação mostram-lhe como toouse CDN toodeliver conteúdo dados globais centros tooany dispositivo.
+Saiba como utilizar a Rede de Entrega de Conteúdos (CDN) para fornecer conteúdo de largura de banda alta alojada no Azure ou noutro local. Tutoriais, referências de API e outra documentação mostram-lhe como utilizar a CDN para fornecer conteúdo a partir de centros de dados globais em qualquer dispositivo.
 
 <ul class="panelContent cardsFTitle">
     <li>

@@ -1,9 +1,9 @@
 ---
-title: aaaIntroduction tooAzure armazenamento | Microsoft Docs
-description: "Introdução tooAzure armazenamento, armazenamento de dados da Microsoft na nuvem de Olá."
+title: "Introdução ao Azure Storage | Microsoft Docs"
+description: "Introdução ao Armazenamento do Azure, o armazenamento de dados da Microsoft na cloud."
 services: storage
 documentationcenter: 
-author: robinsh
+author: tamram
 manager: timlt
 editor: tysonn
 ms.assetid: a4a1bc58-ea14-4bf5-b040-f85114edc1f1
@@ -13,89 +13,82 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/09/2017
-ms.author: robinsh
-ms.openlocfilehash: f61324f98d0a8eb24023e4344acdb4ca58bb27f8
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.author: tamram
+ms.openlocfilehash: e7b32aa2de5d6501e8d7894a936e9ab8b2f4f42f
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-<!-- this is hello same version that is in hello MVC branch -->
-# <a name="introduction-toomicrosoft-azure-storage"></a>Introdução tooMicrosoft Storage do Azure
+# <a name="introduction-to-microsoft-azure-storage"></a>Introdução ao Storage do Microsoft Azure
 
 O Armazenamento do Microsoft Azure é um serviço cloud gerido da Microsoft que oferece armazenamento de elevada disponibilidade, seguro, duradouro, dimensionável e redundante. A Microsoft trata da manutenção e lida com os problemas críticos por si. 
 
-O Armazenamento do Azure consiste em três serviços de dados: Armazenamento de Blobs, Armazenamento de Ficheiros e Armazenamento de Filas. O blob storage suporta armazenamento standard e premium, com o armazenamento premium utilizando apenas SSDs para possíveis de desempenho mais rápido Olá. Outra funcionalidade é armazenamento esporádico, permitindo-lhe toostorage grandes quantidades de dados raramente acedidos para um custo mais baixo.
+O Armazenamento do Azure consiste em três serviços de dados: Armazenamento de Blobs, Armazenamento de Ficheiros e Armazenamento de Filas. O Armazenamento de blobs suporta o armazenamento standard e premium, sendo que o último só utiliza SSDs para o desempenho mias rápido possível. Outra funcionalidade é o armazenamento de acesso esporádico, que lhe permite armazenar grandes quantidades de dados raramente acedidos a um custo mais baixo.
 
-Neste artigo, pode obter informações sobre seguinte Olá:
-* Serviços de armazenamento do Azure Olá
-* tipos de Olá de contas de armazenamento
+Neste artigo, vai ficar a saber o seguinte:
+* Os serviços do Armazenamento do Azure
+* Os tipos de contas de armazenamento
 * Aceder a blobs, filas e ficheiros
 * Encriptação
 * Replicação 
 * Transferir dados para dentro ou fora do armazenamento
-* Olá muitos bibliotecas de cliente de armazenamento disponíveis. 
+* As várias bibliotecas de clientes de armazenamento disponíveis. 
 
+Para começar a trabalhar com o Armazenamento do Azure rapidamente, veja um dos Inícios rápidos seguintes:
+* [Criar uma conta de armazenamento com o PowerShell](storage-quickstart-create-storage-account-powershell.md)
+* [Criar uma conta de armazenamento com a CLI](storage-quickstart-create-storage-account-cli.md)
 
-<!-- RE-ENABLE THESE AFTER MVC GOES LIVE 
-tooget up and running with Azure Storage quickly, check out one of hello following Quickstarts:
-* [Create a storage account using PowerShell](storage-quick-create-storage-account-powershell.md)
-* [Create a storage account using CLI](storage-quick-create-storage-account-cli.md)
--->
+## <a name="introducing-the-azure-storage-services"></a>Apresentação dos serviços de Armazenamento do Azure
 
-
-## <a name="introducing-hello-azure-storage-services"></a>Introdução às Olá dos serviços de armazenamento do Azure
-
-toouse qualquer um dos serviços de Olá fornecida pelo armazenamento do Azure – armazenamento de BLOBs, armazenamento de ficheiros e armazenamento de filas – tem primeiro de criar uma conta de armazenamento e, em seguida, pode transferir os dados de/para um serviço específico nessa conta de armazenamento. 
+Para utilizar qualquer um dos serviços fornecidos pelo Armazenamento do Azure --- Armazenamento de blobs, Armazenamento de ficheiros e Armazenamento de filas --, crie primeiro uma conta de armazenamento e, em seguida, pode transferir dados de/para um serviço específico nessa conta. 
 
 ## <a name="blob-storage"></a>Armazenamento de blobs
 
-Os blobs são, essencialmente, ficheiros semelhantes aos que armazena no seu computador (ou tablet, dispositivo móvel, etc.). Podem ser imagens, ficheiros do Microsoft Excel, ficheiros HTML, discos rígidos virtuais (VHDs), macrodados, como registos, cópias de segurança de bases de dados -- podem ser qualquer coisa, no fundo. Os BLOBs são armazenados em contentores que são toofolders semelhantes. 
+Os blobs são, essencialmente, ficheiros semelhantes aos que armazena no seu computador (ou tablet, dispositivo móvel, etc.). Podem ser imagens, ficheiros do Microsoft Excel, ficheiros HTML, discos rígidos virtuais (VHDs), macrodados, como registos, cópias de segurança de bases de dados -- podem ser qualquer coisa, no fundo. Os blobs são armazenados em contentores, que são semelhantes a pastas. 
 
-Após o armazenamento de ficheiros no Blob storage, pode aceder aos mesmos partir de qualquer local no mundo de Olá utilizando URLs, Olá REST interface ou uma das bibliotecas de cliente de armazenamento de Azure SDK Olá. As bibliotecas de clientes de armazenamento estão disponíveis para muitas linguagens, incluindo Node.js, Java, PHP, Ruby, Python e .NET. 
+Depois de armazenar ficheiros no Armazenamento de blobs, pode aceder aos mesmos em qualquer parte do mundo através de URLs, da interface REST ou de uma das bibliotecas de cliente de armazenamento do SDK do Azure. As bibliotecas de clientes de armazenamento estão disponíveis para muitas linguagens, incluindo Node.js, Java, PHP, Ruby, Python e .NET. 
 
-Existem três tipos de blobs - blobs de blocos, blobs de acréscimo e blobs de páginas (utilizados para ficheiros VHD).
+Existem três tipos de blobs - blobs de blocos, blobs de páginas (utilizados para ficheiros VHD) e blobs de acréscimo.
 
-* Os blobs de blocos são ficheiros comum de toohold utilizadas cópias de segurança tooabout 4.7 TB. 
-* Os blobs de páginas são ficheiros de acesso aleatório toohold utilizadas cópias de segurança too8 TB de tamanho. Estes são utilizados para ficheiros VHD Olá que apoiam a VMs.
-* Acrescentar blobs são constituídos por blocos como Olá blobs de blocos, mas estão otimizados para operações de acréscimo. Estes são utilizados para ações como toohello informações mesmo blob o registo de várias VMs.
+* Os blobs de blocos são utilizados para armazenar ficheiros comuns com um máximo de 4,7 TB. 
+* Os blobs de páginas são utilizados para armazenar ficheiros de acesso aleatório com até 8 TB de tamanho. São utilizados para os ficheiros VHD que suportam a VMs.
+* Os blobs de acréscimo são compostos por blocos, de forma semelhante aos blobs de blocos, mas estão otimizados para operações de acréscimo. São utilizados para ações como registar informações no mesmo blob provenientes de várias VMs.
 
-Para grandes conjuntos de dados onde as restrições de rede se carregar ou transferir o armazenamento de dados tooBlob através de transmissão Olá irreal pode enviar um conjunto de unidades de disco rígido tooMicrosoft tooimport ou exportar dados diretamente a partir do Centro de dados de Olá. Consulte [utilizar Olá serviço de importação/exportação do Microsoft Azure tooTransfer dados tooBlob armazenamento](../storage-import-export-service.md).
+Para conjuntos de dados muito grandes e em que as limitações de rede fazem com que carregar ou transferir dados para o Armazenamento de blobs de forma automática seja irrealista, pode enviar um conjunto de discos rígidos à Microsoft para importar ou exportar dados diretamente do datacenter. Consulte o artigo [Utilizar o Serviço de Importação/Exportação do Microsoft Azure para Transferir Dados para o Blob Storage](../storage-import-export-service.md).
 
-## <a name="file-storage"></a>Armazenamento de ficheiros
+## <a name="azure-files"></a>Ficheiros do Azure
+O serviço [Ficheiros do Azure](../files/storage-files-introduction.md) permite configurar partilhas de ficheiros de rede de elevada disponibilidade que podem ser acedidas através do protocolo SMB (Server Message Block) padrão. Isto significa que múltiplas VMs podem partilhar os mesmos ficheiros com acesso de leitura e de escrita. Também pode ler os ficheiros através da interface REST ou das bibliotecas de cliente de armazenamento. 
 
-Olá serviço de ficheiros do Azure permite-lhe tooset segurança partilhas de ficheiros de rede altamente disponível que possa ser acedida através do protocolo Server Message Block (SMB) Olá padrão. Ficheiros com o que significa que podem partilhar várias VMs Olá mesmo com acesso de escrita e leitura. Também pode ler ficheiros de Olá utilizando a interface REST de Olá ou bibliotecas de cliente do armazenamento de Olá. 
-
-Única coisa que distingue File storage do Azure dos ficheiros numa partilha de ficheiros empresarial é que pode aceder aos ficheiros de Olá partir de qualquer local no mundo Olá utilizando um URL que aponta toohello ficheiro e inclui um token de assinatura (SAS) de acesso partilhado. Pode gerar SAS tokens; permitem asset privada do tooa acesso específico durante um período de tempo específico. 
+A única coisa que distingue os Ficheiros do Azure dos ficheiros numa partilha de ficheiros empresarial é o facto de o utilizador poder aceder aos ficheiros a partir de qualquer parte do mundo através de um URL que aponta para o ficheiro e inclui um token de assinatura de acesso partilhado (SAS). Pode gerar tokens SAS; estes permitem o acesso específico a um recurso privado durante um período de tempo específico. 
 
 As partilhas de ficheiros podem ser utilizadas para inúmeros cenários comuns: 
 
-* Muitas aplicações no local utilizam partilhas de ficheiros. Esta funcionalidade torna mais fácil toomigrate essas aplicações que partilham tooAzure de dados. Se montar hello toohello de partilha de ficheiros mesmo unidade letra Olá no local utiliza de aplicação, parte Olá da sua aplicação que acede a partilha de ficheiros de Olá deve funcionar com alterações mínimas, se aplicável.
+* Muitas aplicações no local utilizam partilhas de ficheiros. Esta funcionalidade facilita a migração dessas aplicações que partilham dados no Azure. Se montar a partilha de ficheiros na mesma letra de unidade utilizada pela aplicação no local, a parte da sua aplicação que acede à partilha de ficheiros deve funcionar com alterações mínimas, se existirem.
 
-* Os ficheiros de configuração podem ser armazenados numa partilha de ficheiros e acedidos a partir de múltiplas VMs. Ferramentas e utilitários utilizados pelos programadores vários num grupo podem ser armazenados numa partilha de ficheiros, garantindo que everybody pode encontrá-los, e que utilizam Olá a mesma versão.
+* Os ficheiros de configuração podem ser armazenados numa partilha de ficheiros e acedidos a partir de múltiplas VMs. As ferramentas e os utilitários utilizados pelos múltiplos programadores num grupo podem ser armazenados numa partilha de ficheiros, o que garante que todos podem encontrá-los e que utilizam a mesma versão.
 
-* Os registos de diagnóstico, métricas e informações de estado de falha são apenas três exemplos de dados que podem ser escritos na partilha de ficheiros tooa e processados ou analisados mais tarde.
+* Os registos de diagnóstico, métricas e informações de falha são apenas três exemplos de dados que podem ser escritos numa partilha de ficheiros e processados ou analisados mais tarde.
 
-A este tempo, a autenticação baseada no Active Directory e o acesso não são suportadas listas de controlo (ACLs), mas estará em altura no Olá futura. Olá credenciais da conta de armazenamento são utilizados tooprovide autenticação para partilha de ficheiros de toohello de acesso. Isto significa que qualquer pessoa com partilha de Olá montada terão a partilha de toohello de acesso de leitura/escrita completa.
+Neste momento, a autenticação baseada no Active Directory e as listas de controlo de acesso (ACLs) não são suportadas, mas vão ser futuramente. As credenciais da conta de armazenamento são utilizadas para fornecer à autenticação o acesso à partilha de ficheiros. Isto significa que qualquer pessoa com a partilha montada terá total acesso de leitura/escrita à partilha.
 
 ## <a name="queue-storage"></a>Armazenamento de filas
 
-Olá serviço fila do Azure é utilizadas mensagens toostore e obter. Fila de mensagens pode ser segurança too64 KB de tamanho e uma fila pode conter milhões de mensagens. As filas são geralmente utilizados toostore listas de toobe de mensagens processados de forma assíncrona. 
+O serviço Filas do Azure é utilizado para armazenar e obter mensagens. As mensagens das filas podem ter até 64 KB de tamanho, ao passo que as filas podem conter milhões de mensagens. Geralmente, as filas são utilizadas para armazenar listas de mensagens que vão ser processadas de forma assíncrona. 
 
-Por exemplo, imagine que pretende que as imagens de tooupload capaz de toobe clientes e pretende toocreate miniaturas para cada imagem. Pode ter o cliente Aguarde que as miniaturas de Olá toocreate ao carregar as imagens de Olá. Uma alternativa seria toouse uma fila. Quando o cliente de Olá conclui o carregamento, escreva uma fila de toohello de mensagens. Em seguida, ter uma função do Azure obter a mensagem de saudação da fila de Olá e para criar miniaturas Olá. Cada uma das partes de Olá deste processamento pode ser ampliada separadamente, dando-lhe mais controlo quando otimização-lo para a sua utilização.
+Por exemplo, imaginemos que quer dar aos seus clientes a capacidade de carregar imagens e que quer igualmente criar miniaturas de cada uma delas. Pode fazer com que os clientes esperem até criar as miniaturas enquanto carregam as imagens. Uma alternativa é utilizar uma fila. Quando o cliente concluir o carregamento, escreva uma mensagem para a fila. Em seguida, crie um função das Funções do Azure para obter a mensagem da fila e criar as miniaturas. Cada uma das partes envolvidas neste processamento pode ser dimensionada à parte, dando-lhe mais controlo para a otimizar para a sua utilização.
 
-<!-- this bookmark is used by other articles; you'll need tooupdate them before this goes into production ROBIN-->
 ## <a name="table-storage"></a>Table Storage
-<!-- add a link toohello old table storage toothis paragraph once it's moved -->
-O Armazenamento de Tabelas Standard do Azure faz agora parte do Cosmos DB. Também disponível estão as Tabelas Premium do armazenamento de Tabelas do Azure, que oferece tabelas otimizadas para débito, distribuição global e índices secundários automáticos. toolearn mais e tente terminar nova experiência de premium Olá, consulte [BD do Azure Cosmos: API de tabela](https://aka.ms/premiumtables).
+
+O Armazenamento de Tabelas Standard do Azure faz agora parte do Cosmos DB. Para ver a referida documentação, veja a [Descrição Geral do Armazenamento de Tabelas do Azure](../../cosmos-db/table-storage-overview.md). Também disponível estão as Tabelas Premium do armazenamento de Tabelas do Azure, que oferece tabelas otimizadas para débito, distribuição global e índices secundários automáticos. Para saber mais e experimentar a nova experiência premium, veja [Azure Cosmos DB: Table API](https://aka.ms/premiumtables) (Azure Cosmos DB: API da Tabela).
 
 ## <a name="disk-storage"></a>Armazenamento em disco
 
-equipa de armazenamento do Azure Olá também detém discos, que inclui todos os Olá gerido e capacidades de não gerido disco utilizadas pelas máquinas virtuais. Para obter mais informações sobre estas funcionalidades, consulte Olá [documentação do serviço de computação](https://docs.microsoft.com/azure/#pivot=services&panel=Compute).
+O Armazenamento do Azure também inclui capacidades de discos geridos e não geridos que as máquinas virtuais utilizam. Para obter mais informações sobre estas funcionalidades, veja a [documentação do Serviço de Computação](https://docs.microsoft.com/azure/#pivot=services&panel=Compute).
 
 ## <a name="types-of-storage-accounts"></a>Tipos de contas de armazenamento 
 
-Esta tabela mostra Olá vários tipos de contas do storage e quais os objetos que podem ser utilizados com cada um.
+Esta tabela mostra os vários tipos de contas de armazenamento e quais os objetos que podem ser utilizados com cada uma.
 
 |**Tipo de conta de armazenamento**|**Standard para fins gerais**|**Premium para fins gerais**|**Armazenamento de blobs, camadas de acesso frequente e esporádico**|
 |-----|-----|-----|-----|
@@ -108,105 +101,105 @@ Existem dois tipos de contas de armazenamento para fins gerais.
 
 #### <a name="standard-storage"></a>Armazenamento Standard 
 
-Olá mais amplamente utilizada contas de armazenamento são contas de armazenamento standard, que podem ser utilizadas para todos os tipos de dados. Contas de armazenamento Standard utilizam dados do suporte de dados torção toostore.
+As contas de armazenamento mais amplamente utilizadas são as contas de armazenamento standard, que podem ser utilizadas para todos os tipos de dados. As contas de armazenamento standard armazenam os dados num suporte de dados magnético.
 
 #### <a name="premium-storage"></a>Armazenamento Premium
 
-O Armazenamento Premium disponibiliza armazenamento de elevado desempenho para blobs de páginas, que são essencialmente utilizados para ficheiros VHD. Contas de armazenamento Premium utilizam dados de toostore SSD. A Microsoft recomenda utilizar o Armazenamento Premium em todas as suas VMs.
+O Armazenamento Premium disponibiliza armazenamento de elevado desempenho para blobs de páginas, que são essencialmente utilizados para ficheiros VHD. As contas deste tipo de armazenamento utilizam o SSD para armazenar os dados. A Microsoft recomenda utilizar o Armazenamento Premium em todas as suas VMs.
 
 ### <a name="blob-storage-accounts"></a>Contas de Armazenamento de blobs
 
-conta de armazenamento de BLOBs de Olá é uma conta de armazenamento especializado utilizado toostore blobs de blocos e blobs de acréscimo. Não pode armazenar blobs de páginas nestas contas, pelo que não pode armazenar ficheiros VHD. Estas contas permitem-lhe tooset um tooHot de camada de acesso ou útil; é possível alterar a camada de Olá em qualquer altura. 
+A conta de Armazenamento de blobs é uma conta de armazenamento especializada utilizada para armazenar blobs de blocos e blobos de acréscimo. Não pode armazenar blobs de páginas nestas contas, pelo que não pode armazenar ficheiros VHD. Estas contas permitem-lhe definir uma camada de acesso Frequente ou Esporádico, pode ser alterada em qualquer altura. 
 
-camada de acesso frequente de Olá é utilizada para os ficheiros que são acedidos com frequência – paga um custo mais elevado para armazenamento, mas custo de Olá de aceder a blobs Olá é muito inferior. Para blobs armazenados na camada de acesso esporádico Olá, paga um custo mais elevado para aceder aos blobs Olá, mas o custo de Olá de armazenamento é muito inferior.
+A camada de acesso frequente é utilizada para os ficheiros que são acedidos com frequência – paga um custo mais elevado para o armazenamento, mas o custo de aceder aos blobs é muito inferior. Quanto a blobs armazenados na camada de acesso esporádico, o acesso aos blobs é mais caro, mas o custo do armazenamento é muito mais baixo.
 
 ## <a name="accessing-your-blobs-files-and-queues"></a>Aceder a blobs, ficheiros e filas
 
-Cada conta de armazenamento tem duas chaves de autenticação, sendo que pode ser utilizada qualquer uma destas para realizar qualquer operação. Existem duas chaves, pelo que pode implementar através de Olá ocasionalmente chaves tooenhance segurança. É fundamental que estas chaves seja mantida segura porque permite que os respetivos posse, juntamente com o nome da conta Olá, dados de tooall acesso ilimitado na conta do storage Olá. 
+Cada conta de armazenamento tem duas chaves de autenticação, sendo que pode ser utilizada qualquer uma destas para realizar qualquer operação. Existem duas chaves, pelo que pode implementá-las ocasionalmente para melhorar a segurança. É fundamental que estas chaves estejam guardadas em segurança, porque estar na posso da mesma, juntamente com o nome de utilizador, permite acesso ilimitado a todos os dados da conta de armazenamento. 
 
-Esta secção procura dois conta de armazenamento do Olá toosecure formas e os respetivos dados. Para obter informações detalhadas sobre como proteger a sua conta de armazenamento e os dados, consulte Olá [manual de segurança de armazenamento do Azure](storage-security-guide.md).
+Esta secção mostra duas formas de proteger a conta de armazenamento e os respetivos dados. Para obter informações detalhadas sobre como proteger a sua conta de armazenamento e os seus dados, veja [manual de segurança do Armazenamento do Azure](storage-security-guide.md).
 
-### <a name="securing-access-toostorage-accounts-using-azure-ad"></a>Proteger o acesso a contas de toostorage utilizar o Azure AD
+### <a name="securing-access-to-storage-accounts-using-azure-ad"></a>Utilizar o Azure AD para proteger o acesso às contas de armazenamento
 
-Os dados de armazenamento do toosecure uma forma acesso tooyour são controlar o acesso toohello chaves de conta de armazenamento. Com o Gestor de recursos do controlo de acesso baseado em funções (RBAC), pode atribuir funções toousers, grupos ou aplicações. Estas funções estão associadas tooa conjunto específico de ações que são permitidas ou não permitido. Conta de armazenamento do toogrant acesso tooa através do RBAC processa apenas operações de gestão de Olá para essa conta de armazenamento, tal como alterar a camada de acesso de Olá. Não é possível utilizar objetos de toodata do RBAC toogrant acesso como uma partilha de ficheiro ou contentor específico. No entanto, pode utilizar o RBAC toogrant acesso toohello armazenamento chaves de conta, que, em seguida, podem ser utilizado tooread Olá dos objetos de dados. 
+Uma forma de proteger o acesso aos seus dados de armazenamento é controlar o acesso às chaves da conta de armazenamento. Com o Controlo de Acesso Baseado em Funções (RBAC) do Resource Manager, pode atribuir funções a utilizadores, grupos ou aplicações. Estas funções estão associadas a um conjunto específico de ações que são permitidas ou negadas. Utilizar o RBAC para conceder acesso a uma conta de armazenamento processa apenas as operações de gestão dessa conta, tal como alterar a camada de acesso. Não pode utilizar o RBAC para conceder acesso a objetos de dados, como um contentor ou uma partilha de ficheiros específica. No entanto, pode utilizar o RBAC para conceder acesso às chaves da conta de armazenamento, que podem, depois, ser utilizadas para ler os objetos de dados. 
 
 ### <a name="securing-access-using-shared-access-signatures"></a>Utilizar assinaturas de acesso partilhado para proteger o acesso 
 
-Pode utilizar assinaturas de acesso partilhado e armazenados toosecure de políticas de acesso os objetos de dados. Uma assinatura de acesso partilhado (SAS) é uma cadeia contendo um token de segurança que pode ser anexados toohello URI para um recurso que lhe permite objetos de armazenamento do toodelegate acesso toospecific e restrições de toospecify, tais como o intervalo de data/hora Olá de acesso e permissões. Esta funcionalidade tem extensas capacidades. Para obter informações detalhadas, consulte demasiado[através de acesso partilhado assinaturas (SAS)](storage-dotnet-shared-access-signature-part-1.md).
+Pode utilizar assinaturas de acesso partilhado e políticas de acesso armazenadas para proteger os seus objetos de dados. As assinaturas de acesso partilhado (SAS) são uma cadeia que contém um token de segurança que pode ser ligado ao URI de um recurso que lhe permite delegar acesso a objetos de armazenamento específicos e especificar limitações, como permissões e o intervalo de data/hora do acesso. Esta funcionalidade tem extensas capacidades. Para obter informações detalhadas, veja [Using Shared Access Signatures (SAS)](storage-dotnet-shared-access-signature-part-1.md) (Utilizar Assinaturas de Acesso Partilhado [SAS]).
 
-### <a name="public-access-tooblobs"></a>Tooblobs acesso público
+### <a name="public-access-to-blobs"></a>Acesso público a blobs
 
-Olá serviço Blob permite-lhe tooprovide acesso público tooa contentor e os respetivos blobs ou um blob específico. Quando indicar que um contentor ou um blob é público, todas as pessoas podem lê-lo anonimamente. Não é necessária autenticação. Um exemplo de quando seria aconselhável toodo trata quando tiver um site que está a utilizar imagens, vídeo ou documentos a partir do Blob storage. Para obter mais informações, consulte [gerir o acesso de leitura anónimo toocontainers e blobs](../blobs/storage-manage-access-to-resources.md) 
+O Serviço Blob permite-lhe fornecer acesso público a um contentor e respetivos blobs ou a um blob específico. Quando indicar que um contentor ou um blob é público, todas as pessoas podem lê-lo anonimamente. Não é necessária autenticação. Um exemplo de quando pode utilizar o acesso público é se tiver um Web site que utiliza imagens, vídeos ou documentos provenientes do Armazenamento de blobs. Para obter mais informações, veja [Manage anonymous read access to containers and blobs](../blobs/storage-manage-access-to-resources.md) (Gerir o acesso de leitura anónima a contentores e blobs). 
 
 ## <a name="encryption"></a>Encriptação
 
-Existem alguns dos tipos básicos de encriptação disponíveis Olá dos serviços de armazenamento. 
+Estão disponíveis alguns tipos básicos de encriptação para os serviços de Armazenamento. 
 
 ### <a name="encryption-at-rest"></a>Encriptação inativa 
 
-Pode ativar a encriptação de serviço de armazenamento (SSE) em qualquer serviço de ficheiros de Olá (pré-visualização) ou Olá serviço Blob para uma conta de armazenamento do Azure. Se estiver ativada, todos os dados escritos serviço específico toohello é encriptado antes de escrita. Ao ler dados Olá, é desencriptado antes de que devolvido. 
+Pode ativar a Storage Service Encryption (SSE) no serviço de Ficheiros (pré-visualização) ou no serviço Blob de uma conta de armazenamento do Azure. Se estiver ativada, todos os dados escritos no serviço específico são encriptados antes de serem escritos. Quando ler os dados, estes são desencriptados antes de serem devolvidos. 
 
 ### <a name="client-side-encryption"></a>Encriptação do lado do cliente
 
-Olá bibliotecas de cliente de armazenamento têm métodos pode chamar tooprogrammatically encriptar dados antes de a enviar entre a transmissão Olá de Olá tooAzure de cliente. São armazenados encriptados, o que significa que também estão encriptados quando estão inativos. Ao ler dados de Olá novamente, desencriptar informações Olá depois de recebê-lo. 
+As bibliotecas de cliente de armazenamento têm métodos que pode chamar para encriptar os dados programaticamente antes de os enviar de forma automática do cliente para o Azure. São armazenados encriptados, o que significa que também estão encriptados quando estão inativos. Ao ler os dados novamente, desencripte as informações depois de as receber. 
 
-### <a name="encryption-in-transit-with-azure-file-shares"></a>Encriptação em trânsito com Partilhas de Ficheiros do Azure
+### <a name="encryption-in-transit-with-azure-file-shares"></a>Encriptação em trânsito com partilhas de Ficheiros do Azure
 
-Veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](../storage-dotnet-shared-access-signature-part-1.md) para obter mais informações sobre assinaturas de acesso partilhado. Consulte [gerir o acesso de leitura anónimo toocontainers e blobs](../blobs/storage-manage-access-to-resources.md) e [autenticação para Olá dos serviços de armazenamento do Azure](https://msdn.microsoft.com/library/azure/dd179428.aspx) para obter mais informações sobre a conta de armazenamento de tooyour acesso seguro.
+Veja [Utilizar Assinaturas de Acesso Partilhado (SAS)](../storage-dotnet-shared-access-signature-part-1.md) para obter mais informações sobre assinaturas de acesso partilhado. Consulte o artigo [Gerir o acesso de leitura anónimo a contentores e blobs](../blobs/storage-manage-access-to-resources.md) e [Autenticação para os Serviços do Storage do Azure](https://msdn.microsoft.com/library/azure/dd179428.aspx) para mais informações sobre o acesso seguro à sua conta do Storage.
 
-Para obter mais detalhes sobre como proteger a sua conta de armazenamento e a encriptação, consulte Olá [manual de segurança de armazenamento do Azure](storage-security-guide.md).
+Para obter mais informações sobre como proteger a sua conta de armazenamento e a encriptação, veja o [Guia de segurança do Armazenamento do Azure](storage-security-guide.md).
 
 ## <a name="replication"></a>Replicação
 
-Ordem tooensure que os seus dados são duráveis, armazenamento do Azure tem Olá capacidade tookeep (e a gerir) várias cópias dos seus dados. Estas cópias são denominadas “réplicas” ou, por vezes, “redundância”. Vai selecionar o tipo de replicação quando configurar a sua conta de armazenamento. Na maioria dos casos, esta definição pode ser modificada depois de configurar a conta de armazenamento Olá. 
+Para garantir que os seus dados são duráveis, o Armazenamento do Azure tem a capacidade de manter (e gerir) várias cópias dos mesmos. Estas cópias são denominadas “réplicas” ou, por vezes, “redundância”. Quando configurar a sua conta de armazenamento, vai selecionar um tipo de replicação. Na maioria dos casos, esta definição pode ser alterada após a configuração da conta de armazenamento. 
 
-Todas as contas de armazenamento têm o **armazenamento localmente redundante (LRS)**. Isto significa três cópias dos seus dados são geridas pelo armazenamento do Azure no Centro de dados de Olá especificado quando a conta de armazenamento de Olá foi configurada. Quando as alterações são consolidar tooone copiar, hello outras duas cópias são atualizadas antes da devolução com êxito. Isto significa que os três réplicas de Olá sempre são sincronizadas. Além disso, Olá três cópias residirem em domínios de falhas separada e atualizar domínios, que significa que os dados estão disponíveis mesmo se falha um nó de armazenamento que contém os dados ou é colocado offline toobe atualizado. 
+Todas as contas de armazenamento têm o **armazenamento localmente redundante (LRS)**. Isto significa que são geridas três cópias dos seus dados pelo Armazenamento do Azure no datacenter especificado quando a conta de armazenamento foi configurada. Quando as alterações forem consolidadas para uma cópia, as duas outras cópias são atualizadas antes da devolução com êxito. Isto significa que as três réplicas estão sempre sincronizadas. Além disso, as três cópias residem em domínios de falha e em domínios de atualização diferentes, o que quer dizer que os seus dados estão disponíveis mesmo que um nó de armazenamento que contenha os seus dados falhe ou seja colocado offline para ser atualizado. 
 
 **Armazenamento localmente redundante (LRS)**
 
-Tal como explicado anteriormente, com o LRS, tem três cópias dos seus dados num único datacenter. Isto processa problema Olá de dados se tornar indisponível se um nó de armazenamento falha ou é colocado offline toobe atualizada, mas não Olá maiúsculas e minúsculas de um centro de dados completo se tornar indisponível.
+Tal como explicado anteriormente, com o LRS, tem três cópias dos seus dados num único datacenter. Isto resolve o problema de os dados ficarem indisponíveis caso um nó de armazenamento falhe ou seja colocado offline para ser atualizado, mas não se todo o datacenter ficar indisponível.
 
 **Armazenamento com redundância de zona (ZRS)**
 
-Armazenamento com redundância de zona (ZRS) mantém três cópias locais Olá dos seus dados, bem como outro conjunto de três cópias dos seus dados. Olá segundo conjunto de três cópias é replicado de forma assíncrona entre centros de dados dentro de uma ou duas regiões. Tenha em conta que o ZRS só está disponível nos blobs de blocos em contas de armazenamento de fins gerais. Além disso, depois de ter criado a sua conta do storage e selecionado o ZRS, não é possível convertê-lo toouse tooany outro tipo de replicação ou vice-versa.
+O armazenamento com redundância de zona (ZRS) mantém as três cópias locais dos seus dados, bem como outro conjunto das três cópias do dados. O segundo conjunto de três cópias é replicado de forma assíncrona entre datacenters numa ou duas regiões. Tenha em conta que o ZRS só está disponível nos blobs de blocos em contas de armazenamento de fins gerais. Do mesmo modo, depois de criar a sua conta de armazenamento e selecionado o ZRS, não pode convertê-lo para utilizar qualquer outro tipo de replicação ou vice-versa.
 
 As contas ZRS proporcionam uma durabilidade mais alta do que o LRS, mas não têm métricas nem capacidade de criação de relatórios. 
 
 **Armazenamento georredundante (GRS)**
 
-Armazenamento georredundante (GRS) mantém três cópias locais Olá dos seus dados numa região primária e outro conjunto de três cópias dos seus dados numa região secundária a centenas de quilómetros região primária Olá. O evento de uma falha na região primária Olá Olá, o Storage do Azure serão ativadas pós-falha região secundária toohello. 
+O armazenamento georredundante (GRS) mantém as três cópias locais dos seus dados numa região primária e outro conjunto de três cópias numa região secundária, a centenas de quilómetros da primária. Se ocorrer uma falha na região primária, o Armazenamento do Azure fará uma ativação pós-falha para a região secundária. 
 
 **Armazenamento georredundante com acesso de leitura (RA-GRS)** 
 
-Armazenamento georredundante com acesso de leitura é exatamente como GRS, exceto que, obter dados de toohello de acesso de leitura na localização secundária Olá. Se o Datacenter primário Olá fique temporariamente indisponível, pode continuar a dados de Olá tooread da localização secundária Olá. Isto pode ser muito útil. Por exemplo, pode ter uma aplicação web que muda para o modo só de leitura e de pontos de cópia de secundário toohello, permitindo algumas acesso, apesar das atualizações não estão disponíveis. 
+O armazenamento georredundante com acesso de leitura é exatamente igual ao GRS, com a diferença de que obtém acesso de leitura aos dados na localização secundária. Se o datacenter primário ficar temporariamente indisponível, pode continuar a ler os dados na localização secundária. Isto pode ser muito útil. Por exemplo, pode ter uma aplicação Web que muda para o modo só de leitura e aponta para a cópia secundária, permitindo algum acesso mesmo apesar de as atualizações não estarem disponíveis. 
 
 > [!IMPORTANT]
-> Pode alterar a forma como os dados são replicados depois de ter sido criada a sua conta do storage, a menos que tenha especificado o ZRS quando criou a conta de Olá. No entanto, tenha em atenção que pode implicar uma transferência de dados de uma única adicionais custo se mudar do LRS tooGRS ou RA-GRS.
+> Pode alterar como os dados são replicados depois de criar a sua conta do Storage, a menos que tenha especificado o ZRS quando criou a conta. No entanto, tenha em atenção que pode ser cobrado um custo único adicional relativo à transferência de dados se mudar do LRS para o GRS ou o RA-GRS.
 >
 
 Para obter mais informações sobre a replicação, veja [Azure Storage replication](storage-redundancy.md) (Replicação do Armazenamento do Azure).
 
-Para informações de recuperação após desastre, consulte [que toodo se ocorrer uma falha de armazenamento do Azure](storage-disaster-recovery-guidance.md).
+Para obter informações sobre a recuperação após desastre, veja [What to do if an Azure Storage outage occurs](storage-disaster-recovery-guidance.md) (O que fazer em caso de falha do Armazenamento do Azure).
 
-Para obter um exemplo de como tooleverage RA-GRS tooensure elevada disponibilidade de armazenamento, consulte [conceber altamente disponível aplicações utilizando RA-GRS](storage-designing-ha-apps-with-ragrs.md).
+Para obter um exemplo de como tirar partido do armazenamento RA-GRS para garantir a elevada disponibilidade, veja [Designing Highly Available Applications using RA-GRS](storage-designing-ha-apps-with-ragrs.md) (Conceber Aplicações de Elevada Disponibilidade com RA-GRS).
 
-## <a name="transferring-data-tooand-from-azure-storage"></a>Transferência de dados tooand do armazenamento do Azure
+## <a name="transferring-data-to-and-from-azure-storage"></a>Transferir dados de e para o Armazenamento do Azure
 
-Pode utilizar os dados de ficheiros e Olá AzCopy utilitário da linha de comandos toocopy blob dentro da sua conta do storage ou em contas de armazenamento. Consulte uma das seguintes Olá artigos de ajuda:
+Pode utilizar o utilitário da linha de comandos AzCopy para copiar os dados de blobs e de ficheiros na sua conta ou em várias contas de armazenamento. Veja um dos artigos seguintes para obter ajuda:
 
 * [Transfer data with AzCopy for Windows](storage-use-azcopy.md) (Transferir dados com AzCopy para Windows)
 * [Transfer data with AzCopy for Linux](storage-use-azcopy-linux.md) (Transferir dados com AzCopy para Linux)
 
-AzCopy é desenvolvida com Olá [biblioteca de movimento de dados do Azure](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/), que está atualmente disponível na pré-visualização.
+O AzCopy é criado sobre a [Biblioteca de Movimento de Dados do Azure](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/), que está atualmente disponível na pré-visualização.
 
-Olá serviço importar/exportar do Azure pode ser utilizadas tooimport ou exportação grandes quantidades de dados de blob tooor da sua conta de armazenamento. Preparar e correio várias unidades de disco rígido tooan Datacenter do Azure, onde são transferidos dados Olá do unidades de disco rígido Olá e enviar a fazer uma cópia de unidades de disco rígido Olá tooyou. Para mais informações sobre Olá serviço de importação/exportação, consulte [utilizar Olá serviço de importação/exportação do Microsoft Azure tooTransfer dados tooBlob armazenamento](../storage-import-export-service.md).
+Pode ser utilizado o serviço Importar/Exportar do Azure para importar ou exportar grandes quantidades de dados de blobs de ou para a sua conta de armazenamento. Para tal, prepare e envie por correio vários discos rígidos para um datacenter do Azure, onde os dados são transferidos do/para os esses discos, que, depois, lhe são devolvidos. Para obter mais informações sobre o serviço de Importação/Exportação, consulte o artigo [Utilizar o Serviço de Importação/Exportação do Microsoft Azure para Transferir Dados para o Blob Storage](../storage-import-export-service.md).
 
 ## <a name="pricing"></a>Preços
 
-Para obter informações detalhadas sobre preços do Storage do Azure, consulte Olá [página de preços](https://azure.microsoft.com/pricing/details/storage/blobs/).
+Para obter informações detalhadas sobre os preços do Armazenamento do Azure, veja a [página de preços](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ## <a name="storage-apis-libraries-and-tools"></a>APIs de armazenamento, bibliotecas e ferramentas
-É possível aceder aos recursos do Storage do Azure por qualquer idioma que consiga efetuar pedidos de HTTP/HTTPS. Além disso, o Storage do Azure oferece bibliotecas de programação para vários idiomas populares. Estas bibliotecas simplificam muitos aspetos do trabalho com o Storage do Azure ao processar detalhes como a invocação síncrona e assíncrona, a criação de batches de operações, a gestão de exceções, as tentativas automáticas, o comportamento operacional, etc. As bibliotecas estão atualmente disponíveis para Olá seguintes idiomas e plataformas, com outros no pipeline de Olá:
+É possível aceder aos recursos do Storage do Azure por qualquer idioma que consiga efetuar pedidos de HTTP/HTTPS. Além disso, o Storage do Azure oferece bibliotecas de programação para vários idiomas populares. Estas bibliotecas simplificam muitos aspetos do trabalho com o Storage do Azure ao processar detalhes como a invocação síncrona e assíncrona, a criação de batches de operações, a gestão de exceções, as tentativas automáticas, o comportamento operacional, etc. Atualmente, as bibliotecas estão disponíveis para os seguintes idiomas e plataformas, com outros no pipeline:
 
 ### <a name="azure-storage-data-services"></a>Serviços de dados do Armazenamento do Azure
 * [API REST dos Serviços de Armazenamento](/rest/api/storageservices/)
@@ -226,15 +219,13 @@ Para obter informações detalhadas sobre preços do Storage do Azure, consulte 
 * [Learn more about File storage](../storage-files-introduction.md) (Saiba mais sobre o Armazenamento de ficheiros)
 * [Learn more about Queue storage](../queues/storage-queues-introduction.md) (Saiba mais sobre o Armazenamento de filas)
 
-<!-- RE-ENABLE THESE AFTER MVC GOES LIVE 
-tooget up and running with Azure Storage quickly, check out one of hello following Quickstarts:
-* [Create a storage account using PowerShell](storage-quick-create-storage-account-powershell.md)
-* [Create a storage account using CLI](storage-quick-create-storage-account-cli.md)
--->
+Para começar a trabalhar com o Armazenamento do Azure rapidamente, veja um dos Inícios rápidos seguintes:
+* [Criar uma conta de armazenamento com o PowerShell](storage-quickstart-create-storage-account-powershell.md)
+* [Criar uma conta de armazenamento com a CLI](storage-quickstart-create-storage-account-cli.md)
 
-<!-- FIGURE OUT WHAT tooDO WITH ALL THESE LINKS.
+<!-- FIGURE OUT WHAT TO DO WITH ALL THESE LINKS.
 
-Azure Storage resources can be accessed by any language that can make HTTP/HTTPS requests. Additionally, Azure Storage offers programming libraries for several popular languages. These libraries simplify many aspects of working with Azure Storage by handling details such as synchronous and asynchronous invocation, batching of operations, exception management, automatic retries, operational behavior and so forth. Libraries are currently available for hello following languages and platforms, with others in hello pipeline:
+Azure Storage resources can be accessed by any language that can make HTTP/HTTPS requests. Additionally, Azure Storage offers programming libraries for several popular languages. These libraries simplify many aspects of working with Azure Storage by handling details such as synchronous and asynchronous invocation, batching of operations, exception management, automatic retries, operational behavior and so forth. Libraries are currently available for the following languages and platforms, with others in the pipeline:
 
 ### Azure Storage data services
 * [Storage Services REST API](https://docs.microsoft.com/rest/api/storageservices/)
@@ -258,7 +249,7 @@ Azure Storage resources can be accessed by any language that can make HTTP/HTTPS
 * [Storage Data Movement Client Library for .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/)
 
 ### Tools and utilities
-* [Microsoft Azure Storage Explorer](../../vs-azure-tools-storage-manage-with-storage-explorer.md) is a free, standalone app from Microsoft that enables you toowork visually with Azure Storage data on Windows, macOS, and Linux.
+* [Microsoft Azure Storage Explorer](../../vs-azure-tools-storage-manage-with-storage-explorer.md) is a free, standalone app from Microsoft that enables you to work visually with Azure Storage data on Windows, macOS, and Linux.
 * [Azure Storage Client Tools](../storage-explorers.md)
 * [Azure SDKs and Tools](https://azure.microsoft.com/tools/)
 * [Azure Storage Emulator](http://www.microsoft.com/download/details.aspx?id=43709)
@@ -266,15 +257,12 @@ Azure Storage resources can be accessed by any language that can make HTTP/HTTPS
 * [AzCopy Command-Line Utility](http://aka.ms/downloadazcopy)
 
 ## Next steps
-toolearn more about Azure Storage, explore these resources:
+To learn more about Azure Storage, explore these resources:
 
 ### Documentation
 * [Azure Storage Documentation](https://azure.microsoft.com/documentation/services/storage/)
 * [Create a storage account](../storage-create-storage-account.md)
 
-<!-- after our quick starts are available, replace this link with a link tooone of those. 
-Had tooremove this article, it refers toohello VS quickstarts, and they've stopped publishing them. Robin --> 
-<!--* [Get started with Azure Storage in five minutes](storage-getting-started-guide.md)
 -->
 
 ### <a name="for-administrators"></a>Para administradores
@@ -283,34 +271,33 @@ Had tooremove this article, it refers toohello VS quickstarts, and they've stopp
 
 ### <a name="for-net-developers"></a>Para programadores do .NET
 * [Introdução ao armazenamento de Blobs do Azure através do .NET](../blobs/storage-dotnet-how-to-use-blobs.md)
+* [Programar para os Ficheiros do Azure com .NET](../files/storage-dotnet-how-to-use-files.md)
 * [Introdução ao armazenamento de Tabelas do Azure através do .NET](../../cosmos-db/table-storage-how-to-use-dotnet.md)
 * [Introdução ao Armazenamento de filas do Azure através do .NET](../storage-dotnet-how-to-use-queues.md)
-* [Introdução ao Armazenamento de Ficheiros do Azure no Windows](../storage-dotnet-how-to-use-files.md)
 
 ### <a name="for-javaandroid-developers"></a>Para orogramadores de Java/Android
-* [Como toouse Blob storage do Java](../blobs/storage-java-how-to-use-blob-storage.md)
-* [Como toouse Table storage do Java](../../cosmos-db/table-storage-how-to-use-java.md)
-* [Como toouse armazenamento de filas do Java](../storage-java-how-to-use-queue-storage.md)
-* [Como toouse File storage do Java](../storage-java-how-to-use-file-storage.md)
+* [Como utilizar o Armazenamento de blobs do Java](../blobs/storage-java-how-to-use-blob-storage.md)
+* [Programar para os Ficheiros do Azure com Java](../files/storage-java-how-to-use-file-storage.md)
+* [Como utilizar o Armazenamento de tabelas do Java](../../cosmos-db/table-storage-how-to-use-java.md)
+* [Como utilizar o Armazenamento de filas do Java](../storage-java-how-to-use-queue-storage.md)
 
 ### <a name="for-nodejs-developers"></a>Para programadores de Node.js
-* [Como toouse Blob storage do Node.js](../blobs/storage-nodejs-how-to-use-blob-storage.md)
-* [Como toouse Table storage do Node.js](../../cosmos-db/table-storage-how-to-use-nodejs.md)
-* [Como toouse armazenamento de filas do Node.js](../storage-nodejs-how-to-use-queues.md)
+* [Como utilizar o Armazenamento de blobs do Node.js](../blobs/storage-nodejs-how-to-use-blob-storage.md)
+* [Como utilizar o Armazenamento de tabelas do Node.js](../../cosmos-db/table-storage-how-to-use-nodejs.md)
+* [Como utilizar o Armazenamento de filas do Node.js](../storage-nodejs-how-to-use-queues.md)
 
 ### <a name="for-php-developers"></a>Para programadores de PHP
-* [Como toouse Blob storage do PHP](../blobs/storage-php-how-to-use-blobs.md)
-* [Como toouse Table storage do PHP](../../cosmos-db/table-storage-how-to-use-php.md)
-* [Como toouse armazenamento de filas do PHP](../storage-php-how-to-use-queues.md)
+* [Como utilizar o Armazenamento de blobs do PHP](../blobs/storage-php-how-to-use-blobs.md)
+* [Como utilizar o Armazenamento de tabelas do PHP](../../cosmos-db/table-storage-how-to-use-php.md)
+* [Como utilizar o Armazenamento de filas do PHP](../storage-php-how-to-use-queues.md)
 
 ### <a name="for-ruby-developers"></a>Para programadores de Ruby
-* [Como toouse Blob storage do Ruby](../blobs/storage-ruby-how-to-use-blob-storage.md)
-* [Como toouse Table storage do Ruby](../../cosmos-db/table-storage-how-to-use-ruby.md)
-* [Como toouse armazenamento de filas do Ruby](../storage-ruby-how-to-use-queue-storage.md)
+* [Como utilizar o Armazenamento de blobs do Ruby](../blobs/storage-ruby-how-to-use-blob-storage.md)
+* [Como utilizar o Armazenamento de tabelas do Ruby](../../cosmos-db/table-storage-how-to-use-ruby.md)
+* [Como utilizar o Armazenamento de filas do Ruby](../storage-ruby-how-to-use-queue-storage.md)
 
 ### <a name="for-python-developers"></a>Para programadores de Python
-* [Como toouse Blob storage do Python](../blobs/storage-python-how-to-use-blob-storage.md)
-* [Como toouse Table storage do Python](../../cosmos-db/table-storage-how-to-use-python.md)
-* [Como toouse armazenamento de filas do Python](../storage-python-how-to-use-queue-storage.md)   
-* [Como toouse File storage do Python](../storage-python-how-to-use-file-storage.md) 
--->
+* [Como utilizar o Armazenamento de blobs do Python](../blobs/storage-python-how-to-use-blob-storage.md)
+* [Programar para os Ficheiros do Azure com Python](../files/storage-python-how-to-use-file-storage.md)
+* [Como utilizar o Armazenamento de tabelas do Python](../../cosmos-db/table-storage-how-to-use-python.md)
+* [Como utilizar o Armazenamento de filas do Python](../storage-python-how-to-use-queue-storage.md)

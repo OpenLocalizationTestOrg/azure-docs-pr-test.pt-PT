@@ -1,4 +1,4 @@
-Olá serviço de cópia de segurança do Azure tem dois tipos de cofres - Cofre de cópia de segurança de Olá e Olá Cofre de serviços de recuperação. cofre da cópia de segurança de Olá veio primeiro. Em seguida, Olá cofre dos serviços de recuperação transmitida ao longo de implementações do toosupport Olá expandido do Resource Manager. A Microsoft recomenda a utilização de implementações Resource Manager, exceto se precisar especificamente de uma implementação Clássica.
+O serviço Azure Backup tem dois tipos de cofres – o cofre das Cópias de Segurança e o cofre dos Serviços de Recuperação. O cofre das Cópias de Segurança foi criado primeiro. Em seguida, foi criado o cofre dos Serviços de Recuperação para suportar as implementações expandidas do Resource Manager. A Microsoft recomenda a utilização de implementações Resource Manager, exceto se precisar especificamente de uma implementação Clássica.
 
 | **Implementação** | **Portal** | **Cofre** |
 | --- | --- | --- |
@@ -6,7 +6,7 @@ Olá serviço de cópia de segurança do Azure tem dois tipos de cofres - Cofre 
 | Resource Manager |[Azure](https://portal.azure.com) |Serviços de Recuperação |
 
 > [!NOTE]
-> Os cofres das Cópia de Segurança não podem proteger soluções implementadas pelo Resource Manager. No entanto, pode utilizar os serviços de recuperação cofre tooprotect classically implementado servidores e VMs.  
+> Os cofres das Cópia de Segurança não podem proteger soluções implementadas pelo Resource Manager. Contudo, pode utilizar um cofre dos Serviços de Recuperação para proteger os servidores e as VMs com implementação clássica.  
 > 
 > 
 

@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure Devtest Labs documentação - tutoriais | Microsoft Docs"
-description: "Saiba como tooquickly criar ambientes de teste de aplicação com artefactos reutilizáveis. Tutoriais, vídeos e muito mais mostram-lhe como toocreate, gerir e proteger laboratórios."
+title: "Documentação do Azure DevTest Labs - Tutoriais | Microsoft Docs"
+description: "Saiba como criar rapidamente ambientes de teste de aplicações através de artefactos reutilizáveis. Tutoriais, vídeos e muito mais mostram-lhe como criar, gerir e proteger laboratórios."
 services: devtest-lab
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: b403eeda791425bc8f74ee4430224479e39d727c
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 92aab190dfba196d48feacbfcc81a0097102b810
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 #<a name="devtest-labs-documentation"></a>Documentação do DevTest Labs
 
-Saiba como toouse Devtest Labs tooquickly criar ambientes de teste de aplicação com artefactos reutilizáveis. Tutoriais, vídeos e outra documentação mostram-lhe como toocreate, gerir e proteger laboratórios, adicionar e gerir artefactos.
+Saiba como utilizar Devtest Labs para criar rapidamente ambientes de teste de aplicações através de artefactos reutilizáveis. Tutoriais, vídeos e outra documentação mostram-lhe como criar, gerir e proteger laboratórios e adicionar e gerir artefactos.
 
 <ul class="panelContent cardsFTitle">
     <li>
@@ -70,7 +70,7 @@ Saiba como toouse Devtest Labs tooquickly criar ambientes de teste de aplicaçã
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Introdução ao Azure DevTest Labs utilizando Olá portal do Azure</h3>
+                        <h3>Introdução ao Azure DevTest Labs com o Portal do Azure</h3>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 ---
-title: "utilização de aaaMonitoring e desempenho para aplicações de ambiente de trabalho do Windows"
+title: "Monitorização de utilização e desempenho de aplicações de ambiente de trabalho do Windows"
 description: "Análise da utilização e desempenho da sua aplicação de ambiente de trabalho do Windows com o HockeyApp e o Application Insights."
 services: application-insights
 documentationcenter: windows
@@ -13,11 +13,11 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 08/26/2016
 ms.author: bwren
-ms.openlocfilehash: 73806885a6f0ed3896c0e43308c90ba087007887
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 9d7e2a390adf10cbf5d88dd0084ce09136987309
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="monitoring-usage-and-performance-in-windows-desktop-apps"></a>Monitorização de utilização e desempenho de aplicações de Ambiente de Trabalho do Windows
 
@@ -25,27 +25,27 @@ ms.lasthandoff: 10/06/2017
 O [Azure Application Insights](app-insights-overview.md) e o [HockeyApp](https://hockeyapp.net) permitem-lhe monitorizar a aplicação implementada para utilização e desempenho.
 
 > [!IMPORTANT]
-> Recomendamos [HockeyApp](https://hockeyapp.net) toodistribute e monitorizar aplicações de ambiente de trabalho e dispositivos. Com o HockeyApp, pode gerir a distribuição, os testes em direto e os comentários do utilizador, bem como monitorizar relatórios de utilização e falhas. Também pode [exportar e consultar a telemetria com a Análise](app-insights-hockeyapp-bridge-app.md).
+> Recomendamos o [HockeyApp](https://hockeyapp.net) para distribuir e monitorizar aplicações de ambiente de trabalho e do dispositivo. Com o HockeyApp, pode gerir a distribuição, os testes em direto e os comentários do utilizador, bem como monitorizar relatórios de utilização e falhas. Também pode [exportar e consultar a telemetria com a Análise](app-insights-hockeyapp-bridge-app.md).
 > 
-> Apesar de telemetria pode ser enviada informações tooApplication de uma aplicação de ambiente de trabalho, este é chiefly úteis para fins de depuração e experimental.
+> Apesar de a telemetria poder ser enviada para o Application Insights a partir de uma aplicação de ambiente de trabalho, isto é principalmente útil para fins de depuração e experimentais.
 > 
 > 
 
-## <a name="toosend-telemetry-tooapplication-insights-from-a-windows-application"></a>toosend telemetria tooApplication Insights a partir de uma aplicação do Windows
-1. No Olá [portal do Azure](https://portal.azure.com), [crie um recurso do Application Insights](app-insights-create-new-resource.md). Para o tipo de aplicação, escolha a aplicação ASP.NET.
-2. Efetuar uma cópia da chave de instrumentação de Olá. Localize a chave de Olá na Olá pendente Essentials do novo recurso do Olá que acabou de criar. 
-3. No Visual Studio, edite os pacotes de NuGet Olá do seu projeto de aplicação e adicione Microsoft.ApplicationInsights.WindowsServer. (Ou escolha Microsoft.ApplicationInsights se pretender apenas Olá versão simples da API, sem módulos de coleção de telemetria padrão Olá)
-4. Chave de instrumentação Olá definido no seu código:
+## <a name="to-send-telemetry-to-application-insights-from-a-windows-application"></a>Para enviar a telemetria para o Application Insights a partir de uma aplicação do Windows
+1. No [portal do Azure](https://portal.azure.com), [crie um recurso do Application Insights](app-insights-create-new-resource.md). Para o tipo de aplicação, escolha a aplicação ASP.NET.
+2. Faça uma cópia da Chave de Instrumentação. Encontre a chave na lista pendente Essentials do novo recurso que acabou de criar. 
+3. No Visual Studio, edite os pacotes NuGet do seu projeto da aplicação e adicione Microsoft.ApplicationInsights.WindowsServer. (Ou escolha Microsoft.ApplicationInsights se apenas pretender a API bare, sem os módulos de coleção de telemetria standard.)
+4. Defina a chave de instrumentação no seu código:
    
     `TelemetryConfiguration.Active.InstrumentationKey = "` *a sua chave* `";` 
    
-    ou no Applicationinsights (se tiver instalado um dos pacotes de telemetria padrão Olá):
+    ou no Applicationinsights (se tiver instalado um dos pacotes de telemetria standard):
    
     `<InstrumentationKey>`*a sua chave*`</InstrumentationKey>` 
    
-    Se utilizar Applicationinsights, certificar-se de que as respetivas propriedades no Explorador de soluções estão definidas demasiado**ação criar = conteúdo, cópia tooOutput Directory = cópia**.
-5. [Utilize a API de Olá](app-insights-api-custom-events-metrics.md) toosend telemetria.
-6. Executar a aplicação e ver a telemetria de Olá no recurso de Olá que criou no Olá Portal do Azure.
+    Se utilizar o ApplicationInsights.config, certifique-se de que as propriedades no Explorador de Soluções estão definidas para **Ação de Compilação = Conteúdo, Copiar para o Diretório de Saída = Copiar**.
+5. [Utilize a API](app-insights-api-custom-events-metrics.md) para enviar telemetria.
+6. Execute a aplicação e veja a telemetria no recurso que criou no Portal do Azure.
 
 ## <a name="telemetry"></a>Código de exemplo
 ```C#
@@ -56,7 +56,7 @@ O [Azure Application Insights](app-insights-overview.md) e o [HockeyApp](https:/
         ...
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Alternative toosetting ikey in config file:
+            // Alternative to setting ikey in config file:
             tc.InstrumentationKey = "key copied from portal";
 
             // Set session data:

@@ -1,6 +1,6 @@
 ---
-title: "aaaGet conhecimentos aprofundados sobre dados do Centro de segurança do Azure com Power BI | Microsoft Docs"
-description: "Olá pacote de conteúdos do Power BI do Centro de segurança do Azure torna mais fácil toofind alertas de segurança, recomendações, recursos atacados e tendências, com base num conjunto de dados que foi criado para o seu relatório."
+title: "Obter informações a partir de dados do Centro de Segurança do Azure com Power BI| Microsoft Docs"
+description: "O pacote de conteúdo do Power BI do Centro de Segurança do Azure faz com que seja mais fácil encontrar alertas de segurança, recomendações, recursos atacados e tendências, com base num conjunto de dados que tenha sido criado para o seu relatório."
 services: security-center
 documentationcenter: na
 author: YuriDio
@@ -14,49 +14,49 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/09/2017
 ms.author: yurid
-ms.openlocfilehash: af68aef626034fe03d793c36b515a3f26619e5f1
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 10f7b8f20cc41a5ebb1b1376e2bf17be02600ae4
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-insights-from-azure-security-center-data-with-power-bi"></a>Obter informações a partir de dados do Centro de Segurança do Azure com Power BI
-Olá [Dashboard do Power BI](http://aka.ms/azure-security-center-power-bi) para o Centro de segurança do Azure permite-lhe toovisualize, analisar e filtrar recomendações e alertas de segurança a partir de qualquer lugar, incluindo o seu dispositivo móvel. Utilize as tendências do Olá Power BI dashboard tooreveal e padrões de ataques – veja alertas de segurança por recurso ou endereço IP de origem e riscos de segurança não abordados por recurso ou idade.
+O [Dashboard do Power BI](http://aka.ms/azure-security-center-power-bi) para o Centro de Segurança do Azure permite-lhe visualizar, analisar e filtrar recomendações e alertas de segurança a partir de qualquer lugar, incluindo o seu dispositivo móvel. Utilize o dashboard do Power BI para revelar as tendências e padrões de ataques – veja alertas de segurança por recurso ou endereço IP de origem e riscos de segurança não abordados por recurso ou idade.
 
-Também pode misturar recomendações e alertas de segurança do Centro de Segurança com outros dados de formas interessantes, por exemplo, utilizando dados dos [Registos de Auditoria do Azure](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) e da [Auditoria da Base de Dados SQL do Azure](https://powerbi.microsoft.com/blog/monitor-your-azure-sql-database-auditing-activity-with-power-bi/). Dashboards do Power BI e também pode exportar esta tooExcel de dados para facilmente relatórios acerca do Estado de segurança de Olá dos seus recursos de nuvem.
+Também pode misturar recomendações e alertas de segurança do Centro de Segurança com outros dados de formas interessantes, por exemplo, utilizando dados dos [Registos de Auditoria do Azure](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) e da [Auditoria da Base de Dados SQL do Azure](https://powerbi.microsoft.com/blog/monitor-your-azure-sql-database-auditing-activity-with-power-bi/). Ambos oferecem Dashboards do Power BI e também pode exportar estes dados para o Excel para elaborar facilmente relatórios sobre o estado de segurança dos seus recursos de nuvem.
 
-## <a name="using-azure-security-center-dashboard-tooaccess-power-bi"></a>Utilizar o Centro de segurança do Azure dashboard tooaccess Power BI
-Também pode utilizar relatórios do Power BI tooaccess Olá Centro de segurança do Azure dashboard. Siga Olá passos tooperform esta tarefa:
+## <a name="using-azure-security-center-dashboard-to-access-power-bi"></a>Utilizar o dashboard do Centro de Segurança do Azure para aceder ao Power BI
+Também pode utilizar o dashboard do Centro de Segurança do Azure para aceder aos relatórios do Power BI. Siga os passos para realizar esta tarefa:
 
-1. No Olá **Centro de segurança do Azure** dashboard, clique em **Power BI** botão.
+1. No dashboard do **Centro de Segurança do Azure**, clique no botão **Power BI**.
 
-    ![Ligar através do Power BI do Centro de segurança tooAzure](./media/security-center-powerbi/security-center-powerbi-fig1-1-newUI-2017.png)
-2. Olá **Power BI** painel abre no lado direito de Olá, conforme mostrado no seguinte ecrã de Olá:
+    ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-1-newUI-2017.png)
+2. O painel **Power BI** abre-se no lado direito, conforme mostrado no ecrã seguinte:
 
-    ![Ligar através do Power BI do Centro de segurança tooAzure](./media/security-center-powerbi/security-center-powerbi-fig1-new11-2017.png)
-3. Se estiver a criar dashboard do Power BI Olá para Olá pela primeira vez, pode escolher uma das seguintes Olá opções na Olá **explorar no Power BI** painel:
+    ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new11-2017.png)
+3. Se estiver a criar o dashboard do Power BI pela primeira vez, pode escolher uma das opções seguintes no painel **Explorar no Power BI**:
 
-   * **Dashboard de conhecimentos de segurança**: Escolha esta opção se quiser toocreate um dashboard que inclua o estado de segurança, threads e deteções. Esta opção é mais comum para a função DevOps que é responsável por analisar o respetivo estado de proteção e os alertas detetados nas subscrições.
-   * **Dashboard de gestão de políticas**: Escolha esta opção se pretender que a política de gestão e de imposição de tooexplore.  Esta opção é mais comum para os departamentos de TI centrais mais focados no setor governativo. Podem utilizar este visibilidade de toogain de dashboard e conhecimentos aprofundados no cumprimento das políticas de segurança na respetiva organização.
-   * Se já tiver um dashboard do Power BI, clique em **aceda tooyour dashboard do Power BI atual**.
-4. Para efeitos deste exemplo, clique na opção **Dashboard de conhecimentos de segurança aprofundados**. Se este for Olá pela primeira vez, está a criar um dashboard do Power BI para o Centro de segurança que é-lhe pedido que o pacote de conteúdos do tooinstall Olá. Clique em **obter** botão no Olá **pacotes de conteúdo do Power BI** janela conforme mostrado no seguinte ecrã de Olá:
+   * **Dashboard de informações de segurança**: escolha esta opção se pretende criar um dashboard que inclua o estado de segurança, threads e deteções. Esta opção é mais comum para a função DevOps que é responsável por analisar o respetivo estado de proteção e os alertas detetados nas subscrições.
+   * **Dashboard de gestão de políticas**: escolha esta opção se pretende explorar a política de gestão e de imposição.  Esta opção é mais comum para os departamentos de TI centrais mais focados no setor governativo. Podem utilizar este dashboard para obter visibilidade e conhecimentos aprofundados acerca do cumprimento das políticas de segurança na respetiva organização.
+   * Se já tiver um dashboard do Power BI, clique em **Aceder ao seu dashboard do Power BI atual**.
+4. Para efeitos deste exemplo, clique na opção **Dashboard de conhecimentos de segurança aprofundados**. Se for a primeira vez que cria um dashboard do Power BI para o Centro de Segurança, ser-lhe-á solicitado que instale o pacote de conteúdos. Clique no botão **Obter** na janela **Pacotes de conteúdo do Power BI**, conforme mostrado no ecrã seguinte:
 
     ![Dashboard de Conhecimentos de Segurança Aprofundados do Centro de Segurança do Azure](./media/security-center-powerbi/security-center-powerbi-fig1-new3.png)
-5. Olá **ligar conhecimentos aprofundados segurança do Centro de segurança do tooAzure** aparecer a janela. Certifique-se de que Olá **autenticação** método é **oAuth2** conforme mostrado abaixo e clique em **sessão** botão.
+5. É apresentada a janela **Ligar aos Conhecimentos de Segurança Aprofundados do Centro de Segurança do Azure**. Certifique-se de que o método de **Autenticação** é **oAuth2**, conforme mostrado abaixo, e clique no botão **Iniciar sessão**.
 
     ![Autenticação](./media/security-center-powerbi/security-center-powerbi-fig1-new4.png)
-6. Poderá ser-lhe pedido tooauthenticate novamente com as suas credenciais do Azure. O seu dashboard será criado assim que se autenticar. Assim que for criado o dashboard de Olá, ver um relatório com uma estrutura semelhante Olá, conforme mostrado no seguinte ecrã de Olá:
+6. Poderá ser-lhe pedido para se autenticar novamente com as suas credenciais do Azure. O seu dashboard será criado assim que se autenticar. Assim que o dashboard for criado, é apresentado um relatório com uma estrutura semelhante à que é mostrada no ecrã seguinte:
 
     ![Dashboard do Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new5.png)
 
 > [!NOTE]
-> Uma atualização do relatório de Olá é o local de tootake agendado numa base diária. No caso de ocorrer uma falha nesta atualização, leia [potenciais problemas de atualização com o Power BI do Centro de segurança do Azure de Olá](https://blogs.msdn.microsoft.com/azuresecurity/2016/04/07/azure-security-center-power-bi-refresh-fails/), para obter mais informações sobre como tootroubleshoot.
+> Uma atualização do relatório está agendada para ser efetuada diariamente. Se ocorrer uma falha nesta atualização, leia [Potential Refresh Issues with the Azure Security Center Power BI (Potenciais Problemas de Atualização com o Power BI do Centro de Segurança do Azure)](https://blogs.msdn.microsoft.com/azuresecurity/2016/04/07/azure-security-center-power-bi-refresh-fails/) para obter mais informações sobre como resolver problemas.
 >
 >
 
-Aqui pode ver o número de Olá de alertas de segurança e as recomendações, bem como Olá número de VMs, bases de dados SQL do Azure e os recursos de rede monitorizados pelo centro de segurança do Azure.
+Aqui pode ver o número de alertas de segurança e as recomendações, bem como o número de VMs, bases de dados SQL do Azure e recursos de rede monitorizados pelo Centro de Segurança do Azure.
 
-Um centro de segurança de tooAzure ligação redireciona toohello portal do Azure. Olá gráficos fazem como que toovisualize fácil informações sobre as recomendações de segurança e os alertas, incluindo:
+Uma ligação para o Centro de Segurança do Azure redireciona-o para o Portal do Azure. Os gráficos fazem como que seja mais fácil visualizar informações sobre as recomendações e os alertas de segurança, incluindo:
 
 * Estado de Segurança do Recurso
 * Recomendações Pendentes
@@ -65,57 +65,57 @@ Um centro de segurança de tooAzure ligação redireciona toohello portal do Azu
 * Recursos atacados
 * IPs atacados
 
-Atrás de cada gráfico existem informações adicionais. Selecione um mosaico toosee obter mais informações. Por exemplo, Olá **estado de segurança de recursos** mosaico mostra-lhe detalhes adicionais acerca das recomendações pendentes pelos recursos conforme mostrado no seguinte ecrã de Olá:
+Atrás de cada gráfico existem informações adicionais. Selecione um mosaico para obter mais informações. Por exemplo, o mosaico **Estado de Segurança do Recurso** mostra-lhe detalhes adicionais acerca das recomendações pendentes por recursos, conforme mostrado no ecrã seguinte:
 
 ![Recomendações](./media/security-center-powerbi/security-center-powerbi-fig1-new6.png)
 
-Se clicar em qualquer linha deste gráfico, Olá outros vai toogray enviados e foco apenas em Olá um que selecionou. tooreturn toohello dashboard, clique em **Centro de segurança do Azure** em Olá **Dashboards** opção no painel esquerdo Olá desta página.
+Se clicar em qualquer linha deste gráfico, as outras ficam cinzentas e o cursor foca-se apenas na que selecionou. Para regressar ao dashboard, clique em **Centro de Segurança do Azure** sob a opção **Dashboards** no painel à esquerda desta página.
 
 > [!NOTE]
-> Se quiser toocustomize os seus relatórios adicionando campos adicionais ou alterar os efeitos visuais existentes, pode editar o relatório de Olá. Leia [Interagir com um relatório na Vista de Edição no Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-interact-with-a-report-in-editing-view/) para obter mais informações.
+> Se pretender personalizar os seus relatórios ao adicionar campos adicionais ou alterar os efeitos visuais existentes, pode editar o relatório. Leia [Interagir com um relatório na Vista de Edição no Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-interact-with-a-report-in-editing-view/) para obter mais informações.
 >
 >
 
-Olá **alertas ao longo do tempo, recursos atacados** e **IPs atacantes** mosaicos terão o resultado semelhante Olá quando clica em cada um deles. Isto acontece porque o relatório de Olá agrega as informações relativas essas três variáveis e denomina- **recursos sob ataque** conforme mostrado no seguinte ecrã de Olá:
+Os mosaicos **Alertas ao longo do Tempo, Recursos Atacados** e **IPs Atacantes** terão o resultado semelhante quando clica em cada um deles. Isto acontece porque o relatório agrega as informações relativas a essas três variáveis e denomina-o **Recursos sob Ataque** conforme é mostrado no ecrã seguinte:
 
 ![Recursos sob ataque](./media/security-center-powerbi/security-center-powerbi-fig1-new7.png)
 
-Neste momento também pode guardar uma cópia deste relatório, imprimi-la ou publicá-la na web Olá utilizando Olá opções disponíveis no Olá **ficheiro** menu.
+Neste momento também pode guardar uma cópia deste relatório, imprimi-la ou publicá-la na Web ao utilizar as opções disponíveis no menu **Ficheiro**.
 
 ![Menu Ficheiro](./media/security-center-powerbi/security-center-powerbi-fig8.png)
 
 ## <a name="exploring-your-azure-security-center-data-with-power-bi-services"></a>Explorar os dados do Centro de Segurança do Azure com os serviços Power BI
-Ligar toohello [serviços do pacote de conteúdos do Power BI](https://msit.powerbi.com/groups/me/getdata/services) no Power BI e executar Olá os seguintes passos:
+Ligue-se aos [Serviços do Pacote de Conteúdo do Power BI](https://msit.powerbi.com/groups/me/getdata/services) no Power BI e execute os seguintes passos:
 
-1. No Olá **pacote de conteúdos do Power BI** janela verá duas opções conforme é mostrado abaixo.
+1. Na janela **Pacote de conteúdo do Power BI** verá duas opções conforme é mostrado abaixo.
 
     ![Pacote de conteúdo para o Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new.png)
 
    > [!NOTE]
-   > Se já executada Olá primeira parte deste artigo, verá apenas uma opção, o que é a gestão de política do Centro de segurança do Azure.
+   > Se já tiver executado a primeira parte deste artigo, apenas verá uma opção, ou seja, a Gestão de Políticas do Centro de Segurança do Azure.
    >
    >
-2. Para o objetivo de Olá deste exemplo, clique em **obter** no Olá **gestão de política do Centro de segurança do Azure** mosaico.
-3. No Olá **ligar tooAzure gestão de política do Centro de segurança** janela, tooselect se disponibilizar **oAuth2** em **método de autenticação** menu pendente, conforme mostrado abaixo e clique em **Sessão** botão.
+2. Para efeitos deste exemplo, clique em **Obter** no mosaico **Gestão de Políticas do Centro de Segurança do Azure**.
+3. Na janela **Ligar à Gestão de Políticas do Centro de Segurança do Azure**, certifique-se de que seleciona **oAuth2** no menu pendente **Método de Autenticação** conforme mostrado abaixo e clique no botão **Iniciar sessão**.
 
     ![Janela de Gestão de Políticas](./media/security-center-powerbi/security-center-powerbi-fig1-new8.png)
-4. Será redirecionado tooan página de autenticação onde deve escrever as credenciais de Olá que está a utilizar o Centro de segurança de tooAzure tooconnect. Após a conclusão do processo de autenticação de Olá, Power BI inicia a importação dos dados toobuild os seus relatórios. Durante este tempo, pode ver Olá seguir a mensagem no canto direito de Olá do seu browser:
+4. Será redirecionado para uma página de autenticação onde deve escrever as credenciais que está a utilizar para se ligar ao Centro de Segurança do Azure. Após a conclusão do processo de autenticação, o Power BI inicia a importação dos dados para criar os seus relatórios. Durante esta altura é possível que apareça a mensagem no canto superior direito do seu browser:
 
-    ![Ligar através do Power BI do Centro de segurança tooAzure](./media/security-center-powerbi/security-center-powerbi-fig4.png)
+    ![Ligar-se ao Centro de Segurança do Azure através do Power BI](./media/security-center-powerbi/security-center-powerbi-fig4.png)
 
    > [!NOTE]
-   > Quando o dashboard de Olá está a ser criada para Olá pela primeira vez, poderá demorar mais do que o habitual, principalmente para cenários em que tiver várias subscrições.
+   > quando o dashboard está a ser criado pela primeira vez, poderá demorar mais do que o habitual, principalmente para cenários em que tem várias subscrições.
    >
    >
-5. Depois de terminar o processo de Olá, o dashboard do Power BI do Centro de segurança do Azure será carregado com Olá **gestão de políticas** reportar toohello semelhante mostrado abaixo:
+5. Assim que o processo estiver concluído, o dashboard do Power BI do Centro de Segurança do Azure será carregado com o relatório da **Gestão de Políticas**, semelhante ao apresentado abaixo:
 
     ![Dashboard de Gestão de Políticas](./media/security-center-powerbi/security-center-powerbi-fig1-new9.png)
 
 ## <a name="see-also"></a>Consultar também
-Neste documento, aprendeu como toouse Power BI no Centro de segurança do Azure. toolearn mais acerca do Centro de segurança do Azure, consulte o artigo seguinte Olá:
+Neste documento, aprendeu a utilizar o Power BI no Centro de Segurança do Azure. Para saber mais acerca do Centro de Segurança do Azure, consulte o seguinte:
 
-* [Guia de operações e planeamento do Centro de segurança do Azure](security-center-planning-and-operations-guide.md) — Saiba como tooplan adoção do Centro de segurança do Azure.
-* [Definir políticas de segurança no Centro de segurança do Azure](security-center-policies.md) — Saiba como tooconfigure definições de segurança no Centro de segurança do Azure
-* [Gestão e de que responde toosecurity alertas no Centro de segurança do Azure](security-center-managing-and-responding-alerts.md) — Saiba como alertas de toosecurity toomanage e respondeu
-* [FAQ do Centro de segurança do Azure](security-center-faq.md) – encontre as perguntas mais frequentes sobre a utilização do serviço de Olá
+* [Guia de Operações e Planeamento do Centro de Segurança do Azure](security-center-planning-and-operations-guide.md) – Saiba como planear a adoção do Centro de Segurança do Azure.
+* [Definir políticas de segurança no Centro de Segurança do Azure](security-center-policies.md) – Saiba como configurar definições de segurança no Centro de Segurança do Azure
+* [Gerir e responder a alertas de segurança no Centro de Segurança do Azure](security-center-managing-and-responding-alerts.md) – Saiba como gerir e responder a alertas de segurança
+* [Azure Security Center FAQ (FAQ do Centro de Segurança do Azure)](security-center-faq.md) – Encontre as perguntas mais frequentes acerca de como utilizar o serviço
 * [Blogue de Segurança do Azure](http://blogs.msdn.com/b/azuresecurity/) – Encontre mensagens do blogue acerca da segurança e conformidade do Azure

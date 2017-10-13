@@ -1,6 +1,6 @@
 ---
-title: "instruções de manutenção aaaPredictive | Microsoft Docs"
-description: "Instruções de manutenção preditiva do Azure IoT Olá solução pré-configurada."
+title: "Instruções de manutenção preditiva | Microsoft Docs"
+description: "Instruções sobre a solução pré-configurada de manutenção preditiva do Azure IoT."
 services: 
 suite: iot-suite
 documentationcenter: 
@@ -15,66 +15,66 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/25/2017
 ms.author: dobett
-ms.openlocfilehash: 900d6351019489a8e2f4b98908364e3bd14975c5
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: a68a8fdc3976ade0d1036d5ed58c8b2eb6d32a5d
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="predictive-maintenance-preconfigured-solution-walkthrough"></a>Instruções sobre a solução pré-configurada de manutenção preditiva
 
-solução pré-configurada de manutenção preditiva de Olá é uma solução ponto a ponto para um cenário de negócio que prevê o ponto de Olá em que uma falha é provavelmente toooccur. Pode utilizar, de forma pró-ativa, esta solução pré-configurada para atividades como a manutenção de otimização. solução Olá combina principais serviços do Azure IoT Suite, como o IoT Hub, Stream analytics e um [Azure Machine Learning] [ lnk-machine-learning] área de trabalho. Esta área de trabalho contém um modelo, com base num conjunto de dados de exemplo público, toopredict Olá vida útil restante (RUL) do motor de uma aeronave. solução Olá totalmente implementa o cenário de negócio de IoT Olá como um ponto de partida para tooplan e implementar uma solução que satisfaça as suas próprias necessidades comerciais específicas.
+A solução pré-configurada de manutenção preditiva é uma solução ponto a ponto para um cenário de negócio que prevê o momento em que poderá ocorrer uma falha. Pode utilizar, de forma pró-ativa, esta solução pré-configurada para atividades como a manutenção de otimização. A solução combina os serviços principais do Azure IoT Suite, como uma Hub IoT, Stream Analytics e uma área de trabalho do [Azure Machine Learning][lnk-machine-learning]. Esta área de trabalho contém um modelo, com base num conjunto de dados de exemplo público, para prever a Vida Útil Remanescente (RUL) de um motor de aeronave. A solução implementa completamente o cenário empresarial IoT como um ponto de partida para que possa planear e implementar uma solução que satisfaça os seus próprios requisitos de negócio.
 
 ## <a name="logical-architecture"></a>Arquitetura lógica
 
-Olá diagrama a seguir descreve os componentes lógicos de Olá da solução pré-configurada de Olá:
+O diagrama que se segue descreve os componentes lógicos da solução pré-configurada:
 
 ![][img-architecture]
 
-os itens de Olá azul são os serviços do Azure aprovisionados na região de olá onde implementou a solução pré-configurada de Olá. lista de Olá das regiões onde pode implementar a solução pré-configurada de Olá apresenta no Olá [página aprovisionamento][lnk-azureiotsuite].
+Os itens a azul são os serviços do Azure aprovisionados na região em que implementou a solução pré-configurada. Apresenta a lista de regiões onde pode implementar a solução pré-configurada na [página aprovisionamento][lnk-azureiotsuite].
 
-item de Olá verde é um dispositivo simulado que representa um motor de aeronave. Pode saber mais sobre estes dispositivos simulados em Olá secção a seguir.
+O item a verde é um dispositivo simulado que representa o motor de uma aeronave. Pode saber mais sobre estes dispositivos simulados na secção seguinte.
 
-Olá itens a cinzento representam componentes que implementam *gestão de dispositivos* capacidades. versão atual do Olá da solução pré-configurada de manutenção preditiva de Olá não Aprovisiona estes recursos. toolearn mais informações sobre a gestão de dispositivos, consulte toohello [solução pré-configurada de monitorização remota][lnk-remote-monitoring].
+Os itens a cinzento representam componentes que implementam capacidades de *gestão do dispositivo*. A atual versão da solução pré-configurada de manutenção preditiva não aprovisiona estes recursos. Para saber mais sobre a gestão do dispositivo, consulte [remote monitoring pre-configured solution (solução pré-configurada de monitorização remota)][lnk-remote-monitoring].
 
 ## <a name="simulated-devices"></a>Dispositivos simulados
 
-Na solução pré-configurada de Olá, um dispositivo simulado representa um motor de aeronave. solução de Olá é aprovisionada com dois motores que mapeiam tooa única aeronave. Cada motor emite quatro tipos de telemetria: Sensor 9, Sensor 11, Sensor 14 e Sensor 15 fornecerem dados de Olá necessários para toocalculate Olá RUL do Machine Learning modelo Olá de motor de Olá. Cada dispositivo simulado envia Olá seguintes mensagens de telemetria tooIoT Hub:
+Na solução pré-configurada, um dispositivo simulado representa o motor de uma aeronave. A solução é aprovisionada com dois motores que mapeiam para uma única aeronave. Cada motor emite quatro tipos de telemetria: Sensor 9, Sensor 11, Sensor 14 e Sensor 15, que fornecem os dados necessários para que o modelo do Machine Learning possa calcular a RUL desse motor. Cada dispositivo simulado envia as seguintes mensagens de telemetria ao IoT Hub:
 
-*Ciclo de contagem*. Um ciclo representa um voo concluído com uma duração entre duas a dez horas. Durante o voo Olá, dados de telemetria são capturados a cada meia hora.
+*Ciclo de contagem*. Um ciclo representa um voo concluído com uma duração entre duas a dez horas. Durante o voo, os dados telemétricos são capturados a cada meia hora.
 
-*Telemetria*. Existem quatro sensores que representam os atributos do motor. sensores de Olá são geralmente denominados Sensor 9, Sensor 11, Sensor 14 e Sensor 15. Estes quatro sensores representam a telemetria suficiente tooobtain útil os resultados do modelo RUL Olá. modelo de Olá utilizado na solução pré-configurada de Olá é criado a partir de um conjunto de dados público, que inclui dados de sensores do motor. Para obter mais informações sobre como criação do modelo de Olá Olá conjunto de dados original, consulte Olá [modelo de manutenção Cortana Intelligence Gallery preditiva][lnk-cortana-analytics].
+*Telemetria*. Existem quatro sensores que representam os atributos do motor. Os sensores são geralmente denominados Sensor 9, Sensor 11, Sensor 14 e Sensor 15. Estes quatro sensores representam telemetria suficiente para obter resultados úteis a partir do modelo de RUL. O modelo utilizado na solução pré-configurada é criado a partir de um conjunto de dados públicos, que inclui dados do sensor do motor. Para obter mais informações sobre a criação do modelo a partir do conjunto de dados original, consulte o artigo [Cortana Intelligence Gallery Predictive Maintenance Template (Modelo de Manutenção Preditiva do Cortana Intelligence Gallery)][lnk-cortana-analytics].
 
-dispositivos de Olá simulado podem processar Olá os seguintes comandos enviados a partir do hub IoT de Olá na solução de Olá:
+Os dispositivos simulados podem processar os seguintes comandos enviados a partir do hub IoT na solução:
 
 | Comando | Descrição |
 | --- | --- |
-| StartTelemetry |Controlos Olá estado da simulação Olá.<br/>Inicia Olá dispositivo que envia a telemetria |
-| StopTelemetry |Controlos Olá estado da simulação Olá.<br/>Olá, deixa de dispositivo que envia a telemetria |
+| StartTelemetry |Controla o estado da simulação.<br/>Inicia o dispositivo que envia a telemetria |
+| StopTelemetry |Controla o estado da simulação.<br/>Para o dispositivo que envia a telemetria |
 
 O IoT Hub reconhece o comando do dispositivo.
 
 ## <a name="azure-stream-analytics-job"></a>Tarefa do Azure Stream Analytics
 
-**Tarefa: Telemetria** opera em Olá entrada fluxo telemetria do dispositivo utilizando duas instruções:
+**Tarefa: Telemetria** intervém no fluxo de telemetria de entrada do dispositivo através de duas instruções:
 
-* Olá primeiro seleciona todas as telemetrias dos dispositivos Olá e envia esta tooblob de armazenamento de dados. Aqui, serão visualizados na aplicação web de Olá.
-* Olá segundo calcula médios do sensor os valores uma dois janela deslizante e envia esses dados através de tooan de hub de eventos de Olá **processador de eventos**.
+* A primeira seleciona toda a telemetria dos dispositivos e envia esses dados ao armazenamento de blobs. Aí, são visualizados na aplicação Web.
+* A segunda calcula os valores médios do sensor numa janela deslizante e envia esses dados através do Hub de Eventos a um **processador de eventos**.
 
 ## <a name="event-processor"></a>Processador de eventos
-Olá **anfitrião do processador de eventos** executa uma tarefa de Web do Azure. Olá **processador de eventos** assume os valores médios do sensor de Olá para um ciclo concluído. Em seguida, estes passam tooan esses valores API que expõe Olá de toocalculate de modelo treinado RUL de um motor. Olá API é exposto por uma área de trabalho do Machine Learning que está aprovisionada como parte da solução de Olá.
+O **anfitrião do processador de eventos** executa uma Tarefa Web do Azure. O **processador de eventos** obtém os valores médios do sensor para um ciclo concluído. Em seguida, transmite esses valores para uma API que expõe o modelo formado para calcular a RUL de um motor. A API é exposta por uma área de trabalho do Machine Learning que está aprovisionada como parte da solução.
 
 ## <a name="machine-learning"></a>Machine Learning
-componente de Machine Learning Olá utiliza um modelo derivado de dados recolhidos a partir dos motores das aeronaves real. Pode navegar toohello área de trabalho de Machine Learning do mosaico de Olá no Olá [azureiotsuite.com] [ lnk-azureiotsuite] página para a sua solução aprovisionada. Olá mosaico está disponível quando está a ser Olá solução Olá **pronto** estado.
+O componente de Machine Learning utiliza um modelo derivado dos dados recolhidos de motores de aeronave reais. Pode navegar para a área de trabalho do Machine Learning a partir do mosaico na página [azureiotsuite.com][lnk-azureiotsuite] da sua solução aprovisionada. O mosaico está disponível quando a solução está no estado **Pronto**.
 
 
 ## <a name="next-steps"></a>Passos seguintes
-Agora que viu componentes chave do Olá da solução pré-configurada de manutenção preditiva de Olá, poderá ser útil toocustomize-lo. Consulte [Guidance on customizing preconfigured solutions (Documentação de orientação sobre como personalizar soluções pré-configuradas)][lnk-customize].
+Agora que viu os principais componentes da solução de manutenção preditiva pré-configurada, deverá personalizá-los. Consulte [Guidance on customizing preconfigured solutions (Documentação de orientação sobre como personalizar soluções pré-configuradas)][lnk-customize].
 
-Também pode explorar algumas das Olá outras funcionalidades e capacidades das soluções pré-configuradas do IoT Suite de Olá:
+Também pode explorar algumas das outras funcionalidades e capacidades das soluções pré-configuradas do IoT Suite:
 
 * [Perguntas mais frequentes sobre o IoT Suite][lnk-faq]
-* [Segurança de IoT a partir de Olá fundo cópias de segurança][lnk-security-groundup]
+* [Segurança de IoT desde o início][lnk-security-groundup]
 
 [img-architecture]: media/iot-suite-predictive-walkthrough/architecture.png
 

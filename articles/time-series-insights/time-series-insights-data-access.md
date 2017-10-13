@@ -1,6 +1,6 @@
 ---
-title: "as políticas de acesso do aaaData informações de séries de tempo do Azure | Microsoft Docs"
-description: "Neste tutorial, aprende toomanage políticas de acesso de dados no Insights de séries de tempo"
+title: "Políticas de acesso a dados no Azure Time Series Insights | Microsoft Docs"
+description: "Neste tutorial, vai aprender a gerir políticas de acesso a dados no Time Series Insights"
 keywords: 
 services: time-series-insights
 documentationcenter: 
@@ -8,68 +8,68 @@ author: op-ravi
 manager: jhubbard
 editor: cgronlun
 ms.assetid: 
-ms.service: time-series-insights
+ms.service: tsi
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 05/01/2017
 ms.author: omravi
-ms.openlocfilehash: f286d26c8c5c851c523e9384760dc4b10711fa3f
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 5258bf5de6f7aa1ea246f1235e7d362b1b7d0181
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="grant-data-access-tooa-time-series-insights-environment-using-azure-portal"></a>Conceder acesso tooa Insights de séries de tempo ambiente do dados através do portal do Azure
+# <a name="grant-data-access-to-a-time-series-insights-environment-using-azure-portal"></a>Conceder acesso a dados a um ambiente do Time Series Insights com o portal do Azure
 
 Os ambientes do Time Series Insights têm dois tipos de políticas de acesso independentes:
 
 * Políticas de acesso de gestão
 * Políticas de acesso a dados
 
-Ambas as políticas concedem aos principais (utilizadores e aplicações) do Azure Active Directory várias permissões num determinado ambiente. Olá principais (utilizadores e aplicações) têm de pertencer toohello active directory (ou "Inquilino do Azure") associado à subscrição Olá que contém o ambiente de Olá.
+Ambas as políticas concedem aos principais (utilizadores e aplicações) do Azure Active Directory várias permissões num determinado ambiente. Os principais (utilizadores e aplicações) têm de pertencer ao Active Directory (ou “inquilino do Azure”) associado à subscrição que contém o ambiente.
 
-Políticas de gestão de acesso conceder configuração toohello relacionados de permissões de ambiente de Olá, tais como
-*   Criação e eliminação do ambiente de Olá, origens de eventos, referenciam conjuntos de dados, e
-*   Gestão de políticas de acesso de dados de Olá.
+As políticas de acesso de gestão concedem permissões relacionadas com a configuração do ambiente, como a:
+*   Criação e eliminação do ambiente, origens de eventos, conjuntos de dados de referência, e
+*   Gestão das políticas de acesso a dados.
 
-Políticas de acesso de dados conceder permissões tooissue as consultas de dados, manipular dados de referência no ambiente de Olá e partilham consultas guardadas e perspetivas associadas Olá ambiente.
+As políticas de acesso a dados concedem permissões para emitir consultas de dados, manipular dados de referência no ambiente e partilhar consultas guardadas e perspetivas associadas ao ambiente.
 
-dois tipos de Olá das políticas permitem clara separação entre a gestão de toohello de acesso de ambiente de Olá e aceder a dados toohello Olá ambiente. Por exemplo, é possível toosetup um ambiente que Olá proprietário/criador de ambiente de Olá é removido do acesso a dados Olá. Bem como os utilizadores e serviços que são permitidos dados tooread do ambiente de Olá não pode ser concedido nenhuma configuração de toohello de acesso de ambiente de Olá.
+Ambos os tipos de políticas permitem uma clara separação entre o acesso à gestão do ambiente e o acesso aos dados dentro do ambiente. Por exemplo, é possível configurar um ambiente de forma a que o proprietário/criador do mesmo é removido do acesso a dados. Da mesma forma, pode não ser concedido acesso à configuração do ambiente aos utilizadores e serviços que têm permissão para ler dados do mesmo.
 
 ## <a name="grant-data-access"></a>Conceder acesso a dados
-Olá passos seguintes mostram como toogrant de acesso aos dados para um principal de utilizador:
+Os passos seguintes mostram como pode conceder acesso a dados a um principal de utilizador:
 
-1.  Inicie sessão no toohello [portal do Azure](https://portal.azure.com).
-2.  Clique em "Todos os recursos" no menu de Olá no lado esquerdo do Olá da Olá portal do Azure.
+1.  Inicie sessão no [Portal do Azure](https://portal.azure.com).
+2.  Clique em "Todos os recursos" no menu no lado esquerdo do Portal do Azure.
 3.  Selecione o seu ambiente do Time Series Insights.
 
-  ![Gerir a origem de informações de séries de tempo de Olá - ambiente](media/data-access/getstarted-grant-data-access1.png)
+  ![Gerir a origem do Time Series Insights - ambiente](media/data-access/getstarted-grant-data-access1.png)
 
 4.  Selecione "Acesso do Plano de Dados", clique em "Adicionar"
 
-  ![Gerir a origem de informações de séries de tempo de Olá – adicionar](media/data-access/getstarted-grant-data-access2.png)
+  ![Gerir a origem do Time Series Insights - adicionar](media/data-access/getstarted-grant-data-access2.png)
 
 5.  Clique em "Selecionar utilizador".
-6.  Procure e selecione o utilizador por correio eletrónico de Olá.
+6.  Procure e selecione o utilizador por e-mail.
 7.  Clique em “Selecionar”, no painel “Selecionar Utilizador”.
 
-  ![Gerir a origem de informações de séries de tempo de Olá - selecionar utilizador](media/data-access/getstarted-grant-data-access3.png)
+  ![Gerir a origem do Time Series Insights - selecionar utilizador](media/data-access/getstarted-grant-data-access3.png)
 
 8.  Clique em “Selecionar função”.
-9.  Se pretender que os dados de referência do tooallow utilizador toochange e partilhar consultas guardadas e perspetivas com outros utilizadores do ambiente de Olá, selecione "Contribuinte". Caso contrário, selecione "Leitor" tooallow utilizador consultar os dados no ambiente de Olá e guarde consultas de (não partilhadas) pessoais no ambiente de Olá.
-10. Clique em "Ok" no painel do Olá "Selecionar função".
+9.  Selecione “Contribuidor” se quiser permitir que o utilizador altere os dados de referência e partilhe consultas guardadas e perspetivas com outros utilizadores do ambiente. Caso contrário, selecione “Utilizador” para permitir ao utilizador consultar dados no ambiente e guardar consultas pessoais (não partilhadas) no ambiente.
+10. Clique em "Ok", no painel "Selecionar função".
 
-  ![Gerir a origem de informações de séries de tempo de Olá - selecionar função](media/data-access/getstarted-grant-data-access4.png)
+  ![Gerir a origem do Time Series Insights - selecionar função](media/data-access/getstarted-grant-data-access4.png)
 
-11. Clique em "Ok" no painel do Olá "Selecionar função de utilizador".
+11. Clique em "Ok", no painel "Selecionar Função do Utilizador".
 12. Deverá ver:
 
-  ![Gerir a origem de informações de séries de tempo de Olá - resultados](media/data-access/getstarted-grant-data-access5.png)
+  ![Gerir a origem do Time Series Insights - resultados](media/data-access/getstarted-grant-data-access5.png)
 
 ## <a name="next-steps"></a>Passos seguintes
 
 * [Criar uma origem de eventos](time-series-insights-add-event-source.md)
-* [Enviar eventos](time-series-insights-send-events.md) toohello origem de evento
+* [Enviar eventos](time-series-insights-send-events.md) para a origem de eventos
 * Ver o seu ambiente no [Portal do Time Series Insights](https://insights.timeseries.azure.com)

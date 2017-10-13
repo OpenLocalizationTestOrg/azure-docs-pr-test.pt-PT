@@ -1,8 +1,8 @@
 ---
-title: "aaaAzure documentação de Hubs de eventos - tutoriais, referência da API | Microsoft Docs"
-description: "Saiba como toouse Event Hubs tooingest milhões de eventos por segundo de ligadas dispositivos IoT e aplicações num conjunto abrangente de plataformas."
+title: "Documentação dos Hubs de Eventos do Azure - Tutoriais, Referência da API | Microsoft Docs"
+description: "Saiba como utilizar Hubs de Eventos para ingerir milhões de eventos por segundo a partir de dispositivos IoT ligados e aplicações num conjunto abrangente de plataformas."
 services: event-hubs
-author: carolz
+author: czeumault
 manager: carolz
 layout: LandingPage
 ms.assetid: 
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: b75a4f958f66afdbca2fc612e2359df241164818
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: d24139de04b36044bbb88d0e9b9a1feb6d8edfa8
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="event-hubs-documentation"></a>Documentação dos Hubs de Eventos
 
-Saiba como toouse Event Hubs toocollect e gerir milhões de eventos por segundo do IoT dispositivos e aplicações ligados. Tutoriais, referências de API e outra documentação mostram-lhe como configurar a ingestão dimensionável para eventos de um conjunto abrangente de plataformas.
+Saiba como utilizar Hubs de Eventos para recolher e gerir milhões de eventos por segundo a partir de aplicações e dispositivos IoT ligados. Tutoriais, referências de API e outra documentação mostram-lhe como configurar a ingestão dimensionável para eventos de um conjunto abrangente de plataformas.
 
 <ul class="panelContent cardsFTitle">
      <li>
@@ -70,7 +70,7 @@ Saiba como toouse Event Hubs toocollect e gerir milhões de eventos por segundo 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Introdução ao guia de programação Olá Event Hubs</h3>
+                        <h3>Introdução ao manual de programação dos Hubs de Eventos</h3>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@ Saiba como toouse Event Hubs toocollect e gerir milhões de eventos por segundo 
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Introdução ao Event Hubs utilizando Olá portal do Azure</h3>
+                        <h3>Introdução aos Hubs de Eventos com o portal do Azure</h3>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 ---
 layout: LandingPage
-description: "Saiba como único toosynchronize diretórios e ativar início de sessão. Documentação mostra-lhe como toointegrate um conjunto completo de capacidades de gestão de identidade."
-title: "aaaAzure documentação do Active Directory - tutoriais, referência da API | Microsoft Docs"
+description: "Saiba como sincronizar diretórios e ativar o início de sessão único. A documentação mostra-lhe como integrar um conjunto completo de capacidades de gestão de identidade."
+title: "Documentação do Azure Active Directory - Tutoriais, Referência da API | Microsoft Docs"
 services: active-directory
-author: carolz
+author: czeumault
 manager: carolz
 ms.assetid: 
 ms.service: active-directory
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 01/23/2017
 ms.author: carolz
-ms.openlocfilehash: a99aa3cc979a518c5b53cb1540f037b6776fb157
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: a0a9b69824829d0b7a07583210eaddb1f39bcf88
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="azure-active-directory-documentation"></a>Documentação do Azure Active Directory
 
-Saiba como único toosynchronize diretórios e ativar início de sessão no Azure Active Directory (Azure AD). Tutoriais, referências de API e outra documentação mostram-lhe como controlam toointegrate capacidades de gestão de identidade, incluindo autenticação multifator, o registo de dispositivos, o acesso baseado em funções e a monitorização de segurança e alertas.
+Saiba como sincronizar diretórios e ativar o início de sessão único com o Azure Active Directory (Azure AD). Tutoriais, referências de API e outra documentação mostram-lhe como integrar as funcionalidades de gestão de identidade incluindo a autenticação multifator, o registo do dispositivo, o controlo de acesso baseado em funções e a monitorização e alertas de segurança.
 
 <ul class="panelContent cardsFTitle">
     <li>

@@ -1,5 +1,5 @@
 ---
-title: aaaGet ao agendador do Azure no portal do Azure | Microsoft Docs
+title: "Introdução ao Azure Scheduler no portal do Azure | Microsoft Docs"
 description: "Introdução ao Agendador do Azure no portal do Azure"
 services: scheduler
 documentationcenter: .NET
@@ -14,33 +14,33 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 08/10/2016
 ms.author: deli
-ms.openlocfilehash: 58255c0ad19da65932f8b1d36cb8fef1ff6e651b
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 3861ee121ed1c4d086ea81640e84d924d7d17ea1
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="get-started-with-azure-scheduler-in-azure-portal"></a>Introdução ao Agendador do Azure no portal do Azure
-É fácil toocreate agendada tarefas do agendador do Azure. Neste tutorial, irá aprender como toocreate uma tarefa. Também irá aprender capacidades de monitorização e gestão do Agendador.
+É fácil criar tarefas agendadas no Agendador do Azure. Neste tutorial, ficará a saber como criar uma tarefa. Também irá aprender capacidades de monitorização e gestão do Agendador.
 
 ## <a name="create-a-job"></a>Criar uma tarefa
-1. A iniciar sessão demasiado[portal do Azure](https://portal.azure.com/).  
-2. Clique em **+ novo** > tipo *programador* na caixa de pesquisa de Olá > selecione **programador** nos resultados > clique **criar**.
+1. Inicie sessão no [portal do Azure](https://portal.azure.com/).  
+2. Clique em **+novo** > escreva *Agendador* na caixa de pesquisa > selecione **Agendador** nos resultados > clique **Criar**.
    
     ![][marketplace-create]
-3. Vamos criar uma tarefa que simplesmente chegue a http://www.microsoft.com/ com um pedido GET. No Olá **tarefa do agendador** ecrã, introduza Olá seguintes informações:
+3. Vamos criar uma tarefa que simplesmente chegue a http://www.microsoft.com/ com um pedido GET. No ecrã da **tarefa do Agendador**, introduza as seguintes informações:
    
    1. **Nome:** `getmicrosoft`  
    2. **Subscrição:** a sua subscrição do Azure   
    3. **Coleção de Tarefas:** selecione uma coleção de tarefas existente ou clique em **Criar novo** > introduza um nome.
-4. Em seguida, no **definições de ação**, definir Olá os seguintes valores:
+4. Em seguida, nas **Definições de Ação**, defina os seguintes valores:
    
    1. **Tipo de Ação:** ` HTTP`  
    2. **Método:** `GET`  
    3. **URL:** ` http://www.microsoft.com`  
       
       ![][action-settings]
-5. Por fim, vamos definir uma agenda. tarefa de Olá pode ser definido como uma única tarefa, mas vamos escolher uma agenda de periodicidade:
+5. Por fim, vamos definir uma agenda. A tarefa pode ser definida como uma única tarefa, mas vamos escolher uma agenda de periodicidade:
    
    1. **Periodicidade**: `Recurring`
    2. **Iniciar**: data de hoje
@@ -51,7 +51,7 @@ ms.lasthandoff: 10/06/2017
 6. Clique em **Criar**.
 
 ## <a name="manage-and-monitor-jobs"></a>Gerir e monitorizar tarefas
-Quando é criada uma tarefa, aparecerá no dashboard do Olá principal do Azure. Clique em tarefa Olá e uma nova janela abre-se com Olá seguintes separadores:
+Quando é criada uma tarefa, a mesma aparece no dashboard principal do Azure. Clique na tarefa e abre-se uma nova janela com as seguintes abas:
 
 1. Propriedades  
 2. Definições de Ação  
@@ -62,34 +62,34 @@ Quando é criada uma tarefa, aparecerá no dashboard do Olá principal do Azure.
    ![][job-overview]
 
 ### <a name="properties"></a>Propriedades
-Estas propriedades só de leitura descrevem Olá gestão metadados de tarefa do agendador de Olá.
+Estas propriedades só de leitura descrevem os metadados de gestão para a tarefa do Agendador.
 
    ![][job-properties]
 
 ### <a name="action-settings"></a>Definições de ação
-Clicar numa tarefa no Olá **tarefas** ecrã permite-lhe tooconfigure da tarefa. Isto permite-lhe configurar as definições avançadas, se não as tenha feito no Olá criação rápida assistente.
+Clicar numa tarefa no ecrã **Tarefas** permite-lhe configurar essa tarefa. Isto permite-lhe fazer configurações avançadas, caso não as tenha feito no assistente de criação rápida.
 
-Para todos os tipos de ação, pode alterar a política de repetição Olá e ação de erro Olá.
+Para todos os tipos de ação, pode alterar a política de repetição e a ação de erro.
 
-Para os tipos de ação de tarefa HTTP e HTTPS, pode alterar Olá método tooany permitido verbo HTTP. Também pode adicionar, eliminar ou alterar cabeçalhos Olá e informações de autenticação básica.
+Para tipos de ação de tarefa HTTP e HTTPS, pode alterar o método para qualquer verbo HTTP permitido. Também pode adicionar, eliminar ou alterar os cabeçalhos e as informações de autenticação básica.
 
-Para tipos de ação de fila de armazenamento, pode alterar a conta de armazenamento Olá, nome da fila, SAS token e corpo.
+Para os tipos de ação de fila de armazenamento, pode alterar a conta de armazenamento, nome da fila, token SAS e corpo.
 
-Para os tipos de ação de barramento de serviço, pode alterar Olá espaço de nomes, caminho do tópico/fila, definições de autenticação, tipo de transporte, propriedades da mensagem e corpo da mensagem.
+Para os tipos de ação de barramento de serviço, pode alterar o espaço de nomes, caminho do tópico/fila, definições de autenticação, tipo de transporte, propriedades de mensagem e o corpo da mensagem.
 
    ![][job-action-settings]
 
 ### <a name="schedule"></a>Agenda
-Isto permite-lhe reconfigurar a agenda de Olá, se pretender que o agendamento de Olá toochange que criou no Olá criação rápida assistente.
+Isto permite-lhe reconfigurar a agenda, caso gostaria de alterar a agenda que criou no assistente de criação rápida.
 
-Esta é uma oportunidade toobuild [agendas complexas e periodicidade avançada na sua tarefa](scheduler-advanced-complexity.md)
+Trata-se de uma oportunidade para criar [agendas complexas e periodicidade avançada na tarefa](scheduler-advanced-complexity.md)
 
-Pode alterar a data de início Olá e tempo, a agenda de periodicidade e Olá terminar a data e hora (se a tarefa de Olá seja recorrente).
+Pode alterar a data e hora de início, a agenda de periodicidade e a data e hora de fim (caso a tarefa seja recorrente).
 
    ![][job-schedule]
 
 ### <a name="history"></a>Histórico
-Olá **histórico** separador mostra as métricas selecionadas para cada execução da tarefa no sistema de Olá para a tarefa selecionada Olá. Estas métricas fornecem valores em tempo real sobre o estado de funcionamento de Olá do seu agendador:
+O separador **Histórico** exibe as métricas selecionadas para todas as execuções de tarefa no sistema para a tarefa selecionada. Estas métricas fornecem valores em tempo real sobre o estado de funcionamento do seu Agendador:
 
 1. Estado  
 2. Detalhes  
@@ -100,12 +100,12 @@ Olá **histórico** separador mostra as métricas selecionadas para cada execuç
    
    ![][job-history]
 
-Pode clicar numa execução tooview respetivo **detalhes de histórico**, incluindo a resposta completa do Olá para cada execução. Esta caixa de diálogo também lhe permite área de transferência do toocopy Olá resposta toohello.
+Pode clicar numa execução para visualizar os seus **Detalhes de Histórico**, incluindo a resposta completa para cada execução. Esta caixa de diálogo também lhe permite copiar a resposta para a área de transferência.
 
    ![][job-history-details]
 
 ### <a name="users"></a>Utilizadores
-O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão pormenorizada de acesso ao Agendador do Azure. toolearn como toouse Olá separador de utilizadores, consulte demasiado[controlo de acesso em funções do Azure](../active-directory/role-based-access-control-configure.md)
+O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão pormenorizada de acesso ao Agendador do Azure. Para saber como utilizar o separador de Utilizadores, consulte o [Controlo de Acesso Baseado em Funções do Azure](../active-directory/role-based-access-control-configure.md)
 
 ## <a name="see-also"></a>Consultar também
  [O que é o Scheduler?](scheduler-intro.md)
@@ -114,7 +114,7 @@ O Controlo de Acesso Baseado em Funções (RBAC) do Azure permite uma gestão po
 
  [Planos e faturação no Azure Scheduler](scheduler-plans-billing.md)
 
- [Como as agendas de toobuild complexas e periodicidade avançada com o agendador do Azure](scheduler-advanced-complexity.md)
+ [Como criar agendas complexas e periodicidade avançada com o Azure Scheduler](scheduler-advanced-complexity.md)
 
  [Referência da API REST do Scheduler](https://msdn.microsoft.com/library/mt629143)
 

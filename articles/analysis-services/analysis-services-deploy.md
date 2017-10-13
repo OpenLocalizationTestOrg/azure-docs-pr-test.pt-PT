@@ -1,6 +1,6 @@
 ---
-title: aaaDeploy tooAzure Analysis Services utilizando o SSDT | Microsoft Docs
-description: Saiba como toodeploy tooan um modelo em tabela do Azure Analysis Services server utilizando o SSDT.
+title: Implementar Azure Analysis Services com o SSDT | Microsoft Docs
+description: Saiba como implementar um modelo de tabela num servidor Azure Analysis Services com o SSDT.
 services: analysis-services
 documentationcenter: 
 author: minewiskan
@@ -15,51 +15,51 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 08/01/2017
 ms.author: owend
-ms.openlocfilehash: e3f3771fe32a37b9e0173c274080c647152edd4c
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: e9a3aedfb6e55696e1525e226fada1062fd5eda8
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="deploy-a-model-from-ssdt"></a>Implementar um modelo a partir de SSDT
-Depois de criar um servidor na sua subscrição do Azure, está pronto toodeploy um tooit de base de dados do modelo de tabela. Pode utilizar o SQL Server Data Tools (SSDT) toobuild e implementar um projeto de modelo em tabela que está a trabalhar. 
+Depois de criar um servidor na sua subscrição do Azure, está pronto para implementar uma base de dados de modelo de tabela no mesmo. Pode usar as SQL Server Data Tools (SSDT) para criar e implementar um projeto de modelo de tabela em que está a trabalhar. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
-tooget iniciada, é necessário:
+Para começar, precisa do seguinte:
 
-* **Servidor Analysis Services** no Azure. toolearn mais, consulte [criar um servidor de Analysis Services do Azure](analysis-services-create-server.md).
-* **Projeto de modelo em tabela** no SSDT ou um modelo em tabela existente em Olá 1200 ou superior ao nível de compatibilidade. Nunca criou um? Tente Olá [tutorial de vendas modelação de tabela do Adventure Works Internet](https://msdn.microsoft.com/library/hh231691.aspx).
-* **Gateway no local** -se uma ou mais origens de dados estão no local na rede da sua organização, terá de tooinstall um [gateway de dados no local](analysis-services-gateway.md). gateway de Olá é necessário para o servidor na nuvem de Olá ligar tooyour no local origens tooprocess e atualize dados no modelo de Olá.
+* **Servidor Analysis Services** no Azure. Para obter mais informações, consulte [Criar um servidor Azure Analysis](analysis-services-create-server.md).
+* **Projeto de modelo de tabela** no SSDT ou modelo de tabela existente no nível de compatibilidade 1200 ou posterior. Nunca criou um? Experimente o [tutorial do modelo de tabela de vendas na Internet Adventure Works](https://msdn.microsoft.com/library/hh231691.aspx).
+* **Gateway local** - se uma ou mais origens de dados se encontrarem no local da rede da sua organização, é necessário instalar um [gateway de dados no local](analysis-services-gateway.md). O gateway é necessário para que o servidor na nuvem se ligue às suas origens de dados no local para processar e atualizar os dados no modelo.
 
 > [!TIP]
-> Antes de implementar, certifique-se de que pode processar os dados de Olá nas suas tabelas. No SSDT, clique em **Modelo** > **Processar** > **Processar tudo**. Se o processamento falhar, a implementação não é efetuada com êxito.
+> Antes de implementar, certifique-se de que pode processar os dados nas tabelas. No SSDT, clique em **Modelo** > **Processar** > **Processar tudo**. Se o processamento falhar, a implementação não é efetuada com êxito.
 > 
 > 
 
-## <a name="toodeploy-a-tabular-model-from-ssdt"></a>toodeploy um modelo em tabela do SSDT
+## <a name="to-deploy-a-tabular-model-from-ssdt"></a>Para implantar um modelo de tabela do SSDT
 
-1. Antes de implementar, terá de nome do servidor tooget Olá. No **portal do Azure** > servidor > **descrição geral** > **nome do servidor**, nome do servidor de Olá de cópia.
+1. Antes de implementar, é necessário obter o nome do servidor. No **portal do Azure** > servidor > **Descrição geral** > **Nome do servidor**, copie o nome do servidor.
    
     ![Obter o nome do servidor no Azure](./media/analysis-services-deploy/aas-deploy-get-server-name.png)
-2. No SSDT > **Explorador de soluções**, projeto do contexto Olá > **propriedades**. Em seguida, no **implementação** > **servidor** cole o nome do servidor Olá.   
+2. No SSDT > **Explorador de Soluções**, clique com o botão direito do rato no projeto > **Propriedades**. Em seguida, em **Implementação** > **Servidor** cole o nome do servidor.   
    
     ![Colar o nome do servidor na propriedade de implementação do servidor](./media/analysis-services-deploy/aas-deploy-deployment-server-property.png)
-3. Em **Explorador de Soluções**, clique com o botão direito do rato em **Propriedades** e, em seguida, clique em **Implementar**. Poderá ser pedido toosign no tooAzure.
+3. Em **Explorador de Soluções**, clique com o botão direito do rato em **Propriedades** e, em seguida, clique em **Implementar**. Ser-lhe-á pedido que inicie sessão no Azure.
    
-    ![Implementar tooserver](./media/analysis-services-deploy/aas-deploy-deploy.png)
+    ![Implementar no servidor](./media/analysis-services-deploy/aas-deploy-deploy.png)
    
-    Estado de implementação é apresentado na janela saída Olá e em implementar.
+    O estado de implementação é exibido na janela de saída e na implementação.
    
     ![Estado da implementação](./media/analysis-services-deploy/aas-deploy-status.png)
 
-É tudo há tooit!
+E é tudo o que é preciso!
 
 
 ## <a name="troubleshooting"></a>Resolução de problemas
-Se a implementação falhar quando os metadados de implementação, é provável porque SSDT não foi possível ligar o servidor de tooyour. Certifique-se de que pode ligar o servidor de tooyour com o SSMS. Em seguida, certifique-se Olá propriedade do servidor de implementação para o projeto de Olá está correto.
+Se a implementação falhar durante a implementação de metadados, é provável que se deva ao facto de não ser possível estabelecer ligação entre o SSDT e o seu servidor. Verifique se é possível estabelecer ligação ao seu servidor com o SSMS. Em seguida, verifique se a propriedade de implementação do servidor é a correta para o projeto.
 
-Se a implementação falhar numa tabela, é provável porque o servidor não foi possível ligar a origem de dados de tooa. Se a origem de dados no local na rede da sua organização, ser tooinstall se um [gateway de dados no local](analysis-services-gateway.md).
+Se a implementação falhar numa tabela, provavelmente não foi possível estabelecer ligação entre o servidor e a origem de dados. Se a sua origem de dados se encontra na rede da sua organização, certifique-se de que instala um [gateway de dados no local](analysis-services-gateway.md).
 
 ## <a name="next-steps"></a>Passos seguintes
-Agora que tem o seu servidor do modelo em tabela tooyour implementado, está pronto tooconnect tooit. Pode [ligar tooit com o SSMS](analysis-services-manage.md) toomanage-lo. E, pode [ligar tooit utilizando uma ferramenta de cliente](analysis-services-connect.md) como Power BI, o Power BI Desktop, ou o Excel e o início a criação de relatórios.
+Agora que tem o modelo de tabela implementado no seu servidor, está pronto para se estabelecer ligação com o mesmo. Pode [ligá-lo com o SSMS](analysis-services-manage.md) para o gerir. E pode [ligá-lo através de uma ferramenta de cliente](analysis-services-connect.md) como o Power BI, o Power BI Desktop ou o Excel e começar a criar relatórios.
 

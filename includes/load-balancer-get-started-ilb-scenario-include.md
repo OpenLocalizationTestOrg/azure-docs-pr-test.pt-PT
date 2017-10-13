@@ -1,6 +1,6 @@
 ## <a name="scenario"></a>Cenário
 
-Está a criar toohello seguir o cenário de acordo com um balanceador de carga interno
+Está a criar um balanceador de carga interno, de acordo com o seguinte cenário
 
 ![DESCRIÇÃO DA IMAGEM](./media/load-balancer-get-started-ilb-scenario-include/figure1.png)
 

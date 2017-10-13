@@ -1,21 +1,28 @@
 
 
-1. Inicie sessão no toohello [Portal do Azure](https://portal.azure.com)e, em seguida, clique em **+ novo** em Olá parte superior esquerda do ecrã de Olá.
-2. Clique em **Novo** e, em seguida, em **Web + Móvel**. Se necessário, desloque o ecrã para baixo e clique em **Hub de Notificação**.
+1. Inicie sessão no [Portal do Azure](https://portal.azure.com).
+
+2. Selecione **Novo** > **Web + Móvel** > **Hub de Notificação**.
    
-      ![Portal do Azure – Criar Hubs de Notificação](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-create.png)
+      ![Portal do Azure – criar hubs de notificação](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-create.png)
       
-3. Certifique-se de especificar um nome exclusivo no Olá **Notification Hub** campo. Selecione a **Região**, a **Subscrição** e o **Grupo de Recursos** (se já possuir um) que pretende. 
+3. Na caixa **Hub de Notificação**, escreva um nome exclusivo. Selecione a **Região**, a **Subscrição** e o **Grupo de Recursos** (se já tiver um). 
    
-    Se já tiver um espaço de nomes de barramento de serviço que pretende que o hub Olá toocreate, selecione-o através de Olá **selecione existente** opção na Olá **espaço de nomes** campo.  Caso contrário, pode utilizar Olá nome predefinido que será criado com base no nome do hub Olá, desde que o nome de espaço de nomes de Olá está disponível. 
+    Se já tiver um espaço de nomes do service bus no qual quer criar o hub, faça o seguinte:
+
+    a. Na área **Espaço de nomes**, selecione a ligação **Selecionar Existente**. 
    
-    Quando estiver pronto, clique em **Criar**.
+    b. Selecione **Criar**.
+
+    Se ainda não tiver um espaço de nomes do service bus, pode utilizar o nome predefinido, que é criado tendo por base o nome do hub (se esse nome do espaço de nomes estiver disponível).
    
-      ![Portal do Azure – Definir as propriedades do hub de notificação](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-settings.png)
-4. Depois de hub de espaço de nomes e notificação Olá são criados, será direcionado toohello respetiva página do portal. 
+      ![Portal do Azure – definir as propriedades do hub de notificação](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-settings.png)
+
+    Depois de criar o espaço de nomes e o hub de notificação, é aberto o portal do Azure. 
    
-      ![Portal do Azure – Página do portal do hub de notificação](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-page.png)
-5. Clique em **definições** e, em seguida, **políticas de acesso** -tome nota das cadeias de ligação de Olá dois tooyou disponível, que são efetuados como vai precisar deles notificações de push toohandle mais tarde.
+      ![Portal do Azure - página do portal do hub de notificação](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-page.png)
+
+4. Selecione **Definições** > **Políticas de Acesso**. Anote as duas cadeias de ligação que tem à sua disposição. Vai precisar destas para processar as notificações push mais tarde.
    
-      ![Portal do Azure – Cadeias de ligação do hub de notificação](./media/notification-hubs-portal-create-new-hub/notification-hubs-connection-strings-portal.png)
+      ![Portal do Azure – cadeias de ligação do hub de notificação](./media/notification-hubs-portal-create-new-hub/notification-hubs-connection-strings-portal.png)
 

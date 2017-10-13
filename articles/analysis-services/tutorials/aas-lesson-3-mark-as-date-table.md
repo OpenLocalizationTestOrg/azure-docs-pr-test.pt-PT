@@ -1,7 +1,25 @@
 ---
-Título: aaa "lesson tutorial do Azure Analysis Services 3: Marcar como tabela de datas | Descrição da Microsoft Docs": descreve a forma como toomark uma data de tabela no projeto tutorial do Olá Azure Analysis Services. serviços: documentationcenter do Analysis Services: ' autor: Gestor minewiskan: erikre editor: ' etiquetas: '
-
-MS. AssetID: MS. Service: devlang do Analysis Services: MS. topic de NA: get-started-article tgt_pltfrm: NA workload: na MS. Date: 06/01/2017 Author: owend
+title: "Lição 3 do tutorial do Azure Analysis Services: marcar como tabela de datas | Microsoft Docs"
+description: Descreve como marcar uma tabela de datas no projeto de tutorial do Azure Analysis Services.
+services: analysis-services
+documentationcenter: 
+author: Minewiskan
+manager: erikre
+editor: 
+tags: 
+ms.assetid: 
+ms.service: analysis-services
+ms.devlang: NA
+ms.topic: get-started-article
+ms.tgt_pltfrm: NA
+ms.workload: na
+ms.date: 09/20/2017
+ms.author: owend
+ms.openlocfilehash: 94ea44091c8a7befaf0c82349c47dce7a36c1fd8
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="lesson-3-mark-as-date-table"></a>Lição 3: marcar como tabela de datas
 
@@ -11,29 +29,29 @@ Na Lição 2: obter dados, importou uma tabela de dimensões com o nome DimDate.
   
 Sempre que utilizar funções de inteligência de tempo DAX, como quando cria medidas mais tarde, deve especificar as propriedades que incluem uma *tabela de datas* e um identificador exclusivo *Coluna de datas* nessa tabela.
   
-Neste lesson, marcar a tabela de DimDate de Olá como Olá *tabela de datas* e na coluna de data Olá (na tabela de datas Olá) como Olá *coluna data* (Identificador exclusivo).  
+Nesta lição, marque a tabela DimDate como a *Tabela de datas* e a coluna de datas (na tabela de datas) como a *Coluna de datas* (identificador exclusivo).  
 
-Antes de marcar a coluna de tabela e a data da data Olá, é toodo uma boa altura um pouco os toomake sua toounderstand mais fácil de modelo. Repare na tabela de DimDate Olá uma coluna chamada **FullDateAlternateKey**. Esta coluna contém uma linha para cada dia do ano de calendário cada incluído na tabela de Olá. Utiliza muito esta coluna em fórmulas de medições e relatórios. Porém, FullDateAlternateKey não é um identificador válido para esta coluna. Mudar o nome demasiado**data**, tornando mais fácil tooidentify e incluir em fórmulas. Sempre que possível, é uma boa ideia toorename objetos, como tabelas e colunas toomake-los mais fácil tooidentify no SSDT e o cliente de relatórios de aplicações, como o Power BI e o Excel. 
+Antes de marcar a tabela de datas e a coluna de datas, este é um bom momento para fazer a manutenção do sistema para que seja mais fácil compreender o modelo. Observe, na tabela DimDate, uma coluna denominada **FullDateAlternateKey**. Esta coluna contém uma linha para cada dia em cada ano civil incluído na tabela. Utiliza muito esta coluna em fórmulas de medições e relatórios. Porém, FullDateAlternateKey não é um identificador válido para esta coluna. Deve mudar o respetivo nome para **Data**, de modo a facilitar a identificação e a inclusão em fórmulas. Sempre que possível, é recomendável mudar o nome aos objetos, como tabelas e colunas, para facilitar a sua identificação no SSDT e nas aplicações de relatório do cliente, como Power BI e Excel. 
   
-Estimado tempo toocomplete este lesson: **três minutos**  
+Tempo estimado para concluir esta lição: **3 minutos**  
   
 ## <a name="prerequisites"></a>Pré-requisitos  
-Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar tarefas de Olá neste lesson, deve concluir lesson anterior Olá: [Lesson 2: obter dados](../tutorials/aas-lesson-2-get-data.md). 
+Este tópico faz parte de um tutorial de modelação em tabela que deve ser concluído por ordem. Antes de executar as tarefas nesta lição, deverá ter concluído a lição anterior: [Lição 2: obter dados](../tutorials/aas-lesson-2-get-data.md). 
 
-### <a name="toorename-hello-fulldatealternatekey-column"></a>coluna de FullDateAlternateKey toorename Olá
+### <a name="to-rename-the-fulldatealternatekey-column"></a>Para mudar o nome da coluna FullDateAlternateKey
 
-1.  No estruturador de modelo de Olá, clique em Olá **DimDate** tabela.
+1.  No designer de modelo, clique na tabela **DimDate**.
 
-2.  Faça duplo clique em cabeçalho Olá Olá **FullDateAlternateKey** coluna e, em seguida, mude o nome demasiado**data**.
+2.  Clique duas vezes no cabeçalho da coluna **FullDateAlternateKey** e, em seguida, mude o nome para **Data**.
 
   
-### <a name="tooset-mark-as-date-table"></a>tooset marcar como tabela de datas  
+### <a name="to-set-mark-as-date-table"></a>Para definir Marcar como tabela de datas  
   
-1.  Selecione Olá **data** coluna e, em seguida, no Olá **propriedades** janela, em **tipo de dados**, certifique-se **data** está selecionada.  
+1.  Selecione a coluna **Data** e, em seguida, na janela **Propriedades**, em **Tipo de dados**, confirme que **Data** está selecionado.  
   
-2.  Clique em Olá **tabela** menu, em seguida, clique em **data**e, em seguida, clique em **marcar como tabela de datas**.  
+2.  Clique no menu **Tabela**, clique em **Data**e, em seguida, clique em **Marcar como Tabela de Datas**.  
   
-3.  No Olá **marcar como tabela de datas** Olá caixa de diálogo **data** listbox, selecione de Olá **data** coluna como Olá Identificador exclusivo. Está geralmente selecionado predefinição. Clique em **OK**. 
+3.  Na caixa de diálogo **Marcar como Tabela de Datas**, na caixa de listagem **Datas**, selecione a coluna **Data** como o identificador exclusivo. Está geralmente selecionado predefinição. Clique em **OK**. 
 
     ![aas-lesson3-date-table](../tutorials/media/aas-lesson3-date-table.png)
   

@@ -1,6 +1,6 @@
 ---
-title: "aaaGet dados utilizando Olá API do Azure AD Reporting com certificados | Microsoft Docs"
-description: "Explica como toouse Olá API do Azure AD Reporting com dados tooget de credenciais de certificado de diretórios sem intervenção do utilizador."
+title: "Utilizar a API de Relatórios do Azure AD com certificados para obter dados | Microsoft Docs"
+description: "Explica como utilizar a API de Relatórios do Azure AD com credenciais de certificados para obter dados de diretórios sem intervenção do utilizador."
 services: active-directory
 documentationcenter: 
 author: ramical
@@ -12,59 +12,59 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 03/24/2017
+ms.date: 09/08/2017
 ms.author: ramical
-ms.openlocfilehash: 00ddfaefe32ea6ae48f276c974a17ddcf84f7894
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 38c240ed1608b2e99bde78f3633e722f8e2fa30b
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="get-data-using-hello-azure-ad-reporting-api-with-certificates"></a>Obter dados utilizando a API de relatórios do Azure AD Olá com certificados
-Este artigo aborda como toouse Olá API do Azure AD Reporting com dados tooget de credenciais de certificado de diretórios sem intervenção do utilizador. 
+# <a name="get-data-using-the-azure-ad-reporting-api-with-certificates"></a>Utilizar a API de Relatórios do Azure AD com certificados para obter dados
+Este artigo explica como utilizar a API de Relatórios do Azure AD com credenciais de certificados para obter dados de diretórios sem intervenção do utilizador. 
 
-## <a name="use-hello-azure-ad-reporting-api"></a>Olá, utilize a API de relatórios de AD do Azure 
-A API de relatórios de AD do Azure requer que conclua Olá os seguintes passos:
+## <a name="use-the-azure-ad-reporting-api"></a>Utilizar a API de Relatórios do Azure AD 
+A API de Relatórios do Azure AD requer que conclua os passos seguintes:
  *  Pré-requisitos da instalação
- *  Defina o certificado de Olá na sua aplicação
+ *  Definir o certificado na sua aplicação
  *  Obter um token de acesso
- *  Utilizar Olá de token toocall de acesso de Olá Graph API
+ *  Utilizar o token de acesso para chamar a Graph API
 
 Para obter informações sobre o código de origem, veja [Leverage Report API Module (Tirar Partido do Módulo da API de Relatório)](https://github.com/AzureAD/azure-activedirectory-powershell/tree/gh-pages/Modules/AzureADUtils). 
 
 ### <a name="install-prerequisites"></a>Pré-requisitos da instalação
-Precisa de toohave Azure AD PowerShell V2 e AzureADUtils module instalada.
+Tem de ter instalado o Azure AD PowerShell V2 e o módulo AzureADUtils.
 
-1. Transfira e instale o Azure AD Powershell V2, seguir instruções Olá em [Azure Active Directory PowerShell](https://github.com/Azure/azure-docs-powershell-azuread/blob/master/Azure AD Cmdlets/AzureAD/index.md).
-2. Transferir o módulo do Azure AD Utils Olá da [AzureAD/azure-activedirectory-powershell](https://github.com/AzureAD/azure-activedirectory-powershell/blob/gh-pages/Modules/AzureADUtils/AzureADUtils.psm1). 
+1. Siga as instruções em [Azure Active Directory PowerShell](https://github.com/Azure/azure-docs-powershell-azuread/blob/master/Azure AD Cmdlets/AzureAD/index.md) para transferir e instalar o Azure AD PowerShell V2.
+2. Transfira o módulo Utils do Azure AD em [AzureAD/azure-activedirectory-powershell](https://github.com/AzureAD/azure-activedirectory-powershell/blob/gh-pages/Modules/AzureADUtils/AzureADUtils.psm1). 
   Este módulo disponibiliza vários cmdlets de utilitário, incluindo:
-   * versão mais recente do Olá da ADAL com Nuget
+   * A versão mais recente da ADAL através de Nuget
    * Tokens de acesso de utilizador, chaves de aplicação e certificados, através da ADAL
    * Graph API que processa resultados paginados
 
-**módulo do Azure AD Utils de Olá tooinstall:**
+**Para instalar o módulo Utils do Azure AD:**
 
-1. Criar um diretório toosave Olá utilitários módulo (por exemplo, c:\azureAD) e transferir o módulo Olá a partir do GitHub.
-2. Abra uma sessão do PowerShell e aceda diretório toohello que acabou de criar. 
-3. Importar o módulo Olá e instalá-la no caminho de módulo Olá PowerShell utilizando o cmdlet Olá AzureADUtilsModule de instalação. 
+1. Crie um diretório para guardar o módulo do utilitário (por exemplo, c:\azureAD) e transfira o módulo a partir do GitHub.
+2. Abra uma sessão do PowerShell e aceda ao diretório que acabou de criar. 
+3. Importe o módulo e instale-o no caminho do módulo do PowerShell, utilizando o cmdlet Install-AzureADUtilsModule. 
 
-sessão de Olá deve ter um aspeto semelhante toothis ecrã:
+A sessão deverá ter um aspeto semelhante a este ecrã:
 
   ![Windows Powershell](./media/active-directory-report-api-with-certificates/windows-powershell.png)
 
-### <a name="set-hello-certificate-in-your-app"></a>Defina o certificado de Olá na sua aplicação
-1. Se já tiver uma aplicação, obter o ID de objeto de Olá Portal do Azure. 
+### <a name="set-the-certificate-in-your-app"></a>Definir o certificado na sua aplicação
+1. Se já tiver uma aplicação, obtenha o ID de Objeto da mesma a partir do Portal do Azure. 
 
   ![Portal do Azure](./media/active-directory-report-api-with-certificates/azure-portal.png)
 
-2. Abra uma sessão do PowerShell e ligue tooAzure AD utilizando o cmdlet Olá Connect-AzureAD.
+2. Abra uma sessão do PowerShell e utilize o cmdlet Connect-AzureAD para ligar ao Azure AD.
 
   ![Portal do Azure](./media/active-directory-report-api-with-certificates/connect-azuaread-cmdlet.png)
 
-3. Utilize o cmdlet New-AzureADApplicationCertificateCredential de Olá de AzureADUtils tooadd tooit de credencial um certificado. 
+3. Utilize o cmdlet New-AzureADApplicationCertificateCredential a partir de AzureADUtils para adicionar uma credencial de certificado ao mesmo. 
 
 >[!Note]
->Precisa de aplicação de Olá tooprovide ID de objeto capturadas anteriormente, bem como Olá objeto certificado (obter esta utilizando Olá Cert: unidade).
+>Tem de indicar o ID de Objeto da aplicação que capturou anteriormente, bem como o objeto do certificado (para o obter, utilize a unidade Cert:).
 >
 
 
@@ -72,24 +72,24 @@ sessão de Olá deve ter um aspeto semelhante toothis ecrã:
   
 ### <a name="get-an-access-token"></a>Obter um token de acesso
 
-tooget um token de acesso, utilize o cmdlet de Get-AzureADGraphAPIAccessTokenFromCert Olá de AzureADUtils. 
+Para obter um token de acesso, utilize o cmdlet Get-AzureADGraphAPIAccessTokenFromCert a partir de AzureADUtils. 
 
 >[!NOTE]
->É necessário toouse Olá ID da aplicação em vez de Olá ID de objeto que utilizou na secção último Olá.
+>Tem de utilizar o ID da Aplicação em vez do ID de Objeto que utilizou na secção anterior.
 >
 
  ![Portal do Azure](./media/active-directory-report-api-with-certificates/application-id.png)
 
-### <a name="use-hello-access-token-toocall-hello-graph-api"></a>Utilizar Olá de token toocall de acesso de Olá Graph API
+### <a name="use-the-access-token-to-call-the-graph-api"></a>Utilizar o token de acesso para chamar a Graph API
 
-Agora, pode criar script de Olá. Abaixo está um exemplo utilizando o cmdlet Invoke-AzureADGraphAPIQuery de Olá de Olá AzureADUtils. Este cmdlet processa resultados paginados múltiplos e, em seguida, envia do pipeline de PowerShell esses resultados toohello. 
+Agora, pode criar o script. Segue-se um exemplo que utiliza o cmdlet Invoke-AzureADGraphAPIQuery a partir de AzureADUtils. Este cmdlet processa resultados paginados múltiplos e, em seguida, envia-os para o pipeline do PowerShell. 
 
  ![Portal do Azure](./media/active-directory-report-api-with-certificates/script-completed.png)
 
-Agora está pronto tooexport tooa CSV e guardar o sistema do tooa SIEM. Pode também moldar o script no tooget tarefa agendada dados do Azure AD do seu inquilino periodicamente sem ter de chaves de aplicação toostore no código de origem Olá. 
+Agora, está pronto para exportar para um CSV e guardar num sistema SIEM. Também pode encapsular o script numa tarefa agendada para obter dados do Azure AD a partir do seu inquilino periodicamente, sem ter de armazenar chaves de aplicação no código de origem. 
 
 ## <a name="next-steps"></a>Passos seguintes
-[Olá Noções básicas de gestão de identidades do Azure](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals-identity)<br>
+[The fundamentals of Azure identity management](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals-identity) (As noções básicas da gestão de identidades do Azure)<br>
 
 
 

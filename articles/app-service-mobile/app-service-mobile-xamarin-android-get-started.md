@@ -1,6 +1,6 @@
 ---
-title: "aaaGet iniciado com o Azure Mobile Apps para aplicações xamarin Android"
-description: Siga este tutorial tooget iniciado a utilizar Mobile Apps do Azure para desenvolvimento de Xamarin Android
+title: "Introdução às Mobile Apps do Azure para aplicações Xamarin.Android"
+description: "Siga este tutorial para começar a utilizar Mobile Apps do Azure para desenvolvimento do Xamarin.Android"
 services: app-service\mobile
 documentationcenter: xamarin
 author: ggailey777
@@ -14,61 +14,61 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 10/01/2016
 ms.author: glenga
-ms.openlocfilehash: 38710660d9328fe3c068efca972f76aa8b6e049b
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 6b41fd8090dd771fc40769c134bad258b3d4bd36
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="create-a-xamarinandroid-app"></a>Criar uma Aplicação Xamarin.Android
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
 ## <a name="overview"></a>Descrição geral
-Este tutorial mostra como tooadd um back-end baseado na nuvem service aplicação xamarin. Android de tooa. Para obter mais informações, consulte [O que são Mobile Apps](app-service-mobile-value-prop.md).
+Este tutorial mostra como adicionar um serviço de back-end baseado na nuvem a uma aplicação Xamarin.Android. Para obter mais informações, consulte [O que são Mobile Apps](app-service-mobile-value-prop.md).
 
-Abaixo é uma captura de ecrã da aplicação Olá concluída:
+Abaixo é exibida uma captura de ecrã da aplicação concluída:
 
 ![][0]
 
 A conclusão deste tutorial é um pré-requisito para todos os outros tutoriais de Mobile Apps para aplicações Xamarin.Android.
 
 ## <a name="prerequisites"></a>Pré-requisitos
-toocomplete neste tutorial, terá de Olá os seguintes pré-requisitos:
+Para concluir este tutorial, precisa dos seguintes pré-requisitos:
 
-* Uma conta ativa do Azure. Se não tiver uma conta, inscreva-se uma versão de avaliação do Azure e obter cópias de segurança too10 livre Mobile Apps. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Uma conta ativa do Azure. Se não tiver uma conta, inscreva-se para uma versão de avaliação do Azure e obtenha até 10 Aplicações Móveis gratuitas. Para obter mais detalhes, consulte [Avaliação Gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Visual Studio com Xamarin. Para obter instruções, consulte [Configuração e instalação do Visual Studio e Xamarin](https://msdn.microsoft.com/library/mt613162.aspx).
 
 ## <a name="create-an-azure-mobile-app-backend"></a>Criar um back-end da Aplicação Móvel do Azure
-Siga estes passos toocreate um back-end de aplicação móvel.
+Siga estes passos para criar um back-end da Aplicação Móvel.
 
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-Acabou de aprovisionar um back-end da Aplicação Móvel do Azure que pode ser utilizado pelas suas aplicações cliente móveis. Em seguida, transferir um projeto de servidor para um simples "todo list" back-end e publicá-lo tooAzure.
+Acabou de aprovisionar um back-end da Aplicação Móvel do Azure que pode ser utilizado pelas suas aplicações cliente móveis. Em seguida, transfira um projeto de servidor para um back-end simples de uma “lista de tarefas” e publique-o no Azure.
 
-## <a name="configure-hello-server-project"></a>Configurar o projeto de servidor Olá
+## <a name="configure-the-server-project"></a>Configurar o projeto de servidor
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="download-and-run-hello-xamarinandroid-app"></a>Transferir e executar a aplicação xamarin. Android de Olá
-1. Em **transferir e executar o projeto xamarin. Android**, clique em Olá **transferir** botão.
+## <a name="download-and-run-the-xamarinandroid-app"></a>Transferir e executar a aplicação Xamarin.Android
+1. Em **Transferir e executar o projeto Xamarin.Android**, clique no botão **Transferir**.
 
-      Guarde o computador local de tooyour ficheiro de projeto comprimido Olá e tome nota do local onde o guardou.
-2. Olá prima **F5** projeto de Olá toobuild da chave e iniciar a aplicação Olá.
-3. Na aplicação Olá, digite um texto significativo, tal como *tutorial Olá concluída* e, em seguida, clique em Olá **adicionar** botão.
+      Guarde o ficheiro de projeto comprimido no computador local e tome nota do local onde o guardou.
+2. Prima a tecla **F5** para compilar o projeto e iniciar a aplicação.
+3. Na aplicação, digite um texto significativo, tal como *Concluir o tutorial*, e clique no botão **Adicionar**.
 
     ![][10]
 
-    Dados de pedido de Olá são inseridos na tabela TodoItem de Olá. Os itens armazenados na tabela de Olá são devolvidos pelo back-end de aplicação móvel de Olá e os dados são apresentados na lista de Olá.
+    Os dados do pedido são inseridos na tabela TodoItem. Os itens armazenados na tabela são devolvidos pelo back-end da aplicação móvel e os dados são apresentados na lista.
 
    > [!NOTE]
-   > Pode rever Olá código que acede ao seu tooquery de back-end da aplicação móvel e inserir dados, que se encontra no Olá ficheiro c# ToDoActivity.cs.
+   > Pode rever o código que acede ao seu back-end da aplicação móvel para consultar e inserir dados (presente no ficheiro ToDoActivity.cs c#).
    >
    >
 
 ## <a name="next-steps"></a>Passos seguintes
-* [Adicionar aplicação tooyour de Sincronização Offline](app-service-mobile-xamarin-android-get-started-offline-data.md)
-* [Adicionar autenticação tooyour aplicação](app-service-mobile-xamarin-android-get-started-users.md)
-* [Adicionar a aplicação de xamarin. Android de tooyour de notificações push](app-service-mobile-xamarin-android-get-started-push.md)
-* [Como toouse Olá geridos cliente para Mobile Apps do Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
+* [Adicionar Sincronização Offline à sua aplicação](app-service-mobile-xamarin-android-get-started-offline-data.md)
+* [Adicionar autenticação à aplicação ](app-service-mobile-xamarin-android-get-started-users.md)
+* [Adicionar notificações push à aplicação Xamarin.Android](app-service-mobile-xamarin-android-get-started-push.md)
+* [Como utilizar o cliente gerido para Mobile Apps do Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
 
 <!-- Images. -->
 [0]: ./media/app-service-mobile-xamarin-android-get-started/mobile-quickstart-completed-android.png

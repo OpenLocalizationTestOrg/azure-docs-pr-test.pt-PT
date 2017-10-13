@@ -1,5 +1,5 @@
 ---
-title: 'Ligar um tooanother de rede virtual do Azure VNet: PowerShell | Microsoft Docs'
+title: 'Ligar uma rede virtual do Azure a outra VNet: PowerShell | Microsoft Docs'
 description: "Este artigo explica como ligar redes virtuais entre si através do Azure Resource Manager e do PowerShell."
 services: vpn-gateway
 documentationcenter: na
@@ -15,17 +15,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/02/2017
 ms.author: cherylmc
-ms.openlocfilehash: 2da30c76867cc3f71d040e63e0dd15d153e15c10
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: 537e80937289d6b46283843c2ee0725e7e08fefc
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-powershell"></a>Configurar uma ligação de gateway de VPN de VNet a VNet com o PowerShell
 
-Este artigo mostra como toocreate uma ligação de gateway VPN entre redes virtuais. Olá redes virtuais podem estar em Olá regiões idêntica ou diferentes e de Olá mesmo ou subscrições diferentes. Quando ao ligar VNets de diferentes subscrições, subscrições Olá não é necessário toobe associado Olá mesmo inquilino do Active Directory. 
+Este artigo mostra-lhe como criar uma ligação de gateway de VPN entre redes virtuais. As redes virtuais podem estar nas mesmas regiões ou em regiões diferentes e pertencer às mesmas subscrições ou a subscrições diferentes. Ao ligar VNets de diferentes subscrições, estas não têm de estar associadas ao mesmo inquilino do Active Directory. 
 
-passos de Olá neste artigo aplicam-se modelo de implementação do Resource Manager toohello e utilizam o PowerShell. Também pode criar esta configuração utilizando uma ferramenta de implementação diferentes ou modelo de implementação, selecionando uma opção diferente de Olá lista a seguir:
+Os passos deste artigo aplicam-se ao modelo de implementação Resource Manager e o PowerShell. Também pode criar esta configuração ao utilizar uma ferramenta de implementação diferente ou modelo de implementação ao selecionar uma opção diferente da lista seguinte:
 
 > [!div class="op_single_selector"]
 > * [Portal do Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
@@ -37,45 +37,45 @@ passos de Olá neste artigo aplicam-se modelo de implementação do Resource Man
 >
 >
 
-Ligar a rede virtual tooanother rede virtual (VNet a VNet) é semelhante tooconnecting uma localização de site do VNet tooan no local. Ambos os tipos de conetividade utilizam um tooprovide de gateway VPN um túnel seguro através de IPsec/IKE. Se as suas VNets estiverem na Olá mesma região, poderá ser útil tooconsider ligá-las a utilização de VNet Peering. O VNet peering não utiliza um gateway de VPN. Para obter mais informações, veja [VNet peering](../virtual-network/virtual-network-peering-overview.md).
+A ligação de uma rede virtual a outra rede virtual (VNet a VNet) é semelhante à ligação de uma VNet a uma localização do site no local. Ambos os tipos de conetividade utilizam um gateway de VPN para fornecer um túnel seguro através de IPsec/IKE. Se as suas VNets estiverem na mesma região, poderá ponderar ligá-las através da utilização de VNet Peering. O VNet peering não utiliza um gateway de VPN. Para obter mais informações, veja [VNet peering](../virtual-network/virtual-network-peering-overview.md).
 
-A comunicação VNet a VNet pode ser combinada com configurações multilocal. Isto permite-lhe estabelecer topologias de rede que combinam uma conectividade entre instalações com conectividade de rede intervirtual, como mostrado na Olá diagrama a seguir:
+A comunicação VNet a VNet pode ser combinada com configurações multilocal. Desta forma, pode estabelecer topologias de rede que combinam uma conectividade em vários locais com uma conectividade de rede intervirtual, conforme mostrado no diagrama seguinte:
 
 ![Acerca das ligações](./media/vpn-gateway-vnet-vnet-rm-ps/aboutconnections.png)
 
 ### <a name="why-connect-virtual-networks"></a>Por que motivo ligar redes virtuais?
 
-Poderá pretender redes virtuais tooconnect para Olá seguintes motivos:
+Poderá pretender ligar redes virtuais pelos seguintes motivos:
 
 * **Geopresença e georredundância entre várias regiões**
 
   * Pode configurar a sua própria georreplicação ou sincronização com uma conetividade segura sem passar por pontos finais com acesso à Internet.
-  * Com o Gestor de Tráfego e o Balanceador de Carga do Azure, pode configurar uma carga de trabalho de elevada disponibilidade com georredundância em várias regiões do Azure. Um exemplo importante consiste tooset cópias de segurança SQL Always On com grupos de disponibilidade propagando-se em várias regiões do Azure.
+  * Com o Gestor de Tráfego e o Balanceador de Carga do Azure, pode configurar uma carga de trabalho de elevada disponibilidade com georredundância em várias regiões do Azure. Um exemplo importante consiste em configurar o SQL Always On com Grupos de Disponibilidade propagando-se em várias regiões do Azure.
 * **Aplicações multicamadas regionais com isolamento ou limites administrativos**
 
-  * Olá da mesma região, pode configurar aplicações de várias camadas com várias redes virtuais ligadas em conjunto devido tooisolation ou a requisitos administrativos.
+  * Na mesma região, pode configurar aplicações de várias camadas com várias redes virtuais ligadas em conjunto devido a requisitos de isolamento ou administrativos.
 
-Para obter mais informações sobre ligações VNet a VNet, consulte Olá [FAQ de VNet a VNet](#faq) no fim de Olá deste artigo.
+Para obter mais informações sobre ligações de VNet a VNet, consulte [FAQ sobre VNet para VNet](#faq) no final deste artigo.
 
 ## <a name="which-set-of-steps-should-i-use"></a>Que conjunto de passos devo utilizar?
 
-Neste artigo, verá dois conjuntos de passos diferentes. Um conjunto de passos para [Olá de VNets que residem na mesma subscrição](#samesub)e outra para [VNets que residem em subscrições diferentes](#difsub). Olá principal diferença entre conjuntos de Olá é se pode criar e configurar todos os gateway de rede e recursos virtuais no Olá mesma sessão do PowerShell.
+Neste artigo, verá dois conjuntos de passos diferentes. Um conjunto de passos para [VNets que residem na mesma subscrição](#samesub) e outro para [VNets que residem em diferentes subscrições](#difsub). A principal diferença entre os dois é se pode criar e configurar todos os recursos do gateway e da rede virtual na mesma sessão do PowerShell.
 
-Olá passos neste artigo utilizam as variáveis que são declaradas no início de Olá de cada secção. Se já estiver a trabalhar com as VNets existentes, modifique Olá variáveis tooreflect Olá as definições no seu próprio ambiente. Se pretender a resolução de nomes para as suas redes virtuais, veja [Name resolution](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) (Resolução de nomes).
+Os passos deste artigo utilizam variáveis declaradas no início de cada secção. Se já estiver a trabalhar com VNets existentes, modifique as variáveis de forma a refletir as definições do seu ambiente. Se pretender a resolução de nomes para as suas redes virtuais, veja [Name resolution](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) (Resolução de nomes).
 
-## <a name="samesub"></a>Como tooconnect VNets que estão em Olá mesma subscrição
+## <a name="samesub"></a>Como ligar VNets que estão na mesma subscrição
 
 ![Diagrama v2v](./media/vpn-gateway-vnet-vnet-rm-ps/v2vrmps.png)
 
 ### <a name="before-you-begin"></a>Antes de começar
 
-Antes de começar, terá de versão mais recente de Olá tooinstall Olá do Azure Resource Manager de cmdlets do PowerShell, pelo menos 4.0 ou posteriores. Para obter mais informações sobre a instalação de cmdlets do PowerShell Olá, consulte [como tooinstall e configurar o Azure PowerShell](/powershell/azure/overview).
+Antes de começar, tem de instalar a versão mais recente dos cmdlets do PowerShell do Azure Resource Manager, a 4.0 ou posterior. Para obter mais informações sobre como instalar os cmdlets do PowerShell, veja [How to install and configure Azure PowerShell (Como instalar e configurar o Azure PowerShell)](/powershell/azure/overview) .
 
 ### <a name="Step1"></a>Passo 1 - Planear os intervalos de endereços IP
 
-Olá os passos seguintes, vamos criar duas redes virtuais juntamente com as respetivas sub-redes de gateway e configurações. Em seguida, criamos uma ligação VPN entre Olá duas VNets. É importante tooplan intervalos de endereços IP Olá para a sua configuração de rede. Nota: precisa confirmar que nenhum dos intervalos de VNet ou intervalos de rede local se sobrepõe de modo algum. Nestes exemplos, não incluímos um servidor DNS. Se pretender a resolução de nomes para as suas redes virtuais, veja [Name resolution](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) (Resolução de nomes).
+Nos passos seguintes, vamos criar duas redes virtuais, juntamente com as respetivas sub-redes de gateway e configurações. Depois, vamos criar uma ligação de VPN entre as duas VNets. É importante planear os intervalos de endereços IP da configuração da rede. Nota: precisa confirmar que nenhum dos intervalos de VNet ou intervalos de rede local se sobrepõe de modo algum. Nestes exemplos, não incluímos um servidor DNS. Se pretender a resolução de nomes para as suas redes virtuais, veja [Name resolution](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) (Resolução de nomes).
 
-Podemos utilizar Olá valores nos exemplos de Olá os seguintes:
+Utilizamos os seguintes valores nos exemplos:
 
 **Valores da TestVNet1:**
 
@@ -111,7 +111,7 @@ Podemos utilizar Olá valores nos exemplos de Olá os seguintes:
 
 ### <a name="Step2"></a>Passo 2 - Criar e configurar a TestVNet1
 
-1. Declarar as variáveis. Neste exemplo declara as variáveis de Olá utilizando valores de Olá para este exercício. Na maioria dos casos, deve substituir os valores de Olá com os seus próprios. No entanto, pode utilizar estas variáveis se estiver a executar através de Olá passos toobecome familiarizado com este tipo de configuração. Modificar variáveis de Olá, se necessário, em seguida, copie e cole-os para a consola do PowerShell.
+1. Declarar as variáveis. Este exemplo declara as variáveis com os valores deste exercício. Na maioria dos casos, deverá substituir os valores pelos seus próprios. Contudo, pode utilizar estas variáveis se estiver a executar os passos para se familiarizar com este tipo de configuração. Modifique as variáveis, se necessário, e, em seguida, copie e cole-as na consola do PowerShell.
 
   ```powershell
   $Sub1 = "Replace_With_Your_Subcription_Name"
@@ -133,19 +133,19 @@ Podemos utilizar Olá valores nos exemplos de Olá os seguintes:
   $Connection15 = "VNet1toVNet5"
   ```
 
-2. Ligar a tooyour conta. Utilize Olá toohelp de exemplo, ligar os seguintes:
+2. Ligar à sua conta. Utilize o exemplo seguinte para o ajudar na ligação:
 
   ```powershell
   Login-AzureRmAccount
   ```
 
-  Verifique Olá subscrições para a conta de Olá.
+  Verifique as subscrições da conta.
 
   ```powershell
   Get-AzureRmSubscription
   ```
 
-  Especifique que pretende que o toouse de subscrição de Olá.
+  Especifique a subscrição que pretende utilizar.
 
   ```powershell
   Select-AzureRmSubscription -SubscriptionName $Sub1
@@ -155,9 +155,9 @@ Podemos utilizar Olá valores nos exemplos de Olá os seguintes:
   ```powershell
   New-AzureRmResourceGroup -Name $RG1 -Location $Location1
   ```
-4. Crie Olá configurações de sub-rede da TestVNet1. Este exemplo cria uma rede virtual com o nome TestVNet1 e três sub-redes, uma chamada GatewaySubnet, outra FrontEnd e a última BackEnd. Quando estiver a substituir os valores, é importante que dê sempre à sub-rede do gateway o nome específico GatewaySubnet. Se der outro nome, a criação da gateway falha.
+4. Criar as configurações de sub-rede da TestVNet1. Este exemplo cria uma rede virtual com o nome TestVNet1 e três sub-redes, uma chamada GatewaySubnet, outra FrontEnd e a última BackEnd. Quando estiver a substituir os valores, é importante que dê sempre à sub-rede do gateway o nome específico GatewaySubnet. Se der outro nome, a criação da gateway falha.
 
-  Olá exemplo seguinte utiliza variáveis de Olá que configurou anteriormente. Neste exemplo, a sub-rede do gateway Olá é utilizar/27. Embora seja possível toocreate uma sub-rede do gateway tão pequena como/29, recomendamos que crie uma sub-rede maior que inclua endereços mais ao selecionar, pelo menos, / 28 ou /27. Isto permitirá para suficiente endereços tooaccommodate possíveis configurações adicionais que poderá ser útil no Olá futuras.
+  O exemplo seguinte utiliza as variáveis que definiu anteriormente. Neste exemplo, a sub-rede do gateway está a utilizar um /27. Embora seja possível criar uma sub-rede de gateway tão pequena como /29, recomendamos que crie uma sub-rede maior para incluir mais endereços ao selecionar, pelo menos, /28 ou /27. Desta forma, se quiser ter mais configurações no futuro, haverá endereços suficientes para as acomodar.
 
   ```powershell
   $fesub1 = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName1 -AddressPrefix $FESubPrefix1
@@ -170,13 +170,13 @@ Podemos utilizar Olá valores nos exemplos de Olá os seguintes:
   New-AzureRmVirtualNetwork -Name $VNetName1 -ResourceGroupName $RG1 `
   -Location $Location1 -AddressPrefix $VNetPrefix11,$VNetPrefix12 -Subnet $fesub1,$besub1,$gwsub1
   ```
-6. Pedir um público IP endereço toobe toohello alocado gateway que será criado para a sua VNet. Repare que Olá AllocationMethod é dinâmico. Não é possível especificar o endereço IP Olá que pretende que o toouse. É gateway tooyour alocada dinamicamente. 
+6. Peça para que seja atribuído um endereço IP público ao gateway que vai criar para a VNet. Tenha em atenção que o AllocationMethod é Dinâmico. Não pode especificar o endereço IP que pretende utilizar. É atribuído dinamicamente ao seu gateway. 
 
   ```powershell
   $gwpip1 = New-AzureRmPublicIpAddress -Name $GWIPName1 -ResourceGroupName $RG1 `
   -Location $Location1 -AllocationMethod Dynamic
   ```
-7. Crie a configuração do gateway Olá. configuração do gateway de Olá define uma sub-rede de Olá e Olá toouse de endereço IP público. Utilize toocreate de exemplo de Olá a configuração do gateway.
+7. Criar a configuração do gateway. A configuração do gateway define a sub-rede e o endereço IP público a utilizar. Utilize o exemplo para criar a configuração do gateway.
 
   ```powershell
   $vnet1 = Get-AzureRmVirtualNetwork -Name $VNetName1 -ResourceGroupName $RG1
@@ -184,7 +184,7 @@ Podemos utilizar Olá valores nos exemplos de Olá os seguintes:
   $gwipconf1 = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName1 `
   -Subnet $subnet1 -PublicIpAddress $gwpip1
   ```
-8. Crie gateway de Olá da TestVNet1. Neste passo, vai criar gateway de rede virtual Olá para a TestVNet1. As configurações VNet a VNet requerem um VpnType RouteBased. Criar um gateway, muitas vezes, pode demorar 45 minutos ou mais, dependendo do SKU de gateway selecionado Olá.
+8. Criar o gateway da TestVNet1. Neste passo, vai criar o gateway de rede virtual da TestVNet1. As configurações VNet a VNet requerem um VpnType RouteBased. Criar um gateway, muitas vezes, pode demorar 45 minutos ou mais, dependendo do SKU de gateway selecionado.
 
   ```powershell
   New-AzureRmVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1 `
@@ -194,9 +194,9 @@ Podemos utilizar Olá valores nos exemplos de Olá os seguintes:
 
 ### <a name="step-3---create-and-configure-testvnet4"></a>Passo 3 – Criar e configurar a TestVNet4
 
-Assim que tiver configurado a TestVNet1, crie a TestVNet4. Siga os passos de Olá abaixo, substituindo os valores de Olá com os seus próprios quando necessário. Este passo pode ser feito na Olá mesma sessão do PowerShell porque está a ser Olá mesma subscrição.
+Assim que tiver configurado a TestVNet1, crie a TestVNet4. Siga os passos abaixo, substituindo os valores pelos seus, quando necessário. Este passo pode ser feito na mesma sessão do PowerShell porque se encontra na mesma subscrição.
 
-1. Declarar as variáveis. Ser tooreplace se valores Olá com Olá aqueles que pretende que toouse para a sua configuração.
+1. Declarar as variáveis. Confirme que substitui os valores pelos que pretende utilizar para a configuração.
 
   ```powershell
   $RG4 = "TestRG4"
@@ -220,7 +220,7 @@ Assim que tiver configurado a TestVNet1, crie a TestVNet4. Siga os passos de Ol�
   ```powershell
   New-AzureRmResourceGroup -Name $RG4 -Location $Location4
   ```
-3. Crie Olá configurações de sub-rede da TestVNet4.
+3. Criar as configurações de sub-rede da TestVNet4.
 
   ```powershell
   $fesub4 = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName4 -AddressPrefix $FESubPrefix4
@@ -239,14 +239,14 @@ Assim que tiver configurado a TestVNet1, crie a TestVNet4. Siga os passos de Ol�
   $gwpip4 = New-AzureRmPublicIpAddress -Name $GWIPName4 -ResourceGroupName $RG4 `
   -Location $Location4 -AllocationMethod Dynamic
   ```
-6. Crie a configuração do gateway Olá.
+6. Criar a configuração do gateway.
 
   ```powershell
   $vnet4 = Get-AzureRmVirtualNetwork -Name $VnetName4 -ResourceGroupName $RG4
   $subnet4 = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet4
   $gwipconf4 = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName4 -Subnet $subnet4 -PublicIpAddress $gwpip4
   ```
-7. Crie Olá TestVNet4 gateway. Criar um gateway, muitas vezes, pode demorar 45 minutos ou mais, dependendo do SKU de gateway selecionado Olá.
+7. Criar o gateway da TestVNet4. Criar um gateway, muitas vezes, pode demorar 45 minutos ou mais, dependendo do SKU de gateway selecionado.
 
   ```powershell
   New-AzureRmVirtualNetworkGateway -Name $GWName4 -ResourceGroupName $RG4 `
@@ -254,43 +254,43 @@ Assim que tiver configurado a TestVNet1, crie a TestVNet4. Siga os passos de Ol�
   -VpnType RouteBased -GatewaySku VpnGw1
   ```
 
-### <a name="step-4---create-hello-connections"></a>Passo 4 – criar ligações Olá
+### <a name="step-4---create-the-connections"></a>Passo 4 - Criar as ligações
 
-1. Obter os gateways da rede virtual. Se ambas as gateways de Olá no Olá mesma subscrição, conforme forem no exemplo de Olá, pode concluir este passo na Olá mesma sessão do PowerShell.
+1. Obter os gateways da rede virtual. Se ambos os gateways estiverem na mesma subscrição, como acontece no exemplo, pode concluir esta etapa na mesma sessão do PowerShell.
 
   ```powershell
   $vnet1gw = Get-AzureRmVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1
   $vnet4gw = Get-AzureRmVirtualNetworkGateway -Name $GWName4 -ResourceGroupName $RG4
   ```
-2. Crie Olá TestVNet1 tooTestVNet4 ligação. Neste passo, criará Olá ligação da TestVNet1 tooTestVNet4. Verá uma chave partilhada referenciada nos exemplos de Olá. Pode utilizar os seus próprios valores para a chave partilhada Olá. Olá coisa que essa chave partilhada Olá, é importante tem de corresponder ao ambas as ligações. Criar uma ligação pode demorar uns toocomplete breves instantes.
+2. Criar a ligação da TestVNet1 para a TestVNet4. Neste passo, vai criar a ligação da TestVNet1 à TestVNet4. Nos exemplos, verá uma chave partilhada referenciada. Pode utilizar os seus próprios valores para a chave partilhada. Importante: a chave partilhada tem de corresponder a ambas as ligações. A criação de uma ligação pode demorar algum tempo.
 
   ```powershell
   New-AzureRmVirtualNetworkGatewayConnection -Name $Connection14 -ResourceGroupName $RG1 `
   -VirtualNetworkGateway1 $vnet1gw -VirtualNetworkGateway2 $vnet4gw -Location $Location1 `
   -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3'
   ```
-3. Crie Olá TestVNet4 tooTestVNet1 ligação. Este passo é semelhante toohello um acima, exceto que está a criar ligação Olá da TestVNet4 tooTestVNet1. Certifique-se de chaves de Olá partilhada correspondem. será possível estabelecer a ligação de Olá após alguns minutos.
+3. Criar a ligação da TestVNet4 para a TestVNet1. Este passo é semelhante ao anterior, exceto que está a criar a ligação da TestVNet4 para a TestVNet1. Verifique se as chaves partilhadas correspondem. Após alguns minutos, estará ligado.
 
   ```powershell
   New-AzureRmVirtualNetworkGatewayConnection -Name $Connection41 -ResourceGroupName $RG4 `
   -VirtualNetworkGateway1 $vnet4gw -VirtualNetworkGateway2 $vnet1gw -Location $Location4 `
   -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3'
   ```
-4. Verifique a ligação. Consulte a secção de Olá [como tooverify a ligação](#verify).
+4. Verifique a ligação. Veja a secção [Como verificar a ligação](#verify).
 
-## <a name="difsub"></a>Como tooconnect VNets que estão em subscrições diferentes
+## <a name="difsub"></a>Como ligar VNets que estão em subscrições diferentes
 
 ![Diagrama v2v](./media/vpn-gateway-vnet-vnet-rm-ps/v2vdiffsub.png)
 
-Neste cenário, vamos ligar TestVNet1 e TestVNet5. TestVNet1 e TestVNet5 residem em subscrições diferentes. subscrições de Olá não é necessário toobe associado Olá mesmo inquilino do Active Directory. diferença Olá entre estes passos e o conjunto anterior Olá é que alguns dos passos de configuração de Olá necessitam toobe efetuada numa sessão separada do PowerShell no contexto de Olá da subscrição segundo Olá. Especialmente quando Olá duas subscrições pertencem toodifferent organizações.
+Neste cenário, vamos ligar TestVNet1 e TestVNet5. TestVNet1 e TestVNet5 residem em subscrições diferentes. As subscrições não têm de estar associadas ao mesmo inquilino do Active Directory. A diferença entre estes passos e as definições anteriores é que alguns dos passos de configuração têm de ser realizados numa sessão separada do PowerShell no contexto da segunda subscrição. especialmente quando as duas subscrições pertencem a organizações distintas.
 
 ### <a name="step-5---create-and-configure-testvnet1"></a>Passo 5 - Criar e configurar a TestVNet1
 
-Tem de concluir [passo 1](#Step1) e [passo 2](#Step2) de Olá anterior secção toocreate e configurar a TestVNet1 e hello do VPN Gateway da TestVNet1. Para esta configuração, não são necessária toocreate TestVNet4 da secção anterior Olá, embora se criá-la, este será não entrar em conflito com estes passos. Depois de concluir o passo 1 e o passo 2, prosseguir para o passo 6 toocreate TestVNet5. 
+Tem de concluir o [Passo 1](#Step1) e o [Passo 2](#Step2) da secção anterior para criar e configurar a TestVNet1 e o Gateway de VPN da TestVNet1. Para esta configuração, não tem de criar a TestVNet4 da secção anterior, embora se a criar, não entrará em conflito com estes passos. Depois de concluir o Passo 1 e o Passo 2, avance para o Passo 6 para criar a TestVNet5. 
 
-### <a name="step-6---verify-hello-ip-address-ranges"></a>Passo 6 – Certifique-se de intervalos de endereços IP Olá
+### <a name="step-6---verify-the-ip-address-ranges"></a>Passo 6 – Verificar os intervalos de endereços IP
 
-É importante toomake certificar-se de que espaço de endereços IP Olá de Olá nova rede virtual, TestVNet5, não se sobreponha a nenhum dos intervalos de Vnets ou intervalos de gateway de rede local. Neste exemplo, redes virtuais Olá poderão pertencer toodifferent organizações. Para este exercício, pode utilizar Olá os seguintes valores para Olá TestVNet5:
+É importante garantir que o espaço de endereços IP da nova rede virtual, TestVNet5, não se sobrepõe a qualquer um dos intervalos de VNets ou intervalos de gateways de rede local. Neste exemplo, as redes virtuais poderão pertencer a diferentes organizações. Para este exercício, pode utilizar os seguintes valores para a TestVNet5:
 
 **Valores da TestVNet5:**
 
@@ -309,9 +309,9 @@ Tem de concluir [passo 1](#Step1) e [passo 2](#Step2) de Olá anterior secção 
 
 ### <a name="step-7---create-and-configure-testvnet5"></a>Passo 7 – Criar e configurar a TestVNet5
 
-Este passo tem de ser efetuado no contexto de Olá da nova subscrição de Olá. Esta parte pode ser realizada pelo administrador de Olá numa organização diferente proprietária da subscrição Olá.
+Este passo tem de ser realizado no contexto da nova subscrição. Esta parte pode ser realizada pelo administrador noutra organização que seja proprietária da subscrição.
 
-1. Declarar as variáveis. Ser tooreplace se valores Olá com Olá aqueles que pretende que toouse para a sua configuração.
+1. Declarar as variáveis. Confirme que substitui os valores pelos que pretende utilizar para a configuração.
 
   ```powershell
   $Sub5 = "Replace_With_the_New_Subcription_Name"
@@ -331,19 +331,19 @@ Este passo tem de ser efetuado no contexto de Olá da nova subscrição de Olá.
   $GWIPconfName5 = "gwipconf5"
   $Connection51 = "VNet5toVNet1"
   ```
-2. Ligar toosubscription 5. Abra a consola do PowerShell e ligue tooyour conta. Utilize Olá toohelp de exemplo, ligar os seguintes:
+2. Estabelecer ligação à subscrição 5. Abra a consola do PowerShell e ligue-se à sua conta. Utilize o seguinte exemplo para o ajudar na ligação:
 
   ```powershell
   Login-AzureRmAccount
   ```
 
-  Verifique Olá subscrições para a conta de Olá.
+  Verifique as subscrições da conta.
 
   ```powershell
   Get-AzureRmSubscription
   ```
 
-  Especifique que pretende que o toouse de subscrição de Olá.
+  Especifique a subscrição que pretende utilizar.
 
   ```powershell
   Select-AzureRmSubscription -SubscriptionName $Sub5
@@ -353,7 +353,7 @@ Este passo tem de ser efetuado no contexto de Olá da nova subscrição de Olá.
   ```powershell
   New-AzureRmResourceGroup -Name $RG5 -Location $Location5
   ```
-4. Crie Olá configurações de sub-rede para a TestVNet5.
+4. Criar as configurações de sub-rede para TestVNet5.
 
   ```powershell
   $fesub5 = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName5 -AddressPrefix $FESubPrefix5
@@ -372,38 +372,38 @@ Este passo tem de ser efetuado no contexto de Olá da nova subscrição de Olá.
   $gwpip5 = New-AzureRmPublicIpAddress -Name $GWIPName5 -ResourceGroupName $RG5 `
   -Location $Location5 -AllocationMethod Dynamic
   ```
-7. Crie a configuração do gateway Olá.
+7. Criar a configuração do gateway.
 
   ```powershell
   $vnet5 = Get-AzureRmVirtualNetwork -Name $VnetName5 -ResourceGroupName $RG5
   $subnet5  = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet5
   $gwipconf5 = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName5 -Subnet $subnet5 -PublicIpAddress $gwpip5
   ```
-8. Crie Olá TestVNet5 gateway.
+8. Criar o gateway da TestVNet5.
 
   ```powershell
   New-AzureRmVirtualNetworkGateway -Name $GWName5 -ResourceGroupName $RG5 -Location $Location5 `
   -IpConfigurations $gwipconf5 -GatewayType Vpn -VpnType RouteBased -GatewaySku VpnGw1
   ```
 
-### <a name="step-8---create-hello-connections"></a>Passo 8 - criar ligações Olá
+### <a name="step-8---create-the-connections"></a>Passo 8 - Criar as ligações
 
-Neste exemplo, porque os gateways de Olá estão em subscrições diferentes Olá, iremos tiver dividir este passo em duas sessões do PowerShell marcadas como [subscrição 1] e [subscrição 5].
+Neste exemplo, uma vez que os gateways estão em subscrições diferentes, dividimos este passo em duas sessões do PowerShell marcadas como [Subscrição 1] e [Subscrição 5].
 
-1. **[Subscrição 1]**  Gateway de rede virtual Olá get da subscrição 1. Iniciar sessão e ligar tooSubscription 1 antes de executar o seguinte exemplo de Olá:
+1. **[Subscrição 1]** Obter o gateway de rede virtual da Subscrição 1. Inicie sessão e ligue-se à Subscrição 1 antes de executar o exemplo a seguir:
 
   ```powershell
   $vnet1gw = Get-AzureRmVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1
   ```
 
-  Copiar resultado Olá Olá seguintes elementos e envie estes administrador toohello da subscrição 5 por e-mail ou outro método.
+  Copie a saída dos seguintes elementos e envie-os ao administrador da Subscrição 5 por e-mail ou outro método.
 
   ```powershell
   $vnet1gw.Name
   $vnet1gw.Id
   ```
 
-  Estes dois elementos terão valores toohello semelhante, saída de exemplo a seguir:
+  Estes dois elementos terão valores semelhantes ao seguinte exemplo de saída:
 
   ```
   PS D:\> $vnet1gw.Name
@@ -411,20 +411,20 @@ Neste exemplo, porque os gateways de Olá estão em subscrições diferentes Ol�
   PS D:\> $vnet1gw.Id
   /subscriptions/b636ca99-6f88-4df4-a7c3-2f8dc4545509/resourceGroupsTestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW
   ```
-2. **[Subscrição 5]**  Gateway de rede virtual Olá get da subscrição 5. Iniciar sessão e ligar tooSubscription 5 antes de executar o seguinte exemplo de Olá:
+2. **[Subscrição 5]** Obter o gateway de rede virtual da Subscrição 5. Inicie sessão e ligue-se à Subscrição 5 antes de executar o exemplo a seguir:
 
   ```powershell
   $vnet5gw = Get-AzureRmVirtualNetworkGateway -Name $GWName5 -ResourceGroupName $RG5
   ```
 
-  Copiar resultado Olá Olá seguintes elementos e envie estes administrador toohello da subscrição 1 por e-mail ou outro método.
+  Copie a saída dos seguintes elementos e envie-os para o administrador da Subscrição 1 por e-mail ou outro método.
 
   ```powershell
   $vnet5gw.Name
   $vnet5gw.Id
   ```
 
-  Estes dois elementos terão valores toohello semelhante, saída de exemplo a seguir:
+  Estes dois elementos terão valores semelhantes ao seguinte exemplo de saída:
 
   ```
   PS C:\> $vnet5gw.Name
@@ -432,9 +432,9 @@ Neste exemplo, porque os gateways de Olá estão em subscrições diferentes Ol�
   PS C:\> $vnet5gw.Id
   /subscriptions/66c8e4f1-ecd6-47ed-9de7-7e530de23994/resourceGroups/TestRG5/providers/Microsoft.Network/virtualNetworkGateways/VNet5GW
   ```
-3. **[Subscrição 1]**  Criar ligação Olá TestVNet1 tooTestVNet5. Neste passo, criará Olá ligação da TestVNet1 tooTestVNet5. diferença de Olá aqui é que $vnet5gw não pode ser obtido diretamente porque está numa subscrição diferente. Precisa de toocreate um novo objeto do PowerShell com valores de Olá comunicados da subscrição 1 nos passos Olá acima. Utilize o exemplo de Olá abaixo. Substitua os seus próprios valores Olá nome, a Id e a chave partilhada. Olá coisa que essa chave partilhada Olá, é importante tem de corresponder ao ambas as ligações. Criar uma ligação pode demorar uns toocomplete breves instantes.
+3. **[Subscrição 1]** Criar a ligação da TestVNet1 para a TestVNet5. Neste passo, vai criar a ligação da TestVNet1 à TestVNet5. A diferença aqui é que $vnet5gw não pode ser obtido diretamente porque se está numa subscrição diferente. Terá de criar um novo objeto do PowerShell com os valores comunicados da Subscrição 1 nos passos acima. Utilize o exemplo abaixo. Substitua o Nome, o ID e a chave partilhada pelos seus valores. Importante: a chave partilhada tem de corresponder a ambas as ligações. A criação de uma ligação pode demorar algum tempo.
 
-  Ligar tooSubscription 1 antes de executar o seguinte exemplo de Olá:
+  Ligue-se à Subscrição 1 antes de executar o exemplo a seguir:
 
   ```powershell
   $vnet5gw = New-Object Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
@@ -443,9 +443,9 @@ Neste exemplo, porque os gateways de Olá estão em subscrições diferentes Ol�
   $Connection15 = "VNet1toVNet5"
   New-AzureRmVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -VirtualNetworkGateway2 $vnet5gw -Location $Location1 -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3'
   ```
-4. **[Subscrição 5]**  Criar ligação Olá TestVNet5 tooTestVNet1. Este passo é semelhante toohello um acima, exceto que está a criar ligação Olá da TestVNet5 tooTestVNet1. Olá mesmo processo de criação de um objeto do PowerShell com base nos valores de Olá obtidos na subscrição 1 aplica-se aqui bem. Neste passo, lembre-se de que as chaves de Olá partilhada correspondem.
+4. **[Subscrição 5]** Criar a ligação da TestVNet5 para a TestVNet1. Este passo é semelhante ao de cima, exceto que está a criar a ligação da TestVNet5 para a TestVNet1. Aplica-se também aqui o mesmo processo de criação de um objeto do PowerShell basedo nos valores obtidos na Subscrição 1. Neste passo, verifique se as chaves partilhadas correspondem.
 
-  Ligar tooSubscription 5 antes de executar o seguinte exemplo de Olá:
+  Ligue-se à Subscrição 5 antes de executar o exemplo a seguir:
 
   ```powershell
   $vnet1gw = New-Object Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
@@ -454,7 +454,7 @@ Neste exemplo, porque os gateways de Olá estão em subscrições diferentes Ol�
   New-AzureRmVirtualNetworkGatewayConnection -Name $Connection51 -ResourceGroupName $RG5 -VirtualNetworkGateway1 $vnet5gw -VirtualNetworkGateway2 $vnet1gw -Location $Location5 -ConnectionType Vnet2Vnet -SharedKey 'AzureA1b2C3'
   ```
 
-## <a name="verify"></a>Como tooverify uma ligação
+## <a name="verify"></a>Como verificar uma ligação
 
 [!INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
 
@@ -462,9 +462,9 @@ Neste exemplo, porque os gateways de Olá estão em subscrições diferentes Ol�
 
 ## <a name="faq"></a>FAQ da ligação VNet a VNet
 
-[!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
+[!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
 ## <a name="next-steps"></a>Passos seguintes
 
-* Assim que a ligação estiver concluída, pode adicionar redes virtuais do tooyour máquinas virtuais. Consulte Olá [documentação de Virtual Machines](https://docs.microsoft.com/azure/#pivot=services&panel=Compute) para obter mais informações.
-* Para informações sobre o BGP, consulte Olá [descrição geral do BGP](vpn-gateway-bgp-overview.md) e [como tooconfigure BGP](vpn-gateway-bgp-resource-manager-ps.md).
+* Assim que a ligação estiver concluída, pode adicionar máquinas virtuais às redes virtuais. Veja a documentação das [Máquinas Virtuais](https://docs.microsoft.com/azure/#pivot=services&panel=Compute) para obter mais informações.
+* Para obter informações sobre o BGP, veja a [Descrição Geral do BGP](vpn-gateway-bgp-overview.md) e [Como configurar o BGP](vpn-gateway-bgp-resource-manager-ps.md).

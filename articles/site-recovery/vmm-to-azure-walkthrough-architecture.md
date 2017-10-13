@@ -1,6 +1,6 @@
 ---
-title: "arquitetura de Olá aaaReview para tooAzure de replicação (com o System Center VMM) de Hyper-V com o Azure Site Recovery | Microsoft Docs"
-description: "Este artigo fornece uma descrição geral dos componentes e arquitetura utilizada quando replicar no local VMs de Hyper-V na tooAzure de nuvens do VMM, com o serviço do Azure Site Recovery Olá."
+title: "Analise a arquitetura da replicação do Hyper-V (com o System Center VMM) no Azure com o Azure Site Recovery | Microsoft Docs"
+description: "Este artigo apresenta uma descrição geral dos componentes e da arquitetura utilizada ao replicar VMs de Hyper-V no local em clouds do VMM para o Azure com o serviço Azure Site Recovery."
 services: site-recovery
 documentationcenter: 
 author: rayne-wiselman
@@ -14,80 +14,80 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/24/2017
 ms.author: raynew
-ms.openlocfilehash: ee1f2775b0c929894933b639464176d7a0441519
-ms.sourcegitcommit: 523283cc1b3c37c428e77850964dc1c33742c5f0
-ms.translationtype: MT
+ms.openlocfilehash: df4e227d02901153d3cfcfd4dfd4f11de180763a
+ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/11/2017
 ---
-# <a name="step-1-review-hello-architecture"></a>Passo 1: Rever arquitetura Olá
+# <a name="step-1-review-the-architecture"></a>Passo 1: Rever a arquitetura
 
 
-Este artigo descreve os componentes de Olá e processos utilizados quando replicar no local máquinas de virtuais de Hyper-V em nuvens do System Center Virtual Machine Manager (VMM), tooAzure utilizando Olá [do Azure Site Recovery](site-recovery-overview.md) serviço.
+Este artigo descreve os componentes e os processos utilizados ao replicar máquinas virtuais de Hyper-V no local em clouds do System Center Virtual Machine Manager (VMM) para o Azure com o serviço [Azure Site Recovery](site-recovery-overview.md).
 
-Publique quaisquer comentários na parte inferior de Olá deste artigo ou no Olá [fórum de serviços de recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Publique comentários na parte inferior deste artigo ou no [Fórum dos Serviços de Recuperação do Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
 
 ## <a name="architectural-components"></a>Componentes da arquitetura
 
-Existem vários componentes envolvidos quando replicar VMs Hyper-V no tooAzure de nuvens do VMM.
+Existem vários componentes envolvidos na replicação de VMs de Hyper-V em clouds do VMM para o Azure.
 
 **Componente** | **Requisito** | **Detalhes**
 --- | --- | ---
-**Azure** | No Azure, precisa de uma conta do Microsoft Azure, de uma conta de armazenamento do Azure e de uma rede do Azure. | Dados replicados são guardados na conta do storage Olá e as VMs do Azure são criadas com dados Olá replicado quando ocorre a ativação pós-falha do seu site no local.<br/><br/> Olá VMs do Azure ligar toohello rede virtual do Azure quando são criados.
-**Servidor VMM** | servidor do VMM Olá tem uma ou mais nuvens que contêm anfitriões Hyper-V. | No servidor do VMM Olá instale a replicação de tooorchestrate do fornecedor da recuperação de Site de Olá com a recuperação de Site e registar o servidor de Olá no Olá que cofre dos serviços de recuperação.
-**Anfitrião Hyper-V** | Um ou mais anfitriões/clusters de Hyper-V geridos pelo VMM. |  Instale o agente de serviços de recuperação de Olá em cada membro de anfitrião ou cluster.
-**VMs de Hyper-V** | Uma ou mais VMs em execução num servidor de anfitrião Hyper-V. | Nada tem tooexplicitly instalado em VMs.
-**Redes** |Lógicas e redes VM configurado no servidor do VMM Olá. Uma rede VM deve ser ligado tooa rede lógica que está associada à nuvem Olá. | Redes VM são mapeadas tooAzure de redes virtuais, para que as VMs do Azure estão localizadas numa rede quando são criados após a ativação pós-falha.
+**Azure** | No Azure, precisa de uma conta do Microsoft Azure, de uma conta de armazenamento do Azure e de uma rede do Azure. | Os dados replicados são armazenados na conta de armazenamento e as VMs do Azure são criadas com os dados replicados quando ocorre a ativação pós-falha a partir do site no local.<br/><br/> As VMs do Azure ligam-se à rede virtual do Azure quando são criadas.
+**Servidor VMM** | O servidor VMM tem uma ou mais clouds que contêm anfitriões Hyper-V. | No servidor VMM, instale o Fornecedor do Site Recovery para orquestrar a replicação com este serviço e registar o servidor no cofre dos Serviços de Recuperação.
+**Anfitrião Hyper-V** | Um ou mais anfitriões/clusters de Hyper-V geridos pelo VMM. |  Instale o agente dos Serviços de Recuperação em cada anfitrião ou membro do cluster.
+**VMs de Hyper-V** | Uma ou mais VMs em execução num servidor de anfitrião Hyper-V. | Nada tem de estar explicitamente instalado nas VMs.
+**Redes** |Redes lógicas e de VMs configuradas no servidor VMM. Uma rede VM deve ser ligada a uma rede lógica que está associada à nuvem. | As redes de VMs são mapeadas para as redes virtuais do Azure, para que as VMs do Azure sejam alocadas numa rede quando forem criadas após uma ativação pós-falha.
 
-Saiba mais sobre os pré-requisitos de implementação de Olá e os requisitos para cada um destes componentes no Olá [matriz de suporte](site-recovery-support-matrix-to-azure.md).
+Saiba mais sobre os pré-requisitos de implementação e os requisitos para cada um destes componentes na [matriz de suporte](site-recovery-support-matrix-to-azure.md).
 
 
-**Figura 1: Replicar VMs em anfitriões Hyper-V no VMM nuvens tooAzure**
+**Figura 1: Replicar VMs em anfitriões Hyper-V em clouds de VMM para o Azure**
 
 ![Componentes](./media/vmm-to-azure-walkthrough-architecture/arch-onprem-onprem-azure-vmm.png)
 
 
 ## <a name="replication-process"></a>Processo de replicação
 
-**Figura 2: Processo de replicação e a recuperação para tooAzure de replicação de Hyper-V**
+**Figura 2: Processo de replicação e de recuperação da replicação do Hyper-V para o Azure**
 
 ![fluxo de trabalho](./media/vmm-to-azure-walkthrough-architecture/arch-hyperv-azure-workflow.png)
 
 ### <a name="enable-protection"></a>Ativar a proteção
 
-1. Depois de ativar a proteção para uma VM de Hyper-V, no Olá portal do Azure ou no local, Olá **ativar a proteção** é iniciado.
-2. Olá tarefa verifica que a máquina Olá está em conformidade com os pré-requisitos, antes de invocar Olá [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx), tooset a replicação com definições de Olá que configurou.
-3. tarefa de Olá começa a replicação inicial invocando Olá [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx) método, tooinitialize uma replicação completa de VM e tooAzure de discos virtuais de VM de Olá a enviar.
-4. Pode monitorizar a tarefa de Olá na Olá **tarefas** separador.      ![Lista de tarefas](media/vmm-to-azure-walkthrough-architecture/image1.png)![Ativar a desagregação da proteção](media/vmm-to-azure-walkthrough-architecture/image2.png)
+1. Depois de ativar a proteção para uma VM Hyper-V, no portal do Azure ou no local, **Ativar a proteção** é iniciado.
+2. A tarefa verifica se a máquina está em conformidade com os pré-requisitos, antes de invocar o [CreateReplicationRelationship](https://msdn.microsoft.com/library/hh850036.aspx), para configurar a replicação com as definições que configurou.
+3. A tarefa inicia a replicação inicial ao invocar o método [StartReplication](https://msdn.microsoft.com/library/hh850303.aspx), para inicializar uma replicação de VM completa e enviar os discos virtuais da VM para o Azure.
+4. Pode monitorizar a tarefa no separador **Tarefas**.      ![Lista de tarefas](media/vmm-to-azure-walkthrough-architecture/image1.png)![Ativar a desagregação da proteção](media/vmm-to-azure-walkthrough-architecture/image2.png)
 
-### <a name="replicate-hello-initial-data"></a>Replicar os dados iniciais Olá
+### <a name="replicate-the-initial-data"></a>Replicar os dados iniciais
 
 1. Um [instantâneo de VM Hyper-V](https://technet.microsoft.com/library/dd560637.aspx) é tirado quando a replicação inicial é acionada.
-2. Discos rígidos virtuais são replicados um de cada vez até estiverem tooAzure copiados todos os. Isto pode demorar algum tempo, dependendo Olá tamanho da VM e largura de banda de rede. toooptimize a utilização da rede, consulte [como toomanage no local a utilização de largura de banda da rede de proteção de tooAzure](https://support.microsoft.com/kb/3056159).
-3. Se ocorrerem alterações de disco enquanto a replicação inicial está em curso, Olá controlador de replicação de réplica do Hyper-V controla essas alterações como registos de replicação de Hyper-V (. hrl). Estes ficheiros estão localizados no Olá mesma pasta que os discos de Olá. Cada disco tem um ficheiro. hrl associado que será enviado toosecondary armazenamento.
-4. ficheiros de registo e de instantâneo de Olá consumam recursos de disco enquanto a replicação inicial está em curso.
-5. Quando a replicação inicial Olá estiver concluída, o instantâneo VM de Olá é eliminado. Alterações de disco delta no registo de Olá são sincronizadas e intercaladas toohello disco de principal.
+2. Os discos rígidos virtuais são replicados, um de cada vez, até serem todos copiados para o Azure. Pode demorar algum tempo, consoante o tamanho da VM e a largura de banda da rede. Para otimizar a utilização da rede, veja [Como gerir a utilização de largura de banda da rede de proteção no local do Azure](https://support.microsoft.com/kb/3056159).
+3. Se ocorrerem alterações de disco enquanto a replicação inicial estiver em curso, o Controlador de Replicação de Réplica do Hyper-V controla essas alterações como Registos de Replicação do Hyper-V (.hrl). Estes ficheiros estão localizados na mesma pasta que os discos. Cada disco tem um ficheiro de .hrl associado que será enviado para o armazenamento secundário.
+4. Os ficheiros de instantâneo e de registo consomem recursos do disco quando a replicação inicial está em curso.
+5. Quando a replicação inicial for concluída, o instantâneo da VM é eliminado. As alterações de disco delta no registo são sincronizadas e unidas ao disco principal.
 
 
 ### <a name="finalize-protection"></a>Finalizar a proteção
 
-1. Após a replicação inicial Olá, hello **finalizar proteção na máquina virtual de Olá** tarefa configura a rede e outras definições de pós-replicação para que máquina virtual de Olá está protegida.
+1. Após a conclusão da replicação inicial, a tarefa **Finalizar proteção na máquina virtual** configura a rede e outras definições de pós-replicação, para que a máquina virtual fique protegida.
     ![Finalizar a tarefa de proteção](media/vmm-to-azure-walkthrough-architecture/image3.png)
-2. Se estiver a replicar tooAzure, poderá ter definições de Olá tootweak para a máquina virtual de Olá, para que fique preparada para ativação pós-falha. Neste momento, pode executar um toocheck de ativação pós-falha de teste que tudo está a funcionar conforme esperado.
+2. Se está a replicar para o Azure, poderá ter de otimizar as definições para a máquina virtual para que fique preparada para a ativação pós-falha. Nesta altura, pode executar uma ativação pós-falha de teste para verificar que tudo está a funcionar conforme esperado.
 
-### <a name="replicate-hello-delta"></a>Replicar delta Olá
+### <a name="replicate-the-delta"></a>Replicar o delta
 
-1. Após a replicação inicial Olá, começa a sincronização delta, de acordo com as definições de replicação.
-2. Olá controlador de replicação de réplica do Hyper-V controla Olá alterações tooa disco virtual como ficheiros. hrl. Cada disco que está configurado para replicação tem um ficheiro .hrl associado. Este registo é enviado a conta de armazenamento do cliente de toohello após a conclusão da replicação inicial. Quando um registo estiver em trânsito tooAzure, Olá as alterações no disco principal Olá são controladas no outro ficheiro de registo, na Olá mesmo diretório.
-3. Durante a replicação inicial e diferenças, pode monitorizar Olá VM na Olá vista VM. [Saiba mais](site-recovery-monitoring-and-troubleshooting.md#monitor-replication-health-for-virtual-machines).  
+1. Depois da replicação inicial, começa a sincronização delta, de acordo com as definições de replicação.
+2. O Controlador de Replicação de Réplica do Hyper-V verifica as alterações efetuadas num disco rígido virtual como ficheiros .hrl. Cada disco que está configurado para replicação tem um ficheiro .hrl associado. Este registo é enviado para a conta de armazenamento do cliente depois de concluída a replicação inicial. Quando um registo está em trânsito para o Azure, as alterações ao disco principal são controladas noutro ficheiro de registo no mesmo diretório.
+3. Durante a replicação inicial e delta, pode monitorizar a VM na vista de VM. [Saiba mais](site-recovery-monitoring-and-troubleshooting.md#monitor-replication-health-for-virtual-machines).  
 
 ### <a name="synchronize-replication"></a>Sincronizar replicação
 
-1. Se a replicação delta falhar, e uma replicação completa seria dispendiosa em termos de largura de banda ou de tempo, então uma VM fica marcada para ressincronização. Por exemplo, se os ficheiros. hrl Olá atingirem 50% do tamanho do disco Olá, em seguida, hello VM será marcada para ressincronização.
-2.  A ressincronização minimiza a quantidade de Olá de dados enviados por computação de somas de verificação de máquinas de virtuais de origem e destino Olá e enviar apenas os dados delta Olá. A ressincronização utiliza um algoritmo de segmentação com blocos fixos, em que os ficheiros de origem e de destino estão divididos em segmentos fixos. As somas de verificação para cada segmento são geradas e, em seguida, em comparação com toodetermine que bloqueia a partir do destino do Olá origem necessidade toobe toohello aplicados.
-3. Após a conclusão da ressincronização, a replicação delta normal deve ser retomada. Por predefinição, a ressincronização está agendada toorun automaticamente fora do horário, mas pode ressincronizar uma máquina virtual manualmente. Por exemplo, pode retomar a ressincronização se ocorrer uma indisponibilidade de rede ou de outro tipo. toodo esta, selecione Olá VM no portal de Olá > **ressincronizar**.
+1. Se a replicação delta falhar, e uma replicação completa seria dispendiosa em termos de largura de banda ou de tempo, então uma VM fica marcada para ressincronização. Por exemplo, se os ficheiros de .hrl atingirem 50% do tamanho do disco, a VM será marcada para ressincronização.
+2.  A ressincronização minimiza a quantidade de dados enviados por computação de somas de verificação das máquinas virtuais de origem e de destino, enviando apenas dados delta. A ressincronização utiliza um algoritmo de segmentação com blocos fixos, em que os ficheiros de origem e de destino estão divididos em segmentos fixos. As somas de verificação para cada segmento são geradas e, em seguida, são comparadas para determinar os blocos da origem que devem ser aplicados ao destino.
+3. Após a conclusão da ressincronização, a replicação delta normal deve ser retomada. Por predefinição, a ressincronização está agendada para ser executada automaticamente fora do horário de expediente, mas pode ressincronizar manualmente uma máquina virtual. Por exemplo, pode retomar a ressincronização se ocorrer uma indisponibilidade de rede ou de outro tipo. Para tal, selecione a VM no portal > **Ressincronizar**.
 
     ![Ressincronização manual](media/vmm-to-azure-walkthrough-architecture/image4.png)
 
@@ -98,22 +98,22 @@ Se ocorrer um erro de replicação, haverá uma repetição interna. Esta lógic
 
 **Categoria** | **Detalhes**
 --- | ---
-**Erros não recuperáveis** | Não é efetuada qualquer tentativa. O estado da VM será **Crítico**, e é necessária a intervenção do administrador. Exemplos destes erros incluem: rutura da cadeia de VHD Estado inválido para a réplica de Olá VM; Erros de autenticação de rede: erros de autorização VM erros não encontrado (para servidores autónomos do Hyper-V)
-**Erros recuperáveis** | As repetições ocorrem a cada intervalo de replicação, utilizando um exponencial término que aumenta Olá tentativas de início de Olá da primeira tentativa de Olá por 1, 2, 4, 8 e de 10 minutos. Se o erro persistir, tente novamente a cada 30 minutos. Os exemplos incluem: erros de rede; erros de espaço insuficiente no disco; condições de falta de memória |
+**Erros não recuperáveis** | Não é efetuada qualquer tentativa. O estado da VM será **Crítico**, e é necessária a intervenção do administrador. Exemplos destes erros incluem: rutura da cadeia VHD; estado inválido da VM de réplica; erros de autenticação de rede: erros de autorização; a VM não encontrou erros (para os servidores Hyper-V autónomos)
+**Erros recuperáveis** | As tentativas ocorrem a cada intervalo de replicação, utilizando um término exponencial que aumenta o intervalo entre tentativas, desde o início da primeira tentativa para 1, 2, 4, 8 e 10 minutos. Se o erro persistir, tente novamente a cada 30 minutos. Os exemplos incluem: erros de rede; erros de espaço insuficiente no disco; condições de falta de memória |
 
 
 
 ## <a name="failover-and-failback-process"></a>Processo de ativação pós-falha e de reativação pós-falha
 
-1. Pode executar um planeadas ou imprevistas [ativação pós-falha](site-recovery-failover.md) de tooAzure de VMs de Hyper-V no local. Se executar uma ativação pós-falha planeada, em seguida, as VMs de origem são encerradas tooensure sem perda de dados.
-2. Pode efetuar a ativação pós-falha de um único computador ou criar [planos de recuperação](site-recovery-create-recovery-plans.md) ativação pós-falha de tooorchestrate de várias máquinas.
-4. Depois de executar a ativação pós-falha de Olá, deve ser Olá toosee capaz de criar as VMs da réplica no Azure. Pode atribuir um toohello de endereço IP público VM, se necessário.
-5. Em seguida, consolidar toostart de ativação pós-falha de Olá aceder à carga de trabalho Olá da réplica de Olá VM do Azure.
-6. Quando o site no local primário estiver novamente disponível, pode fazer a [reativação pós-falha](site-recovery-failback-from-azure-to-hyper-v.md). Pode iniciar uma ativação pós-falha planeada do site primário toohello do Azure. Para uma ativação pós-falha planeada que pode toofailback selecione toohello mesmo VM ou tooan alternativo de localização e sincronizar as alterações entre o Azure e no local, tooensure sem perda de dados. Quando as VMs são criadas no local, a consolidação de ativação pós-falha de Olá.
+1. Executa uma [ativação pós-falha](site-recovery-failover.md) planeada ou não planeada a partir das VMs de Hyper-V no local para o Azure. Se executar uma ativação pós-falha planeada, as VMs de origem são desligadas para garantir que não há perda de dados.
+2. Pode fazer a ativação pós-falha de uma máquina individual ou criar [planos de recuperação](site-recovery-create-recovery-plans.md) para orquestrar a ativação pós-falha de várias máquinas.
+4. Depois de executar a ativação pós-falha, deverá conseguir ver as VMs de réplica criadas no Azure. Pode atribuir um endereço IP público à VM, se necessário.
+5. Em seguida, consolida a ativação pós-falha para começar a aceder à carga de trabalho da VM do Azure de réplica.
+6. Quando o site no local primário estiver novamente disponível, pode fazer a [reativação pós-falha](site-recovery-failback-from-azure-to-hyper-v.md). Arranca uma ativação pós-falha planeada do Azure para o site primário. Nas ativações pós-falha planeadas, pode optar por ativar para a mesma VM ou para uma localização alternativa, bem como sincronizar as alterações entre o Azure e o site no local, para garantir que não se perdem dados. Quando as VMs são criadas no local, é consolidada a ativação pós-falha.
 
 
 
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Aceda demasiado[passo 2: consultar os pré-requisitos de implementação de Olá](vmm-to-azure-walkthrough-prerequisites.md)
+Vá para a [Etapa 2: Analisar os pré-requisitos de implementação](vmm-to-azure-walkthrough-prerequisites.md)
