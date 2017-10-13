@@ -1,5 +1,0 @@
-Os registos de política Framework (SPF) remetente são utilizado toospecifying os servidores de e-mail são permitidos toosend e-mail em nome de um determinado nome de domínio.  Configuração correta dos registos SPF é destinatários tooprevent importante marcar o seu correio eletrónico como 'lixo'.
-
-Olá DNS RFCs originalmente introduzida um novo tipo de registo toosupport da 'SPF' neste cenário. toosupport mais antigos servidores de nomes, estes também permitida a utilização de Olá de registos de toospecify SPF Olá TXT tipo de registo.  Esta ambiguidade guiado tooconfusion, que foi resolvido pelo [RFC 7208](http://tools.ietf.org/html/rfc7208#section-3.1).  Isto indica que os registos SPF só devem ser criados utilizando o tipo de registo TXT Olá e esse tipo de registo Olá SPF foi preterido.
-
-**Os registos SPF são suportados pelo DNS do Azure e deverá ser criados utilizando o tipo de registo do Olá TXT.** Não é suportado o tipo de registo de SPF Olá obsoleto. Quando [importar um ficheiro de zona DNS](../articles/dns/dns-import-export.md), todos os registos SPF utilizando o tipo de registo Olá SPF são convertidos toohello TXT tipo de registo.
