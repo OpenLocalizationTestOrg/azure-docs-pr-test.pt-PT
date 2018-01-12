@@ -756,7 +756,7 @@ A resposta pretendida é um erro 401. Indica que a camada do Passport está a te
 ## <a name="you-now-have-a-rest-api-service-that-uses-oauth2"></a>Agora tem um serviço de API REST que utiliza o OAuth2
 Tem implementada uma API REST utilizando o Restify e o OAuth! Tem agora código suficiente para que possa continuar a desenvolver o seu serviço e compilação neste exemplo. Fez tudo o que podia com este servidor sem utilizar um cliente compatível com o OAuth2. Para esse passo seguinte, utilize uma passagem walk-through adicional como a nossa passagem [Ligar a uma API web utilizando iOS com B2C](active-directory-b2c-devquickstarts-ios.md).
 
-## <a name="next-steps"></a>Passos seguintes
+## <a name="next-steps"></a>Passos Seguintes
 Agora pode aceder a tópicos mais avançados, como:
 
 [Ligar a uma API Web utilizando o iOS com o B2C](active-directory-b2c-devquickstarts-ios.md)
