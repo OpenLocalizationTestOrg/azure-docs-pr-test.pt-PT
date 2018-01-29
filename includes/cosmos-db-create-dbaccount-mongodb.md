@@ -1,31 +1,31 @@
-1. Numa nova janela, inicie sessão no toohello [portal do Azure](https://portal.azure.com/).
-2. No menu à esquerda Olá, clique em **novo**, clique em **bases de dados**e, em **Azure Cosmos DB**, clique em **criar**.
+1. Numa nova janela, inicie sessão no [portal do Azure](https://portal.azure.com/).
+2. No menu esquerdo, clique em **Novo**, clique em **Bases de Dados**e, em **Azure Cosmos DB**, clique em **Criar**.
    
-   ![Captura de ecrã da Olá portal do Azure, realçando mais serviços e a base de dados do Azure Cosmos](./media/cosmos-db-create-dbaccount-mongodb/create-nosql-db-databases-json-tutorial-1.png)
+   ![Captura de ecrã do portal do Azure, com destaque para Mais Serviços e Azure Cosmos DB](./media/cosmos-db-create-dbaccount-mongodb/create-nosql-db-databases-json-tutorial-1.png)
 
-3. No Olá **nova conta** painel, especifique Olá configuração pretendida para Olá conta de base de dados do Azure Cosmos. 
+3. No painel **Nova conta**, especifique a configuração pretendida para a conta do Azure Cosmos DB. 
 
-    Com o Azure Cosmos DB, pode escolher um de quatro modelos de programação: Gremlin (gráficos), MongoDB, SQL (DocumentDB) e Table (chave-valor). 
+    Com base de dados do Azure Cosmos, pode escolher um dos quatro modelos de programação: Gremlin (gráfico), MongoDB, SQL e a tabela (chave-valor). 
        
-    Neste início rápido irá ser programação contra Olá MongoDB API para escolherá **MongoDB** como preencher o formulário de Olá. Contudo, se tiver dados de gráficos para aplicações de redes sociais, dados de documentos de aplicações de catálogos ou dados de chaves-valores (tabela), tenha em conta que o Azure Cosmos DB pode proporcionar uma plataforma de serviço de bases de dados de elevada disponibilidade e distribuída globalmente para todas as aplicações críticas para a sua atividade.
+    Neste guia de introdução, vamos programar com a API MongoDB, pelo que vai escolher **MongoDB** quando preencher o formulário. Contudo, se tiver dados de gráficos para aplicações de redes sociais, dados de documentos de aplicações de catálogos ou dados de chaves-valores (tabela), tenha em conta que o Azure Cosmos DB pode proporcionar uma plataforma de serviço de bases de dados de elevada disponibilidade e distribuída globalmente para todas as aplicações críticas para a sua atividade.
 
-    Preencha Olá **nova conta** painel com informações de Olá na tabela de Olá como guia.
+    Preencha o painel **Nova conta** com as informações que estão na tabela como guia.
  
-    ![Captura de ecrã do painel de base de dados do novo Azure Cosmos Olá](./media/cosmos-db-create-dbaccount-mongodb/create-nosql-db-databases-json-tutorial-2.png)
+    ![Captura de ecrã do painel Novo Azure Cosmos DB](./media/cosmos-db-create-dbaccount-mongodb/create-nosql-db-databases-json-tutorial-2.png)
    
     Definição|Valor sugerido|Descrição
     ---|---|---
-    ID|*Valor exclusivo*|Um nome exclusivo que escolher a conta de base de dados do Azure Cosmos tooidentify Olá. *Documents.Azure.com* é anexado toohello ID fornecer toocreate seu URI, por isso, utilize um ID exclusivo mas identificável. Olá ID pode conter apenas letras minúsculas, números e Olá '-' carateres e tem de ter entre 3 e 50 carateres.
-    API|MongoDB|Iremos irá programação contra Olá [MongoDB API](../articles/documentdb/documentdb-protocol-mongodb.md) posteriormente neste artigo.|
-    Subscrição|*A sua subscrição*|Olá subscrição do Azure que pretende que toouse para a conta de base de dados do Azure Cosmos Olá. 
-    Grupo de Recursos|*Olá mesmo valor como ID*|Olá novo nome grupo de recursos para a sua conta. Simplicidade, pode utilizar Olá mesmo nome como o seu ID. 
-    Localização|*utilizadores de tooyour do Olá região mais próximos*|Olá localização geográfica na qual toohost a sua conta de base de dados do Azure Cosmos. Escolha a localização de Olá mais próximos tooyour utilizadores toogive Olá-os dados de toohello acesso mais rápidos.
+    ID|*Valor exclusivo*|Um nome exclusivo que vai escolher para identificar a conta do Azure Cosmos DB. *documents.azure.com* é anexado ao ID que indicar para criar o seu URI, pelo que deve utilizar um ID exclusivo, mas identificável. O ID pode conter apenas minúsculas, números, o caráter “-” e tem de ter entre três e 50 carateres.
+    API|MongoDB|A API determina o tipo de conta para criar. BD do Azure do Cosmos fornece cinco APIs para se adequa às necessidades da sua aplicação: SQL Server (base de dados do documento), Gremlin (base de dados do gráfico), MongoDB (base de dados do documento), tabelas do Azure e Cassandra, cada qual atualmente necessitam de uma conta separada. <br><br>Selecione **MongoDB** porque neste guia de introdução que está a criar uma base de dados de documento que é consultável MongoDB a utilizar.<br><br>[Saiba mais sobre a API do MongoDB](../articles/cosmos-db/mongodb-introduction.md)|
+    Subscrição|*A sua subscrição*|A subscrição do Azure que quer utilizar para a conta do Azure Cosmos DB. 
+    Grupo de Recursos|*O mesmo valor que o ID*|O nome do grupo de recursos novo para a sua conta. Para simplicidade, pode utilizar o mesmo nome do ID. 
+    Localização|*A região mais próxima dos seus utilizadores*|A localização geográfica na qual vai alojar a sua conta do Azure Cosmos DB. Escolha a localização mais próxima dos seus utilizadores para lhes dar o acesso mais rápido aos dados.
 
-4. Clique em **criar** conta de Olá toocreate.
-5. Na barra de ferramentas Olá, clique em **notificações** processo de implementação de Olá toomonitor.
+4. Clique em **Criar** para criar a conta.
+5. Na barra de ferramentas, clique em **Notificações** para monitorizar o processo de implementação.
 
     ![Notificação de implementação iniciada](./media/cosmos-db-create-dbaccount-mongodb/azure-documentdb-nosql-notification.png)
 
-6.  Quando a implementação de Olá estiver concluída, nova conta de Olá aberta de Olá todos os recursos do mosaico. 
+6.  Quando a implementação estiver concluída, abra a conta nova no mosaico Todos os Recursos. 
 
-    ![Conta de DocumentDB no mosaico de todos os recursos de Olá](./media/cosmos-db-create-dbaccount-mongodb/azure-documentdb-all-resources.png)
+    ![Conta de base de dados do Cosmos do Azure no mosaico todos os recursos](./media/cosmos-db-create-dbaccount-mongodb/azure-documentdb-all-resources.png)

@@ -1,4 +1,4 @@
-Olá tabela seguinte lista os limites de Olá associados Olá diferentes escalões de serviço (S1, S2, S3, F1). Para obter informações sobre o custo de Olá de cada *unidade* em cada camada, consulte [preços do IoT Hub](https://azure.microsoft.com/pricing/details/iot-hub/).
+A tabela seguinte lista os limites associados aos diferentes escalões de serviço (S1, S2, S3, F1). Para obter informações sobre o custo de cada *unidade* em cada escalão, consulte [IoT Hub Pricing (Preços do Hub IoT)](https://azure.microsoft.com/pricing/details/iot-hub/).
 
 | Recurso | S1 Standard | S2 Standard | S3 Standard | F1 Gratuito |
 | --- | --- | --- | --- | --- |
@@ -10,7 +10,7 @@ Olá tabela seguinte lista os limites de Olá associados Olá diferentes escalõ
 > 
 > 
 
-Olá tabela seguinte lista os limites de Olá que se aplicam tooIoT recursos de Hub:
+A tabela seguinte lista os limites que se aplicam aos recursos do Hub IoT:
 
 | Recurso | Limite |
 | --- | --- |
@@ -24,12 +24,12 @@ Olá tabela seguinte lista os limites de Olá que se aplicam tooIoT recursos de 
 | Tamanho máximo da mensagem da cloud para o dispositivo |64 KB |
 | TTL máximo das mensagens da cloud para o dispositivo |2 dias |
 | Contagem máxima de entrega da cloud para o dispositivo <br/> mensagens |100 |
-| Contagem máxima de entrega para mensagens de comentários <br/> na mensagem de resposta de nuvem para o dispositivo de tooa |100 |
-| TTL máximo para mensagens de comentários em <br/> mensagem de resposta de nuvem para o dispositivo de tooa |2 dias |
+| Contagem máxima de entrega para mensagens de comentários <br/> em resposta a uma mensagem da cloud para o dispositivo |100 |
+| TTL máximo para mensagens de comentários em <br/> resposta a uma mensagem da cloud para o dispositivo |2 dias |
 | Tamanho máximo do dispositivo duplo <br/> (etiquetas, propriedades comunicadas e propriedades pretendidas) | 8 KB |
-| Tamanho máximo do valor da cadeia do dispositivo duplo | 512 bytes |
+| Tamanho máximo do valor da cadeia do dispositivo duplo | 4 KB |
 | Profundidade máxima do objeto no dispositivo duplo | 5 |
-| Tamanho máximo do payload de método direto | 8 KB |
+| Tamanho máximo do payload de método direto | 128 KB |
 | Retenção máxima de histórico de tarefas | 30 dias |
 | Máximo de tarefas simultâneas | 10 (para S3), 5 (para S2), 1 (para S1) |
 | Máximo de pontos finais adicionais | 10 (para S1, S2, S3) |
@@ -41,9 +41,9 @@ Olá tabela seguinte lista os limites de Olá que se aplicam tooIoT recursos de 
 
 
 > [!NOTE]
-> Olá, atualmente, o número máximo de dispositivos pode ligar tooa único IoT hub é 500 000. Se quiser tooincrease este limite, contacte [Microsoft Support](https://azure.microsoft.com/en-us/support/options/).
+> Atualmente, o número máximo de dispositivos que pode ligar a um IoT hub único é 500 000. Se pretende aumentar este limite, contacte [Microsoft Support](https://azure.microsoft.com/en-us/support/options/).
 
-Olá serviço IoT Hub acelera pedidos quando Olá seguir quotas for excedido:
+O serviço de IoT Hub limita os pedidos quando as quotas seguintes são ultrapassadas:
 
 | Limitação | Valor por hub |
 | --- | --- |
@@ -53,7 +53,7 @@ Olá serviço IoT Hub acelera pedidos quando Olá seguir quotas for excedido:
 | Envios da cloud para o dispositivo | 83.33/SEC/Unit (5000/mínimo/unidade) (para S3), 1.67/sec/unit (min/100/unidade) (para S1 e S2). |
 | Receções da cloud para o dispositivo |833.33/SEC/Unit (50000/mínimo/unidade) (para S3), 16.67/sec/unit (1000/mínimo/unidade) (para S1 e S2). |
 | Operações de carregamento de ficheiros |ficheiro 83.33 carregar notificações/seg/unidade (5000/mínimo/unidade) (para S3), ficheiros 1.67 carregamento notificações/seg/unidade (min/100/unidade) (para S1 e S2). <br/> 10000 SAS URIs podem ficar fora de uma conta de Armazenamento do Azure ao mesmo tempo.<br/> 10 SAS URIs/dispositivo podem ficar fora de uma só vez. |
-| Métodos diretos | 3000/seg/unidade (para S3), 60/seg/unidade (para S2), 20/seg/unidade (para S1) |
+| Métodos diretos | 24MB/seg/unidade (para S3), 480KB/seg/unidade (para S2), 160KB/seg/unidade (para S1)<br/> Com base no tamanho do medidor de limitação de 8KB. |
 | Leituras de dispositivo duplo | 50/seg/unidade (para S3), Máximo de 10/seg ou 1/seg/unidade (para S2), 10/seg (para S1) |
 | Atualizações de dispositivo duplo | 50/seg/unidade (para S3), Máximo de 10/seg ou 1/seg/unidade (para S2), 10/seg (para S1) |
 | Operações de tarefas <br/> (criar, atualizar, listar, eliminar) | 83.33/SEC/Unit (5000/mínimo/unidade) (para S3), 1.67/sec/unit (min/100/unidade) (para S2), 1.67/sec/unit (min/100/unidade) (para S1) |

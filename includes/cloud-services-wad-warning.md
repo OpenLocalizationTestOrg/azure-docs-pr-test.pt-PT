@@ -1,5 +1,5 @@
 > [!WARNING]
-> Quando ativar o diagnóstico numa função existente, quaisquer extensões ativou serão desativadas quando Olá pacote é implementado. Estas incluem:
+> Quando ativar diagnósticos para uma função existente, as extensões que já definiu são desativados quando o pacote é implementado. Estas incluem:
 >
 > * Diagnóstico de agente de monitorização Microsoft
 > * Monitorização de segurança do Microsoft Azure
@@ -11,5 +11,5 @@
 > * Windows extensão de ambiente de trabalho remoto do Azure
 > * Recoletor de registos do Azure do Windows
 >
-> Pode voltar a ativar as extensões de via Olá Portal do Azure ou o PowerShell depois de ter implementado a função de Olá atualizado.
+> Só pode repor as extensões através do portal do Azure ou do PowerShell depois de implementar a função atualizada.
 >

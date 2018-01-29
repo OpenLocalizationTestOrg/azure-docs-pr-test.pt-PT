@@ -1,24 +1,25 @@
-1. Inicie sessão no toohello [portal do Azure][Azure portal].
-2. No painel de navegação esquerdo Olá do portal de Olá, clique em **novo**, em seguida, clique em **integração empresarial com**e, em seguida, clique em **reencaminhamento**.
-3. No Olá **criar espaço de nomes** caixa de diálogo, introduza um nome de espaço de nomes. sistema de Olá verifica imediatamente toosee se o nome de Olá está disponível.
-4. No Olá **subscrição** campo, escolha uma subscrição do Azure no espaço de nomes de Olá que toocreate.
-5. No Olá  **[grupo de recursos](../articles/azure-resource-manager/resource-group-portal.md)**  campo, escolha um grupo de recursos existente na qual Olá espaço de nomes em direto ou, crie um novo.      
-6. No **localização**, escolha o país Olá ou região onde será alojado o espaço de nomes.
+1. Inicie sessão no [Portal do Azure][Azure portal].
+2. No menu do lado esquerdo, selecione **+ Criar um recurso**. Em seguida, selecione **Enterprise Integration** > **Reencaminhamento**.
+3. Em **Criar espaço de nomes**, introduza um nome de espaço de nomes. O sistema verifica imediatamente a disponibilidade do nome.
+4. Na caixa **Subscrição**, selecione a subscrição do Azure em que pretende criar o espaço de nomes.
+5. Na caixa [Grupo de recursos](../articles/azure-resource-manager/resource-group-portal.md), selecione um grupo de recursos existente em que o espaço de nomes será colocado ou crie um novo.  
+6. Em **Localização**, selecione o país ou a região em que o espaço de nomes deverá ser alojado.
    
     ![Create namespace][create-namespace]
-7. Clique em **Criar**. Agora, o sistema Olá cria o seu espaço de nomes e ativa-o. Após alguns minutos, Olá sistema Aprovisiona recursos para a sua conta.
+7. Selecione **Criar**. O sistema cria o seu espaço de nomes e ativa o mesmo. Após alguns minutos, o sistema aprovisiona recursos para a sua conta.
 
-### <a name="obtain-hello-management-credentials"></a>Obter credenciais de gestão de Olá
-1. Na lista de Olá dos espaços de nomes, clique em Olá recém-criado espaço de nomes.
-2. No painel de espaço de nomes de Olá, clique em **políticas de acesso partilhado**.
-3. No Olá **políticas de acesso partilhado** painel, clique em **RootManageSharedAccessKey**.
+### <a name="get-management-credentials"></a>Obter credenciais de gestão
+
+1. Selecione **Todos os recursos** e, em seguida, selecione o nome do espaço de nomes criado recentemente.
+2. No espaço de nomes Reencaminhamento, clique em **Políticas de acesso partilhado**.  
+3. Em **Políticas de acesso partilhado**, selecione **RootManageSharedAccessKey**.
    
     ![connection-info][connection-info]
-4. No Olá **política: RootManageSharedAccessKey** painel, clique no botão de cópia de Olá junto demasiado**chave de cadeia – primária da ligação**, toocopy Olá ligação cadeia tooyour área de transferência para utilização posterior. Cole este valor no Bloco de Notas ou noutra localização temporária.
+4. Em **Policy: RootManageSharedAccessKey**, selecione o botão **Copiar**, junto a **Cadeia de ligação — chave primária**. Esta ação copia a cadeia de ligação para a sua área de transferência, para que possa utilizá-la posteriormente. Cole este valor no Bloco de Notas ou noutra localização temporária.
    
     ![connection-string][connection-string]
 
-5. Passo anterior repetida Olá, copiar e colar o valor Olá **chave primária** tooa localização temporária para utilização posterior.  
+5. Repita o passo anterior para copiar e colar o valor da **Chave primária** para uma localização temporária para utilizar mais tarde.  
 
 <!--Image references-->
 

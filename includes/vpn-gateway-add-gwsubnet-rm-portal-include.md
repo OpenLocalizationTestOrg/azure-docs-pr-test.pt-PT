@@ -1,8 +1,8 @@
-1. No Olá [portal](http://portal.azure.com), navegue até toohello Resource Manager rede virtual para o qual pretende toocreate um gateway de rede virtual.
-2. No Olá **definições** secção da sua página de VNet e clique em **sub-redes** página do tooexpand Olá sub-redes.
-3. No Olá **sub-redes** página, clique em **+ sub-rede do Gateway** tooopen Olá **adicionar sub-rede** página.
+1. No [portal](http://portal.azure.com), navegue para a rede virtual do Gestor de Recursos para a qual pretende criar um gateway de rede virtual.
+2. Na secção **Definições** da página da VNet, clique em **Sub-redes** para expandir a página Sub-redes.
+3. Na página **Sub-redes**, clique em **+Sub-rede do gateway** para abrir a página **Adicionar sub-rede**.
 
-  ![Adicionar sub-rede do gateway Olá](./media/vpn-gateway-add-gwsubnet-rm-portal-include/addgwsubnet.png "adicionar sub-rede do gateway Olá")
-4. Olá **nome** para a sub-rede é automaticamente preenchida com Olá valor "GatewaySubnet". Este valor é necessário para sub-rede do Azure toorecognize Olá como a sub-rede do gateway Olá. Ajustar Olá preenchida automaticamente **intervalo de endereços** valores toomatch os requisitos de configuração, em seguida, clique em **OK** na parte inferior de Olá da sub-rede do Olá página toocreate Olá.
+  ![Add the gateway subnet](./media/vpn-gateway-add-gwsubnet-rm-portal-include/addgwsub.png "Add the gateway subnet")
+4. O **Nome** da sub-rede é preenchido automaticamente com o valor "GatewaySubnet". Este valor é obrigatório para que o Azure reconheça a sub-rede como a sub-rede do gateway. Ajuste os valores de preenchimento automático **Intervalo de endereços** para corresponder aos requisitos de configuração e, em seguida, clique em **OK** na parte inferior da página para criar a sub-rede.
 
-  ![Adicionar a sub-rede de Olá](./media/vpn-gateway-add-gwsubnet-rm-portal-include/addsubnetgw.png "adicionar a sub-rede de Olá")
+  ![Adding the subnet](./media/vpn-gateway-add-gwsubnet-rm-portal-include/addsubnetgw.png "Adding the subnet")

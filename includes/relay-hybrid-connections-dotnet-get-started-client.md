@@ -1,15 +1,16 @@
 ### <a name="create-a-console-application"></a>Criar uma aplicação de consola
 
-Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação de Consola (.NET Framework)**.
+No Visual Studio, crie um novo projeto de **Aplicação de Consola (.NET Framework)**.
 
-### <a name="add-hello-relay-nuget-package"></a>Adicionar o pacote NuGet do reencaminhamento de Olá
+### <a name="add-the-relay-nuget-package"></a>Adicionar o pacote NuGet de Reencaminhamento
 
-1. Clique no projeto Olá recém-criado e, em seguida, clique em **gerir pacotes NuGet**.
-2. Clique em Olá **procurar** separador, em seguida, procure "Microsoft.Azure.Relay" e selecione Olá **reencaminhamento do Microsoft Azure** item. Clique em **instalar** toocomplete Olá instalação, em seguida, feche esta caixa de diálogo.
+1. Clique com o botão direito do rato no projeto recém-criado e, em seguida, selecione **Gerir Pacotes NuGet**.
+2. Selecione **Procurar** e, em seguida, procure **Microsoft.Azure.Relay**. Nos resultados da pesquisa, selecione **Reencaminhamento do Microsoft Azure**. 
+3. Selecione **Instalar** para concluir a instalação. Feche a caixa de diálogo.
 
-### <a name="write-some-code-toosend-messages"></a>Escrever alguns códigos toosend mensagens
+### <a name="write-code-to-send-messages"></a>Escrever código para enviar mensagens
 
-1. Substituir a existente Olá `using` declarações, Olá parte superior do ficheiro Program.cs de Olá com seguinte Olá `using` instruções:
+1. Na parte superior do ficheiro Program.cs, substitua as instruções `using` existentes pelas seguintes instruções `using`:
    
     ```csharp
     using System;
@@ -18,7 +19,7 @@ Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação 
     using System.Threading.Tasks;
     using Microsoft.Azure.Relay;
     ```
-2. Adicionar constantes toohello `Program` classe para detalhes de ligação do Olá híbrida. Substitua os marcadores de posição de Olá entre parênteses Retos valores Olá obtido durante a criação da ligação híbrida Olá. Ser toouse se Olá completamente qualificado espaço de nomes:
+2. Adicione constantes à classe `Program`, para obter os detalhes da ligação híbrida. Substitua os marcadores de posição entre parênteses retos pelos valores que obteve quando criou a ligação híbrida. Certifique-se de que utiliza o nome de espaço de nomes totalmente qualificado.
    
     ```csharp
     private const string RelayNamespace = "{RelayNamespace}.servicebus.windows.net";
@@ -26,74 +27,74 @@ Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação 
     private const string KeyName = "{SASKeyName}";
     private const string Key = "{SASKey}";
     ```
-3. Adicionar Olá seguinte método toohello `Program` classe:
+3. Adicione o seguinte método à classe `Program`:
    
     ```csharp
     private static async Task RunAsync()
     {
-        Console.WriteLine("Enter lines of text toosend toohello server with ENTER");
+        Console.WriteLine("Enter lines of text to send to the server with ENTER");
    
-        // Create a new hybrid connection client
+        // Create a new hybrid connection client.
         var tokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider(KeyName, Key);
         var client = new HybridConnectionClient(new Uri(String.Format("sb://{0}/{1}", RelayNamespace, ConnectionName)), tokenProvider);
    
-        // Initiate hello connection
+        // Initiate the connection.
         var relayConnection = await client.CreateConnectionAsync();
    
-        // We run two concurrent loops on hello connection. One 
-        // reads input from hello console and writes it toohello connection 
-        // with a stream writer. hello other reads lines of input from hello 
-        // connection with a stream reader and writes them toohello console. 
-        // Entering a blank line will shut down hello write task after 
-        // sending it toohello server. hello server will then cleanly shut down
-        // hello connection which will terminate hello read task.
+        // Run two concurrent loops on the connection. One 
+        // reads input from the console and writes it to the connection 
+        // with a stream writer. The other reads lines of input from the 
+        // connection with a stream reader and writes them to the console. 
+        // Entering a blank line shuts down the write task after 
+        // sending it to the server. The server then cleanly shuts down
+        // the connection, which terminates the read task.
    
         var reads = Task.Run(async () => {
-            // Initialize hello stream reader over hello connection
+            // Initialize the stream reader over the connection.
             var reader = new StreamReader(relayConnection);
             var writer = Console.Out;
             do
             {
-                // Read a full line of UTF-8 text up toonewline
+                // Read a full line of UTF-8 text up to newline.
                 string line = await reader.ReadLineAsync();
-                // if hello string is empty or null, we are done.
+                // If the string is empty or null, you are done.
                 if (String.IsNullOrEmpty(line))
                     break;
-                // Write toohello console
+                // Write to the console.
                 await writer.WriteLineAsync(line);
             }
             while (true);
         });
    
-        // Read from hello console and write toohello hybrid connection
+        // Read from the console and write to the hybrid connection.
         var writes = Task.Run(async () => {
             var reader = Console.In;
             var writer = new StreamWriter(relayConnection) { AutoFlush = true };
             do
             {
-                // Read a line form hello console
+                // Read a line from the console.
                 string line = await reader.ReadLineAsync();
-                // Write hello line out, also when it's empty
+                // Write the line out, also when it's empty.
                 await writer.WriteLineAsync(line);
-                // Quit when hello line was empty
+                // Quit when the line is empty,
                 if (String.IsNullOrEmpty(line))
                     break;
             }
             while (true);
         });
    
-        // Wait for both tasks toocomplete
+        // Wait for both tasks to finish.
         await Task.WhenAll(reads, writes);
         await relayConnection.CloseAsync(CancellationToken.None);
     }
     ```
-4. Adicione a seguinte linha de código toohello de Olá `Main` método Olá `Program` classe.
+4. Adicione a seguinte linha de código ao método `Main` na classe `Program`.
    
     ```csharp
     RunAsync().GetAwaiter().GetResult();
     ```
    
-    O ficheiro Program.cs deve ter o seguinte aspeto.
+    O ficheiro Program.cs deve ter o seguinte aspeto:
    
     ```csharp
     using System;
@@ -118,58 +119,58 @@ Em primeiro lugar, abra o Visual Studio e crie um novo projeto de **Aplicação 
    
             private static async Task RunAsync()
             {
-                Console.WriteLine("Enter lines of text toosend toohello server with ENTER");
+                Console.WriteLine("Enter lines of text to send to the server with ENTER");
    
-                // Create a new hybrid connection client
+                // Create a new hybrid connection client.
                 var tokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider(KeyName, Key);
                 var client = new HybridConnectionClient(new Uri(String.Format("sb://{0}/{1}", RelayNamespace, ConnectionName)), tokenProvider);
    
-                // Initiate hello connection
+                // Initiate the connection.
                 var relayConnection = await client.CreateConnectionAsync();
    
-                // We run two conucrrent loops on hello connection. One 
-                // reads input from hello console and writes it toohello connection 
-                // with a stream writer. hello other reads lines of input from hello 
-                // connection with a stream reader and writes them toohello console. 
-                // Entering a blank line will shut down hello write task after 
-                // sending it toohello server. hello server will then cleanly shut down
-                // hello connection which will terminate hello read task.
+                // Run two conucrrent loops on the connection. One 
+                // reads input from the console and then writes it to the connection 
+                // with a stream writer. The other reads lines of input from the 
+                // connection with a stream reader and then writes them to the console. 
+                // Entering a blank line shuts down the write task after 
+                // sending it to the server. The server then cleanly shuts down
+                // the connection, which terminates the read task.
    
                 var reads = Task.Run(async () => {
-                    // Initialize hello stream reader over hello connection
+                    // Initialize the stream reader over the connection.
                     var reader = new StreamReader(relayConnection);
                     var writer = Console.Out;
                     do
                     {
-                        // Read a full line of UTF-8 text up toonewline
+                        // Read a full line of UTF-8 text up to newline.
                         string line = await reader.ReadLineAsync();
-                        // If hello string is empty or null, we are done.
+                        // If the string is empty or null, you are done.
                         if (String.IsNullOrEmpty(line))
                             break;
-                        // Write toohello console
+                        // Write to the console.
                         await writer.WriteLineAsync(line);
                     }
                     while (true);
                 });
    
-                // Read from hello console and write toohello hybrid connection
+                // Read from the console and write to the hybrid connection.
                 var writes = Task.Run(async () => {
                     var reader = Console.In;
                     var writer = new StreamWriter(relayConnection) { AutoFlush = true };
                     do
                     {
-                        // Read a line form hello console
+                        // Read a line from the console.
                         string line = await reader.ReadLineAsync();
-                        // Write hello line out, also when it's empty
+                        // Write the line out, also when it's empty.
                         await writer.WriteLineAsync(line);
-                        // Quit when hello line was empty
+                        // Quit when the line is empty.
                         if (String.IsNullOrEmpty(line))
                             break;
                     }
                     while (true);
                 });
    
-                // Wait for both tasks toocomplete
+                // Wait for both tasks to finish.
                 await Task.WhenAll(reads, writes);
                 await relayConnection.CloseAsync(CancellationToken.None);
             }

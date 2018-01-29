@@ -1,0 +1,60 @@
+---
+title: Exemplo de Script do PowerShell do Azure - OMS | Microsoft Docs
+description: Exemplo de Script do PowerShell do Azure - OMS
+services: virtual-machines-windows
+documentationcenter: virtual-machines
+author: neilpeterson
+manager: timlt
+editor: tysonn
+tags: azure-service-management
+ms.assetid: 
+ms.service: virtual-machines-windows
+ms.devlang: na
+ms.topic: sample
+ms.tgt_pltfrm: vm-windows
+ms.workload: infrastructure
+ms.date: 12/12/2017
+ms.author: nepeters
+ms.custom: mvc
+ms.openlocfilehash: 2f9303568838113335343a420913b8dcb84cb49c
+ms.sourcegitcommit: d247d29b70bdb3044bff6a78443f275c4a943b11
+ms.translationtype: MT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 12/13/2017
+---
+# <a name="create-an-operations-management-suite-monitored-vm-with-powershell"></a>Criar um Operations Management Suite monitorizado VM com o PowerShell
+
+Este script cria uma Máquina Virtual do Azure, instala o agente do Operations Management Suite (OMS) e inscreve o sistema com uma área de trabalho do OMS. Assim que o script tem de ser executado, a máquina virtual serão visível na consola do OMS. Além disso, terá de atualizar a chave de área de trabalho e ID de área de trabalho do OMS.
+
+[!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh.md)]
+
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="sample-script"></a>Script de exemplo
+
+[!code-powershell[main](../../../powershell_scripts/virtual-machine/create-vm-monitor-oms/create-windows-vm-detailed-oms.ps1 "Create VM OMS")]
+
+## <a name="clean-up-deployment"></a>Limpar a implementação 
+
+Execute o seguinte comando para remover o grupo de recursos, a VM e todos os recursos relacionados.
+
+```powershell
+Remove-AzureRmResourceGroup -Name myResourceGroup
+```
+
+## <a name="script-explanation"></a>Explicação de script
+
+Este script utiliza os seguintes comandos para criar a implementação. Cada item nas ligações de tabela para a documentação específica do comando.
+
+| Comando | Notas |
+|---|---|
+| [Novo-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Cria um grupo de recursos na qual todos os recursos são armazenados. |
+| [Novo-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm) | Cria a máquina virtual e liga-o para a placa de rede, a rede virtual, a sub-rede e o grupo de segurança de rede. Este comando também abre-se a porta 80 e define as credenciais administrativas. |
+| [Conjunto AzureRmVMExtension](/powershell/module/azurerm.compute/set-azurermvmextension) | Adicione uma extensão de VM para a máquina virtual. Neste caso, a extensão de agente do Operations Management Suite é utilizada para instalar o agente do OMS e inscrever a VM com uma área de trabalho do OMS. |
+|[Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) | Remove um grupo de recursos e todos os recursos contidos. |
+
+## <a name="next-steps"></a>Passos seguintes
+
+Para obter mais informações sobre o módulo Azure PowerShell, consulte [documentação do Azure PowerShell](/powershell/azure/overview).
+
+Exemplos de script do PowerShell de máquina virtual adicional que podem ser encontrados no [documentação do Azure Windows VM](../windows/powershell-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

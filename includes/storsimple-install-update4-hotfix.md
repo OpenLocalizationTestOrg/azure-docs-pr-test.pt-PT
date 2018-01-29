@@ -1,45 +1,45 @@
-<!--author=alkohli last changed: 02/10/17-->
+<!--author=alkohli last changed: 01/23/18-->
 
-#### <a name="toodownload-hotfixes"></a>correções toodownload
+#### <a name="to-download-hotfixes"></a>Para transferir correções
 
-Efetue Olá seguintes passos toodownload Olá atualização de software de Olá catálogo Microsoft Update.
+Execute os seguintes passos para transferir a atualização de software a partir do Catálogo Microsoft Update.
 
-1. Inicie o Internet Explorer e navegue demasiado[http://catalog.update.microsoft.com](http://catalog.update.microsoft.com).
-2. Se esta for a primeira vez utilizando Olá catálogo Microsoft Update neste computador, clique em **instalar** quando pedido tooinstall hello do suplemento do catálogo Microsoft Update.
+1. Inicie o Internet Explorer e navegue para [http://catalog.update.microsoft.com](http://catalog.update.microsoft.com).
+2. Se esta for a primeira vez que utiliza o Catálogo Microsoft Update neste computador, clique em **Instalar** quando lhe for pedido para instalar o suplemento do Catálogo Microsoft Update.
 
     ![Instalar o catálogo](./media/storsimple-install-update2-hotfix/HCS_InstallCatalog-include.png)
 
-3. Na caixa de pesquisa de Olá de Olá catálogo Microsoft Update, introduza o número de Base de dados de conhecimento (KB) Olá de correção de Olá que pretende toodownload, por exemplo **4011839**e, em seguida, clique em **pesquisa**.
+3. Na caixa de pesquisa do Catálogo Microsoft Update, introduza o número da Base de Dados de Conhecimento (BDC) de correção que pretende transferir, por exemplo **4011839**e, em seguida, clique em **Pesquisa**.
    
-    Olá listagem de correção é apresentado, por exemplo, **cumulativa 4.0 atualização do pacote de Software para a série de 8000 do StorSimple**.
+    A lista de correções é apresentada, por exemplo, **Atualização do Pacote de Software Cumulativo 4.0 para StorSimple Série 8000**.
    
     ![Catálogo de pesquisa](./media/storsimple-install-update2-hotfix/HCS_SearchCatalog1-include.png)
 
-4. Clique em **Transferir**. Especifique ou **procurar** tooa localização local onde pretende Olá transfere tooappear. Clique em ficheiros Olá toodownload toohello especificada a localização e a pasta. pasta de Olá também pode ser copiado tooa partilha de rede que seja acessível a partir do dispositivo Olá.
-5. Procure as correções adicionais listados na tabela de Olá acima (**4011841**), e transferência Olá correspondente ficheiros pastas específicas toohello conforme indicado em Olá anterior a tabela.
+4. Clique em **Transferir**. Especifique ou **Pesquise** uma localização local onde pretende que as transferências apareçam. Clique em ficheiros para transferir para a pasta e a localização especificada. A pasta também pode ser copiada para uma partilha de rede que é acessível a partir do dispositivo.
+5. Procure as correções adicionais listados na tabela acima (**4011841**) e transfira os ficheiros correspondentes para as pastas específicas, tal como indicado na tabela anterior.
 
 > [!NOTE]
-> Correções de Olá devem ser acessíveis a ambos os toodetect controladores mensagens de quaisquer potenciais erros de controlador de ponto a ponto Olá.
+> As correções devem ser acessíveis a ambos os controladores para detetar as mensagens de erro potencial do controlador de ponto a ponto.
 >
-> Olá correções têm de ser copiadas em 3 pastas separadas. Por exemplo, a atualização de agente Cis/software/MDS Olá dispositivo pode ser copiada no _FirstOrderUpdate_ Olá, pasta, todas as outras atualizações não acontece foi possível copiar no Olá _SecondOrderUpdate_ pasta, e as atualizações de modo de manutenção copiadas no _ThirdOrderUpdate_ pasta.
+> As correções têm de ser copiadas em três pastas separadas. Por exemplo, a atualização de agente Cis/software/MDS do dispositivo pode ser copiada no _FirstOrderUpdate_ pasta, todas as outras atualizações não acontece foi serem copiadas o _SecondOrderUpdate_ pasta, e as atualizações de modo de manutenção copiadas no _ThirdOrderUpdate_ pasta.
 
-#### <a name="tooinstall-and-verify-regular-mode-hotfixes"></a>tooinstall e certifique-se correções modo normal
+#### <a name="to-install-and-verify-regular-mode-hotfixes"></a>Para instalar e verificar correções do modo normal
 
-Efetuar Olá tooinstall passos a seguir e certifique-se correções modo normal. Se já instalou utilizando Olá portal clássico do Azure, avançar diretamente demasiado[instalar e certifique-se correções do modo de manutenção](#to-install-and-verify-maintenance-mode-hotfixes).
+Execute os seguintes passos para instalar e verificar correções do modo normal. Se já as instalou através do portal clássico do Azure, avance para [instalar e verificar correções de modo de manutenção](#to-install-and-verify-maintenance-mode-hotfixes).
 
-1. tooinstall Olá correções, interface do Windows PowerShell de Olá de acesso na consola de série do dispositivo StorSimple. Siga instruções de detalhado Olá [consola de série utilizar o PuTTy tooconnect toohello](../articles/storsimple/storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console). Na linha de comandos Olá, prima **Enter**.
-2. Selecione **opção 1** toolog no dispositivo toohello com acesso total. Recomendamos que instale a correção de Olá no controlador passivo Olá primeiro.
-3. correção de Olá tooinstall, na linha de comandos Olá, tipo:
+1. Para instalar as correções, aceda à interface do Windows PowerShell na consola de série do dispositivo StorSimple. Siga as instruções detalhadas em [Utilizar o PuTTY para ligar à consola de série](../articles/storsimple/storsimple-8000-deployment-walkthrough-u2.md#use-putty-to-connect-to-the-device-serial-console). Na linha de comandos, prima **Enter**.
+2. Selecione a **Opção 1** para iniciar sessão no dispositivo com acesso total. Recomendamos que primeiro instale a correção no controlador passivo.
+3. Para instalar a correção, na linha de comandos, escreva:
    
-    `Start-HcsHotfix -Path <path tooupdate file> -Credential <credentials in domain\username format>`
+    `Start-HcsHotfix -Path <path to update file> -Credential <credentials in domain\username format>`
    
-    Utilize o IP, em vez de DNS no caminho de partilha no Olá acima comando. parâmetro de credencial de Olá só é utilizado se aceder a uma partilha autenticada.
+    Utilize o IP em vez de DNS no caminho de partilha no comando acima. O parâmetro da credencial é utilizado apenas se aceder a uma partilha autenticada.
    
-    Recomendamos que utilize partilhas de tooaccess de parâmetro de credencial de Olá. Mesmo partilhas que estão abertas demasiado "todos os utilizadores" são, normalmente, não abrir toounauthenticated utilizadores.
+    Recomendamos que utilize o parâmetro da credencial para aceder a partilhas. Mesmo as partilhas abertas para "todos" não são normalmente abertas para utilizadores não autenticados.
    
-    Forneça a palavra-passe Olá quando lhe for pedido.
+    Forneça a palavra-passe quando lhe for pedida.
    
-    Uma saída de exemplo para instalar atualizações de ordem primeiro Olá é mostrada abaixo. Para a atualização de ordem primeiro Olá, terá de ficheiro específico do toopoint toohello.
+    É apresentada abaixo uma saída de exemplo para instalar as primeiras atualizações de pedido. Para a primeira atualização de ordem, tem de apontar para o ficheiro específico.
    
         ````
         Controller0>Start-HcsHotfix -Path \\10.100.100.100\share
@@ -47,16 +47,16 @@ Efetuar Olá tooinstall passos a seguir e certifique-se correções modo normal.
    
         Confirm
    
-        This operation starts hello hotfix installation and could reboot one or
-        both of hello controllers. If hello device is serving I/Os, these will not
-        be disrupted. Are you sure you want toocontinue?
+        This operation starts the hotfix installation and could reboot one or
+        both of the controllers. If the device is serving I/Os, these will not
+        be disrupted. Are you sure you want to continue?
         [Y] Yes [N] No [?] Help (default is "Y"): Y
    
         ````
-4. Tipo **Y** quando o pedido tooconfirm Olá instalação de correção.
-5. Monitorizar Olá update utilizando Olá `Get-HcsUpdateStatus` cmdlet. atualização Olá primeiro irá concluir num controlador de Olá passiva. Depois do controlador passivo Olá é atualizada, existirá uma ativação pós-falha e atualização Olá, em seguida, irão ser aplicada em Olá outro controlador. atualização de Olá está concluída quando ambos os controladores de Olá são atualizados.
+4. Escreva **Y** quando lhe for pedido para confirmar a instalação da correção.
+5. Monitorize a atualização com o cmdlet `Get-HcsUpdateStatus`. A atualização será concluída primeiro no controlador passivo. Assim que o controlador passivo for atualizado, existirá uma ativação pós-falha e a atualização será então aplicada no outro controlador. A atualização é concluída quando ambos os controladores são atualizados.
    
-    Olá saída de exemplo seguinte mostra Olá atualização em curso. Olá `RunInprogress` será `True` quando Olá atualização se encontra em curso.
+    A seguinte saída de exemplo mostra a atualização em curso. O `RunInprogress` será `True` quando a atualização está em curso.
 
     ```
     Controller0>Get-HcsUpdateStatus
@@ -67,7 +67,7 @@ Efetuar Olá tooinstall passos a seguir e certifique-se correções modo normal.
     Controller1Events   :
     ```
    
-     Olá saída de exemplo a seguir indica que a atualização Olá estiver concluída. Olá `RunInProgress` será `False` quando a atualização de Olá foi concluída.
+     A saída de exemplo seguinte indica que a atualização foi concluída. O `RunInProgress` será `False` quando a atualização for concluída.
    
     ```
     Controller0>Get-HcsUpdateStatus
@@ -79,40 +79,40 @@ Efetuar Olá tooinstall passos a seguir e certifique-se correções modo normal.
     ```
 
     > [!NOTE]
-    > Ocasionalmente, Olá cmdlet relatórios `False` quando atualização Olá ainda está em curso. tooensure Olá correção está concluída, aguarde alguns minutos, execute novamente este comando e certifique-se de que Olá `RunInProgress` é `False`. Se estiver, Olá correção foi concluída.
+    > Ocasionalmente, o cmdlet comunica `False` quando a atualização ainda está em curso. Para se certificar de que a correção foi concluída, aguarde alguns minutos, execute novamente este comando e certifique-se de que o `RunInProgress` é `False`. Se for, então a correção foi concluída.
 
-6. Após a conclusão da atualização de software Olá, verifique as versões de software do sistema Olá. Escreva:
+6. Assim que a atualização do software for concluída, verifique as versões do software do sistema. Escreva:
    
     `Get-HcsSystem`
    
-    Deverá ver Olá seguintes versões:
+    Deverá ver as seguintes versões:
    
    * `FriendlySoftwareVersion: StorSimple 8000 Series Update 4.0`
    *  `HcsSoftwareVersion: 6.3.9600.17820`
    
-    Se o número de versão Olá não alterar depois de aplicar a atualização de Olá, indica que correção Olá tooapply falhou. Se tal acontecer, entre em contacto com o [Suporte da Microsoft](../articles/storsimple/storsimple-contact-microsoft-support.md) para obter assistência.
+    Se o número da versão não se alterar depois de aplicar a atualização, indica que a correção não foi aplicada. Se tal acontecer, entre em contacto com o [Suporte da Microsoft](../articles/storsimple/storsimple-contact-microsoft-support.md) para obter assistência.
      
     > [!IMPORTANT]
-    > Tem de reiniciar o controlador de Active Directory Olá através de Olá `Restart-HcsController` cmdlet antes de aplicar Olá próxima atualização.
+    > Tem de reiniciar o controlador de Active Directory através do `Restart-HcsController` cmdlet antes de aplicar a atualização seguinte.
      
-7. Repita os passos 3 a 5 tooinstall Olá Cis/MDS agente transferido tooyour _FirstOrderUpdate_ pasta. 
-8. Repita os passos 3 a 5 tooinstall Olá segundo ordem das atualizações. **Para atualizações de ordem segundo, várias atualizações podem ser instaladas através da execução apenas Olá `Start-HcsHotfix cmdlet` e apontador de toohello de pasta onde estão localizadas segundo as atualizações de ordem. Olá cmdlet irá executar todas as atualizações de Olá disponíveis na pasta Olá.** Se já estiver instalada uma atualização, a lógica de atualização de Olá irá detetar que e não aplicar essa atualização. 
+7. Repita os passos 3 a 5 para instalar o agente de Cis/MDS transferido para o _FirstOrderUpdate_ pasta. 
+8. Repita os passos 3 a 5 para instalar as atualizações de segunda ordem. **Para atualizações de ordem segundo, várias atualizações podem ser instaladas através da execução apenas o `Start-HcsHotfix cmdlet` e apontar para a pasta onde estão localizadas segundo as atualizações de ordem. O cmdlet irá executar todas as atualizações disponíveis na pasta.** Se já estiver instalado uma atualização, a lógica de atualização irá detetar e não irá aplicar essa atualização. 
 
-Depois de instalar todas as correções Olá, utilize Olá `Get-HcsSystem` cmdlet. versões de Olá devem ser:
+Depois de instalar todas as correções, utilize o cmdlet `Get-HcsSystem`. As versões devem ser:
 
    * `CisAgentVersion:  1.0.9441.0`
    * `MdsAgentVersion: 35.2.2.0`
    * `Lsisas2Version: 2.0.78.00`
 
 
-#### <a name="tooinstall-and-verify-maintenance-mode-hotfixes"></a>tooinstall e certifique-se correções do modo de manutenção
-Utilize as atualizações de firmware do KB4011837 tooinstall disco. Estas atualizações acontece e tomar toocomplete cerca de 30 minutos. Pode escolher tooinstall estes numa janela de manutenção planeada por consola ligação de série do dispositivo toohello.
+#### <a name="to-install-and-verify-maintenance-mode-hotfixes"></a>Para instalar e verificar correções do modo de manutenção
+Utilize o KB4011837 para instalar atualizações de firmware do disco. Estas são atualizações disruptivas e demoram cerca de 30 minutos a serem concluídas. Pode optar por instalá-las numa janela de manutenção planeada ao estabelecer uma ligação à consola de série do dispositivo.
 
-Tenha em atenção que se o firmware do disco já se encontra atualizado, não terá de tooinstall estas atualizações. Executar Olá `Get-HcsUpdateAvailability` cmdlet a partir da consola de série de dispositivo do Olá toocheck se as atualizações estão disponíveis e se Olá atualiza tem acontece (modo de manutenção) ou não acontece (modo normal) atualizações.
+Tenha em atenção que se o firmware do disco já estiver atualizado, não terá de instalar estas atualizações. Execute o cmdlet `Get-HcsUpdateAvailability` a partir da consola de série do dispositivo para verificar se as atualizações estão disponíveis e se as atualizações são disruptivas (modo de manutenção) ou não disruptivas (modo normal).
 
-atualizações de firmware do tooinstall Olá disco, siga as instruções de Olá abaixo.
+Para instalar as atualizações de firmware do disco, siga as instruções abaixo.
 
-1. Colocar o dispositivo de Olá em modo de manutenção de Olá. **Tenha em atenção que não deve utilizar a comunicação remota do Windows PowerShell ao ligar o dispositivo de tooa no modo de manutenção. Em vez disso, execute este cmdlet no controlador de dispositivo Olá quando estiver ligado através da consola de série do dispositivo de Olá.** Escreva:
+1. Coloque o dispositivo no modo de manutenção. **Tenha em atenção de que não deve utilizar a comunicação remota do Windows PowerShell ao ligar a um dispositivo no modo de manutenção. Em vez disso, execute este cmdlet no controlador de dispositivo quando estiver ligado através da consola de série do dispositivo.** Escreva:
    
     `Enter-HcsMaintenanceMode`
    
@@ -121,14 +121,14 @@ atualizações de firmware do tooinstall Olá disco, siga as instruções de Ol�
         Controller0>Enter-HcsMaintenanceMode
         Checking device state...
    
-        In maintenance mode, your device will not service IOs and will be disconnected from hello Microsoft Azure StorSimple Manager service. Entering maintenance mode will end hello current session and reboot both controllers, which takes a few minutes toocomplete. Are you sure you want tooenter maintenance mode?
+        In maintenance mode, your device will not service IOs and will be disconnected from the Microsoft Azure StorSimple Manager service. Entering maintenance mode will end the current session and reboot both controllers, which takes a few minutes to complete. Are you sure you want to enter maintenance mode?
         [Y] Yes [N] No (Default is "Y"): Y
    
         -----------------------MAINTENANCE MODE------------------------
         Microsoft Azure StorSimple Appliance Model 8600
         Name: Update4-8600-mystorsimple
         Copyright (C) 2014 Microsoft Corporation. All rights reserved.
-        You are connected tooController0 - Passive
+        You are connected to Controller0 - Passive
         ---------------------------------------------------------------
    
         Serial Console Menu
@@ -138,26 +138,26 @@ atualizações de firmware do tooinstall Olá disco, siga as instruções de Ol�
         [4] Change language
         Please enter your choice>
    
-    Em seguida, reinicie os dois controladores de Olá no modo de manutenção.
-2. atualização de firmware de disco por Olá tooinstall, tipo:
+    Ambos os controladores são, em seguida, reiniciados no modo de manutenção.
+2. Para instalar a atualização de firmware do disco, escreva:
    
-    `Start-HcsHotfix -Path <path tooupdate file> -Credential <credentials in domain\username format>`
+    `Start-HcsHotfix -Path <path to update file> -Credential <credentials in domain\username format>`
    
     É apresentada abaixo uma saída de exemplo.
    
         Controller1>Start-HcsHotfix -Path \\10.100.100.100\share\ThirdOrderUpdates\ -Credential contoso\john
         Enter Password:
-        WARNING: In maintenance mode, hotfixes should be installed on each controller sequentially. After hello hotfix is installed on this controller, install it on hello peer controller.
+        WARNING: In maintenance mode, hotfixes should be installed on each controller sequentially. After the hotfix is installed on this controller, install it on the peer controller.
         Confirm
-        This operation starts a hotfix installation and could reboot one or both of hello controllers. By installing new updates you agree to, and accept any additional terms associated with, hello new functionality listed in hello release notes (https://go.microsoft.com/fwLink/?LinkID=613790). Are you sure you want toocontinue?
+        This operation starts a hotfix installation and could reboot one or both of the controllers. By installing new updates you agree to, and accept any additional terms associated with, the new functionality listed in the release notes (https://go.microsoft.com/fwLink/?LinkID=613790). Are you sure you want to continue?
         [Y] Yes [N] No (Default is "Y"): Y
-        WARNING: Installation is currently in progress. This operation can take several minutes toocomplete.
-3. Monitor Olá instalar progresso com `Get-HcsUpdateStatus` comando. Olá atualização estiver concluída quando hello `RunInProgress` alterações demasiado`False`.
-4. Depois de concluída a instalação de Olá, reinicia o controlador de Olá no qual Olá foi instalada a correção de modo de manutenção. Inicie sessão como opção 1 com acesso total e verificar a versão de firmware do disco Olá. Escreva:
+        WARNING: Installation is currently in progress. This operation can take several minutes to complete.
+3. Monitorize o progresso da instalação com o comando `Get-HcsUpdateStatus`. A atualização está completa quando o `RunInProgress` é alterado para `False`.
+4. Após a instalação estar concluída, o controlador em que a correção do modo de manutenção foi instalada reinicia. Inicie sessão com a opção 1 com acesso total e verifique a versão de firmware do disco. Escreva:
    
    `Get-HcsFirmwareVersion`
    
-   Olá esperado versões de firmware do disco são:
+   As versões de firmware do disco esperadas são:
    
    `XMGJ, XGEG, KZ50, F6C2, VR08, N002, 0106`
    
@@ -168,7 +168,7 @@ atualizações de firmware do tooinstall Olá disco, siga as instruções de Ol�
        Name: Update4-8600-mystorsimple
        Software Version: 6.3.9600.17820
        Copyright (C) 2014 Microsoft Corporation. All rights reserved.
-       You are connected tooController1
+       You are connected to Controller1
        ---------------------------------------------------------------
    
        Controller1>Get-HcsFirmwareVersion
@@ -244,9 +244,9 @@ atualizações de firmware do tooinstall Olá disco, siga as instruções de Ol�
               WD:WD4001FYYG-01SL3:VR08
               WD:WD4001FYYG-01SL3:VR08
    
-    Executar Olá `Get-HcsFirmwareVersion` comando em tooverify controlador segundo Olá que Olá versão do software foi atualizado. Modo de manutenção de Olá, em seguida, pode sair. toodo por isso, escreva Olá seguinte comando para cada controlador de dispositivo:
+    Execute o comando `Get-HcsFirmwareVersion` no segundo controlador para se certificar que a versão do software foi atualizada. Em seguida, pode sair do modo de manutenção. Para tal, escreva o seguinte comando em cada controlador de dispositivo:
    
    `Exit-HcsMaintenanceMode`
 
-5. os controladores de Olá reinicie quando sair do modo de manutenção. Depois de firmware de disco Olá atualizações são aplicadas com êxito e o dispositivo de Olá saiu do modo de manutenção, toohello retorno portal clássico do Azure. Tenha em atenção que portal Olá poderá não mostrar que instalou as atualizações de modo de manutenção Olá durante 24 horas.
+5. Os controladores reiniciam quando sair do modo de manutenção. Assim que as atualizações do firmware do disco forem aplicadas com êxito e o dispositivo tiver saído do modo de manutenção, regresse ao portal clássico do Azure. Tenha em atenção que o portal pode não mostrar que instalou as atualizações do modo de manutenção durante 24 horas.
 

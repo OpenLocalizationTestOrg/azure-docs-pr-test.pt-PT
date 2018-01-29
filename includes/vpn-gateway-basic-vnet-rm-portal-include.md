@@ -1,24 +1,26 @@
-toocreate uma VNet no modelo de implementação do Resource Manager Olá utilizando Olá portal do Azure, siga os passos de Olá abaixo. Olá capturas de ecrã são fornecidas como exemplos. Ser se valores de Olá tooreplace com os seus próprios. Para obter mais informações sobre como trabalhar com redes virtuais, consulte Olá [descrição geral de rede Virtual](../articles/virtual-network/virtual-networks-overview.md).
+Para criar uma VNet no modelo de implementação do Gestor de Recursos com o Portal do Azure, siga os passos abaixo. As capturas de ecrã são disponibilizadas como exemplos. Não se esqueça de substituir os valores pelos seus. Para obter mais informações sobre como trabalhar com redes virtuais, veja [Descrição Geral da Virtual Network](../articles/virtual-network/virtual-networks-overview.md).
 
-1. Num browser, navegue toohello [portal do Azure](http://portal.azure.com) e, se necessário, inicie sessão com a sua conta do Azure.
-2. Clique em **+**. No Olá **marketplace Olá de pesquisa** campo, escreva "Rede Virtual". Localizar **rede Virtual** de Olá devolvido lista e clique em tooopen Olá **rede Virtual** página.
+>[!NOTE]
+>Para esta VNet ligar a uma localização no local, terá de se coordenar com o administrador da rede no local para extrair um intervalo de endereços IP que possa utilizar especificamente para esta rede virtual. Se existir um intervalo de endereços duplicados em ambos os lados da ligação VPN, o tráfego não será encaminhado da forma esperada. Além disso, se pretender ligar esta VNet a outra VNet, o espaço de endereços não pode sobrepor-se a outra VNet. Tenha o cuidado de planear a configuração da rede em conformidade.
+>
+>
+
+1. Num browser, navegue para o [Portal do Azure](http://portal.azure.com) e, se necessário, inicie sessão com a sua conta do Azure.
+2. Clique em **+**. No campo **Procurar no Marketplace**, escreva “Rede Virtual”. Localize a **Rede Virtual** na lista devolvida e clique para abrir a página **Rede Virtual**.
 
   ![Localizar página de recursos da Rede Virtual](./media/vpn-gateway-basic-vnet-rm-portal-include/newvnetportal700.png "Localizar página de recursos da Rede Virtual")
-3. Perto Olá parte inferior da página Olá da rede Virtual, do Olá **selecionar um modelo de implementação** lista, selecione **Resource Manager**e, em seguida, clique em **criar**.
+3. Perto da parte inferior do painel Virtual Network, na página **Selecionar um modelo de implementação**, selecione **Resource Manager** e clique em **Criar**.
 
   ![Selecionar o Resource Manager](./media/vpn-gateway-basic-vnet-rm-portal-include/resourcemanager250.png "Selecionar o Resource Manager")
-4. No Olá **criar rede virtual** página, configurar definições da VNet Olá. Quando preencha os campos de Olá, hello de exclamação vermelho torna-se uma marca de verificação verde quando caracteres Olá introduzidos no campo Olá são válidos. Poderá haver valores preenchidos automaticamente. Se assim for, substitua os valores de Olá com os seus próprios. Olá **criar rede virtual** página procura toohello semelhante seguinte exemplo:
+4. Na página **Criar rede virtual**, configure as definições da VNet. Depois de preencher os campos, o sinal de exclamação vermelho muda para uma marca de verificação verde se os caracteres introduzidos nos campos forem válidos. Poderá haver valores preenchidos automaticamente. Se for esse o caso, substitua-os pelos seus próprios valores. A página **Criar rede virtual** é semelhante ao exemplo seguinte:
 
-  ![Página Criar rede virtual](./media/vpn-gateway-basic-vnet-rm-portal-include/createvnet300.png "Página Criar rede virtual")
-5. **Nome**: introduza o nome de Olá na sua rede Virtual.
-6. **Espaço de endereços**: introduza o espaço de endereços de Olá. Se tiver vários tooadd de espaços de endereços, adicione o seu primeiro espaço de endereços. Pode adicionar mais tarde, espaços de endereços adicionais depois de criar Olá VNet.
-7. **Nome da sub-rede**: Adicionar Olá sub-rede nome e a sub-rede intervalo de endereços. Pode adicionar sub-redes adicionais mais tarde, depois de criar Olá VNet.
-8. **Subscrição**: Certifique-se de que Olá listada de subscrição é Olá correto. Pode alterar as subscrições utilizando Olá lista pendente.
-9. **Grupo de recursos**: selecione um grupo de recursos existente ou crie um novo ao escrever o nome do mesmo. Se estiver a criar um novo grupo, o grupo de recursos nome Olá tooyour de acordo com planeada valores de configuração. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md#resource-groups).
-10. **Localização**: selecione a localização de Olá para a sua VNet. localização de Olá determina onde os recursos de Olá que implemente toothis VNet irão residir.
-11. Selecione **Pin toodashboard** se pretende toofind capaz de toobe a VNet facilmente no dashboard de Olá e, em seguida, clique em **criar**.
+  ![Página Criar rede virtual](./media/vpn-gateway-basic-vnet-rm-portal-include/vnet.png "Página Criar rede virtual")
+5. **Nome**: Introduza o nome da rede virtual.
+6. **Espaço de endereços**: introduza o espaço de endereços. Se tiver vários espaços de endereços para adicionar, adicione o primeiro. Pode adicionar os outros mais tarde, depois de criar a VNet.
+7. **Subscrição**: verifique se a Subscrição listada é a correta. Pode utilizar o menu pendente para mudar de subscrição.
+8. **Grupo de recursos**: selecione um grupo de recursos existente ou crie um novo ao escrever o nome do mesmo. Se estiver a criar um novo grupo, dê-lhe um nome de acordo com os valores de configuração planeados. Para obter mais informações sobre os grupos de recursos, veja [Descrição Geral do Azure Resource Manager](../articles/azure-resource-manager/resource-group-overview.md#resource-groups).
+9. **Localização**: selecione a localização da VNet. A localização determina onde é que os recursos que implementar nesta VNet vão residir.
+10. **Sub-rede**: adicione o nome e o intervalo de endereços da sub-rede. Pode adicionais outras sub-redes mais tarde, depois de criar a VNet.
+11. Selecione **Afixar ao dashboard** se pretender conseguir localizar mais facilmente as suas VNet no dashboard e clique em **Criar**.
 
- ![PIN toodashboard](./media/vpn-gateway-basic-vnet-rm-portal-include/pintodashboard150.png "toodashboard de pin")
-12. Depois de clicar em **criar**, verá um mosaico no dashboard que irá refletir o progresso de Olá da VNet. alterações de mosaico Olá como Olá VNet está a ser criado.
-
-  ![Mosaico Criar rede virtual](./media/vpn-gateway-basic-vnet-rm-portal-include/deploying150.png "Mosaico Criar rede virtual")
+  ![Afixar ao dashboard](./media/vpn-gateway-basic-vnet-rm-portal-include/pintodashboard150.png "afixar ao dashboard")

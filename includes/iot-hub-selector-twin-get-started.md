@@ -1,39 +1,38 @@
 > [!div class="op_single_selector"]
 > * [Node.js](../articles/iot-hub/iot-hub-node-node-twin-getstarted.md)
-> * [C#/node.js](../articles/iot-hub/iot-hub-csharp-node-twin-getstarted.md)
+> * [C#/Node.js](../articles/iot-hub/iot-hub-csharp-node-twin-getstarted.md)
 > * [C#](../articles/iot-hub/iot-hub-csharp-csharp-twin-getstarted.md)
 > * [Java](../articles/iot-hub/iot-hub-java-java-twin-getstarted.md)
+> * [Python](../articles/iot-hub/iot-hub-python-twin-getstarted.md)
 
-Os dispositivos duplos são documentos JSON que armazenam informações de estado dos dispositivos (metadados, configurações e condições). IoT Hub mantém um dispositivo duplo para cada dispositivo que liga tooit.
+Os dispositivos duplos são documentos JSON que armazenam informações de estado dos dispositivos (metadados, configurações e condições). IoT Hub mantém um dispositivo duplo para cada dispositivo que se liga ao mesmo.
 
 Utilize dispositivos duplos para:
 
 * Armazenar metadados do dispositivo da sua solução de back-end.
-* Comunicarão as informações de estado atual, tais como condições (por exemplo, Olá conectividade método utilizado) e capacidades disponíveis da sua aplicação de dispositivo.
-* Sincronize o estado de Olá de execução longa os fluxos de trabalho (tais como atualizações de firmware e de configuração) entre uma aplicação de dispositivo e uma aplicação de back-end.
+* Comunicarão as informações de estado atual, tais como condições (por exemplo, o método de conectividade utilizado) e capacidades disponíveis da sua aplicação de dispositivo.
+* Sincronize o estado de execução longa os fluxos de trabalho (tais como atualizações de firmware e de configuração) entre uma aplicação de dispositivo e uma aplicação de back-end.
 * Consulta os metadados do dispositivo, a configuração ou o estado.
 
 > [!NOTE]
-> Dispositivos duplos foram concebidos para a sincronização de e para consultar as configurações de dispositivo e condições. Mais informations no quando toouse dispositivos duplos podem ser encontrados na [compreender dispositivos duplos][lnk-twins].
+> Dispositivos duplos foram concebidos para a sincronização de e para consultar as configurações de dispositivo e condições. Podem encontrar mais informações sobre quando utilizar dispositivos duplos no [compreender dispositivos duplos][lnk-twins].
 
 Dispositivos duplos são armazenados num IoT hub e contenham:
 
-* *etiquetas*, os metadados do dispositivo acessível apenas a Olá solução de back-end;
-* *pretender propriedades*, objetos JSON modificável pela solução de Olá back-end e observable pela aplicação de dispositivo Olá; e
-* *comunicado propriedades*, objetos JSON modificável pela aplicação de dispositivo Olá e ser lido pelo Olá solução de back-end. As etiquetas e propriedades não podem conter matrizes, mas podem ser aninhados em objetos.
+* *etiquetas*, os metadados do dispositivo acessível apenas ao solução de back-end;
+* *pretender propriedades*, objetos JSON modificável pela solução de back-end e observable pela aplicação do dispositivo; e
+* *comunicado propriedades*, objetos JSON modificável pela aplicação de dispositivo e ser lido pelo solução de back-end. As etiquetas e propriedades não podem conter matrizes, mas podem ser aninhados em objetos.
 
 ![][img-twin]
 
-Além disso, Olá solução de back-end pode consultar dispositivos duplos com base em todos os Olá acima dados.
-Consulte demasiado[compreender dispositivos duplos] [ lnk-twins] para obter mais informações sobre dispositivos duplos e toohello [idioma de consulta do IoT Hub] [ lnk-query] referência para consultas.
+Além disso, o solução de back-end pode consultar dispositivos duplos com base em todos os dados acima.
+Consulte [compreender dispositivos duplos] [ lnk-twins] para obter mais informações sobre dispositivos duplos e o [idioma de consulta do IoT Hub] [ lnk-query] referenciar para a consultar.
 
-> [!NOTE]
-> Neste momento, os dispositivos duplos são acessíveis apenas a partir de dispositivos que ligam tooIoT Hub através do protocolo MQTT Olá. Consulte toohello [suporte MQTT] [ lnk-devguide-mqtt] artigo para obter instruções sobre como toouse de aplicação de dispositivo existente do tooconvert MQTT.
 
 Este tutorial mostrar-lhe como:
 
-* Criar uma aplicação de back-end que adiciona *etiquetas* tooa dispositivo duplo e uma aplicação de dispositivo simulado que comunica a conectividade de canal como um *comunicadas propriedade* no dispositivo duplo de Olá.
-* Consultar os dispositivos da sua aplicação de back-end utilizando filtros em etiquetas Olá e as propriedades que criou anteriormente.
+* Criar uma aplicação de back-end que adiciona *etiquetas* para um dispositivo duplo e uma aplicação de dispositivo simulado que comunica o canal de conectividade como um *comunicadas propriedade* no dispositivo duplo.
+* Consultar os dispositivos da sua aplicação de back-end utilizando filtros na etiquetas e propriedades que criou anteriormente.
 
 <!-- images -->
 [img-twin]: media/iot-hub-selector-twin-get-started/twin.png

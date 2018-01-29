@@ -6,7 +6,7 @@
 | Capacidade total do instantâneo por conta |10 TB |
 | Largura de banda máxima por conta (entrada + saída<sup>1</sup>) |<=50 Gbps |
 
-<sup>1</sup>*entrada* refere-se os dados de tooall (pedidos) que está a ser enviados tooa conta de armazenamento. *Saída* refere-se os dados de tooall (respostas) que está a ser recebidos de uma conta de armazenamento.
+<sup>1</sup>*Entrada* refere-se a todos os dados (pedidos) enviados para uma conta de armazenamento. *Entrada* refere-se a todos os dados (respostas) recebidas de uma conta de armazenamento.
 
 **Discos da máquina virtual não geridos premium: por limites de disco**
 
@@ -21,8 +21,6 @@
 
 | Recurso | Limite Predefinido |
 | --- | --- |
-| IOPs Máx Por VM |80.000 IOPS com GS5 VM<sup>1</sup> |
-| Débito máx por VM |2.000 MB/s com GS5 VM<sup>1</sup> |
-
-<sup>1</sup>Consulte demasiado[tamanho da VM](../articles/virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) para limites de outros tamanhos de VM. 
+| IOPs Máx Por VM |80.000 IOPS com GS5 VM |
+| Débito máx por VM |2.000 MB/s com GS5 VM |
 

@@ -1,4 +1,4 @@
-Definir um nome de domínio personalizado numa aplicação web no App Service do Azure tem pelo Gestor de tráfego de balanceamento de carga está disponível apenas para **padrão** Web sites do modo. Antes de mudar de uma aplicação web a partir Olá serviço de aplicações gratuito plano modo toohello partilhado, o modo de básicas ou Standard, tem de remover primeiro caps gastos no local para a sua subscrição do serviço de aplicações. 
+Definir um nome de domínio personalizado numa aplicação web que está integrada com o Gestor de tráfego só está disponível para o **padrão** escalão de preço.  
 
-Para obter mais informações sobre modos de plano do App Service Olá, incluindo como toochange Olá modo do seu site, consulte [como tooscale web sites](../articles/app-service-web/web-sites-scale.md).
+Para obter mais informações sobre os escalões de preço do serviço de aplicações, incluindo como alterar a sua aplicação do escalão de preço, consulte [aumentar verticalmente a uma aplicação no Azure](../articles/app-service/web-sites-scale.md).
 

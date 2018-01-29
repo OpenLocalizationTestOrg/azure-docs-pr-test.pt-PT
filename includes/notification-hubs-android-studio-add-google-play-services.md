@@ -1,18 +1,22 @@
-1. Olá abra o Gestor do Android SDK clicando Olá ícone na barra de ferramentas de Olá do Android Studio ou ao clicar em **ferramentas** -> **Android** -> **SDK Manager**no menu de Olá. Localizar a versão de destino Olá do Olá Android SDK utilizada no seu projeto, abra-o ao clicar em **Mostrar detalhes do pacote**e escolha **Google APIs**, se não estiver já instalado.
-2. Clique em Olá **ferramentas do SDK** separador. Se ainda não instalou o Serviço do Google Play, clique em **Serviços do Google Play**, como mostrado abaixo. Em seguida, clique em **aplicar** tooinstall. 
+1. Abra o Gestor do Android SDK clicando no ícone na barra de ferramentas do Android Studio ou em **Ferramentas** -> **Android** -> **Gestor de SDKs** no menu. Localize a versão de destino do Android SDK utilizada no projeto, abra-a clicando em **Mostrar Detalhes do Pacote** e escolha **APIs do Google**, se ainda não estiver instalada.
+2. Clique no separador **Ferramentas SDK** . Se ainda não instalou o Serviço do Google Play, clique em **Serviços do Google Play**, como mostrado abaixo. Em seguida, clique em **Aplicar** para instalar. 
    
-    Tenha em atenção o caminho do SDK Olá, para utilização num passo posterior. 
+    Anote o caminho do SDK, para utilização num passo posterior. 
    
     ![](./media/notification-hubs-android-studio-add-google-play-services/notification-hubs-android-studio-sdk-manager.png)
-3. Abra Olá **gradle** ficheiro no diretório de aplicação Olá.
+3. Abra o ficheiro **build.gradle** no diretório da aplicação.
    
     ![](./media/notification-hubs-android-studio-add-google-play-services/notification-hubs-android-studio-add-google-play-dependency.png)
 4. Adicione esta linha sob *dependências*: 
+    
+    ```java
+        compile 'com.google.android.gms:play-services-gcm:9.2.0'
+    ```
+5. Clique no ícone **Sincronizar Projeto com os Ficheiros Gradle** na barra de ferramentas.
+6. Abra **AndroidManifest.xml** e adicione esta etiqueta à etiqueta *aplicação*.
    
-           compile 'com.google.android.gms:play-services-gcm:9.2.0'
-5. Clique em Olá **sincronizar projeto com os ficheiros Gradle** ícone na barra de ferramentas de Olá.
-6. Abra **AndroidManifest.xml** e adicione esta etiqueta toohello *aplicação* etiquetas.
-   
-        <meta-data android:name="com.google.android.gms.version"
+    ```java
+    <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+    ```
 

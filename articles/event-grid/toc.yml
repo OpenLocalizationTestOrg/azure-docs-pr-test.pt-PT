@@ -1,0 +1,73 @@
+- name: Event Grid
+  href: index.yml
+- name: Descrição geral
+  items:
+    - name: Sobre o Event Grid
+      href: overview.md
+    - name: Comparar serviços de mensagens
+      href: compare-messaging-services.md
+- name: Inícios rápidos
+  items:
+    - name: Encaminhar eventos de armazenamento de Blobs - CLI do Azure
+      href: ../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
+    - name: Criar evento personalizado - CLI do Azure
+      href: custom-event-quickstart.md
+    - name: Criar evento personalizado - Azure PowerShell
+      href: custom-event-quickstart-powershell.md
+    - name: Criar evento personalizado - Portal do Azure
+      href: custom-event-quickstart-portal.md
+- name: Tutoriais
+  items:
+    - name: Monitorizar as alterações nas VMs com as Aplicações Lógicas
+      href: monitor-virtual-machine-changes-event-grid-logic-app.md
+    - name: Redimensionar imagens carregadas
+      href: resize-images-on-storage-blob-upload-event.md
+    - name: Acionar o runbook da Automatização
+      href: ensure-tags-exists-on-new-virtual-machines.md
+- name: Conceitos
+  items:
+    - name: Conceitos do Event Grid
+      href: concepts.md
+    - name: Segurança e autenticação
+      href: security-authentication.md
+    - name: Entrega e tentativa
+      href: delivery-and-retry.md
+- name: Guias de procedimentos
+  items:
+    - name: Dados de fluxo dos Hubs de Eventos no armazém de dados
+      href: event-grid-event-hubs-integration.md
+    - name: Modelos para subscrições de eventos
+      href: event-subscription-template.md
+    - name: Monitorize a entrega de eventos
+      href: monitor-event-delivery.md
+- name: Referência
+  items:
+    - name: CLI do Azure
+      href: /cli/azure/eventgrid
+    - name: PowerShell
+      href: /powershell/module/azurerm.eventgrid
+    - name: REST
+      href: /rest/api/eventgrid
+    - name: Esquema de subscrições
+      href: subscription-creation-schema.md
+    - name: Esquema de eventos
+      href: event-schema.md
+      items:
+        - name: Subscrições do Azure
+          href: event-schema-subscriptions.md
+        - name: Armazenamento de blobs
+          href: event-schema-blob-storage.md
+        - name: Hubs de Eventos
+          href: event-schema-event-hubs.md
+        - name: Grupos de recursos
+          href: event-schema-resource-groups.md
+- name: Recursos
+  items:
+    - name: Mapa do Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Preços
+      href: 'https://azure.microsoft.com/pricing/details/event-grid/'
+    - name: Calculadora de preços
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Stack Overflow
+      href: 'http://stackoverflow.com/questions/tagged/azure-eventgrid'

@@ -4,20 +4,20 @@ Para obter mais informações sobre discos, veja [About Disks and VHDs for Virtu
 <a id="attachempty"></a>
 
 ## <a name="attach-an-empty-disk"></a>Anexar um disco vazio
-1. Abra a CLI do Azure 1.0 e [ligar tooyour subscrição do Azure](../articles/xplat-cli-connect.md). Confirme que está no modo Gestão de Serviço do Azure (`azure config mode asm`).
-2. Introduza `azure vm disk attach-new` toocreate e anexe um novo disco, conforme mostrado no seguinte exemplo de Olá. Substitua *myVM* com o nome de Olá da Máquina Virtual com Linux e especifique o tamanho do disco de Olá Olá em GB, o que é *100GB* neste exemplo:
+1. Abra o CLI do Azure 1.0 e [ligue-se à sua subscrição do Azure](/cli/azure/authenticate-azure-cli). Confirme que está no modo Gestão de Serviço do Azure (`azure config mode asm`).
+2. Introduza `azure vm disk attach-new` para criar e anexar um disco novo, conforme mostrado no exemplo seguinte. Substitua *myVM* pelo nome da sua Máquina Virtual do Linux e especifique o tamanho do disco em GB, que é *100* GB neste exemplo:
 
     ```azurecli
     azure vm disk attach-new myVM 100
     ```
 
-3. Depois de disco de dados de Olá é criado e ligado, está listado no resultado Olá `azure vm disk list <virtual-machine-name>` conforme mostrado no seguinte exemplo de Olá:
+3. Depois de ser criado e anexado, o disco de dados é listado nos resultados de `azure vm disk list <virtual-machine-name>`, conforme mostrado no exemplo seguinte:
    
     ```azurecli
     azure vm disk list TestVM
     ```
 
-    Olá de saída é semelhante toohello seguinte exemplo:
+    O resultado é semelhante ao seguinte exemplo:
 
     ```bash
     info:    Executing command vm disk list
@@ -37,14 +37,14 @@ Para obter mais informações sobre discos, veja [About Disks and VHDs for Virtu
 ## <a name="attach-an-existing-disk"></a>Anexar um disco existente
 Para anexar um disco existente, tem de ter um .vhd disponível numa conta de armazenamento.
 
-1. Abra a CLI do Azure 1.0 e [ligar tooyour subscrição do Azure](../articles/xplat-cli-connect.md). Confirme que está no modo Gestão de Serviço do Azure (`azure config mode asm`).
-2. Verifique se Olá VHD que pretende tooattach já está carregado tooyour subscrição do Azure:
+1. Abra o CLI do Azure 1.0 e [ligue-se à sua subscrição do Azure](/cli/azure/authenticate-azure-cli). Confirme que está no modo Gestão de Serviço do Azure (`azure config mode asm`).
+2. Verifique se o VHD que pretende anexar já está carregado para a sua subscrição do Azure:
    
     ```azurecli
     azure vm disk list
     ```
 
-    Olá de saída é semelhante toohello seguinte exemplo:
+    O resultado é semelhante ao seguinte exemplo:
 
     ```azurecli
      info:    Executing command vm disk list
@@ -58,13 +58,13 @@ Para anexar um disco existente, tem de ter um .vhd disponível numa conta de arm
      info:    vm disk list command OK
     ```
 
-3. Se não encontrar o disco de Olá que quiser toouse, pode carregar uma subscrição de tooyour VHD local utilizando `azure vm disk create` ou `azure vm disk upload`. Um exemplo de `disk create` seria como no seguinte exemplo de Olá:
+3. Se não encontrar o disco que quer utilizar, pode carregar um VHD local para a sua subscrição com `azure vm disk create` ou `azure vm disk upload`. Um exemplo de `disk create` seria igual ao seguinte:
    
     ```azurecli
     azure vm disk create myVhd .\TempDisk\test.VHD -l "East US" -o Linux
     ```
 
-    Olá de saída é semelhante toohello seguinte exemplo:
+    O resultado é semelhante ao seguinte exemplo:
 
     ```azurecli
     info:    Executing command vm disk create
@@ -78,23 +78,23 @@ Para anexar um disco existente, tem de ter um .vhd disponível numa conta de arm
     info:    vm disk create command OK
     ```
    
-   Também pode utilizar `azure vm disk upload` tooupload uma conta de armazenamento específicas de tooa do VHD. Ler mais sobre Olá comandos toomanage os discos de dados de máquina virtual do Azure [através de aqui](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2).
+   Também pode utilizar `azure vm disk upload` para carregar um VHD para uma conta de armazenamento específica. Leia mais sobre os comandos para gerir os discos de dados de máquinas virtuais do Azure [aqui](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2).
 
-4. Agora pode anexa Olá pretendido VHD tooyour máquina:
+4. Agora, vai anexar o VHD pretendido para a sua máquina virtual:
    
     ```azurecli
     azure vm disk attach myVM myVhd
     ```
    
-   Certifique-se de que tooreplace *myVM* com o nome de Olá da sua máquina virtual, e *myVHD* com o VHD pretendido.
+   Confirme que substitui *myVM* pelo nome da sua máquina virtual e *myVHD* pelo VHD pretendido.
 
-5. Pode verificar o disco de Olá é anexado toohello máquina de virtual com `azure vm disk list <virtual-machine-name>`:
+5. Pode utilizar `azure vm disk list <virtual-machine-name>` para verificar se o disco está anexado à máquina virtual.
    
     ```azurecli
     azure vm disk list myVM
     ```
 
-    Olá de saída é semelhante toohello seguinte exemplo:
+    O resultado é semelhante ao seguinte exemplo:
 
     ```azurecli
      info:    Executing command vm disk list
@@ -111,7 +111,7 @@ Para anexar um disco existente, tem de ter um .vhd disponível numa conta de arm
     ```
 
 > [!NOTE]
-> Depois de adicionar um disco de dados, irá precisar de toolog na máquina virtual de toohello e inicializar disco Olá, para que a máquina virtual de Olá pode utilizar o disco de Olá para armazenamento (veja Olá os seguintes passos para obter mais informações sobre como toodo Inicializar disco Olá).
+> Depois de adicionar um disco de dados, terá de iniciar sessão na máquina virtual e inicializar o disco, para que esta possa utilizar o disco para armazenamento (veja os passos seguintes para obter mais informações sobre como inicializar o disco).
 > 
 > 
 

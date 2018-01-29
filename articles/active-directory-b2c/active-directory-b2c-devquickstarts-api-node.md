@@ -4,7 +4,7 @@ description: Como criar uma API Web de Node.js que aceita tokens de um inquilino
 services: active-directory-b2c
 documentationcenter: 
 author: dstrockis
-manager: mbaldwin
+manager: mtillman
 editor: 
 ms.assetid: fc2b9af8-fbda-44e0-962a-8b963449106a
 ms.service: active-directory-b2c
@@ -14,11 +14,11 @@ ms.devlang: javascript
 ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: xerners
-ms.openlocfilehash: 6480be75c314ede1b786e959a79c0385dd2edea8
-ms.sourcegitcommit: 73f159cdbc122ffe42f3e1f7a3de05f77b6a4725
-ms.translationtype: MT
+ms.openlocfilehash: 3a0249f2f7dfd76d89cbf497376f53fe06c250c3
+ms.sourcegitcommit: 68aec76e471d677fd9a6333dc60ed098d1072cfc
+ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/18/2017
 ---
 # <a name="azure-ad-b2c-secure-a-web-api-by-using-nodejs"></a>B2C do Azure AD: Proteger uma API Web utilizando Node.js
 <!-- TODO [AZURE.INCLUDE [active-directory-b2c-devquickstarts-web-switcher](../../includes/active-directory-b2c-devquickstarts-web-switcher.md)]-->
@@ -35,7 +35,7 @@ Com o Azure Active Directory (Azure AD) B2C, pode proteger uma API web utilizand
 Para efetuar este exemplo, tem de:
 
 1. Registar uma aplicação com o Azure AD.
-2. Configure a aplicação para utilizar o plug-in `azure-ad-passport` do Passport.
+2. Configure a aplicação para utilizar o plug-in `passport-azure-ad` do Passport.
 3. Configure uma aplicação de cliente para chamar a API Web da “lista de ações a fazer”.
 
 ## <a name="get-an-azure-ad-b2c-directory"></a>Obter um diretório do Azure AD B2C
@@ -48,8 +48,6 @@ Em seguida, precisa de criar uma aplicação no seu diretório do B2C que dá ao
 * Introduzir `http://localhost/TodoListService` como um **URL de resposta**. É o URL predefinido para este exemplo de código.
 * Criar um **Segredo de aplicação** para a aplicação e copiá-lo. Estes dados são necessários mais tarde. Tenha em atenção que este valor de ser [XML de escape](https://www.w3.org/TR/2006/REC-xml11-20060816/#dt-escape) antes de o utilizar.
 * Copiar a **ID da Aplicação** atribuída à aplicação. Estes dados são necessários mais tarde.
-
-[!INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
 ## <a name="create-your-policies"></a>Criar as políticas
 No Azure AD B2C, cada experiência de utilizador é definida por uma [política](active-directory-b2c-reference-policies.md). Esta aplicação contém duas experiências de identidade: registo e início de sessão. Tem de criar uma política de cada tipo, conforme descrito no [artigo de referência de política](active-directory-b2c-reference-policies.md#create-a-sign-up-policy).  Quando criar as três políticas, não se esqueça de:
@@ -756,7 +754,7 @@ A resposta pretendida é um erro 401. Indica que a camada do Passport está a te
 ## <a name="you-now-have-a-rest-api-service-that-uses-oauth2"></a>Agora tem um serviço de API REST que utiliza o OAuth2
 Tem implementada uma API REST utilizando o Restify e o OAuth! Tem agora código suficiente para que possa continuar a desenvolver o seu serviço e compilação neste exemplo. Fez tudo o que podia com este servidor sem utilizar um cliente compatível com o OAuth2. Para esse passo seguinte, utilize uma passagem walk-through adicional como a nossa passagem [Ligar a uma API web utilizando iOS com B2C](active-directory-b2c-devquickstarts-ios.md).
 
-## <a name="next-steps"></a>Passos Seguintes
+## <a name="next-steps"></a>Passos seguintes
 Agora pode aceder a tópicos mais avançados, como:
 
 [Ligar a uma API Web utilizando o iOS com o B2C](active-directory-b2c-devquickstarts-ios.md)

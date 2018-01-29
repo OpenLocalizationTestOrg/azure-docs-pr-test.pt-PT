@@ -1,10 +1,12 @@
 
-* conversão de Olá requer um reinício de Olá VM, por isso, agendar a migração de Olá das suas VMs durante uma janela de manutenção já existente. 
+* A conversão necessita de um reinício da VM, por isso, agende a migração das VMs durante uma janela de manutenção pré-existente. 
 
-* a conversão de Olá não é reversível. 
+* A conversão não é reversível. 
 
-* Ser conversão de Olá tootest se. Migre uma máquina virtual de teste antes de executar a migração de Olá na produção.
+* Certifique-se de que testa a conversão. Migre uma máquina virtual de teste antes de efetuar a migração na produção.
 
-* Durante a conversão de Olá, desalocar Olá VM. Olá VM recebe um novo endereço IP quando é iniciada após a conversão de Olá. Se necessário, pode [atribuir um endereço IP estático](../articles/virtual-network/virtual-network-ip-addresses-overview-arm.md) toohello VM.
+* Durante a conversão, deve desalocar a VM. A VM recebe um novo endereço IP quando é iniciada após a conversão. Se necessário, pode [atribuir um endereço IP estático](../articles/virtual-network/virtual-network-ip-addresses-overview-arm.md) à VM.
 
-* Olá VHDs originais e conta de armazenamento de Olá utilizada pelo Olá VM antes de conversão não são eliminados. Podem continuar tooincur encargos. tooavoid a ser cobrado destes artefactos, eliminar blobs de VHD originais Olá depois de verificar que a conversão de Olá está concluída.
+* Os VHDs originais e a conta de armazenamento utilizada pela VM antes da conversão não são eliminados. Continuam a incorrer em custos. Para evitar a cobrança destes artefactos, elimine os blobs de VHD originais depois de verificar que a conversão está concluída.
+
+* Reveja a versão mínima do agente de VM do Azure necessário para suportar o processo de conversão. Para obter informações sobre como Verifique e atualize a sua versão do agente, consulte [suporte para a versão mínima para agentes VM no Azure](https://support.microsoft.com/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support)

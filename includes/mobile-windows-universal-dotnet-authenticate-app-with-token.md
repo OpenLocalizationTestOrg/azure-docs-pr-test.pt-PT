@@ -1,25 +1,25 @@
 
-1. No ficheiro de projeto do Olá MainPage.xaml.cs, adicione o seguinte de Olá **utilizando** instruções:
+1. No ficheiro de projeto MainPage.xaml.cs, adicione a seguinte **utilizando** instruções:
    
         using System.Linq;        
         using Windows.Security.Credentials;
-2. Substitua Olá **AuthenticateAsync** método com Olá seguinte código:
+2. Substitua o **AuthenticateAsync** método com o seguinte código:
    
         private async System.Threading.Tasks.Task<bool> AuthenticateAsync()
         {
             string message;
             bool success = false;
    
-            // This sample uses hello Facebook provider.
+            // This sample uses the Facebook provider.
             var provider = MobileServiceAuthenticationProvider.Facebook;
    
-            // Use hello PasswordVault toosecurely store and access credentials.
+            // Use the PasswordVault to securely store and access credentials.
             PasswordVault vault = new PasswordVault();
             PasswordCredential credential = null;
    
             try
             {
-                // Try tooget an existing credential from hello vault.
+                // Try to get an existing credential from the vault.
                 credential = vault.FindAllByResource(provider.ToString()).FirstOrDefault();
             }
             catch (Exception)
@@ -29,15 +29,15 @@
    
             if (credential != null)
             {
-                // Create a user from hello stored credentials.
+                // Create a user from the stored credentials.
                 user = new MobileServiceUser(credential.UserName);
                 credential.RetrievePassword();
                 user.MobileServiceAuthenticationToken = credential.Password;
    
-                // Set hello user from hello stored credentials.
+                // Set the user from the stored credentials.
                 App.MobileService.CurrentUser = user;
    
-                // Consider adding a check toodetermine if hello token is 
+                // Consider adding a check to determine if the token is 
                 // expired, as shown in this post: http://aka.ms/jww5vp.
    
                 success = true;
@@ -47,11 +47,11 @@
             {
                 try
                 {
-                    // Login with hello identity provider.
+                    // Login with the identity provider.
                     user = await App.MobileService
-                        .LoginAsync(provider);
+                        .LoginAsync(provider, "{url_scheme_of_your_app}");
    
-                    // Create and store hello user credentials.
+                    // Create and store the user credentials.
                     credential = new PasswordCredential(provider.ToString(),
                         user.UserId, user.MobileServiceAuthenticationToken);
                     vault.Add(credential);
@@ -72,13 +72,13 @@
             return success;
         }
    
-    Nesta versão do **AuthenticateAsync**, aplicação Olá tenta credenciais de toouse armazenadas no Olá **PasswordVault** tooaccess Olá serviço. Um regular início de sessão é também efetuado quando não existe nenhuma credencial armazenada.
+    Nesta versão do **AuthenticateAsync**, a aplicação tenta utilizar as credenciais armazenadas no **PasswordVault** para aceder ao serviço. Um regular início de sessão é também efetuado quando não existe nenhuma credencial armazenada.
    
    > [!NOTE]
-   > Um token em cache pode estar expirado e expiração do token também pode ocorrer após a autenticação quando a aplicação Olá está a ser utilizado. toolearn como toodetermine se um token tiver expirado, consulte o artigo [Verifique a existência de tokens de autenticação expirada](http://aka.ms/jww5vp). Erros de autorização de toohandling uma solução de tokens de tooexpiring relacionadas, consulte Olá publique [colocação em cache e tokens expirados em Mobile Services do Azure de processamento gerido SDK](http://blogs.msdn.com/b/carlosfigueira/archive/2014/03/13/caching-and-handling-expired-tokens-in-azure-mobile-services-managed-sdk.aspx). 
+   > Um token em cache pode estar expirado e expiração do token também pode ocorrer após a autenticação quando a aplicação está a ser utilizado. Para saber como determinar se um token tiver expirado, consulte [Verifique a existência de tokens de autenticação expirada](http://aka.ms/jww5vp). Para uma solução de processamento de erros de autorização relacionados com a expiração de tokens, consulte o post [colocação em cache e tokens expirados em Mobile Services do Azure de processamento gerido SDK](http://blogs.msdn.com/b/carlosfigueira/archive/2014/03/13/caching-and-handling-expired-tokens-in-azure-mobile-services-managed-sdk.aspx). 
    > 
    > 
-3. Reinicie a aplicação de Olá duas vezes.
+3. Reinicie a aplicação duas vezes.
    
-    Tenha em atenção que no arranque primeiro de Olá, início de sessão com o fornecedor de Olá novamente é necessária. No entanto, no momento do reinício segundo Olá credenciais Olá em cache são utilizadas e início de sessão é ignorada. 
+    Tenha em atenção que no arranque do primeiro início de sessão com o fornecedor é novamente necessária. No entanto, na segunda reinicialização são utilizadas as credenciais em cache e início de sessão é ignorada. 
 

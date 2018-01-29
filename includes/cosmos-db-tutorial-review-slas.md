@@ -1,7 +1,11 @@
-Agora que a aplicação está a funcionar, poderá ser útil tooensure negócio continuidade e veja utilizador acesso tooensure elevada disponibilidade. Pode utilizar Olá disponibilidade de Olá tooreview portal do Azure, a latência, débito e consistência da sua coleção. 
+O débito, armazenamento, disponibilidade, latência e consistência recursos na sua conta são monitorizados no portal do Azure. Vamos ver rapidamente estas métricas. 
 
-Cada gráfico associado Olá [contratos de nível de serviço de base de dados de Cosmos do Azure (SLAs)](https://azure.microsoft.com/support/legal/sla/documentdb/) fornece uma linha que mostra Olá quota necessário toomeet Olá SLA e a sua utilização real, dando-lhe uma vista encriptada para o desempenho de base de dados. Métricas adicionais, tais como a utilização do armazenamento e número de pedidos por minuto, também estão incluídas no portal de Olá.
+1. Clique em **métricas** no menu de navegação.
 
-* No portal do Azure Olá, no Olá deixado painel, em **monitorização**, clique em **métricas**.
+   ![Métricas no portal do Azure](./media/cosmos-db-tutorial-review-slas/metrics.png)
 
-   ![Aplicação de Lista A Fazer com dados de exemplo](./media/cosmos-db-tutorial-review-slas/azure-cosmosdb-portal-metrics-slas.png)
+2. Clique em através de cada um dos separadores, pelo que tem em consideração as métricas de que BD do Cosmos do Azure fornece. 
+
+    Cada gráfico que se encontra associado a [contratos de nível de serviço de base de dados de Cosmos do Azure (SLAs)](https://azure.microsoft.com/support/legal/sla/cosmos-db/) fornece uma linha que mostra se qualquer um dos SLAs foram violadas. BD do Azure do Cosmos faz com que os SLAs transparentes com este conjunto de métricas de monitorização. 
+
+   ![Conjunto de métricas do Cosmos BD do Azure](./media/cosmos-db-tutorial-review-slas/metrics-suite.png)

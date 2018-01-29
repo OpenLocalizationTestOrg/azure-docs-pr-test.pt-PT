@@ -1,52 +1,53 @@
-## <a name="os-config"></a>Adicionar endereços IP tooa sistema de operativo VM
+## <a name="os-config"></a>Adicionar endereços IP ao sistema operativo de uma VM
 
-Ligue e início de sessão tooa VM que criou com vários endereços IP privados. Tem de adicionar manualmente todos os Olá endereços IP privados (incluindo Olá primário) que adicionou toohello VM. Conclua os seguintes passos para o seu sistema de operativo VM de Olá:
+Ligue-se e inicie sessão numa VM criada por si com múltiplos endereços IP privados. Tem de adicionar manualmente todos os endereços IP privados (incluindo o principal) que adicionou à VM. Conclua os passos seguintes relativamente ao sistema operativo da sua VM:
 
 ### <a name="windows"></a>Windows
 
-1. A partir de uma linha de comandos, escreva *ipconfig /all*.  Vê apenas Olá *primário* endereço IP privado (através de DHCP).
-2. Tipo *ncpa.cpl* no Olá de tooopen de linha de comandos Olá **ligações de rede** janela.
-3. Abrir propriedades Olá adaptador adequado Olá: **ligação de área Local**.
+1. A partir de uma linha de comandos, escreva *ipconfig /all*.  Apenas verá o endereço IP privado *Principal* (através de DHCP).
+2. Escreva *ncpa.cpl* na linha de comandos para abrir a janela **Ligações de rede**.
+3. Abra as propriedades do adaptador adequado: **Ligação de Área Local**.
 4. Faça duplo clique em protocolo IP versão 4 (IPv4).
-5. Selecione **Olá utilize os seguintes endereços IP** e introduza Olá os seguintes valores:
+5. Selecione **Utilizar o seguinte endereço IP** e introduza os seguinte valores:
 
-    * **Endereço IP**: introduza Olá *primário* endereço IP privado
-    * **Máscara de sub-rede**: Conjunto baseado na sua sub-rede. Por exemplo, se hello sub-rede é um /24 sub-rede e sub-rede Olá máscara é 255.255.255.0.
-    * **Gateway predefinido**: Olá primeiro endereço IP da sub-rede Olá. Se a sub-rede 10.0.0.0/24, endereço IP do gateway Olá for de 10.0.0.1.
-    * Clique em **Olá utilize os seguintes endereços de servidor DNS** e introduza Olá os seguintes valores:
-        * **Servidor DNS preferencial**: Se não estiver a utilizar o seu próprio servidor DNS, introduza 168.63.129.16.  Se estiver a utilizar o seu próprio servidor DNS, introduza o endereço IP Olá para o servidor.
-    * Clique em Olá **avançadas** botão e adicionar endereços IP adicionais. Adicione cada Olá secundários endereços IP privados listados no passo 8 toohello NIC com Olá mesma sub-rede especificada para o endereço IP primário Olá.
+    * **Endereço IP**: Introduza o endereço IP privado *Principal*
+    * **Máscara de sub-rede**: Conjunto baseado na sua sub-rede. Por exemplo, se a sub-rede for uma sub-rede /24, a máscara de sub-rede será 255.255.255.0.
+    * **Gateway predefinido**: O primeiro endereço IP na sub-rede. Se a sua sub-rede for 10.0.0.0/24, o endereço IP do gateway será 10.0.0.1.
+    * Clique em **Utilizar os seguintes endereços de servidor DNS** e introduza os seguintes valores:
+        * **Servidor DNS preferencial**: Se não estiver a utilizar o seu próprio servidor DNS, introduza 168.63.129.16.  Se estiver a utilizar o seu próprio servidor DNS, introduza o endereço IP do seu servidor.
+    * Clique no botão **Avançado** e adicione mais endereços IP. Adicione cada um dos endereços IP privados secundários apresentados no passo 8 ao NIC com a mesma sub-rede especificada para o endereço IP principal.
         >[!WARNING] 
-        >Se não siga os passos de Olá acima corretamente, poderá perder conectividade tooyour VM. Certifique-se de que as informações de Olá introduzidas para o passo 5 são precisos antes de continuar.
+        >Se não seguir os passos acima corretamente, poderá perder a conetividade da sua VM. Certifique-se de que as informações introduzidas no passo 5 estão corretas antes de continuar.
 
-    * Clique em **OK** tooclose saída definições Olá TCP/IP e, em seguida, **OK** novamente tooclose Olá as definições da placa. A ligação RDP é restabelecida.
+    * Clique em **OK** para fechar as definições de TCP/IP e, em seguida, novamente em **OK** para fechar as definições do adaptador. A ligação RDP é restabelecida.
 
 6. A partir de uma linha de comandos, escreva *ipconfig /all*. Todos os endereços IP adicionados por si são apresentados e o DHCP é desativado.
+7. Configure janelas de utilizar o endereço IP privado o principal da configuração de IP no Azure como o endereço IP primário para o Windows. Consulte [acesso não Internet de VM do Windows Azure que tenha vários endereços IP](https://support.microsoft.com/help/4040882/no-internet-access-from-azure-windows-vm-that-has-multiple-ip-addresse) para obter mais detalhes. 
 
 
 ### <a name="validation-windows"></a>Validação (Windows)
 
-tooensure toohello tooconnect capaz de internet da sua configuração de IP secundária através de Olá que IP público associados, depois de adicioná-la corretamente utilizando os passos acima, utilize Olá os seguintes comandos:
+Para se certificar de que pode estabelecer uma ligação à Internet a partir da configuração de IP secundário através do IP público associado, assim que o tiver adicionado corretamente com os passos acima, utilize o seguinte comando:
 
 ```bash
 ping -S 10.0.0.5 hotmail.com
 ```
 >[!NOTE]
->Para configurações de IP secundárias, só pode ping toohello Internet se a configuração de Olá tem um endereço IP público com associados. Para configurações de IP primárias, um endereço IP público não é necessário tooping toohello Internet.
+>Para configurações de IP secundárias, pode apenas enviar ping à Internet se a configuração tem um endereço IP público com associados. Para configurações de IP primárias, um endereço IP público não é necessário para enviar um ping à Internet.
 
 ### <a name="linux-ubuntu"></a>Linux (Ubuntu)
 
 1. Abra uma janela de terminal.
-2. Certifique-se que utilizador do Olá raiz. Se não estiver, introduza Olá os seguintes comandos:
+2. Certifique-se de que é o utilizador raiz. Se não for, introduza o seguinte comando:
 
     ```bash
     sudo -i
     ```
 
-3. Atualize o ficheiro de configuração de Olá Olá da interface de rede (assumindo que 'eth0').
+3. Atualize o ficheiro de configuração da interface de rede (assumindo “eth0”).
 
-    * Manter Olá item de linha existente do dhcp. endereço IP primário Olá permanece configurado que estava anteriormente.
-    * Adicione uma configuração para um endereço IP estático adicional com Olá os seguintes comandos:
+    * Mantenha o item de linha existente para dhcp. O endereço IP principal continua configurado como estava anteriormente.
+    * Adicione uma configuração para um endereço IP estático adicional com os seguintes comandos:
 
         ```bash
         cd /etc/network/interfaces.d/
@@ -54,14 +55,14 @@ ping -S 10.0.0.5 hotmail.com
         ```
 
     Deverá ver um ficheiro .cfg.
-4. Ficheiro Olá aberta. Deverá ver Olá seguintes linhas no fim de Olá do ficheiro de Olá:
+4. Abra o ficheiro. Deverá ver as linhas seguintes no final do ficheiro:
 
     ```bash
     auto eth0
     iface eth0 inet dhcp
     ```
 
-5. Adicione Olá seguintes linhas após as linhas de Olá existentes neste ficheiro:
+5. Adicione as seguintes linhas a seguir às linhas existentes neste ficheiro:
 
     ```bash
     iface eth0 inet static
@@ -69,66 +70,66 @@ ping -S 10.0.0.5 hotmail.com
     netmask <your subnet mask>
     ```
 
-6. Guarde o ficheiro de Olá utilizando Olá os seguintes comandos:
+6. Guarde o ficheiro com o comando seguinte:
 
     ```bash
     :wq
     ```
 
-7. Interface de rede de Olá repor com Olá os seguintes comandos:
+7. Reponha a interface de rede com o seguinte comando:
 
     ```bash
     sudo ifdown eth0 && sudo ifup eth0
     ```
 
     > [!IMPORTANT]
-    > Execute ifdown e ifup no Olá mesmo linha se utilizar uma ligação remota.
+    > Execute ifdown e ifup na mesma linha se estiver a utilizar uma ligação remota.
     >
 
-8. Certifique-se de que o endereço IP Olá é adicionado a interface de rede toohello com Olá os seguintes comandos:
+8. Certifique-se de que o endereço IP é adicionado à interface de rede com o seguinte comando:
 
     ```bash
     ip addr list eth0
     ```
 
-    Deverá ver que adicionou como parte da lista de Olá de endereços de IP de Olá.
+    Deverá ver o endereço IP que adicionou como parte da lista.
 
 ### <a name="linux-redhat-centos-and-others"></a>Linux (Redhat, CentOS e outros)
 
 1. Abra uma janela de terminal.
-2. Certifique-se que utilizador do Olá raiz. Se não estiver, introduza Olá os seguintes comandos:
+2. Certifique-se de que é o utilizador raiz. Se não for, introduza o seguinte comando:
 
     ```bash
     sudo -i
     ```
 
-3. Introduza a sua palavra-passe e siga as instruções, conforme solicitado. Assim que estiver utilizador de raiz de Olá, navegue toohello pasta de scripts de rede com Olá os seguintes comandos:
+3. Introduza a sua palavra-passe e siga as instruções, conforme solicitado. Assim que se tornar no utilizador raiz, navegue até à pasta de scripts de rede com o seguinte comando:
 
     ```bash
     cd /etc/sysconfig/network-scripts
     ```
 
-4. Olá lista relacionado com ficheiros de ifcfg utilizando Olá os seguintes comandos:
+4. Liste os ficheiros ifcfg relacionados com o seguinte comando:
 
     ```bash
     ls ifcfg-*
     ```
 
-    Deverá ver *ifcfg eth0* como um dos ficheiros de Olá.
+    Deverá ver *ifcfg-eth0* como um dos ficheiros.
 
-5. tooadd um endereço IP, crie um ficheiro de configuração para o mesmo conforme mostrado abaixo. Tenha em atenção que tem de criar um ficheiro para cada configuração de IP.
+5. Para adicionar um endereço IP, crie um ficheiro de configuração para o mesmo como apresentado abaixo. Tenha em atenção que tem de criar um ficheiro para cada configuração de IP.
 
     ```bash
     touch ifcfg-eth0:0
     ```
 
-6. Abra Olá *ifcfg-eth0:0* ficheiro com Olá os seguintes comandos:
+6. Abra o ficheiro *ifcfg-eth0:0* com o seguinte comando:
 
     ```bash
     vi ifcfg-eth0:0
     ```
 
-7. Adicionar ficheiros de conteúdo toohello, *eth0:0* neste caso, com Olá os seguintes comandos. Informações de tooupdate se basear-se no seu endereço IP.
+7. Adicione conteúdo ao ficheiro, que é *eth0:0* neste caso, com o seguinte comando. Certifique-se de que atualiza as informações com base no seu endereço IP.
 
     ```bash
     DEVICE=eth0:0
@@ -138,32 +139,32 @@ ping -S 10.0.0.5 hotmail.com
     NETMASK=255.255.255.0
     ```
 
-8. Guarde o ficheiro de Olá com Olá os seguintes comandos:
+8. Guarde o ficheiro com o comando seguinte:
 
     ```bash
     :wq
     ```
 
-9. Reinicie os serviços de rede Olá e certifique-se as alterações de Olá com êxito executando Olá os seguintes comandos:
+9. Reinicie os serviços de rede e certifique-se de que as alterações são realizadas com êxito ao executar os seguintes comandos:
 
     ```bash
     /etc/init.d/network restart
     ifconfig
     ```
 
-    Deverá ver que adicionou, endereços de IP de Olá *eth0:0*, na lista de Olá devolvida.
+    Deverá ver o endereço IP que adicionou, *eth0:0*, na lista devolvida.
 
 ### <a name="validation-linux"></a>Validação (Linux)
 
-tooensure são toohello tooconnect capaz de internet da sua configuração de IP secundária através de IP público Olá associados-lo, utilize Olá os seguintes comandos:
+Para se certificar de que pode estabelecer uma ligação à Internet a partir da configuração de IP secundário através do IP público associado, utilize o seguinte comando:
 
 ```bash
 ping -I 10.0.0.5 hotmail.com
 ```
 >[!NOTE]
->Para configurações de IP secundárias, só pode ping toohello Internet se a configuração de Olá tem um endereço IP público com associados. Para configurações de IP primárias, um endereço IP público não é necessário tooping toohello Internet.
+>Para configurações de IP secundárias, pode apenas enviar ping à Internet se a configuração tem um endereço IP público com associados. Para configurações de IP primárias, um endereço IP público não é necessário para enviar um ping à Internet.
 
-Para VMs com Linux, quando tentar toovalidate conectividade de saída de uma NIC secundária, poderá ser necessário tooadd de rotas adequado. Existem muitas formas toodo isto. Consulte a documentação adequada para a distribuição de Linux. seguinte Olá é um método tooaccomplish:
+Para VMs de Linux, ao tentar validar a conectividade de saída a partir de um NIC secundário, poderá ter de adicionar rotas adequadas. Existem várias formas de efetuar este procedimento. Consulte a documentação adequada para a distribuição de Linux. O método seguinte é adequado para realizar este procedimento:
 
 ```bash
 echo 150 custom >> /etc/iproute2/rt_tables 
@@ -172,7 +173,7 @@ ip rule add from 10.0.0.5 lookup custom
 ip route add default via 10.0.0.1 dev eth2 table custom
 
 ```
-- Ser tooreplace se:
-    - **10.0.0.5** com Olá privada endereço que tenha um IP público endereço IP associado tooit
-    - **10.0.0.1** gateway predefinido de tooyour
-    - **eth2** toohello nome do seu NIC secundário
+- Certifique-se de que substitui:
+    - **10.0.0.5** pelo endereço IP privado que tem um endereço IP público associado ao mesmo
+    - **10.0.0.1** para o gateway predefinido
+    - **eth2** para o nome do seu NIC secundário

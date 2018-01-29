@@ -1,4 +1,4 @@
-Olá limites a seguir aplicam-se apenas ao utilizar o Olá do Azure Resource Manager e grupos de recursos do Azure.
+Os seguintes limites aplicam-se ao realizar operações de gestão utilizando apenas o Gestor de recursos do Azure.
 
 | Recurso | Limite Predefinido |
 | --- | --- |

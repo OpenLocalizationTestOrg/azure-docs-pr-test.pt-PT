@@ -1,16 +1,16 @@
-Agora, pode utilizar a ferramenta Explorador de dados de Olá no Olá toocreate do portal do Azure, uma base de dados do gráfico. 
+Agora, pode utilizar a ferramenta Data Explorer no portal do Azure para criar uma base de dados de gráfico. 
 
-1. No Olá portal do Azure, no menu de navegação esquerdo Olá, clique em **Explorador de dados (pré-visualização)**. 
-2. No Olá **Explorador de dados (pré-visualização)** painel, clique em **gráfico novo**, em seguida, preencha a página Olá utilizando Olá informações a seguir.
+1. No portal do Azure, no menu à esquerda, selecione **Explorador de dados (pré-visualização)**.
 
-    ![Explorador de dados no Olá portal do Azure](./media/cosmos-db-create-graph/azure-cosmosdb-data-explorer.png)
+2. Em **Explorador de dados (pré-visualização)**, selecione **gráfico novo**. Em seguida, preencha a página utilizando as seguintes informações:
+
+    ![Data Explorer no portal do Azure](./media/cosmos-db-create-graph/azure-cosmosdb-data-explorer.png)
 
     Definição|Valor sugerido|Descrição
     ---|---|---
-    Id da base de dados|base de dados de exemplo|Olá ID para a sua nova base de dados. Os nomes das bases de dados têm de ter entre um e 255 carateres e não podem conter `/ \ # ?` nem espaços à direita.
-    ID do gráfico|gráfico de exemplo|ID de Olá para o novo gráfico. Os nomes de gráfico têm Olá requisitos mesmo caráter como ids de base de dados.
-    Capacidade de Armazenamento| 10 GB|Deixe o valor predefinido de Olá. Esta é a capacidade de armazenamento Olá da base de dados de Olá.
-    Débito|400 RUs|Deixe o valor predefinido de Olá. Pode dimensionar débito hello mais tarde se quiser tooreduce latência.
-    Chave de partição|/userid|Uma chave de partição que será a distribuir uniformemente dados tooeach partição. Selecionar Olá correto de chave de partição é importante criar uma performant graph, leia mais acerca do mesmo no [estruturar para criação de partições](../articles/cosmos-db/partition-data.md#designing-for-partitioning).
+    Id da base de dados|base de dados de exemplo|Designe a nova base de dados como *sample-database*. Os nomes de base de dados tem de estar entre 1 e 255 carateres e não pode conter `/ \ # ?` ou um espaço à direita.
+    ID do gráfico|gráfico de exemplo|Denomine a nova coleção como *sample-graph*. Os nomes dos gráficos têm os mesmos requisitos de carateres que os IDs das bases de dados.
+    Capacidade de armazenamento| 10 GB|Deixe o valor predefinido. Esta é a capacidade de armazenamento da base de dados.
+    Débito|400 RUs|Deixe o valor predefinido. Pode aumentar verticalmente o débito mais tarde, se quiser reduzir a latência.
 
-3. Depois do formulário de Olá é preenchido, clique em **OK**.
+3. Depois do formulário é preenchido, selecione **OK**.
