@@ -1,39 +1,39 @@
 <!--author=alkohli last changed: 9/17/15-->
 
-#### <a name="toocomplete-hello-minimum-storsimple-device-setup"></a>toocomplete Olá mínimo StorSimple a configuração do dispositivo
-1. No Olá **dispositivos** página, o dispositivo selecione Olá, clique em Olá seta junto ao página específica do dispositivo de toohello toogo Olá dispositivo nome. 
+#### <a name="to-complete-the-minimum-storsimple-device-setup"></a>Para concluir a configuração mínima do dispositivo StorSimple
+1. Na página **Dispositivos**, selecione o dispositivo, clique na seta junto ao nome do dispositivo para ir para a página específica do dispositivo. 
    
     ![Página de dispositivos com o dispositivo online](./media/storsimple-complete-minimum-device-setup/HCS_DevicesPageM-include.png) 
-2. Clique em início rápido ícone ![ícone início rápido](./media/storsimple-complete-minimum-device-setup/HCS_QuickStartIcon-include.png) tooaccess Olá página de início rápido do dispositivo. Clique em **concluir a configuração de dispositivo** toostart Olá **configurar dispositivo** assistente.
+2. Clique no ícone de início rápido ![Ícone Início Rápido](./media/storsimple-complete-minimum-device-setup/HCS_QuickStartIcon-include.png) para aceder à página de início rápido do dispositivo. Clique em **Concluir a configuração do dispositivo** para iniciar o assistente **Configurar dispositivo**.
    
     ![Página de início rápido do dispositivo](./media/storsimple-complete-minimum-device-setup/Device_Quick_Start_page_1M.png)
-3. No Olá **definições básicas** página, Olá a seguir:
+3. Na página **Definições Básicas**, realize o seguinte:
    
-   1. Forneça um **nome amigável** para o dispositivo. nome Olá predefinido do dispositivo reflete informações como o modelo de dispositivo Olá e número de série. Pode atribuir um nome amigável de cópia de segurança too64 carateres toomanage seu dispositivo.
-   2. Conjunto Olá **fuso horário** com base na localização geográfica Olá no qual Olá o dispositivo está a ser implementado. O dispositivo utiliza este fuso horário para todas as operações agendadas.
-   3. Em **Definições de DNS**, forneça um endereço para o **Servidor DNS Secundário**. Se estiver a utilizar o IPv6, o campo de Olá será preenchido com base no prefixo de IPv6 Olá fornecido na interface do Windows PowerShell de Olá. 
-      Se o servidor DNS secundário de Olá não estiver configurado, não será permitida toosave a configuração do dispositivo.
-   4. Nas interfaces preparadas para iSCSI, ative, pelo menos, uma rede para iSCSI. Pelo menos uma interface de rede tem toobe ativado para a nuvem e uma interface preparada toobe preparada para iSCSI. DATA 0 é automaticamente ativado para a nuvem.
+   1. Forneça um **nome amigável** para o dispositivo. O nome predefinido do dispositivo reflete informações como o modelo e número de série do dispositivo. Pode atribuir um nome amigável com um máximo de 64 carateres para gerir o dispositivo.
+   2. Defina o **fuso horário** com base na localização geográfica onde o dispositivo está a ser implementado. O dispositivo utiliza este fuso horário para todas as operações agendadas.
+   3. Em **Definições de DNS**, forneça um endereço para o **Servidor DNS Secundário**. Se estiver a utilizar IPv6, o campo será preenchido com base no prefixo IPv6 fornecido na interface do Windows PowerShell. 
+      Se o servidor DNS secundário não estiver configurado, não lhe será permitido guardar a configuração do dispositivo.
+   4. Nas interfaces preparadas para iSCSI, ative, pelo menos, uma rede para iSCSI. Tem de haver, no mínimo, uma interface de rede preparada para a nuvem e uma interface preparada para iSCSI. DATA 0 é automaticamente ativado para a nuvem.
       
       ![Definições básicas para a configuração mínima do dispositivo StorSimple](./media/storsimple-complete-minimum-device-setup/HCS_MinDeviceSetupBasicSettings1-include.png)
-4. Clique em ícone de seta de Olá. ![Ícone de seta do StorSimple](./media/storsimple-complete-minimum-device-setup/HCS_ArrowIcon-include.png)
-5. No Olá **Interfaces de rede** , indique Olá fixo endereços IP para o controlador 0 e o controlador 1. Se hello dados 0 interface foi configurada para IPv4, hello fixo toobe de necessidade de endereços IP fornecido no Olá formato IPv4. Se tiver indicado um prefixo para a configuração IPv6, Olá endereços IP fixos será preenchido automaticamente nestes campos.
+4. Clique no ícone de seta. ![Ícone de seta do StorSimple](./media/storsimple-complete-minimum-device-setup/HCS_ArrowIcon-include.png)
+5. Na página **Interfaces de Rede**, forneça os endereços IP fixos para o Controlador 0 e o Controlador 1. Se a interface DATA 0 tiver sido configurada para IPv4, os endereços IP fixos têm de ser fornecidos no formato IPv4. Se tiver indicado um prefixo para a configuração IPv6, os endereços IP fixos serão preenchidos automaticamente nestes campos.
 
     > [!NOTE] 
-    > - controlador Olá endereços IP fixos necessário toobe livre IPs sub-rede de Olá acessível pelo endereço IP do dispositivo Olá.
-    > - Olá endereços IP para o controlador de Olá fixos são utilizados para a manutenção do dispositivo de toohello Olá atualizações e, por conseguinte, tem de ser encaminháveis e consegue tooconnect toohello Internet Olá IPs fixo.
+    > - Os endereços IP fixos do controlador têm de ser IPs livres na sub-rede acessível pelo endereço IP do dispositivo.
+    > - Os endereços IP fixos do controlador são utilizados para a manutenção de atualizações do dispositivo e, por conseguinte, os IPs fixos têm de ser encaminháveis e conseguir estabelecer ligação à Internet.
 
     ![Interfaces de rede para a configuração mínima do dispositivo StorSimple](./media/storsimple-complete-minimum-device-setup/HCS_MinDeviceSetupNetworkInterfaces2-include.png)
 
-1. Clique em ícone de verificação Olá ![ícone de verificação StorSimple](./media/storsimple-complete-minimum-device-setup/HCS_CheckIcon-include.png).
-   Irá devolver toohello dispositivo **início rápido** página.
+1. Clique no ícone de verificação ![Ícone de verificação do StorSimple](./media/storsimple-complete-minimum-device-setup/HCS_CheckIcon-include.png).
+   Voltará à página **Início Rápido** do dispositivo.
    
    > [!NOTE]
-   > Pode modificar Olá todas as outras definições do dispositivo em qualquer altura acedendo Olá **configurar** página.
+   > Pode modificar todas as outras definições do dispositivo em qualquer altura acedendo à página **Configurar**.
    > 
    > 
 
 ![Vídeo disponível](./media/storsimple-complete-minimum-device-setup/Video_icon.png) **Vídeo disponível**
 
-toowatch um vídeo que demonstra como toocomplete Olá configuração mínima do dispositivo, clique em [aqui](https://azure.microsoft.com/documentation/videos/minimum-storsimple-device-setup/).
+Para ver um vídeo que demonstra como concluir a configuração mínima do dispositivo, clique [aqui](https://azure.microsoft.com/documentation/videos/minimum-storsimple-device-setup/).
 

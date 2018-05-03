@@ -1,16 +1,16 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### <a name="tooadd-a-new-storage-account-in-storsimple-release-version-ga"></a>tooadd uma nova conta de armazenamento na versão de lançamento do StorSimple (GA)
-1. Num serviço do StorSimple Manager Olá página de destino, selecione o seu serviço e faça duplo clique. Esta ação irá demorar toohello **início rápido** página. Selecione Olá **configurar** página.
+#### <a name="to-add-a-new-storage-account-in-storsimple-release-version-ga"></a>Para adicionar uma nova conta de armazenamento na versão de Lançamento (GA) do StorSimple
+1. Na página de destino do serviço StorSimple Manager, selecione o seu serviço e faça duplo clique para aceder à página **Início Rápido**. Selecione a página **Configurar**.
 2. Clique em **Adicionar/editar conta de armazenamento**.
-3. No Olá **adicionar/editar conta de armazenamento** diálogo caixa, Olá a seguir:
+3. Na caixa de diálogo **Adicionar/editar conta de armazenamento**, faça o seguinte:
    
    1. Clique em **Adicionar novo**.
    2. Forneça um nome para a conta de armazenamento.
-   3. Olá de alimentação primário **chave de acesso** para a sua conta de armazenamento do Microsoft Azure.
-   4. Selecione **ativar modo SSL** toocreate um canal seguro para a comunicação de rede entre a nuvem de dispositivo e Olá. Limpar Olá **ativar modo SSL** caixa de verificação apenas se estiver a utilizar uma nuvem privada.
-   5. Clique Olá ícone de verificação ![ícone de verificação](./media/storsimple-configure-new-storage-account/HCS_CheckIcon-include.png). Será notificado depois de conta de armazenamento Olá é criada com êxito.
+   3. Forneça a **Chave de Acesso** primária para a sua conta de armazenamento do Microsoft Azure.
+   4. Selecione **Ativar Modo SSL** para criar um canal seguro para a comunicação de rede entre o seu dispositivo e a nuvem. Desmarque a caixa de verificação **Ativar Modo SSL** apenas se estiver a utilizar uma nuvem privada.
+   5. Clique no ícone de verificação ![ícone de verificação](./media/storsimple-configure-new-storage-account/HCS_CheckIcon-include.png). Será notificado quando a conta de armazenamento for criada com êxito.
       
       ![Adicionar conta de armazenamento](./media/storsimple-configure-new-storage-account/HCS_AddStorageAccount-include.png)
-4. Olá, conta de armazenamento recentemente criada será apresentada no Olá **configurar** página em **contas do Storage**. Clique em **guardar** Olá toosave conta de armazenamento recentemente criada. Clique em **OK** quando lhe for pedida a confirmação.
+4. A conta de armazenamento recentemente criada será apresentada na página **Configurar** em **Contas de armazenamento**. Clique em **Guardar** para guardar a conta de armazenamento recentemente criada. Clique em **OK** quando lhe for pedida a confirmação.
 
