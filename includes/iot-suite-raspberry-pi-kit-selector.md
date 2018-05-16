@@ -1,7 +1,0 @@
-> [!div class="op_single_selector"]
-> * [<span data-ttu-id="d3268-101">C com a telemetria simulada</span><span class="sxs-lookup"><span data-stu-id="d3268-101">C with simulated telemetry</span></span>](../articles/iot-suite/iot-suite-raspberry-pi-kit-c-get-started-simulator.md)
-> * [<span data-ttu-id="d3268-102">C com o real sensor</span><span class="sxs-lookup"><span data-stu-id="d3268-102">C with real sensor</span></span>](../articles/iot-suite/iot-suite-raspberry-pi-kit-c-get-started-basic.md)
-> * [<span data-ttu-id="d3268-103">C implementar atualização de firmware</span><span class="sxs-lookup"><span data-stu-id="d3268-103">C implement firmware update</span></span>](../articles/iot-suite/iot-suite-raspberry-pi-kit-c-get-started-advanced.md)
-> * [<span data-ttu-id="d3268-104">NODE.js com a telemetria simulada</span><span class="sxs-lookup"><span data-stu-id="d3268-104">Node.js with simulated telemetry</span></span>](../articles/iot-suite/iot-suite-raspberry-pi-kit-node-get-started-simulator.md)
-> * [<span data-ttu-id="d3268-105">NODE.js com real sensor</span><span class="sxs-lookup"><span data-stu-id="d3268-105">Node.js with real sensor</span></span>](../articles/iot-suite/iot-suite-raspberry-pi-kit-node-get-started-basic.md)
-> * [<span data-ttu-id="d3268-106">NODE.js implementar atualização de firmware</span><span class="sxs-lookup"><span data-stu-id="d3268-106">Node.js implement firmware update</span></span>](../articles/iot-suite/iot-suite-raspberry-pi-kit-node-get-started-advanced.md)
